@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import Iframe from '../Iframe'
+import { getUrlForFile } from '../../constants/pages'
 
 const Pdf = () => {
     const pdfElement = useRef()
@@ -8,7 +9,7 @@ const Pdf = () => {
         if (pdfElement.current) {
             // This prevents iframe src from adding to browser history.
             pdfElement.current.contentWindow.location.replace(
-                'https://www.bobtailyearlings.com/docs/Dyadminoes_rules.pdf',
+                getUrlForFile('docs/Dyadminoes_rules.pdf'),
             )
         }
     }, [])
