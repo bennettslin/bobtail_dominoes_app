@@ -1,0 +1,9 @@
+@import './colours';
+
+$textShadow__dark: 0.5px 1px $colour__text__dark;
+
+$colour__shadow__medium: hsla(240, 33%, 15%, 0.25);
+$dropShadow: drop-shadow(0 2px 4px $colour__shadow__medium);
+
+$colour__shadow__lightHover: hsla(60, 100%, 93%, 0.9);
+$dropShadow__lightHover: drop-shadow(0 2px 8px $colour__shadow__lightHover);

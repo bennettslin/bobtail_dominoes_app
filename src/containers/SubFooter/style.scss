@@ -1,0 +1,15 @@
+@import '../../scss/constants/colours';
+@import '../../scss/constants/responsive';
+
+.SubFooter {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+
+    height: $height__subFooter;
+    background-color: $colour__background__subFooter;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

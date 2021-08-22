@@ -1,0 +1,16 @@
+@import '../../scss/constants/responsive';
+
+.Header {
+    width: 100%;
+    box-sizing: border-box;
+    padding: $margin__narrow $margin__wide;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: $width__page__narrow) {
+        flex-direction: row;
+    }
+}

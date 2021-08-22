@@ -1,0 +1,58 @@
+@import '../constants/colours';
+
+body {
+    background-color: $colour__background__subFooter;
+    color: $colour__text__dark;
+}
+
+body, p, h1, h3, h5 {
+    margin: 0;
+}
+
+h1, h3, h5 {
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 2em * 1.5;
+}
+
+h3 {
+    font-size: 1.17em * 1.5;
+}
+
+h5 {
+    font-size: 0.83em * 1.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+	background: none;
+	border: none;
+	padding: 0;
+}
+
+a, button {
+    color: $colour__link__dark;
+
+    &:not([disabled]):hover {
+        color: $colour__link__medium;
+    }
+
+    &:not([disabled]):active {
+        color: $colour__link__light;
+    }
+
+    &[disabled] {
+        color: $colour__primary__dark;
+        cursor: default;
+    }
+}
+
+em, i {
+    position: relative;
+    left: -0.05em; // Eyeballed.
+}
