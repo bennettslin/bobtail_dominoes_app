@@ -1,26 +1,20 @@
 import React from 'react'
 import cx from 'classnames'
-import VisitButton from '..'
-import Svg from '../../../Svg'
-import twitter from '../../../../assets/svgs/twitter.svg'
-import { TWITTER_ID } from '../../../../constants/socialMedia'
 
 const TwitterButton = () => (
-    <VisitButton
+    <a
         {...{
             className: cx(
                 'TwitterButton',
+                'twitter-follow-button',
             ),
-            id: TWITTER_ID,
             href: 'https://twitter.com/BobtailYearling',
+            'data-size': 'large',
+            'data-show-screen-name': false,
+            'data-dnt': true,
+            'data-show-count': false,
         }}
-    >
-        <Svg
-            {...{
-                src: twitter,
-            }}
-        />
-    </VisitButton>
+    />
 )
 
 export default TwitterButton

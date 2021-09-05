@@ -1,14 +1,13 @@
 import React from 'react'
 import Page from '../../containers/Page'
-import MarkdownBody from '../../containers/Page/MarkdownBody'
-import content, { title } from '../../content/puzzles'
+import Body from '../../containers/Page/Body'
+import Puzzles2021 from './2021'
 
-const Apply = () => (
+const Puzzles = () => (
     <Page>
-        <MarkdownBody {...{ title }}>
-            {content}
-        </MarkdownBody>
+        <Body {...{ title: 'Puzzles' }}>
+            <Puzzles2021 />
+        </Body>
     </Page>
 )
-
-export default Apply
+export default Puzzles

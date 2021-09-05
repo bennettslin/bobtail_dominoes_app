@@ -1,0 +1,15 @@
+@import '../../scss/constants/responsive.scss';
+
+.ShareButtons {
+    padding: $margin__narrow 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ShareButtons__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

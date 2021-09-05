@@ -5,9 +5,14 @@
     position: relative;
     height: auto;
     width: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .ButtonAnimatable__enabled {
+    cursor: pointer;
     filter: $dropShadow;
 
     .Button:hover

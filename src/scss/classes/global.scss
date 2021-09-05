@@ -9,6 +9,10 @@ body, p, h1, h3, h5 {
     margin: 0;
 }
 
+label {
+    color: $colour__primary__dark;
+}
+
 a {
     text-decoration: none;
 }
@@ -28,14 +32,12 @@ input[type=submit] {
 
     &[disabled] {
         color: $colour__neutral__light;
-        cursor: default;
     }
 }
 
 a, button {
     &[disabled] {
         color: $colour__primary__dark;
-        cursor: default;
     }
 }
 
@@ -54,6 +56,10 @@ a, button, input[type=submit] {
 
     &:not([disabled]):active {
         color: $colour__link__light;
+    }
+
+    &[disabled] {
+        cursor: default;
     }
 }
 

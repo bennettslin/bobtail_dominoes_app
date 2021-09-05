@@ -1,0 +1,13 @@
+@import '../../scss/constants/responsive';
+
+.MultiPageFooter {
+    width: 100%;
+    margin-top: $margin__wide * 2;
+    padding-top: $margin__wide;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-top: 1px solid hsla(0, 0%, 50%, 0.5);
+}

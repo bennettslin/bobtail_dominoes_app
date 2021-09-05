@@ -7,3 +7,7 @@ export const getTruncatedText = (text, maxLength = 160) => (
         text.substring(0, maxLength).trim() + '…' :
         text
 )
+
+export const getCapitalizedText = text => (
+    `${text.charAt(0).toUpperCase()}${text.slice(1).toLowerCase()}`
+)

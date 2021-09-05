@@ -1,0 +1,15 @@
+@import '../../../scss/constants/responsive';
+
+.ShareButton {
+    svg {
+        height: $length__icon__small;
+        width: $length__icon__small;
+    }
+
+    @media (min-width: $width__page__narrow) {
+        svg {
+            height: $length__icon__medium;
+            width: $length__icon__medium;
+        }    
+    }
+}

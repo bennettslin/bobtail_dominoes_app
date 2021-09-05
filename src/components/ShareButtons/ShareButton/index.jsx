@@ -4,7 +4,7 @@ import cx from 'classnames'
 import Button from '../../Button'
 import './style'
 
-const VisitButton = forwardRef(({
+const ShareButton = forwardRef(({
     className,
     id,
     children,
@@ -15,10 +15,10 @@ const VisitButton = forwardRef(({
         {...{
             ref,
             className: cx(
-                'VisitButton',
+                'ShareButton',
                 className,
             ),
-            analyticsLabel: `VisitButton__${id}`,
+            analyticsLabel: `ShareButton__${id}`,
             ...rest,
         }}
     >
@@ -26,11 +26,11 @@ const VisitButton = forwardRef(({
     </Button>
 ))
 
-VisitButton.propTypes = {
+ShareButton.propTypes = {
     className: PropTypes.string,
     id: PropTypes.string.isRequired,
     handleButtonClick: PropTypes.func,
     children: PropTypes.node.isRequired,
 }
 
-export default VisitButton
+export default ShareButton

@@ -3,7 +3,7 @@ import Page from '../../containers/Page'
 import MarkdownBody from '../../containers/Page/MarkdownBody'
 import content, { title } from '../../content/rules'
 
-const About = () => (
+const Rules = () => (
     <Page>
         <MarkdownBody {...{ title }}>
             {content}
@@ -11,4 +11,4 @@ const About = () => (
     </Page>
 )
 
-export default About
+export default Rules

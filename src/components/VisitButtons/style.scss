@@ -1,4 +1,5 @@
 @import '../../scss/constants/responsive.scss';
+@import '../../scss/constants/transition.scss';
 
 .VisitButtons {
     padding: $margin__narrow 0;
@@ -6,4 +7,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    opacity: 0;
+    transition:
+        opacity $transitionDuration__slow $transitionDuration__slower;
+}
+
+.VisitButtons__shown {
+    opacity: 1;
+}
+
+.VisitButtons__buttons {
+    display: flex;
+    margin-left: $margin__narrow * 0.5;
 }

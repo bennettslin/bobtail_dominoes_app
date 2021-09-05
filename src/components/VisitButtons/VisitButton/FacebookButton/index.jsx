@@ -1,26 +1,26 @@
 import React from 'react'
 import cx from 'classnames'
-import VisitButton from '..'
-import Svg from '../../../Svg'
-import facebook from '../../../../assets/svgs/facebook.svg'
-import { FACEBOOK_ID } from '../../../../constants/socialMedia'
+import { FacebookProvider, Like } from 'react-facebook'
 
 const FacebookButton = () => (
-    <VisitButton
+    <FacebookProvider
         {...{
-            className: cx(
-                'FacebookButton',
-            ),
-            id: FACEBOOK_ID,
-            href: 'https://www.facebook.com/BobtailYearlings',
+            appId: '1569818066640189',
+            version: 'v11.0',
         }}
     >
-        <Svg
+        <Like
             {...{
-                src: facebook,
+                className: cx(
+                    'FacebookButton',
+                    'fb-like',
+                ),
+                href: 'https://www.facebook.com/BobtailYearlings',
+                layout: 'button',
+                size: 'large',
             }}
         />
-    </VisitButton>
+    </FacebookProvider>
 )
 
 export default FacebookButton
