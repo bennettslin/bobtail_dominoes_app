@@ -1,9 +1,9 @@
 // Reducers for options state.
 import { OPTION_STORE } from '../../constants/store'
-import { getOptionDefaults } from './default'
+import { OPTION_DEFAULTS } from './default'
 
 export const getOptionReducer = () => (
-    state = getOptionDefaults(),
+    state = OPTION_DEFAULTS,
     { type, payload },
 ) => {
     switch (type) {

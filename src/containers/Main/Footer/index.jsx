@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import MailingList from '../../../components/MailingList'
@@ -7,14 +7,20 @@ import { mapIsUpsellShown } from '../../../redux/option/selector'
 import './style'
 
 const Footer = () => {
-    const isUpsellShown = useSelector(mapIsUpsellShown)
+    const
+        isUpsellShown = useSelector(mapIsUpsellShown),
+        [didMount, setDidMount] = useState(false)
+
+    useEffect(() => {
+        setTimeout(() => setDidMount(true), 0)
+    }, [])
 
     return (
         <div
             {...{
                 className: cx(
                     'Footer',
-                    !isUpsellShown && 'Footer__visible',
+                    didMount && !isUpsellShown && 'Footer__visible',
                 ),
             }}
         >

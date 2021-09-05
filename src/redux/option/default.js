@@ -1,7 +1,9 @@
 import { getBoolFromStorage } from '../../utils/storage'
 const INITIAL_IS_UPSELL_DISABLED = getBoolFromStorage('isUpsellDisabled')
 
-export const getOptionDefaults = () => ({
+export const OPTION_DEFAULTS = {
     isUpsellDisabled: INITIAL_IS_UPSELL_DISABLED,
-    isUpsellShown: true,
-})
+
+    // Initialise as true if it's not disabled.
+    isUpsellShown: !INITIAL_IS_UPSELL_DISABLED,
+}

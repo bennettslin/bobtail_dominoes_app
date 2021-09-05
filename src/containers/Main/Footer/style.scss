@@ -14,7 +14,7 @@
         flex-direction: row;
     }
 
-    transition: 0 $transitionDuration__slow;
+    transition: opacity $transitionDuration__slow $transitionDuration__slower;
     opacity: 0;
 }
 

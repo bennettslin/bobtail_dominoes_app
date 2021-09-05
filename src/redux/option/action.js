@@ -6,7 +6,14 @@ export const updateIsUpsellDisabled = isUpsellDisabled => {
 
     return {
         type: OPTION_STORE,
-        payload: { isUpsellDisabled },
+        payload: {
+            isUpsellDisabled,
+
+            // If disabling upsell, also update shown to false.
+            ...isUpsellDisabled && {
+                isUpsellShown: false,
+            },
+        },
     }
 }
 
