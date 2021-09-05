@@ -23,7 +23,7 @@ const MailingList = () => (
         <MailingListInputs />
         <div {...{ className: cx('font__finePrint') }}>
             {replaceStraightWithSmartQuotes(
-                `We'll send out an email per month at most.`,
+                `We'll send out one email per month at most.`,
             )}
         </div>
     </form>

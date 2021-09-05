@@ -1,7 +1,7 @@
 @import '../../scss/constants/responsive.scss';
 @import '../../scss/constants/transition.scss';
 
-.VisitButtons {
+.FollowButtons {
     padding: $margin__narrow 0;
 
     display: flex;
@@ -13,11 +13,10 @@
         opacity $transitionDuration__slow $transitionDuration__slower;
 }
 
-.VisitButtons__shown {
+.FollowButtons__shown {
     opacity: 1;
 }
 
-.VisitButtons__buttons {
-    display: flex;
-    margin-left: $margin__narrow * 0.5;
+.FollowButtons__label {
+    margin-right: $margin__narrow * 0.5;
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 import MailingList from '../../../components/MailingList'
-import VisitButtons from '../../../components/VisitButtons'
+import FollowButtons from '../../../components/FollowButtons'
 import './style'
 
 const Footer = () => (
@@ -13,7 +13,7 @@ const Footer = () => (
         }}
     >
         <MailingList />
-        <VisitButtons />
+        <FollowButtons />
     </div>
 )
 
