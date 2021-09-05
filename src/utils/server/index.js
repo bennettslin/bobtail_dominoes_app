@@ -1,3 +1,9 @@
+export const APP_TITLE = 'Bobtail Dominoes'
+export const APP_DESCRIPTION =
+    'Website for the musical tile game Bobtail Dominoes.'
+export const APP_NAME = 'bobtailDominoes'
+export const DOMAIN = APP_NAME.toLowerCase()
+
 export const getIsRuntimeBuild = () => (
     process.env.BUILD === 'runtime'
 )
@@ -9,23 +15,12 @@ export const getIsProductionBuild = () => (
 export const getFaviconFileName = () => {
     switch (process.env.DESTINATION) {
         case 'local':
-            return 'bobtaildominoes_local'
-        case 'candidate':
-            return 'bobtaildominoes_candidate'
-        case 'delivery':
-            return 'bobtaildominoes_delivery'
+            return `${APP_NAME}_local`
         default:
-            return 'bobtaildominoes'
+            return APP_NAME
     }
 }
 
-export const getS3BucketName = () => {
-    switch (process.env.DESTINATION) {
-        case 'candidate':
-            return 'bobtaildominoes--candidate'
-        case 'delivery':
-            return 'bobtaildominoes--delivery'
-        default:
-            return 'bobtaildominoes--production'
-    }
-}
+export const getS3BucketName = () => (
+    `${DOMAIN}--production`
+)

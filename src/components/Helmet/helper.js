@@ -4,6 +4,12 @@ import {
     getUrlForFile,
     HOME_PAGE,
 } from '../../constants/pages'
+import { TWITTER_ACCOUNT } from '../../constants/socialMedia'
+import {
+    APP_DESCRIPTION,
+    APP_NAME,
+    APP_TITLE,
+} from '../../utils/server'
 
 const capitalise = str => (
     str[0].toUpperCase() + str.substring(1)
@@ -13,13 +19,13 @@ export const getMetaTitle = ({
     page,
     title,
 }) => (
-    `${page === HOME_PAGE ? '' : `${title || capitalise(page)} | `}Bobtail Dominoes`
+    `${page === HOME_PAGE ? '' : `${title || capitalise(page)} | `}${APP_TITLE}`
 )
 
 export const getMetaDescription = description => (
     description ?
         getTruncatedText(description) :
-        'Website for the musical tile game Bobtail Dominoes.'
+        APP_DESCRIPTION
 )
 
 const getDefaultConfig = description => ({
@@ -38,7 +44,7 @@ const getFacebookConfig = ({
         title,
     }),
     'og:description': getMetaDescription(description),
-    'og:image': getUrlForFile(`share/image/facebook/bobtailDominoes.png`),
+    'og:image': getUrlForFile(`share/image/facebook/${APP_NAME}.png`),
 })
 
 const getTwitterConfig = ({
@@ -47,14 +53,14 @@ const getTwitterConfig = ({
     title,
 }) => ({
     'twitter:card': 'summary',
-    'twitter:site': '@BobtailYearling',
+    'twitter:site': TWITTER_ACCOUNT,
     'twitter:title': getMetaTitle({
         page,
         title,
     }),
     'twitter:description': getMetaDescription(description),
     'twitter:image':
-        getUrlForFile(`share/image/twitter/bobtailDominoes.png`),
+        getUrlForFile(`share/image/twitter/${APP_NAME}.png`),
 })
 
 const spreadHelmetConfig = ({ config, nameKey }) => (
