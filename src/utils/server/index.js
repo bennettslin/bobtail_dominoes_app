@@ -9,8 +9,23 @@ export const getIsProductionBuild = () => (
 export const getFaviconFileName = () => {
     switch (process.env.DESTINATION) {
         case 'local':
-            return 'bobtailDominoes_local'
+            return 'bobtaildominoes_local'
+        case 'candidate':
+            return 'bobtaildominoes_candidate'
+        case 'delivery':
+            return 'bobtaildominoes_delivery'
         default:
-            return 'bobtailDominoes'
+            return 'bobtaildominoes'
+    }
+}
+
+export const getS3BucketName = () => {
+    switch (process.env.DESTINATION) {
+        case 'candidate':
+            return 'bobtaildominoes--candidate'
+        case 'delivery':
+            return 'bobtaildominoes--delivery'
+        default:
+            return 'bobtaildominoes--production'
     }
 }

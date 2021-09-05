@@ -1,7 +1,11 @@
 import React from 'react'
 import cx from 'classnames'
 import HeaderButton from '../HeaderButton'
-import { HOME_PAGE } from '../../../constants/pages'
+import {
+    RULES_PAGE,
+    PUZZLES_PAGE,
+    LINKS_PAGE,
+} from '../../../constants/pages'
 import './style'
 
 const Menu = () => (
@@ -12,8 +16,14 @@ const Menu = () => (
             ),
         }}
     >
-        <HeaderButton {...{ pageLink: HOME_PAGE }}>
-            Bobtail Dominoes
+        <HeaderButton {...{ pageLink: RULES_PAGE }}>
+            Rules
+        </HeaderButton>
+        <HeaderButton {...{ pageLink: PUZZLES_PAGE }}>
+            Puzzles
+        </HeaderButton>
+        <HeaderButton {...{ pageLink: LINKS_PAGE }}>
+            Links
         </HeaderButton>
     </div>
 )

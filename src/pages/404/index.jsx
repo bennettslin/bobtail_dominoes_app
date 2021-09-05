@@ -5,7 +5,7 @@ import { NOT_FOUND_PAGE } from '../../constants/pages'
 
 const NotFound = () => (
     <Page {...{ page: NOT_FOUND_PAGE }}>
-        <Heading {...{ level: 3 }}>Page Not Found</Heading>
+        <Heading>Page Not Found</Heading>
     </Page>
 )
 

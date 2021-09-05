@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import Content from './Content'
+import Footer from './Footer'
 import './style'
 
 const Main = ({ children }) => (
@@ -11,7 +13,8 @@ const Main = ({ children }) => (
             ),
         }}
     >
-        {children}
+        <Content>{children}</Content>
+        <Footer />
     </div>
 )
 

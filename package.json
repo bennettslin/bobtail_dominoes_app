@@ -11,6 +11,8 @@
     "start": "npm run clean && DESTINATION=local BUILD=runtime gatsby develop --port 1116",
     "serve": "gatsby serve --port 1116",
     "stage": "npm run clean && DESTINATION=local npm run build:staging && npm run serve",
+    "release:candidate": "npm run clean && DESTINATION=candidate npm run build:staging && npm run deploy",
+    "release:delivery": "npm run clean && DESTINATION=delivery npm run build:production && npm run deploy",
     "release:production": "npm run clean && DESTINATION=production npm run build:production && npm run deploy",
     "lint": "eslint --ext js,jsx src",
     "lint:fix": "eslint --ext js,jsx --fix src"
@@ -28,15 +30,19 @@
   "dependencies": {
     "bowser": "^2.11.0",
     "classnames": "^2.3.1",
+    "email-validator": "^2.0.4",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
+    "react-inlinesvg": "^2.3.0",
+    "react-markdown": "^6.0.3",
     "react-redux": "^7.2.4",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-tooltip": "^4.2.21",
-    "redux": "^4.1.1"
+    "redux": "^4.1.1",
+    "remove-markdown": "^0.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",

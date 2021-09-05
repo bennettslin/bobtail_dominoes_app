@@ -1,5 +1,6 @@
 import React from 'react'
 import cx from 'classnames'
+import HomeButton from './HomeButton'
 import Menu from './Menu'
 import './style'
 
@@ -11,6 +12,7 @@ const Header = () => (
             ),
         }}
     >
+        <HomeButton />
         <Menu />
     </div>
 )

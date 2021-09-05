@@ -1,0 +1,9 @@
+@import '../../scss/constants/responsive.scss';
+
+.VisitButtons {
+    padding: $margin__narrow 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

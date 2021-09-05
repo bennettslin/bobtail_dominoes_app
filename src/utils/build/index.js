@@ -4,7 +4,7 @@ const getDateTimeForConsole = dateTime => (
     `${format(dateTime, 'MMMM d, yyyy, h:mmaaaaa')}m`
 )
 
-export const getDateTimeForGa = dateTime => (
+const getDateTimeForGa = dateTime => (
     format(dateTime, 'yyyy.MM.dd.HH.mm')
 )
 

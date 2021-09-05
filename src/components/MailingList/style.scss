@@ -1,0 +1,17 @@
+@import '../../scss/constants/responsive';
+
+.MailingList {
+    width: 100%;
+    max-width: 480px;
+    padding: $margin__narrow 0;
+
+    & > :not(:first-child) {
+        margin-top: $margin__narrow * 0.5;
+    }
+}
+
+.MailingList__label {
+    @media (min-width: $width__page__narrow) {
+        font-size: 1.25em;
+    }
+}

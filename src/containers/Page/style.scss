@@ -1,7 +1,6 @@
 @import '../../scss/constants/responsive';
 
 .Page {
-    flex-grow: 1;
     width: 100%;
 
     display: flex;
@@ -11,7 +10,15 @@
     padding: $margin__wide;
     box-sizing: border-box;
     overflow-y: scroll;
+}
 
+.Page__narrow {
+    @media (min-width: $width__page__narrow) {
+        width: $width__page__narrow;
+    }
+}
+
+.Page__wide {
     @media (min-width: $width__page__wide) {
         width: $width__page__wide;
     }

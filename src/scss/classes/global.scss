@@ -9,33 +9,43 @@ body, p, h1, h3, h5 {
     margin: 0;
 }
 
-h1, h3, h5 {
-    font-weight: normal;
-}
-
-h1 {
-    font-size: 2em * 1.5;
-}
-
-h3 {
-    font-size: 1.17em * 1.5;
-}
-
-h5 {
-    font-size: 0.83em * 1.5;
-}
-
 a {
     text-decoration: none;
 }
 
-button {
+input {
+    box-sizing: border-box;
+    padding: 0;
+    font-size: 1em;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+input[type=submit] {
+    cursor: pointer;
+
+    &[disabled] {
+        color: $colour__neutral__light;
+        cursor: default;
+    }
+}
+
+a, button {
+    &[disabled] {
+        color: $colour__primary__dark;
+        cursor: default;
+    }
+}
+
+button, input[type=submit] {
 	background: none;
 	border: none;
 	padding: 0;
 }
 
-a, button {
+a, button, input[type=submit] {
     color: $colour__link__dark;
 
     &:not([disabled]):hover {
@@ -45,14 +55,9 @@ a, button {
     &:not([disabled]):active {
         color: $colour__link__light;
     }
-
-    &[disabled] {
-        color: $colour__primary__dark;
-        cursor: default;
-    }
 }
 
 em, i {
     position: relative;
-    left: -0.05em; // Eyeballed.
+    left: -0.025em; // Eyeballed.
 }

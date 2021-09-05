@@ -1,5 +1,8 @@
 import { GA_ACCOUNT } from './src/constants/analytics'
-import { getFaviconFileName } from './src/utils/server'
+import {
+    getFaviconFileName,
+    getS3BucketName,
+} from './src/utils/server'
 
 export default {
     plugins: [
@@ -16,10 +19,10 @@ export default {
             options: {
                 name: `Bobtail Dominoes`,
                 short_name: `Bobtail Dominoes`,
-                description: 'Website for the musical tile game Bobtail Dominoes',
+                description: 'Website for the musical tile game Bobtail Dominoes.',
                 start_url: '/',
-                background_color: '#634680',
-                theme_color: '#ead9cc',
+                background_color: '#7d9bb8',
+                theme_color: '#8c7363',
                 display: 'standalone',
                 icon: `src/assets/favicon/${getFaviconFileName()}.png`,
             },
@@ -30,7 +33,7 @@ export default {
         {
             resolve: `gatsby-plugin-s3`,
             options: {
-                bucketName: 'bobtaildominoes--production',
+                bucketName: getS3BucketName(),
             },
         },
     ],

@@ -20,7 +20,7 @@ export const onCreateWebpackConfig = ({ actions }) => {
         ],
         resolve: {
             // Import from files without specifying extensions.
-            extensions: ['.js', '.jsx', '.scss'],
+            extensions: ['.js', '.jsx', '.scss', '.svg'],
         },
     })
 }

@@ -1,0 +1,14 @@
+@import '../../../scss/constants/responsive';
+
+.Footer {
+    padding: 0 $margin__wide;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (min-width: $width__page__narrow) {
+        flex-direction: row;
+    }
+}

@@ -1,10 +1,13 @@
 import React from 'react'
 import Page from '../../containers/Page'
-import Pdf from '../../components/Pdf'
+import MarkdownBody from '../../containers/Page/MarkdownBody'
+import content, { title } from '../../content/home'
 
 const Home = () => (
     <Page>
-        <Pdf />
+        <MarkdownBody {...{ title }}>
+            {content}
+        </MarkdownBody>
     </Page>
 )
 

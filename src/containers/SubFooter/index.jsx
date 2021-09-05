@@ -10,7 +10,7 @@ const SubFooter = () => (
             ),
         }}
     >
-        {`© ${new Date().getFullYear()} Dogies Almondine Records`}
+        {`© ${new Date().getFullYear()} Dogies Almondine`}
     </div>
 )
 

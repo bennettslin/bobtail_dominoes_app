@@ -1,8 +1,14 @@
+@import '../constants/colours';
+
 .font__text {
-    font-family: Asap, Arial;
+    font-family: Fresca, Arial;
 }
 
 .font__heading {
-    font-family: Sexsmith, Georgia;
-    letter-spacing: 0.025em;
+    font-family: Birra, Georgia;
+}
+
+.font__finePrint {
+    font-size: 0.75em;
+    color: $colour__neutral__dark;
 }

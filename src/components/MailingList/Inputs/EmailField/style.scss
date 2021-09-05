@@ -1,0 +1,26 @@
+@import '../../../../scss/constants/borders';
+@import '../../../../scss/constants/colours';
+@import '../../../../scss/constants/responsive';
+
+$height__mailingList: 32px;
+
+.MailingListEmailField {
+    flex-grow: 1;
+
+    height: $height__mailingList;
+    margin-right: $margin__narrow;
+    padding-left: $margin__narrow;
+
+    &::placeholder {
+        color: $colour__neutral__light;
+    }
+
+    border: 1px solid $colour__neutral__dark;
+    border-radius: $borderRadius__narrow;
+
+    &:hover,
+    &:active,
+    &:focus {
+        border-color: $colour__primary__light;
+    }
+}

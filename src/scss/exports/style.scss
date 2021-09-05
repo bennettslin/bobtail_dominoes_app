@@ -1,0 +1,8 @@
+// Sass constants are uppercase when exported to JavaScript.
+:export {
+    TEST: 2.5;
+}
+
+.TEST_1 {
+    color: green;
+}

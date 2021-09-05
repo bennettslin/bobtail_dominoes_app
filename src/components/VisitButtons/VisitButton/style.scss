@@ -1,0 +1,15 @@
+@import '../../../scss/constants/responsive';
+
+.VisitButton {
+    svg {
+        height: $length__icon__medium;
+        width: $length__icon__medium;
+    }
+
+    @media (min-width: $width__page__narrow) {
+        svg {
+            height: $length__icon__large;
+            width: $length__icon__large;
+        }    
+    }
+}
