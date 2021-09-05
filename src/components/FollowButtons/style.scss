@@ -2,15 +2,13 @@
 @import '../../scss/constants/transition.scss';
 
 .FollowButtons {
-    padding: $margin__narrow 0;
-
     display: flex;
     justify-content: center;
     align-items: center;
 
     opacity: 0;
     transition:
-        opacity $transitionDuration__slow $transitionDuration__slower;
+        opacity $transitionDuration__slower $transitionDuration__slower;
 }
 
 .FollowButtons__shown {

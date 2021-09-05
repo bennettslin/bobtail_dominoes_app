@@ -1,0 +1,24 @@
+@import '../../scss/constants/colours';
+@import '../../scss/constants/transition';
+
+.Popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $colour__neutral__opaque;
+
+    transition: opacity $transitionDuration__fast;
+    opacity: 0;
+}
+
+.Popup__visible {
+    transition: opacity $transitionDuration__slow;
+    opacity: 1;
+}

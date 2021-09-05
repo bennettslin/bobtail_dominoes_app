@@ -1,4 +1,6 @@
-const SAFE_WINDOW = {}
+const SAFE_WINDOW = {
+    localStorage: {},
+}
 
 export const getIsServerSide = () => (
     typeof window === 'undefined'

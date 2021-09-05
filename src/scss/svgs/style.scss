@@ -14,4 +14,8 @@ svg {
     &.twitter {
         .bird { fill: hsl(203, 65%, 58%); }
     }
+
+    &.popupClose {
+        .close { fill: hsl(0, 50%, 65%); }
+    }
 }

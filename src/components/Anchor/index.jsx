@@ -11,6 +11,7 @@ const Anchor = ({
     analyticsLabel,
     href,
     pageLink,
+    handleAnchorClick = () => {},
     children,
 
 }) => {
@@ -29,6 +30,8 @@ const Anchor = ({
                 analyticsLabel || pageLink,
             )
         }
+
+        handleAnchorClick()
     }
 
     return (
@@ -58,7 +61,7 @@ Anchor.propTypes = {
     analyticsLabel: PropTypes.string,
     href: PropTypes.string,
     pageLink: PropTypes.string,
-    onClick: PropTypes.func,
+    handleAnchorClick: PropTypes.func,
     children: PropTypes.node.isRequired,
 }
 

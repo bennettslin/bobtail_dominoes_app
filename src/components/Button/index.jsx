@@ -95,7 +95,7 @@ const Button = forwardRef(({
 
 Button.propTypes = {
     className: PropTypes.string,
-    analyticsLabel: PropTypes.string.isRequired,
+    analyticsLabel: PropTypes.string,
     pageLink: PropTypes.string,
     href: PropTypes.string,
     isSelected: PropTypes.bool,

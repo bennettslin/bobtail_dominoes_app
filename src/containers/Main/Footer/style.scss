@@ -1,14 +1,23 @@
 @import '../../../scss/constants/responsive';
+@import '../../../scss/constants/transition';
 
 .Footer {
-    padding: 0 $margin__wide;
+    padding: $margin__narrow $margin__wide;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    gap: $margin__narrow * 2;
 
     @media (min-width: $width__page__narrow) {
         flex-direction: row;
     }
+
+    transition: 0 $transitionDuration__slow;
+    opacity: 0;
+}
+
+.Footer__visible {
+    opacity: 1;
 }

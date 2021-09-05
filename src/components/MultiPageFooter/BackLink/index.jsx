@@ -22,7 +22,7 @@ const MultiPagesBackLink = ({ backPage }) => {
                     analyticsLabel: `MultiPagesBackLink__${selectedPage}`,
                 }}
             >
-                back to {getCapitalizedText(backPage)}
+                Back to {getCapitalizedText(backPage)}
             </Anchor>
         </Paragraph>
     )

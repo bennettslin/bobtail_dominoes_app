@@ -28,8 +28,6 @@ input {
 }
 
 input[type=submit] {
-    cursor: pointer;
-
     &[disabled] {
         color: $colour__neutral__light;
     }
@@ -48,6 +46,7 @@ button, input[type=submit] {
 }
 
 a, button, input[type=submit] {
+    cursor: pointer;
     color: $colour__link__dark;
 
     &:not([disabled]):hover {

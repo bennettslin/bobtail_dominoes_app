@@ -1,0 +1,12 @@
+@import '../../../../scss/constants/responsive';
+
+.PopupCloseButton {
+    position: absolute;
+    top: -$length__icon__large * 0.5;
+    left: 0;
+
+    svg {
+        height: $length__icon__large;
+        width: $length__icon__large;
+    }    
+}

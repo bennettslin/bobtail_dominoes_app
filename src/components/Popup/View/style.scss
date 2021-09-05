@@ -1,0 +1,28 @@
+@import '../../../scss/constants/borders';
+@import '../../../scss/constants/colours';
+@import '../../../scss/constants/responsive';
+@import '../../../scss/constants/transition';
+
+.PopupView {
+    position: relative;
+    width: $width__modal;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $margin__narrow * 2;
+
+    padding: $margin__wide;
+    box-sizing: border-box;
+    background-color: $colour__background;
+    border-radius: $borderRadius__wide;
+
+    transition: opacity $transitionDuration__slow $transitionDuration__slower;
+    opacity: 0;
+}
+
+.PopupView__visible {
+    animation: bounceIn $transitionDuration__slow $transitionDuration__slower;
+    opacity: 1;
+}

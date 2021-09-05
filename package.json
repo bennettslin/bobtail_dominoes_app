@@ -42,8 +42,10 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-tooltip": "^4.2.21",
+    "react-transition-group": "^4.4.2",
     "redux": "^4.1.1",
-    "remove-markdown": "^0.3.0"
+    "remove-markdown": "^0.3.0",
+    "reselect": "^4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
