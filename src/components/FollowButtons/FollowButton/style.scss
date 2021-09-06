@@ -1,15 +1,45 @@
+@import '../../../scss/constants/borders';
+@import '../../../scss/constants/colours';
 @import '../../../scss/constants/responsive';
 
 .FollowButton {
     svg {
-        height: $length__icon__medium;
-        width: $length__icon__medium;
+        height: $length__icon__small * 0.75;
+        width: $length__icon__small * 0.75;
     }
 
     @media (min-width: $width__page__narrow) {
         svg {
-            height: $length__icon__large;
-            width: $length__icon__large;
+            height: $length__icon__small;
+            width: $length__icon__small;
         }    
     }
+}
+
+.FollowButton__field {
+    padding: $margin__narrow $margin__narrow * 2 $margin__narrow $margin__narrow * 1.5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 $margin__narrow;
+
+    border-radius: $borderRadius__medium;
+    color: $colour__text__light;
+
+    @media (min-width: $width__page__narrow) {
+        font-size: 1.25em;
+    }
+
+    svg {
+        fill: $colour__text__light;
+    }
+}
+
+.FollowButton__field__facebook {
+    background-color: $colour__facebook;
+}
+
+.FollowButton__field__twitter {
+    background-color: $colour__twitter;
 }

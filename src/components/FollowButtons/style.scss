@@ -5,8 +5,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.FollowButtons__label {
-    margin-right: $margin__narrow * 0.5;
+    gap: 0 $margin__narrow;
 }

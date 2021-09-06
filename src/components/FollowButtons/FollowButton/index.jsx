@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Button from '../../Button'
+import { getCapitalizedText } from '../../../utils/format'
 import './style'
 
 const FollowButton = ({
@@ -21,7 +22,18 @@ const FollowButton = ({
             handleButtonClick,
         }}
     >
-        {children}
+        <div
+            {...{
+                className: cx(
+                    'FollowButton__field',
+                    `FollowButton__field__${id}`,
+                    'font__text',
+                ),
+            }}
+        >
+            {children}
+            {getCapitalizedText(id)}
+        </div>
     </Button>
 )
 
