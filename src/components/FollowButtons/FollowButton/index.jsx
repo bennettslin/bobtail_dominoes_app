@@ -1,36 +1,35 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Button from '../../Button'
 import './style'
 
-const ShareButton = forwardRef(({
+const FollowButton = ({
     className,
     id,
     handleButtonClick,
     children,
 
-}, ref) => (
+}) => (
     <Button
         {...{
-            ref,
             className: cx(
-                'ShareButton',
+                'FollowButton',
                 className,
             ),
-            analyticsLabel: `ShareButton__${id}`,
+            analyticsLabel: `FollowButton__${id}`,
             handleButtonClick,
         }}
     >
         {children}
     </Button>
-))
+)
 
-ShareButton.propTypes = {
+FollowButton.propTypes = {
     className: PropTypes.string,
     id: PropTypes.string.isRequired,
     handleButtonClick: PropTypes.func,
     children: PropTypes.node.isRequired,
 }
 
-export default ShareButton
+export default FollowButton

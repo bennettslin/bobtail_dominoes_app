@@ -53,7 +53,7 @@ const getTwitterConfig = ({
     title,
 }) => ({
     'twitter:card': 'summary',
-    'twitter:site': TWITTER_ACCOUNT,
+    'twitter:site': `@${TWITTER_ACCOUNT}`,
     'twitter:title': getMetaTitle({
         page,
         title,

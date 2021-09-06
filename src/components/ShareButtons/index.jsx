@@ -13,7 +13,9 @@ const ShareButtons = () => (
             ),
         }}
     >
-        <label>Share this page:</label>
+        <label {...{ className: 'ShareButtons__label' }}>
+            Share this page:
+        </label>
         <FacebookButton />
         <TwitterButton />
         <CopyUrlButton />

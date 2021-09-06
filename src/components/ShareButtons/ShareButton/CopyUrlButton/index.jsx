@@ -8,7 +8,7 @@ import copyUrl from '../../../../assets/svgs/copyUrl'
 import copyUrlCopied from '../../../../assets/svgs/copyUrlCopied'
 import { mapSelectedPage } from '../../../../redux/page/selector'
 import { getUrlForPage } from '../../../../constants/pages'
-import { COPY_URL_ID } from '../../../../constants/socialMedia'
+import { COPY_URL_KEY } from '../../../../constants/socialMedia'
 
 const TOOLTIP_TEXT = 'link copied!'
 
@@ -56,7 +56,7 @@ const CopyUrlButton = () => {
                 className: cx(
                     'CopyUrlButton',
                 ),
-                id: COPY_URL_ID,
+                id: COPY_URL_KEY,
                 ...isCopied && {
                     tooltipId: selectedPage,
                     tooltipText: TOOLTIP_TEXT,

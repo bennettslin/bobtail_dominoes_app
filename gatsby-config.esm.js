@@ -38,6 +38,5 @@ export default {
                 bucketName: getS3BucketName(),
             },
         },
-        `gatsby-plugin-twitter`,
     ],
 }
