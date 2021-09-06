@@ -32,6 +32,7 @@ const
             [FACEBOOK_KEY]: () => getSocialMediaUrl({
                 brandUrl: 'https://www.facebook.com/v11.0/plugins/error/confirm/like',
                 queryStrings: {
+                    plugin: 'like',
                     return_params: JSON.stringify({
                         href: `https://www.facebook.com/${FACEBOOK_ACCOUNT}`,
                     }),
@@ -45,8 +46,8 @@ const
             }),
         },
     },
-    POPUP_HEIGHT = 456,
-    POPUP_WIDTH = 568,
+    POPUP_HEIGHT = 420,
+    POPUP_WIDTH = 560,
     BASE_WINDOW_FEATURES = {
         height: POPUP_HEIGHT,
         width: POPUP_WIDTH,
@@ -55,7 +56,7 @@ const
 
 const getWindowFeatures = features => (
     Object.keys(features).map(key => (
-        `${key}=${features[key]}`
+        features[key] === true ? key : `${key}=${features[key]}`
     )).join(',')
 )
 
@@ -65,7 +66,7 @@ export const openSocialMediaPopup = ({
     socialMediaKey,
 
 }) => {
-    window.open(
+    const popupWindow = window.open(
         SOCIAL_MEDIA_URL_MAP[socialMediaKey][brandId](getUrlForPage(page)),
         `${APP_NAME}_${socialMediaKey}`,
         getWindowFeatures({
@@ -73,7 +74,7 @@ export const openSocialMediaPopup = ({
 
             // Centre the window popup.
             top:
-                window.top.outerHeight / 2
+                window.top.outerHeight / 3
                 + window.top.screenY
                 - POPUP_HEIGHT / 2,
             left:
@@ -82,4 +83,11 @@ export const openSocialMediaPopup = ({
                 - POPUP_WIDTH / 2,
         }),
     )
+
+    /**
+     * Prevent plugins from hijacking the referrer window. This has to be set
+     * after the popup window is opened. Otherwise, it loses knowledge of the
+     * parent window and cannot position itself properly.
+     */
+    popupWindow.opener = null
 }

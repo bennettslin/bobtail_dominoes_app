@@ -2,7 +2,7 @@ import React from 'react'
 import cx from 'classnames'
 import FollowButton from '..'
 import Svg from '../../../Svg'
-import facebook from '../../../../assets/svgs/facebook.svg'
+import facebookLike from '../../../../assets/svgs/facebookLike.svg'
 import { openSocialMediaPopup } from '../../../../utils/socialMedia'
 import { FACEBOOK_KEY } from '../../../../constants/socialMedia'
 
@@ -26,7 +26,7 @@ const FacebookButton = () => {
         >
             <Svg
                 {...{
-                    src: facebook,
+                    src: facebookLike,
                 }}
             />
         </FollowButton>
