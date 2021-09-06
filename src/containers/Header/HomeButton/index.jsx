@@ -1,6 +1,8 @@
 import React from 'react'
 import cx from 'classnames'
 import HeaderButton from '../HeaderButton'
+import Svg from '../../../components/Svg'
+import bobtailDominoes from '../../../assets/svgs/bobtailDominoes.svg'
 import { HOME_PAGE } from '../../../constants/pages'
 import './style'
 
@@ -13,7 +15,11 @@ const HomeButton = () => (
             pageLink: HOME_PAGE,
         }}
     >
-        {`Bobtail\u00a0Dominoes`}
+        <Svg
+            {...{
+                src: bobtailDominoes,
+            }}
+        />
     </HeaderButton>
 )
 
