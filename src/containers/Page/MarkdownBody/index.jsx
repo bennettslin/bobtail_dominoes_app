@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import Body from '../Body'
 import ContactEmail from '../../../components/ContactEmail'
@@ -8,16 +8,23 @@ const MarkdownBody = ({
     title,
     showContactEmail,
     children,
-}) => (
-    <Body {...{ title }}>
-        <Markdown>
-            {children}
-        </Markdown>
-        {showContactEmail && (
-            <ContactEmail />
-        )}
-    </Body>
-)
+}) => {
+    return (
+        <Body {...{ title }}>
+            {(Array.isArray(children) ? children : [children])
+                .map((child, index) => (
+                    typeof child === 'string' ? (
+                        <Markdown {...{ key: index }}>
+                            {child}
+                        </Markdown>
+                    ) : <Fragment {...{ key: index }}>{child}</Fragment>
+                ))}
+            {showContactEmail && (
+                <ContactEmail />
+            )}
+        </Body>
+    )
+}
 
 MarkdownBody.propTypes = {
     title: PropTypes.string,

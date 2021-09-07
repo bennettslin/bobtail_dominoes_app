@@ -1,15 +1,7 @@
 @import '../../scss/constants/colours';
-@import '../../scss/constants/responsive';
 
 .Heading {
     color: $colour__primary__dark;
-    margin-bottom: $margin__wide;
-}
-
-h1 {
-    &.Heading {
-        margin-bottom: $margin__wide + $margin__narrow * 2;
-    }
 }
 
 .Heading__bodyHeading {

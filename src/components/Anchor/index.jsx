@@ -43,7 +43,10 @@ const Anchor = ({
                 ),
                 ...href && {
                     href,
-                    target: '_blank',
+                    // Open in new tab only if it's not an internal page link.
+                    ...href[0] !== '#' && {
+                        target: '_blank',
+                    },
                 },
                 ...pageLink && {
                     to: getPathForPage(pageLink),

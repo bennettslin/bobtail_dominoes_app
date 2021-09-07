@@ -8,4 +8,8 @@
     @media (min-width: $width__page__narrow) {
         font-size: 1.5em;
     }
+
+    & > *:not(:first-child) {
+        margin-top: $margin__wide + $margin__narrow;
+    }
 }
