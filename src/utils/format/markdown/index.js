@@ -1,5 +1,4 @@
 import removeMarkdown from 'remove-markdown'
-import { MONTH_NAMES } from '../../../constants/dates'
 
 export const convertMarkdownToText = markdown => (
     removeMarkdown(markdown)
@@ -23,7 +22,3 @@ export const getMarkdownLinkFromDate = ({ map, root, year, month, day }) => {
         `[${title}](/${root}/${year}/${month}-${day}-${path})${'  '}`
     )
 }
-
-export const getMarkdownHeaderFromDate = ({ year, month, day }) => (
-    `##### ${day} ${MONTH_NAMES[month]} ${year}`
-)

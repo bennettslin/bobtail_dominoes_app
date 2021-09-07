@@ -5,7 +5,7 @@ import { getLinkId } from '../../utils/format/markdown'
 import './style'
 
 const Heading = ({
-    isBodyHeading,
+    alignCentre,
     level = 1,
     children,
 }) => {
@@ -16,7 +16,7 @@ const Heading = ({
             {...{
                 className: cx(
                     'Heading',
-                    isBodyHeading && 'Heading__bodyHeading',
+                    alignCentre && 'Heading__alignCentre',
                     'font__heading',
                 ),
                 id: getLinkId(children),
@@ -28,7 +28,7 @@ const Heading = ({
 }
 
 Heading.propTypes = {
-    isBodyHeading: PropTypes.bool,
+    alignCentre: PropTypes.bool,
     level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
     children: PropTypes.node.isRequired,
 }

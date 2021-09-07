@@ -1,11 +1,11 @@
 import React from 'react'
 import Page from '../../containers/Page'
-import MarkdownBody from '../../containers/Page/MarkdownBody'
+import Body from '../../containers/Page/Body'
 import content from '../../content/chords'
 
 const Chords = () => (
     <Page>
-        <MarkdownBody {...content} />
+        <Body {...content} />
     </Page>
 )
 
