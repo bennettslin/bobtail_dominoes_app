@@ -1,6 +1,6 @@
 export default {
     title: `Valid chords`,
-    content: `
+    body: `
 We'll be making this page more interactive in the coming months! In the meantime, use the list below as a reference.
 
 ##### Beginner chords

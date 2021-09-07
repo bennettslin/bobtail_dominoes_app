@@ -6,7 +6,7 @@ const
 
 export default {
     title: `Rules of the game`,
-    content: [
+    body: [
         `
 ${getMarkdownLinkFromId(SETTING_UP)}
 ${getMarkdownLinkFromId(PLAYING_A_TURN)}

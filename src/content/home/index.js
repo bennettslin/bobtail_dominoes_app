@@ -1,6 +1,6 @@
 export default {
     title: `Bobtail Dominoes`,
-    content: `
+    body: `
 Temporary Bobtail Dominoes home page content
     `,
 }

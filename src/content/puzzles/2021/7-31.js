@@ -5,7 +5,7 @@ export default {
     date,
     title: `Old links`,
     path: `old-links`,
-    content: `
+    body: `
 ${getMarkdownHeaderFromDate(date)}
 
 Temporary content.

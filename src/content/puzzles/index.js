@@ -4,7 +4,7 @@ import { getMarkdownLinkFromEssayDate } from './helper'
 
 export default {
     title: `Essays`,
-    content: `
+    body: `
 ### 2021
 ${getMarkdownLinkFromEssayDate(content210822.date)}
 ${getMarkdownLinkFromEssayDate(content210731.date)}

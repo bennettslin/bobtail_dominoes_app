@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import Anchor from '../../../Anchor'
 import { updateIsUpsellDisabled } from '../../../../redux/option/action'
+import { replaceStraightWithSmartQuotes } from '../../../../utils/format/smartQuote'
 
 const UpsellDisableLink = () => {
     const dispatch = useDispatch()
@@ -18,7 +19,7 @@ const UpsellDisableLink = () => {
                     handleAnchorClick,
                 }}
             >
-                {`Don't show this popup again`}
+                {replaceStraightWithSmartQuotes(`Don't show this popup again`)}
             </Anchor>
         </div>
     )
