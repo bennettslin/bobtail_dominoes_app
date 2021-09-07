@@ -29,7 +29,7 @@ const MarkdownBody = ({
 MarkdownBody.propTypes = {
     title: PropTypes.string,
     showContactEmail: PropTypes.bool,
-    children: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
 }
 
 export default MarkdownBody

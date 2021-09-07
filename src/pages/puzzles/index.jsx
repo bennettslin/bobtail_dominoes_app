@@ -5,7 +5,7 @@ import Puzzles2021 from './2021'
 
 const Puzzles = () => (
     <Page>
-        <Body {...{ title: 'Puzzles' }}>
+        <Body {...{ title: 'Weekly puzzles' }}>
             <Puzzles2021 />
         </Body>
     </Page>

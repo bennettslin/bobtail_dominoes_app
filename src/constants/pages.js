@@ -6,6 +6,7 @@ export const HOME_PAGE = 'home'
 export const NOT_FOUND_PAGE = '404'
 
 export const RULES_PAGE = 'rules'
+export const CHORDS_PAGE = 'chords'
 export const PUZZLES_PAGE = 'puzzles'
 export const LINKS_PAGE = 'links'
 
