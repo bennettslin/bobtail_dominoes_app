@@ -5,6 +5,7 @@ import { Link } from 'gatsby'
 import { useDispatch } from 'react-redux'
 import { updateSelectedPage } from '../../redux/page/action'
 import { getPathForPage } from '../../constants/pages'
+import { getInternalLink } from './helper'
 
 const Anchor = ({
     className,
@@ -17,17 +18,21 @@ const Anchor = ({
 }) => {
     const
         dispatch = useDispatch(),
-        Tag = pageLink ? Link : 'a'
+        internalLink = getInternalLink({
+            href,
+            pageLink,
+        }),
+        Tag = internalLink ? Link : 'a'
 
     const onClick = () => {
-        if (pageLink) {
-            dispatch(updateSelectedPage(pageLink))
+        if (internalLink) {
+            dispatch(updateSelectedPage(internalLink))
         }
 
-        if (analyticsLabel || pageLink) {
+        if (analyticsLabel || internalLink) {
             logEvent(
                 'Anchor',
-                analyticsLabel || pageLink,
+                analyticsLabel || internalLink,
             )
         }
 
@@ -41,15 +46,15 @@ const Anchor = ({
                     'Anchor',
                     className,
                 ),
-                ...href && {
+                ...internalLink && {
+                    to: getPathForPage(internalLink),
+                },
+                ...!internalLink && href && {
                     href,
                     // Open in new tab only if it's not an internal page link.
                     ...href[0] !== '#' && {
                         target: '_blank',
                     },
-                },
-                ...pageLink && {
-                    to: getPathForPage(pageLink),
                 },
                 onClick,
             }}

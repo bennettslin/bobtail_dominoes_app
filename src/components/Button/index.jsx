@@ -13,7 +13,6 @@ const Button = forwardRef(({
     className,
     analyticsLabel,
     pageLink,
-    href,
     isSelected,
     tooltipId,
     tooltipText,
@@ -25,7 +24,8 @@ const Button = forwardRef(({
 }, ref) => {
     const
         dispatch = useDispatch(),
-        isTooltipEnabled = Boolean(tooltipId)
+        isTooltipEnabled = Boolean(tooltipId),
+        Tag = pageLink ? Link : 'button'
 
     const onClick = e => {
         if (isSelected) {
@@ -46,14 +46,6 @@ const Button = forwardRef(({
         handleButtonClick(e)
     }
 
-    let Tag = 'button'
-
-    if (href) {
-        Tag = 'a'
-    } else if (pageLink) {
-        Tag = Link
-    }
-
     return (
         <Tag
             {...{
@@ -65,10 +57,6 @@ const Button = forwardRef(({
                 onClick,
                 ...pageLink && {
                     to: getPathForPage(pageLink),
-                },
-                ...href && {
-                    href,
-                    target: '_blank',
                 },
                 ...isTooltipEnabled && {
                     'data-for': tooltipId,
@@ -97,7 +85,6 @@ Button.propTypes = {
     className: PropTypes.string,
     analyticsLabel: PropTypes.string,
     pageLink: PropTypes.string,
-    href: PropTypes.string,
     isSelected: PropTypes.bool,
     tooltipId: PropTypes.string,
     tooltipText: PropTypes.string,

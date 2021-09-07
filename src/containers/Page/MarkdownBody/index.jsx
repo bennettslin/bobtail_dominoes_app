@@ -5,13 +5,13 @@ import ContactEmail from '../../../components/ContactEmail'
 import Markdown from '../../../components/Markdown'
 
 const MarkdownBody = ({
+    content,
     title,
     showContactEmail,
-    children,
 }) => {
     return (
         <Body {...{ title }}>
-            {(Array.isArray(children) ? children : [children])
+            {(Array.isArray(content) ? content : [content])
                 .map((child, index) => (
                     typeof child === 'string' ? (
                         <Markdown {...{ key: index }}>
@@ -29,7 +29,7 @@ const MarkdownBody = ({
 MarkdownBody.propTypes = {
     title: PropTypes.string,
     showContactEmail: PropTypes.bool,
-    children: PropTypes.node.isRequired,
+    content: PropTypes.node.isRequired,
 }
 
 export default MarkdownBody

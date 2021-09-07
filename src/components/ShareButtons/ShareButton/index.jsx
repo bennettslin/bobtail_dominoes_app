@@ -9,6 +9,7 @@ const ShareButton = forwardRef(({
     id,
     handleButtonClick,
     children,
+    ...rest
 
 }, ref) => (
     <Button
@@ -20,6 +21,7 @@ const ShareButton = forwardRef(({
             ),
             analyticsLabel: `ShareButton__${id}`,
             handleButtonClick,
+            ...rest,
         }}
     >
         {children}

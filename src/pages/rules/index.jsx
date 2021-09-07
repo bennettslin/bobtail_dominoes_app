@@ -1,13 +1,11 @@
 import React from 'react'
 import Page from '../../containers/Page'
 import MarkdownBody from '../../containers/Page/MarkdownBody'
-import content, { title } from '../../content/rules'
+import content from '../../content/rules'
 
 const Rules = () => (
     <Page>
-        <MarkdownBody {...{ title }}>
-            {content}
-        </MarkdownBody>
+        <MarkdownBody {...content} />
     </Page>
 )
 

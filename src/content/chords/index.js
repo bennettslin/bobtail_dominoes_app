@@ -1,5 +1,6 @@
-export const title = `Valid chords`
-export default `
+export default {
+    title: `Valid chords`,
+    content: `
 We'll be making this page more interactive in the coming months! In the meantime, use the list below as a reference.
 
 ##### Beginner chords
@@ -27,4 +28,5 @@ All intermediate chords, plus:
 - Augmented major seventh (1, 3, ♯5, 7)
 
 Since the Junior edition doesn't include semitone dominoes, we don't recommend advanced chords when playing with the Junior edition.
-`
+    `,
+}

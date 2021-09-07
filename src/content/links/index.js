@@ -1,5 +1,6 @@
-export const title = `Bobtail Yearlings links`
-export default `
+export default {
+    title: `Bobtail Yearlings links`,
+    content: `
 [*Bobtail Yearlings*](https://www.bobtailyearlings.com/)${'  '}
 Our band website.
 
@@ -11,4 +12,5 @@ Our artist accelerator.
 
 [*Yearling's Bobtail*](https://www.yearlingsbobtail.com/)${'  '}
 Our "*Ulysses* of Rock Albums."
-`
+    `,
+}
