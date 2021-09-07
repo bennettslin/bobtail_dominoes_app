@@ -5,7 +5,6 @@ import Paragraph from '../../Paragraph'
 import Anchor from '../../Anchor'
 import { mapSelectedPage } from '../../../redux/page/selector'
 import { getCapitalizedText } from '../../../utils/format'
-import './style'
 
 const MultiPagesBackLink = ({ backPage }) => {
     const selectedPage = useSelector(mapSelectedPage)

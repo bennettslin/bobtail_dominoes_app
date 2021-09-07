@@ -1,12 +1,9 @@
 import React from 'react'
-import Page from '../../containers/Page'
-import Body from '../../containers/Page/Body'
 import content from '../../content/rules'
+import Page from '../../containers/Page'
 
 const Rules = () => (
-    <Page>
-        <Body {...content} />
-    </Page>
+    <Page {...content} />
 )
 
 export default Rules

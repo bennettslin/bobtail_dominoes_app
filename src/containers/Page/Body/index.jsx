@@ -32,14 +32,16 @@ const Body = ({
                     {getHeaderFromDate(date)}
                 </Heading>
             )}
-            {(Array.isArray(body) ? body : [body])
-                .map((child, index) => (
-                    typeof child === 'string' ? (
-                        <Markdown {...{ key: index }}>
-                            {child}
-                        </Markdown>
-                    ) : <Fragment {...{ key: index }}>{child}</Fragment>
-                ))}
+            {body && (
+                (Array.isArray(body) ? body : [body])
+                    .map((child, index) => (
+                        typeof child === 'string' ? (
+                            <Markdown {...{ key: index }}>
+                                {child}
+                            </Markdown>
+                        ) : <Fragment {...{ key: index }}>{child}</Fragment>
+                    ))
+            )}
             {showContactEmail && (
                 <ContactEmail />
             )}
@@ -55,7 +57,7 @@ Body.propTypes = {
     }),
     title: PropTypes.string,
     showContactEmail: PropTypes.bool,
-    body: PropTypes.node.isRequired,
+    body: PropTypes.node,
 }
 
 export default Body

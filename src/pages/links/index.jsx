@@ -1,12 +1,9 @@
 import React from 'react'
-import Page from '../../containers/Page'
-import Body from '../../containers/Page/Body'
 import content from '../../content/links'
+import Page from '../../containers/Page'
 
 const Links = () => (
-    <Page>
-        <Body {...content} />
-    </Page>
+    <Page {...content} />
 )
 
 export default Links
