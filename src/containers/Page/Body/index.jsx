@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import ContactEmail from '../../../components/ContactEmail'
@@ -39,7 +39,7 @@ const Body = ({
                             <Markdown {...{ key: index }}>
                                 {child}
                             </Markdown>
-                        ) : <Fragment {...{ key: index }}>{child}</Fragment>
+                        ) : child
                     ))
             )}
             {showContactEmail && (

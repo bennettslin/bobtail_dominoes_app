@@ -1,4 +1,6 @@
-export const getArrayOfTexts = children => {
+import React from 'react'
+
+const getArrayOfTextsWithFlatSeparator = children => {
     const
         text = Array.isArray(children) ? children[0] : children,
         texts = []
@@ -18,3 +20,18 @@ export const getArrayOfTexts = children => {
 
     return texts.filter(text => Boolean(text))
 }
+
+export const getTextWithFlatsSeparated = children => (
+    getArrayOfTextsWithFlatSeparator(children).map((text, index) => (
+        text === '♭' ? (
+            <span
+                {...{
+                    key: index,
+                    className: 'Character__musicFlat',
+                }}
+            >
+                {text}
+            </span>
+        ) : text
+    ))
+)
