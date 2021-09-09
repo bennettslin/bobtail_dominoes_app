@@ -1,0 +1,7 @@
+@import '../../../../scss/constants/responsive';
+
+.DirectionPageLink {
+    @media (min-width: $width__page__narrow) {
+        font-size: 1.25em;
+    }
+}

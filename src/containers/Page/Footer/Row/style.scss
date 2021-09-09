@@ -1,0 +1,15 @@
+@import '../../../../scss/constants/responsive';
+
+.PageFooterRow {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: $margin__narrow;
+}
+
+.PageFooterRow__bottom {
+    border-top: 1px solid hsla(0, 0%, 50%, 0.5);
+}

@@ -1,10 +1,22 @@
-import content0731 from './7-31'
-import content0822 from './8-22'
-import { getPagesMapFromContents } from '../../../utils/pages'
+import { getMapFromPages } from '../../../utils/pages'
+import { PUZZLES_PAGE } from '../../../constants/pages'
 
-const pagesMap = getPagesMapFromContents([
-    content0731,
-    content0822,
-])
+export const pages = [
+    {
+        id: `old-links`,
+        title: `Old links`,
+        date: { year: 2021, month: 7, day: 31 },
+    },
+    {
+        id: `music-getting-worse`,
+        title: `Yes, music is getting worse`,
+        date: { year: 2021, month: 8, day: 22 },
+    },
+]
+
+const pagesMap = getMapFromPages({
+    rootPage: PUZZLES_PAGE,
+    pages,
+})
 
 export default pagesMap

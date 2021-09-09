@@ -1,4 +1,4 @@
-import { getMarkdownLinkFromId } from '../../utils/format/markdown'
+import { getMarkdownLinkFromText } from '../../utils/format/markdown'
 const
     SETTING_UP = 'Setting up',
     PLAYING_A_TURN = 'Playing a turn',
@@ -8,9 +8,9 @@ export default {
     title: `Standard rules`,
     body: [
         `
-${getMarkdownLinkFromId(SETTING_UP)}
-${getMarkdownLinkFromId(PLAYING_A_TURN)}
-${getMarkdownLinkFromId(SCORING)}
+${getMarkdownLinkFromText(SETTING_UP)}
+${getMarkdownLinkFromText(PLAYING_A_TURN)}
+${getMarkdownLinkFromText(SCORING)}
 
 ### ${SETTING_UP}
 

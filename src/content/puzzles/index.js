@@ -1,12 +1,10 @@
-import content210731 from './2021/7-31'
-import content210822 from './2021/8-22'
-import { getMarkdownLinkFromEssayDate } from './helper'
+import { pages as pages2021 } from './2021/map'
+import { getMarkdownLinksForPuzzlesPages } from './helper'
 
 export default {
-    title: `Essays`,
+    title: `Puzzles`,
     body: `
 ### 2021
-${getMarkdownLinkFromEssayDate(content210822.date)}
-${getMarkdownLinkFromEssayDate(content210731.date)}
+${getMarkdownLinksForPuzzlesPages(pages2021)}
     `,
 }

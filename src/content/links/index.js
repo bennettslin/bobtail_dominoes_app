@@ -1,6 +1,8 @@
 export default {
-    title: `Bobtail Yearlings links`,
+    title: `Links`,
     body: `
+### Bobtail Yearlings
+
 [*Bobtail Yearlings*](https://www.bobtailyearlings.com/)${'  '}
 Our band website.
 

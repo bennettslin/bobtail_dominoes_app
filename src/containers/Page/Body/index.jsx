@@ -13,41 +13,40 @@ const Body = ({
     date,
     title,
     showContactEmail,
-}) => {
-    return (
-        <div
-            {...{
-                className: cx(
-                    'Body',
-                ),
-            }}
-        >
-            {title && (
-                <Heading alignCentre>
-                    {replaceStraightWithSmartQuotes(title)}
-                </Heading>
-            )}
-            {date && (
-                <Heading {...{ level: 5 }}>
-                    {getHeaderFromDate(date)}
-                </Heading>
-            )}
-            {body && (
-                (Array.isArray(body) ? body : [body])
-                    .map((child, index) => (
-                        typeof child === 'string' ? (
-                            <Markdown {...{ key: index }}>
-                                {child}
-                            </Markdown>
-                        ) : child
-                    ))
-            )}
-            {showContactEmail && (
-                <ContactEmail />
-            )}
-        </div>
-    )
-}
+
+}) => (
+    <div
+        {...{
+            className: cx(
+                'Body',
+            ),
+        }}
+    >
+        {title && (
+            <Heading alignCentre>
+                {replaceStraightWithSmartQuotes(title)}
+            </Heading>
+        )}
+        {date && (
+            <Heading {...{ level: 5 }}>
+                {getHeaderFromDate(date)}
+            </Heading>
+        )}
+        {body && (
+            (Array.isArray(body) ? body : [body])
+                .map((child, index) => (
+                    typeof child === 'string' ? (
+                        <Markdown {...{ key: index }}>
+                            {child}
+                        </Markdown>
+                    ) : child
+                ))
+        )}
+        {showContactEmail && (
+            <ContactEmail />
+        )}
+    </div>
+)
 
 Body.propTypes = {
     date: PropTypes.shape({

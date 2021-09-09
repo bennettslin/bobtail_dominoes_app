@@ -1,4 +1,5 @@
 import removeMarkdown from 'remove-markdown'
+import { getLinkForPage } from '../../pages'
 
 export const convertMarkdownToText = markdown => (
     removeMarkdown(markdown)
@@ -11,14 +12,29 @@ export const getLinkId = children => (
         .join('-')
 )
 
-export const getMarkdownLinkFromId = id => (
+export const getMarkdownLinkFromText = id => (
     `[${id}](#${getLinkId(id)})${'  '}`
 )
 
-export const getMarkdownLinkFromDate = ({ map, root, year, month, day }) => {
+export const getMarkdownLinkFromDate = ({ map, rootPage, year, month, day }) => {
     const { title, path } = map[year][month][day]
 
     return (
-        `[${title}](/${root}/${year}/${month}-${day}-${path})${'  '}`
+        `[${title}](/${rootPage}/${year}/${month}-${day}-${path})${'  '}`
     )
 }
+
+export const getMarkdownLinksForPages = ({
+    rootPage,
+    pages,
+
+}) => (
+    pages.map(page => {
+        const { title } = page
+
+        return (
+            `[${title}](/${getLinkForPage({ rootPage, ...page })})${'  '}`
+        )
+    }).join(`
+`)
+)

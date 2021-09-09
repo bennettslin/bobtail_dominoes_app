@@ -1,5 +1,5 @@
 import React from 'react'
-import content from '../../../content/puzzles/2021/7-31'
+import content from '../../../content/puzzles/2021/7-31-old-links'
 import Page from '../../../containers/Page'
 
 const Puzzle210731 = () => (

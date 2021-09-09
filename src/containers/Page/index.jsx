@@ -8,7 +8,9 @@ import './style'
 
 const Page = ({
     isWide,
-    root,
+    nextPage,
+    previousPage,
+    rootPage,
     children,
     ...rest
 }) => (
@@ -24,16 +26,22 @@ const Page = ({
     >
         <Helmet />
         <Body {...rest} />
-        {root && (
-            <PageFooter {...{ backPage: root }} />
-        )}
+        <PageFooter
+            {...{
+                nextPage,
+                previousPage,
+                rootPage,
+            }}
+        />
         {children}
     </div>
 )
 
 Page.propTypes = {
     isWide: PropTypes.bool,
-    root: PropTypes.string,
+    nextPage: PropTypes.object,
+    previousPage: PropTypes.object,
+    rootPage: PropTypes.string,
     children: PropTypes.node,
 }
 

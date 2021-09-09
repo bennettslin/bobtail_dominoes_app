@@ -2,12 +2,11 @@
 
 .PageFooter {
     width: 100%;
-    margin-top: $margin__wide * 2;
-    padding-top: $margin__wide;
+    margin-top: $margin__wide;
 
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-
-    border-top: 1px solid hsla(0, 0%, 50%, 0.5);
+    gap: $margin__wide
 }

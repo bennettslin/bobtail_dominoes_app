@@ -1,31 +1,41 @@
-export const getPagesMapFromContents = contents => {
+export const getMapFromPages = ({
+    rootPage,
+    pages,
+
+}) => (
+    pages.reduce((map, page, index) => {
+        map[page.id] = {
+            rootPage,
+            ...page,
+            ...index > 0 && {
+                previousPage: pages[index - 1],
+            },
+            ...index < pages.length - 1 && {
+                nextPage: pages[index + 1],
+            },
+        }
+
+        return map
+    }, {})
+)
+
+export const getLinkForPage = ({
+    rootPage,
+    id,
+    date = {},
+}) => {
+    const {
+            year,
+            month,
+            day,
+        } = date,
+        datePath = (
+            year && month && day ?
+                `${year}/${month}-${day}-` :
+                ''
+        )
+
     return (
-        contents.reduce((map, content) => {
-            const {
-                date: {
-                    year,
-                    month,
-                    day,
-                },
-                title,
-                path,
-            } = content
-
-            if (!map[year]) {
-                map[year] = {}
-            }
-
-            if (!map[year][month]) {
-                map[year][month] = {}
-            }
-
-            // This assumes only one page per date.
-            map[year][month][day] = {
-                title,
-                path,
-            }
-
-            return map
-        }, {})
+        `${rootPage}/${datePath}${id}`
     )
 }
