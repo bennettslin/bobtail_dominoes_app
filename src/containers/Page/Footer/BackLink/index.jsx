@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useSelector } from 'react-redux'
-import Paragraph from '../../Paragraph'
-import Anchor from '../../Anchor'
-import { mapSelectedPage } from '../../../redux/page/selector'
-import { getCapitalizedText } from '../../../utils/format'
+import Paragraph from '../../../../components/Paragraph'
+import Anchor from '../../../../components/Anchor'
+import { mapSelectedPage } from '../../../../redux/page/selector'
+import { getCapitalizedText } from '../../../../utils/format'
 
 const MultiPagesBackLink = ({ backPage }) => {
     const selectedPage = useSelector(mapSelectedPage)

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Helmet from '../../components/Helmet'
-import MultiPageFooter from '../../components/MultiPageFooter'
+import PageFooter from './Footer'
 import Body from './Body'
 import './style'
 
@@ -25,7 +25,7 @@ const Page = ({
         <Helmet />
         <Body {...rest} />
         {root && (
-            <MultiPageFooter {...{ backPage: root }} />
+            <PageFooter {...{ backPage: root }} />
         )}
         {children}
     </div>

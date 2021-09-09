@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import MultiPagesBackLink from './BackLink'
-import ShareButtons from '../ShareButtons'
+import ShareButtons from '../../../components/ShareButtons'
 import './style'
 
-const MultiPageFooter = ({ backPage }) => (
+const PageFooter = ({ backPage }) => (
     <div
         {...{
             className: cx(
-                'MultiPageFooter',
+                'PageFooter',
             ),
         }}
     >
@@ -18,8 +18,8 @@ const MultiPageFooter = ({ backPage }) => (
     </div>
 )
 
-MultiPageFooter.propTypes = {
+PageFooter.propTypes = {
     backPage: PropTypes.string.isRequired,
 }
 
-export default MultiPageFooter
+export default PageFooter
