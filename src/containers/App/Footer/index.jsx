@@ -2,11 +2,11 @@ import React from 'react'
 import cx from 'classnames'
 import './style'
 
-const SubFooter = () => (
+const AppFooter = () => (
     <div
         {...{
             className: cx(
-                'SubFooter',
+                'AppFooter',
             ),
         }}
     >
@@ -14,4 +14,4 @@ const SubFooter = () => (
     </div>
 )
 
-export default SubFooter
+export default AppFooter

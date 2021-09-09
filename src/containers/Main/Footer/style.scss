@@ -1,7 +1,7 @@
 @import '../../../scss/constants/responsive';
 @import '../../../scss/constants/transition';
 
-.Footer {
+.MainFooter {
     padding: $margin__narrow $margin__wide;
 
     display: flex;
@@ -18,6 +18,6 @@
     opacity: 0;
 }
 
-.Footer__visible {
+.MainFooter__visible {
     opacity: 1;
 }

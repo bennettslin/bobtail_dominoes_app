@@ -6,7 +6,7 @@ import FollowButtons from '../../../components/FollowButtons'
 import { mapIsUpsellShown } from '../../../redux/option/selector'
 import './style'
 
-const Footer = () => {
+const MainFooter = () => {
     const
         isUpsellShown = useSelector(mapIsUpsellShown),
         [didMount, setDidMount] = useState(false)
@@ -19,8 +19,8 @@ const Footer = () => {
         <div
             {...{
                 className: cx(
-                    'Footer',
-                    didMount && !isUpsellShown && 'Footer__visible',
+                    'MainFooter',
+                    didMount && !isUpsellShown && 'MainFooter__visible',
                 ),
             }}
         >
@@ -30,4 +30,4 @@ const Footer = () => {
     )
 }
 
-export default Footer
+export default MainFooter

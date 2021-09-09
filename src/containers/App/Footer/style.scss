@@ -1,12 +1,12 @@
-@import '../../scss/constants/colours';
-@import '../../scss/constants/responsive';
+@import '../../../scss/constants/colours';
+@import '../../../scss/constants/responsive';
 
-.SubFooter {
+.AppFooter {
     position: absolute;
     top: 100%;
     width: 100%;
 
-    height: $height__subFooter;
+    height: $height__appFooter;
     background-color: $colour__background__subFooter;
 
     display: flex;

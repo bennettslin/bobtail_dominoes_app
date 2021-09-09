@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Wrapper from '../Wrapper'
-import SubFooter from '../SubFooter'
+import AppFooter from './Footer'
 import './style'
 
 const App = ({ children }) => (
@@ -15,7 +15,7 @@ const App = ({ children }) => (
         }}
     >
         <Wrapper>{children}</Wrapper>
-        <SubFooter />
+        <AppFooter />
     </div>
 )
 
