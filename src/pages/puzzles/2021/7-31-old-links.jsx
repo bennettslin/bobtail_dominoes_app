@@ -1,9 +1,11 @@
-import React from 'react'
-import content from '../../../content/puzzles/2021/7-31-old-links'
-import Page from '../../../containers/Page'
+import { getPageElementForConfig } from '../../../containers/Page'
+import { pagesMap } from '../../../content/puzzles/2021'
 
-const Puzzle210731 = () => (
-    <Page {...content} />
-)
+const id = 'old-links'
 
-export default Puzzle210731
+export default getPageElementForConfig({
+    ...pagesMap[id],
+    body: `
+Temporary content.
+    `,
+})

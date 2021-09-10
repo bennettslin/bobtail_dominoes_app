@@ -8,6 +8,7 @@ import RootPageLink from './RootPageLink'
 import './style'
 
 const PageFooter = ({
+    noShare,
     nextPage,
     previousPage,
     rootPage,
@@ -47,7 +48,7 @@ const PageFooter = ({
                 leftChild: rootPage && (
                     <RootPageLink {...{ rootPage }} />
                 ),
-                rightChild: (
+                rightChild: !noShare && (
                     <ShareButtons />
                 ),
             }}
@@ -56,6 +57,7 @@ const PageFooter = ({
 )
 
 PageFooter.propTypes = {
+    noShare: PropTypes.bool,
     nextPage: PropTypes.shape({
         id: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,

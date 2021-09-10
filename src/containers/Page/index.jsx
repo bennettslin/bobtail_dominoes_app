@@ -6,8 +6,15 @@ import PageFooter from './Footer'
 import Body from './Body'
 import './style'
 
+export const getPageElementForConfig = ({ children, ...config }) => () => (
+    <Page {...config}>
+        {children}
+    </Page>
+)
+
 const Page = ({
     isWide,
+    noShare,
     nextPage,
     previousPage,
     rootPage,
@@ -28,6 +35,7 @@ const Page = ({
         <Body {...rest} />
         <PageFooter
             {...{
+                noShare,
                 nextPage,
                 previousPage,
                 rootPage,
@@ -39,6 +47,7 @@ const Page = ({
 
 Page.propTypes = {
     isWide: PropTypes.bool,
+    noShare: PropTypes.bool,
     nextPage: PropTypes.object,
     previousPage: PropTypes.object,
     rootPage: PropTypes.string,

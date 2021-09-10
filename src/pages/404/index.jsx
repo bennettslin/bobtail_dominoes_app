@@ -1,8 +1,6 @@
-import React from 'react'
-import Page from '../../containers/Page'
+import { getPageElementForConfig } from '../../containers/Page'
 
-const NotFound = () => (
-    <Page {...{ title: 'Page not found' }} />
-)
-
-export default NotFound
+export default getPageElementForConfig({
+    title: 'Page not found',
+    noShare: true,
+})

@@ -27,7 +27,6 @@ export const getMarkdownLinkFromDate = ({ map, rootPage, year, month, day }) => 
 export const getMarkdownLinksForPages = ({
     rootPage,
     pages,
-
 }) => (
     pages.map(page => {
         const { title } = page
@@ -35,6 +34,12 @@ export const getMarkdownLinksForPages = ({
         return (
             `[${title}](/${getLinkForPage({ rootPage, ...page })})${'  '}`
         )
-    }).join(`
-`)
+    }).join(`\n`)
+)
+
+export const getMarkdownLinksForRootPage = ({ rootPage, pagesList }) => (
+    pagesList.map(({ heading, pages }) => (
+        `### ${heading}${'\n'}` +
+        getMarkdownLinksForPages({ rootPage, pages })
+    ))
 )

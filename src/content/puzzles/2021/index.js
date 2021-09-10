@@ -14,9 +14,7 @@ export const pages = [
     },
 ]
 
-const pagesMap = getMapFromPages({
+export const pagesMap = getMapFromPages({
     rootPage: PUZZLES_PAGE,
     pages,
 })
-
-export default pagesMap

@@ -1,9 +1,8 @@
-import React from 'react'
-import content from '../../content/home'
-import Page from '../../containers/Page'
+import { getPageElementForConfig } from '../../containers/Page'
 
-const Home = () => (
-    <Page {...content} />
-)
-
-export default Home
+export default getPageElementForConfig({
+    title: `Bobtail Dominoes`,
+    body: `
+Temporary Bobtail Dominoes home page content
+    `,
+})

@@ -1,9 +1,25 @@
-import React from 'react'
-import content from '../../content/chords'
-import Page from '../../containers/Page'
+import { getPageElementForConfig } from '../../containers/Page'
 
-const Chords = () => (
-    <Page {...content} />
-)
+export default getPageElementForConfig({
+    title: `Valid chords`,
+    body: `
+We'll be making this page more interactive in the coming months! In the meantime, use the list below as a reference.
 
-export default Chords
+##### Triads
+
+- Minor triad (1, ♭3, 5)
+- Major triad (1, 3, 5)
+- Diminished triad (1, ♭3, ♭5)
+- Augmented triad (1, 3, ♯5)
+
+##### Seventh chords
+
+- Minor seventh (1, ♭3, 5, ♭7)
+- Dominant seventh (1, 3, 5, ♭7)
+- Major seventh (1, 3, 5, 7)
+- Minor-major seventh (1, ♭3, 5, 7)
+- Half-diminished seventh (1, ♭3, ♭5, ♭7)
+- Diminished seventh (1, ♭3, ♭5, ♭♭7)
+- Augmented major seventh (1, 3, ♯5, 7)
+    `,
+})
