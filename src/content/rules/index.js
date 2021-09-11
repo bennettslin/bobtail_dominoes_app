@@ -1,7 +1,7 @@
 import { getMapFromPages } from '../../utils/pages'
 import { RULES_PAGE } from '../../constants/pages'
 
-export const pages = [
+const pages = [
     {
         id: `setup`,
         title: `Setup`,
@@ -24,10 +24,3 @@ export const pagesMap = getMapFromPages({
     rootPage: RULES_PAGE,
     pages,
 })
-
-export const pagesList = [
-    {
-        heading: 'Standard rules',
-        pages,
-    },
-]

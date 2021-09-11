@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { useSelector } from 'react-redux'
 import Anchor from '../../../../components/Anchor'
 import { mapSelectedPage } from '../../../../redux/page/selector'
@@ -19,10 +18,6 @@ const RootPageLink = () => {
                 Back to {getCapitalizedText(rootPage)}
         </Anchor>
     )
-}
-
-RootPageLink.propTypes = {
-    rootPage: PropTypes.string.isRequired,
 }
 
 export default RootPageLink

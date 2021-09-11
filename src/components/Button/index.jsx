@@ -25,7 +25,8 @@ const Button = forwardRef(({
     const
         dispatch = useDispatch(),
         isTooltipEnabled = Boolean(tooltipId),
-        Tag = pageLink ? Link : 'button'
+        isInternalLink = pageLink && !isSelected,
+        Tag = isInternalLink ? Link : 'button'
 
     const onClick = e => {
         if (isSelected) {
@@ -55,7 +56,7 @@ const Button = forwardRef(({
                     className,
                 ),
                 onClick,
-                ...pageLink && {
+                ...isInternalLink && {
                     to: getPathForPage(pageLink),
                 },
                 ...isTooltipEnabled && {

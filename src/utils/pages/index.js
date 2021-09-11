@@ -3,16 +3,11 @@ export const getMapFromPages = ({
     pages,
 
 }) => (
-    pages.reduce((map, page, index) => {
+    pages.reduce((map, page) => {
         map[page.id] = {
             rootPage,
+            pages,
             ...page,
-            ...index > 0 && {
-                previousPage: pages[index - 1],
-            },
-            ...index < pages.length - 1 && {
-                nextPage: pages[index + 1],
-            },
         }
 
         return map

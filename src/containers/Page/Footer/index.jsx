@@ -9,9 +9,8 @@ import './style'
 
 const PageFooter = ({
     noShare,
-    nextPage,
-    previousPage,
     rootPage,
+    pages,
 }) => (
     <div
         {...{
@@ -20,33 +19,37 @@ const PageFooter = ({
             ),
         }}
     >
-        <PageFooterRow
-            {...{
-                leftChild: rootPage && previousPage && (
-                    <DirectionPageLink
-                        isPrevious
-                        {...{
-                            rootPage,
-                            ...previousPage,
-                        }}
-                    />
-                ),
-                rightChild: rootPage && nextPage && (
-                    <DirectionPageLink
-                        isNext
-                        {...{
-                            rootPage,
-                            ...nextPage,
-                        }}
-                    />
-                ),
-            }}
-        />
+        {pages && (
+            <PageFooterRow
+                {...{
+                    leftChild: (
+                        <DirectionPageLink
+                            isPrevious
+                            {...{
+                                direction: -1,
+                                rootPage,
+                                pages,
+                            }}
+                        />
+                    ),
+                    rightChild: (
+                        <DirectionPageLink
+                            isNext
+                            {...{
+                                direction: 1,
+                                rootPage,
+                                pages,
+                            }}
+                        />
+                    ),
+                }}
+            />
+        )}
         <PageFooterRow
             hasBorderTop
             {...{
-                leftChild: rootPage && (
-                    <RootPageLink {...{ rootPage }} />
+                leftChild: (
+                    <RootPageLink />
                 ),
                 rightChild: !noShare && (
                     <ShareButtons />
@@ -58,25 +61,11 @@ const PageFooter = ({
 
 PageFooter.propTypes = {
     noShare: PropTypes.bool,
-    nextPage: PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
-        date: PropTypes.shape({
-            year: PropTypes.number.isRequired,
-            month: PropTypes.number.isRequired,
-            day: PropTypes.number.isRequired,
-        }),
-    }),
-    previousPage: PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
-        date: PropTypes.shape({
-            year: PropTypes.number.isRequired,
-            month: PropTypes.number.isRequired,
-            day: PropTypes.number.isRequired,
-        }),
-    }),
     rootPage: PropTypes.string,
+    pages: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+    })),
 }
 
 export default PageFooter

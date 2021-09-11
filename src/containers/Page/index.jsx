@@ -15,6 +15,7 @@ export const getPageElementForConfig = ({ children, ...config }) => () => (
 const Page = ({
     isWide,
     noShare,
+    pages,
     nextPage,
     previousPage,
     rootPage,
@@ -36,6 +37,7 @@ const Page = ({
         <PageFooter
             {...{
                 noShare,
+                pages,
                 nextPage,
                 previousPage,
                 rootPage,
@@ -48,6 +50,10 @@ const Page = ({
 Page.propTypes = {
     isWide: PropTypes.bool,
     noShare: PropTypes.bool,
+    pages: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+    })),
     nextPage: PropTypes.object,
     previousPage: PropTypes.object,
     rootPage: PropTypes.string,

@@ -1,0 +1,9 @@
+@import '../../../scss/constants/responsive';
+
+.PageMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0 $margin__md;
+}

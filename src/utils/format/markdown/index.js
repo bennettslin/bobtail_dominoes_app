@@ -27,34 +27,25 @@ export const getMarkdownLinkFromDate = ({ map, rootPage, year, month, day }) => 
 const getMarkdownLinksForPages = ({
     rootPage,
     pages,
-    isReverse,
-}) => {
-    const links = (
-        pages.map(page => {
-            const { title } = page
+}) => (
+    pages.map(page => {
+        const { title } = page
 
-            return (
-                `[${title}](/${getLinkForPage({ rootPage, ...page })})${'  '}`
-            )
-        })
-    )
-
-    return (
-        isReverse ? links.reverse() : links
-    ).join(`\n`)
-}
+        return (
+            `[${title}](/${getLinkForPage({ rootPage, ...page })})${'  '}`
+        )
+    }).join(`\n`)
+)
 
 export const getMarkdownLinksForRootPage = ({
     rootPage,
     pagesList,
-    isReverse,
 }) => (
     pagesList.map(({ heading, pages }) => (
         `### ${heading}${'\n'}` +
         getMarkdownLinksForPages({
             rootPage,
             pages,
-            isReverse,
         })
     ))
 )

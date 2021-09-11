@@ -16,6 +16,10 @@ export const getRootPageFromPath = (path = '') => (
     path.split('/')[0]
 )
 
+export const getChildPageFromPath = (path = '') => (
+    path.split('/').reverse()[0]
+)
+
 export const getIsTabbedPage = path => (
     TABBED_PAGES_SET.has(getRootPageFromPath(path))
 )

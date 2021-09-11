@@ -1,0 +1,9 @@
+@import '../../../../scss/constants/responsive';
+
+.HeaderButton {
+    font-size: 1.25em;
+
+    @media (min-width: $width__page__narrow) {
+        font-size: 1.5em;
+    }
+}
