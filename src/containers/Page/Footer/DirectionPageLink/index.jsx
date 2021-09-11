@@ -33,7 +33,7 @@ DirectionPageLink.propTypes = {
     rootPage: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    date: PropTypes.object.isRequired,
+    date: PropTypes.object,
 }
 
 export default DirectionPageLink

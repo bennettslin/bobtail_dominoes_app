@@ -1,8 +1,11 @@
 import { getPageElementForConfig } from '../../containers/Page'
+import { pagesMap } from '../../content/rules'
+
+const id = 'demo'
 
 export default getPageElementForConfig({
-    title: `Bobtail Dominoes`,
+    ...pagesMap[id],
     body: `
-Available soon.
+TODO!
     `,
 })

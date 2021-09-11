@@ -1,5 +1,15 @@
 @import '../constants/colours';
 
+@font-face {
+    font-family: Fresca;
+    src: url('../assets/fonts/Fresca/Fresca-Regular.ttf');
+}
+
+@font-face {
+    font-family: BioRhyme;
+    src: url('../assets/fonts/BioRhyme/BioRhyme-Regular.ttf');
+}
+
 .font__text {
     font-family: Fresca, Arial;
     letter-spacing: 0.025em;

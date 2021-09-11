@@ -1,15 +1,2 @@
-@import './classes/animation';
-@import './classes/font';
-@import './classes/global';
-@import './classes/music';
+@import './classes/style';
 @import './svgs/style';
-
-@font-face {
-    font-family: Fresca;
-    src: url('../assets/fonts/Fresca/Fresca-Regular.ttf');
-}
-
-@font-face {
-    font-family: BioRhyme;
-    src: url('../assets/fonts/BioRhyme/BioRhyme-Regular.ttf');
-}

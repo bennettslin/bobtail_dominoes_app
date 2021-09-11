@@ -1,0 +1,14 @@
+svg {
+    &.bobtailDominoes {
+        .left { fill: hsl(45, 5%, 57%); }
+        .right { fill: hsl(45, 5%, 47%); }
+        .edge { fill: hsl(45, 20%, 77%); }
+        .face { fill: hsl(45, 30%, 87%); }
+        .bBottom { fill: hsl(150, 45%, 32%); }
+        .bFace { fill: hsl(150, 45%, 42%); }
+        .dBottom { fill: hsl(45, 45%, 32%); }
+        .dFace { fill: hsl(45, 45%, 42%); }
+        .dotsBottom { fill: hsl(0, 0%, 37%); }
+        .dotsFace { fill: hsl(0, 0%, 52%); }
+    }
+}
