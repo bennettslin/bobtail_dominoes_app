@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import CSSTransition from 'react-transition-group/CSSTransition'
+import { CSSTransition } from 'react-transition-group'
 import PopupView from './View'
 import './style'
 

@@ -1,7 +1,10 @@
+@import '../../../scss/constants/colours';
 @import '../../../scss/constants/responsive';
+@import '../../../scss/constants/shadows';
 @import '../../../scss/constants/transition';
 
 .MainFooter {
+    width: 100vw;
     padding: $margin__narrow $margin__wide;
 
     display: flex;
@@ -10,12 +13,16 @@
     align-items: center;
     gap: $margin__narrow * 2;
 
+    background-color: $colour__background;
+
     @media (min-width: $width__page__narrow) {
         flex-direction: row;
     }
 
     transition: opacity $transitionDuration__slow $transitionDuration__slower;
     opacity: 0;
+
+    box-shadow: $boxShadow__below;
 }
 
 .MainFooter__visible {

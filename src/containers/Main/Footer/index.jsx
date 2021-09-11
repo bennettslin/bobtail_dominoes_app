@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
+import { CSSTransition } from 'react-transition-group'
 import MailingList from '../../../components/MailingList'
 import FollowButtons from '../../../components/FollowButtons'
 import { mapIsUpsellShown } from '../../../redux/option/selector'
@@ -16,17 +17,27 @@ const MainFooter = () => {
     }, [])
 
     return (
-        <div
+        <CSSTransition
+            appear
             {...{
-                className: cx(
-                    'MainFooter',
-                    didMount && !isUpsellShown && 'MainFooter__visible',
-                ),
+                in: didMount && !isUpsellShown,
+                timeout: 200,
+                classNames: {
+                    enterDone: 'MainFooter__visible',
+                },
             }}
         >
-            <MailingList />
-            <FollowButtons />
-        </div>
+            <div
+                {...{
+                    className: cx(
+                        'MainFooter',
+                    ),
+                }}
+            >
+                <MailingList />
+                <FollowButtons />
+            </div>
+        </CSSTransition>
     )
 }
 

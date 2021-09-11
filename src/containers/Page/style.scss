@@ -1,6 +1,10 @@
+@import '../../scss/constants/colours';
 @import '../../scss/constants/responsive';
+@import '../../scss/constants/shadows';
 
 .Page {
+    flex-grow: 1;
+
     width: 100%;
 
     display: flex;
@@ -8,8 +12,9 @@
     align-items: center;
 
     padding: $margin__wide;
-    box-sizing: border-box;
     overflow-y: scroll;
+
+    background-color: $colour__background__light;
 }
 
 .Page__narrow {

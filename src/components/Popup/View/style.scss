@@ -1,6 +1,7 @@
 @import '../../../scss/constants/borders';
 @import '../../../scss/constants/colours';
 @import '../../../scss/constants/responsive';
+@import '../../../scss/constants/shadows';
 @import '../../../scss/constants/transition';
 
 .PopupView {
@@ -14,9 +15,9 @@
     gap: $margin__narrow * 2;
 
     padding: $margin__wide;
-    box-sizing: border-box;
     background-color: $colour__background;
     border-radius: $borderRadius__wide;
+    box-shadow: $boxShadow__above;
 
     transition: opacity $transitionDuration__slow $transitionDuration__slower;
     opacity: 0;

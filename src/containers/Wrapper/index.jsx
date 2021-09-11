@@ -14,8 +14,8 @@ const Wrapper = ({ children }) => (
             ),
         }}
     >
-        <Header />
         <Main>{children}</Main>
+        <Header />
         <UpsellPopup />
     </div>
 )
