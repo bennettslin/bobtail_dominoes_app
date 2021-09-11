@@ -3,11 +3,16 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Button from '../../../components/Button'
-import { getMapIsSelectedPage } from '../../../redux/page/selector'
+import {
+    getMapIsSelectedPage,
+    getMapIsSelectedTabbedPage,
+} from '../../../redux/page/selector'
 import './style'
 
 const HeaderButton = ({ className, pageLink, children }) => {
-    const isSelectedPage = useSelector(getMapIsSelectedPage(pageLink))
+    const
+        isSelectedPage = useSelector(getMapIsSelectedPage(pageLink)),
+        isSelectedTabbedPage = useSelector(getMapIsSelectedTabbedPage(pageLink))
 
     return (
         <Button
@@ -19,7 +24,7 @@ const HeaderButton = ({ className, pageLink, children }) => {
                 ),
                 analyticsLabel: `HeaderButton__${pageLink}`,
                 pageLink,
-                isSelected: isSelectedPage,
+                isSelected: isSelectedPage || isSelectedTabbedPage,
             }}
         >
             {children}

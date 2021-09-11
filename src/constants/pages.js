@@ -10,6 +10,16 @@ export const CHORDS_PAGE = 'chords'
 export const PUZZLES_PAGE = 'puzzles'
 export const LINKS_PAGE = 'links'
 
+const TABBED_PAGES_SET = new Set([RULES_PAGE])
+
+export const getRootPageFromPath = (path = '') => (
+    path.split('/')[0]
+)
+
+export const getIsTabbedPage = path => (
+    TABBED_PAGES_SET.has(getRootPageFromPath(path))
+)
+
 export const getPathForPage = page => (
     page === HOME_PAGE ? '/' : `/${page}`
 )

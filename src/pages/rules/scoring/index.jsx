@@ -1,5 +1,5 @@
-import { getPageElementForConfig } from '../../containers/Page'
-import { pagesMap } from '../../content/rules'
+import { getPageElementForConfig } from '../../../containers/Page'
+import { pagesMap } from '../../../content/rules'
 
 const id = 'scoring'
 

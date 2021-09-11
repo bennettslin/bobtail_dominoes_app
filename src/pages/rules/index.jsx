@@ -1,8 +1,3 @@
-import { getPageElementForConfig } from '../../containers/Page'
-import { getMarkdownLinksForRootPage } from '../../utils/format/markdown'
-import { pagesList } from '../../content/rules'
-import { RULES_PAGE } from '../../constants/pages'
+import Setup from './setup'
 
-export default getPageElementForConfig({
-    body: getMarkdownLinksForRootPage({ rootPage: RULES_PAGE, pagesList }),
-})
+export default Setup
