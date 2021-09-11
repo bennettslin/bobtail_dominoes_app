@@ -17,12 +17,12 @@
 }
 
 .FollowButton__field {
-    padding: $margin__sm $margin__sm * 1.5;
+    padding: $margin__xs $margin__xs * 1.5;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0 $margin__sm;
+    gap: 0 $margin__xs;
 
     border-radius: $borderRadius__medium;
     color: $colour__text__light;

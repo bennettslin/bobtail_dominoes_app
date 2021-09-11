@@ -2,10 +2,10 @@
 
 .Markdown {
     & > *:not(:first-child) {
-        margin-top: $margin__lg;
+        margin-top: $margin__md;
 
         &.Heading {
-            margin-top: $margin__lg + $margin__sm;
+            margin-top: $margin__lg;
         }
     }
 }

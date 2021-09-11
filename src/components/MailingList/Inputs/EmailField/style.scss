@@ -8,8 +8,8 @@ $height__mailingList: 32px;
     flex-grow: 1;
 
     height: $height__mailingList;
-    margin-right: $margin__sm;
-    padding-left: $margin__sm;
+    margin-right: $margin__xs;
+    padding-left: $margin__xs;
 
     &::placeholder {
         color: $colour__neutral__light;

@@ -5,13 +5,13 @@
 
 .MainFooter {
     width: 100vw;
-    padding: $margin__sm $margin__lg;
+    padding: $margin__xs $margin__md;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: $margin__sm * 2;
+    gap: $margin__sm;
 
     background-color: $colour__background;
 

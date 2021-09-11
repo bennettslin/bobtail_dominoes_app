@@ -1,7 +1,6 @@
 import { getPageElementForConfig } from '../../containers/Page'
 
 export default getPageElementForConfig({
-    title: `Valid chords`,
     body: `
 We'll be making this page more interactive in the coming months! In the meantime, use the list below as a reference.
 

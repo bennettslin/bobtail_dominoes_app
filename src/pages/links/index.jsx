@@ -1,9 +1,8 @@
 import { getPageElementForConfig } from '../../containers/Page'
 
 export default getPageElementForConfig({
-    title: `Links`,
     body: `
-### Bobtail Yearlings
+### Bobtail Yearlings links
 
 [*Bobtail Yearlings*](https://www.bobtailyearlings.com/)${'  '}
 Our band website.

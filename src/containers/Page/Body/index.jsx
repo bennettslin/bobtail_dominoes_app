@@ -11,6 +11,7 @@ import './style'
 const Body = ({
     body,
     date,
+    pageHeading,
     title,
     showContactEmail,
 
@@ -22,8 +23,13 @@ const Body = ({
             ),
         }}
     >
-        {title && (
+        {pageHeading && (
             <Heading>
+                {replaceStraightWithSmartQuotes(pageHeading)}
+            </Heading>
+        )}
+        {title && (
+            <Heading {...{ level: 3 }}>
                 {replaceStraightWithSmartQuotes(title)}
             </Heading>
         )}
@@ -54,6 +60,7 @@ Body.propTypes = {
         month: PropTypes.number.isRequired,
         day: PropTypes.number.isRequired,
     }),
+    pageHeading: PropTypes.string,
     title: PropTypes.string,
     showContactEmail: PropTypes.bool,
     body: PropTypes.node,
