@@ -10,6 +10,6 @@
     }
 
     & > *:not(:first-child) {
-        margin-top: $margin__wide + $margin__narrow;
+        margin-top: $margin__lg + $margin__sm;
     }
 }

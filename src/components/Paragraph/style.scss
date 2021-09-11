@@ -2,6 +2,6 @@
 
 .Paragraph {
     &:not(:first-child) {
-        margin-top: $margin__wide;
+        margin-top: $margin__lg;
     }
 }

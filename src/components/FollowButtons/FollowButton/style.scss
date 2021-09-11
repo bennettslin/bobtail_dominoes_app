@@ -4,25 +4,25 @@
 
 .FollowButton {
     svg {
-        height: $length__icon__small * 0.75;
-        width: $length__icon__small * 0.75;
+        height: $length__icon__sm * 0.75;
+        width: $length__icon__sm * 0.75;
     }
 
     @media (min-width: $width__page__narrow) {
         svg {
-            height: $length__icon__small;
-            width: $length__icon__small;
+            height: $length__icon__sm;
+            width: $length__icon__sm;
         }    
     }
 }
 
 .FollowButton__field {
-    padding: $margin__narrow $margin__narrow * 1.5;
+    padding: $margin__sm $margin__sm * 1.5;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0 $margin__narrow;
+    gap: 0 $margin__sm;
 
     border-radius: $borderRadius__medium;
     color: $colour__text__light;

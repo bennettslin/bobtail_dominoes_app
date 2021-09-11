@@ -12,9 +12,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: $margin__narrow * 2;
+    gap: $margin__sm * 2;
 
-    padding: $margin__wide;
+    padding: $margin__lg;
     background-color: $colour__background;
     border-radius: $borderRadius__wide;
     box-shadow: $boxShadow__above;
