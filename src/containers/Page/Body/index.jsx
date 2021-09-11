@@ -23,7 +23,7 @@ const Body = ({
         }}
     >
         {title && (
-            <Heading alignCentre>
+            <Heading>
                 {replaceStraightWithSmartQuotes(title)}
             </Heading>
         )}

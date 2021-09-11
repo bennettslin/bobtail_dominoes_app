@@ -13,6 +13,10 @@ body, p, h1, h3, h5 {
     margin: 0;
 }
 
+h1 {
+    text-align: center;
+}
+
 label {
     color: $colour__primary__dark;
 }
