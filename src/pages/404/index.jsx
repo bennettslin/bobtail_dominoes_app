@@ -1,6 +1,13 @@
-import { getPageElementForConfig } from '../../containers/Page'
+import React from 'react'
+import Page from '../../containers/Page'
 
-export default getPageElementForConfig({
-    pageHeading: 'Page not found',
-    noShare: true,
-})
+const Component = () => (
+    <Page
+        {...{
+            pageHeading: 'Page not found',
+            noShare: true,
+        }}
+    />
+)
+
+export default Component

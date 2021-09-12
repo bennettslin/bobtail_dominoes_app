@@ -1,7 +1,10 @@
-import { getPageElementForConfig } from '../../containers/Page'
+import React from 'react'
+import Page from '../../containers/Page'
 
-export default getPageElementForConfig({
-    body: `
+const Component = () => (
+    <Page
+        {...{
+            body: `
 ### Bobtail Yearlings links
 
 [*Bobtail Yearlings*](https://www.bobtailyearlings.com/)${'  '}
@@ -15,5 +18,9 @@ Our artist accelerator.
 
 [*Yearling's Bobtail*](https://www.yearlingsbobtail.com/)${'  '}
 Our "*Ulysses* of Rock Albums."
-    `,
-})
+            `,
+        }}
+    />
+)
+
+export default Component

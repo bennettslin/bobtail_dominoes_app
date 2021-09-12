@@ -8,12 +8,6 @@ import Body from './Body'
 import PageFooter from './Footer'
 import './style'
 
-export const getPageElementForConfig = ({ children, ...config }) => () => (
-    <Page {...config}>
-        {children}
-    </Page>
-)
-
 const Page = ({
     isWide,
     children,

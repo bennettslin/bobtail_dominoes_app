@@ -1,7 +1,10 @@
-import { getPageElementForConfig } from '../../containers/Page'
+import React from 'react'
+import Page from '../../containers/Page'
 
-export default getPageElementForConfig({
-    body: `
+const Component = () => (
+    <Page
+        {...{
+            body: `
 We'll be making this page more interactive in the coming months! In the meantime, use the list below as a reference.
 
 ##### Triads
@@ -20,5 +23,9 @@ We'll be making this page more interactive in the coming months! In the meantime
 - Half-diminished seventh (1, ♭3, ♭5, ♭7)
 - Diminished seventh (1, ♭3, ♭5, ♭♭7)
 - Augmented major seventh (1, 3, ♯5, 7)
-    `,
-})
+            `,
+        }}
+    />
+)
+
+export default Component
