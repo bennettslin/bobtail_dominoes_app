@@ -17,16 +17,16 @@ const Menu = () => (
             ),
         }}
     >
-        <HeaderButton {...{ pageLink: RULES_PAGE }}>
+        <HeaderButton {...{ pagePath: RULES_PAGE }}>
             Rules
         </HeaderButton>
-        <HeaderButton {...{ pageLink: CHORDS_PAGE }}>
+        <HeaderButton {...{ pagePath: CHORDS_PAGE }}>
             Chords
         </HeaderButton>
-        <HeaderButton {...{ pageLink: PUZZLES_PAGE }}>
+        <HeaderButton {...{ pagePath: PUZZLES_PAGE }}>
             Puzzles
         </HeaderButton>
-        <HeaderButton {...{ pageLink: LINKS_PAGE }}>
+        <HeaderButton {...{ pagePath: LINKS_PAGE }}>
             Links
         </HeaderButton>
     </div>

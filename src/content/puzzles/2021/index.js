@@ -15,6 +15,6 @@ export const pages = [
 ]
 
 export const pagesMap = getMapFromPages({
-    rootPage: PUZZLES_PAGE,
+    topLevelPage: PUZZLES_PAGE,
     pages,
 })

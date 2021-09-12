@@ -3,19 +3,19 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Anchor from '../../../../components/Anchor'
-import { mapSelectedPage } from '../../../../redux/page/selector'
+import { mapSelectedPagePath } from '../../../../redux/page/selector'
 import { getLinkForPage } from '../../../../utils/pages'
 import { getDirectionPage } from './helper'
 import './style'
 
 const DirectionPageLink = ({
     direction,
-    rootPage,
+    topLevelPage,
     pages,
 }) => {
     const
-        selectedPage = useSelector(mapSelectedPage),
-        directionPage = getDirectionPage({ direction, pages, selectedPage })
+        selectedPagePath = useSelector(mapSelectedPagePath),
+        directionPage = getDirectionPage({ direction, pages, selectedPagePath })
 
     const {
         id,
@@ -29,7 +29,7 @@ const DirectionPageLink = ({
                 className: cx(
                     'DirectionPageLink',
                 ),
-                pageLink: getLinkForPage({ rootPage, id, date }),
+                pagePath: getLinkForPage({ topLevelPage, id, date }),
             }}
         >
             {direction === -1 && '❮ '}
@@ -41,7 +41,7 @@ const DirectionPageLink = ({
 
 DirectionPageLink.propTypes = {
     direction: PropTypes.oneOf([-1, 1]).isRequired,
-    rootPage: PropTypes.string.isRequired,
+    topLevelPage: PropTypes.string.isRequired,
     pages: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,

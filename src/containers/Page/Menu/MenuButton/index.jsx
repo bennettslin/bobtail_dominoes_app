@@ -3,17 +3,17 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Button from '../../../../components/Button'
-import { getMapIsSelectedPage } from '../../../../redux/page/selector'
+import { getMapIsSelectedPagePath } from '../../../../redux/page/selector'
 import { getPathForChildPage } from '../../../../constants/pages'
 import './style'
 
-const PageMenuButton = ({ pageLink, rootPage, children }) => {
+const PageMenuButton = ({ pagePath, topLevelPage, children }) => {
     const
         childPath = getPathForChildPage({
-            rootPage,
-            id: pageLink,
+            topLevelPage,
+            id: pagePath,
         }),
-        isSelectedPage = useSelector(getMapIsSelectedPage(childPath))
+        isSelectedPagePath = useSelector(getMapIsSelectedPagePath(childPath))
 
     return (
         <Button
@@ -22,9 +22,9 @@ const PageMenuButton = ({ pageLink, rootPage, children }) => {
                     'PageMenuButton',
                     'font__heading',
                 ),
-                analyticsLabel: `PageMenuButton__${pageLink}`,
-                pageLink: childPath,
-                isSelected: isSelectedPage,
+                analyticsLabel: `PageMenuButton__${pagePath}`,
+                pagePath: childPath,
+                isSelected: isSelectedPagePath,
             }}
         >
             {children}
@@ -34,8 +34,8 @@ const PageMenuButton = ({ pageLink, rootPage, children }) => {
 
 PageMenuButton.propTypes = {
     className: PropTypes.string,
-    pageLink: PropTypes.string.isRequired,
-    rootPage: PropTypes.string.isRequired,
+    pagePath: PropTypes.string.isRequired,
+    topLevelPage: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
 }
 

@@ -5,14 +5,14 @@ import { useDispatch } from 'react-redux'
 import { Link } from 'gatsby'
 import ButtonAnimatable from './Animatable'
 import Tooltip from './Tooltip'
-import { updateSelectedPage } from '../../redux/page/action'
-import { getPathForPage } from '../../constants/pages'
+import { updateSelectedPagePath } from '../../redux/page/action'
+import { getLinkFromPath } from '../../constants/pages'
 import './style'
 
 const Button = forwardRef(({
     className,
     analyticsLabel,
-    pageLink,
+    pagePath,
     isSelected,
     tooltipId,
     tooltipText,
@@ -25,7 +25,7 @@ const Button = forwardRef(({
     const
         dispatch = useDispatch(),
         isTooltipEnabled = Boolean(tooltipId),
-        isInternalLink = pageLink && !isSelected,
+        isInternalLink = pagePath && !isSelected,
         Tag = isInternalLink ? Link : 'button'
 
     const onClick = e => {
@@ -33,8 +33,8 @@ const Button = forwardRef(({
             return
         }
 
-        if (pageLink) {
-            dispatch(updateSelectedPage(pageLink))
+        if (pagePath) {
+            dispatch(updateSelectedPagePath(pagePath))
         }
 
         if (analyticsLabel) {
@@ -57,7 +57,7 @@ const Button = forwardRef(({
                 ),
                 onClick,
                 ...isInternalLink && {
-                    to: getPathForPage(pageLink),
+                    to: getLinkFromPath(pagePath),
                 },
                 ...isTooltipEnabled && {
                     'data-for': tooltipId,
@@ -85,7 +85,7 @@ const Button = forwardRef(({
 Button.propTypes = {
     className: PropTypes.string,
     analyticsLabel: PropTypes.string,
-    pageLink: PropTypes.string,
+    pagePath: PropTypes.string,
     isSelected: PropTypes.bool,
     tooltipId: PropTypes.string,
     tooltipText: PropTypes.string,

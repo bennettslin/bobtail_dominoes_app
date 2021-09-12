@@ -1,14 +1,14 @@
-import { getIsTabbedPage, getRootPageFromPath } from '../../constants/pages'
+import { getIsTabbedPageFromPath, getTopLevelPageFromPath } from '../../constants/pages'
 import { PAGE_STORE } from '../../constants/store'
 
-export const mapSelectedPage = (
-    { [PAGE_STORE]: { selectedPage } },
-) => selectedPage
+export const mapSelectedPagePath = (
+    { [PAGE_STORE]: { selectedPagePath } },
+) => selectedPagePath
 
-export const getMapIsSelectedPage = page => (
-    { [PAGE_STORE]: { selectedPage } },
-) => page === selectedPage
+export const getMapIsSelectedPagePath = page => (
+    { [PAGE_STORE]: { selectedPagePath } },
+) => page === selectedPagePath
 
 export const getMapIsSelectedTabbedPage = page => (
-    { [PAGE_STORE]: { selectedPage } },
-) => getIsTabbedPage(page) && page === getRootPageFromPath(selectedPage)
+    { [PAGE_STORE]: { selectedPagePath } },
+) => getIsTabbedPageFromPath(page) && page === getTopLevelPageFromPath(selectedPagePath)

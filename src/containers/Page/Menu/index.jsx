@@ -4,7 +4,7 @@ import cx from 'classnames'
 import PageMenuButton from './MenuButton'
 import './style'
 
-const PageMenu = ({ pages, rootPage }) => (
+const PageMenu = ({ pages, topLevelPage }) => (
     Boolean(pages) && (
         <div
             {...{
@@ -17,7 +17,7 @@ const PageMenu = ({ pages, rootPage }) => (
                 id,
                 title,
             }) => (
-                <PageMenuButton {...{ key: id, pageLink: id, rootPage }}>
+                <PageMenuButton {...{ key: id, pagePath: id, topLevelPage }}>
                     {title}
                 </PageMenuButton>
             ))}
@@ -30,7 +30,7 @@ PageMenu.propTypes = {
         id: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
     })),
-    rootPage: PropTypes.string,
+    topLevelPage: PropTypes.string,
 }
 
 export default PageMenu

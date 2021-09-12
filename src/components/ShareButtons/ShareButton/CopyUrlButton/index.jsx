@@ -6,8 +6,8 @@ import ShareButton from '..'
 import Svg from '../../../Svg'
 import copyUrl from '../../../../assets/svgs/copyUrl'
 import copyUrlCopied from '../../../../assets/svgs/copyUrlCopied'
-import { mapSelectedPage } from '../../../../redux/page/selector'
-import { getUrlForPage } from '../../../../constants/pages'
+import { mapSelectedPagePath } from '../../../../redux/page/selector'
+import { getUrlFromPath } from '../../../../constants/pages'
 import { COPY_URL_KEY } from '../../../../constants/socialMedia'
 
 const TOOLTIP_TEXT = 'link copied!'
@@ -16,7 +16,7 @@ const CopyUrlButton = () => {
     const
         buttonRef = useRef(),
         copiedUrlRef = useRef(),
-        selectedPage = useSelector(mapSelectedPage),
+        selectedPagePath = useSelector(mapSelectedPagePath),
         [isCopied, setIsCopied] = useState(false),
         [copyTimeoutId, setCopyTimeoutId] = useState(-1)
 
@@ -29,7 +29,7 @@ const CopyUrlButton = () => {
     }
 
     const handleButtonClick = () => {
-        navigator.clipboard.writeText(getUrlForPage(selectedPage))
+        navigator.clipboard.writeText(getUrlFromPath(selectedPagePath))
 
         clearTimeout(copyTimeoutId)
         setIsCopied(true)
@@ -58,7 +58,7 @@ const CopyUrlButton = () => {
                 ),
                 id: COPY_URL_KEY,
                 ...isCopied && {
-                    tooltipId: selectedPage,
+                    tooltipId: selectedPagePath,
                     tooltipText: TOOLTIP_TEXT,
                 },
                 handleButtonClick,

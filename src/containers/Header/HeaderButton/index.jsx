@@ -4,15 +4,15 @@ import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Button from '../../../components/Button'
 import {
-    getMapIsSelectedPage,
+    getMapIsSelectedPagePath,
     getMapIsSelectedTabbedPage,
 } from '../../../redux/page/selector'
 import './style'
 
-const HeaderButton = ({ className, pageLink, children }) => {
+const HeaderButton = ({ className, pagePath, children }) => {
     const
-        isSelectedPage = useSelector(getMapIsSelectedPage(pageLink)),
-        isSelectedTabbedPage = useSelector(getMapIsSelectedTabbedPage(pageLink))
+        isSelectedPagePath = useSelector(getMapIsSelectedPagePath(pagePath)),
+        isSelectedTabbedPage = useSelector(getMapIsSelectedTabbedPage(pagePath))
 
     return (
         <Button
@@ -22,9 +22,9 @@ const HeaderButton = ({ className, pageLink, children }) => {
                     'font__heading',
                     className,
                 ),
-                analyticsLabel: `HeaderButton__${pageLink}`,
-                pageLink,
-                isSelected: isSelectedPage || isSelectedTabbedPage,
+                analyticsLabel: `HeaderButton__${pagePath}`,
+                pagePath,
+                isSelected: isSelectedPagePath || isSelectedTabbedPage,
             }}
         >
             {children}
@@ -34,7 +34,7 @@ const HeaderButton = ({ className, pageLink, children }) => {
 
 HeaderButton.propTypes = {
     className: PropTypes.string,
-    pageLink: PropTypes.string.isRequired,
+    pagePath: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
 }
 

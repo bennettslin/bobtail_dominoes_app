@@ -12,7 +12,7 @@ const HomeButton = () => (
             className: cx(
                 'HomeButton',
             ),
-            pageLink: HOME_PAGE,
+            pagePath: HOME_PAGE,
         }}
     >
         <Svg

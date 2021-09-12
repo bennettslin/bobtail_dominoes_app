@@ -9,7 +9,7 @@ import './style'
 
 const PageFooter = ({
     noShare,
-    rootPage,
+    topLevelPage,
     pages,
 }) => (
     <div
@@ -27,7 +27,7 @@ const PageFooter = ({
                             isPrevious
                             {...{
                                 direction: -1,
-                                rootPage,
+                                topLevelPage,
                                 pages,
                             }}
                         />
@@ -37,7 +37,7 @@ const PageFooter = ({
                             isNext
                             {...{
                                 direction: 1,
-                                rootPage,
+                                topLevelPage,
                                 pages,
                             }}
                         />
@@ -61,7 +61,7 @@ const PageFooter = ({
 
 PageFooter.propTypes = {
     noShare: PropTypes.bool,
-    rootPage: PropTypes.string,
+    topLevelPage: PropTypes.string,
     pages: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,

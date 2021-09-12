@@ -4,5 +4,5 @@ import { pagesList } from '../../content/puzzles'
 import { PUZZLES_PAGE } from '../../constants/pages'
 
 export default getPageElementForConfig({
-    body: getMarkdownLinksForRootPage({ rootPage: PUZZLES_PAGE, pagesList }),
+    body: getMarkdownLinksForRootPage({ topLevelPage: PUZZLES_PAGE, pagesList }),
 })

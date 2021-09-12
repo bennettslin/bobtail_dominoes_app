@@ -3,15 +3,15 @@ import cx from 'classnames'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { useDispatch } from 'react-redux'
-import { updateSelectedPage } from '../../redux/page/action'
-import { getPathForPage } from '../../constants/pages'
+import { updateSelectedPagePath } from '../../redux/page/action'
+import { getLinkFromPath } from '../../constants/pages'
 import { getInternalLink } from './helper'
 
 const Anchor = ({
     className,
     analyticsLabel,
     href,
-    pageLink,
+    pagePath,
     handleAnchorClick = () => {},
     children,
 
@@ -20,13 +20,13 @@ const Anchor = ({
         dispatch = useDispatch(),
         internalLink = getInternalLink({
             href,
-            pageLink,
+            pagePath,
         }),
         Tag = internalLink ? Link : 'a'
 
     const onClick = () => {
         if (internalLink) {
-            dispatch(updateSelectedPage(internalLink))
+            dispatch(updateSelectedPagePath(internalLink))
         }
 
         if (analyticsLabel || internalLink) {
@@ -47,7 +47,7 @@ const Anchor = ({
                     className,
                 ),
                 ...internalLink && {
-                    to: getPathForPage(internalLink),
+                    to: getLinkFromPath(internalLink),
                 },
                 ...!internalLink && href && {
                     href,
@@ -68,7 +68,7 @@ Anchor.propTypes = {
     className: PropTypes.string,
     analyticsLabel: PropTypes.string,
     href: PropTypes.string,
-    pageLink: PropTypes.string,
+    pagePath: PropTypes.string,
     handleAnchorClick: PropTypes.func,
     children: PropTypes.node.isRequired,
 }

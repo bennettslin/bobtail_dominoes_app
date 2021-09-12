@@ -1,6 +1,6 @@
-export const getInternalLink = ({ href = '', pageLink }) => {
-    if (pageLink) {
-        return pageLink
+export const getInternalLink = ({ href = '', pagePath }) => {
+    if (pagePath) {
+        return pagePath
     }
     // Markdown will return page link beginning with forward slash.
     if (href[0] === '/') {

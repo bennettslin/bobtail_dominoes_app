@@ -1,5 +1,5 @@
 export const getPageDefaults = ({
     initialPage,
 }) => ({
-    selectedPage: initialPage,
+    selectedPagePath: initialPage,
 })

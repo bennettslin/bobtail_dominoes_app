@@ -17,7 +17,7 @@ const Page = ({
     isWide,
     noShare,
     pages,
-    rootPage,
+    topLevelPage,
     children,
     ...rest
 }) => (
@@ -32,13 +32,13 @@ const Page = ({
         }}
     >
         <Helmet />
-        <PageMenu {...{ pages, rootPage }} />
+        <PageMenu {...{ pages, topLevelPage }} />
         <Body {...rest} />
         <PageFooter
             {...{
                 noShare,
                 pages,
-                rootPage,
+                topLevelPage,
             }}
         />
         {children}
@@ -52,7 +52,7 @@ Page.propTypes = {
         id: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
     })),
-    rootPage: PropTypes.string,
+    topLevelPage: PropTypes.string,
     children: PropTypes.node,
 }
 

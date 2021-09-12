@@ -16,35 +16,35 @@ export const getMarkdownLinkFromText = id => (
     `[${id}](#${getLinkId(id)})${'  '}`
 )
 
-export const getMarkdownLinkFromDate = ({ map, rootPage, year, month, day }) => {
+export const getMarkdownLinkFromDate = ({ map, topLevelPage, year, month, day }) => {
     const { title, path } = map[year][month][day]
 
     return (
-        `[${title}](/${rootPage}/${year}/${month}-${day}-${path})${'  '}`
+        `[${title}](/${topLevelPage}/${year}/${month}-${day}-${path})${'  '}`
     )
 }
 
 const getMarkdownLinksForPages = ({
-    rootPage,
+    topLevelPage,
     pages,
 }) => (
     pages.map(page => {
         const { title } = page
 
         return (
-            `[${title}](/${getLinkForPage({ rootPage, ...page })})${'  '}`
+            `[${title}](/${getLinkForPage({ topLevelPage, ...page })})${'  '}`
         )
     }).join(`\n`)
 )
 
 export const getMarkdownLinksForRootPage = ({
-    rootPage,
+    topLevelPage,
     pagesList,
 }) => (
     pagesList.map(({ heading, pages }) => (
         `### ${heading}${'\n'}` +
         getMarkdownLinksForPages({
-            rootPage,
+            topLevelPage,
             pages,
         })
     ))

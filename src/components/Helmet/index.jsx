@@ -2,25 +2,25 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useSelector } from 'react-redux'
 import { Helmet as ReactHelmet } from 'react-helmet'
-import { mapSelectedPage } from '../../redux/page/selector'
+import { mapSelectedPagePath } from '../../redux/page/selector'
 import {
     getMetaTitle,
     getMetaTags,
 } from './helper'
 
 const Helmet = ({ description, title }) => {
-    const selectedPage = useSelector(mapSelectedPage)
+    const selectedPagePath = useSelector(mapSelectedPagePath)
 
     return (
         <ReactHelmet>
             <title>
                 {getMetaTitle({
-                    page: selectedPage,
+                    page: selectedPagePath,
                     title,
                 })}
             </title>
             {getMetaTags({
-                page: selectedPage,
+                page: selectedPagePath,
                 description,
                 title,
             }).map(({

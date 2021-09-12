@@ -4,16 +4,16 @@ import { useSelector } from 'react-redux'
 import ShareButton from '..'
 import Svg from '../../../Svg'
 import facebook from '../../../../assets/svgs/facebook.svg'
-import { mapSelectedPage } from '../../../../redux/page/selector'
+import { mapSelectedPagePath } from '../../../../redux/page/selector'
 import { openSocialMediaPopup } from '../../../../utils/socialMedia'
 import { FACEBOOK_KEY } from '../../../../constants/socialMedia'
 
 const FacebookButton = () => {
-    const selectedPage = useSelector(mapSelectedPage)
+    const selectedPagePath = useSelector(mapSelectedPagePath)
 
     const handleButtonClick = () => {
         openSocialMediaPopup({
-            page: selectedPage,
+            page: selectedPagePath,
             brandId: FACEBOOK_KEY,
             socialMediaKey: 'share',
         })

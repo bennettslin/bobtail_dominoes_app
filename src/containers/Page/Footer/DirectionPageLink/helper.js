@@ -3,14 +3,14 @@ import { getChildPageFromPath } from '../../../../constants/pages'
 export const getDirectionPage = ({
     direction,
     pages,
-    selectedPage,
+    selectedPagePath,
 }) => {
     if (!pages) {
         return null
     }
 
     const
-        childPage = getChildPageFromPath(selectedPage),
+        childPage = getChildPageFromPath(selectedPagePath),
         foundIndex = pages.findIndex(({ id, date: { month, day } = {} }) => (
             childPage === (
                 month && day ?
