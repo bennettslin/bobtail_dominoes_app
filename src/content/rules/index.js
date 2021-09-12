@@ -1,4 +1,4 @@
-import { getMapFromPages } from '../../utils/pages'
+import { getMapFromPages } from '../../utils/pages/config'
 import { RULES_PAGE } from '../../constants/pages'
 
 const pages = [

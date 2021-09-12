@@ -1,5 +1,5 @@
 import removeMarkdown from 'remove-markdown'
-import { getLinkForPage } from '../../pages'
+import { getPagePathFromConfig } from '../../pages/config'
 
 export const convertMarkdownToText = markdown => (
     removeMarkdown(markdown)
@@ -32,7 +32,7 @@ const getMarkdownLinksForPages = ({
         const { title } = page
 
         return (
-            `[${title}](/${getLinkForPage({ topLevelPage, ...page })})${'  '}`
+            `[${title}](/${getPagePathFromConfig({ topLevelPage, ...page })})${'  '}`
         )
     }).join(`\n`)
 )

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { useDispatch } from 'react-redux'
 import { updateSelectedPagePath } from '../../redux/page/action'
-import { getLinkFromPath } from '../../constants/pages'
+import { getLinkFromPath } from '../../utils/pages/path'
 import { getInternalLink } from './helper'
 
 const Anchor = ({

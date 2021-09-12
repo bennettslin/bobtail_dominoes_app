@@ -4,12 +4,12 @@ import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Button from '../../../../components/Button'
 import { getMapIsSelectedPagePath } from '../../../../redux/page/selector'
-import { getPathForChildPage } from '../../../../constants/pages'
+import { getPagePathFromConfig } from '../../../../utils/pages/config'
 import './style'
 
 const PageMenuButton = ({ pagePath, topLevelPage, children }) => {
     const
-        childPath = getPathForChildPage({
+        childPath = getPagePathFromConfig({
             topLevelPage,
             id: pagePath,
         }),

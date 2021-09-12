@@ -1,4 +1,4 @@
-import { getChildPageFromPath } from '../../../../constants/pages'
+import { getChildPageFromPath } from '../../../../utils/pages/path'
 
 export const getDirectionPage = ({
     direction,

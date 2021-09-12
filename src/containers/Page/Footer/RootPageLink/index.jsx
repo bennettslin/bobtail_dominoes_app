@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import Anchor from '../../../../components/Anchor'
 import { mapSelectedPagePath } from '../../../../redux/page/selector'
 import { getCapitalizedText } from '../../../../utils/format'
-import { getIsTabbedPageFromPath, getTopLevelPageFromPath } from '../../../../constants/pages'
+import { getIsTabbedPageFromPath, getTopLevelPageFromPath } from '../../../../utils/pages/path'
 
 const RootPageLink = () => {
     const

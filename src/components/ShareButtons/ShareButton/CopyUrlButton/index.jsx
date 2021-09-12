@@ -7,7 +7,7 @@ import Svg from '../../../Svg'
 import copyUrl from '../../../../assets/svgs/copyUrl'
 import copyUrlCopied from '../../../../assets/svgs/copyUrlCopied'
 import { mapSelectedPagePath } from '../../../../redux/page/selector'
-import { getUrlFromPath } from '../../../../constants/pages'
+import { getUrlFromPath } from '../../../../utils/pages/path'
 import { COPY_URL_KEY } from '../../../../constants/socialMedia'
 
 const TOOLTIP_TEXT = 'link copied!'

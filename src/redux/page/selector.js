@@ -1,4 +1,4 @@
-import { getIsTabbedPageFromPath, getTopLevelPageFromPath } from '../../constants/pages'
+import { getIsTabbedPageFromPath, getTopLevelPageFromPath } from '../../utils/pages/path'
 import { PAGE_STORE } from '../../constants/store'
 
 export const mapSelectedPagePath = (

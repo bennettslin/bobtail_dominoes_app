@@ -1,5 +1,5 @@
 import qs from 'qs'
-import { getUrlFromPath } from '../../constants/pages'
+import { getUrlFromPath } from '../pages/path'
 import {
     FACEBOOK_ACCOUNT,
     FACEBOOK_KEY,

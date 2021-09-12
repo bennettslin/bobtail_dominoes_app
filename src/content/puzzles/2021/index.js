@@ -1,4 +1,4 @@
-import { getMapFromPages } from '../../../utils/pages'
+import { getMapFromPages } from '../../../utils/pages/config'
 import { PUZZLES_PAGE } from '../../../constants/pages'
 
 export const pages = [

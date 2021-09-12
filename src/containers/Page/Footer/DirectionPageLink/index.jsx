@@ -4,7 +4,7 @@ import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Anchor from '../../../../components/Anchor'
 import { mapSelectedPagePath } from '../../../../redux/page/selector'
-import { getLinkForPage } from '../../../../utils/pages'
+import { getPagePathFromConfig } from '../../../../utils/pages/config'
 import { getDirectionPage } from './helper'
 import './style'
 
@@ -29,7 +29,7 @@ const DirectionPageLink = ({
                 className: cx(
                     'DirectionPageLink',
                 ),
-                pagePath: getLinkForPage({ topLevelPage, id, date }),
+                pagePath: getPagePathFromConfig({ topLevelPage, id, date }),
             }}
         >
             {direction === -1 && '❮ '}

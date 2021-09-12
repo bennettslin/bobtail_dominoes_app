@@ -1,8 +1,6 @@
 import { getTruncatedText } from '../../utils/format'
-import {
-    getUrlFromPath,
-    HOME_PAGE,
-} from '../../constants/pages'
+import { getUrlFromPath } from '../../utils/pages/path'
+import { HOME_PAGE } from '../../constants/pages'
 import { TWITTER_ACCOUNT } from '../../constants/socialMedia'
 import {
     APP_DESCRIPTION,

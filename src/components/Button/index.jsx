@@ -6,7 +6,7 @@ import { Link } from 'gatsby'
 import ButtonAnimatable from './Animatable'
 import Tooltip from './Tooltip'
 import { updateSelectedPagePath } from '../../redux/page/action'
-import { getLinkFromPath } from '../../constants/pages'
+import { getLinkFromPath } from '../../utils/pages/path'
 import './style'
 
 const Button = forwardRef(({
