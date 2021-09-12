@@ -1,11 +1,11 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import Anchor from '../../../../components/Anchor'
-import { mapSelectedPagePath } from '../../../../redux/page/selector'
-import { getCapitalizedText } from '../../../../utils/format'
-import { getIsTabbedPath, getTopLevelPageFromPath } from '../../../../utils/pages/path'
+import Anchor from '../../../../../components/Anchor'
+import { mapSelectedPagePath } from '../../../../../redux/page/selector'
+import { getCapitalizedText } from '../../../../../utils/format'
+import { getIsTabbedPath, getTopLevelPageFromPath } from '../../../../../utils/pages/path'
 
-const RootPageLink = () => {
+const TopLevelPageLink = () => {
     const
         selectedPagePath = useSelector(mapSelectedPagePath),
         topLevelPage = getTopLevelPageFromPath(selectedPagePath)
@@ -20,4 +20,4 @@ const RootPageLink = () => {
     )
 }
 
-export default RootPageLink
+export default TopLevelPageLink

@@ -6,10 +6,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    padding-top: $margin__xs;
 }
 
 .PageFooterRow__bottom {
+    padding-top: $margin__xs;
     border-top: 1px solid hsla(0, 0%, 50%, 0.5);
 }

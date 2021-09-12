@@ -2,11 +2,14 @@
 
 .PageFooter {
     width: 100%;
-    margin-top: $margin__md;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: $margin__md
+    gap: $margin__md;
+
+    > :first-child {
+        margin-top: $margin__md;
+    }
 }
