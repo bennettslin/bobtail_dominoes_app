@@ -3,23 +3,26 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Button from '../../../../components/Button'
-import { getMapIsSelectedPagePath } from '../../../../redux/page/selector'
+import { getMapIsSelectedPagePath, mapSelectedPagePath } from '../../../../redux/page/selector'
 import { getPagePathFromConfig } from '../../../../utils/pages/config'
 import './style'
 
 const TabbedMenuButton = ({
-    topLevelPage,
     id,
     date,
+    topLevelPage,
+    isFirstPage,
     children,
 }) => {
     const
-        childPath = getPagePathFromConfig({
+        pagePath = getPagePathFromConfig({
             topLevelPage,
             id,
             date,
         }),
-        isSelectedPagePath = useSelector(getMapIsSelectedPagePath(childPath))
+        selectedPagePath = useSelector(mapSelectedPagePath),
+        isSelectedPagePath = useSelector(getMapIsSelectedPagePath(pagePath)),
+        isTopLevelTabbedPath = isFirstPage && selectedPagePath === topLevelPage
 
     return (
         <Button
@@ -29,8 +32,8 @@ const TabbedMenuButton = ({
                     'font__heading',
                 ),
                 analyticsLabel: `TabbedMenuButton__${id}`,
-                pagePath: childPath,
-                isSelected: isSelectedPagePath,
+                pagePath,
+                isSelected: isSelectedPagePath || isTopLevelTabbedPath,
             }}
         >
             {children}
@@ -41,12 +44,13 @@ const TabbedMenuButton = ({
 TabbedMenuButton.propTypes = {
     className: PropTypes.string,
     id: PropTypes.string.isRequired,
-    topLevelPage: PropTypes.string.isRequired,
     date: PropTypes.shape({
         year: PropTypes.number.isRequired,
         month: PropTypes.number.isRequired,
         day: PropTypes.number.isRequired,
     }),
+    topLevelPage: PropTypes.string.isRequired,
+    isFirstPage: PropTypes.bool.isRequired,
     children: PropTypes.node.isRequired,
 }
 

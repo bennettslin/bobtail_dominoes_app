@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import Anchor from '../../../../components/Anchor'
 import { mapSelectedPagePath } from '../../../../redux/page/selector'
 import { getCapitalizedText } from '../../../../utils/format'
-import { getIsTabbedPageFromPath, getTopLevelPageFromPath } from '../../../../utils/pages/path'
+import { getIsTabbedPath, getTopLevelPageFromPath } from '../../../../utils/pages/path'
 
 const RootPageLink = () => {
     const
@@ -12,7 +12,7 @@ const RootPageLink = () => {
 
     return (
         topLevelPage !== selectedPagePath &&
-        !getIsTabbedPageFromPath(selectedPagePath)
+        !getIsTabbedPath(selectedPagePath)
     ) && (
         <Anchor {...{ pagePath: topLevelPage }} >
                 Back to {getCapitalizedText(topLevelPage)}
