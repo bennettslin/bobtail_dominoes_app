@@ -26,6 +26,4 @@ export const getDirectionPage = ({
     } else if (direction === 1 && pageIndex < pages.length - 1) {
         return pages[pageIndex + 1]
     }
-
-    return null
 }

@@ -28,6 +28,22 @@ export const getPathForPage = page => (
     page === HOME_PAGE ? '/' : `/${page}`
 )
 
+export const getPathForChildPage = ({
+    rootPage,
+    id,
+    date: {
+        year,
+        month,
+        day,
+    } = {},
+}) => [
+    rootPage && `${rootPage}/`,
+    year && `${year}/`,
+    month && `${year}-`,
+    day && `${year}-`,
+    id && `${id}`,
+].filter(segment => Boolean(segment)).join('')
+
 export const getUrlForPage = page => {
     const
         pagePath = getPathForPage(page),

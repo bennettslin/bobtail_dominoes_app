@@ -23,7 +23,7 @@ const DirectionPageLink = ({
         date,
     } = directionPage || {}
 
-    return directionPage && (
+    return Boolean(directionPage) && (
         <Anchor
             {...{
                 className: cx(

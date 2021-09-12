@@ -1,35 +1,36 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import cx from 'classnames'
 import PageMenuButton from './MenuButton'
-import {
-    RULES_PAGE,
-    CHORDS_PAGE,
-    PUZZLES_PAGE,
-    LINKS_PAGE,
-} from '../../../constants/pages'
 import './style'
 
-const PageMenu = () => (
-    <div
-        {...{
-            className: cx(
-                'PageMenu',
-            ),
-        }}
-    >
-        <PageMenuButton {...{ pageLink: RULES_PAGE }}>
-            Rules
-        </PageMenuButton>
-        <PageMenuButton {...{ pageLink: CHORDS_PAGE }}>
-            Chords
-        </PageMenuButton>
-        <PageMenuButton {...{ pageLink: PUZZLES_PAGE }}>
-            Puzzles
-        </PageMenuButton>
-        <PageMenuButton {...{ pageLink: LINKS_PAGE }}>
-            Links
-        </PageMenuButton>
-    </div>
+const PageMenu = ({ pages, rootPage }) => (
+    Boolean(pages) && (
+        <div
+            {...{
+                className: cx(
+                    'PageMenu',
+                ),
+            }}
+        >
+            {pages.map(({
+                id,
+                title,
+            }) => (
+                <PageMenuButton {...{ key: id, pageLink: id, rootPage }}>
+                    {title}
+                </PageMenuButton>
+            ))}
+        </div>
+    )
 )
+
+PageMenu.propTypes = {
+    pages: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+    })),
+    rootPage: PropTypes.string,
+}
 
 export default PageMenu

@@ -2,8 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Helmet from '../../components/Helmet'
-import PageFooter from './Footer'
+import PageMenu from './Menu'
 import Body from './Body'
+import PageFooter from './Footer'
 import './style'
 
 export const getPageElementForConfig = ({ children, ...config }) => () => (
@@ -16,8 +17,6 @@ const Page = ({
     isWide,
     noShare,
     pages,
-    nextPage,
-    previousPage,
     rootPage,
     children,
     ...rest
@@ -33,13 +32,12 @@ const Page = ({
         }}
     >
         <Helmet />
+        <PageMenu {...{ pages, rootPage }} />
         <Body {...rest} />
         <PageFooter
             {...{
                 noShare,
                 pages,
-                nextPage,
-                previousPage,
                 rootPage,
             }}
         />
@@ -54,8 +52,6 @@ Page.propTypes = {
         id: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
     })),
-    nextPage: PropTypes.object,
-    previousPage: PropTypes.object,
     rootPage: PropTypes.string,
     children: PropTypes.node,
 }

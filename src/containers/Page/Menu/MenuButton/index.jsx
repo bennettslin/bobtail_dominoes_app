@@ -4,10 +4,16 @@ import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Button from '../../../../components/Button'
 import { getMapIsSelectedPage } from '../../../../redux/page/selector'
+import { getPathForChildPage } from '../../../../constants/pages'
 import './style'
 
-const PageMenuButton = ({ pageLink, children }) => {
-    const isSelectedPage = useSelector(getMapIsSelectedPage(pageLink))
+const PageMenuButton = ({ pageLink, rootPage, children }) => {
+    const
+        childPath = getPathForChildPage({
+            rootPage,
+            id: pageLink,
+        }),
+        isSelectedPage = useSelector(getMapIsSelectedPage(childPath))
 
     return (
         <Button
@@ -17,7 +23,7 @@ const PageMenuButton = ({ pageLink, children }) => {
                     'font__heading',
                 ),
                 analyticsLabel: `PageMenuButton__${pageLink}`,
-                pageLink,
+                pageLink: childPath,
                 isSelected: isSelectedPage,
             }}
         >
@@ -29,6 +35,7 @@ const PageMenuButton = ({ pageLink, children }) => {
 PageMenuButton.propTypes = {
     className: PropTypes.string,
     pageLink: PropTypes.string.isRequired,
+    rootPage: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
 }
 
