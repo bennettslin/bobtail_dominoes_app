@@ -1,71 +1,48 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { useContext } from 'react'
 import cx from 'classnames'
+import PageConfigContext from '../../../contexts/PageConfig'
 import ShareButtons from '../../../components/ShareButtons'
 import PageFooterRow from './Row'
 import DirectionPageLink from './DirectionPageLink'
 import RootPageLink from './RootPageLink'
 import './style'
 
-const PageFooter = ({
-    noShare,
-    topLevelPage,
-    pages,
-}) => (
-    <div
-        {...{
-            className: cx(
-                'PageFooter',
-            ),
-        }}
-    >
-        {pages && (
+const PageFooter = () => {
+    const { pages, noShare } = useContext(PageConfigContext)
+
+    return (
+        <div
+            {...{
+                className: cx(
+                    'PageFooter',
+                ),
+            }}
+        >
+            {pages && (
+                <PageFooterRow
+                    {...{
+                        leftChild: (
+                            <DirectionPageLink {...{ direction: -1 }} />
+                        ),
+                        rightChild: (
+                            <DirectionPageLink {...{ direction: 1 }} />
+                        ),
+                    }}
+                />
+            )}
             <PageFooterRow
+                hasBorderTop
                 {...{
                     leftChild: (
-                        <DirectionPageLink
-                            isPrevious
-                            {...{
-                                direction: -1,
-                                topLevelPage,
-                                pages,
-                            }}
-                        />
+                        <RootPageLink />
                     ),
-                    rightChild: (
-                        <DirectionPageLink
-                            isNext
-                            {...{
-                                direction: 1,
-                                topLevelPage,
-                                pages,
-                            }}
-                        />
+                    rightChild: !noShare && (
+                        <ShareButtons />
                     ),
                 }}
             />
-        )}
-        <PageFooterRow
-            hasBorderTop
-            {...{
-                leftChild: (
-                    <RootPageLink />
-                ),
-                rightChild: !noShare && (
-                    <ShareButtons />
-                ),
-            }}
-        />
-    </div>
-)
-
-PageFooter.propTypes = {
-    noShare: PropTypes.bool,
-    topLevelPage: PropTypes.string,
-    pages: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
-    })),
+        </div>
+    )
 }
 
 export default PageFooter

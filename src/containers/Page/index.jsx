@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import PageConfigContext from '../../contexts/PageConfig'
 import Helmet from '../../components/Helmet'
 import PageMenu from './Menu'
 import Body from './Body'
@@ -15,45 +16,51 @@ export const getPageElementForConfig = ({ children, ...config }) => () => (
 
 const Page = ({
     isWide,
-    noShare,
-    pages,
-    topLevelPage,
     children,
     ...rest
 }) => (
-    <div
-        {...{
-            className: cx(
-                'Page',
-                isWide ?
-                    'Page__wide' :
-                    'Page__narrow',
-            ),
-        }}
-    >
-        <Helmet />
-        <PageMenu {...{ pages, topLevelPage }} />
-        <Body {...rest} />
-        <PageFooter
+    <PageConfigContext.Provider {...{ value: rest }}>
+        <div
             {...{
-                noShare,
-                pages,
-                topLevelPage,
+                className: cx(
+                    'Page',
+                    isWide ?
+                        'Page__wide' :
+                        'Page__narrow',
+                ),
             }}
-        />
-        {children}
-    </div>
+        >
+            <Helmet />
+            <PageMenu />
+            <Body />
+            <PageFooter />
+            {children}
+        </div>
+    </PageConfigContext.Provider>
 )
 
 Page.propTypes = {
     isWide: PropTypes.bool,
     noShare: PropTypes.bool,
+    showContactEmail: PropTypes.bool,
+    children: PropTypes.node,
     pages: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
     })),
+    id: PropTypes.string,
     topLevelPage: PropTypes.string,
-    children: PropTypes.node,
+    pageHeading: PropTypes.string,
+    title: PropTypes.string,
+    date: PropTypes.shape({
+        year: PropTypes.number.isRequired,
+        month: PropTypes.number.isRequired,
+        day: PropTypes.number.isRequired,
+    }),
+    body: PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.string,
+    ]),
 }
 
 export default Page

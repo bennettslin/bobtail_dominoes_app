@@ -1,36 +1,32 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { useContext } from 'react'
 import cx from 'classnames'
+import PageConfigContext from '../../../contexts/PageConfig'
 import PageMenuButton from './MenuButton'
 import './style'
 
-const PageMenu = ({ pages, topLevelPage }) => (
-    Boolean(pages) && (
-        <div
-            {...{
-                className: cx(
-                    'PageMenu',
-                ),
-            }}
-        >
-            {pages.map(({
-                id,
-                title,
-            }) => (
-                <PageMenuButton {...{ key: id, pagePath: id, topLevelPage }}>
-                    {title}
-                </PageMenuButton>
-            ))}
-        </div>
-    )
-)
+const PageMenu = () => {
+    const { pages, topLevelPage } = useContext(PageConfigContext)
 
-PageMenu.propTypes = {
-    pages: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
-    })),
-    topLevelPage: PropTypes.string,
+    return (
+        Boolean(pages) && (
+            <div
+                {...{
+                    className: cx(
+                        'PageMenu',
+                    ),
+                }}
+            >
+                {pages.map(({
+                    id,
+                    title,
+                }) => (
+                    <PageMenuButton {...{ key: id, pagePath: id, topLevelPage }}>
+                        {title}
+                    </PageMenuButton>
+                ))}
+            </div>
+        )
+    )
 }
 
 export default PageMenu
