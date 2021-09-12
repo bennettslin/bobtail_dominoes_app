@@ -1,12 +1,12 @@
-export const getMapFromPages = ({
+export const getMapFromPageConfigs = ({
     topLevelPage,
-    pages,
+    pageConfigs,
 
 }) => (
-    pages.reduce((map, page) => {
+    pageConfigs.reduce((map, page) => {
         map[page.id] = {
             topLevelPage,
-            pages,
+            pages: pageConfigs,
             ...page,
         }
 

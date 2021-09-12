@@ -1,7 +1,7 @@
-import { getMapFromPages } from '../../utils/pages/config'
+import { getMapFromPageConfigs } from '../../utils/pages/config'
 import { RULES_PAGE } from '../../constants/pages'
 
-const pages = [
+const pageConfigs = [
     {
         id: `setup`,
         title: `Setup`,
@@ -20,7 +20,7 @@ const pages = [
     },
 ]
 
-export const pagesMap = getMapFromPages({
+export const pagesMap = getMapFromPageConfigs({
     topLevelPage: RULES_PAGE,
-    pages,
+    pageConfigs,
 })

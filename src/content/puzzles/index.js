@@ -1,8 +1,8 @@
-import { pages as pages2021 } from './2021'
+import { pageConfigs as pageConfigs2021 } from './2021'
 
 export const pagesList = [
     {
         heading: 2021,
-        pages: pages2021,
+        pages: pageConfigs2021,
     },
 ]

@@ -1,7 +1,7 @@
-import { getMapFromPages } from '../../../utils/pages/config'
+import { getMapFromPageConfigs } from '../../../utils/pages/config'
 import { PUZZLES_PAGE } from '../../../constants/pages'
 
-export const pages = [
+export const pageConfigs = [
     {
         id: `music-getting-worse`,
         title: `Yes, music is getting worse`,
@@ -14,7 +14,7 @@ export const pages = [
     },
 ]
 
-export const pagesMap = getMapFromPages({
+export const pagesMap = getMapFromPageConfigs({
     topLevelPage: PUZZLES_PAGE,
-    pages,
+    pageConfigs,
 })
