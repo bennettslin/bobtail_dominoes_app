@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import PageConfigContext from '../../contexts/PageConfig'
 import Helmet from '../../components/Helmet'
-import PageMenu from './Menu'
+import TabbedMenu from './TabbedMenu'
 import Body from './Body'
 import PageFooter from './Footer'
 import './style'
@@ -31,7 +31,7 @@ const Page = ({
             }}
         >
             <Helmet />
-            <PageMenu />
+            <TabbedMenu />
             <Body />
             <PageFooter />
             {children}
@@ -48,7 +48,6 @@ Page.propTypes = {
         id: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
     })),
-    id: PropTypes.string,
     topLevelPage: PropTypes.string,
     pageHeading: PropTypes.string,
     title: PropTypes.string,

@@ -7,11 +7,17 @@ import { getMapIsSelectedPagePath } from '../../../../redux/page/selector'
 import { getPagePathFromConfig } from '../../../../utils/pages/config'
 import './style'
 
-const PageMenuButton = ({ pagePath, topLevelPage, children }) => {
+const TabbedMenuButton = ({
+    topLevelPage,
+    id,
+    date,
+    children,
+}) => {
     const
         childPath = getPagePathFromConfig({
             topLevelPage,
-            id: pagePath,
+            id,
+            date,
         }),
         isSelectedPagePath = useSelector(getMapIsSelectedPagePath(childPath))
 
@@ -19,10 +25,10 @@ const PageMenuButton = ({ pagePath, topLevelPage, children }) => {
         <Button
             {...{
                 className: cx(
-                    'PageMenuButton',
+                    'TabbedMenuButton',
                     'font__heading',
                 ),
-                analyticsLabel: `PageMenuButton__${pagePath}`,
+                analyticsLabel: `TabbedMenuButton__${id}`,
                 pagePath: childPath,
                 isSelected: isSelectedPagePath,
             }}
@@ -32,11 +38,16 @@ const PageMenuButton = ({ pagePath, topLevelPage, children }) => {
     )
 }
 
-PageMenuButton.propTypes = {
+TabbedMenuButton.propTypes = {
     className: PropTypes.string,
-    pagePath: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
     topLevelPage: PropTypes.string.isRequired,
+    date: PropTypes.shape({
+        year: PropTypes.number.isRequired,
+        month: PropTypes.number.isRequired,
+        day: PropTypes.number.isRequired,
+    }),
     children: PropTypes.node.isRequired,
 }
 
-export default PageMenuButton
+export default TabbedMenuButton
