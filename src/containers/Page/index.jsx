@@ -25,10 +25,14 @@ const Page = ({
             }}
         >
             <Helmet />
-            <TabbedMenu />
-            <Body />
-            <PageFooter />
-            {children}
+            {/* This assumes children or markdown, but never both. */}
+            {(children ? children : (
+                <>
+                    <TabbedMenu />
+                    <Body />
+                    <PageFooter />
+                </>
+            ))}
         </div>
     </PageConfigContext.Provider>
 )

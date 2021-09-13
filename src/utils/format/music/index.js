@@ -5,6 +5,10 @@ const getArrayOfTextsWithFlatSeparator = children => {
         text = Array.isArray(children) ? children[0] : children,
         texts = []
 
+    if (typeof text !== 'string') {
+        return children
+    }
+
     let indexStart = 0,
         indexEnd = 0
 
