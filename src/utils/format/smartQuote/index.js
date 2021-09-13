@@ -25,7 +25,7 @@ const _replaceCharacterAtIndex = (string, index, character) => (
     string.substring(0, index) + character + string.substring(index + 1)
 )
 
-export const replaceStraightWithSmartQuotes = text => {
+export const replaceStraightWithSmartQuotes = (text = '') => {
     QUOTES_CONFIGS.forEach(({
         straightQuote,
         openingSmartQuote,

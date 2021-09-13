@@ -8,10 +8,11 @@ const Component = () => (
     <Page
         {...{
             ...pagesMap[id],
+            titleHeading: 'Playing your turn',
             body: `
-When it's your turn, place a single domino from your hand onto the board to create at least one valid chord. No domino previously placed on the board may be moved.
+When it's your turn, place a single domino from your hand onto the board to create at least one valid chord. No domino previously placed on the board may be shifted.
 
-Two faces in a row make up a dyad. Dyads aren't chords, and it's permitted to create any number of them. However, any three or more faces in a row must be a valid chord. No row may have duplicate faces.
+Two faces in a row make up a dyad. Since dyads aren't chords, it's permitted to create any number of them. However, any three or more faces in a row must be a valid chord. No row may have duplicate faces.
 
 Count the points earned from playing this domino. You may then repeat this step for each remaining domino in your hand until none are left.
 

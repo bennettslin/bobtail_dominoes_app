@@ -15,8 +15,8 @@ const pageConfigs = [
         title: `Scoring`,
     },
     {
-        id: `demo`,
-        title: `Demo`,
+        id: `example`,
+        title: `Example`,
     },
 ]
 

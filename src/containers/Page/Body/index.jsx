@@ -11,6 +11,7 @@ import './style'
 const Body = () => {
     const {
         pageHeading,
+        titleHeading,
         title,
         date,
         body,
@@ -25,21 +26,15 @@ const Body = () => {
                 ),
             }}
         >
-            {pageHeading && (
-                <Heading>
-                    {replaceStraightWithSmartQuotes(pageHeading)}
-                </Heading>
-            )}
-            {title && (
-                <Heading {...{ level: 3 }}>
-                    {replaceStraightWithSmartQuotes(title)}
-                </Heading>
-            )}
-            {date && (
-                <Heading {...{ level: 5 }}>
-                    {getHeaderFromDate(date)}
-                </Heading>
-            )}
+            <Heading>
+                {replaceStraightWithSmartQuotes(pageHeading)}
+            </Heading>
+            <Heading {...{ level: 3 }}>
+                {replaceStraightWithSmartQuotes(titleHeading || title)}
+            </Heading>
+            <Heading {...{ level: 5 }}>
+                {getHeaderFromDate(date)}
+            </Heading>
             {body && (
                 (Array.isArray(body) ? body : [body])
                     .map((child, index) => (

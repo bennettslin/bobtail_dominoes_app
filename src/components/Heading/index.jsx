@@ -10,7 +10,7 @@ const Heading = ({
 }) => {
     const Tag = `h${level}`
 
-    return (
+    return Boolean(children) && (
         <Tag
             {...{
                 className: cx(
