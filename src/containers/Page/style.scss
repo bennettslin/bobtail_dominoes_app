@@ -10,8 +10,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: $margin__md;
 
-    padding: $margin__md;
+    padding: $margin__xl $margin__md;
     overflow-y: scroll;
 
     background-color: $colour__background__light;
