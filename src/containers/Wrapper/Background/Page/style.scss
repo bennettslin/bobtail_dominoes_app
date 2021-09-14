@@ -11,5 +11,14 @@
 
     @media (min-width: $width__page__narrow) {
         width: $width__page__narrow;
+
+        background: linear-gradient(
+            to right,
+            hsl(0, 0%, 0%) 0% 15%,
+            hsl(120, 50%, 25%) 45%,
+            hsl(120, 50%, 25%) 55%,
+            hsl(0, 0%, 0%) 85% 100%
+        );
     }
+
 }

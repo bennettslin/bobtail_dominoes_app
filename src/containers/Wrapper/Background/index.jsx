@@ -1,6 +1,6 @@
 import React from 'react'
 import cx from 'classnames'
-// import BackgroundPage from './Page'
+import BackgroundPage from './Page'
 import './style'
 
 const Background = () => (
@@ -11,7 +11,7 @@ const Background = () => (
             ),
         }}
     >
-        {/* <BackgroundPage /> */}
+        <BackgroundPage />
     </div>
 )
 
