@@ -1,0 +1,12 @@
+@import '../../scss/constants/borders.scss';
+
+.DominoSvg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        border-radius: $borderRadius__wide;
+        overflow: hidden;
+    }
+}

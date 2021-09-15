@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { Fragment, useContext } from 'react'
 import cx from 'classnames'
 import PageConfigContext from '../../../contexts/PageConfig'
 import ContactEmail from '../../../components/ContactEmail'
@@ -42,7 +42,9 @@ const Body = () => {
                             <Markdown {...{ key: index }}>
                                 {child}
                             </Markdown>
-                        ) : child
+                        ) : <Fragment {...{ key: index }}>
+                            {child}
+                        </Fragment>
                     ))
             )}
             {showContactEmail && (

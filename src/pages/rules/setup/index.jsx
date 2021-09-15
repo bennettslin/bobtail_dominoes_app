@@ -1,6 +1,8 @@
 import React from 'react'
+import DominoSvg from '../../../components/DominoSvg'
 import Page from '../../../containers/Page'
 import { pagesMap } from '../../../content/rules'
+import dominoPiecesSemitone from '../../../assets/svgs/rules/dominoPiecesSemitone'
 
 const id = 'setup'
 
@@ -13,7 +15,12 @@ const Component = () => (
                 `
 The Standard edition contains the standard set of 48 dominoes. These represent all whole tones, minor and major thirds, and perfect fourths. The Extended edition adds semitones and tritones to the standard set, for a total of 66 dominoes.
                 `,
-                // Image here.
+                (
+                    <DominoSvg {...{
+                        src: dominoPiecesSemitone,
+                        scaleFactor: 0.75,
+                    }} />
+                ),
                 `
 We recommend playing the standard set, but advanced players may choose to play the extended set. To play the standard set with the Extended edition, remove all semitone and tritone dominoes.
 

@@ -10,10 +10,28 @@ svg {
             stroke-width: 15px;
         }
         .background { fill: hsl(160, 30%, 39%); }
+        
+        .textFirstShadow { fill: hsl(180, 32.8%, 22.7%); }
+        .textFirst { fill: hsl(180, 100%, 75.1%); }
+        .outlineFirst { stroke: hsl(180, 63.1%, 59.6%); }
+        
+        .textErrorShadow { fill: hsl(0, 32.8%, 22.7%); }    
+        .textError { fill: hsl(0, 100%, 75.1%); }    
+        .outlineError { stroke: hsl(0, 61%, 61.8%); }
+
+        .iconError { fill: hsl(0, 58.9%, 63.7%); }    
+        .iconSuccess { fill: hsl(150.2, 65%, 57.5%); }
+
         .left { fill: hsl(45, 5%, 57%); }
         .right { fill: hsl(45, 5%, 47%); }
         .edge { fill: hsl(45, 20%, 77%); }
         .face { fill: hsl(45, 30%, 87%); }
+
+        .leftNew { fill: hsl(60, 19.3%, 33.5%); }    
+        .rightNew { fill: hsl(60, 20.3%, 29%); }    
+        .edgeNew { fill: hsl(60, 25%, 56.1%); }    
+        .faceNew { fill: hsl(60, 35.2%, 64.3%); }    
+
         .dotsBottom { fill: hsl(0, 0%, 37%); }
         .dotsFace { fill: hsl(0, 0%, 52%); }
         .cBottom { fill: hsl(5, 40%, 42%); }

@@ -1,6 +1,9 @@
 import React from 'react'
+import DominoSvg from '../../../components/DominoSvg'
 import Page from '../../../containers/Page'
 import { pagesMap } from '../../../content/rules'
+import dominoesPlayingValid from '../../../assets/svgs/rules/dominoesPlayingValid'
+import dominoesPlayingError from '../../../assets/svgs/rules/dominoesPlayingError'
 
 const id = 'playing'
 
@@ -12,10 +15,16 @@ const Component = () => (
             body: [
                 `
 When it's your turn, place a single domino from your hand onto the board to create at least one valid chord. No domino previously placed on the board may be shifted.
-
+                `,
+                (
+                    <DominoSvg {...{ src: dominoesPlayingValid }} />
+                ),
+                `
 Two faces in a row make up a dyad. Since dyads aren't chords, it's permitted to create any number of them. However, any three or more faces in a row must be a valid chord. No row may have duplicate faces.
                 `,
-                // Image here.
+                (
+                    <DominoSvg {...{ src: dominoesPlayingError }} />
+                ),
                 `
 Count the points earned from playing this domino. You may then repeat this step for each remaining domino in your hand until none are left.
 
