@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { useDispatch } from 'react-redux'
 import { Link } from 'gatsby'
+import Flex from '../Flex'
 import ButtonAnimatable from './Animatable'
 import Tooltip from './Tooltip'
 import { updateSelectedPagePath } from '../../redux/page/action'
@@ -48,7 +49,7 @@ const Button = forwardRef(({
     }
 
     return (
-        <Tag
+        <Flex
             {...{
                 ref,
                 className: cx(
@@ -64,6 +65,7 @@ const Button = forwardRef(({
                     'data-tip': tooltipText,
                 },
                 disabled: isSelected,
+                Tag,
             }}
         >
             <ButtonAnimatable {...{ isSelected }}>
@@ -78,7 +80,7 @@ const Button = forwardRef(({
                     }}
                 />
             )}
-        </Tag>
+        </Flex>
     )
 })
 

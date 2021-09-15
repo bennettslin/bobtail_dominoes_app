@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { CSSTransition } from 'react-transition-group'
+import Flex from '../../Flex'
 import PopupCloseButton from './CloseButton'
 import './style'
 
@@ -26,18 +27,19 @@ const PopupView = ({
                 },
             }}
         >
-            <div
+            <Flex
                 {...{
                     className: cx(
                         'PopupView',
                         `${popupName}View`,
                     ),
+                    flexDirection: 'column',
                     onClick,
                 }}
             >
                 {children}
                 <PopupCloseButton {...{ handleCloseClick }} />
-            </div>
+            </Flex>
         </CSSTransition>
     )
 }

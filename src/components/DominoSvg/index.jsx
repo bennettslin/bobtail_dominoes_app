@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import Flex from '../Flex'
 import Svg from '../Svg'
 import './style'
 
@@ -10,7 +11,7 @@ const DominoSvg = ({
     src,
     scaleFactor = 1,
 }) => (
-    <div
+    <Flex
         {...{
             className: cx(
                 'DominoSvg',
@@ -24,7 +25,7 @@ const DominoSvg = ({
                 scaleFactor: scaleFactor * DOMINO_SCALE_FACTOR,
             }}
         />
-    </div>
+    </Flex>
 )
 
 DominoSvg.propTypes = {

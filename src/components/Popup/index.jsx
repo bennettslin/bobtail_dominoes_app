@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { CSSTransition } from 'react-transition-group'
+import Flex from '../Flex'
 import PopupView from './View'
 import './style'
 
@@ -25,7 +26,7 @@ const Popup = ({
                 },
             }}
         >
-            <div
+            <Flex
                 {...{
                     className: cx(
                         'Popup',
@@ -42,7 +43,7 @@ const Popup = ({
                         children,
                     }}
                 />
-            </div>
+            </Flex>
         </CSSTransition>
     )
 }

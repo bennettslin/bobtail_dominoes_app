@@ -1,13 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import Flex from '../../Flex'
 import './style'
 
 const ButtonAnimatable = ({
     isSelected,
     children,
 }) => (
-    <div
+    <Flex
         {...{
             className: cx(
                 'ButtonAnimatable',
@@ -16,7 +17,7 @@ const ButtonAnimatable = ({
         }}
     >
         {children}
-    </div>
+    </Flex>
 )
 
 ButtonAnimatable.propTypes = {

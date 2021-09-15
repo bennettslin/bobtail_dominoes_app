@@ -7,11 +7,6 @@
 .PopupView {
     position: relative;
     width: $width__modal;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: $margin__sm;
 
     padding: $margin__md;

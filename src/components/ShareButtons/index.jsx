@@ -1,12 +1,13 @@
 import React from 'react'
 import cx from 'classnames'
+import Flex from '../Flex'
 import FacebookButton from './ShareButton/FacebookButton'
 import TwitterButton from './ShareButton/TwitterButton'
 import CopyUrlButton from './ShareButton/CopyUrlButton'
 import './style'
 
 const ShareButtons = () => (
-    <div
+    <Flex
         {...{
             className: cx(
                 'ShareButtons',
@@ -19,7 +20,7 @@ const ShareButtons = () => (
         <FacebookButton />
         <TwitterButton />
         <CopyUrlButton />
-    </div>
+    </Flex>
 )
 
 export default ShareButtons
