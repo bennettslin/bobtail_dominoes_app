@@ -1,36 +1,63 @@
 svg {
-    &.dominoes {
-        .text {
-            font-size: 72px;
-            fill: hsl(45, 100%, 90%);
-            font-family: Fresca-Regular, Fresca;
+    &.dominoes {            
+        [class^=text] {
+            font-size: 84px;
+            font-family: Fresca;
         }
-        .outline {
+        [class^=outline] {
+            fill: none;
+            stroke-width: 10px;
+        }
+
+        .textLogoShadow {
+            fill: #7a708c;
+        }
+
+        .textLogo {
+            fill: #9b8fb3;
+        }
+
+        .textLogoPresent {
+            font-size: 84px;
+            fill: #b57070;
+            font-family: Rancho;
+        }
+        
+        .textFelt { fill: hsl(45, 100%, 90%); }
+        .outlineFelt {
             stroke: hsl(45, 100%, 90%);
             stroke-width: 15px;
         }
-        .background { fill: hsl(160, 30%, 39%); }
-        
-        .textFirstShadow { fill: hsl(180, 32.8%, 22.7%); }
-        .textFirst { fill: hsl(180, 100%, 75.1%); }
-        .outlineFirst { stroke: hsl(180, 63.1%, 59.6%); }
-        
-        .textErrorShadow { fill: hsl(0, 32.8%, 22.7%); }    
-        .textError { fill: hsl(0, 100%, 75.1%); }    
-        .outlineError { stroke: hsl(0, 61%, 61.8%); }
+        .background { fill: hsl(160, 30%, 37%); }
 
-        .iconError { fill: hsl(0, 58.9%, 63.7%); }    
-        .iconSuccess { fill: hsl(150.2, 65%, 57.5%); }
+        .textFirstShadow { fill: hsl(180, 65%, 22%); }
+        .outlineFirstShadow { stroke: hsl(180, 65%, 22%); }
+        .textFirst { fill: hsl(180, 65%, 72%); }
+        .outlineFirst { stroke: hsl(180, 65%, 72%); }
+
+        .textSecondShadow { fill: hsl(30, 65%, 22%); }
+        .outlineSecondShadow { stroke: hsl(30, 65%, 22%); }
+        .textSecond { fill: hsl(30, 65%, 72%); }
+        .outlineSecond { stroke: hsl(30, 65%, 72%); }
+        
+        .iconErrorShadow,
+        .textErrorShadow { fill: hsl(0, 65%, 22%); }
+        .outlineErrorShadow { stroke: hsl(0, 65%, 22%); }
+        .iconError, .textError { fill: hsl(0, 65%, 72%); }
+        .outlineError { stroke: hsl(0, 65%, 72%); }
+
+        .iconSuccessShadow { fill: hsl(150, 65%, 22%); }
+        .iconSuccess { fill: hsl(150, 65%, 72%); }
 
         .left { fill: hsl(45, 5%, 57%); }
         .right { fill: hsl(45, 5%, 47%); }
         .edge { fill: hsl(45, 20%, 77%); }
         .face { fill: hsl(45, 30%, 87%); }
 
-        .leftNew { fill: hsl(60, 19.3%, 33.5%); }    
-        .rightNew { fill: hsl(60, 20.3%, 29%); }    
-        .edgeNew { fill: hsl(60, 25%, 56.1%); }    
-        .faceNew { fill: hsl(60, 35.2%, 64.3%); }    
+        .leftNew { fill: hsl(60, 19.3%, 33.5%); }
+        .rightNew { fill: hsl(60, 20.3%, 29%); }
+        .edgeNew { fill: hsl(60, 25%, 56.1%); }
+        .faceNew { fill: hsl(60, 35.2%, 64.3%); }
 
         .dotsBottom { fill: hsl(0, 0%, 37%); }
         .dotsFace { fill: hsl(0, 0%, 52%); }

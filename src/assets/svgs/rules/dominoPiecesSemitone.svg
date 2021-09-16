@@ -1,4 +1,4 @@
-<svg id="layout" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3715.58 3301.33">
+<svg id="dominoes" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3715.58 3301.33">
   <defs>
     <style>
       .cls-1 {
@@ -130,7 +130,7 @@
       }
 
       .cls-33 {
-        font-size: 72px;
+        font-size: 84px;
         fill: #fff2cc;
         font-family: Fresca-Regular, Fresca;
       }
@@ -3779,20 +3779,20 @@
       <path id="dotsFace-72" data-name="dotsFace" class="cls-12" d="M501.5,2840.64l15-8.66.13-.1a1,1,0,0,0-.13-.09l-15-8.66a3,3,0,0,0-4.5,2.59V2838A3,3,0,0,0,501.5,2840.64Z"/>
     </g>
   </g>
-  <g id="text">
-    <text class="cls-33" transform="translate(1399.7 3147.54)">Extended edition (66 dominoes)</text>
-    <text class="cls-33" transform="translate(1408.37 3047.54)">Standard edition (48 dominoes)</text>
-    <text class="cls-33" transform="translate(3155.91 192.6)">tritone</text>
-    <text class="cls-33" transform="translate(2400.36 192.6)">perfect fourth</text>
-    <text class="cls-33" transform="translate(1941.8 192.6)">major third</text>
-    <text class="cls-33" transform="translate(1440.32 192.6)">minor third</text>
-    <text class="cls-33" transform="translate(943.38 192.6)">whole tone</text>
-    <text class="cls-33" transform="translate(324.01 192.6)">semitone</text>
+  <g id="textFelt">
+    <text class="cls-33" transform="translate(1383.32 3147.54)">extended set (66 dominoes)</text>
+    <text class="cls-33" transform="translate(1394.37 3047.54)">standard set (48 dominoes)</text>
+    <text class="cls-33" transform="translate(3138.93 192.6)">tritone</text>
+    <text class="cls-33" transform="translate(2365.84 192.6)">perfect fourth</text>
+    <text class="cls-33" transform="translate(1914.13 192.6)">major third</text>
+    <text class="cls-33" transform="translate(1412.46 192.6)">minor third</text>
+    <text class="cls-33" transform="translate(915.98 192.6)">whole tone</text>
+    <text class="cls-33" transform="translate(301.72 192.6)">semitone</text>
   </g>
-  <g id="outline">
-    <path class="cls-34" d="M2321.74,3027.54h572.5a13.26,13.26,0,0,0,13.26-13.17V172.6"/>
-    <path class="cls-34" d="M807.5,172.6V3014.37a13.26,13.26,0,0,0,13.26,13.17h569.41"/>
-    <path class="cls-34" d="M2330.46,3127.54H3541.39a16.92,16.92,0,0,0,16.69-17V172.6"/>
-    <path class="cls-34" d="M157.5,172.6V3110.51a16.92,16.92,0,0,0,16.69,17h1209"/>
+  <g id="outlineFelt">
+    <path class="cls-34" d="M2345,3027.54h549.29a13.26,13.26,0,0,0,13.26-13.17V172.6"/>
+    <path class="cls-34" d="M807.5,172.6V3014.37a13.26,13.26,0,0,0,13.26,13.17H1370.7"/>
+    <path class="cls-34" d="M2354.43,3127.54h1187a16.92,16.92,0,0,0,16.69-17V172.6"/>
+    <path class="cls-34" d="M157.5,172.6V3110.51a16.92,16.92,0,0,0,16.69,17H1361.38"/>
   </g>
 </svg>
