@@ -36,7 +36,7 @@ You then place your second domino on the board, creating another triad and anoth
                 `
 Notice that this seventh chord extends the triad that you created with your first domino. The order here matters! Had you placed the second domino first, the chords would still be the same, but you would have fewer points.
 
-Finally, you're ready to place your third domino on the board, this time to create a seventh chord for 4 points. But only one face of the domino is needed for this chord, which means there are several possible orientations.
+Finally, you're ready to place your third domino on the board, this time to create a seventh chord for 4 points. But since only one face of the domino is needed for this chord, there are several possible orientations to choose from.
                 `,
                 (
                     <DominoSvg {...{ src: dominoesExample4 }} />
