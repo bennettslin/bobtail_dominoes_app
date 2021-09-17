@@ -1,5 +1,7 @@
 svg {
     &.dominoes {            
+        .background { fill: hsl(160, 30%, 37%); }
+
         [class^=text] {
             font-size: 84px;
             font-family: Fresca;
@@ -9,26 +11,19 @@ svg {
             stroke-width: 10px;
         }
 
-        .textLogoShadow {
-            fill: #7a708c;
-        }
-
-        .textLogo {
-            fill: #9b8fb3;
-        }
-
-        .textLogoPresent {
-            font-size: 84px;
-            fill: #b57070;
-            font-family: Rancho;
-        }
-        
         .textFelt { fill: hsl(45, 100%, 90%); }
         .outlineFelt {
             stroke: hsl(45, 100%, 90%);
             stroke-width: 15px;
         }
-        .background { fill: hsl(160, 30%, 37%); }
+
+        .textLogoPresent {
+            fill: hsl(0, 32%, 57%);
+            font-family: Rancho;
+        }
+
+        .textLogoShadow { fill: hsl(270, 10%, 52%); }
+        .textLogo { fill: hsl(270, 20%, 72%); }
 
         .textFirstShadow { fill: hsl(180, 65%, 22%); }
         .outlineFirstShadow { stroke: hsl(180, 65%, 22%); }
@@ -54,10 +49,10 @@ svg {
         .edge { fill: hsl(45, 20%, 77%); }
         .face { fill: hsl(45, 30%, 87%); }
 
-        .leftNew { fill: hsl(60, 19.3%, 33.5%); }
-        .rightNew { fill: hsl(60, 20.3%, 29%); }
-        .edgeNew { fill: hsl(60, 25%, 56.1%); }
-        .faceNew { fill: hsl(60, 35.2%, 64.3%); }
+        .leftNew { fill: hsl(60, 5%, 37%); }
+        .rightNew { fill: hsl(60, 5%, 27%); }
+        .edgeNew { fill: hsl(60, 20%, 57%); }
+        .faceNew { fill: hsl(60, 30%, 67%); }
 
         .dotsBottom { fill: hsl(0, 0%, 37%); }
         .dotsFace { fill: hsl(0, 0%, 52%); }
