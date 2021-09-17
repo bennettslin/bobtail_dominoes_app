@@ -1,19 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ReactInlineSvg from 'react-inlinesvg'
-import { getSvgWithDimensions } from './helper'
+import { getSvgWithDimensions } from './helpers/dimensions'
+import { getSvgWithClassStyles } from './helpers/styles'
 
 const Svg = ({
     src,
-    inlineDimensions,
-    scaleFactor = 1,
+    scaleFactor,
+    styles,
 }) => {
     const preProcessor = svgString => {
-        return (
-            inlineDimensions ?
-                getSvgWithDimensions({ svgString, scaleFactor }) :
-                svgString
-        )
+        return getSvgWithClassStyles({
+            svgString: getSvgWithDimensions({
+                svgString,
+                scaleFactor,
+            }),
+            styles,
+        })
     }
 
     return (
@@ -29,8 +32,10 @@ const Svg = ({
 
 Svg.propTypes = {
     src: PropTypes.string.isRequired,
-    inlineDimensions: PropTypes.bool,
     scaleFactor: PropTypes.number,
+    styles: PropTypes.shape({
+        fill: PropTypes.object,
+    }),
 }
 
 export default Svg

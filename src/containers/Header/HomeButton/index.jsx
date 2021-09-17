@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 import HeaderButton from '../HeaderButton'
-import Svg from '../../../components/Svg'
+import DominoSvg from '../../../components/Svgs/Domino'
 import logo from '../../../assets/svgs/app/logo'
 import { HOME_PAGE } from '../../../constants/pages'
 import './style'
@@ -15,7 +15,7 @@ const HomeButton = () => (
             pagePath: HOME_PAGE,
         }}
     >
-        <Svg
+        <DominoSvg
             {...{
                 src: logo,
             }}

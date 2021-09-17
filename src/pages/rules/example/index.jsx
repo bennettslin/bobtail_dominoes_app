@@ -1,5 +1,5 @@
 import React from 'react'
-import DominoSvg from '../../../components/DominoSvg'
+import DominoSvg from '../../../components/Svgs/Domino'
 import Page from '../../../containers/Page'
 import { pagesMap } from '../../../content/rules'
 import dominoesExample1 from '../../../assets/svgs/rules/dominoesExample1'

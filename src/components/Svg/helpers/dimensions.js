@@ -1,4 +1,8 @@
 export const getSvgWithDimensions = ({ svgString, scaleFactor }) => {
+    if (!Number.isFinite(scaleFactor)) {
+        return svgString
+    }
+
     const
         startIndex = svgString.indexOf('viewBox="'),
         endIndex = svgString.indexOf('">', startIndex + 1),

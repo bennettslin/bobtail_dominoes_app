@@ -1,5 +1,5 @@
 import React from 'react'
-import DominoSvg from '../../../components/DominoSvg'
+import DominoSvg from '../../../components/Svgs/Domino'
 import Page from '../../../containers/Page'
 import { pagesMap } from '../../../content/rules'
 import dominoPiecesSemitone from '../../../assets/svgs/rules/dominoPiecesSemitone'
@@ -13,7 +13,7 @@ const Component = () => (
             titleHeading: 'Setting up',
             body: [
                 `
-The Standard edition contains the standard set of 48 dominoes. These represent all whole tones, minor and major thirds, and perfect fourths. The Extended edition adds semitones and tritones to the standard set, for a total of 66 dominoes.
+The standard set consists of 48 dominoes representing all whole tones, minor and major thirds, and perfect fourths. The extended set includes semitones and tritones as well, for a total of 66 dominoes.
                 `,
                 (
                     <DominoSvg {...{
@@ -22,7 +22,7 @@ The Standard edition contains the standard set of 48 dominoes. These represent a
                     }} />
                 ),
                 `
-We recommend playing the standard set, but advanced players may choose to play the extended set. To play the standard set with the Extended edition, remove all semitone and tritone dominoes.
+We recommend the standard set, but advanced players may choose to play the extended set.
 
 Before playing, the players should decide on which chords to consider valid. We recommend the chords listed on this website, but extended jazz chords and set theory collections are also possible.
 
