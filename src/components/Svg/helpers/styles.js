@@ -53,7 +53,7 @@ export const getSvgWithClassStyles = ({
     const classStyles = getClassStyles({ svgString, styles }),
         stylesString = Object.keys(classStyles).reduce((sum, className) => (
             sum +
-            // TODO: Allow for multiple styles to be passed. Do this in getClassStyles instead.
+            // TODO: Allow for multiple styles to be passed. But do this in getClassStyles instead.
             `.${className}{fill:${classStyles[className]}}`
         ), '')
 

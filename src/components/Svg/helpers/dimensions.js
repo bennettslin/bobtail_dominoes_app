@@ -1,3 +1,7 @@
+const getStyleString = ({ style, length, scaleFactor }) => (
+    `${style}:${(parseFloat(length) * scaleFactor).toFixed(2)}px;`
+)
+
 export const getSvgWithDimensions = ({ svgString, scaleFactor }) => {
     if (!Number.isFinite(scaleFactor)) {
         return svgString
@@ -10,8 +14,18 @@ export const getSvgWithDimensions = ({ svgString, scaleFactor }) => {
 
     return (
         svgString.slice(0, startIndex) +
-            `width="${parseFloat(dimensions[2]) * scaleFactor}px" ` +
-            `height="${parseFloat(dimensions[3]) * scaleFactor}px" ` +
+            `style="` +
+            getStyleString({
+                style: 'max-width',
+                length: dimensions[2],
+                scaleFactor,
+            }) +
+            getStyleString({
+                style: 'max-height',
+                length: dimensions[3],
+                scaleFactor,
+            }) +
+            `"` +
             svgString.slice(startIndex)
     )
 }
