@@ -7,18 +7,23 @@ $offset__inset__top: $length__frame * 0.4;
 $offset__inset__side: $length__frame * 0.125;
 $offset__bottom: $length__frame * 0.5;
 
-$borderRadius__outer: $borderRadius__medium + $length__frame * 0.75;
+$borderRadius__outer: $borderRadius__wide;
+$borderRadius__inner: $borderRadius__wide - $length__frame * 0.66;
 
 .StyledFrame {
     position: relative;
     padding: $length__frame;
     padding-top: $length__frame + $offset__inset__top;
     border-radius: $borderRadius__outer;
+
+    @media (min-width: $width__page__narrow) {
+        width: $width__page__narrow;
+    }
 }
 
 .StyledFrame__body {
     margin: 0 $offset__inset__side;
-    border-radius: $borderRadius__medium;
+    border-radius: $borderRadius__inner;
     overflow: hidden;
 
     & > * {
@@ -38,7 +43,6 @@ $borderRadius__outer: $borderRadius__medium + $length__frame * 0.75;
 
 .StyledFrame__frameFront {
     border-radius: $borderRadius__outer;
-    background-color: #cc8;
     background: linear-gradient(
         120deg,
         #cc8 0 30%,
@@ -55,7 +59,7 @@ $borderRadius__outer: $borderRadius__medium + $length__frame * 0.75;
     width: calc(100% - #{$length__frame * 2});
     height: calc(100% - #{$length__frame * 2});
     margin: $length__frame;
-    border-radius: $borderRadius__medium;
+    border-radius: $borderRadius__inner;
     background-color: #884;
 }
 

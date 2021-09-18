@@ -15,8 +15,4 @@
     overflow-y: scroll;
 
     background-color: $colour__background__light;
-
-    @media (min-width: $width__page__narrow) {
-        width: $width__page__narrow;
-    }
 }

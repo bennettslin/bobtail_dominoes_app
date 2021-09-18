@@ -1,11 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import Flex from '../../../components/Flex'
 import './style'
 
 const StyledFrame = ({ className, children }) => (
-    <Flex
+    <div
         {...{
             className: cx(
                 'StyledFrame',
@@ -13,13 +12,13 @@ const StyledFrame = ({ className, children }) => (
             ),
         }}
     >
-        <div className="StyledFrame__frameBottom" />
-        <div className="StyledFrame__frameFront" />
-        <div className="StyledFrame__frameInset" />
-        <div className="StyledFrame__body">
+        <div {...{ className: 'StyledFrame__frameBottom' }} />
+        <div {...{ className: 'StyledFrame__frameFront' }} />
+        <div {...{ className: 'StyledFrame__frameInset' }} />
+        <div {...{ className: 'StyledFrame__body' }}>
             {children}
         </div>
-    </Flex>
+    </div>
 )
 
 StyledFrame.propTypes = {
