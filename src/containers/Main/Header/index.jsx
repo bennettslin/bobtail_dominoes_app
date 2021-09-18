@@ -4,11 +4,11 @@ import HomeButton from './HomeButton'
 import Menu from './Menu'
 import './style'
 
-const Header = () => (
+const MainHeader = () => (
     <div
         {...{
             className: cx(
-                'Header',
+                'MainHeader',
             ),
         }}
     >
@@ -17,4 +17,4 @@ const Header = () => (
     </div>
 )
 
-export default Header
+export default MainHeader

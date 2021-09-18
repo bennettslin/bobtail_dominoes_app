@@ -2,9 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Background from './Background'
-import Header from '../Header'
 import Main from '../Main'
-import UpsellPopup from '../../components/Popups/Upsell'
+import Popups from '../../components/Popups'
 import './style'
 
 const Wrapper = ({ children }) => (
@@ -17,8 +16,7 @@ const Wrapper = ({ children }) => (
     >
         <Background />
         <Main>{children}</Main>
-        <Header />
-        <UpsellPopup />
+        <Popups />
     </div>
 )
 

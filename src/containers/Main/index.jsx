@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import MainHeader from './Header'
 import MainFooter from './Footer'
 import './style'
 
@@ -12,6 +13,7 @@ const Main = ({ children }) => (
             ),
         }}
     >
+        <MainHeader />
         {children}
         <MainFooter />
     </div>

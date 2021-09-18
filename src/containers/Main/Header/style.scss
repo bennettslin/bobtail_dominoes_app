@@ -1,8 +1,8 @@
-@import '../../scss/constants/colours';
-@import '../../scss/constants/responsive';
-@import '../../scss/constants/shadows';
+@import '../../../scss/constants/colours';
+@import '../../../scss/constants/responsive';
+@import '../../../scss/constants/shadows';
 
-.Header {
+.MainHeader {
     position: relative;
     width: 100%;
     padding: $margin__sm $margin__md;

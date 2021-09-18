@@ -2,11 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
-import Button from '../../../components/Button'
+import Button from '../../../../components/Button'
 import {
     getMapIsSelectedPagePath,
     getMapIsSelectedTabbedPath,
-} from '../../../redux/page/selector'
+} from '../../../../redux/page/selector'
 import './style'
 
 const HeaderButton = ({ className, pagePath, children }) => {

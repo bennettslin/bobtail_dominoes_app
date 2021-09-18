@@ -6,7 +6,7 @@ import {
     CHORDS_PAGE,
     PUZZLES_PAGE,
     // LINKS_PAGE,
-} from '../../../constants/pages'
+} from '../../../../constants/pages'
 import './style'
 
 const Menu = () => (
