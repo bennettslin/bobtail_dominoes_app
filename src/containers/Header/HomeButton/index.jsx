@@ -4,7 +4,6 @@ import HeaderButton from '../HeaderButton'
 import DominoSvg from '../../../components/Svgs/Domino'
 import logo from '../../../assets/svgs/app/logo'
 import { HOME_PAGE } from '../../../constants/pages'
-import './style'
 
 const HomeButton = () => (
     <HeaderButton
@@ -18,6 +17,7 @@ const HomeButton = () => (
         <DominoSvg
             {...{
                 src: logo,
+                isPage: false,
             }}
         />
     </HeaderButton>
