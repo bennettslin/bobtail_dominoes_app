@@ -1,6 +1,5 @@
 @import '../../../scss/constants/colours';
 @import '../../../scss/constants/responsive';
-@import '../../../scss/constants/shadows';
 
 .MainHeader {
     position: relative;
@@ -13,9 +12,9 @@
     align-items: center;
 
     background-color: $colour__background;
-    box-shadow: $boxShadow__above;
 
     @media (min-width: $width__page__narrow) {
+        width: $width__page__narrow;
         flex-direction: row;
     }
 }
