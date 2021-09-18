@@ -1,0 +1,235 @@
+{
+    "[json]": {
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace",
+        "gitlens.codeLens.scopes": [
+            "document"
+        ]
+    },
+    "macros": {
+        /**
+         * VS Code extension.
+         * Install *macros* by geddski.
+         * https://github.com/geddski/macros
+         *
+         * List of VS Code commands.
+         * https://gist.github.com/skfarhat/4e88ef386c93b9dceb98121d9457edbf
+         */
+        "testMacro": [],
+        "prepSvg": [
+            /**
+             * Focus in text editor.
+             *
+             * FIXME: This prevents text from being added, for some reason. I
+             * end up still needing to focus manually.
+             */
+            "workbench.action.focusFirstEditorGroup",
+
+            /* Remove xmlns metadata. */
+            "cursorTop",
+            "cursorWordRight",
+            "cursorRight",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "cursorRightSelect",
+            "deleteLeft",
+
+            /* Remove entire styles field. */
+            "cursorTop",
+            "editor.action.insertLineBefore",
+            "editor.action.insertLineBefore",
+            {"command": "type", "args": {"text": "      }"}},
+            "cursorTop",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "editor.action.selectHighlights",
+            "cursorDownSelect",
+            "editor.action.deleteLines",
+            "editor.action.deleteLines",
+
+            "cursorTop",
+            "editor.action.insertLineBefore",
+            {"command": "type", "args": {"text": "      ."}},
+            "cursorTop",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorWordRightSelect",
+            "editor.action.selectHighlights",
+            "editor.action.deleteLines",
+
+            "cursorTop",
+            "editor.action.insertLineBefore",
+            {"command": "type", "args": {"text": "        fill"}},
+            "cursorTop",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorWordRightSelect",
+            "editor.action.selectHighlights",
+            "editor.action.deleteLines",
+
+            "cursorTop",
+            "editor.action.insertLineBefore",
+            {"command": "type", "args": {"text": "        stroke"}},
+            "cursorTop",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorWordRightSelect",
+            "editor.action.selectHighlights",
+            "editor.action.deleteLines",
+
+            "cursorTop",
+            "editor.action.insertLineBefore",
+            {"command": "type", "args": {"text": "        opacity"}},
+            "cursorTop",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "cursorWordRightSelect",
+            "editor.action.selectHighlights",
+            "editor.action.deleteLines",
+
+            "cursorTop",
+            "editor.action.insertLineBefore",
+            {"command": "type", "args": {"text": "font-"}},
+            "cursorTop",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "editor.action.selectHighlights",
+            "editor.action.deleteLines",
+
+            "cursorTop",
+            "editor.action.insertLineBefore",
+            {"command": "type", "args": {"text": "defs>"}},
+            "cursorTop",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "editor.action.selectHighlights",
+            "editor.action.deleteLines",
+
+            "cursorTop",
+            "editor.action.insertLineBefore",
+            {"command": "type", "args": {"text": "style>"}},
+            "cursorTop",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "editor.action.selectHighlights",
+            "editor.action.deleteLines",
+
+            /* Remove all classes. */
+            "cursorTop",
+            {"command": "type", "args": {"text": " class=\"cls-1\""}},
+            "cursorLineStart",
+            "cursorLeft",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "editor.action.selectHighlights",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "cursorRightSelect",
+            "deleteLeft",
+
+            /* Change ids to classes. */
+            "cursorTop",
+            {"command": "type", "args": {"text": "id=\" "}},
+            "cursorLineStart",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "editor.action.selectHighlights",
+            {"command": "type", "args": {"text": "class=\""}},
+            "cursorTop",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "cursorRightSelect",
+            "deleteLeft",
+
+            /* Remove all data names. */
+            "cursorTop",
+            {"command": "type", "args": {"text": " data-name=\"blah\""}},
+            "cursorLineStart",
+            "cursorLeft",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "editor.action.selectHighlights",
+            "cursorWordRightSelect",
+            "cursorRightSelect",
+            "deleteLeft",
+            "cursorLeft",
+            "cursorWordLeftSelect",
+            "cursorLeftSelect",
+            "deleteLeft",
+
+            /* Remove all useless transform translates. */
+            "cursorTop",
+            {"command": "type", "args": {"text": " transform=\"translate(0 0)\""}},
+            "cursorLineStart",
+            "cursorLeft",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "cursorRightSelect",
+            "cursorRightSelect",
+            "editor.action.selectHighlights",
+            "deleteLeft",
+
+            /* Remove all bases. */
+            "cursorTop",
+            "editor.action.insertLineBefore",
+            {"command": "type", "args": {"text": "class=\"base\"\nblah\nblah\nblah"}},
+            "cursorTop",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "cursorWordRightSelect",
+            "cursorRightSelect",
+            "editor.action.selectHighlights",
+            "editor.action.toggleWordWrap",
+            "cursorDownSelect",
+            "cursorDownSelect",
+            "cursorDownSelect",
+            "editor.action.deleteLines",
+            "editor.action.toggleWordWrap",
+
+            // /* Save file . */
+            "workbench.action.files.save",
+
+            // /* Focus in side bar. */
+            "workbench.action.focusSideBar"
+        ],
+    }
+}

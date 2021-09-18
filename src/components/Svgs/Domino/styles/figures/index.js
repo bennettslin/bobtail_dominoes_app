@@ -11,11 +11,11 @@ export default {
         outlineErrorShadow: hsl(0, 65, 22),
         outlineError: hsl(0, 65, 72),
 
-        outlineFelt: hsl(45, 100, 90),
+        outlineBoard: hsl(45, 100, 90),
     },
     fill: {
         textLogoPresent: hsl(0, 32, 57),
-        textFelt: hsl(45, 100, 90),
+        textBoard: hsl(45, 100, 90),
 
         textLogoShadow: hsl(270, 10, 52),
         textLogo: hsl(270, 20, 72),

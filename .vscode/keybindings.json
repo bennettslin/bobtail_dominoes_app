@@ -1,0 +1,11 @@
+// Copy this to the editor's key bindings.
+[
+    {
+        "key": "ctrl+alt+cmd+h",
+        "command": "macros.testMacro"
+    },
+    {
+        "key": "ctrl+alt+cmd+j",
+        "command": "macros.prepSvg"
+    }
+]

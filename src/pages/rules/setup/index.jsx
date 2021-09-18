@@ -2,7 +2,7 @@ import React from 'react'
 import DominoSvg from '../../../components/Svgs/Domino'
 import Page from '../../../containers/Page'
 import { pagesMap } from '../../../content/rules'
-import dominoPiecesSemitone from '../../../assets/svgs/rules/dominoPiecesSemitone'
+import dominoesExtendedSet from '../../../assets/svgs/rules/dominoesExtendedSet'
 
 const id = 'setup'
 
@@ -17,7 +17,7 @@ The standard set consists of 48 dominoes representing all whole tones, minor and
                 `,
                 (
                     <DominoSvg {...{
-                        src: dominoPiecesSemitone,
+                        src: dominoesExtendedSet,
                         scaleFactor: 0.75,
                     }} />
                 ),

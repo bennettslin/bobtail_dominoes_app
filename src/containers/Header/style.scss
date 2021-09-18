@@ -14,4 +14,8 @@
 
     background-color: $colour__background;
     box-shadow: $boxShadow__above;
+
+    @media (min-width: $width__page__narrow) {
+        flex-direction: row;
+    }
 }
