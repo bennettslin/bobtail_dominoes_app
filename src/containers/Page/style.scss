@@ -17,17 +17,9 @@
 
     background-color: $colour__background__light;
 
-    box-shadow: $boxShadow__above;
-}
+    // box-shadow: $boxShadow__above;
 
-.Page__narrow {
     @media (min-width: $width__page__narrow) {
         width: $width__page__narrow;
-    }
-}
-
-.Page__wide {
-    @media (min-width: $width__page__wide) {
-        width: $width__page__wide;
     }
 }

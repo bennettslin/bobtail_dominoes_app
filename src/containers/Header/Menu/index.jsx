@@ -5,7 +5,7 @@ import {
     RULES_PAGE,
     CHORDS_PAGE,
     PUZZLES_PAGE,
-    LINKS_PAGE,
+    // LINKS_PAGE,
 } from '../../../constants/pages'
 import './style'
 
@@ -26,9 +26,9 @@ const Menu = () => (
         <HeaderButton {...{ pagePath: PUZZLES_PAGE }}>
             Puzzles
         </HeaderButton>
-        <HeaderButton {...{ pagePath: LINKS_PAGE }}>
+        {/* <HeaderButton {...{ pagePath: LINKS_PAGE }}>
             Links
-        </HeaderButton>
+        </HeaderButton> */}
     </div>
 )
 

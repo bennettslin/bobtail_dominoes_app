@@ -9,7 +9,6 @@ import PageFooter from './Footer'
 import './style'
 
 const Page = ({
-    isWide,
     children,
     ...rest
 }) => (
@@ -18,9 +17,6 @@ const Page = ({
             {...{
                 className: cx(
                     'Page',
-                    isWide ?
-                        'Page__wide' :
-                        'Page__narrow',
                 ),
             }}
         >
@@ -38,7 +34,6 @@ const Page = ({
 )
 
 Page.propTypes = {
-    isWide: PropTypes.bool,
     noShare: PropTypes.bool,
     showContactEmail: PropTypes.bool,
     children: PropTypes.node,
