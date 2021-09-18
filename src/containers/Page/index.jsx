@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import PageConfigContext from '../../contexts/PageConfig'
 import Helmet from '../../components/Helmet'
+import StyledPage from './StyledPage'
 import TabbedMenu from './TabbedMenu'
 import Body from './Body'
 import PageFooter from './Footer'
@@ -13,23 +14,25 @@ const Page = ({
     ...rest
 }) => (
     <PageConfigContext.Provider {...{ value: rest }}>
-        <div
-            {...{
-                className: cx(
-                    'Page',
-                ),
-            }}
-        >
-            <Helmet />
-            {/* This assumes children or markdown, but never both. */}
-            {(children ? children : (
-                <>
-                    <TabbedMenu />
-                    <Body />
-                    <PageFooter />
-                </>
-            ))}
-        </div>
+        <StyledPage>
+            <div
+                {...{
+                    className: cx(
+                        'Page',
+                    ),
+                }}
+            >
+                <Helmet />
+                {/* This assumes children or markdown, but never both. */}
+                {(children ? children : (
+                    <>
+                        <TabbedMenu />
+                        <Body />
+                        <PageFooter />
+                    </>
+                ))}
+            </div>
+        </StyledPage>
     </PageConfigContext.Provider>
 )
 
