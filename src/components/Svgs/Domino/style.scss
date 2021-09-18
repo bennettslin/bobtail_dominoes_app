@@ -9,10 +9,7 @@
         fill: none;
         stroke-width: 10px;
     }
-    .outlineFelt {
-        stroke-width: 15px;
-    }
-    .textLogoPresent {
+    [class^=textRancho] {
         font-family: Rancho;
     }
 }

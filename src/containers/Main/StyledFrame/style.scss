@@ -1,0 +1,66 @@
+@import '../../../scss/constants/borders';
+@import '../../../scss/constants/colours';
+@import '../../../scss/constants/responsive';
+
+$length__frame: 8px;
+$offset__inset__top: $length__frame * 0.4;
+$offset__inset__side: $length__frame * 0.125;
+$offset__bottom: $length__frame * 0.5;
+
+$borderRadius__outer: $borderRadius__medium + $length__frame * 0.75;
+
+.StyledFrame {
+    position: relative;
+    padding: $length__frame;
+    padding-top: $length__frame + $offset__inset__top;
+    border-radius: $borderRadius__outer;
+}
+
+.StyledFrame__body {
+    margin: 0 $offset__inset__side;
+    border-radius: $borderRadius__medium;
+    overflow: hidden;
+
+    & > * {
+        position: relative;
+    }
+}
+
+.StyledFrame__frameFront,
+.StyledFrame__frameInset,
+.StyledFrame__frameBottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.StyledFrame__frameFront {
+    border-radius: $borderRadius__outer;
+    background-color: #cc8;
+    background: linear-gradient(
+        120deg,
+        #cc8 0 30%,
+        #dd9 30% 35%,
+        #cc8 35% 45%,
+        #dd9 45% 55%,
+        #cc8 55% 60%,
+        #dd9 60% 70%,
+        #cc8 70% 100%,
+    );
+}
+
+.StyledFrame__frameInset {
+    width: calc(100% - #{$length__frame * 2});
+    height: calc(100% - #{$length__frame * 2});
+    margin: $length__frame;
+    border-radius: $borderRadius__medium;
+    background-color: #884;
+}
+
+.StyledFrame__frameBottom {
+    top: $offset__bottom;
+    border-radius: $borderRadius__outer;
+    background-color: #884;
+}

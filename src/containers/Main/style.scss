@@ -4,14 +4,15 @@
     position: relative;
     width: 100%;
     flex-grow: 1;
+    padding: $margin__sm 0;
     
     display: flex;
     flex-direction: column;
     align-items: center;
     
-    // @media (min-width: $width__page__narrow) {
-    //     gap: $margin__md;
-    // }
+    @media (min-width: $width__page__narrow) {
+        gap: $margin__md;
+    }
 }
 
 #gatsby-focus-wrapper {

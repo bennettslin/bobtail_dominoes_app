@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { CSSTransition } from 'react-transition-group'
 import MailingList from '../../../components/MailingList'
 import FollowButtons from '../../../components/FollowButtons'
+import StyledFrame from '../StyledFrame'
 import { mapIsUpsellShown } from '../../../redux/option/selector'
 import './style'
 
@@ -23,19 +24,30 @@ const MainFooter = () => {
                 in: didMount && !isUpsellShown,
                 timeout: 200,
                 classNames: {
-                    enterDone: 'MainFooter__visible',
+                    enterDone: 'MainFooter__containerVisible',
                 },
             }}
         >
             <div
                 {...{
                     className: cx(
-                        'MainFooter',
+                        'MainFooter__container',
                     ),
                 }}
             >
-                <MailingList />
-                <FollowButtons />
+                <StyledFrame>
+                    <div
+                        {...{
+                            className: cx(
+                                'MainFooter',
+                            ),
+                        }}
+                    >
+
+                        <MailingList />
+                        <FollowButtons />
+                    </div>
+                </StyledFrame>
             </div>
         </CSSTransition>
     )

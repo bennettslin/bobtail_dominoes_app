@@ -9,16 +9,14 @@
     background-color: $colour__background__light;
     box-shadow: $boxShadow__above;
 
-    @media (min-width: $width__page__narrow) {
-        width: $width__page__narrow;
-
-        background: linear-gradient(
-            to right,
-            hsl(0, 0%, 0%) 0% 15%,
-            hsl(120, 50%, 25%) 45%,
-            hsl(120, 50%, 25%) 55%,
-            hsl(0, 0%, 0%) 85% 100%
-        );
-    }
-
+    background: linear-gradient(
+        to right,
+        hsla(240, 0%, 0%, 0.2) 0% 10%,
+        hsla(300, 50%, 25%, 1) 30%,
+        hsla(300, 50%, 25%, 1) 70%,
+        hsla(240, 0%, 0%, 0.2) 90% 100%
+    );
+    // @media (min-width: $width__page__narrow) {
+    //     width: $width__page__narrow;
+    // }
 }

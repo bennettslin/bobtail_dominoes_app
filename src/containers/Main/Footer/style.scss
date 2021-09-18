@@ -2,8 +2,16 @@
 @import '../../../scss/constants/responsive';
 @import '../../../scss/constants/transition';
 
+.MainFooter__container {
+    opacity: 0;
+    transition: opacity $transitionDuration__slow $transitionDuration__slower;
+}
+
+.MainFooter__containerVisible {
+    opacity: 1;
+}
+
 .MainFooter {
-    width: 100vw;
     padding: $margin__sm $margin__md;
 
     display: flex;
@@ -13,16 +21,9 @@
     gap: $margin__sm;
 
     background-color: $colour__background;
-
-    opacity: 0;
-    transition: opacity $transitionDuration__slow $transitionDuration__slower;
-
+    
     @media (min-width: $width__page__narrow) {
         width: $width__page__narrow;
         flex-direction: row;
     }
-}
-
-.MainFooter__visible {
-    opacity: 1;
 }

@@ -11,14 +11,18 @@ export default {
         outlineErrorShadow: hsl(0, 65, 22),
         outlineError: hsl(0, 65, 72),
 
-        outlineBoard: hsl(45, 100, 90),
+        outlineBoardShadow: hsl(45, 65, 20),
+        outlineBoard: hsl(45, 65, 85),
     },
     fill: {
-        textLogoPresent: hsl(0, 32, 57),
-        textBoard: hsl(45, 100, 90),
+        textRanchoShadow: hsl(0, 32, 37),
+        textRancho: hsl(0, 32, 57),
 
-        textLogoShadow: hsl(270, 10, 52),
-        textLogo: hsl(270, 20, 72),
+        textLogoShadow: hsl(240, 10, 52),
+        textLogo: hsl(240, 20, 72),
+
+        textBoardShadow: hsl(45, 65, 20),
+        textBoard: hsl(45, 65, 85),
 
         textFirstShadow: hsl(180, 65, 22),
         textFirst: hsl(180, 65, 72),
