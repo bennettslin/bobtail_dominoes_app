@@ -1,19 +1,19 @@
 @import '../constants/colours';
 
 svg {
-    &.copyUrl {
+    .copyUrl {
         fill: hsl(195, 8%, 47%);
     }
 
-    &.copyUrlCopied {
+    .copyUrlCopied {
         fill: hsl(120, 33%, 67%);
     }
 
-    &.facebook {
+    .facebook {
         fill: $colour__facebook;
     }
 
-    &.twitter {
+    .twitter {
         fill: $colour__twitter;
     }
 }

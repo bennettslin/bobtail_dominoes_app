@@ -1,5 +1,22 @@
 @import '../../../scss/constants/borders.scss';
 
+.DominoSvg {
+    [class^=text] {
+        font-size: 84px;
+        font-family: Fresca;
+    }
+    [class^=outline] {
+        fill: none;
+        stroke-width: 10px;
+    }
+    .outlineFelt {
+        stroke-width: 15px;
+    }
+    .textLogoPresent {
+        font-family: Rancho;
+    }
+}
+
 .DominoSvg__page {
     svg {
         border-radius: $borderRadius__wide;
