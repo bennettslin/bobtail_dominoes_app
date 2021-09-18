@@ -13,7 +13,7 @@ export const getMergedStyles = styleGroups => {
 }
 
 export const hsl = (h, s, l, a) => (
-    a || Number.isFinite(a) ?
+    Number.isFinite(a) ?
         `hsla(${h},${s}%,${l}%,${a})` :
         `hsl(${h},${s}%,${l}%)`
 )

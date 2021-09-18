@@ -59,7 +59,7 @@ const getClassStylesString = ({ svgString, styles }) => {
 
     const classStyles = getClassStyles({ svgString, styles })
 
-    return Object.keys(classStyles).reduce((sum, className) => {
+    return Object.keys(classStyles).map(className => {
         const styleStrings = classStyles[className].map(({
             styleKey,
             classStyle,
@@ -67,8 +67,8 @@ const getClassStylesString = ({ svgString, styles }) => {
             `${styleKey}:${classStyle}`
         ))
 
-        return sum + `.${className}{${styleStrings.join(';')}}`
-    }, '')
+        return `.${className}{${styleStrings.join('; ')}}`
+    }).join(' ')
 }
 
 export const getSvgWithClassStyles = ({ svgString, styles }) => {
