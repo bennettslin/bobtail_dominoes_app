@@ -2,6 +2,7 @@ import React from 'react'
 import cx from 'classnames'
 import HeaderButton from '../HeaderButton'
 import {
+    ABOUT_PAGE,
     RULES_PAGE,
     CHORDS_PAGE,
     PUZZLES_PAGE,
@@ -17,6 +18,9 @@ const Menu = () => (
             ),
         }}
     >
+        <HeaderButton {...{ pagePath: ABOUT_PAGE }}>
+            About
+        </HeaderButton>
         <HeaderButton {...{ pagePath: RULES_PAGE }}>
             Rules
         </HeaderButton>
