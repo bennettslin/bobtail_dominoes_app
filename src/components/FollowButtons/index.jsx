@@ -11,11 +11,21 @@ const FollowButtons = () => (
             className: cx(
                 'FollowButtons',
             ),
+            flexDirection: 'column',
+            alignItems: 'normal',
         }}
     >
         <label>Follow the Bobtail Yearlings:</label>
-        <FacebookButton />
-        <TwitterButton />
+        <Flex
+            {...{
+                className: cx(
+                    'FollowButtons__buttons',
+                ),
+            }}
+        >
+            <FacebookButton />
+            <TwitterButton />
+        </Flex>
     </Flex>
 )
 

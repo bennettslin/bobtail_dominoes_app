@@ -2,15 +2,9 @@
 
 .MailingList {
     width: 100%;
-    max-width: 480px;
+    max-width: 360px;
 
     & > :not(:first-child) {
         margin-top: $margin__xs * 0.5;
-    }
-}
-
-.MailingList__label {
-    @media (min-width: $width__page__narrow) {
-        font-size: 1.25em;
     }
 }

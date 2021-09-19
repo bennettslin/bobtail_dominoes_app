@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import PageConfigContext from '../../contexts/PageConfig'
-import Helmet from '../../components/Helmet'
 import StyledPage from './StyledPage'
 import TabbedMenu from './TabbedMenu'
 import Body from './Body'
@@ -22,7 +21,6 @@ const Page = ({
                     ),
                 }}
             >
-                <Helmet />
                 {/* This assumes children or markdown, but never both. */}
                 {(children ? children : (
                     <>
