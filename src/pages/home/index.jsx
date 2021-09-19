@@ -1,11 +1,19 @@
 import React from 'react'
-import DominoSvg from '../../components/Svgs/Domino'
 import Page from '../../containers/Page'
-import dominoesPlayingValid from '../../assets/svgs/rules/dominoesPlayingValid'
+import DominoSvg from '../../components/Svgs/Domino'
+import Flex from '../../components/Flex'
+import samplePerspective from '../../assets/svgs/rules/samplePerspective'
 
 const Component = () => (
     <Page>
-        <DominoSvg {...{ src: dominoesPlayingValid }} />
+        <Flex>
+            <DominoSvg
+                {...{
+                    src: samplePerspective,
+                    scaleFactor: 3,
+                }}
+            />
+        </Flex>
     </Page>
 )
 
