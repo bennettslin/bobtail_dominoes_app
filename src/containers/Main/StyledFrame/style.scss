@@ -3,9 +3,9 @@
 @import '../../../scss/constants/responsive';
 
 $length__frame: 8px;
-$offset__inset__top: $length__frame * 0.4;
-$offset__inset__side: $length__frame * 0.125;
-$offset__bottom: $length__frame * 0.5;
+$length__inset__top: $length__frame * 0.4;
+$length__inset__side: $length__frame * 0.125;
+$length__bottom__edge: $length__frame;
 
 $borderRadius__outer: $borderRadius__wide;
 $borderRadius__inner: $borderRadius__wide - $length__frame * 0.66;
@@ -13,7 +13,7 @@ $borderRadius__inner: $borderRadius__wide - $length__frame * 0.66;
 .StyledFrame {
     position: relative;
     padding: $length__frame;
-    padding-top: $length__frame + $offset__inset__top;
+    padding-top: $length__frame + $length__inset__top;
     border-radius: $borderRadius__outer;
 
     @media (min-width: $width__page__narrow) {
@@ -23,7 +23,7 @@ $borderRadius__inner: $borderRadius__wide - $length__frame * 0.66;
 
 .StyledFrame__body {
     position: relative;
-    margin: 0 $offset__inset__side;
+    margin: 0 $length__inset__side;
     border-radius: $borderRadius__inner;
     overflow: hidden;
 
@@ -67,7 +67,7 @@ $borderRadius__inner: $borderRadius__wide - $length__frame * 0.66;
 }
 
 .StyledFrame__frameBottom {
-    top: $offset__bottom;
+    top: $length__bottom__edge;
     border-radius: $borderRadius__outer;
     background-color: #884;
 }

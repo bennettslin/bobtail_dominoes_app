@@ -1,4 +1,3 @@
-@import '../../scss/constants/colours';
 @import '../../scss/constants/responsive';
 
 .Page {
@@ -7,16 +6,7 @@
     width: 100%;
     padding: $margin__md;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     gap: $margin__md;
 
     overflow-y: scroll;
-
-    background-color: $colour__background__light;
-
-    @media (min-width: $width__page__narrow) {
-        width: $width__page__narrow;
-    }
 }

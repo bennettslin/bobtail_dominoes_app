@@ -12,8 +12,8 @@ const StyledPage = ({ className, children }) => (
             ),
         }}
     >
-        <div {...{ className: 'StyledPage__frameBottom' }} />
-        <div {...{ className: 'StyledPage__frameFront' }} />
+        <div {...{ className: 'StyledPage__pageBottom' }} />
+        <div {...{ className: 'StyledPage__pageSide' }} />
         <div {...{ className: 'StyledPage__body' }}>
             {children}
         </div>
