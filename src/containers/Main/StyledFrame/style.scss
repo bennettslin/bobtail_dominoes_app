@@ -22,9 +22,12 @@ $borderRadius__inner: $borderRadius__wide - $length__frame * 0.66;
 }
 
 .StyledFrame__body {
+    position: relative;
     margin: 0 $offset__inset__side;
     border-radius: $borderRadius__inner;
     overflow: hidden;
+
+    background-color: $colour__background;
 
     & > * {
         position: relative;
