@@ -28,9 +28,11 @@ Before playing, the players should decide on which chords to allow. We recommend
 
 The players should also agree on the maximum number of dominoes held in each player's hand. We recommend three, but advanced players may choose four or five.
 
-Place all dominoes face down. Each player draws a single domino from this pool. The player with a domino face closest to C, in ascending order, goes first. To break a tie, compare the other face.
+Place all dominoes face down to form a pool at the center of the table. Each player draws a single domino from this pool. The player with a domino face closest to C, in ascending order, goes first. To break a tie, compare the other face.
 
-Reshuffle the pool. Draw a single domino and place it on the board. Each player now draws the maximum number of dominoes into their hand.
+Reshuffle the pool and clear a space at its center. Draw a single domino and place it face up in this center. This begins the board, which will expand outward as more dominoes are taken from the pool.
+
+Each player now draws the maximum number of dominoes into their hand.
                 `,
             ],
         }}

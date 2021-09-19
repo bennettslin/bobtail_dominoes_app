@@ -7,6 +7,7 @@ import TabbedMenu from './TabbedMenu'
 import Body from './Body'
 import PageFooter from './Footer'
 import Flex from '../../components/Flex'
+import Helmet from '../../components/Helmet'
 import './style'
 
 const Page = ({
@@ -14,26 +15,25 @@ const Page = ({
     ...rest
 }) => (
     <PageConfigContext.Provider {...{ value: rest }}>
-        <StyledPage>
-            <Flex
-                {...{
-                    className: cx(
-                        'Page',
-                    ),
-                    flexDirection: 'column',
-                    justifyContent: 'normal',
-                }}
-            >
-                {/* This assumes children or markdown, but never both. */}
-                {(children ? children : (
-                    <>
-                        <TabbedMenu />
-                        <Body />
-                        <PageFooter />
-                    </>
-                ))}
-            </Flex>
-        </StyledPage>
+        <Helmet />
+        {/* This assumes children or markdown, but never both. */}
+        {children ? children : (
+            <StyledPage>
+                <Flex
+                    {...{
+                        className: cx(
+                            'Page',
+                        ),
+                        flexDirection: 'column',
+                        justifyContent: 'normal',
+                    }}
+                >
+                    <TabbedMenu />
+                    <Body />
+                    <PageFooter />
+                </Flex>
+            </StyledPage>
+        )}
     </PageConfigContext.Provider>
 )
 

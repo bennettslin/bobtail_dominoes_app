@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Wrapper from '../Wrapper'
 import AppFooter from './Footer'
-import Helmet from '../../components/Helmet'
 import './style'
 
 const App = ({ children }) => (
@@ -15,7 +14,6 @@ const App = ({ children }) => (
             ),
         }}
     >
-        <Helmet />
         <Wrapper>{children}</Wrapper>
         <AppFooter />
     </div>
