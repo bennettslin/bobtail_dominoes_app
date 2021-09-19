@@ -11,6 +11,10 @@ const pageConfigs = [
         title: `Playing`,
     },
     {
+        id: `rotating`,
+        title: `Rotating`,
+    },
+    {
         id: `scoring`,
         title: `Scoring`,
     },

@@ -2,18 +2,18 @@
 @import '../../../scss/constants/colours';
 @import '../../../scss/constants/responsive';
 
-$length__frame: 8px;
-$length__inset__top: $length__frame * 0.4;
-$length__inset__side: $length__frame * 0.125;
-$length__bottom__edge: $length__frame;
+$length__base: $margin__xs;
+$length__inset__top: $length__base * 0.4;
+$length__inset__side: $length__base * 0.125;
+$length__bottom__edge: $length__base;
 
 $borderRadius__outer: $borderRadius__wide;
-$borderRadius__inner: $borderRadius__wide - $length__frame * 0.66;
+$borderRadius__inner: $borderRadius__wide - $length__base * 0.66;
 
 .StyledFrame {
     position: relative;
-    padding: $length__frame;
-    padding-top: $length__frame + $length__inset__top;
+    padding: $length__base;
+    padding-top: $length__base + $length__inset__top;
     border-radius: $borderRadius__outer;
 
     @media (min-width: $width__page__narrow) {
@@ -59,9 +59,9 @@ $borderRadius__inner: $borderRadius__wide - $length__frame * 0.66;
 }
 
 .StyledFrame__frameInset {
-    width: calc(100% - #{$length__frame * 2});
-    height: calc(100% - #{$length__frame * 2});
-    margin: $length__frame;
+    width: calc(100% - #{$length__base * 2});
+    height: calc(100% - #{$length__base * 2});
+    margin: $length__base;
     border-radius: $borderRadius__inner;
     background-color: #884;
 }

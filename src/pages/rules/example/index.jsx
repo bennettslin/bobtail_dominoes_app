@@ -34,7 +34,7 @@ You then place your second domino on the board, creating another triad and anoth
                     <DominoSvg {...{ src: dominoesExample3 }} />
                 ),
                 `
-Notice that this seventh chord extends the triad that you created with your first domino. The order here matters! Had you placed the second domino first, the chords would still be the same, but you would have fewer points.
+Notice that this seventh chord extends the triad that you created with your first domino. The order of placement matters! Had you placed the second domino first, the chords would still be the same, but you would have fewer points.
 
 Finally, you're ready to place your third domino on the board, this time to create a seventh chord for 4 points. But since only one face of the domino is needed for this chord, there are several possible orientations to choose from.
                 `,
@@ -44,9 +44,9 @@ Finally, you're ready to place your third domino on the board, this time to crea
                 `
 Time for some strategy! You decide to place the G face in line with another G face on the board. This prevents your opponents from connecting them, since no chord can have duplicate faces. Your G face also lines up with an F♯-G♭ face to create a semitone dyad, which is very hard to build into a chord.
 
-Don't forget that you played all the dominoes in your hand. That's a bonus of 10 points! Now let's add up your points for this turn.
+Don't forget that you played all the dominoes in your hand. That's a bonus of 7 points! Now let's add up your points for this turn.
 
-7 + 7 + 4 + 10 = 28 points!
+7 + 7 + 4 + 7 = 25 points!
                 `,
             ],
         }}

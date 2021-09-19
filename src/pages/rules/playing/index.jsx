@@ -14,21 +14,19 @@ const Component = () => (
             titleHeading: 'Playing your turn',
             body: [
                 `
-When it's your turn, place a single domino from your hand onto the board to create at least one valid chord. No domino previously placed on the board may be shifted.
+When it's your turn, place a single domino from your hand onto the board to build at least one valid chord.
                 `,
                 (
                     <DominoSvg {...{ src: dominoesPlayingValid }} />
                 ),
                 `
-Two faces in a row make up a dyad. Since dyads aren't chords, it's permitted to create any number of them. However, any three or more faces in a row must be a valid chord. No row may have duplicate faces.
+Two faces in a row make up a dyad. Since dyads aren't chords, it's permitted to form any number of them. However, any three or more faces in a row must be a valid chord. No row may have duplicate faces.
                 `,
                 (
                     <DominoSvg {...{ src: dominoesPlayingError }} />
                 ),
                 `
-Count the points earned from playing this domino. You may then repeat this step for each remaining domino in your hand until none are left.
-
-Upon completing your turn, tally up all your points and add them to your score. Draw new dominoes until you have the maximum number in your hand, or until the pool is empty. Play passes to your left.
+You may play each of the remaining dominoes in your hand until none are left. Upon completing your turn, draw new dominoes until you have the maximum number in your hand, or until the pool is empty. Play passes to your left.
 
 Instead of placing any dominoes on the board, you may use your turn to exchange all, some, or none of the dominoes in your hand. Draw the new dominoes from the pool, return your discarded ones, and reshuffle. This ends your turn.
 
