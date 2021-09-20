@@ -3,7 +3,7 @@ import DominoSvg from '../../../components/Svgs/Domino'
 import Page from '../../../containers/Page'
 import { pagesMap } from '../../../content/rules'
 import dominoesPlayingValid from '../../../assets/svgs/rules/dominoesPlayingValid'
-import dominoesPlayingError from '../../../assets/svgs/rules/dominoesPlayingError'
+import dominoesPlayingInvalid from '../../../assets/svgs/rules/dominoesPlayingInvalid'
 
 const id = 'playing'
 
@@ -23,7 +23,7 @@ When it's your turn, place a single domino from your hand onto the board to buil
 Two faces in a row make up a dyad. Since dyads aren't chords, it's permitted to form any number of them. However, any three or more faces in a row must be a valid chord. No row may have duplicate faces.
                 `,
                 (
-                    <DominoSvg {...{ src: dominoesPlayingError }} />
+                    <DominoSvg {...{ src: dominoesPlayingInvalid }} />
                 ),
                 `
 The remaining dominoes in your hand may be played in the same manner until none are left. Upon ending your turn, draw new dominoes until you have the maximum number in your hand, or until the pool is empty. Play passes to your left.

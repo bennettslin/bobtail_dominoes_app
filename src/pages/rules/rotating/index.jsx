@@ -3,8 +3,8 @@ import DominoSvg from '../../../components/Svgs/Domino'
 import Page from '../../../containers/Page'
 import { pagesMap } from '../../../content/rules'
 import dominoesPlayingValid from '../../../assets/svgs/rules/dominoesPlayingValid'
-import dominoesRotating1 from '../../../assets/svgs/rules/dominoesRotating1'
-import dominoesRotating2 from '../../../assets/svgs/rules/dominoesRotating2'
+import dominoesRotatingInvalidPlace from '../../../assets/svgs/rules/dominoesRotatingInvalidPlace'
+import dominoesRotatingInvalidChord from '../../../assets/svgs/rules/dominoesRotatingInvalidChord'
 
 const id = 'rotating'
 
@@ -15,18 +15,18 @@ const Component = () => (
             titleHeading: 'Rotating dominoes',
             body: [
                 `
-A domino that was previously placed on the board may not be moved or shifted. However, it may be rotated in place.
+A domino that is already on the board may not be moved or shifted in any way other than by rotating in place.
 
-At any number of times during your turn, you may rotate a single domino by pivoting it around one of its faces, or by spinning it around its center to effectively swap the two faces.
+At any number of times during your turn, you may rotate a single domino on the board by pivoting it around one of its faces, or by spinning it around its center to swap its two faces.
                 `,
                 (
-                    <DominoSvg {...{ src: dominoesRotating1 }} />
+                    <DominoSvg {...{ src: dominoesRotatingInvalidPlace }} />
                 ),
                 `
-This domino rotation must not break any existing chord or form invalid chords. Dyads may be formed and broken at will.
+This domino rotation must not break any existing chord or form invalid chords. Only dyads may be formed and broken at will.
                 `,
                 (
-                    <DominoSvg {...{ src: dominoesRotating2 }} />
+                    <DominoSvg {...{ src: dominoesRotatingInvalidChord }} />
                 ),
                 `
 If a domino rotation results in a new chord, the player who rotated the domino gets credit for building that chord on their turn.

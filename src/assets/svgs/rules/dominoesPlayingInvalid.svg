@@ -312,11 +312,11 @@
     <path d="M2105,565.8l-97.5-56.29a15,15,0,0,0-15,0L1895,565.8a15,15,0,0,0-7.5,13v98.14a15,15,0,0,1-7.5,13L1795,739a15,15,0,0,0-7.5,13V864.58a15,15,0,0,0,7.5,13l97.5,56.28a15,15,0,0,0,15,0l97.5-56.28a15,15,0,0,0,7.5-13V766.43a15,15,0,0,1,7.5-13l85-49.07a15,15,0,0,0,7.5-13V578.8A15,15,0,0,0,2105,565.8Z" transform="translate(0)"/>
   </g>
   <g class="textErrorShadow">
-    <text transform="translate(655 858.44)">Invalid chord</text>
+    <text transform="translate(683.68 858.44)">Not a valid<tspan x="79.59" y="100.8">chord</tspan></text>
     <text transform="translate(2055.29 858.83)">Duplicate<tspan x="69.72" y="100.8">faces</tspan></text>
   </g>
   <g class="textError">
-    <text transform="translate(655 853.44)">Invalid chord</text>
+    <text transform="translate(683.68 853.44)">Not a valid<tspan x="79.59" y="100.8">chord</tspan></text>
     <text transform="translate(2055.29 853.83)">Duplicate<tspan x="69.72" y="100.8">faces</tspan></text>
   </g>
   <g class="iconErrorShadow">

@@ -9,6 +9,9 @@
         fill: none;
         stroke-width: 10px;
     }
+    [class^=outline][class*=Dashed] {
+        stroke-dasharray: 12;
+    }
     [class^=textRancho] {
         font-family: Rancho;
     }
