@@ -14,13 +14,13 @@ const Component = () => (
             titleHeading: 'Playing your turn',
             body: [
                 `
-When it's your turn, place a single domino from your hand onto the board to build at least one valid chord.
+When it's your turn, place a single domino from your hand onto the board to build at least one valid chord. In doing so, you are permitted to form any number of dyads, or two faces in a row.
                 `,
                 (
                     <DominoSvg {...{ src: dominoesPlayingValid }} />
                 ),
                 `
-Two faces in a row make up a dyad. Since dyads aren't chords, it's permitted to form any number of them. However, any three or more faces in a row must be a valid chord. No row may have duplicate faces.
+However, any three or more faces in a row must be a valid chord. No row may have duplicate faces.
                 `,
                 (
                     <DominoSvg {...{ src: dominoesPlayingInvalid }} />
