@@ -14,17 +14,11 @@ export default {
         outlineErrorShadow: hsl(0, 65, 22),
         outlineError: hsl(0, 65, 72),
 
-        outlineErrorArrowShadow: hsl(0, 65, 22),
-        outlineErrorArrow: hsl(0, 65, 72),
+        outlineInfoShadow: hsl(240, 65, 22),
+        outlineInfo: hsl(240, 65, 72),
 
-        outlineErrorDashedShadow: hsl(0, 65, 22),
-        outlineErrorDashed: hsl(0, 65, 72),
-
-        outlineSuccessArrowShadow: hsl(160, 65, 22),
-        outlineSuccessArrow: hsl(160, 65, 72),
-
-        outlineSuccessDashedShadow: hsl(160, 65, 22),
-        outlineSuccessDashed: hsl(160, 65, 72),
+        outlineInfoDashedShadow: hsl(240, 65, 22),
+        outlineInfoDashed: hsl(240, 65, 72),
     },
     fill: {
         textRanchoShadow: hsl(0, 32, 37),
@@ -42,13 +36,16 @@ export default {
         textSecondShadow: hsl(30, 65, 22),
         textSecond: hsl(30, 65, 72),
 
-        iconErrorShadow: hsl(0, 65, 22),
-        iconError: hsl(0, 65, 72),
-
         textErrorShadow: hsl(0, 65, 22),
         textError: hsl(0, 65, 72),
 
+        iconErrorShadow: hsl(0, 65, 22),
+        iconError: hsl(0, 65, 72),
+
         iconSuccessShadow: hsl(150, 65, 22),
         iconSuccess: hsl(150, 65, 72),
+
+        iconInfoShadow: hsl(240, 65, 22),
+        iconInfo: hsl(240, 65, 72),
     },
 }
