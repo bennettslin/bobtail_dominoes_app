@@ -29,7 +29,7 @@ This means that within the same turn, it's possible to earn 3 points by creating
                     <DominoSvg {...{ src: dominoesRotatingInvalidPlace }} />
                 ),
                 `
-Keep in mind that sometimes the order of placement matters. In the above example, had you switched the order of the first and second dominoes, the chords would still be the same, but you would have fewer points! 
+Sometimes the order of placement matters. In the above example, had you switched the order of the first and second dominoes, the chords would still be the same, but you would have fewer points! 
                 `,
                 (
                     <DominoSvg {...{ src: dominoesRotatingInvalidPlace }} />

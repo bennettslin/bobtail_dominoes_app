@@ -5,9 +5,18 @@
         font-size: 84px;
         font-family: Fresca;
     }
+    [class^=characterAccidental] {
+        font-family: Maestro;
+    }
+    [class^=characterSymbol] {
+        font-size: 60px;
+    }
     [class^=outline] {
         fill: none;
         stroke-width: 10px;
+    }
+    [class^=outlineError] {
+        stroke-width: 20px;
     }
     [class^=outline][class*=Dashed] {
         stroke-dasharray: 12;

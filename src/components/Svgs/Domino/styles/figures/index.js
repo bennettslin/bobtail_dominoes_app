@@ -39,6 +39,9 @@ export default {
         textErrorShadow: hsl(0, 65, 22),
         textError: hsl(0, 65, 72),
 
+        textInfoShadow: hsl(180, 65, 22),
+        textInfo: hsl(180, 65, 72),
+
         iconErrorShadow: hsl(0, 65, 22),
         iconError: hsl(0, 65, 72),
 
