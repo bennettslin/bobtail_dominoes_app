@@ -1,22 +1,25 @@
+/* eslint-disable key-spacing */
 import { hsl } from '../../../../../utils/svgs'
 
 export default {
     fill: {
+        right:      hsl(40, 0, 27),
+        left:       hsl(40, 0, 37),
+        edge:       hsl(40, 20, 77),
+        face:       hsl(40, 20, 87),
+
         background: hsl(160, 30, 37),
 
-        left: hsl(45, 5, 47),
-        right: hsl(45, 5, 37),
-        edge: hsl(45, 20, 77),
-        face: hsl(45, 30, 87),
+        edgeNew:    hsl(200, 35, 67),
+        faceNew:    hsl(200, 35, 77),
 
-        leftNew: hsl(210, 5, 37),
-        rightNew: hsl(210, 5, 27),
-        edgeNew: hsl(210, 20, 62),
-        faceNew: hsl(210, 30, 72),
+        edgeMoved:  hsl(320, 20, 67),
+        faceMoved:  hsl(320, 20, 77),
 
-        leftMoved: hsl(70, 5, 37),
-        rightMoved: hsl(70, 5, 27),
-        edgeMoved: hsl(70, 20, 67),
-        faceMoved: hsl(70, 30, 77),
+        // TODO: Delete these styles.
+        leftNew:    hsl(40, 0, 37),
+        rightNew:   hsl(40, 0, 27),
+        leftMoved:  hsl(40, 5, 37),
+        rightMoved: hsl(40, 5, 27),
     },
 }

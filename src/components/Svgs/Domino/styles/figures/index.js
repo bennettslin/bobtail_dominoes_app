@@ -1,54 +1,46 @@
+/* eslint-disable key-spacing */
 import { hsl } from '../../../../../utils/svgs'
 
 export default {
     stroke: {
-        outlineBoardShadow: hsl(45, 65, 20),
-        outlineBoard: hsl(45, 65, 85),
+        outlineErrorShadow:         hsl(0, 60, 22),
+        outlineError:               hsl(0, 60, 77),
 
-        outlineFirstShadow: hsl(180, 65, 22),
-        outlineFirst: hsl(180, 65, 72),
+        outlineFirstShadow:         hsl(30, 65, 22),
+        outlineFirst:               hsl(30, 65, 72),
 
-        outlineSecondShadow: hsl(30, 65, 22),
-        outlineSecond: hsl(30, 65, 72),
+        outlineBoardShadow:         hsl(45, 50, 32),
+        outlineBoard:               hsl(45, 50, 82),
 
-        outlineErrorShadow: hsl(0, 65, 22),
-        outlineError: hsl(0, 65, 72),
+        outlineInfoShadow:          hsl(180, 50, 32),
+        outlineInfo:                hsl(180, 50, 82),
+        outlineInfoDashedShadow:    hsl(180, 50, 32),
+        outlineInfoDashed:          hsl(180, 50, 82),
 
-        outlineInfoShadow: hsl(240, 65, 22),
-        outlineInfo: hsl(240, 65, 72),
-
-        outlineInfoDashedShadow: hsl(240, 65, 22),
-        outlineInfoDashed: hsl(240, 65, 72),
+        outlineSecondShadow:        hsl(300, 50, 27),
+        outlineSecond:              hsl(300, 50, 77),
     },
     fill: {
-        textRanchoShadow: hsl(0, 32, 37),
-        textRancho: hsl(0, 32, 57),
+        textErrorShadow:            hsl(0, 60, 27),
+        textError:                  hsl(0, 60, 77),
+        iconErrorShadow:            hsl(0, 60, 22),
+        iconError:                  hsl(0, 60, 72),
 
-        textLogoShadow: hsl(240, 10, 52),
-        textLogo: hsl(240, 20, 72),
+        textFirstShadow:            hsl(30, 65, 22),
+        textFirst:                  hsl(30, 65, 72),
 
-        textBoardShadow: hsl(45, 65, 20),
-        textBoard: hsl(45, 65, 85),
+        textBoardShadow:            hsl(45, 50, 32),
+        textBoard:                  hsl(45, 50, 82),
 
-        textFirstShadow: hsl(180, 65, 22),
-        textFirst: hsl(180, 65, 72),
+        iconSuccessShadow:          hsl(150, 70, 22),
+        iconSuccess:                hsl(150, 70, 72),
 
-        textSecondShadow: hsl(30, 65, 22),
-        textSecond: hsl(30, 65, 72),
+        textInfoShadow:             hsl(180, 50, 32),
+        textInfo:                   hsl(180, 50, 82),
+        iconInfoShadow:             hsl(180, 50, 32),
+        iconInfo:                   hsl(180, 50, 82),
 
-        textErrorShadow: hsl(0, 65, 22),
-        textError: hsl(0, 65, 72),
-
-        textInfoShadow: hsl(180, 65, 22),
-        textInfo: hsl(180, 65, 72),
-
-        iconErrorShadow: hsl(0, 65, 22),
-        iconError: hsl(0, 65, 72),
-
-        iconSuccessShadow: hsl(150, 65, 22),
-        iconSuccess: hsl(150, 65, 72),
-
-        iconInfoShadow: hsl(240, 65, 22),
-        iconInfo: hsl(240, 65, 72),
+        textSecondShadow:           hsl(300, 50, 27),
+        textSecond:                 hsl(300, 50, 77),
     },
 }
