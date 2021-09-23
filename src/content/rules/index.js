@@ -18,10 +18,6 @@ const pageConfigs = [
         id: `scoring`,
         title: `Scoring`,
     },
-    {
-        id: `example`,
-        title: `Example`,
-    },
 ]
 
 export const pagesMap = getMapFromPageConfigs({
