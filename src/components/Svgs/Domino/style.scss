@@ -1,28 +1,28 @@
 @import '../../../scss/constants/borders.scss';
 
 .DominoSvg {
-    [class^=text] {
+    .text {
         font-size: 84px;
         font-family: Fresca;
     }
-    [class^=characterAccidental] {
+    [class^=rancho] {
+        font-family: Rancho;
+    }
+    .characterAccidental {
         font-family: Maestro;
     }
-    [class^=characterSymbol] {
+    .characterSymbol {
         font-size: 60px;
     }
-    [class^=outline] {
+    [class$=Line] {
         fill: none;
         stroke-width: 10px;
     }
-    [class^=outlineError] {
+    .wide {
         stroke-width: 20px;
     }
-    [class^=outline][class*=Dashed] {
+    .dashed {
         stroke-dasharray: 12;
-    }
-    [class^=textRancho] {
-        font-family: Rancho;
     }
 }
 

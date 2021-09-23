@@ -15,11 +15,5 @@ export default {
 
         edgeMoved:  hsl(320, 20, 67),
         faceMoved:  hsl(320, 20, 77),
-
-        // TODO: Delete these styles.
-        leftNew:    hsl(40, 0, 37),
-        rightNew:   hsl(40, 0, 27),
-        leftMoved:  hsl(40, 5, 37),
-        rightMoved: hsl(40, 5, 27),
     },
 }

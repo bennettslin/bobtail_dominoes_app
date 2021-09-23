@@ -3,44 +3,38 @@ import { hsl } from '../../../../../utils/svgs'
 
 export default {
     stroke: {
-        outlineErrorShadow:         hsl(0, 60, 22),
-        outlineError:               hsl(0, 60, 77),
+        errorShadowLine:    hsl(0, 65, 22),
+        errorLine:          hsl(0, 65, 77),
 
-        outlineFirstShadow:         hsl(30, 65, 22),
-        outlineFirst:               hsl(30, 65, 72),
+        firstShadowLine:    hsl(30, 65, 22),
+        firstLine:          hsl(30, 65, 72),
 
-        outlineBoardShadow:         hsl(45, 50, 32),
-        outlineBoard:               hsl(45, 50, 82),
+        boardShadowLine:    hsl(45, 50, 32),
+        boardLine:          hsl(45, 50, 82),
 
-        outlineInfoShadow:          hsl(180, 50, 32),
-        outlineInfo:                hsl(180, 50, 82),
-        outlineInfoDashedShadow:    hsl(180, 50, 32),
-        outlineInfoDashed:          hsl(180, 50, 82),
+        infoShadowLine:     hsl(180, 50, 17),
+        infoLine:           hsl(180, 50, 67),
 
-        outlineSecondShadow:        hsl(300, 50, 27),
-        outlineSecond:              hsl(300, 50, 77),
+        secondShadowLine:   hsl(300, 50, 27),
+        secondLine:         hsl(300, 50, 77),
     },
     fill: {
-        textErrorShadow:            hsl(0, 60, 27),
-        textError:                  hsl(0, 60, 77),
-        iconErrorShadow:            hsl(0, 60, 22),
-        iconError:                  hsl(0, 60, 72),
+        errorShadow:        hsl(0, 65, 27),
+        error:              hsl(0, 65, 77),
 
-        textFirstShadow:            hsl(30, 65, 22),
-        textFirst:                  hsl(30, 65, 72),
+        firstShadow:        hsl(30, 65, 22),
+        first:              hsl(30, 65, 72),
 
-        textBoardShadow:            hsl(45, 50, 32),
-        textBoard:                  hsl(45, 50, 82),
+        boardShadow:        hsl(45, 50, 32),
+        board:              hsl(45, 50, 82),
 
-        iconSuccessShadow:          hsl(150, 70, 22),
-        iconSuccess:                hsl(150, 70, 72),
+        successShadow:      hsl(150, 70, 22),
+        success:            hsl(150, 70, 72),
 
-        textInfoShadow:             hsl(180, 50, 32),
-        textInfo:                   hsl(180, 50, 82),
-        iconInfoShadow:             hsl(180, 50, 32),
-        iconInfo:                   hsl(180, 50, 82),
+        infoShadow:         hsl(180, 50, 17),
+        info:               hsl(180, 50, 67),
 
-        textSecondShadow:           hsl(300, 50, 27),
-        textSecond:                 hsl(300, 50, 77),
+        secondShadow:       hsl(300, 50, 27),
+        second:             hsl(300, 50, 77),
     },
 }
