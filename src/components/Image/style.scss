@@ -1,0 +1,4 @@
+.Image {
+    // Hacky fix to prevent Safari from messing with aspect ratio.
+    object-fit: cover;
+}

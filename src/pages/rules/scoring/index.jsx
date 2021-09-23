@@ -25,13 +25,13 @@ A chord of three notes, called a triad, is worth 3 points. A chord of four notes
                 `
 After each domino you play, add up the points for all the chords built from that domino. A chord built by extending a previous chord is worth the full number of points.
 
-This means that within the same turn, it's possible to earn 3 points by creating a triad with one domino, and then earn another 4 points by extending the triad into a seventh chord with the next domino.
+This means that within the same turn, it's possible to earn 3 points by creating a triad with one domino, and then another 4 points by extending the triad into a seventh chord with the next domino.
                 `,
                 (
                     <DominoSvg {...{ src: dominoesScoringExtend }} />
                 ),
                 `
-Sometimes the order of placement matters. In the above example, had you switched the order of the first and second dominoes, the final chords would be the same, but you would have fewer points! 
+The order of placement sometimes matters. In the above example, had you switched the first and second dominoes, the final chords would be the same, but you would have fewer points! 
                 `,
                 (
                     <DominoSvg {...{ src: dominoesScoringOrder }} />
