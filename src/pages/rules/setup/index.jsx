@@ -18,7 +18,7 @@ The standard set consists of 48 dominoes representing all whole tones, minor and
                 (
                     <DominoSvg {...{
                         src: dominoesExtendedSet,
-                        scaleFactor: 0.75,
+                        scaleFactor: 0.66,
                     }} />
                 ),
                 `

@@ -22,7 +22,7 @@ const Image = ({
 )
 
 Image.propTypes = {
-    className: PropTypes.string.isRequired,
+    className: PropTypes.string,
     src: PropTypes.string.isRequired,
     onLoad: PropTypes.func,
 }
