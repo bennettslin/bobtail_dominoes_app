@@ -13,17 +13,17 @@ const Component = () => (
             titleHeading: 'Our story',
             body: [
                 `
-Hi, I'm Bennett from the Bobtail Yearlings. Many years ago, I decided that being able to visualize chordal space was the next stage in my growth as a songwriter. I wanted a way to gamify the process, and that's when the idea for Bobtail Dominoes came to me. 
+Hi, I'm Bennett from the Bobtail Yearlings. Many years ago, I decided that visualizing chordal space was the next stage in my growth as a songwriter. I wanted a way to gamify the process, and that's when the idea for Bobtail Dominoes came to me.
 
-So I made a prototype out of mosaic bathroom tiles, and each day I would challenge myself to build chords in a hexagonal lattice.
+After making a prototype out of mosaic tiles, I would challenge myself each day to arrange the pieces into chords. It was addictive and satisfying, and I could feel myself developing a keen harmonic intuition.
                 `,
                 (
                     <Image {...{ src: bobtailDominoesPrototype }} />
                 ),
                 `
-It later dawned on me that Bobtail Dominoes would work well as a tabletop game. I then came up with a set of rules and play tested with some musician friends.
+In time, it dawned on me that Bobtail Dominoes would work well as a tabletop game. So I play tested with some musician friends and finalized the basic rules. My hope is that others will invent their own variants, just like with classic dominoes.
 
-While you're challenging yourself or having fun with friends, Bobtail Dominoes will improve your skills as a musician. I know they've improved mine!
+Whether you're playing by yourself or with friends, Bobtail Dominoes is a fun and challenging game that will help you grow as a musician. I can make that promise with confidence, because I know how much it's helped me!
             `,
             ],
         }}
