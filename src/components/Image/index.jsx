@@ -1,6 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
+import Flex from '../Flex'
 import './style'
 
 const Image = ({
@@ -9,16 +10,21 @@ const Image = ({
     onLoad = () => {},
 
 }) => (
-    <img
+    <Flex
         {...{
             className: cx(
                 'Image',
                 className,
             ),
-            src,
-            onLoad,
         }}
-    />
+    >
+        <img
+            {...{
+                src,
+                onLoad,
+            }}
+        />
+    </Flex>
 )
 
 Image.propTypes = {

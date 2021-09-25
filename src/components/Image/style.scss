@@ -1,4 +1,15 @@
+@import '../../scss/constants/borders';
+@import '../../scss/constants/responsive';
+
 .Image {
-    // Hacky fix to prevent Safari from messing with aspect ratio.
-    object-fit: cover;
+    img {
+        width: 100%;
+        max-width: $width__modal;
+        
+        border-radius: $borderRadius__wide;
+        overflow: hidden;
+
+        // Hacky fix to prevent Safari from messing with aspect ratio.
+        object-fit: cover;
+    }
 }
