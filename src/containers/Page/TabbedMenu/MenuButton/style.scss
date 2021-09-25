@@ -1,11 +1,44 @@
+@import '../../../../scss/constants/borders';
+@import '../../../../scss/constants/colours';
 @import '../../../../scss/constants/responsive';
+@import '../../../../scss/constants/shadows';
 
 .TabbedMenuButton {
+    padding-top: $margin__xs * 0.5;
+
     @media (min-width: $breakpoint__sm) {
         font-size: 1.25em;
     }
 
     @media (min-width: $breakpoint__md) {
         font-size: 1.5em;
+    }
+
+    &.Button__selected {
+        &:before, &:after {
+            position: absolute;
+            left: -$margin__sm;
+            width: calc(100% + #{$margin__sm * 2});
+            background-color: $colour__background__light;
+            content: '';
+        }
+
+        &:before {
+            top: 0;
+            height: calc(100% - #{$margin__xs * 0.5});
+            border-radius:
+                $borderRadius__medium
+                $borderRadius__medium
+                0 0;
+            box-shadow: $boxShadow__above;
+            content: '';
+        }
+
+        &:after {
+            position: absolute;
+            bottom: -$margin__xs;
+            height: $margin__xs * 2;
+            content: '';
+        }
     }
 }

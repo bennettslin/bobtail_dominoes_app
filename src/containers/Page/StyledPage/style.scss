@@ -14,6 +14,9 @@ $borderRadius__inner: $borderRadius__wide - $length__base * 0.25;
     flex-grow: 1;
     position: relative;
     width: 100%;
+
+    display: flex;
+
     @media (min-width: $breakpoint__sm) {
         padding:
             $length__top__edge
@@ -29,11 +32,11 @@ $borderRadius__inner: $borderRadius__wide - $length__base * 0.25;
     display: flex;
     overflow: hidden;
     background-color: $colour__background__light;
-    
+
     & > * {
         position: relative;
     }
-    
+
     @media (min-width: $breakpoint__sm) {
         border-radius: $borderRadius__inner;
     }

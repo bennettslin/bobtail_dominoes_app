@@ -54,7 +54,7 @@ $borderRadius__inner: $borderRadius__wide - $length__base * 0.66;
 }
 
 .StyledFrame__frameFront {
-    @media (min-width: $breakpoint__sm) {        
+    @media (min-width: $breakpoint__sm) {
         border-radius: $borderRadius__outer;
         background: linear-gradient(
             120deg,
