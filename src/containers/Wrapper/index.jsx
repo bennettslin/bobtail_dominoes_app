@@ -3,21 +3,23 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Background from './Background'
 import Main from '../Main'
+import Flex from '../../components/Flex'
 import Popups from '../../components/Popups'
 import './style'
 
 const Wrapper = ({ children }) => (
-    <div
+    <Flex
         {...{
             className: cx(
                 'Wrapper',
             ),
+            flexDirection: 'column-reverse',
         }}
     >
         <Background />
         <Main>{children}</Main>
         <Popups />
-    </div>
+    </Flex>
 )
 
 Wrapper.propTypes = {

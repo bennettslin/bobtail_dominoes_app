@@ -32,7 +32,7 @@ Instead of placing any dominoes on the board, you may use your turn to exchange 
 
 The game ends when no dominoes are left in the pool and a player empties their hand, or when no possible plays are left to be made.
 
-Don't forget to take a photo of the final board!
+Don't forget to take a picture of the final board!
                 `,
             ],
         }}

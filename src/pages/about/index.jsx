@@ -1,3 +1,3 @@
-import Design from './design'
+import Story from './story'
 
-export default Design
+export default Story

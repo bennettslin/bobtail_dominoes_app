@@ -3,12 +3,12 @@ import { ABOUT_PAGE } from '../../constants/pages'
 
 const pageConfigs = [
     {
-        id: `design`,
-        title: `Design`,
-    },
-    {
         id: `story`,
         title: `Story`,
+    },
+    {
+        id: `design`,
+        title: `Design`,
     },
 ]
 

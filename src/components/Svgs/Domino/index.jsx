@@ -6,7 +6,7 @@ import Svg from '../../Svg'
 import styles from './styles'
 import './style'
 
-const DOMINO_SCALE_FACTOR = 0.225
+const DOMINO_SCALE_FACTOR = 0.2
 
 const DominoSvg = ({
     src,
