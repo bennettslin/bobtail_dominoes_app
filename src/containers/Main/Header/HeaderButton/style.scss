@@ -3,7 +3,11 @@
 .HeaderButton {
     font-size: 1.5em;
 
-    @media (min-width: $width__page__narrow) {
+    @media (min-width: $breakpoint__md) {
+        font-size: 1.75em;
+    }
+
+    @media (min-width: $breakpoint__lg) {
         font-size: 2em;
     }
 }

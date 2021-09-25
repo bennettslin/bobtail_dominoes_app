@@ -13,13 +13,13 @@ $borderRadius__inner: $borderRadius__wide - $length__base * 0.25;
 .StyledPage {
     flex-grow: 1;
     position: relative;
-    display: flex;
-
-    padding: $length__top__edge $length__side__edge $length__bottom__edge;
-    border-radius: $borderRadius__outer;
-
-    @media (min-width: $width__page__narrow) {
-        width: $width__page__narrow;
+    width: 100%;
+    @media (min-width: $breakpoint__sm) {
+        padding:
+            $length__top__edge
+            $length__side__edge
+            $length__bottom__edge;
+        border-radius: $borderRadius__outer;
     }
 }
 
@@ -27,33 +27,43 @@ $borderRadius__inner: $borderRadius__wide - $length__base * 0.25;
     flex-grow: 1;
     position: relative;
     display: flex;
-
-    border-radius: $borderRadius__inner;
     overflow: hidden;
-
     background-color: $colour__background__light;
-
+    
     & > * {
         position: relative;
+    }
+    
+    @media (min-width: $breakpoint__sm) {
+        border-radius: $borderRadius__inner;
     }
 }
 
 .StyledPage__pageSide,
 .StyledPage__pageBottom {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    display: none;
+
+    @media (min-width: $breakpoint__sm) {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .StyledPage__pageSide {
-    border-radius: $borderRadius__outer;
-    background-color: #ccc;
+    @media (min-width: $breakpoint__sm) {
+        border-radius: $borderRadius__outer;
+        background-color: #ccc;
+    }
 }
 
 .StyledPage__pageBottom {
-    top: $length__base;
-    border-radius: $borderRadius__outer;
-    background-color: #888;
+    @media (min-width: $breakpoint__sm) {
+        top: $length__base;
+        border-radius: $borderRadius__outer;
+        background-color: #888;
+    }
 }

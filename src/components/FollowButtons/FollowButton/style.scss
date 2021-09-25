@@ -8,7 +8,7 @@
         width: $length__icon__sm * 0.75;
     }
 
-    @media (min-width: $width__page__narrow) {
+    @media (min-width: $breakpoint__md) {
         svg {
             height: $length__icon__sm;
             width: $length__icon__sm;
@@ -27,7 +27,7 @@
     border-radius: $borderRadius__medium;
     color: $colour__text__light;
 
-    @media (min-width: $width__page__narrow) {
+    @media (min-width: $breakpoint__md) {
         font-size: 1.25em;
     }
 

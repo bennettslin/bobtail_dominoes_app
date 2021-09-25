@@ -1,17 +1,28 @@
 @import '../../scss/constants/responsive';
 
 .Main {
+    flex-grow: 1;
     position: relative;
     width: 100%;
-    flex-grow: 1;
-    padding: $margin__sm 0;
+    max-width: $breakpoint__lg;
     
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    @media (min-width: $width__page__narrow) {
+
+    @media (min-width: $breakpoint__sm) {
+        padding:
+            $margin__xs
+            $margin__xs
+            $margin__sm;
         gap: $margin__sm;
+    }
+
+    @media (min-width: $breakpoint__md) {
+        padding:
+            $margin__sm
+            $margin__md
+            $margin__md;
     }
 }
 

@@ -13,7 +13,7 @@ const Component = () => (
             titleHeading: 'Setting up',
             body: [
                 `
-The standard set consists of 48 dominoes representing all whole tones, minor and major thirds, and perfect fourths. The extended set includes semitones and tritones as well, for a total of 66 dominoes.
+The standard set consists of 48 dominoes representing all possible whole tones, minor and major thirds, and perfect fourths. The extended set includes semitones and tritones as well, for a total of 66 dominoes.
                 `,
                 (
                     <DominoSvg {...{

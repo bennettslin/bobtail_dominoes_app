@@ -1,0 +1,14 @@
+@import '../../../scss/constants/borders';
+@import '../../../scss/constants/colours';
+@import '../../../scss/constants/responsive';
+
+.GenericPage {
+    flex-grow: 1;
+    position: relative;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #dff;
+}

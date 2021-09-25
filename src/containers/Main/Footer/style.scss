@@ -1,14 +1,4 @@
 @import '../../../scss/constants/responsive';
-@import '../../../scss/constants/transition';
-
-.MainFooter__container {
-    opacity: 0;
-    transition: opacity $transitionDuration__slow $transitionDuration__slower;
-}
-
-.MainFooter__containerVisible {
-    opacity: 1;
-}
 
 .MainFooter {
     width: 100%;
@@ -20,7 +10,7 @@
     align-items: center;
     gap: $margin__sm;
     
-    @media (min-width: $width__page__narrow) {
+    @media (min-width: $breakpoint__md) {
         flex-direction: row;
     }
 }

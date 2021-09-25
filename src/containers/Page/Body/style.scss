@@ -10,7 +10,11 @@
 
     line-height: 1.5em;
 
-    @media (min-width: $width__page__narrow) {
+    @media (min-width: $breakpoint__sm) {
+        font-size: 1.25em;
+    }
+
+    @media (min-width: $breakpoint__md) {
         font-size: 1.5em;
     }
 }

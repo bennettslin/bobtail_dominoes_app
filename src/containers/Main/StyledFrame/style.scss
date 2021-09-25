@@ -3,7 +3,7 @@
 @import '../../../scss/constants/responsive';
 
 $length__base: $margin__xs;
-$length__inset__top: $length__base * 0.4;
+$length__inset__top: $length__base * 1.4;
 $length__inset__side: $length__base * 0.125;
 $length__bottom__edge: $length__base;
 
@@ -12,62 +12,77 @@ $borderRadius__inner: $borderRadius__wide - $length__base * 0.66;
 
 .StyledFrame {
     position: relative;
-    padding: $length__base;
-    padding-top: $length__base + $length__inset__top;
-    border-radius: $borderRadius__outer;
+    width: 100%;
 
-    @media (min-width: $width__page__narrow) {
-        width: $width__page__narrow;
+    @media (min-width: $breakpoint__sm) {
+        padding:
+            $length__inset__top
+            $length__base
+            $length__base;
+        border-radius: $borderRadius__outer;
     }
 }
 
 .StyledFrame__body {
     position: relative;
-    margin: 0 $length__inset__side;
-    border-radius: $borderRadius__inner;
     overflow: hidden;
-
     background-color: $colour__background;
 
     & > * {
         position: relative;
+    }
+
+    @media (min-width: $breakpoint__sm) {
+        margin: 0 $length__inset__side;
+        border-radius: $borderRadius__inner;
     }
 }
 
 .StyledFrame__frameFront,
 .StyledFrame__frameInset,
 .StyledFrame__frameBottom {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    display: none;
+
+    @media (min-width: $breakpoint__sm) {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .StyledFrame__frameFront {
-    border-radius: $borderRadius__outer;
-    background: linear-gradient(
-        120deg,
-        #cc8 0 30%,
-        #dd9 30% 35%,
-        #cc8 35% 45%,
-        #dd9 45% 55%,
-        #cc8 55% 60%,
-        #dd9 60% 70%,
-        #cc8 70% 100%,
-    );
+    @media (min-width: $breakpoint__sm) {        
+        border-radius: $borderRadius__outer;
+        background: linear-gradient(
+            120deg,
+            #cc8 0 30%,
+            #dd9 30% 35%,
+            #cc8 35% 45%,
+            #dd9 45% 55%,
+            #cc8 55% 60%,
+            #dd9 60% 70%,
+            #cc8 70% 100%,
+        );
+    }
 }
 
 .StyledFrame__frameInset {
-    width: calc(100% - #{$length__base * 2});
-    height: calc(100% - #{$length__base * 2});
-    margin: $length__base;
-    border-radius: $borderRadius__inner;
-    background-color: #884;
+    @media (min-width: $breakpoint__sm) {
+        width: calc(100% - #{$length__base * 2});
+        height: calc(100% - #{$length__base * 2});
+        margin: $length__base;
+        border-radius: $borderRadius__inner;
+        background-color: #884;
+    }
 }
 
 .StyledFrame__frameBottom {
-    top: $length__bottom__edge;
-    border-radius: $borderRadius__outer;
-    background-color: #884;
+    @media (min-width: $breakpoint__sm) {
+        top: $length__bottom__edge;
+        border-radius: $borderRadius__outer;
+        background-color: #884;
+    }
 }
