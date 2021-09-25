@@ -1,24 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import Flex from '../../../components/Flex'
 import './style'
 
-const GenericPage = ({ className, children }) => (
-    <div
+const HomePage = ({ className, children }) => (
+    <Flex
         {...{
             className: cx(
-                'GenericPage',
+                'HomePage',
                 className,
             ),
+            flexDirection: 'column',
+            justifyContent: 'space-between',
         }}
     >
         {children}
-    </div>
+    </Flex>
 )
 
-GenericPage.propTypes = {
+HomePage.propTypes = {
     className: PropTypes.string,
     children: PropTypes.node.isRequired,
 }
 
-export default GenericPage
+export default HomePage

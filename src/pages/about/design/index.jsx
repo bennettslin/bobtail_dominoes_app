@@ -14,13 +14,13 @@ const Component = () => (
             titleHeading: 'Design specs',
             body: [
                 `
-Hang tight! As some of you might know, worldwide manufacturers are pretty backed up these days. We're still weighing our options for a manufacturing partner. On the plus side, this gives us time to finalize the design!
+Hang tight! Worldwide manufacturers are backed up these days, so we're still weighing our options for a manufacturing partner. On the plus side, this gives us time to finalize the design.
                 `,
                 (
                     <DominoSvg {...{ src: dominoesPlayingInvalid }} />
                 ),
                 `
-If you have any feedback or suggestions for improvement on the current specs, we'd love to hear them.
+If you have any feedback or suggestions for improvement on the current specs, we'd love to hear them!
                 `,
             ],
         }}

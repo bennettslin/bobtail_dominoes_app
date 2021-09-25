@@ -26,9 +26,13 @@
     }
 }
 
-.DominoSvg__page {
+.DominoSvg__figure {
     svg {
         border-radius: $borderRadius__wide;
         overflow: hidden;
     }
+}
+
+.DominoSvg__full {
+    width: 100%;
 }

@@ -17,7 +17,7 @@ const HomeButton = () => (
         <DominoSvg
             {...{
                 src: logo,
-                isPage: false,
+                isFigure: false,
             }}
         />
     </HeaderButton>

@@ -2,13 +2,8 @@
 @import '../../../scss/constants/colours';
 @import '../../../scss/constants/responsive';
 
-.GenericPage {
+.HomePage {
     flex-grow: 1;
-    position: relative;
     width: 100%;
-
-    display: flex;
-    flex-direction: column;
-
-    background-color: #dff;
+    padding: $margin__md 0;
 }

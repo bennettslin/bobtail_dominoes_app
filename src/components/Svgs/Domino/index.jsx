@@ -10,14 +10,16 @@ const DOMINO_SCALE_FACTOR = 0.2
 
 const DominoSvg = ({
     src,
-    isPage = true,
+    isFigure = true,
     scaleFactor = 1,
 }) => (
     <Flex
         {...{
             className: cx(
                 'DominoSvg',
-                isPage && 'DominoSvg__page',
+                isFigure ?
+                    'DominoSvg__figure' :
+                    'DominoSvg__full',
             ),
         }}
     >
@@ -33,7 +35,7 @@ const DominoSvg = ({
 
 DominoSvg.propTypes = {
     src: PropTypes.string.isRequired,
-    isPage: PropTypes.bool,
+    isFigure: PropTypes.bool,
     scaleFactor: PropTypes.number,
 }
 

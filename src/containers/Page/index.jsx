@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import PageConfigContext from '../../contexts/PageConfig'
-import GenericPage from './GenericPage'
 import StyledPage from './StyledPage'
 import TabbedMenu from './TabbedMenu'
 import Body from './Body'
@@ -18,11 +17,7 @@ const Page = ({
     <PageConfigContext.Provider {...{ value: rest }}>
         <Helmet />
         {/* This assumes children or markdown, but never both. */}
-        {children ? (
-            <GenericPage>
-                {children}
-            </GenericPage>
-        ) : (
+        {children ? children : (
             <StyledPage>
                 <Flex
                     {...{
