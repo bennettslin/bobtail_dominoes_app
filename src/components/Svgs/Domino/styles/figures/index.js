@@ -12,8 +12,8 @@ export default {
         boardShadowLine:    hsl(45, 50, 32),
         boardLine:          hsl(45, 50, 82),
 
-        infoShadowLine:     hsl(180, 50, 22),
-        infoLine:           hsl(180, 50, 72),
+        infoShadowLine:     hsl(180, 50, 27),
+        infoLine:           hsl(180, 50, 77),
 
         secondShadowLine:   hsl(300, 50, 27),
         secondLine:         hsl(300, 50, 77),
@@ -31,8 +31,8 @@ export default {
         successShadow:      hsl(150, 70, 22),
         success:            hsl(150, 70, 72),
 
-        infoShadow:         hsl(180, 50, 22),
-        info:               hsl(180, 50, 72),
+        infoShadow:         hsl(180, 50, 27),
+        info:               hsl(180, 50, 77),
 
         secondShadow:       hsl(300, 50, 27),
         second:             hsl(300, 50, 77),

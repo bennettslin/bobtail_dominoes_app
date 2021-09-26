@@ -26,7 +26,7 @@ $borderRadius__inner: $borderRadius__wide - $length__base * 0.66;
 .StyledFrame__body {
     position: relative;
     overflow: hidden;
-    background-color: $colour__background;
+    background-color: $colour__background__medium;
 
     & > * {
         position: relative;

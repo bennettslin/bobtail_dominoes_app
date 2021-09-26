@@ -54,7 +54,9 @@ const Button = forwardRef(({
                 ref,
                 className: cx(
                     'Button',
-                    isSelected && 'Button__selected',
+                    isSelected ?
+                        'Button__selected' :
+                        'Button__enabled',
                     className,
                 ),
                 onClick,

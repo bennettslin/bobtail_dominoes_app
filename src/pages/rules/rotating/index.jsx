@@ -12,7 +12,7 @@ const Component = () => (
     <Page
         {...{
             ...pagesMap[id],
-            titleHeading: 'Rotating dominoes',
+            titleHeading: 'Rotating a domino',
             body: [
                 `
 A domino that is already on the board may only be shifted by rotating in place.

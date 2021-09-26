@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import Background from './Background'
 import Main from '../Main'
 import Flex from '../../components/Flex'
 import Popups from '../../components/Popups'
@@ -16,7 +15,6 @@ const Wrapper = ({ children }) => (
             flexDirection: 'column-reverse',
         }}
     >
-        <Background />
         <Main>{children}</Main>
         <Popups />
     </Flex>

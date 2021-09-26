@@ -1,17 +1,19 @@
 import React from 'react'
 import cx from 'classnames'
+import Flex from '../../../components/Flex'
 import './style'
 
 const AppFooter = () => (
-    <div
+    <Flex
         {...{
             className: cx(
                 'AppFooter',
+                'text__light',
             ),
         }}
     >
         {`© ${new Date().getFullYear()} Dogies Almondine`}
-    </div>
+    </Flex>
 )
 
 export default AppFooter

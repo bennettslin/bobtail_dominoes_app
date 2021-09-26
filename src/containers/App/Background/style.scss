@@ -1,12 +1,13 @@
 @import '../../../scss/constants/colours';
-@import '../../../scss/constants/gradients';
+@import '../../../scss/constants/responsive';
+@import '../../../scss/mixins/gradients';
 
 .Background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: calc(100% + #{$height__appFooter});
 
     background-color: $colour__wrapper;
     

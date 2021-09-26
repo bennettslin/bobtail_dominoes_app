@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Button from '../../Button'
+import Flex from '../../Flex'
 import { getCapitalizedText } from '../../../utils/format'
 import './style'
 
@@ -22,18 +23,19 @@ const FollowButton = ({
             handleButtonClick,
         }}
     >
-        <div
+        <Flex
             {...{
                 className: cx(
                     'FollowButton__field',
                     `FollowButton__field__${id}`,
                     'font__text',
+                    'text__light',
                 ),
             }}
         >
             {children}
             {getCapitalizedText(id)}
-        </div>
+        </Flex>
     </Button>
 )
 

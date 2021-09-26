@@ -29,7 +29,7 @@ const TabbedMenuButton = ({
             {...{
                 className: cx(
                     'TabbedMenuButton',
-                    'font__heading',
+                    'font__button',
                 ),
                 analyticsLabel: `TabbedMenuButton__${id}`,
                 pagePath,

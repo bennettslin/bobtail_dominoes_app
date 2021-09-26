@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import Background from './Background'
 import Wrapper from '../Wrapper'
 import AppFooter from './Footer'
 import './style'
@@ -14,6 +15,7 @@ const App = ({ children }) => (
             ),
         }}
     >
+        <Background />
         <Wrapper>{children}</Wrapper>
         <AppFooter />
     </div>

@@ -6,8 +6,13 @@
 }
 
 @font-face {
-    font-family: Eczar;
-    src: url('../assets/fonts/Eczar/Eczar-SemiBold.ttf');
+    font-family: Peralta;
+    src: url('../assets/fonts/Peralta/Peralta-Regular.ttf');
+}
+
+@font-face {
+    font-family: Chicle;
+    src: url('../assets/fonts/Chicle/Chicle-Regular.ttf');
 }
 
 @font-face {
@@ -26,10 +31,19 @@
 }
 
 .font__heading {
-    font-family: Eczar, Georgia;
+    font-family: Peralta, Georgia;
+    font-weight: normal;
+}
+
+.font__button {
+    font-family: Chicle, Arial;
 }
 
 .font__finePrint {
     font-size: 0.75em;
-    color: $colour__neutral__dark;
+    color: $colour__text__medium;
+}
+
+.text__light {
+    color: $colour__text__light;
 }

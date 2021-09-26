@@ -1,12 +1,13 @@
 @import '../constants/colours';
+@import '../mixins/gradients';
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    background-color: $colour__background__subFooter;
     color: $colour__text__dark;
+    background-color: hsl(0, 0%, 0%);
 }
 
 body, p, h1, h3, h5, ul {
@@ -40,7 +41,7 @@ input {
 
 input[type=submit] {
     &[disabled] {
-        color: $colour__neutral__light;
+        color: $colour__text__mediumLight;
     }
 }
 

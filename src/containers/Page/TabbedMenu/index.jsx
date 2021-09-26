@@ -38,7 +38,7 @@ const TabbedMenu = () => {
                         isFirstPage: !index,
                     }}
                 >
-                    {title.toUpperCase()}
+                    {title}
                 </TabbedMenuButton>
             ))}
         </Flex>
