@@ -18,6 +18,18 @@ npm run stage
 
 ## Release
 
+Build and deploy candidate release.
+
+```
+npm run release:candidate
+```
+
+Build and deploy delivery release. Reflects production.
+
+```
+npm run release:delivery
+```
+
 Build and deploy production release.
 
 ```
