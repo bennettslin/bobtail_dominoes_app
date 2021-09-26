@@ -27,15 +27,8 @@ $borderRadius__inner: $borderRadius__wide - $length__base * 0.25;
 }
 
 .StyledPage__body {
-    flex-grow: 1;
     position: relative;
-    display: flex;
-    overflow: hidden;
     background-color: $colour__background__light;
-
-    & > * {
-        position: relative;
-    }
 
     @media (min-width: $breakpoint__sm) {
         border-radius: $borderRadius__inner;

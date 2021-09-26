@@ -25,12 +25,6 @@ $borderRadius__inner: $borderRadius__wide - $length__base * 0.66;
 
 .StyledFrame__body {
     position: relative;
-    overflow: hidden;
-
-    & > * {
-        position: relative;
-    }
-
     @media (min-width: $breakpoint__sm) {
         margin: 0 $length__inset__side;
         border-radius: $borderRadius__inner;

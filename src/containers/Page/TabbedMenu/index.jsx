@@ -20,7 +20,7 @@ const TabbedMenu = () => {
                 className: cx(
                     'TabbedMenu',
                 ),
-                justifyContent: 'flex-start',
+                justifyContent: 'start',
             }}
         >
             <div {...{ className: 'TabbedMenu__gutter' }} />

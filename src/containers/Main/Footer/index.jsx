@@ -2,7 +2,7 @@ import React from 'react'
 import cx from 'classnames'
 import MailingList from '../../../components/MailingList'
 import FollowButtons from '../../../components/FollowButtons'
-import StyledFrame from '../StyledFrame'
+import StyledFrame from '../../../components/Styled/Frame'
 import './style'
 
 const MainFooter = () => (

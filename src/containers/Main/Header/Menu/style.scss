@@ -1,9 +1,5 @@
 @import '../../../../scss/constants/responsive';
 
 .Menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
     gap: 0 $margin__md;
 }

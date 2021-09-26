@@ -1,6 +1,6 @@
 import React from 'react'
 import cx from 'classnames'
-import StyledFrame from '../StyledFrame'
+import StyledFrame from '../../../components/Styled/Frame'
 import HomeButton from './HomeButton'
 import Menu from './Menu'
 import './style'
