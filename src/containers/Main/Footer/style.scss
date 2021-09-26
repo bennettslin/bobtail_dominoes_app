@@ -1,3 +1,4 @@
+@import '../../../scss/constants/colours';
 @import '../../../scss/constants/responsive';
 
 .MainFooter {
@@ -9,6 +10,8 @@
     justify-content: space-between;
     align-items: center;
     gap: $margin__sm;
+
+    background-color: $colour__background__medium;
     
     @media (min-width: $breakpoint__md) {
         flex-direction: row;

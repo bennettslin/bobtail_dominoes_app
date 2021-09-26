@@ -26,7 +26,6 @@ $borderRadius__inner: $borderRadius__wide - $length__base * 0.66;
 .StyledFrame__body {
     position: relative;
     overflow: hidden;
-    background-color: $colour__background__medium;
 
     & > * {
         position: relative;
@@ -42,7 +41,6 @@ $borderRadius__inner: $borderRadius__wide - $length__base * 0.66;
 .StyledFrame__frameInset,
 .StyledFrame__frameBottom {
     display: none;
-
     @media (min-width: $breakpoint__sm) {
         display: block;
         position: absolute;

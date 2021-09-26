@@ -13,17 +13,17 @@ const Component = () => (
             titleHeading: 'Our story',
             body: [
                 `
-Hi, I'm Bennett from the Bobtail Yearlings! Many years ago, I decided that visualizing chordal space was the next phase in my growth as a songwriter. I wanted to gamify the process, which is how the idea for Bobtail Dominoes came to me. And so I made a prototype out of mosaic bathroom tiles.
+Hi, I'm Bennett from the Bobtail Yearlings! Years ago, I decided that learning to visualize chordal space was the next phase in my growth as a songwriter. After several false starts, I realized that I needed to gamify the process somehow. Then one day, the idea for Bobtail Dominoes came to me. To test it, I made a prototype out of mosaic bathroom tiles.
                 `,
                 (
                     <Image {...{ src: dominoesPrototype_reduced }} />
                 ),
                 `
-Each day I would challenge myself to arrange the dominoes into chords. Upon completing a layout, I would strum the chords on my guitar, hoping to find a nice progression for my next song. And over time, I could feel myself developing a keen harmonic intuition.
+Each day, I would challenge myself to arrange the dominoes into chords. Upon finishing a layout, I would strum the chords on my guitar, hoping to find a nice progression for my next song. And over time, I could feel myself developing a keen harmonic intuition.
 
-It eventually dawned on me that Bobtail Dominoes might work as a tabletop game. So I play tested with a few musician friends and came up with some basic rules. My hope is that a few of you will invent your own variants and share them, just like with classic dominoes!
+It later dawned on me that Bobtail Dominoes could work as a tabletop game. So I play tested with a few musician friends and came up with some basic rules. My hope is that a few of you will invent your own variants and share them, just like with classic dominoes!
 
-Whether you're playing by yourself or with friends, Bobtail Dominoes is a fun and challenging game that will help you grow as a musician. I can make that promise with confidence, because I know it's helped me!
+Whether playing by yourself or with friends, Bobtail Dominoes is a fun and challenging game that will help you grow as a musician. I can make that promise with confidence, because I know it's helped me!
                 `,
             ],
         }}
