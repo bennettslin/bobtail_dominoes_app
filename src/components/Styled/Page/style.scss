@@ -1,6 +1,7 @@
 @import '../../../scss/constants/borders';
 @import '../../../scss/constants/colours';
 @import '../../../scss/constants/responsive';
+@import '../../../scss/mixins/reflection';
 
 $length__base: $margin__xs;
 $length__top__edge: $length__base * 0.25;
@@ -52,7 +53,10 @@ $borderRadius__inner: $borderRadius__wide - $length__base * 0.25;
 .StyledPage__pageSide {
     @media (min-width: $breakpoint__sm) {
         border-radius: $borderRadius__outer;
-        background-color: #ccc;
+        @include mixin__reflection(
+            $colour__neutral__medium,
+            $colour__neutral__light,
+        );
     }
 }
 
@@ -60,6 +64,6 @@ $borderRadius__inner: $borderRadius__wide - $length__base * 0.25;
     @media (min-width: $breakpoint__sm) {
         top: $length__base;
         border-radius: $borderRadius__outer;
-        background-color: #888;
+        background-color: $colour__neutral__dark;
     }
 }

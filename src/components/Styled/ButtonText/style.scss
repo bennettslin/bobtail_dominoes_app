@@ -11,12 +11,12 @@
     .Button__enabled
     & {
         top: 0.075em;
-        color: $colour__text__dark;
+        color: $colour__neutral__opaque;
     }
 
     .Button__selected
     & {
-        color: $colour__link__dark;
+        color: $colour__link__darker;
     }
 }
 

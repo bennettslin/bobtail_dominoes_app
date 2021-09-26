@@ -1,18 +1,16 @@
-@mixin mixin__easeLinearGradient($direction) {
+@mixin mixin__reflection($darkColour, $lightColour) {
     background: linear-gradient(
-        to $direction,
-        hsla(0, 0%, 12.5%, 1) 0%,
-        hsla(0, 0%, 12.5%, 0.738) 19%,
-        hsla(0, 0%, 12.5%, 0.541) 34%,
-        hsla(0, 0%, 12.5%, 0.382) 47%,
-        hsla(0, 0%, 12.5%, 0.278) 56.5%,
-        hsla(0, 0%, 12.5%, 0.194) 65%,
-        hsla(0, 0%, 12.5%, 0.126) 73%,
-        hsla(0, 0%, 12.5%, 0.075) 80.2%,
-        hsla(0, 0%, 12.5%, 0.042) 86.1%,
-        hsla(0, 0%, 12.5%, 0.021) 91%,
-        hsla(0, 0%, 12.5%, 0.008) 95.2%,
-        hsla(0, 0%, 12.5%, 0.002) 98.2%,
-        hsla(0, 0%, 12.5%, 0) 100%
+        120deg,
+        $darkColour 0 13%,
+        $lightColour 13% 20%,
+        $darkColour 20% 21%,
+        $lightColour 21% 24%,
+        $darkColour 24% 57%,
+        $lightColour 57% 61%,
+        $darkColour 61% 63%,
+        $lightColour 63% 75%,
+        $darkColour 75% 76%,
+        $lightColour 76% 80%,
+        $darkColour 80% 100%
     );
 }

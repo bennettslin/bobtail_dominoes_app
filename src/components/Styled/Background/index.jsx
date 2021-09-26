@@ -6,7 +6,7 @@ const Background = () => (
     <div
         {...{
             className: cx(
-                'Background',
+                'StyledBackground',
             ),
         }}
     />

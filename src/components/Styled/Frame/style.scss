@@ -1,11 +1,12 @@
 @import '../../../scss/constants/borders';
 @import '../../../scss/constants/colours';
 @import '../../../scss/constants/responsive';
+@import '../../../scss/mixins/reflection';
 
 $length__base: $margin__xs;
-$length__inset__top: $length__base * 1.4;
+$length__frame: $length__base * 0.75;
+$length__inset__top: $length__base * 0.33;
 $length__inset__side: $length__base * 0.125;
-$length__bottom__edge: $length__base;
 
 $borderRadius__outer: $borderRadius__wide;
 $borderRadius__inner: $borderRadius__wide - $length__base * 0.66;
@@ -16,9 +17,9 @@ $borderRadius__inner: $borderRadius__wide - $length__base * 0.66;
 
     @media (min-width: $breakpoint__sm) {
         padding:
-            $length__inset__top
-            $length__base
-            $length__base;
+            $length__frame + $length__inset__top
+            $length__frame + $length__inset__side
+            $length__frame;
         border-radius: $borderRadius__outer;
     }
 }
@@ -26,7 +27,6 @@ $borderRadius__inner: $borderRadius__wide - $length__base * 0.66;
 .StyledFrame__body {
     position: relative;
     @media (min-width: $breakpoint__sm) {
-        margin: 0 $length__inset__side;
         border-radius: $borderRadius__inner;
     }
 }
@@ -48,33 +48,27 @@ $borderRadius__inner: $borderRadius__wide - $length__base * 0.66;
 .StyledFrame__frameFront {
     @media (min-width: $breakpoint__sm) {
         border-radius: $borderRadius__outer;
-        background: linear-gradient(
-            120deg,
-            #cc8 0 30%,
-            #dd9 30% 35%,
-            #cc8 35% 45%,
-            #dd9 45% 55%,
-            #cc8 55% 60%,
-            #dd9 60% 70%,
-            #cc8 70% 100%,
+        @include mixin__reflection(
+            $colour__frame__medium,
+            $colour__frame__light,
         );
     }
 }
 
 .StyledFrame__frameInset {
     @media (min-width: $breakpoint__sm) {
-        width: calc(100% - #{$length__base * 2});
-        height: calc(100% - #{$length__base * 2});
-        margin: $length__base;
+        width: calc(100% - #{$length__frame * 2});
+        height: calc(100% - #{$length__frame * 2});
+        margin: $length__frame;
         border-radius: $borderRadius__inner;
-        background-color: #884;
+        background-color: $colour__frame__dark;
     }
 }
 
 .StyledFrame__frameBottom {
     @media (min-width: $breakpoint__sm) {
-        top: $length__bottom__edge;
+        top: $length__base;
         border-radius: $borderRadius__outer;
-        background-color: #884;
+        background-color: $colour__frame__dark;
     }
 }

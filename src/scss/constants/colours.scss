@@ -1,26 +1,32 @@
 /* https://color.adobe.com */
 
-$colour__wrapper: hsl(300, 40%, 25%);
+$colour__wrapper: hsl(300, 38%, 27%);
 
-$colour__background__light: hsl(150, 33%, 97%);
-$colour__background__medium: hsl(170, 28%, 87%);
 $colour__background__dark: hsl(190, 18%, 57%);
+$colour__background__medium: hsl(170, 28%, 87%);
+$colour__background__light: hsl(150, 33%, 97%);
 
-// $colour__neutral__light: hsl(0, 0%, 73%);
-$colour__neutral__dark: hsl(0, 0%, 53%);
-$colour__neutral__opaque: hsla(0, 0%, 30%, 0.7);
+$colour__neutral__dark: hsl(60, 3%, 37%);
+$colour__neutral__medium: hsl(0, 3%, 62%);
+$colour__neutral__light: hsl(0, 3%, 72%);
+$colour__neutral__opaque: hsla(60, 3%, 32%, 0.7);
 
-$colour__text__light: hsl(0, 0%, 92%);
-$colour__text__mediumLight: hsl(0, 0%, 72%);
-$colour__text__medium: hsl(0, 0%, 52%);
-$colour__text__dark: hsl(0, 0%, 27%);
+$colour__text__dark: hsl(60, 3%, 27%);
+$colour__text__medium: hsl(60, 3%, 52%);
+$colour__text__mediumLight: hsl(60, 3%, 72%);
+$colour__text__light: hsl(60, 3%, 92%);
 
-$colour__primary__dark: hsl(45, 22%, 47%);
-$colour__primary__light: hsl(45, 27%, 83%);
+$colour__frame__dark: hsl(60, 23%, 37%);
+$colour__frame__medium: hsl(60, 28%, 62%);
+$colour__frame__light: hsl(60, 33%, 72%);
 
-$colour__link__dark: hsl(270, 42%, 62%);
-$colour__link__medium: hsl(270, 47%, 72%);
-$colour__link__light: hsl(270, 52%, 82%);
+$colour__primary__dark: hsl(45, 23%, 47%);
+$colour__primary__light: hsl(45, 28%, 82%);
 
-$colour__facebook: hsl(214, 60%, 58%);
-$colour__twitter: hsl(203, 65%, 58%);
+$colour__link__darker: hsl(270, 38%, 52%);
+$colour__link__dark: hsl(270, 43%, 62%);
+$colour__link__medium: hsl(270, 48%, 72%);
+$colour__link__light: hsl(270, 53%, 82%);
+
+$colour__facebook: hsl(214, 63%, 57%);
+$colour__twitter: hsl(203, 68%, 57%);

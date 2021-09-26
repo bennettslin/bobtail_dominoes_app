@@ -1,0 +1,23 @@
+@import '../../../scss/constants/borders';
+@import '../../../scss/constants/colours';
+@import '../../../scss/constants/responsive';
+@import '../../../scss/constants/shadows';
+
+.StyledButton {
+    padding: $margin__xs * 0.5 0;
+
+    &.Button__selected {
+        &:before {
+            position: absolute;
+            top: 0;
+            left: -$margin__sm;
+            width: calc(100% + #{$margin__sm * 2});
+            height: 100%;
+
+            background-color: $colour__background__light;
+            border-radius: $borderRadius__medium;
+            box-shadow: $boxShadow__above;
+            content: '';
+        }
+    }
+}
