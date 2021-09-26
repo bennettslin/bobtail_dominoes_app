@@ -42,19 +42,13 @@
     <path d="M351.5,1390.64c-127.95-22.55,37.23-407.38-70-461.88,107.23-54.49-57.95-439.33,70-461.88" transform="translate(-0.5 0)"/>
     <path d="M2046.5,1248c45.7-3.38-11.75-53.1,25-69.28-36.75-16.18,20.7-65.9-25-69.28" transform="translate(-0.5 0)"/>
     <path d="M2001.5,1445c-39,221.62-705.61-64.49-800,121.24-94.39-185.73-760.95,100.38-800-121.24" transform="translate(-0.5 0)"/>
-    <g>
-      <line x1="1201.02" y1="487.8" x2="1201.02" y2="770.45"/>
-      <path d="M1201.52,800.63c-5.26-14.2-14.25-31.82-23.77-42.74l23.77,8.6,23.78-8.6C1215.78,768.81,1206.79,786.43,1201.52,800.63Z" transform="translate(-0.5 0)"/>
-    </g>
-    <g>
-      <path d="M401.52,437.8c24.72,113.36,105.6,240,201.39,326.19" transform="translate(-0.5 0)"/>
-      <path d="M625.83,783.61c-14.18-5.31-33.39-10-47.87-10L600,761.27l9.06-23.61C611.1,752,618.54,770.34,625.83,783.61Z" transform="translate(-0.5 0)"/>
-    </g>
+    <line x1="1201.02" y1="457.8" x2="1201.02" y2="766.49"/>
+    <path d="M401.52,407.8c24.5,112.33,104.13,263,198.78,353.26" transform="translate(-0.5 0)"/>
   </g>
   <g class="infoShadow">
     <g class="text">
-      <text transform="translate(213.69 196.57)">note colors<tspan x="-92.06" y="100.8">map color wheel</tspan><tspan x="-96.93" y="201.6">to circle of fifths</tspan></text>
-      <text transform="translate(971.6 244.07)">pips between<tspan x="-99.91" y="100.8">faces show interval</tspan><tspan x="-66.11" y="201.6">size and direction</tspan></text>
+      <text transform="translate(164.09 266.57)">circle of fifths<tspan x="-107.39" y="100.8">maps to color wheel</tspan></text>
+      <text transform="translate(971.6 214.07)">pips between<tspan x="-99.91" y="100.8">faces show interval</tspan><tspan x="-66.11" y="201.6">size and direction</tspan></text>
       <text transform="translate(78.89 955.41)">1-1/4&quot;</text>
       <text transform="translate(1084.58 1656.26)">2-3/16&quot;</text>
       <text transform="translate(2103.03 1204.39)">3/8&quot;</text>
@@ -66,19 +60,13 @@
     <path d="M350.5,1385.64c-127.95-22.55,37.23-407.38-70-461.88,107.23-54.49-57.95-439.33,70-461.88" transform="translate(-0.5 0)"/>
     <path d="M2045.5,1243c45.7-3.38-11.75-53.1,25-69.28-36.75-16.18,20.7-65.9-25-69.28" transform="translate(-0.5 0)"/>
     <path d="M2000.5,1440c-39,221.62-705.61-64.49-800,121.24-94.39-185.73-760.95,100.38-800-121.24" transform="translate(-0.5 0)"/>
-    <g>
-      <line x1="1200.02" y1="482.8" x2="1200.02" y2="765.45"/>
-      <path d="M1200.52,795.63c-5.26-14.2-14.25-31.82-23.77-42.74l23.77,8.6,23.78-8.6C1214.78,763.81,1205.79,781.43,1200.52,795.63Z" transform="translate(-0.5 0)"/>
-    </g>
-    <g>
-      <path d="M400.52,432.8c24.72,113.36,105.6,240,201.39,326.19" transform="translate(-0.5 0)"/>
-      <path d="M624.83,778.61c-14.18-5.31-33.39-10-47.87-10L599,756.27l9.06-23.61C610.1,747,617.54,765.34,624.83,778.61Z" transform="translate(-0.5 0)"/>
-    </g>
+    <line x1="1200.02" y1="452.8" x2="1200.02" y2="761.49"/>
+    <path d="M400.52,402.8c24.5,112.33,104.13,263,198.78,353.26" transform="translate(-0.5 0)"/>
   </g>
   <g class="info">
     <g class="text">
-      <text transform="translate(212.69 191.57)">note colors<tspan x="-92.06" y="100.8">map color wheel</tspan><tspan x="-96.93" y="201.6">to circle of fifths</tspan></text>
-      <text transform="translate(970.6 239.07)">pips between<tspan x="-99.91" y="100.8">faces show interval</tspan><tspan x="-66.11" y="201.6">size and direction</tspan></text>
+      <text transform="translate(163.09 261.57)">circle of fifths<tspan x="-107.39" y="100.8">maps to color wheel</tspan></text>
+      <text transform="translate(970.6 209.07)">pips between<tspan x="-99.91" y="100.8">faces show interval</tspan><tspan x="-66.11" y="201.6">size and direction</tspan></text>
       <text transform="translate(77.89 950.41)">1-1/4&quot;</text>
       <text transform="translate(1083.58 1651.26)">2-3/16&quot;</text>
       <text transform="translate(2102.03 1199.39)">3/8&quot;</text>
