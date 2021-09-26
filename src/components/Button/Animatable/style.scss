@@ -9,16 +9,23 @@
 
 .ButtonAnimatable__enabled {
     cursor: pointer;
-    filter: $dropShadow;
 
     .Button:hover
     & {
         animation: bounceHover $transitionDuration__slow;
-        filter: $dropShadow__lightHover;
     }
 
     .Button:active
     & {
         transform: scale(0.9);
+    }
+}
+
+.ButtonAnimatable__dropShadow {
+    filter: $dropShadow;
+
+    .Button:hover
+    & {
+        filter: $dropShadow__lightHover;
     }
 }

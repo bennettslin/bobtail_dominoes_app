@@ -1,0 +1,36 @@
+@import '../../../scss/constants/colours';
+@import '../../../scss/constants/responsive';
+
+.StyledButtonText__bottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .Button__enabled
+    & {
+        top: 0.075em;
+        color: $colour__text__dark;
+    }
+
+    .Button__selected
+    & {
+        color: $colour__link__dark;
+    }
+}
+
+.StyledButtonText__top {
+    position: relative;
+
+    .Button__enabled
+    & {
+        color: $colour__text__light;
+    }
+
+    .Button__selected
+    & {
+        top: 0.075em;
+        mix-blend-mode: screen;
+    }
+}

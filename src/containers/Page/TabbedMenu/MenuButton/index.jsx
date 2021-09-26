@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Button from '../../../../components/Button'
+import StyledButtonText from '../../../../components/Styled/ButtonText'
 import { getMapIsSelectedPagePath, mapSelectedPagePath } from '../../../../redux/page/selector'
 import { getPagePathFromConfig } from '../../../../utils/pages/config'
 import './style'
@@ -22,7 +23,8 @@ const TabbedMenuButton = ({
         }),
         selectedPagePath = useSelector(mapSelectedPagePath),
         isSelectedPagePath = useSelector(getMapIsSelectedPagePath(pagePath)),
-        isTopLevelTabbedPath = isFirstPage && selectedPagePath === topLevelPage
+        isTopLevelTabbedPath = isFirstPage && selectedPagePath === topLevelPage,
+        isSelected = isSelectedPagePath || isTopLevelTabbedPath
 
     return (
         <Button
@@ -31,12 +33,14 @@ const TabbedMenuButton = ({
                     'TabbedMenuButton',
                     'font__button',
                 ),
-                analyticsLabel: `TabbedMenuButton__${id}`,
+                analyticsLabel: `StyledButtonText__${id}`,
                 pagePath,
-                isSelected: isSelectedPagePath || isTopLevelTabbedPath,
+                isSelected,
             }}
         >
-            {children}
+            <StyledButtonText>
+                {children}
+            </StyledButtonText>
         </Button>
     )
 }

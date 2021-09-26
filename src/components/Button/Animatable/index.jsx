@@ -6,6 +6,7 @@ import './style'
 
 const ButtonAnimatable = ({
     isSelected,
+    dropShadow,
     children,
 }) => (
     <Flex
@@ -13,6 +14,7 @@ const ButtonAnimatable = ({
             className: cx(
                 'ButtonAnimatable',
                 !isSelected && 'ButtonAnimatable__enabled',
+                dropShadow && 'ButtonAnimatable__dropShadow',
             ),
         }}
     >
@@ -22,6 +24,7 @@ const ButtonAnimatable = ({
 
 ButtonAnimatable.propTypes = {
     isSelected: PropTypes.bool,
+    dropShadow: PropTypes.bool,
     children: PropTypes.any,
 }
 

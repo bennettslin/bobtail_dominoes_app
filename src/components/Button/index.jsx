@@ -15,6 +15,7 @@ const Button = forwardRef(({
     analyticsLabel,
     pagePath,
     isSelected,
+    dropShadow,
     tooltipId,
     tooltipText,
     isTooltipSuccess,
@@ -71,7 +72,7 @@ const Button = forwardRef(({
                 Tag,
             }}
         >
-            <ButtonAnimatable {...{ isSelected }}>
+            <ButtonAnimatable {...{ isSelected, dropShadow }}>
                 {children}
             </ButtonAnimatable>
             {isTooltipEnabled && (
@@ -92,6 +93,7 @@ Button.propTypes = {
     analyticsLabel: PropTypes.string,
     pagePath: PropTypes.string,
     isSelected: PropTypes.bool,
+    dropShadow: PropTypes.bool,
     tooltipId: PropTypes.string,
     tooltipText: PropTypes.string,
     isTooltipShown: PropTypes.bool,

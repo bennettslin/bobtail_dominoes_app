@@ -3,16 +3,23 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Button from '../../../../components/Button'
+import StyledButtonText from '../../../../components/Styled/ButtonText'
 import {
     getMapIsSelectedPagePath,
     getMapIsSelectedTabbedPath,
 } from '../../../../redux/page/selector'
 import './style'
 
-const HeaderButton = ({ className, pagePath, children }) => {
+const HeaderButton = ({
+    className,
+    pagePath,
+    isHomeButton,
+    children,
+}) => {
     const
         isSelectedPagePath = useSelector(getMapIsSelectedPagePath(pagePath)),
-        isSelectedTabbedPath = useSelector(getMapIsSelectedTabbedPath(pagePath))
+        isSelectedTabbedPath = useSelector(getMapIsSelectedTabbedPath(pagePath)),
+        isSelected = isSelectedPagePath || isSelectedTabbedPath
 
     return (
         <Button
@@ -24,10 +31,16 @@ const HeaderButton = ({ className, pagePath, children }) => {
                 ),
                 analyticsLabel: `HeaderButton__${pagePath}`,
                 pagePath,
-                isSelected: isSelectedPagePath || isSelectedTabbedPath,
+                isSelected,
             }}
         >
-            {children}
+            {isHomeButton ? (
+                children
+            ) : (
+                <StyledButtonText>
+                    {children}
+                </StyledButtonText>
+            )}
         </Button>
     )
 }
@@ -35,6 +48,7 @@ const HeaderButton = ({ className, pagePath, children }) => {
 HeaderButton.propTypes = {
     className: PropTypes.string,
     pagePath: PropTypes.string.isRequired,
+    isHomeButton: PropTypes.bool,
     children: PropTypes.node.isRequired,
 }
 

@@ -8,14 +8,6 @@
 
     gap: 0 $margin__md;
 
-    @media (min-width: $breakpoint__sm) {
-        gap: 0 $margin__lg;
-    }
-
-    @media (min-width: $breakpoint__md) {
-        gap: 0 $margin__xl;
-    }
-
     &:before {
         top: -$margin__md;
         height: calc(100% + #{$margin__md});

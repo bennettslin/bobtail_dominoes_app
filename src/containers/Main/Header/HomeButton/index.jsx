@@ -12,6 +12,7 @@ const HomeButton = () => (
                 'HomeButton',
             ),
             pagePath: HOME_PAGE,
+            isHomeButton: true,
         }}
     >
         <DominoSvg

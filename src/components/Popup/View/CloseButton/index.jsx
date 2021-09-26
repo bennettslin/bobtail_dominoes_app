@@ -11,6 +11,7 @@ const PopupCloseButton = ({
 }) => {
     return (
         <Button
+            dropShadow
             {...{
                 className: cx(
                     'PopupCloseButton',

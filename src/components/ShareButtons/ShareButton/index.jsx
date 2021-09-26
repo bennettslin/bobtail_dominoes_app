@@ -13,6 +13,7 @@ const ShareButton = forwardRef(({
 
 }, ref) => (
     <Button
+        dropShadow
         {...{
             ref,
             className: cx(

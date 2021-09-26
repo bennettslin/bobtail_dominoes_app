@@ -13,7 +13,7 @@ const Component = () => (
             titleHeading: 'Our story',
             body: [
                 `
-Hi, I'm Bennett from the Bobtail Yearlings! Years ago, I decided that learning to visualize chordal space was the next phase in my growth as a songwriter. After several false starts, I realized that I needed to gamify the process somehow. Then one day, the idea for Bobtail Dominoes came to me. To test it, I made a prototype out of mosaic bathroom tiles.
+Hi, I'm Bennett from the Bobtail Yearlings! Years ago, I decided that learning to visualize chordal space was the next phase in my growth as a songwriter. After several false starts, I realized that I needed to gamify the process. And so one day, the idea for Bobtail Dominoes came to me. To test it, I made a prototype out of mosaic bathroom tiles.
                 `,
                 (
                     <Image {...{ src: dominoesPrototype_reduced }} />

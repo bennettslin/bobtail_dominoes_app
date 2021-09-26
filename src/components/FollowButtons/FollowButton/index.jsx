@@ -14,6 +14,7 @@ const FollowButton = ({
 
 }) => (
     <Button
+        dropShadow
         {...{
             className: cx(
                 'FollowButton',
