@@ -203,21 +203,10 @@
       <text class="characterSymbol" transform="translate(1032.79 638.83)">7</text>
     </g>
   </g>
-  <g class="infoLineShadow">
-    <g class="wide">
-      <line x1="801" y1="466.88" x2="933.73" y2="466.88"/>
-    </g>
-  </g>
   <g class="infoShadow">
     <g class="text">
       <text transform="translate(239.44 216.09)">triad<tspan x="-32.93" y="100.8">(3 pts)</tspan></text>
       <text transform="translate(1558.71 362.3)">seventh chord<tspan x="127.3" y="100.8">(4 pts)</tspan></text>
-    </g>
-    <path d="M1001,466.88c-28.4,10.54-63.63,28.52-85.47,47.56l17.2-47.56-17.2-47.55C937.37,438.37,972.6,456.35,1001,466.88Z"/>
-  </g>
-  <g class="infoLine">
-    <g class="wide">
-      <line x1="800" y1="461.88" x2="931.73" y2="461.88"/>
     </g>
   </g>
   <g class="info">
@@ -225,6 +214,5 @@
       <text transform="translate(238.44 211.09)">triad<tspan x="-32.93" y="100.8">(3 pts)</tspan></text>
       <text transform="translate(1557.71 357.3)">seventh chord<tspan x="127.3" y="100.8">(4 pts)</tspan></text>
     </g>
-    <path d="M1000,461.88c-28.4,10.54-63.63,28.52-85.47,47.56l17.2-47.56-17.2-47.55C936.37,433.37,971.6,451.35,1000,461.88Z"/>
   </g>
 </svg>
