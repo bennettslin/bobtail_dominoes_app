@@ -3,8 +3,9 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Button from '../../../../components/Button'
+import StyledTabButton from '../../../../components/Styled/TabButton'
 import StyledButtonText from '../../../../components/Styled/ButtonText'
-import { getMapIsSelectedPagePath, mapSelectedPagePath } from '../../../../redux/page/selector'
+import { getMapIsSelectedOrTopLevelTabbedPath } from '../../../../redux/page/selector'
 import { getPagePathFromConfig } from '../../../../utils/pages/config'
 import './style'
 
@@ -21,27 +22,32 @@ const TabbedMenuButton = ({
             id,
             date,
         }),
-        selectedPagePath = useSelector(mapSelectedPagePath),
-        isSelectedPagePath = useSelector(getMapIsSelectedPagePath(pagePath)),
-        isTopLevelTabbedPath = isFirstPage && selectedPagePath === topLevelPage,
-        isSelected = isSelectedPagePath || isTopLevelTabbedPath
+        isSelectedOrTopLevelTabbedPath = useSelector(
+            getMapIsSelectedOrTopLevelTabbedPath({
+                pagePath,
+                topLevelPage,
+                isFirstPage,
+            }),
+        )
 
     return (
-        <Button
-            {...{
-                className: cx(
-                    'TabbedMenuButton',
-                    'font__button',
-                ),
-                analyticsLabel: `StyledButtonText__${id}`,
-                pagePath,
-                isSelected,
-            }}
-        >
-            <StyledButtonText>
-                {children}
-            </StyledButtonText>
-        </Button>
+        <StyledTabButton>
+            <Button
+                {...{
+                    className: cx(
+                        'TabbedMenuButton',
+                        'font__button',
+                    ),
+                    analyticsLabel: `TabbedMenuButton__${id}`,
+                    pagePath,
+                    isSelected: isSelectedOrTopLevelTabbedPath,
+                }}
+            >
+                <StyledButtonText>
+                    {children}
+                </StyledButtonText>
+            </Button>
+        </StyledTabButton>
     )
 }
 

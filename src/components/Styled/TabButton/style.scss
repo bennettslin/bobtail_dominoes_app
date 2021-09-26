@@ -1,0 +1,36 @@
+@import '../../../scss/constants/borders';
+@import '../../../scss/constants/colours';
+@import '../../../scss/constants/responsive';
+@import '../../../scss/constants/shadows';
+
+$margin__shadow: $margin__xs * 0.3;
+
+.StyledTabButton {
+    padding: $margin__xs * 0.5 0;
+
+    &.Button__selected {
+        &:before, &:after {
+            position: absolute;
+            left: -$margin__sm;
+            width: calc(100% + #{$margin__sm * 2});
+            background-color: $colour__background__light;
+            content: '';
+        }
+
+        &:before {
+            top: 0;
+            height: calc(100% - #{$margin__shadow});
+            border-radius:
+                $borderRadius__medium
+                $borderRadius__medium
+                0 0;
+            box-shadow: $boxShadow__above;
+        }
+
+        &:after {
+            bottom: -$margin__xs;
+            // Ensure overlap by adding extra pixel.
+            height: $margin__xs + $margin__shadow + 1px;
+        }
+    }
+}

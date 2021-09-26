@@ -3,9 +3,7 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import './style'
 
-const StyledButtonText = ({
-    children,
-}) => (
+const StyledButtonText = ({ children }) => (
     <>
         <div
             {...{

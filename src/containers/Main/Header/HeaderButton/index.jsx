@@ -4,10 +4,7 @@ import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Button from '../../../../components/Button'
 import StyledButtonText from '../../../../components/Styled/ButtonText'
-import {
-    getMapIsSelectedPagePath,
-    getMapIsSelectedTabbedPath,
-} from '../../../../redux/page/selector'
+import { getMapIsSelectedOrTabbedPath } from '../../../../redux/page/selector'
 import './style'
 
 const HeaderButton = ({
@@ -16,10 +13,9 @@ const HeaderButton = ({
     isHomeButton,
     children,
 }) => {
-    const
-        isSelectedPagePath = useSelector(getMapIsSelectedPagePath(pagePath)),
-        isSelectedTabbedPath = useSelector(getMapIsSelectedTabbedPath(pagePath)),
-        isSelected = isSelectedPagePath || isSelectedTabbedPath
+    const isSelectedOrTabbedPath = useSelector(
+        getMapIsSelectedOrTabbedPath(pagePath),
+    )
 
     return (
         <Button
@@ -31,7 +27,7 @@ const HeaderButton = ({
                 ),
                 analyticsLabel: `HeaderButton__${pagePath}`,
                 pagePath,
-                isSelected,
+                isSelected: isSelectedOrTabbedPath,
             }}
         >
             {isHomeButton ? (
