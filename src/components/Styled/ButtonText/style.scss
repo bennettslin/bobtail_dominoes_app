@@ -10,7 +10,7 @@
 
     .Button__enabled
     & {
-        top: 0.075em;
+        top: 0.08em;
         color: $colour__neutral__opaque;
     }
 
@@ -30,7 +30,7 @@
 
     .Button__selected
     & {
-        top: 0.075em;
+        top: 0.08em;
         mix-blend-mode: screen;
     }
 }

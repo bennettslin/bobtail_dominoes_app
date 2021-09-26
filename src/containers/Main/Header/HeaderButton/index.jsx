@@ -27,7 +27,6 @@ const HeaderButton = ({
                         'font__button',
                         className,
                     ),
-                    analyticsLabel: `HeaderButton__${pagePath}`,
                     pagePath,
                     isSelected: isSelectedOrTabbedPath,
                 }}

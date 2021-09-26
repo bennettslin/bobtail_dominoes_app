@@ -38,7 +38,6 @@ const TabbedMenuButton = ({
                         'TabbedMenuButton',
                         'font__button',
                     ),
-                    analyticsLabel: `TabbedMenuButton__${id}`,
                     pagePath,
                     isSelected: isSelectedOrTopLevelTabbedPath,
                 }}
