@@ -1,19 +1,26 @@
-import { cloneElement } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import Button from '../../Button'
 import './style'
 
 const StyledButton = ({
-    children,
-}) => cloneElement(children, {
-    className: cx(
-        'StyledButton',
-        children.props.className,
-    ),
-})
+    className,
+    ...rest
+}) => (
+    <Button
+        {...{
+            className: cx(
+                'StyledButton',
+                className,
+            ),
+            ...rest,
+        }}
+    />
+)
 
 StyledButton.propTypes = {
-    children: PropTypes.node.isRequired,
+    className: PropTypes.string,
 }
 
 export default StyledButton

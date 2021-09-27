@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Flex from '../../../components/Flex'
+import Helmet from '../../../components/Helmet'
 import './style'
 
 const HomePage = ({ className, children }) => (
@@ -15,6 +16,7 @@ const HomePage = ({ className, children }) => (
             justifyContent: 'space-between',
         }}
     >
+        <Helmet />
         {children}
     </Flex>
 )

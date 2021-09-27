@@ -1,19 +1,26 @@
-import { cloneElement } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import Button from '../../Button'
 import './style'
 
 const StyledTabButton = ({
-    children,
-}) => cloneElement(children, {
-    className: cx(
-        'StyledTabButton',
-        children.props.className,
-    ),
-})
+    className,
+    ...rest
+}) => (
+    <Button
+        {...{
+            className: cx(
+                'StyledTabButton',
+                className,
+            ),
+            ...rest,
+        }}
+    />
+)
 
 StyledTabButton.propTypes = {
-    children: PropTypes.node.isRequired,
+    className: PropTypes.string,
 }
 
 export default StyledTabButton

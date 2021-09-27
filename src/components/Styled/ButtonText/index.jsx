@@ -8,7 +8,7 @@ const StyledButtonText = ({ children }) => (
         <div
             {...{
                 className: cx(
-                    'StyledButtonText__bottom',
+                    'StyledButtonText__rear',
                 ),
             }}
         >
@@ -17,7 +17,7 @@ const StyledButtonText = ({ children }) => (
         <div
             {...{
                 className: cx(
-                    'StyledButtonText__top',
+                    'StyledButtonText__front',
                 ),
             }}
         >

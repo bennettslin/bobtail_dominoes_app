@@ -6,18 +6,15 @@ import StyledFrame from '../../../components/Styled/Frame'
 import './style'
 
 const MainFooter = () => (
-    <StyledFrame>
-        <div
-            {...{
-                className: cx(
-                    'MainFooter',
-                ),
-            }}
-        >
-
-            <MailingList />
-            <FollowButtons />
-        </div>
+    <StyledFrame
+        {...{
+            className: cx(
+                'MainFooter',
+            ),
+        }}
+    >
+        <MailingList />
+        <FollowButtons />
     </StyledFrame>
 )
 

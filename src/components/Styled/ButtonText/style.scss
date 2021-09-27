@@ -1,7 +1,7 @@
 @import '../../../scss/constants/colours';
 @import '../../../scss/constants/responsive';
 
-.StyledButtonText__bottom {
+.StyledButtonText__rear {
     position: absolute;
     top: 0;
     left: 0;
@@ -20,7 +20,7 @@
     }
 }
 
-.StyledButtonText__top {
+.StyledButtonText__front {
     position: relative;
 
     .Button__enabled

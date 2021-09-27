@@ -6,17 +6,15 @@ import Menu from './Menu'
 import './style'
 
 const MainHeader = () => (
-    <StyledFrame>
-        <div
-            {...{
-                className: cx(
-                    'MainHeader',
-                ),
-            }}
-        >
-            <HomeButton />
-            <Menu />
-        </div>
+    <StyledFrame
+        {...{
+            className: cx(
+                'MainHeader',
+            ),
+        }}
+    >
+        <HomeButton />
+        <Menu />
     </StyledFrame>
 )
 

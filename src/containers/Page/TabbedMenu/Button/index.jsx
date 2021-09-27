@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
-import Button from '../../../../components/Button'
 import StyledTabButton from '../../../../components/Styled/TabButton'
 import StyledButtonText from '../../../../components/Styled/ButtonText'
 import { getMapIsSelectedOrTopLevelTabbedPath } from '../../../../redux/page/selector'
@@ -31,21 +30,19 @@ const TabbedMenuButton = ({
         )
 
     return (
-        <StyledTabButton>
-            <Button
-                {...{
-                    className: cx(
-                        'TabbedMenuButton',
-                        'font__button',
-                    ),
-                    pagePath,
-                    isSelected: isSelectedOrTopLevelTabbedPath,
-                }}
-            >
-                <StyledButtonText>
-                    {children}
-                </StyledButtonText>
-            </Button>
+        <StyledTabButton
+            {...{
+                className: cx(
+                    'TabbedMenuButton',
+                    'font__button',
+                ),
+                pagePath,
+                isSelected: isSelectedOrTopLevelTabbedPath,
+            }}
+        >
+            <StyledButtonText>
+                {children}
+            </StyledButtonText>
         </StyledTabButton>
     )
 }
