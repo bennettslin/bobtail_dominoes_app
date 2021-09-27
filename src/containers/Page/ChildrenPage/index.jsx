@@ -11,7 +11,7 @@ const ChildrenPage = ({ children }) => (
                 'ChildrenPage',
             ),
             flexDirection: 'column',
-            justifyContent: 'space-between',
+            justifyContent: 'space-evenly',
         }}
     >
         {children}

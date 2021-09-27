@@ -12,8 +12,6 @@ const StyledPage = ({ className, ...rest }) => (
             ),
         }}
     >
-        <div {...{ className: 'StyledPage__pageBottom' }} />
-        <div {...{ className: 'StyledPage__pageSide' }} />
         <Flex
             {...{
                 className: cx(

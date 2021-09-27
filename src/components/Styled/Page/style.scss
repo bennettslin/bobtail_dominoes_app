@@ -7,7 +7,6 @@ $length__base: $margin__xs;
 $length__top__edge: $length__base * 0.25;
 $length__side__edge: $length__base * 0.5;
 $length__bottom__edge: $length__base * 0.5;
-
 $borderRadius__outer: $borderRadius__wide;
 $borderRadius__inner: $borderRadius__wide - $length__base * 0.25;
 
@@ -15,55 +14,40 @@ $borderRadius__inner: $borderRadius__wide - $length__base * 0.25;
     flex-grow: 1;
     position: relative;
     width: 100%;
-
     display: flex;
 
     @media (min-width: $breakpoint__sm) {
+        margin-bottom: $length__base;
         padding:
             $length__top__edge
             $length__side__edge
             $length__bottom__edge;
         border-radius: $borderRadius__outer;
+        background-color: $colour__neutral__dark;
+
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: calc(100% - #{$length__base});
+            margin-bottom: $length__base;
+            border-radius: $borderRadius__outer;
+            @include mixin__reflection(
+                $colour__neutral__medium,
+                $colour__neutral__light,
+            );
+            content: '';
+        }
     }
 }
 
 .StyledPage__body {
     position: relative;
     background-color: $colour__background__light;
-
+    
     @media (min-width: $breakpoint__sm) {
+        margin-bottom: $length__base;
         border-radius: $borderRadius__inner;
-    }
-}
-
-.StyledPage__pageSide,
-.StyledPage__pageBottom {
-    display: none;
-
-    @media (min-width: $breakpoint__sm) {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-}
-
-.StyledPage__pageSide {
-    @media (min-width: $breakpoint__sm) {
-        border-radius: $borderRadius__outer;
-        @include mixin__reflection(
-            $colour__neutral__medium,
-            $colour__neutral__light,
-        );
-    }
-}
-
-.StyledPage__pageBottom {
-    @media (min-width: $breakpoint__sm) {
-        top: $length__base;
-        border-radius: $borderRadius__outer;
-        background-color: $colour__neutral__dark;
     }
 }
