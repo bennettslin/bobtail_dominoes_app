@@ -17,7 +17,6 @@ const StyledTabbedMenu = ({
             justifyContent: 'start',
         }}
     >
-        <div {...{ className: 'StyledTabbedMenu__gutter' }} />
         {children}
     </Flex>
 )

@@ -4,35 +4,40 @@
 
 .StyledTabbedMenu {
     position: relative;
-    width: 100%;
+    top: -$margin__xs;
+    width: calc(100% + #{$margin__xs * 2});
+    padding: $margin__xs $margin__xs 0;
 
-    &:before {
-        top: -$margin__md;
-        height: calc(100% + #{$margin__md});
-        background-color: $colour__background__dark;
+    @media (min-width: $breakpoint__sm) {
+        top: -$margin__sm;
+        width: calc(100% + #{$margin__sm * 2});
+        padding: $margin__sm $margin__sm 0;
     }
-}
 
-.StyledTabbedMenu:before,
-.StyledTabbedMenu__gutter:before,
-.StyledTabbedMenu__gutter:after {
-    position: absolute;
-    left: -$margin__md;
-    width: calc(100% + #{$margin__md * 2});
-    content: '';
-}
+    @media (min-width: $breakpoint__md) {
+        top: -$margin__md;
+        width: calc(100% + #{$margin__md * 2});
+        padding: $margin__md $margin__md 0;
+    }
 
-.StyledTabbedMenu__gutter {
+    background-color: $colour__background__dark;
+
     &:before {
         bottom: -$margin__sm;
-        height: $margin__sm;
-        background-color: $colour__background__light;
         box-shadow: $boxShadow__above;
     }
 
     &:after {
         bottom: -$margin__md;
-        height: $margin__sm;
-        background-color: $colour__background__light;
     }
+}
+
+.StyledTabbedMenu:before,
+.StyledTabbedMenu:after {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: $margin__sm;
+    background-color: $colour__background__light;
+    content: '';
 }
