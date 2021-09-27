@@ -1,11 +1,11 @@
 import React, { Fragment, useContext } from 'react'
 import cx from 'classnames'
-import PageConfigContext from '../../../contexts/PageConfig'
-import ContactEmail from '../../../components/ContactEmail'
-import Markdown from '../../../components/Markdown'
-import Heading from '../../../components/Heading'
-import { replaceStraightWithSmartQuotes } from '../../../utils/format/smartQuote'
-import { getHeaderFromDate } from '../../../utils/format/dates'
+import PageConfigContext from '../../../../contexts/PageConfig'
+import ContactEmail from '../../../../components/ContactEmail'
+import Markdown from '../../../../components/Markdown'
+import Heading from '../../../../components/Heading'
+import { replaceStraightWithSmartQuotes } from '../../../../utils/format/smartQuote'
+import { getHeaderFromDate } from '../../../../utils/format/dates'
 import './style'
 
 const Body = () => {

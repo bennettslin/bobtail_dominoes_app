@@ -1,14 +1,12 @@
 @import '../../../../scss/constants/responsive';
 
-.PageFooterRow {
+.PageFooter {
     width: 100%;
+    margin-top: $margin__md;
 
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-}
-
-.PageFooterRow__bottom {
-    padding-top: $margin__xs;
-    border-top: 1px solid hsla(0, 0%, 50%, 0.5);
+    gap: $margin__md;
 }

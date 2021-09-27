@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import { useSelector } from 'react-redux'
-import PageConfigContext from '../../../../contexts/PageConfig'
+import PageConfigContext from '../../../../../contexts/PageConfig'
 import PageFooterRow from '../FooterRow'
 import TopLevelPageLink from './TopLevelPageLink'
-import ShareButtons from '../../../../components/ShareButtons'
-import { mapSelectedPagePath } from '../../../../redux/page/selector'
-import { getIsTabbedPath, getTopLevelPageFromPath } from '../../../../utils/pages/path'
+import ShareButtons from '../../../../../components/ShareButtons'
+import { mapSelectedPagePath } from '../../../../../redux/page/selector'
+import { getIsTabbedPath, getTopLevelPageFromPath } from '../../../../../utils/pages/path'
 
 const TopLevelShareRow = () => {
     const

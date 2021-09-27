@@ -1,30 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import cx from 'classnames'
 import PageConfigContext from '../../contexts/PageConfig'
-import StyledPage from '../../components/Styled/Page'
-import TabbedMenu from './TabbedMenu'
-import Body from './Body'
-import PageFooter from './Footer'
 import Helmet from '../../components/Helmet'
-import './style'
+import ChildrenPage from './ChildrenPage'
+import ContentPage from './ContentPage'
 
-const Page = ({ ...rest }) => (
+const Page = ({ children, ...rest }) => (
     <PageConfigContext.Provider {...{ value: rest }}>
         <Helmet />
-        <StyledPage
-            {...{
-                className: cx(
-                    'Page',
-                ),
-                flexDirection: 'column',
-                justifyContent: 'normal',
-            }}
-        >
-            <TabbedMenu />
-            <Body />
-            <PageFooter />
-        </StyledPage>
+        {children ? (
+            <ChildrenPage>
+                {children}
+            </ChildrenPage>
+        ) : (
+            <ContentPage />
+        )}
     </PageConfigContext.Provider>
 )
 

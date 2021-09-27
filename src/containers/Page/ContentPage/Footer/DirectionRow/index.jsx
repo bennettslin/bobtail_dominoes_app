@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import { useSelector } from 'react-redux'
-import PageConfigContext from '../../../../contexts/PageConfig'
+import PageConfigContext from '../../../../../contexts/PageConfig'
 import PageFooterRow from '../FooterRow'
 import DirectionPageLink from './DirectionPageLink'
-import { mapSelectedPagePath } from '../../../../redux/page/selector'
+import { mapSelectedPagePath } from '../../../../../redux/page/selector'
 import { getDirectionPage } from './helper'
 
 const DirectionRow = () => {

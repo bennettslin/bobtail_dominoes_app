@@ -1,20 +1,19 @@
 @import '../../../scss/constants/responsive';
 
-.Body {
+.ContentPage {
     flex-grow: 1;
     width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    gap: $margin__md;
-
-    line-height: 1.5em;
+    padding: $margin__xs;
 
     @media (min-width: $breakpoint__sm) {
-        font-size: 1.25em;
+        padding: $margin__sm;
     }
 
     @media (min-width: $breakpoint__md) {
-        font-size: 1.5em;
+        padding: $margin__md;
     }
+
+    gap: $margin__md;
+
+    overflow-y: scroll;
 }

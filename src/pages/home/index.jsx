@@ -1,12 +1,12 @@
 import React from 'react'
 import cx from 'classnames'
-import HomePage from '../../containers/Page/HomePage'
+import Page from '../../containers/Page'
 import Paragraph from '../../components/Paragraph'
 import DominoSvg from '../../components/Svgs/Domino'
 import samplePerspective from '../../assets/svgs/rules/samplePerspective'
 
 const Component = () => (
-    <HomePage>
+    <Page>
         <Paragraph
             {...{
                 className: cx(
@@ -23,7 +23,7 @@ const Component = () => (
                 isFigure: false,
             }}
         />
-    </HomePage>
+    </Page>
 )
 
 export default Component

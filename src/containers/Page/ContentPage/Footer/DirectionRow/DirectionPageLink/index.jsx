@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import PageConfigContext from '../../../../../contexts/PageConfig'
-import Anchor from '../../../../../components/Anchor'
-import { getPagePathFromConfig } from '../../../../../utils/pages/config'
+import PageConfigContext from '../../../../../../contexts/PageConfig'
+import Anchor from '../../../../../../components/Anchor'
+import { getPagePathFromConfig } from '../../../../../../utils/pages/config'
 import './style'
 
 const DirectionPageLink = ({ direction, directionPage }) => {
