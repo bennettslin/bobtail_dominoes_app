@@ -3,10 +3,10 @@ import { hsl } from '../../../../../utils/svgs'
 
 export default {
     fill: {
-        ranchoShadow:   hsl(0, 32, 37),
-        rancho:         hsl(0, 32, 57),
+        ranchoShadow:   hsl(0, 3, 32, 0.7),
+        rancho:         hsl(60, 3, 92),
 
-        logoShadow:     hsl(240, 10, 52),
-        logo:           hsl(240, 20, 72),
+        logoShadow:     hsl(60, 18, 42),
+        logo:           hsl(60, 23, 72),
     },
 }
