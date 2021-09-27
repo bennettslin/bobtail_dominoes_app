@@ -1,44 +1,9 @@
-@import '../../../scss/constants/colours';
 @import '../../../scss/constants/responsive';
-@import '../../../scss/constants/shadows';
 
 .TabbedMenu {
-    position: relative;
-    width: 100%;
-
     gap: 0 $margin__sm;
 
     @media (min-width: $breakpoint__sm) {
         gap: 0 $margin__md;
-    }
-
-    &:before {
-        top: -$margin__md;
-        height: calc(100% + #{$margin__md});
-        background-color: $colour__background__dark;
-    }
-}
-
-.TabbedMenu:before,
-.TabbedMenu__gutter:before,
-.TabbedMenu__gutter:after {
-    position: absolute;
-    left: -$margin__md;
-    width: calc(100% + #{$margin__md * 2});
-    content: '';
-}
-
-.TabbedMenu__gutter {
-    &:before {
-        bottom: -$margin__sm;
-        height: $margin__sm;
-        background-color: $colour__background__light;
-        box-shadow: $boxShadow__above;
-    }
-
-    &:after {
-        bottom: -$margin__md;
-        height: $margin__sm;
-        background-color: $colour__background__light;
     }
 }

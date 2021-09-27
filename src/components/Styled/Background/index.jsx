@@ -2,7 +2,7 @@ import React from 'react'
 import cx from 'classnames'
 import './style'
 
-const Background = () => (
+const StyledBackground = () => (
     <div
         {...{
             className: cx(
@@ -12,4 +12,4 @@ const Background = () => (
     />
 )
 
-export default Background
+export default StyledBackground

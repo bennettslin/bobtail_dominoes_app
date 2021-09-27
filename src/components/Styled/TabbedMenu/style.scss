@@ -1,0 +1,38 @@
+@import '../../../scss/constants/colours';
+@import '../../../scss/constants/responsive';
+@import '../../../scss/constants/shadows';
+
+.StyledTabbedMenu {
+    position: relative;
+    width: 100%;
+
+    &:before {
+        top: -$margin__md;
+        height: calc(100% + #{$margin__md});
+        background-color: $colour__background__dark;
+    }
+}
+
+.StyledTabbedMenu:before,
+.StyledTabbedMenu__gutter:before,
+.StyledTabbedMenu__gutter:after {
+    position: absolute;
+    left: -$margin__md;
+    width: calc(100% + #{$margin__md * 2});
+    content: '';
+}
+
+.StyledTabbedMenu__gutter {
+    &:before {
+        bottom: -$margin__sm;
+        height: $margin__sm;
+        background-color: $colour__background__light;
+        box-shadow: $boxShadow__above;
+    }
+
+    &:after {
+        bottom: -$margin__md;
+        height: $margin__sm;
+        background-color: $colour__background__light;
+    }
+}

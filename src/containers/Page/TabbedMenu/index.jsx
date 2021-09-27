@@ -2,11 +2,11 @@ import React, { useContext } from 'react'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import PageConfigContext from '../../../contexts/PageConfig'
-import Flex from '../../../components/Flex'
 import TabbedMenuButton from './Button'
 import { mapSelectedPagePath } from '../../../redux/page/selector'
 import { getIsTabbedPath } from '../../../utils/pages/path'
 import './style'
+import StyledTabbedMenu from '../../../components/Styled/TabbedMenu'
 
 const TabbedMenu = () => {
     const
@@ -15,15 +15,13 @@ const TabbedMenu = () => {
         isTabbedPage = getIsTabbedPath(selectedPagePath)
 
     return isTabbedPage && Boolean(pages) && (
-        <Flex
+        <StyledTabbedMenu
             {...{
                 className: cx(
                     'TabbedMenu',
                 ),
-                justifyContent: 'start',
             }}
         >
-            <div {...{ className: 'TabbedMenu__gutter' }} />
             {pages.map(({
                 id,
                 title,
@@ -41,7 +39,7 @@ const TabbedMenu = () => {
                     {title}
                 </TabbedMenuButton>
             ))}
-        </Flex>
+        </StyledTabbedMenu>
     )
 }
 
