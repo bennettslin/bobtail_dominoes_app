@@ -17,7 +17,6 @@ $borderRadius__inner: $borderRadius__wide - $length__base * 0.25;
     display: flex;
 
     @media (min-width: $breakpoint__sm) {
-        margin-bottom: $length__base;
         padding:
             $length__top__edge
             $length__side__edge
@@ -31,7 +30,6 @@ $borderRadius__inner: $borderRadius__wide - $length__base * 0.25;
             left: 0;
             width: 100%;
             height: calc(100% - #{$length__base});
-            margin-bottom: $length__base;
             border-radius: $borderRadius__outer;
             @include mixin__reflection(
                 $colour__neutral__medium,

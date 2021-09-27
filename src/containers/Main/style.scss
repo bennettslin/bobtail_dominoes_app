@@ -12,16 +12,13 @@
 
     @media (min-width: $breakpoint__sm) {
         padding:
-            $margin__xs
-            $margin__xs
-            $margin__sm;
+            $margin__xs;
         gap: $margin__sm;
     }
 
     @media (min-width: $breakpoint__md) {
         padding:
             $margin__sm
-            $margin__md
             $margin__md;
     }
 }
