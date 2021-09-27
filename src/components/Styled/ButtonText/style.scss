@@ -16,7 +16,7 @@
 
     .Button__selected
     & {
-        color: $colour__link__darker;
+        color: $colour__link__dark;
     }
 }
 
@@ -32,5 +32,6 @@
     & {
         top: 0.08em;
         mix-blend-mode: screen;
+        color: $colour__link__darker;
     }
 }
