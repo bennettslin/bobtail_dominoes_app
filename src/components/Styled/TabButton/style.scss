@@ -11,10 +11,15 @@ $margin__shadow: $margin__xs * 0.3;
     &.Button__selected {
         &:before, &:after {
             position: absolute;
-            left: -$margin__sm;
-            width: calc(100% + #{$margin__sm * 2});
+            left: -$margin__xs;
+            width: calc(100% + #{$margin__xs * 2});
             background-color: $colour__background__light;
             content: '';
+
+            @media (min-width: $breakpoint__sm) {
+                left: -$margin__sm;
+                width: calc(100% + #{$margin__sm * 2});
+            }
         }
 
         &:before {

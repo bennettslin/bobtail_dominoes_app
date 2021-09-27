@@ -10,14 +10,19 @@
         &:before {
             position: absolute;
             top: 0;
-            left: -$margin__sm;
-            width: calc(100% + #{$margin__sm * 2});
+            left: -$margin__xs;
+            width: calc(100% + #{$margin__xs * 2});
             height: 100%;
 
             background-color: $colour__background__light;
             border-radius: $borderRadius__medium;
             box-shadow: $boxShadow__above;
             content: '';
+
+            @media (min-width: $breakpoint__sm) {
+                left: -$margin__sm;
+                width: calc(100% + #{$margin__sm * 2});
+            }
         }
     }
 }

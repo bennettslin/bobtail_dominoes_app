@@ -1,6 +1,6 @@
-@import '../../../../scss/constants/responsive';
+@import '../../../../../scss/constants/responsive';
 
-.HeaderButton {
+.MenuButton {
     font-size: 1.33em;
 
     @media (min-width: $breakpoint__sm) {

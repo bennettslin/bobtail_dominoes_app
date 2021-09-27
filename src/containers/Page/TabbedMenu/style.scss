@@ -6,7 +6,11 @@
     position: relative;
     width: 100%;
 
-    gap: 0 $margin__md;
+    gap: 0 $margin__sm;
+
+    @media (min-width: $breakpoint__sm) {
+        gap: 0 $margin__md;
+    }
 
     &:before {
         top: -$margin__md;

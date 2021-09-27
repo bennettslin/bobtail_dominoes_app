@@ -2,16 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
-import Button from '../../../../components/Button'
-import StyledButton from '../../../../components/Styled/Button'
-import StyledButtonText from '../../../../components/Styled/ButtonText'
-import { getMapIsSelectedOrTabbedPath } from '../../../../redux/page/selector'
+import Button from '../../../../../components/Button'
+import StyledButton from '../../../../../components/Styled/Button'
+import StyledButtonText from '../../../../../components/Styled/ButtonText'
+import { getMapIsSelectedOrTabbedPath } from '../../../../../redux/page/selector'
 import './style'
 
-const HeaderButton = ({
+const MenuButton = ({
     className,
     pagePath,
-    isHomeButton,
     children,
 }) => {
     const isSelectedOrTabbedPath = useSelector(
@@ -23,7 +22,7 @@ const HeaderButton = ({
             <Button
                 {...{
                     className: cx(
-                        'HeaderButton',
+                        'MenuButton',
                         'font__button',
                         className,
                     ),
@@ -31,23 +30,18 @@ const HeaderButton = ({
                     isSelected: isSelectedOrTabbedPath,
                 }}
             >
-                {isHomeButton ? (
-                    children
-                ) : (
-                    <StyledButtonText>
-                        {children}
-                    </StyledButtonText>
-                )}
+                <StyledButtonText>
+                    {children}
+                </StyledButtonText>
             </Button>
         </StyledButton>
     )
 }
 
-HeaderButton.propTypes = {
+MenuButton.propTypes = {
     className: PropTypes.string,
     pagePath: PropTypes.string.isRequired,
-    isHomeButton: PropTypes.bool,
     children: PropTypes.node.isRequired,
 }
 
-export default HeaderButton
+export default MenuButton
