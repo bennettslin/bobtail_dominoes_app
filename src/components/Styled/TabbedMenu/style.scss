@@ -6,18 +6,18 @@
     position: relative;
     top: -$margin__xs;
     width: calc(100% + #{$margin__xs * 2});
-    padding: $margin__xs $margin__xs 0;
+    padding: $margin__xs $margin__xs 0 $margin__sm;
 
     @media (min-width: $breakpoint__sm) {
         top: -$margin__sm;
         width: calc(100% + #{$margin__sm * 2});
-        padding: $margin__sm $margin__sm 0;
+        padding: $margin__sm $margin__sm 0 $margin__md;
     }
 
     @media (min-width: $breakpoint__md) {
         top: -$margin__md;
         width: calc(100% + #{$margin__md * 2});
-        padding: $margin__md $margin__md 0;
+        padding: $margin__md $margin__md 0 $margin__lg;
     }
 
     background-color: $colour__background__dark;

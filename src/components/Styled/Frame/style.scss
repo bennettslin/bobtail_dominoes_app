@@ -19,8 +19,36 @@ $borderRadius__inner: $borderRadius__wide - $length__base * 0.66;
         padding:
             $length__frame + $length__inset__top
             $length__frame + $length__inset__side
-            $length__frame;
+            $length__frame + $length__base;
         border-radius: $borderRadius__outer;
+        background-color: $colour__frame__dark;
+
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: calc(100% - #{$length__base});
+            border-radius: $borderRadius__outer;
+            @include mixin__reflection(
+                $colour__frame__medium,
+                $colour__frame__light,
+            );
+            content: '';
+        }
+    }
+}
+
+.StyledFrame__frameInset {
+    @media (min-width: $breakpoint__sm) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(100% - #{$length__frame * 2});
+        height: calc(100% - #{$length__base + $length__frame * 2});
+        margin: $length__frame;
+        border-radius: $borderRadius__inner;
+        background-color: $colour__frame__dark;
     }
 }
 
@@ -28,47 +56,5 @@ $borderRadius__inner: $borderRadius__wide - $length__base * 0.66;
     position: relative;
     @media (min-width: $breakpoint__sm) {
         border-radius: $borderRadius__inner;
-    }
-}
-
-.StyledFrame__frameFront,
-.StyledFrame__frameInset,
-.StyledFrame__frameBottom {
-    display: none;
-    @media (min-width: $breakpoint__sm) {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-}
-
-.StyledFrame__frameFront {
-    @media (min-width: $breakpoint__sm) {
-        border-radius: $borderRadius__outer;
-        @include mixin__reflection(
-            $colour__frame__medium,
-            $colour__frame__light,
-        );
-    }
-}
-
-.StyledFrame__frameInset {
-    @media (min-width: $breakpoint__sm) {
-        width: calc(100% - #{$length__frame * 2});
-        height: calc(100% - #{$length__frame * 2});
-        margin: $length__frame;
-        border-radius: $borderRadius__inner;
-        background-color: $colour__frame__dark;
-    }
-}
-
-.StyledFrame__frameBottom {
-    @media (min-width: $breakpoint__sm) {
-        top: $length__base;
-        border-radius: $borderRadius__outer;
-        background-color: $colour__frame__dark;
     }
 }

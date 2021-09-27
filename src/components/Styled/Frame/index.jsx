@@ -11,8 +11,6 @@ const StyledFrame = ({ className, children }) => (
             ),
         }}
     >
-        <div {...{ className: 'StyledFrame__frameBottom' }} />
-        <div {...{ className: 'StyledFrame__frameFront' }} />
         <div {...{ className: 'StyledFrame__frameInset' }} />
         <div
             {...{
