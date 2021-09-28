@@ -3,7 +3,9 @@ import { hsl } from '../../../../../utils/svgs'
 
 export default {
     fill: {
+        rightFar:   hsl(30, 0, 37),
         right:      hsl(30, 0, 42),
+        leftFar:    hsl(30, 0, 47),
         left:       hsl(30, 0, 52),
         edge:       hsl(30, 13, 77),
         face:       hsl(30, 13, 87),
