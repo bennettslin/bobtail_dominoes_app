@@ -5,16 +5,13 @@ import { useSelector } from 'react-redux'
 import StyledButton from '../../../../../components/Styled/Button'
 import StyledButtonText from '../../../../../components/Styled/ButtonText'
 import { getMapIsSelectedOrTabbedPath } from '../../../../../redux/page/selector'
-import './style'
 
 const MenuButton = ({
     className,
     pagePath,
     children,
 }) => {
-    const isSelectedOrTabbedPath = useSelector(
-        getMapIsSelectedOrTabbedPath(pagePath),
-    )
+    const isSelected = useSelector(getMapIsSelectedOrTabbedPath(pagePath))
 
     return (
         <StyledButton
@@ -22,13 +19,14 @@ const MenuButton = ({
                 className: cx(
                     'MenuButton',
                     'font__button',
+                    'fontSize__lg',
                     className,
                 ),
                 pagePath,
-                isSelected: isSelectedOrTabbedPath,
+                isSelected,
             }}
         >
-            <StyledButtonText>
+            <StyledButtonText {...{ isSelected }}>
                 {children}
             </StyledButtonText>
         </StyledButton>

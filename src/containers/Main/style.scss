@@ -4,22 +4,19 @@
     flex-grow: 1;
     position: relative;
     width: 100%;
-    max-width: $breakpoint__lg;
+    max-width: $width__lg;
     
     display: flex;
     flex-direction: column;
     align-items: center;
 
     @media (min-width: $breakpoint__sm) {
-        padding:
-            $margin__xs;
-        gap: $margin__sm;
+        padding: $margin__xs;
+        gap: $margin__xs;
     }
 
     @media (min-width: $breakpoint__md) {
-        padding:
-            $margin__sm
-            $margin__md;
+        padding: $margin__sm;
     }
 }
 

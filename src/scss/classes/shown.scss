@@ -1,0 +1,11 @@
+@import '../constants/transition';
+
+.hidden {
+    opacity: 0;
+    transition: opacity $transitionDuration__fast;
+}
+
+.shown {
+    opacity: 1;
+    transition: opacity $transitionDuration__slow;
+}

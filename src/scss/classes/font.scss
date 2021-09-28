@@ -1,4 +1,5 @@
 @import '../constants/colours';
+@import '../constants/responsive';
 
 @font-face {
     font-family: Fresca;
@@ -47,4 +48,28 @@
 
 .text__light {
     color: $colour__text__light;
+}
+
+.fontSize__md {
+    line-height: 1.5em;
+
+    @media (min-width: $breakpoint__sm) {
+        font-size: 1.25em;
+    }
+
+    @media (min-width: $breakpoint__md) {
+        font-size: 1.5em;
+    }
+}
+
+.fontSize__lg {
+    font-size: 1.33em;
+
+    @media (min-width: $breakpoint__sm) {
+        font-size: 1.66em;
+    }
+
+    @media (min-width: $breakpoint__md) {
+        font-size: 2em;
+    }
 }

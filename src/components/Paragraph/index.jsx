@@ -1,7 +1,6 @@
 import React from 'react'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import { getTextWithFlatsSeparated } from '../../utils/format/music'
 import './style'
 
 const Paragraph = ({
@@ -16,7 +15,7 @@ const Paragraph = ({
             ),
         }}
     >
-        {getTextWithFlatsSeparated(children)}
+        {children}
     </p>
 )
 

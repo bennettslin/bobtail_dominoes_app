@@ -21,13 +21,11 @@ const TabbedMenuButton = ({
             id,
             date,
         }),
-        isSelectedOrTopLevelTabbedPath = useSelector(
-            getMapIsSelectedOrTopLevelTabbedPath({
-                pagePath,
-                topLevelPage,
-                isFirstPage,
-            }),
-        )
+        isSelected = useSelector(getMapIsSelectedOrTopLevelTabbedPath({
+            pagePath,
+            topLevelPage,
+            isFirstPage,
+        }))
 
     return (
         <StyledTabButton
@@ -37,10 +35,10 @@ const TabbedMenuButton = ({
                     'font__button',
                 ),
                 pagePath,
-                isSelected: isSelectedOrTopLevelTabbedPath,
+                isSelected,
             }}
         >
-            <StyledButtonText>
+            <StyledButtonText {...{ isSelected }}>
                 {children}
             </StyledButtonText>
         </StyledTabButton>

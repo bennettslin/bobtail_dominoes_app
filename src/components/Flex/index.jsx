@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 const Flex = forwardRef(({
     className,
+    flexGrow,
     flexDirection,
     justifyContent = 'center',
     alignItems = 'center',
@@ -19,10 +20,11 @@ const Flex = forwardRef(({
             },
             style: {
                 display: 'flex',
+                ...flexGrow && { flexGrow },
                 ...flexDirection && { flexDirection },
                 justifyContent,
                 alignItems,
-                flexWrap,
+                ...flexWrap && { flexWrap },
             },
             ...rest,
         }}
@@ -33,6 +35,7 @@ const Flex = forwardRef(({
 
 Flex.propTypes = {
     className: PropTypes.string,
+    flexGrow: PropTypes.number,
     flexDirection: PropTypes.string,
     justifyContent: PropTypes.string,
     alignItems: PropTypes.string,

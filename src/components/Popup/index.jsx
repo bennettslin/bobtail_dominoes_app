@@ -21,8 +21,7 @@ const Popup = ({
                 in: isVisible,
                 timeout: 200,
                 classNames: {
-                    exitActive: 'Popup__exiting',
-                    enterDone: 'Popup__visible',
+                    enterDone: 'shown',
                 },
             }}
         >
@@ -30,6 +29,7 @@ const Popup = ({
                 {...{
                     className: cx(
                         'Popup',
+                        'hidden',
                         popupName,
                     ),
                     onClick: handleCloseClick,

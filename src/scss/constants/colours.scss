@@ -1,6 +1,6 @@
 /* https://color.adobe.com */
 
-$colour__wrapper: hsl(300, 38%, 27%);
+$colour__wrapper: hsl(300, 28%, 37%);
 
 $colour__background__dark: hsl(190, 18%, 52%);
 $colour__background__medium: hsl(170, 28%, 87%);
@@ -9,7 +9,9 @@ $colour__background__light: hsl(150, 33%, 97%);
 $colour__neutral__dark: hsl(60, 3%, 37%);
 $colour__neutral__medium: hsl(0, 3%, 62%);
 $colour__neutral__light: hsl(0, 3%, 72%);
-$colour__neutral__opaque: hsla(60, 3%, 32%, 0.7);
+
+$colour__opaque__dark: hsla(60, 3%, 17%, 0.7);
+$colour__opaque__medium: hsla(60, 3%, 32%, 0.7);
 
 $colour__text__dark: hsl(60, 3%, 27%);
 $colour__text__medium: hsl(60, 3%, 52%);
@@ -23,10 +25,10 @@ $colour__frame__light: hsl(60, 33%, 72%);
 $colour__primary__dark: hsl(45, 23%, 47%);
 $colour__primary__light: hsl(45, 28%, 82%);
 
-$colour__link__darker: hsl(270, 38%, 52%);
+$colour__link__darker: hsl(270, 38%, 42%);
 $colour__link__dark: hsl(270, 43%, 62%);
-$colour__link__medium: hsl(270, 48%, 72%);
-$colour__link__light: hsl(270, 53%, 82%);
+$colour__link__medium: hsl(270, 63%, 82%);
+$colour__link__light: hsl(270, 93%, 92%);
 
 $colour__facebook: hsl(214, 63%, 57%);
 $colour__twitter: hsl(203, 68%, 57%);

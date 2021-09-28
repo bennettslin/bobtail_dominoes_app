@@ -3,11 +3,17 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import './style'
 
-const StyledFrame = ({ className, children }) => (
+const StyledFrame = ({
+    className,
+    isShown = true,
+    children,
+}) => (
     <div
         {...{
             className: cx(
                 'StyledFrame',
+                'hidden',
+                isShown && 'shown',
             ),
         }}
     >
@@ -27,6 +33,7 @@ const StyledFrame = ({ className, children }) => (
 
 StyledFrame.propTypes = {
     className: PropTypes.string,
+    isShown: PropTypes.bool,
     children: PropTypes.node.isRequired,
 }
 

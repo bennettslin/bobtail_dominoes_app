@@ -1,0 +1,41 @@
+@import '../../../scss/constants/colours';
+
+.StyledText__rear {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.StyledText__rearInset {
+    &.StyledText__interactive {
+        color: $colour__link__dark;
+    }
+}
+
+.StyledText__rearShadow {
+    top: 0.08em;
+    color: $colour__opaque__medium;
+}
+
+.StyledText__front {
+    position: relative;
+}
+
+.StyledText__frontInset {
+    top: 0.08em;
+    mix-blend-mode: screen;
+
+    &.StyledText__interactive {
+        color: $colour__link__darker;
+    }
+}
+
+.StyledText__frontShadow {
+    color: $colour__text__light;
+
+    &.StyledText__interactive {
+        color: $colour__link__light;
+    }
+}

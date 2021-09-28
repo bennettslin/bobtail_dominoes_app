@@ -1,32 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import cx from 'classnames'
-import './style'
+import StyledText from '../Text'
 
-const StyledButtonText = ({ children }) => (
-    <>
-        <div
-            {...{
-                className: cx(
-                    'StyledButtonText__rear',
-                ),
-            }}
-        >
-            {children}
-        </div>
-        <div
-            {...{
-                className: cx(
-                    'StyledButtonText__front',
-                ),
-            }}
-        >
-            {children}
-        </div>
-    </>
+const StyledButtonText = ({
+    isSelected,
+    children,
+
+}) => (
+    <StyledText
+        isInteractive
+        {...{
+            isInset: isSelected,
+            isShadow: !isSelected,
+        }}
+    >
+        {children}
+    </StyledText>
 )
 
 StyledButtonText.propTypes = {
+    isSelected: PropTypes.bool,
     children: PropTypes.node.isRequired,
 }
 
