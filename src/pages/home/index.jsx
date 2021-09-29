@@ -4,7 +4,7 @@ import Page from '../../containers/Page'
 import Flex from '../../components/Flex'
 import StyledParagraph from '../../components/Styled/Paragraph'
 import DominoSvg from '../../components/Svgs/Domino'
-import samplePerspective from '../../assets/svgs/rules/samplePerspective'
+import homeDominoes from '../../assets/svgs/home/homeDominoes'
 import './style'
 
 const Component = () => (
@@ -18,12 +18,12 @@ const Component = () => (
             }}
         >
             <StyledParagraph>
-            Whether playing by yourself or with friends, Bobtail Dominoes is a fun and challenging game for musicians of all skill levels!
+            A fun and challenging game for musicians of all skill levels!
             </StyledParagraph>
         </Flex>
         <DominoSvg
             {...{
-                src: samplePerspective,
+                src: homeDominoes,
                 scaleFactor: 3,
                 isFigure: false,
             }}
