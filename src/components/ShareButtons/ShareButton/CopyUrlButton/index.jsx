@@ -67,6 +67,7 @@ const CopyUrlButton = () => {
         >
             <Svg
                 {...{
+                    className: isCopied ? 'copyUrlCopied' : 'copyUrl',
                     src: isCopied ? copyUrlCopied : copyUrl,
                 }}
             />

@@ -23,10 +23,8 @@ const Component = () => (
         </Flex>
         <DominoSvg
             {...{
+                className: 'homeDominoes',
                 src: homeDominoes,
-                className: cx(
-                    'homeDominoes',
-                ),
                 scaleFactor: 3,
                 isFigure: false,
             }}

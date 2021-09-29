@@ -31,6 +31,7 @@ const TwitterButton = () => {
         >
             <Svg
                 {...{
+                    className: 'twitter',
                     src: twitter,
                 }}
             />

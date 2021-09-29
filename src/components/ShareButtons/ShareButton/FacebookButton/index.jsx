@@ -31,6 +31,7 @@ const FacebookButton = () => {
         >
             <Svg
                 {...{
+                    className: 'facebook',
                     src: facebook,
                 }}
             />
