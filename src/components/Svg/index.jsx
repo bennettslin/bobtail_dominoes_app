@@ -6,6 +6,7 @@ import { getSvgWithClassStyles } from './helpers/styles'
 
 const Svg = ({
     src,
+    className,
     scaleFactor,
     styles,
 }) => {
@@ -24,6 +25,7 @@ const Svg = ({
             {...{
                 xmlns: 'http://www.w3.org/2000/svg',
                 src,
+                className,
                 preProcessor,
             }}
         />
@@ -32,6 +34,7 @@ const Svg = ({
 
 Svg.propTypes = {
     src: PropTypes.string.isRequired,
+    className: PropTypes.string,
     scaleFactor: PropTypes.number,
     styles: PropTypes.shape({
         fill: PropTypes.object,

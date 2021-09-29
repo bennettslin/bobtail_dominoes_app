@@ -1,5 +1,10 @@
 @import '../../scss/constants/responsive';
+@import '../../scss/constants/shadows';
 
 .HomeFlex {
     max-width: $width__sm;
+}
+
+.homeDominoes {
+    filter: $dropShadow__homeDominoes;
 }

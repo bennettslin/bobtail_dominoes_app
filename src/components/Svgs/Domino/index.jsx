@@ -10,6 +10,7 @@ const DOMINO_SCALE_FACTOR = 0.2
 
 const DominoSvg = ({
     src,
+    className,
     isFigure = true,
     scaleFactor = 1,
 }) => (
@@ -26,6 +27,7 @@ const DominoSvg = ({
         <Svg
             {...{
                 src,
+                className,
                 scaleFactor: scaleFactor * DOMINO_SCALE_FACTOR,
                 styles,
             }}
@@ -35,6 +37,7 @@ const DominoSvg = ({
 
 DominoSvg.propTypes = {
     src: PropTypes.string.isRequired,
+    className: PropTypes.string,
     isFigure: PropTypes.bool,
     scaleFactor: PropTypes.number,
 }

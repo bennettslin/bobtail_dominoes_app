@@ -1,4 +1,5 @@
 @import './colours';
+@import './responsive';
 
 $textShadow__dark: 0.5px 1px $colour__text__dark;
 
@@ -6,6 +7,11 @@ $colour__shadow__light: hsla(240, 33%, 15%, 0.25);
 $colour__shadow__medium: hsla(240, 33%, 15%, 0.5);
 
 $dropShadow: drop-shadow(0 2px 4px $colour__shadow__light);
+$dropShadow__homeDominoes: drop-shadow(
+    0 0
+    $margin__xl * 3
+    $colour__home__primary
+);
 
 $colour__shadow__lightHover: hsla(24, 100%, 93%, 0.9);
 $dropShadow__lightHover: drop-shadow(0 2px 8px $colour__shadow__lightHover);

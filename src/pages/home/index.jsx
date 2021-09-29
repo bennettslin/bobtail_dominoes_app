@@ -24,6 +24,9 @@ const Component = () => (
         <DominoSvg
             {...{
                 src: homeDominoes,
+                className: cx(
+                    'homeDominoes',
+                ),
                 scaleFactor: 3,
                 isFigure: false,
             }}
