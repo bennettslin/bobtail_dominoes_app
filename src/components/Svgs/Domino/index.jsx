@@ -18,6 +18,7 @@ const DominoSvg = ({
         {...{
             className: cx(
                 'DominoSvg',
+                `DominoSvg__${className}`,
                 isFigure ?
                     'DominoSvg__figure' :
                     'DominoSvg__full',

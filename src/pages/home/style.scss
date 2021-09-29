@@ -1,10 +1,34 @@
+@import '../../scss/constants/colours';
 @import '../../scss/constants/responsive';
-@import '../../scss/constants/shadows';
 
 .HomeFlex {
     max-width: $width__sm;
 }
 
 .homeDominoes {
-    filter: $dropShadow__homeDominoes;
+    filter:
+        drop-shadow(
+            0 0
+            $margin__xl * 3
+            $colour__home__primary
+        );
+}
+
+.DominoSvg__homeDominoes {
+    position: relative;
+    &:before {
+        position: absolute;
+        top: 48%;
+        left: 48%;
+        width: 4%;
+        height: 4%;
+        border-radius: 50%;
+        content: '';
+        background-color: $colour__home__secondary;
+        box-shadow:
+            0 0
+            $margin__lg * 3
+            $margin__lg * 4
+            $colour__home__secondary;
+    }
 }
