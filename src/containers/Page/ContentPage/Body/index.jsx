@@ -4,7 +4,7 @@ import PageConfigContext from '../../../../contexts/PageConfig'
 import ContactEmail from '../../../../components/ContactEmail'
 import Markdown from '../../../../components/Markdown'
 import Heading from '../../../../components/Heading'
-import { replaceStraightWithSmartQuotes } from '../../../../utils/format/smartQuote'
+import { getSmartQuotedText } from '../../../../utils/format/smartQuote'
 import { getHeaderFromDate } from '../../../../utils/format/dates'
 import './style'
 
@@ -28,10 +28,10 @@ const Body = () => {
             }}
         >
             <Heading>
-                {replaceStraightWithSmartQuotes(pageHeading)}
+                {getSmartQuotedText(pageHeading)}
             </Heading>
             <Heading {...{ level: 3 }}>
-                {replaceStraightWithSmartQuotes(titleHeading || title)}
+                {getSmartQuotedText(titleHeading || title)}
             </Heading>
             <Heading {...{ level: 5 }}>
                 {getHeaderFromDate(date)}

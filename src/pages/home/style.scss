@@ -1,6 +1,10 @@
 @import '../../scss/constants/colours';
 @import '../../scss/constants/responsive';
 
+.HomePage {
+    width: 100%;
+}
+
 .HomeFlex {
     max-width: $width__sm;
 }

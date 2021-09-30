@@ -5,6 +5,7 @@ import Flex from '../../components/Flex'
 import StyledParagraph from '../../components/Styled/Paragraph'
 import DominoSvg from '../../components/Svgs/Domino'
 import homeDominoes from '../../assets/svgs/home/homeDominoes'
+import { getSmartQuotedText } from '../../utils/format/smartQuote'
 import './style'
 
 const Component = () => (
@@ -12,24 +13,33 @@ const Component = () => (
         <Flex
             {...{
                 className: cx(
-                    'HomeFlex',
+                    'HomePage',
                 ),
+                flexDirection: 'column-reverse',
                 flexGrow: 1,
             }}
         >
-            <StyledParagraph>
-            A fun and challenging game for musicians of all skill levels!
-            </StyledParagraph>
-            {/* Whether playing by yourself or with friends, Bobtail Dominoes is a fun and challenging game that will help you grow as a musician. I can make that promise with confidence, because I know it's helped me! */}
+            <DominoSvg
+                {...{
+                    className: 'homeDominoes',
+                    src: homeDominoes,
+                    scaleFactor: 3,
+                    isFigure: false,
+                }}
+            />
+            <Flex
+                {...{
+                    className: cx(
+                        'HomeFlex',
+                    ),
+                    flexGrow: 1,
+                }}
+            >
+                <StyledParagraph>
+                    {getSmartQuotedText(`Challenge yourself or have fun with friends. Bobtail Dominoes is the ultimate chord-building game for musicians of all skill levels!`)}
+                </StyledParagraph>
+            </Flex>
         </Flex>
-        <DominoSvg
-            {...{
-                className: 'homeDominoes',
-                src: homeDominoes,
-                scaleFactor: 3,
-                isFigure: false,
-            }}
-        />
     </Page>
 )
 

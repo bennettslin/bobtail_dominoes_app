@@ -41,13 +41,9 @@
     letter-spacing: 0.05em;
 }
 
-.font__finePrint {
-    font-size: 0.75em;
-    color: $colour__text__medium;
-}
-
-.text__light {
-    color: $colour__text__light;
+.font__accidental {
+    font-family: Maestro;
+    position: relative;
 }
 
 .fontSize__md {

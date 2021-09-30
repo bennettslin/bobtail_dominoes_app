@@ -9,6 +9,8 @@ const Svg = ({
     className,
     scaleFactor,
     styles,
+    onLoad,
+
 }) => {
     const preProcessor = svgString => {
         return getSvgWithClassStyles({
@@ -27,6 +29,7 @@ const Svg = ({
                 src,
                 className,
                 preProcessor,
+                onLoad,
             }}
         />
     )
@@ -39,6 +42,7 @@ Svg.propTypes = {
     styles: PropTypes.shape({
         fill: PropTypes.object,
     }),
+    onLoad: PropTypes.func,
 }
 
 export default Svg

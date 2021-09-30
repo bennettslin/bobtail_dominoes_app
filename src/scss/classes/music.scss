@@ -1,5 +1,10 @@
-.Character__musicFlat {
-    // Eyeballed.
-    margin-left: -0.3em;
-    margin-right: -0.25em;
+.text__flat {
+    font-size: 1.125em;
+    bottom: 0.125em;
+}
+
+.text__sharp {
+    font-size: 1em;
+    bottom: 0.325em;
+    letter-spacing: 0.025em;
 }

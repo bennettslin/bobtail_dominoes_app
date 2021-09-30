@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Flex from '../../Flex'
@@ -12,34 +12,49 @@ const DominoSvg = ({
     src,
     className,
     isFigure = true,
+    doTransitionEnter = true,
     scaleFactor = 1,
-}) => (
-    <Flex
-        {...{
-            className: cx(
-                'DominoSvg',
-                `DominoSvg__${className}`,
-                isFigure ?
-                    'DominoSvg__figure' :
-                    'DominoSvg__full',
-            ),
-        }}
-    >
-        <Svg
+}) => {
+    const [isLoaded, setIsLoaded] = useState(false)
+
+    const onLoad = () => {
+        setIsLoaded(true)
+    }
+
+    return (
+        <Flex
             {...{
-                src,
-                className,
-                scaleFactor: scaleFactor * DOMINO_SCALE_FACTOR,
-                styles,
+                className: cx(
+                    'DominoSvg',
+                    className && `DominoSvg__${className}`,
+                    isFigure ?
+                        'DominoSvg__figure' :
+                        'DominoSvg__full',
+                    doTransitionEnter && [
+                        'hidden',
+                        isLoaded && 'shown',
+                    ],
+                ),
             }}
-        />
-    </Flex>
-)
+        >
+            <Svg
+                {...{
+                    src,
+                    className,
+                    scaleFactor: scaleFactor * DOMINO_SCALE_FACTOR,
+                    styles,
+                    onLoad,
+                }}
+            />
+        </Flex>
+    )
+}
 
 DominoSvg.propTypes = {
     src: PropTypes.string.isRequired,
     className: PropTypes.string,
     isFigure: PropTypes.bool,
+    doTransitionEnter: PropTypes.number,
     scaleFactor: PropTypes.number,
 }
 
