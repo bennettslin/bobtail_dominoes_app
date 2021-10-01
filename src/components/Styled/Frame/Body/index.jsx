@@ -3,26 +3,25 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import './style'
 
-const StyledFrame = ({
+const StyledFrameBody = ({
     className,
     children,
 }) => (
     <div
         {...{
             className: cx(
-                'StyledFrame',
+                'StyledFrameBody',
                 className,
             ),
         }}
     >
-        <div {...{ className: 'StyledFrame__inset' }} />
         {children}
     </div>
 )
 
-StyledFrame.propTypes = {
+StyledFrameBody.propTypes = {
     className: PropTypes.string,
     children: PropTypes.node.isRequired,
 }
 
-export default StyledFrame
+export default StyledFrameBody

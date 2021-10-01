@@ -1,28 +1,53 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
+import { CSSTransition } from 'react-transition-group'
+import getDidMountHoc from '../../../hocs/DidMountHoc'
 import MailingList from '../../../components/MailingList'
 import FollowButtons from '../../../components/FollowButtons'
 import StyledFrame from '../../../components/Styled/Frame'
+import StyledFrameBody from '../../../components/Styled/Frame/Body'
 import { mapIsUpsellShown } from '../../../redux/option/selector'
 import './style'
 
-const MainFooter = () => {
+const MainFooter = ({ didMount }) => {
     const isUpsellShown = useSelector(mapIsUpsellShown)
 
     return (
-        <StyledFrame
+        <CSSTransition
             {...{
-                className: cx(
-                    'MainFooter',
-                ),
-                isShown: !isUpsellShown,
+                in: didMount && !isUpsellShown,
+                timeout: 200,
+                classNames: {
+                    enterDone: 'shown',
+                },
             }}
         >
-            <MailingList />
-            <FollowButtons />
-        </StyledFrame>
+            <StyledFrame
+                {...{
+                    className: cx(
+                        'hidden',
+                    ),
+                }}
+            >
+                <StyledFrameBody
+                    {...{
+                        className: cx(
+                            'MainFooter',
+                        ),
+                    }}
+                >
+                    <MailingList />
+                    <FollowButtons />
+                </StyledFrameBody>
+            </StyledFrame>
+        </CSSTransition>
     )
 }
 
-export default MainFooter
+MainFooter.propTypes = {
+    didMount: PropTypes.bool.isRequired,
+}
+
+export default getDidMountHoc(MainFooter)

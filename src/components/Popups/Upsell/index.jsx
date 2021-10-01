@@ -1,5 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { useDispatch, useSelector } from 'react-redux'
+import getDidMountHoc from '../../../hocs/DidMountHoc'
 import Popup from '../../Popup'
 import FollowButtons from '../../FollowButtons'
 import MailingList from '../../MailingList'
@@ -7,7 +9,7 @@ import UpsellDisableLink from './DisableLink'
 import { updateIsUpsellShown } from '../../../redux/option/action'
 import { mapIsUpsellShown } from '../../../redux/option/selector'
 
-const UpsellPopup = () => {
+const UpsellPopup = ({ didMount }) => {
     const
         dispatch = useDispatch(),
         isUpsellShown = useSelector(mapIsUpsellShown)
@@ -20,7 +22,7 @@ const UpsellPopup = () => {
         <Popup
             {...{
                 popupName: 'UpsellPopup',
-                isVisible: isUpsellShown,
+                isVisible: didMount && isUpsellShown,
                 handleCloseClick,
             }}
         >
@@ -31,4 +33,8 @@ const UpsellPopup = () => {
     )
 }
 
-export default UpsellPopup
+UpsellPopup.propTypes = {
+    didMount: PropTypes.bool.isRequired,
+}
+
+export default getDidMountHoc(UpsellPopup)
