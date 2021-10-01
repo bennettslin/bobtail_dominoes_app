@@ -5,20 +5,21 @@ import Helmet from '../../components/Helmet'
 import ChildrenPage from './ChildrenPage'
 import ContentPage from './ContentPage'
 
-const Page = ({ children, ...rest }) => (
+const Page = ({ className, children, ...rest }) => (
     <PageConfigContext.Provider {...{ value: rest }}>
         <Helmet />
         {children ? (
-            <ChildrenPage>
+            <ChildrenPage {...{ className }}>
                 {children}
             </ChildrenPage>
         ) : (
-            <ContentPage />
+            <ContentPage {...{ className }} />
         )}
     </PageConfigContext.Provider>
 )
 
 Page.propTypes = {
+    className: PropTypes.string,
     noShare: PropTypes.bool,
     showContactEmail: PropTypes.bool,
     children: PropTypes.node,

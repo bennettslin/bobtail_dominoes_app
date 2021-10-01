@@ -12,14 +12,10 @@ const DominoSvg = ({
     src,
     className,
     isFigure = true,
-    doTransitionEnter = true,
     scaleFactor = 1,
+    onLoad,
 }) => {
     const [isLoaded, setIsLoaded] = useState(false)
-
-    const onLoad = () => {
-        setIsLoaded(true)
-    }
 
     return (
         <Flex
@@ -30,7 +26,7 @@ const DominoSvg = ({
                     isFigure ?
                         'DominoSvg__figure' :
                         'DominoSvg__full',
-                    doTransitionEnter && [
+                    !onLoad && [
                         'hidden',
                         isLoaded && 'shown',
                     ],
@@ -43,7 +39,12 @@ const DominoSvg = ({
                     className,
                     scaleFactor: scaleFactor * DOMINO_SCALE_FACTOR,
                     styles,
-                    onLoad,
+                    onLoad: () => {
+                        setIsLoaded(true)
+                        if (onLoad) {
+                            onLoad()
+                        }
+                    },
                 }}
             />
         </Flex>
@@ -54,8 +55,8 @@ DominoSvg.propTypes = {
     src: PropTypes.string.isRequired,
     className: PropTypes.string,
     isFigure: PropTypes.bool,
-    doTransitionEnter: PropTypes.number,
     scaleFactor: PropTypes.number,
+    onLoad: PropTypes.func,
 }
 
 export default DominoSvg

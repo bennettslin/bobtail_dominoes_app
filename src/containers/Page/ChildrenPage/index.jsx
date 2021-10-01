@@ -4,11 +4,12 @@ import cx from 'classnames'
 import Flex from '../../../components/Flex'
 import './style'
 
-const ChildrenPage = ({ children }) => (
+const ChildrenPage = ({ className, children }) => (
     <Flex
         {...{
             className: cx(
                 'ChildrenPage',
+                className,
             ),
             flexDirection: 'column',
         }}
@@ -18,6 +19,7 @@ const ChildrenPage = ({ children }) => (
 )
 
 ChildrenPage.propTypes = {
+    className: PropTypes.string,
     children: PropTypes.node.isRequired,
 }
 
