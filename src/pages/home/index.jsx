@@ -36,7 +36,7 @@ const Component = () => (
                 }}
             >
                 <StyledParagraph>
-                    {getSmartQuotedText(`Challenge yourself or have fun with friends. Bobtail Dominoes is the ultimate chord-building game for musicians of all skill levels!`)}
+                    {getSmartQuotedText(`Bobtail Dominoes is the ultimate chord-building game for musicians of all skill levels. Challenge yourself or have fun with friends!`)}
                 </StyledParagraph>
             </Flex>
         </Flex>

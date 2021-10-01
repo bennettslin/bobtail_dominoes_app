@@ -273,17 +273,17 @@
   <path class="secondShadowLine" d="M1918.5,217.18l-110-63.51a15,15,0,0,0-15,0l-110,63.51a15,15,0,0,0-7.5,13V342.75a15,15,0,0,1-7.5,13L1596,397.6a15,15,0,0,0-7.5,13v98.15a15,15,0,0,1-7.5,13l-85,49.07a15,15,0,0,0-7.5,13V696.38a15,15,0,0,0,7.5,13l97.5,56.29a15,15,0,0,0,15,0l97.5-56.29a15,15,0,0,0,7.5-13V598.23a15,15,0,0,1,7.5-13l85-49.08a15,15,0,0,0,7.5-13V425a15,15,0,0,1,7.5-13l97.5-56.25a15,15,0,0,0,7.5-13V230.17A15,15,0,0,0,1918.5,217.18Z"/>
   <g class="secondShadow">
     <g class="text">
-      <text class="characterPitch" transform="translate(1460.21 826.77)">F</text>
-      <text class="characterAccidental" transform="translate(1493.03 796.83) scale(1.25 1)">#</text>
-      <text class="characterSymbol" transform="translate(1520.65 796.76)">o</text>
+      <text class="symbol" transform="translate(1526.65 796.9)">o</text>
+      <path class="sharp" d="M1493,784.92l4.51-1.18V770h3v12.85l10.29-2.66V767.94h3v11.49l4.1-1.07v8.75l-4.1,1.09v12.39l4.1-1v8.66l-4.1,1.09v13.7h-3V810.11l-10.29,2.63v12.49h-3v-11.6l-4.51,1.18v-8.75l4.51-1.17v-12.5l-4.51,1.18Zm17.85,4.06-10.29,2.61v12.56l10.29-2.68Z"/>
+      <text transform="translate(1460.21 826.78)">F</text>
     </g>
   </g>
   <path class="secondLine" d="M1917.5,212.18l-110-63.51a15,15,0,0,0-15,0l-110,63.51a15,15,0,0,0-7.5,13V337.75a15,15,0,0,1-7.5,13L1595,392.6a15,15,0,0,0-7.5,13v98.15a15,15,0,0,1-7.5,13l-85,49.07a15,15,0,0,0-7.5,13V691.38a15,15,0,0,0,7.5,13l97.5,56.29a15,15,0,0,0,15,0l97.5-56.29a15,15,0,0,0,7.5-13V593.23a15,15,0,0,1,7.5-13l85-49.08a15,15,0,0,0,7.5-13V420a15,15,0,0,1,7.5-13l97.5-56.25a15,15,0,0,0,7.5-13V225.17A15,15,0,0,0,1917.5,212.18Z"/>
   <g class="second">
     <g class="text">
-      <text class="characterPitch" transform="translate(1459.21 821.77)">F</text>
-      <text class="characterAccidental" transform="translate(1492.03 791.83) scale(1.25 1)">#</text>
-      <text class="characterSymbol" transform="translate(1519.65 791.76)">o</text>
+      <text class="symbol" transform="translate(1525.65 791.9)">o</text>
+      <path class="sharp" d="M1492,779.92l4.51-1.18V765h3v12.85l10.29-2.66V762.94h3v11.49l4.1-1.07v8.75l-4.1,1.09v12.39l4.1-1v8.66l-4.1,1.09v13.7h-3V805.11l-10.29,2.63v12.49h-3v-11.6l-4.51,1.18v-8.75l4.51-1.17v-12.5l-4.51,1.18Zm17.85,4.06-10.29,2.61v12.56l10.29-2.68Z"/>
+      <text transform="translate(1459.21 821.78)">F</text>
     </g>
   </g>
   <g class="firstShadowLine">
@@ -292,16 +292,12 @@
   </g>
   <g class="firstShadow">
     <g class="text">
-      <g class="characterPitch">
-        <text transform="translate(968.09 996.62)">B</text>
-        <text transform="translate(2176.12 994.68)">B</text>
-        <text transform="translate(2216.26 994.68)"><tspan xml:space="preserve"> maj</tspan></text>
-      </g>
-      <g class="characterAccidental">
-        <text transform="translate(1011.66 979.68) scale(1.12)">b</text>
-        <text transform="translate(2217.69 977.74) scale(1.12)">b</text>
-      </g>
-      <text class="characterSymbol" transform="translate(2364.13 964.67)">7</text>
+      <path class="flat" d="M1012.08,938.91V969a14.12,14.12,0,0,1,9.51-3.95c4.42-.07,7.8,4.07,7.8,8.37a11.47,11.47,0,0,1-3.29,8.47c-4,3.86-9.38,7.32-16.46,12.6v-55.6Zm4.71,30.86c-4.15.17-4.73,4.71-4.71,11.85v8.09c.07.25,1.82-1.28,5.27-4.6a12.58,12.58,0,0,0,4-9C1021.4,972.92,1019.65,969.65,1016.79,969.77Z"/>
+      <text transform="translate(968.07 996.59)">B</text>
+      <text class="symbol" transform="translate(2364.13 964.83)">7</text>
+      <text transform="translate(2237.51 994.81)">maj</text>
+      <path class="flat" d="M2220.14,937v30.1a14.14,14.14,0,0,1,9.5-4c4.43-.07,7.8,4.07,7.81,8.37a11.47,11.47,0,0,1-3.29,8.47c-4,3.86-9.39,7.33-16.47,12.61V937Zm4.7,30.85c-4.14.18-4.72,4.71-4.7,11.86v8.09q.09.38,5.27-4.61a12.6,12.6,0,0,0,4-9C2229.45,971,2227.7,967.76,2224.84,967.88Z"/>
+      <text transform="translate(2176.12 994.7)">B</text>
     </g>
   </g>
   <g class="firstLine">
@@ -310,16 +306,12 @@
   </g>
   <g class="first">
     <g class="text">
-      <g class="characterPitch">
-        <text transform="translate(967.09 991.62)">B</text>
-        <text transform="translate(2175.12 989.68)">B</text>
-        <text transform="translate(2215.26 989.68)"><tspan xml:space="preserve"> maj</tspan></text>
-      </g>
-      <g class="characterAccidental">
-        <text transform="translate(1010.66 974.68) scale(1.12)">b</text>
-        <text transform="translate(2216.69 972.74) scale(1.12)">b</text>
-      </g>
-      <text class="characterSymbol" transform="translate(2363.13 959.67)">7</text>
+      <path class="flat" d="M1011.08,933.91V964a14.12,14.12,0,0,1,9.51-3.95c4.42-.07,7.8,4.07,7.8,8.37a11.47,11.47,0,0,1-3.29,8.47c-4,3.86-9.38,7.32-16.46,12.6v-55.6Zm4.71,30.86c-4.15.17-4.73,4.71-4.71,11.85v8.09c.07.25,1.82-1.28,5.27-4.6a12.58,12.58,0,0,0,4-9C1020.4,967.92,1018.65,964.65,1015.79,964.77Z"/>
+      <text transform="translate(967.07 991.59)">B</text>
+      <text class="symbol" transform="translate(2363.13 959.83)">7</text>
+      <text transform="translate(2236.51 989.81)">maj</text>
+      <path class="flat" d="M2219.14,932v30.1a14.14,14.14,0,0,1,9.5-4c4.43-.07,7.8,4.07,7.81,8.37a11.47,11.47,0,0,1-3.29,8.47c-4,3.86-9.39,7.33-16.47,12.61V932Zm4.7,30.85c-4.14.18-4.72,4.71-4.7,11.86v8.09q.09.38,5.27-4.61a12.6,12.6,0,0,0,4-9C2228.45,966,2226.7,962.76,2223.84,962.88Z"/>
+      <text transform="translate(2175.12 989.7)">B</text>
     </g>
   </g>
   <g class="infoShadowLine">
