@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Button from '../../../../components/Button'
@@ -7,7 +8,7 @@ import logo from '../../../../assets/svgs/app/logo'
 import { getMapIsSelectedOrTabbedPath } from '../../../../redux/page/selector'
 import { HOME_PAGE } from '../../../../constants/pages'
 
-const HomeButton = () => {
+const HomeButton = ({ onLoad }) => {
     const isSelectedOrTabbedPath = useSelector(
         getMapIsSelectedOrTabbedPath(HOME_PAGE),
     )
@@ -26,10 +27,15 @@ const HomeButton = () => {
                 {...{
                     src: logo,
                     isFigure: false,
+                    onLoad,
                 }}
             />
         </Button>
     )
+}
+
+HomeButton.propTypes = {
+    onLoad: PropTypes.func,
 }
 
 export default HomeButton
