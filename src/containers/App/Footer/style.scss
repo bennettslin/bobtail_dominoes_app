@@ -5,6 +5,10 @@
     position: absolute;
     top: 100%;
     width: 100%;
-
     height: $height__appFooter;
+    background-color: $colour__background__dark;
+
+    @media (min-width: $breakpoint__md) {
+        background-color: transparent;
+    }
 }

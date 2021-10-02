@@ -13,9 +13,27 @@
     filter:
         drop-shadow(
             0 0
-            $margin__xl * 3
+            $margin__md * 3
             $colour__home__primary
         );
+
+    @media (min-width: $breakpoint__sm) {
+        filter:
+            drop-shadow(
+                0 0
+                $margin__lg * 3
+                $colour__home__primary
+            );
+    }
+
+    @media (min-width: $breakpoint__md) {
+        filter:
+            drop-shadow(
+                0 0
+                $margin__xl * 3
+                $colour__home__primary
+            );
+    }
 }
 
 .DominoSvg__homeDominoes {
@@ -31,8 +49,28 @@
         background-color: $colour__home__secondary;
         box-shadow:
             0 0
-            $margin__lg * 3
-            $margin__lg * 4
+            $margin__sm * 3
+            $margin__sm * 4
             $colour__home__secondary;
+    }
+
+    @media (min-width: $breakpoint__sm) {
+        &:before {
+            box-shadow:
+                0 0
+                $margin__md * 3
+                $margin__md * 4
+                $colour__home__secondary;
+        }
+    }
+
+    @media (min-width: $breakpoint__md) {
+        &:before {
+            box-shadow:
+                0 0
+                $margin__lg * 3
+                $margin__lg * 4
+                $colour__home__secondary;
+        }
     }
 }
