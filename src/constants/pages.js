@@ -16,3 +16,12 @@ export const TABBED_PAGES_SET = new Set([
     RULES_PAGE,
     PUZZLES_PAGE,
 ])
+
+export const BACK_LINKED_PAGES_SET = new Set([
+    PUZZLES_PAGE,
+])
+
+export const INITIAL_CHILD_PAGES = {
+    [ABOUT_PAGE]: 'story',
+    [RULES_PAGE]: 'setup',
+}

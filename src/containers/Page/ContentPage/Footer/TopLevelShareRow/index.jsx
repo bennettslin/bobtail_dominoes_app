@@ -4,20 +4,14 @@ import PageConfigContext from '../../../../../contexts/PageConfig'
 import PageFooterRow from '../FooterRow'
 import TopLevelPageLink from './TopLevelPageLink'
 import ShareButtons from '../../../../../components/ShareButtons'
-import { mapSelectedPagePath } from '../../../../../redux/page/selector'
-import { getIsTabbedPath, getTopLevelPageFromPath } from '../../../../../utils/pages/path'
+import { getMapShowBackLink } from '../../../../../redux/page/selector'
 
 const TopLevelShareRow = () => {
     const
-        { noShare } = useContext(PageConfigContext),
-        selectedPagePath = useSelector(mapSelectedPagePath),
-        topLevelPage = getTopLevelPageFromPath(selectedPagePath),
-        doRenderTopLevelPageLink = (
-            topLevelPage !== selectedPagePath &&
-            !getIsTabbedPath(selectedPagePath)
-        )
+        { noShare, topLevelPage } = useContext(PageConfigContext),
+        showBackLink = useSelector(getMapShowBackLink(topLevelPage))
 
-    if (!doRenderTopLevelPageLink && noShare) {
+    if (!showBackLink && noShare) {
         return null
     }
 
@@ -25,7 +19,7 @@ const TopLevelShareRow = () => {
         <PageFooterRow
             isBottomRow
             {...{
-                leftChild: doRenderTopLevelPageLink && (
+                leftChild: showBackLink && (
                     <TopLevelPageLink />
                 ),
                 rightChild: !noShare && (

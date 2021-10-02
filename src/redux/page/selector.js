@@ -1,5 +1,6 @@
 import { createSelector } from 'reselect'
 import {
+    getIsBackLinkedPath,
     getIsTabbedPath,
     getTopLevelPageFromPath,
 } from '../../utils/pages/path'
@@ -11,12 +12,30 @@ export const mapSelectedPagePath = (
 
 export const getMapIsSelectedPagePath = pagePath => createSelector(
     mapSelectedPagePath,
-    selectedPagePath => (
-        pagePath === selectedPagePath ||
+    selectedPagePath => pagePath === selectedPagePath,
+)
+
+export const getMapIsSelectedOrTabbedPagePath = pagePath => createSelector(
+    mapSelectedPagePath,
+    getMapIsSelectedPagePath(pagePath),
+    (
+        selectedPagePath,
+        isSelectedPagePath,
+    ) => (
+        isSelectedPagePath ||
         (
             getIsTabbedPath(pagePath) &&
             pagePath === getTopLevelPageFromPath(selectedPagePath)
         )
+    ),
+)
+
+export const getMapShowBackLink = pagePath => createSelector(
+    getMapIsSelectedPagePath(pagePath),
+    (
+        isSelectedPagePath,
+    ) => (
+        getIsBackLinkedPath(pagePath) && !isSelectedPagePath
     ),
 )
 

@@ -19,16 +19,16 @@ const Menu = () => (
             flexWrap: 'wrap',
         }}
     >
-        <MenuButton {...{ pagePath: ABOUT_PAGE, initialChildPath: 'story' }}>
+        <MenuButton {...{ topLevelPage: ABOUT_PAGE }}>
             About
         </MenuButton>
-        <MenuButton {...{ pagePath: RULES_PAGE, initialChildPath: 'setup' }}>
+        <MenuButton {...{ topLevelPage: RULES_PAGE }}>
             Rules
         </MenuButton>
-        <MenuButton {...{ pagePath: CHORDS_PAGE }}>
+        <MenuButton {...{ topLevelPage: CHORDS_PAGE }}>
             Chords
         </MenuButton>
-        <MenuButton {...{ pagePath: PUZZLES_PAGE }}>
+        <MenuButton {...{ topLevelPage: PUZZLES_PAGE }}>
             Puzzles
         </MenuButton>
     </Flex>

@@ -9,9 +9,7 @@ import { getMapIsSelectedPagePath } from '../../../../redux/page/selector'
 import { HOME_PAGE } from '../../../../constants/pages'
 
 const HomeButton = ({ onLoad }) => {
-    const showSelectedPath = useSelector(
-        getMapIsSelectedPagePath(HOME_PAGE),
-    )
+    const isSelected = useSelector(getMapIsSelectedPagePath(HOME_PAGE))
 
     return (
         <Button
@@ -20,7 +18,7 @@ const HomeButton = ({ onLoad }) => {
                     'HomeButton',
                 ),
                 pagePath: HOME_PAGE,
-                isSelected: showSelectedPath,
+                isSelected,
             }}
         >
             <DominoSvg

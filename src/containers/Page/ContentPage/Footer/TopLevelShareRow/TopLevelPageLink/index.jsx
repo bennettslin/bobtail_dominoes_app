@@ -1,19 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useSelector } from 'react-redux'
+import PageConfigContext from '../../../../../../contexts/PageConfig'
 import Anchor from '../../../../../../components/Anchor'
-import { mapSelectedPagePath } from '../../../../../../redux/page/selector'
+import { getMapShowBackLink } from '../../../../../../redux/page/selector'
 import { getCapitalizedText } from '../../../../../../utils/format'
-import { getIsTabbedPath, getTopLevelPageFromPath } from '../../../../../../utils/pages/path'
 
 const TopLevelPageLink = () => {
     const
-        selectedPagePath = useSelector(mapSelectedPagePath),
-        topLevelPage = getTopLevelPageFromPath(selectedPagePath)
+        { topLevelPage } = useContext(PageConfigContext),
+        showBackLink = useSelector(getMapShowBackLink(topLevelPage))
 
-    return (
-        topLevelPage !== selectedPagePath &&
-        !getIsTabbedPath(selectedPagePath)
-    ) && (
+    return showBackLink && (
         <Anchor {...{ pagePath: topLevelPage }} >
                 Back to {getCapitalizedText(topLevelPage)}
         </Anchor>

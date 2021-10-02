@@ -1,4 +1,4 @@
-import { DOMAIN_NAME, HOME_PAGE, TABBED_PAGES_SET } from '../../../constants/pages'
+import { BACK_LINKED_PAGES_SET, DOMAIN_NAME, HOME_PAGE, INITIAL_CHILD_PAGES, TABBED_PAGES_SET } from '../../../constants/pages'
 
 export const getTopLevelPageFromPath = (path = '') => (
     path.split('/')[0]
@@ -10,6 +10,14 @@ export const getChildPageFromPath = (path = '') => (
 
 export const getIsTabbedPath = path => (
     TABBED_PAGES_SET.has(getTopLevelPageFromPath(path))
+)
+
+export const getIsBackLinkedPath = path => (
+    BACK_LINKED_PAGES_SET.has(getTopLevelPageFromPath(path))
+)
+
+export const getInitialChildPage = topLevelPage => (
+    INITIAL_CHILD_PAGES[topLevelPage]
 )
 
 export const getLinkFromPath = path => (

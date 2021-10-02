@@ -4,7 +4,7 @@ import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import StyledTabButton from '../../../../../components/Styled/TabButton'
 import StyledButtonText from '../../../../../components/Styled/ButtonText'
-import { getMapIsSelectedPagePath } from '../../../../../redux/page/selector'
+import { getMapIsSelectedOrTabbedPagePath } from '../../../../../redux/page/selector'
 import { getPagePathFromConfig } from '../../../../../utils/pages/config'
 import './style'
 
@@ -16,7 +16,7 @@ const TabbedMenuButton = ({
 }) => {
     const
         pagePath = getPagePathFromConfig({ topLevelPage, id, date }),
-        isSelected = useSelector(getMapIsSelectedPagePath(pagePath))
+        isSelected = useSelector(getMapIsSelectedOrTabbedPagePath(pagePath))
 
     return (
         <StyledTabButton
