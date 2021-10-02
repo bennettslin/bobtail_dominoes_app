@@ -30,6 +30,7 @@ Page.propTypes = {
     topLevelPage: PropTypes.string,
     pageHeading: PropTypes.string,
     title: PropTypes.string,
+    noTitle: PropTypes.bool,
     date: PropTypes.shape({
         year: PropTypes.number.isRequired,
         month: PropTypes.number.isRequired,

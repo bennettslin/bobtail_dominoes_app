@@ -12,7 +12,6 @@ const Body = () => {
     const {
         pageHeading,
         titleHeading,
-        title,
         date,
         body,
         showContactEmail,
@@ -31,7 +30,7 @@ const Body = () => {
                 {getSmartQuotedText(pageHeading)}
             </Heading>
             <Heading {...{ level: 3 }}>
-                {getSmartQuotedText(titleHeading || title)}
+                {getSmartQuotedText(titleHeading)}
             </Heading>
             <Heading {...{ level: 5 }}>
                 {getHeaderFromDate(date)}

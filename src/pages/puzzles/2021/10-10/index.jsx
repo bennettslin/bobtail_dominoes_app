@@ -1,14 +1,13 @@
 import React from 'react'
-import Page from '../../../../../containers/Page'
-import { pagesMap } from '../../../../../content/puzzles/2021/9-27'
+import Page from '../../../../containers/Page'
+import { pagesMap } from '../../../../content/puzzles/2021/week2'
 
-const id = 'sunday'
+const id = '10-10'
 
 const Component = () => (
     <Page
         {...{
             ...pagesMap[id],
-            titleHeading: 'Sunday puzzle',
             body: [
                 `
 Sunday puzzle content.

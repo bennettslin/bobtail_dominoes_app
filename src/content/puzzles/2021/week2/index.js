@@ -3,24 +3,24 @@ import { PUZZLES_PAGE } from '../../../../constants/pages'
 
 const pageConfigs = [
     {
-        id: `monday`,
         title: `Monday`,
+        date: { year: 2021, month: 10, day: 4 },
     },
     {
-        id: `wednesday`,
         title: `Wednesday`,
+        date: { year: 2021, month: 10, day: 6 },
     },
     {
-        id: `friday`,
         title: `Friday`,
+        date: { year: 2021, month: 10, day: 8 },
     },
     {
-        id: `sunday`,
         title: `Sunday`,
+        date: { year: 2021, month: 10, day: 10 },
     },
 ]
 
 export const pagesMap = getMapFromPageConfigs({
-    topLevelPage: `${PUZZLES_PAGE}/2021/10-4`,
+    topLevelPage: PUZZLES_PAGE,
     pageConfigs,
 })
