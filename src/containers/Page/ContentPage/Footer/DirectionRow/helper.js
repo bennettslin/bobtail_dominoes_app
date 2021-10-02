@@ -1,3 +1,4 @@
+import { getFilteredAndJoinedList } from '../../../../../utils/format'
 import { getChildPageFromPath } from '../../../../../utils/pages/path'
 
 export const getDirectionPage = ({
@@ -12,11 +13,7 @@ export const getDirectionPage = ({
     const
         childPage = getChildPageFromPath(selectedPagePath),
         foundIndex = pages.findIndex(({ id, date: { month, day } = {} }) => (
-            childPage === (
-                month && day ?
-                    `${month}-${day}-${id}` :
-                    id
-            )
+            childPage === getFilteredAndJoinedList([month, day, id], '-')
         )),
         // If no index found, default to first page.
         pageIndex = foundIndex === -1 ? 0 : foundIndex

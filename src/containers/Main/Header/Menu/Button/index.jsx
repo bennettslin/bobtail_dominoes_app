@@ -4,14 +4,16 @@ import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import StyledButton from '../../../../../components/Styled/Button'
 import StyledButtonText from '../../../../../components/Styled/ButtonText'
-import { getMapIsSelectedOrTabbedPath } from '../../../../../redux/page/selector'
+import { getMapIsSelectedPagePath } from '../../../../../redux/page/selector'
+import { getFilteredAndJoinedList } from '../../../../../utils/format'
 
 const MenuButton = ({
     className,
     pagePath,
+    initialChildPath,
     children,
 }) => {
-    const isSelected = useSelector(getMapIsSelectedOrTabbedPath(pagePath))
+    const showSelectedPath = useSelector(getMapIsSelectedPagePath(pagePath))
 
     return (
         <StyledButton
@@ -22,11 +24,11 @@ const MenuButton = ({
                     'fontSize__lg',
                     className,
                 ),
-                pagePath,
-                isSelected,
+                pagePath: getFilteredAndJoinedList([pagePath, initialChildPath], '/'),
+                isSelected: showSelectedPath,
             }}
         >
-            <StyledButtonText {...{ isSelected }}>
+            <StyledButtonText {...{ isSelected: showSelectedPath }}>
                 {children}
             </StyledButtonText>
         </StyledButton>
@@ -36,6 +38,7 @@ const MenuButton = ({
 MenuButton.propTypes = {
     className: PropTypes.string,
     pagePath: PropTypes.string.isRequired,
+    initialChildPath: PropTypes.string,
     children: PropTypes.node.isRequired,
 }
 

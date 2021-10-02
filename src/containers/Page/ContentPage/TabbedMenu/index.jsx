@@ -27,11 +27,10 @@ const TabbedMenu = () => {
             }, index) => (
                 <TabbedMenuButton
                     {...{
-                        key: id,
+                        key: index,
                         id,
                         date,
                         topLevelPage,
-                        isFirstPage: !index,
                     }}
                 >
                     {title}

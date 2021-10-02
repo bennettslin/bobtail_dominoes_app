@@ -1,3 +1,5 @@
+import { getFilteredAndJoinedList } from '../../format'
+
 export const getMapFromPageConfigs = ({
     topLevelPage,
     pageConfigs,
@@ -24,13 +26,13 @@ export const getPagePathFromConfig = ({
         day,
     } = {},
 }) => (
-    [
+    getFilteredAndJoinedList([
         topLevelPage,
         year,
-        [
+        getFilteredAndJoinedList([
             month,
             day,
             id,
-        ].filter(segment => Boolean(segment)).join('-'),
-    ].filter(segment => Boolean(segment)).join('/')
+        ], '-'),
+    ], '/')
 )

@@ -24,7 +24,7 @@ Page.propTypes = {
     showContactEmail: PropTypes.bool,
     children: PropTypes.node,
     pages: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.string.isRequired,
+        id: PropTypes.string,
         title: PropTypes.string.isRequired,
     })),
     topLevelPage: PropTypes.string,

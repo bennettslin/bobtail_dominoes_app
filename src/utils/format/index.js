@@ -11,3 +11,7 @@ export const getTruncatedText = (text, maxLength = 160) => (
 export const getCapitalizedText = text => (
     `${text.charAt(0).toUpperCase()}${text.slice(1).toLowerCase()}`
 )
+
+export const getFilteredAndJoinedList = (list = [], separator = '') => (
+    list.filter(entry => Boolean(entry)).join(separator)
+)

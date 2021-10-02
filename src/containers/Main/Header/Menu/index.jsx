@@ -19,10 +19,10 @@ const Menu = () => (
             flexWrap: 'wrap',
         }}
     >
-        <MenuButton {...{ pagePath: ABOUT_PAGE }}>
+        <MenuButton {...{ pagePath: ABOUT_PAGE, initialChildPath: 'story' }}>
             About
         </MenuButton>
-        <MenuButton {...{ pagePath: RULES_PAGE }}>
+        <MenuButton {...{ pagePath: RULES_PAGE, initialChildPath: 'setup' }}>
             Rules
         </MenuButton>
         <MenuButton {...{ pagePath: CHORDS_PAGE }}>

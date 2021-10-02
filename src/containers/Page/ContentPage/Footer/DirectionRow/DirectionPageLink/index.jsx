@@ -38,7 +38,7 @@ const DirectionPageLink = ({ direction, directionPage }) => {
 DirectionPageLink.propTypes = {
     direction: PropTypes.oneOf([-1, 1]).isRequired,
     directionPage: PropTypes.shape({
-        id: PropTypes.string.isRequired,
+        id: PropTypes.string,
         title: PropTypes.string.isRequired,
         date: PropTypes.shape({
             year: PropTypes.number.isRequired,

@@ -5,12 +5,12 @@ import { useSelector } from 'react-redux'
 import Button from '../../../../components/Button'
 import DominoSvg from '../../../../components/Svgs/Domino'
 import logo from '../../../../assets/svgs/app/logo'
-import { getMapIsSelectedOrTabbedPath } from '../../../../redux/page/selector'
+import { getMapIsSelectedPagePath } from '../../../../redux/page/selector'
 import { HOME_PAGE } from '../../../../constants/pages'
 
 const HomeButton = ({ onLoad }) => {
-    const isSelectedOrTabbedPath = useSelector(
-        getMapIsSelectedOrTabbedPath(HOME_PAGE),
+    const showSelectedPath = useSelector(
+        getMapIsSelectedPagePath(HOME_PAGE),
     )
 
     return (
@@ -20,7 +20,7 @@ const HomeButton = ({ onLoad }) => {
                     'HomeButton',
                 ),
                 pagePath: HOME_PAGE,
-                isSelected: isSelectedOrTabbedPath,
+                isSelected: showSelectedPath,
             }}
         >
             <DominoSvg
