@@ -4,7 +4,8 @@ export const getMapFromPageConfigs = ({
 
 }) => (
     pageConfigs.reduce((map, page) => {
-        map[page.id] = {
+        const { id, date: { month, day } = {} } = page
+        map[id || [month, day].join('-')] = {
             topLevelPage,
             pages: pageConfigs,
             ...page,
@@ -22,10 +23,14 @@ export const getPagePathFromConfig = ({
         month,
         day,
     } = {},
-}) => [
-    topLevelPage && `${topLevelPage}/`,
-    year && `${year}/`,
-    month && `${month}-`,
-    day && `${day}-`,
-    id && `${id}`,
-].filter(segment => Boolean(segment)).join('')
+}) => (
+    [
+        topLevelPage,
+        year,
+        [
+            month,
+            day,
+            id,
+        ].filter(segment => Boolean(segment)).join('-'),
+    ].filter(segment => Boolean(segment)).join('/')
+)

@@ -11,4 +11,8 @@ export const CHORDS_PAGE = 'chords'
 export const PUZZLES_PAGE = 'puzzles'
 export const LINKS_PAGE = 'links'
 
-export const TABBED_PAGES_SET = new Set([ABOUT_PAGE, RULES_PAGE])
+export const TABBED_PAGES_SET = new Set([
+    ABOUT_PAGE,
+    RULES_PAGE,
+    PUZZLES_PAGE,
+])

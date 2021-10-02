@@ -9,9 +9,17 @@ export const mapSelectedPagePath = (
     { [PAGE_STORE]: { selectedPagePath } },
 ) => selectedPagePath
 
-export const getMapIsSelectedPagePath = pagePath => (
-    { [PAGE_STORE]: { selectedPagePath } },
-) => pagePath === selectedPagePath
+export const getMapIsSelectedPagePath = pagePath => createSelector(
+    mapSelectedPagePath,
+    selectedPagePath => pagePath === selectedPagePath,
+)
+
+export const getMapShowTabbedMenu = pages => createSelector(
+    mapSelectedPagePath,
+    selectedPagePath => (
+        getIsTabbedPath(selectedPagePath) && Boolean(pages)
+    ),
+)
 
 export const getMapIsSelectedOrTabbedPath = pagePath => createSelector(
     mapSelectedPagePath,
@@ -19,7 +27,8 @@ export const getMapIsSelectedOrTabbedPath = pagePath => createSelector(
     (
         selectedPagePath,
         isSelectedPagePath,
-    ) => isSelectedPagePath || (
+    ) => isSelectedPagePath ||
+    (
         getIsTabbedPath(pagePath) &&
         pagePath === getTopLevelPageFromPath(selectedPagePath)
     ),
@@ -35,7 +44,8 @@ export const getMapIsSelectedOrTopLevelTabbedPath = ({
     (
         selectedPagePath,
         isSelectedPagePath,
-    ) => isSelectedPagePath || (
+    ) => isSelectedPagePath ||
+    (
         isFirstPage && selectedPagePath === topLevelPage
     ),
 )

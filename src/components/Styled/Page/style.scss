@@ -42,10 +42,21 @@ $borderRadius__inner: $borderRadius__wide - $length__base * 0.25;
 
 .StyledPage__body {
     position: relative;
-    background-color: $colour__background__light;
-    
+    padding: $margin__xs;
+
     @media (min-width: $breakpoint__sm) {
+        padding: $margin__sm;
         margin-bottom: $length__base;
         border-radius: $borderRadius__inner;
     }
+
+    @media (min-width: $breakpoint__md) {
+        padding: $margin__md;
+    }
+
+    background-color: $colour__background__light;
+}
+
+.StyledPage__body__tabbedMenu {
+    padding-top: 0;
 }

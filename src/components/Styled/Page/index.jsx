@@ -4,7 +4,7 @@ import cx from 'classnames'
 import Flex from '../../Flex'
 import './style'
 
-const StyledPage = ({ className, ...rest }) => (
+const StyledPage = ({ className, showTabbedMenu, ...rest }) => (
     <div
         {...{
             className: cx(
@@ -16,6 +16,7 @@ const StyledPage = ({ className, ...rest }) => (
             {...{
                 className: cx(
                     'StyledPage__body',
+                    showTabbedMenu && 'StyledPage__body__tabbedMenu',
                     className,
                 ),
                 ...rest,
@@ -26,6 +27,7 @@ const StyledPage = ({ className, ...rest }) => (
 
 StyledPage.propTypes = {
     className: PropTypes.string,
+    showTabbedMenu: PropTypes.bool,
 }
 
 export default StyledPage

@@ -10,7 +10,7 @@
     height: calc(100% + #{$height__appFooter});
 
     background-color: $colour__wrapper;
-    
+
     &:before, &:after {
         position: absolute;
         top: 0;
@@ -18,7 +18,7 @@
         height: 100%;
         content: '';
     }
-    
+
     &:before {
         left: 0;
         @include mixin__easeLinearGradient(right);

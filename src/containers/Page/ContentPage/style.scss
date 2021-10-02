@@ -3,15 +3,6 @@
 .ContentPage {
     flex-grow: 1;
     width: 100%;
-    padding: $margin__xs;
-
-    @media (min-width: $breakpoint__sm) {
-        padding: $margin__sm;
-    }
-
-    @media (min-width: $breakpoint__md) {
-        padding: $margin__md;
-    }
 
     gap: $margin__md;
 

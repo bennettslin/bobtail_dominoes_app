@@ -1,3 +1,3 @@
-import Setup from './setup'
+import Component from './setup'
 
-export default Setup
+export default Component

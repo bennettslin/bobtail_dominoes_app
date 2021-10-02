@@ -6,8 +6,6 @@ const Component = () => (
     <Page
         {...{
             body: `
-We'll be making this page more interactive in the coming months! In the meantime, use the list below as a reference.
-
 ### Triads
 
 - Minor triad (1, ${FLAT}3, 5)
