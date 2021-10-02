@@ -1,20 +1,23 @@
 import React from 'react'
 import cx from 'classnames'
+import Flex from '../../../../components/Flex'
 import DirectionRow from './DirectionRow'
-import BackLinkShareRow from './BackLinkShareRow'
+import BackLinkShareRow from './TopLevelShareRow'
 import './style'
 
 const PageFooter = () => (
-    <div
+    <Flex
         {...{
             className: cx(
                 'PageFooter',
             ),
+            flexDirection: 'column',
+            justifyContent: 'space-between',
         }}
     >
         <DirectionRow />
         <BackLinkShareRow />
-    </div>
+    </Flex>
 )
 
 export default PageFooter

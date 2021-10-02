@@ -1,0 +1,9 @@
+.link__icon {
+    width: $length__icon__xs;
+    height: $length__icon__xs;
+
+    @media (min-width: $breakpoint__md) {
+        width: $length__icon__sm;
+        height: $length__icon__sm;
+    }
+}

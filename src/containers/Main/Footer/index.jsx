@@ -36,6 +36,7 @@ const MainFooter = ({ didMount }) => {
                         className: cx(
                             'MainFooter',
                         ),
+                        justifyContent: 'space-between',
                     }}
                 >
                     <MailingList />

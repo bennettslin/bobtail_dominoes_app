@@ -22,6 +22,11 @@ label {
     color: $colour__primary__dark;
 }
 
+svg {
+    width: 100%;
+    height: 100%;
+}
+
 a {
     text-decoration: none;
 
@@ -40,24 +45,6 @@ input {
 
     &:focus {
         outline: none;
-    }
-}
-
-input[type=submit] {
-    &[disabled] {
-        color: $colour__text__mediumLight;
-    }
-}
-
-a, input[type=submit] {
-    color: $colour__link__dark;
-
-    &:not([disabled]):hover {
-        color: $colour__link__medium;
-    }
-
-    &:not([disabled]):active {
-        color: $colour__link__light;
     }
 }
 

@@ -1,3 +1,5 @@
+@import '../../../scss/constants/responsive';
+
 .MailingListInputs {
-    display: flex;
+    gap: $margin__xs;
 }

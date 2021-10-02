@@ -2,6 +2,7 @@ import React, { Fragment, useContext } from 'react'
 import cx from 'classnames'
 import PageConfigContext from '../../../../contexts/PageConfig'
 import ContactEmail from '../../../../components/ContactEmail'
+import Flex from '../../../../components/Flex'
 import Markdown from '../../../../components/Markdown'
 import Heading from '../../../../components/Heading'
 import { getSmartQuotedText } from '../../../../utils/format/smartQuote'
@@ -18,12 +19,15 @@ const Body = () => {
     } = useContext(PageConfigContext)
 
     return (
-        <div
+        <Flex
             {...{
                 className: cx(
                     'Body',
                     'fontSize__md',
                 ),
+                flexDirection: 'column',
+                justifyContent: 'normal',
+                alignItems: 'normal',
             }}
         >
             <Heading>
@@ -50,7 +54,7 @@ const Body = () => {
             {showContactEmail && (
                 <ContactEmail />
             )}
-        </div>
+        </Flex>
     )
 }
 

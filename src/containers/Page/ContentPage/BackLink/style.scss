@@ -1,0 +1,23 @@
+@import '../../../../scss/constants/responsive';
+
+.BackLink {
+    margin-right: $margin__xs;
+
+    @media (min-width: $breakpoint__md) {
+        margin-right: $margin__sm;
+        font-size: 1.25em;
+    }
+}
+
+.BackLink__text {
+    margin-left: $margin__xs * 0.5;
+    
+    .Button
+    & {        
+        display: none;
+        
+        @media (min-width: $breakpoint__md) {
+            display: block;
+        }
+    }
+}

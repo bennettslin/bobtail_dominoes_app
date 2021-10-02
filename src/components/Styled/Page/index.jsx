@@ -5,11 +5,13 @@ import Flex from '../../Flex'
 import './style'
 
 const StyledPage = ({ className, showTabbedMenu, ...rest }) => (
-    <div
+    <Flex
         {...{
             className: cx(
                 'StyledPage',
             ),
+            justifyContent: 'normal',
+            alignItems: 'normal',
         }}
     >
         <Flex
@@ -22,7 +24,7 @@ const StyledPage = ({ className, showTabbedMenu, ...rest }) => (
                 ...rest,
             }}
         />
-    </div>
+    </Flex>
 )
 
 StyledPage.propTypes = {

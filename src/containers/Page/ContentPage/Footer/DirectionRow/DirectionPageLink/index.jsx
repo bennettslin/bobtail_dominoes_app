@@ -3,6 +3,9 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import PageConfigContext from '../../../../../../contexts/PageConfig'
 import Anchor from '../../../../../../components/Anchor'
+import Flex from '../../../../../../components/Flex'
+import Svg from '../../../../../../components/Svg'
+import popupClose from '../../../../../../assets/svgs/app/popupClose'
 import { getPagePathFromConfig } from '../../../../../../utils/pages/config'
 import './style'
 
@@ -24,13 +27,40 @@ const DirectionPageLink = ({ direction, directionPage }) => {
             {...{
                 className: cx(
                     'DirectionPageLink',
+                    'font__button',
                 ),
                 pagePath: getPagePathFromConfig({ topLevelPage, id, date }),
             }}
         >
-            {direction === -1 && '❮ '}
-            {title}
-            {direction === 1 && ' ❯'}
+            <Flex
+                {...{
+                    className: cx(
+                        'DirectionPageLink__flex',
+                    ),
+                }}
+            >
+                {direction === -1 && (
+                    <Svg
+                        {...{
+                            className: cx(
+                                'link__icon',
+                            ),
+                            src: popupClose,
+                        }}
+                    />
+                )}
+                {title}
+                {direction === 1 && (
+                    <Svg
+                        {...{
+                            className: cx(
+                                'link__icon',
+                            ),
+                            src: popupClose,
+                        }}
+                    />
+                )}
+            </Flex>
         </Anchor>
     )
 }

@@ -14,7 +14,6 @@ $borderRadius__inner: $borderRadius__wide - $length__base * 0.25;
     flex-grow: 1;
     position: relative;
     width: 100%;
-    display: flex;
 
     @media (min-width: $breakpoint__sm) {
         padding:

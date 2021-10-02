@@ -1,12 +1,14 @@
 import React, { forwardRef } from 'react'
 import PropTypes from 'prop-types'
+import cx from 'classnames'
+import './style'
 
 const Flex = forwardRef(({
     className,
     flexGrow,
     flexDirection,
-    justifyContent = 'center',
-    alignItems = 'center',
+    justifyContent,
+    alignItems,
     flexWrap,
     children,
     Tag = 'div',
@@ -15,15 +17,15 @@ const Flex = forwardRef(({
     <Tag
         {...{
             ref,
-            ...className && {
+            className: cx(
+                'Flex',
                 className,
-            },
+            ),
             style: {
-                display: 'flex',
                 ...flexGrow && { flexGrow },
                 ...flexDirection && { flexDirection },
-                justifyContent,
-                alignItems,
+                ...justifyContent && { justifyContent },
+                ...alignItems && { alignItems },
                 ...flexWrap && { flexWrap },
             },
             ...rest,

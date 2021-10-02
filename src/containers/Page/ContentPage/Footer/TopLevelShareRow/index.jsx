@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { useSelector } from 'react-redux'
 import PageConfigContext from '../../../../../contexts/PageConfig'
 import PageFooterRow from '../FooterRow'
-import BackLink from './BackLink'
+import BackLink from '../../BackLink'
 import ShareButtons from '../../../../../components/ShareButtons'
 import { getMapShowBackLink } from '../../../../../redux/page/selector'
 

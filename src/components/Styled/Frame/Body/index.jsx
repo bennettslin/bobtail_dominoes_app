@@ -1,22 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import Flex from '../../../Flex'
 import './style'
 
 const StyledFrameBody = ({
     className,
     children,
+    ...rest
 }) => (
-    <div
+    <Flex
         {...{
             className: cx(
                 'StyledFrameBody',
                 className,
             ),
+            ...rest,
         }}
     >
         {children}
-    </div>
+    </Flex>
 )
 
 StyledFrameBody.propTypes = {

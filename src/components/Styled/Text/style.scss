@@ -17,6 +17,7 @@
 
 .StyledText__rearShadow {
     color: $colour__opaque__medium;
+    fill: $colour__opaque__medium;
 }
 
 .StyledText__front {
@@ -36,6 +37,7 @@
 
     &.StyledText__interactive {
         color: $colour__link__light;
+        fill: $colour__link__light;
     }
 }
 

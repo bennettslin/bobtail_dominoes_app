@@ -14,7 +14,7 @@ export const getSvgWithDimensions = ({ svgString, scaleFactor }) => {
 
     return (
         svgString.slice(0, startIndex) +
-            `style="height:100%;width:100%;` +
+            `style="` +
             getStyleString({
                 style: 'max-width',
                 length: dimensions[2],

@@ -15,6 +15,7 @@ const MailingListSubmitButton = ({ isValidEmail }) => {
             {...{
                 className: cx(
                     'MailingListSubmitButton',
+                    'colour__link',
                     'font__text',
                 ),
                 type: 'submit',
