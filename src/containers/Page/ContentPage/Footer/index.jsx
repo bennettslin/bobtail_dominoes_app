@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 import DirectionRow from './DirectionRow'
-import TopLevelShareRow from './TopLevelShareRow'
+import BackLinkShareRow from './BackLinkShareRow'
 import './style'
 
 const PageFooter = () => (
@@ -13,7 +13,7 @@ const PageFooter = () => (
         }}
     >
         <DirectionRow />
-        <TopLevelShareRow />
+        <BackLinkShareRow />
     </div>
 )
 

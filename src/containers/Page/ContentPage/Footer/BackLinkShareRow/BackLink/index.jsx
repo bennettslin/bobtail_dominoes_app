@@ -5,7 +5,7 @@ import Anchor from '../../../../../../components/Anchor'
 import { getMapShowBackLink } from '../../../../../../redux/page/selector'
 import { getCapitalizedText } from '../../../../../../utils/format'
 
-const TopLevelPageLink = () => {
+const BackLink = () => {
     const
         { topLevelPage } = useContext(PageConfigContext),
         showBackLink = useSelector(getMapShowBackLink(topLevelPage))
@@ -17,4 +17,4 @@ const TopLevelPageLink = () => {
     )
 }
 
-export default TopLevelPageLink
+export default BackLink

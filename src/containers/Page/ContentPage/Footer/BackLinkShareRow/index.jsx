@@ -2,11 +2,11 @@ import React, { useContext } from 'react'
 import { useSelector } from 'react-redux'
 import PageConfigContext from '../../../../../contexts/PageConfig'
 import PageFooterRow from '../FooterRow'
-import TopLevelPageLink from './TopLevelPageLink'
+import BackLink from './BackLink'
 import ShareButtons from '../../../../../components/ShareButtons'
 import { getMapShowBackLink } from '../../../../../redux/page/selector'
 
-const TopLevelShareRow = () => {
+const BackLinkShareRow = () => {
     const
         { noShare, topLevelPage } = useContext(PageConfigContext),
         showBackLink = useSelector(getMapShowBackLink(topLevelPage))
@@ -20,7 +20,7 @@ const TopLevelShareRow = () => {
             isBottomRow
             {...{
                 leftChild: showBackLink && (
-                    <TopLevelPageLink />
+                    <BackLink />
                 ),
                 rightChild: !noShare && (
                     <ShareButtons />
@@ -30,4 +30,4 @@ const TopLevelShareRow = () => {
     )
 }
 
-export default TopLevelShareRow
+export default BackLinkShareRow
