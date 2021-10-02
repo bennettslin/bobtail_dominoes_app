@@ -1,0 +1,13 @@
+@import '../../../../scss/constants/responsive';
+
+.HomeButton {
+    width: $margin__xl * 4;
+
+    @media (min-width: $breakpoint__sm) {
+        width: $margin__xl * 5;
+    }
+
+    @media (min-width: $breakpoint__md) {
+        width: auto;
+    }
+}

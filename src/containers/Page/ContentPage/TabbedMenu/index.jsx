@@ -6,7 +6,6 @@ import StyledTabbedMenu from '../../../../components/Styled/TabbedMenu'
 import TabbedMenuButton from './Button'
 import BackLink from '../BackLink'
 import { getMapShowBackLink, getMapShowTabbedMenu } from '../../../../redux/page/selector'
-import './style'
 
 const TabbedMenu = () => {
     const

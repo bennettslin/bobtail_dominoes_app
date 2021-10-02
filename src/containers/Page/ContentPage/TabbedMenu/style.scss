@@ -1,9 +1,0 @@
-@import '../../../../scss/constants/responsive';
-
-.TabbedMenu {
-    gap: 0 $margin__sm;
-
-    @media (min-width: $breakpoint__sm) {
-        gap: 0 $margin__md;
-    }
-}

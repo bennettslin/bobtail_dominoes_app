@@ -1,0 +1,24 @@
+@import '../../../scss/constants/responsive';
+
+.StyledTabbedBackLink {
+    margin-right: $margin__xs;
+
+    @media (min-width: $breakpoint__md) {
+        margin-right: $margin__sm;
+    }
+
+    @media (min-width: $breakpoint__md) {
+        margin-right: $margin__sm;
+    }
+}
+
+.BackLink__text {
+    .StyledTabbedBackLink
+    & {        
+        display: none;
+        
+        @media (min-width: $breakpoint__md) {
+            display: block;
+        }
+    }
+}

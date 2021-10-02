@@ -4,7 +4,7 @@ import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import PageConfigContext from '../../../../contexts/PageConfig'
 import Anchor from '../../../../components/Anchor'
-import Button from '../../../../components/Button'
+import StyledBackLink from '../../../../components/Styled/TabbedBackLink'
 import Flex from '../../../../components/Flex'
 import Svg from '../../../../components/Svg'
 import StyledButtonText from '../../../../components/Styled/ButtonText'
@@ -17,7 +17,7 @@ const BackLink = ({ isStyledText }) => {
     const
         { topLevelPage } = useContext(PageConfigContext),
         showBackLink = useSelector(getMapShowBackLink(topLevelPage)),
-        Tag = isStyledText ? Button : Anchor,
+        Tag = isStyledText ? StyledBackLink : Anchor,
         TextTag = isStyledText ? StyledButtonText : Fragment
 
     return showBackLink && (

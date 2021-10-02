@@ -7,6 +7,7 @@ import DominoSvg from '../../../../components/Svgs/Domino'
 import logo from '../../../../assets/svgs/app/logo'
 import { getMapIsSelectedPagePath } from '../../../../redux/page/selector'
 import { HOME_PAGE } from '../../../../constants/pages'
+import './style'
 
 const HomeButton = ({ onLoad }) => {
     const isSelected = useSelector(getMapIsSelectedPagePath(HOME_PAGE))
