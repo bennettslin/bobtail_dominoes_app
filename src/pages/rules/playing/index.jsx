@@ -2,8 +2,8 @@ import React from 'react'
 import DominoSvg from '../../../components/Svgs/Domino'
 import Page from '../../../containers/Page'
 import { getPageConfigForId } from '../../../utils/pages/rules'
-import dominoesPlayingValid from '../../../assets/svgs/rules/dominoesPlayingValid'
-import dominoesPlayingInvalid from '../../../assets/svgs/rules/dominoesPlayingInvalid'
+import playingValid from '../../../assets/svgs/rules/playingValid'
+import playingInvalid from '../../../assets/svgs/rules/playingInvalid'
 
 const id = 'playing'
 
@@ -17,13 +17,13 @@ const Component = () => (
 When it's your turn, place a single domino from your hand onto the board to build at least one valid chord. In doing so, you may form any number of dyads, or two faces in a row.
                 `,
                 (
-                    <DominoSvg {...{ src: dominoesPlayingValid }} />
+                    <DominoSvg {...{ src: playingValid }} />
                 ),
                 `
 However, every three or more faces in a row must be a valid chord. No row may have duplicate faces.
                 `,
                 (
-                    <DominoSvg {...{ src: dominoesPlayingInvalid }} />
+                    <DominoSvg {...{ src: playingInvalid }} />
                 ),
                 `
 The remaining dominoes in your hand may be played in the same manner until none are left. Upon ending your turn, draw new dominoes until you have the maximum number in your hand, or until the pool is empty. Play passes to your left.

@@ -2,7 +2,7 @@ import React from 'react'
 import DominoSvg from '../../../components/Svgs/Domino'
 import Page from '../../../containers/Page'
 import { getPageConfigForId } from '../../../utils/pages/rules'
-import dominoesExtendedSet from '../../../assets/svgs/rules/dominoesExtendedSet'
+import setupSet from '../../../assets/svgs/rules/setupSet'
 
 const id = 'setup'
 
@@ -17,7 +17,7 @@ The standard set consists of 48 dominoes representing all possible whole tones, 
                 `,
                 (
                     <DominoSvg {...{
-                        src: dominoesExtendedSet,
+                        src: setupSet,
                         scaleFactor: 0.66,
                     }} />
                 ),
