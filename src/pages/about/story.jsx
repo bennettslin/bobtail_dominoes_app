@@ -1,22 +1,22 @@
 import React from 'react'
-import Page from '../../../containers/Page'
-import Image from '../../../components/Image'
-import { getPageConfigForId } from '../../../utils/pages/about'
-import dominoesPrototype_reduced from '../../../assets/images/dominoesPrototype_reduced.jpg'
+import Page from '../../containers/Page'
+import Image from '../../components/Image'
+import { getPageConfigForId } from '../../utils/pages/about'
+import prototype_reduced from '../../assets/images/prototype_reduced.jpg'
 
-const id = 'story'
+const ID = 'story'
 
 const Component = () => (
     <Page
         {...{
-            ...getPageConfigForId(id),
+            ...getPageConfigForId(ID),
             titleHeading: 'Our story',
             body: [
                 `
 Hi, I'm Bennett from the Bobtail Yearlings! Years ago, I decided that visualizing chordal space was the next phase in my growth as a songwriter. After a few false starts, I realized that I needed to gamify the process, and that's when the idea for Bobtail Dominoes came to me. So I made a prototype from mosaic bathroom tiles to try it out.
                 `,
                 (
-                    <Image {...{ src: dominoesPrototype_reduced }} />
+                    <Image {...{ src: prototype_reduced }} />
                 ),
                 `
 Each day I would challenge myself to arrange the dominoes into chords. Upon finishing a layout, I would strum the various chords on my guitar, hoping to come up with a nice progression for my next song. I started dreaming in chordal space, and over time I could feel myself developing a keen harmonic intuition.

@@ -1,15 +1,15 @@
 import React from 'react'
-import DominoSvg from '../../../components/Svgs/Domino'
-import Page from '../../../containers/Page'
-import { getPageConfigForId } from '../../../utils/pages/about'
-import designSpecs from '../../../assets/svgs/about/designSpecs'
+import DominoSvg from '../../components/Svgs/Domino'
+import Page from '../../containers/Page'
+import { getPageConfigForId } from '../../utils/pages/about'
+import designSpecs from '../../assets/svgs/about/designSpecs'
 
-const id = 'design'
+const ID = 'design'
 
 const Component = () => (
     <Page
         {...{
-            ...getPageConfigForId(id),
+            ...getPageConfigForId(ID),
             showContactEmail: true,
             titleHeading: 'Design specs',
             body: [

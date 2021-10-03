@@ -1,16 +1,16 @@
 import React from 'react'
-import DominoSvg from '../../../components/Svgs/Domino'
-import Page from '../../../containers/Page'
-import { getPageConfigForId } from '../../../utils/pages/rules'
-import playingValid from '../../../assets/svgs/rules/playingValid'
-import playingInvalid from '../../../assets/svgs/rules/playingInvalid'
+import DominoSvg from '../../components/Svgs/Domino'
+import Page from '../../containers/Page'
+import { getPageConfigForId } from '../../utils/pages/rules'
+import playingValid from '../../assets/svgs/rules/playingValid'
+import playingInvalid from '../../assets/svgs/rules/playingInvalid'
 
-const id = 'playing'
+const ID = 'playing'
 
 const Component = () => (
     <Page
         {...{
-            ...getPageConfigForId(id),
+            ...getPageConfigForId(ID),
             titleHeading: 'Playing your turn',
             body: [
                 `

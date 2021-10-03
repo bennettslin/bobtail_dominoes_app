@@ -1,15 +1,15 @@
 import React from 'react'
-import DominoSvg from '../../../components/Svgs/Domino'
-import Page from '../../../containers/Page'
-import { getPageConfigForId } from '../../../utils/pages/rules'
-import setupSet from '../../../assets/svgs/rules/setupSet'
+import DominoSvg from '../../components/Svgs/Domino'
+import Page from '../../containers/Page'
+import { getPageConfigForId } from '../../utils/pages/rules'
+import setupSet from '../../assets/svgs/rules/setupSet'
 
-const id = 'setup'
+const ID = 'setup'
 
 const Component = () => (
     <Page
         {...{
-            ...getPageConfigForId(id),
+            ...getPageConfigForId(ID),
             titleHeading: 'Setting up',
             body: [
                 `
