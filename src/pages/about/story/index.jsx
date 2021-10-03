@@ -1,7 +1,7 @@
 import React from 'react'
 import Page from '../../../containers/Page'
 import Image from '../../../components/Image'
-import { pagesMap } from '../../../content/about'
+import { getPageConfigForId } from '../../../utils/pages/about'
 import dominoesPrototype_reduced from '../../../assets/images/dominoesPrototype_reduced.jpg'
 
 const id = 'story'
@@ -9,7 +9,7 @@ const id = 'story'
 const Component = () => (
     <Page
         {...{
-            ...pagesMap[id],
+            ...getPageConfigForId(id),
             titleHeading: 'Our story',
             body: [
                 `

@@ -65,6 +65,7 @@
     "gatsby-plugin-remove-trailing-slashes": "^3.12.0",
     "gatsby-plugin-s3": "^0.3.8",
     "gatsby-plugin-sass": "^4.12.0",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.25",
     "jsdom": "^16.7.0",
     "redux-devtools-extension": "^2.13.9",
     "sass": "^1.38.0",

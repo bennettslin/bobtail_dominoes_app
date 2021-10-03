@@ -1,7 +1,7 @@
 import React from 'react'
 import DominoSvg from '../../../components/Svgs/Domino'
 import Page from '../../../containers/Page'
-import { pagesMap } from '../../../content/about'
+import { getPageConfigForId } from '../../../utils/pages/about'
 import designSpecs from '../../../assets/svgs/about/designSpecs'
 
 const id = 'design'
@@ -9,7 +9,7 @@ const id = 'design'
 const Component = () => (
     <Page
         {...{
-            ...pagesMap[id],
+            ...getPageConfigForId(id),
             showContactEmail: true,
             titleHeading: 'Design specs',
             body: [

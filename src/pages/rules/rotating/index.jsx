@@ -1,7 +1,7 @@
 import React from 'react'
 import DominoSvg from '../../../components/Svgs/Domino'
 import Page from '../../../containers/Page'
-import { pagesMap } from '../../../content/rules'
+import { getPageConfigForId } from '../../../utils/pages/rules'
 import dominoesRotatingInvalidPlace from '../../../assets/svgs/rules/dominoesRotatingInvalidPlace'
 import dominoesRotatingInvalidChord from '../../../assets/svgs/rules/dominoesRotatingInvalidChord'
 import dominoesRotatingValid from '../../../assets/svgs/rules/dominoesRotatingValid'
@@ -11,7 +11,7 @@ const id = 'rotating'
 const Component = () => (
     <Page
         {...{
-            ...pagesMap[id],
+            ...getPageConfigForId(id),
             titleHeading: 'Rotating a domino',
             body: [
                 `

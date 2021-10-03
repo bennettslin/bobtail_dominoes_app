@@ -38,5 +38,12 @@ export default {
                 bucketName: getS3BucketName(),
             },
         },
+        {
+            resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
+            options: {
+                // analyzerPort: 8888,
+                openAnalyzer: false,
+            },
+        },
     ],
 }
