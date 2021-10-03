@@ -6,7 +6,7 @@ import Flex from '../../../../components/Flex'
 import Markdown from '../../../../components/Markdown'
 import Heading from '../../../../components/Heading'
 import { getSmartQuotedText } from '../../../../utils/format/smartQuote'
-import { getHeaderFromDate } from '../../../../utils/format/dates'
+import { getHeaderFromDate } from '../../../../utils/date'
 import './style'
 
 const Body = () => {
@@ -14,6 +14,7 @@ const Body = () => {
         pageHeading,
         titleHeading,
         date,
+        pageDate,
         body,
         showContactEmail,
     } = useContext(PageConfigContext)
@@ -37,7 +38,7 @@ const Body = () => {
                 {getSmartQuotedText(titleHeading)}
             </Heading>
             <Heading {...{ level: 5 }}>
-                {getHeaderFromDate(date)}
+                {getHeaderFromDate(pageDate || date)}
             </Heading>
             {body && (
                 (Array.isArray(body) ? body : [body])

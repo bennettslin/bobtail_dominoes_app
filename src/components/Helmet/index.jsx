@@ -7,10 +7,12 @@ import {
     getMetaTitle,
     getMetaTags,
 } from './helper'
+import { getCapitalizedText } from '../../utils/format'
 
 const Helmet = () => {
     const
         {
+            id,
             title,
             description,
         } = useContext(PageConfigContext),
@@ -21,13 +23,13 @@ const Helmet = () => {
             <title>
                 {getMetaTitle({
                     page: selectedPagePath,
-                    title,
+                    title: getCapitalizedText(id),
                 })}
             </title>
             {getMetaTags({
                 page: selectedPagePath,
                 description,
-                title,
+                title: getCapitalizedText(id),
             }).map(({
                 name,
                 property,

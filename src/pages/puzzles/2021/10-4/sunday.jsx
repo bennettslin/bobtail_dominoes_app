@@ -1,13 +1,16 @@
 import React from 'react'
 import Page from '../../../../containers/Page'
-import { pagesMap } from '../../../../content/puzzles/2021/week1'
+import { getPageConfigForDate } from '../../../../content/puzzles'
+import { PAGES_CONFIGS } from '../../../../content/puzzles/2021'
 
-const id = '10-3'
+const
+    pathDate = PAGES_CONFIGS[1].date,
+    id = 'sunday'
 
 const Component = () => (
     <Page
         {...{
-            ...pagesMap[id],
+            ...getPageConfigForDate(pathDate, id),
             body: [
                 `
 Sunday puzzle content.

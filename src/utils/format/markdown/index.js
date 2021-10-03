@@ -21,10 +21,14 @@ const getMarkdownLinksForPages = ({
     pages,
 }) => (
     pages.map(page => {
-        const { title } = page
+        const { id, title } = page
 
         return (
-            `[${title}](/${getPagePathFromConfig({ topLevelPage, ...page })})${'  '}`
+            `[${
+                title || id.toUpperCase()
+            }](/${
+                getPagePathFromConfig({ topLevelPage, ...page })
+            })${'  '}`
         )
     }).join(`\n`)
 )

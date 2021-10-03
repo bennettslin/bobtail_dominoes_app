@@ -6,6 +6,7 @@ import StyledTabbedMenu from '../../../../components/Styled/TabbedMenu'
 import TabbedMenuButton from './Button'
 import BackLink from '../BackLink'
 import { getMapShowBackLink, getMapShowTabbedMenu } from '../../../../redux/page/selector'
+import { getCapitalizedText } from '../../../../utils/format'
 
 const TabbedMenu = () => {
     const
@@ -28,16 +29,17 @@ const TabbedMenu = () => {
                 id,
                 title,
                 date,
+                pathDate,
             }, index) => (
                 <TabbedMenuButton
                     {...{
                         key: index,
                         id,
-                        date,
+                        date: pathDate || date,
                         topLevelPage,
                     }}
                 >
-                    {title}
+                    {title || getCapitalizedText(id)}
                 </TabbedMenuButton>
             ))}
         </StyledTabbedMenu>

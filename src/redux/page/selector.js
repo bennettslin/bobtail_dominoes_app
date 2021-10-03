@@ -39,9 +39,9 @@ export const getMapShowBackLink = pagePath => createSelector(
     ),
 )
 
-export const getMapShowTabbedMenu = pages => createSelector(
+export const getMapShowTabbedMenu = pageIds => createSelector(
     mapSelectedPagePath,
     selectedPagePath => (
-        getIsTabbedPath(selectedPagePath) && Boolean(pages)
+        getIsTabbedPath(selectedPagePath) && Boolean(pageIds)
     ),
 )

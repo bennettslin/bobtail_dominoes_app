@@ -25,13 +25,15 @@ Page.propTypes = {
     children: PropTypes.node,
     pages: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.string,
-        title: PropTypes.string.isRequired,
     })),
     topLevelPage: PropTypes.string,
     pageHeading: PropTypes.string,
-    title: PropTypes.string,
-    noTitle: PropTypes.bool,
     date: PropTypes.shape({
+        year: PropTypes.number.isRequired,
+        month: PropTypes.number.isRequired,
+        day: PropTypes.number.isRequired,
+    }),
+    pathDate: PropTypes.shape({
         year: PropTypes.number.isRequired,
         month: PropTypes.number.isRequired,
         day: PropTypes.number.isRequired,

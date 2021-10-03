@@ -6,6 +6,7 @@ import Anchor from '../../../../../../components/Anchor'
 import Flex from '../../../../../../components/Flex'
 import Svg from '../../../../../../components/Svg'
 import arrow from '../../../../../../assets/svgs/app/arrow'
+import { getCapitalizedText } from '../../../../../../utils/format'
 import { getPagePathFromConfig } from '../../../../../../utils/pages/config'
 import './style'
 
@@ -20,6 +21,7 @@ const DirectionPageLink = ({ direction, directionPage }) => {
             id,
             title,
             date,
+            pathDate,
         } = directionPage
 
     return Boolean(directionPage) && (
@@ -29,7 +31,11 @@ const DirectionPageLink = ({ direction, directionPage }) => {
                     'DirectionPageLink',
                     'font__button',
                 ),
-                pagePath: getPagePathFromConfig({ topLevelPage, id, date }),
+                pagePath: getPagePathFromConfig({
+                    topLevelPage,
+                    id,
+                    date: pathDate || date,
+                }),
             }}
         >
             <Flex
@@ -49,7 +55,7 @@ const DirectionPageLink = ({ direction, directionPage }) => {
                         }}
                     />
                 )}
-                {title}
+                {title || getCapitalizedText(id)}
                 {direction === 1 && (
                     <Svg
                         reverse
@@ -70,8 +76,13 @@ DirectionPageLink.propTypes = {
     direction: PropTypes.oneOf([-1, 1]).isRequired,
     directionPage: PropTypes.shape({
         id: PropTypes.string,
-        title: PropTypes.string.isRequired,
+        title: PropTypes.string,
         date: PropTypes.shape({
+            year: PropTypes.number.isRequired,
+            month: PropTypes.number.isRequired,
+            day: PropTypes.number.isRequired,
+        }),
+        pathDate: PropTypes.shape({
             year: PropTypes.number.isRequired,
             month: PropTypes.number.isRequired,
             day: PropTypes.number.isRequired,

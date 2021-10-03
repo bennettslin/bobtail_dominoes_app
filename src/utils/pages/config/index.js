@@ -1,16 +1,17 @@
+import { getWeekLinkForDate } from '../../date'
 import { getFilteredAndJoinedList } from '../../format'
 
 export const getMapFromPageConfigs = ({
     topLevelPage,
     pageConfigs,
-
 }) => (
-    pageConfigs.reduce((map, page) => {
-        const { id, date: { month, day } = {} } = page
+    pageConfigs.reduce((map, pageConfig) => {
+        const { id, date: { month, day } = {} } = pageConfig
+
         map[id || [month, day].join('-')] = {
+            ...pageConfig,
             topLevelPage,
             pages: pageConfigs,
-            ...page,
         }
 
         return map
@@ -20,11 +21,7 @@ export const getMapFromPageConfigs = ({
 export const getPagePathFromConfig = ({
     topLevelPage,
     id,
-    date: {
-        year,
-        month,
-        day,
-    } = {},
+    date: { year, month, day } = {},
 }) => (
     getFilteredAndJoinedList([
         topLevelPage,
@@ -32,7 +29,15 @@ export const getPagePathFromConfig = ({
         getFilteredAndJoinedList([
             month,
             day,
-            id,
         ], '-'),
+        id,
     ], '/')
+)
+
+export const getPagesConfigsForDates = pagesConfigs => (
+    pagesConfigs.map(date => ({
+        id: 'monday',
+        title: getWeekLinkForDate(date),
+        date,
+    }))
 )

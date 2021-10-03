@@ -1,18 +1,16 @@
 import { getMapFromPageConfigs } from '../../utils/pages/config'
 import { ABOUT_PAGE } from '../../constants/pages'
 
-const pageConfigs = [
+const PAGE_CONFIGS = [
     {
         id: `story`,
-        title: `Story`,
     },
     {
         id: `design`,
-        title: `Design`,
     },
 ]
 
 export const pagesMap = getMapFromPageConfigs({
     topLevelPage: ABOUT_PAGE,
-    pageConfigs,
+    pageConfigs: PAGE_CONFIGS,
 })

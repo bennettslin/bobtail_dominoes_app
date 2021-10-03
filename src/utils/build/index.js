@@ -1,4 +1,4 @@
-import format from 'date-fns/format'
+import { format } from 'date-fns'
 
 const getDateTimeForConsole = dateTime => (
     `${format(dateTime, 'MMMM d, yyyy, h:mmaaaaa')}m`
