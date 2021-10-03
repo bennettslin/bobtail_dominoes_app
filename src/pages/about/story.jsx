@@ -1,7 +1,7 @@
 import React from 'react'
 import Page from '../../containers/Page'
 import Image from '../../components/Image'
-import { getPageConfigForId } from '../../utils/pages/about'
+import PAGES_MAP from '../../content/about'
 import prototype_reduced from '../../assets/images/prototype_reduced.jpg'
 
 const ID = 'story'
@@ -9,7 +9,7 @@ const ID = 'story'
 const Component = () => (
     <Page
         {...{
-            ...getPageConfigForId(ID),
+            ...PAGES_MAP[ID],
             titleHeading: 'Our story',
             body: [
                 `

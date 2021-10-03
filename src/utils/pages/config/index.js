@@ -1,20 +1,27 @@
 import { getFilteredAndJoinedList } from '../../format'
 
-export const getMapFromPageConfigs = ({
+export const getPagesMap = (
+    initialConfigs,
     topLevelPage,
-    pageConfigs,
-}) => (
-    pageConfigs.reduce((map, pageConfig) => {
-        const { id, date: { month, day } = {} } = pageConfig
+) => (
+    initialConfigs.reduce((map, initialConfig) => {
+        const { id, date: { month, day } = {} } = initialConfig
 
         map[id || [month, day].join('-')] = {
-            ...pageConfig,
+            ...initialConfig,
             topLevelPage,
-            pages: pageConfigs,
+            pages: initialConfigs,
         }
 
         return map
     }, {})
+)
+
+export const getPagesMapForIds = (pageIds, topLevelPage) => (
+    getPagesMap(
+        pageIds.map(id => ({ id })),
+        topLevelPage,
+    )
 )
 
 export const getPagePathFromConfig = ({

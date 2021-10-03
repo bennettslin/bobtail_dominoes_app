@@ -1,7 +1,7 @@
 import React from 'react'
 import DominoSvg from '../../components/Svgs/Domino'
 import Page from '../../containers/Page'
-import { getPageConfigForId } from '../../utils/pages/rules'
+import PAGES_MAP from '../../content/rules'
 import playingValid from '../../assets/svgs/rules/playingValid'
 import playingInvalid from '../../assets/svgs/rules/playingInvalid'
 
@@ -10,7 +10,7 @@ const ID = 'playing'
 const Component = () => (
     <Page
         {...{
-            ...getPageConfigForId(ID),
+            ...PAGES_MAP[ID],
             titleHeading: 'Playing your turn',
             body: [
                 `

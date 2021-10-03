@@ -6,7 +6,7 @@ import Flex from '../../../../components/Flex'
 import Markdown from '../../../../components/Markdown'
 import Heading from '../../../../components/Heading'
 import { getSmartQuotedText } from '../../../../utils/format/smartQuote'
-import { getHeaderFromDate } from '../../../../utils/date'
+import { formatHeaderFromDate } from '../../../../utils/date/format'
 import './style'
 
 const Body = () => {
@@ -38,7 +38,7 @@ const Body = () => {
                 {getSmartQuotedText(titleHeading)}
             </Heading>
             <Heading {...{ level: 5 }}>
-                {getHeaderFromDate(pageDate || date)}
+                {formatHeaderFromDate(pageDate || date)}
             </Heading>
             {body && (
                 (Array.isArray(body) ? body : [body])

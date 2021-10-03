@@ -1,16 +1,15 @@
 import React from 'react'
 import Page from '../../../../containers/Page'
-import { getPageConfigForDate } from '../../../../utils/pages/puzzles'
-import PAGES_DATES from '../../../../content/puzzles/2021'
+import PAGES_MAPS from '../../../../content/puzzles/2021'
 
-const
-    PATH_DATE = PAGES_DATES[0],
-    ID = 'wednesday'
+const ID = 'wednesday'
+
+console.log(PAGES_MAPS)
 
 const Component = () => (
     <Page
         {...{
-            ...getPageConfigForDate(PATH_DATE, ID),
+            ...PAGES_MAPS[0][ID],
             body: [
                 `
 Wednesday puzzle content.

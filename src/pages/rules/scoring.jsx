@@ -1,7 +1,7 @@
 import React from 'react'
 import DominoSvg from '../../components/Svgs/Domino'
 import Page from '../../containers/Page'
-import { getPageConfigForId } from '../../utils/pages/rules'
+import PAGES_MAP from '../../content/rules'
 import scoringPoints from '../../assets/svgs/rules/scoringPoints'
 import scoringExtend from '../../assets/svgs/rules/scoringExtend'
 import scoringOrder from '../../assets/svgs/rules/scoringOrder'
@@ -11,7 +11,7 @@ const ID = 'scoring'
 const Component = () => (
     <Page
         {...{
-            ...getPageConfigForId(ID),
+            ...PAGES_MAP[ID],
             titleHeading: 'Counting your score',
             body: [
                 `

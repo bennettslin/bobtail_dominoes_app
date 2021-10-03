@@ -1,7 +1,7 @@
 import React from 'react'
 import DominoSvg from '../../components/Svgs/Domino'
 import Page from '../../containers/Page'
-import { getPageConfigForId } from '../../utils/pages/rules'
+import PAGES_MAP from '../../content/rules'
 import setupSet from '../../assets/svgs/rules/setupSet'
 
 const ID = 'setup'
@@ -9,7 +9,7 @@ const ID = 'setup'
 const Component = () => (
     <Page
         {...{
-            ...getPageConfigForId(ID),
+            ...PAGES_MAP[ID],
             titleHeading: 'Setting up',
             body: [
                 `

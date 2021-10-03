@@ -1,53 +1,39 @@
-import { addDaysToDate, getWeekLinkForDate } from '../../date'
-import { getMapFromPageConfigs } from '../config'
+import { addDaysToDate } from '../../date'
+import { formatWeekLinkForDate } from '../../date/format'
+import { getPagesMap } from '../config'
 import { PUZZLES_PAGE } from '../../../constants/pages'
+import { filterPastAndPresentDates } from '../../date/puzzles'
 
-const
-    INCREMENT_WEDNESDAY = 2,
-    INCREMENT_FRIDAY = 4,
-    INCREMENT_SUNDAY = 6
-
-const PUZZLE_DAYS = [
-    {
-        id: 'monday',
-    },
-    {
-        id: 'wednesday',
-        increment: INCREMENT_WEDNESDAY,
-    },
-    {
-        id: 'friday',
-        increment: INCREMENT_FRIDAY,
-    },
-    {
-        id: 'sunday',
-        increment: INCREMENT_SUNDAY,
-    },
+const PAGE_IDS = [
+    { id: 'monday' },
+    { id: 'wednesday', increment: 2 },
+    { id: 'friday', increment: 4 },
+    { id: 'sunday', increment: 6 },
 ]
 
-const getPageConfigsForDate = pathDate => (
-    PUZZLE_DAYS.map(({ id, increment }) => ({
-        id,
-        pathDate,
-        date: increment ? addDaysToDate(pathDate, increment) : pathDate,
-    }))
+export const getPagesMapsForDates = pathDates => (
+    // Filter out future week.
+    filterPastAndPresentDates(pathDates).map(pathDate => (
+        getPagesMap(
+            // Filter out future day.
+            filterPastAndPresentDates(
+                PAGE_IDS.map(({ id, increment }) => ({
+                    id,
+                    pathDate,
+                    date: increment ?
+                        addDaysToDate(pathDate, increment) :
+                        pathDate,
+                })),
+            ),
+            PUZZLES_PAGE,
+        )
+    ))
 )
 
-const getMapForDate = pathDate => (
-    getMapFromPageConfigs({
-        topLevelPage: PUZZLES_PAGE,
-        pageConfigs: getPageConfigsForDate(pathDate),
-    })
-)
-
-export const getPageConfigForDate = (pathDate, id) => (
-    getMapForDate(pathDate)[id]
-)
-
-export const getPagesConfigsForDates = pagesConfigs => (
-    pagesConfigs.map(date => ({
+export const getLinkConfigsByDate = pagesMaps => (
+    pagesMaps.map(({ monday: { date } }) => ({
         id: 'monday',
-        title: getWeekLinkForDate(date),
+        title: formatWeekLinkForDate(date),
         date,
     }))
 )
