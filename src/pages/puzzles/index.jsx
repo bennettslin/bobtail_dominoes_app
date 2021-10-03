@@ -1,7 +1,7 @@
 import React from 'react'
 import Page from '../../containers/Page'
 import { getMarkdownLinksForRootPage } from '../../utils/format/markdown'
-import { pagesList } from '../../content/puzzles'
+import PAGES_LIST from '../../content/puzzles'
 import { PUZZLES_PAGE } from '../../constants/pages'
 
 const Component = () => (
@@ -9,7 +9,7 @@ const Component = () => (
         {...{
             body: getMarkdownLinksForRootPage({
                 topLevelPage: PUZZLES_PAGE,
-                pagesList,
+                pagesList: PAGES_LIST,
             }),
         }}
     />

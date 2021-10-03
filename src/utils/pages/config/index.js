@@ -1,4 +1,3 @@
-import { getWeekLinkForDate } from '../../date'
 import { getFilteredAndJoinedList } from '../../format'
 
 export const getMapFromPageConfigs = ({
@@ -32,12 +31,4 @@ export const getPagePathFromConfig = ({
         ], '-'),
         id,
     ], '/')
-)
-
-export const getPagesConfigsForDates = pagesConfigs => (
-    pagesConfigs.map(date => ({
-        id: 'monday',
-        title: getWeekLinkForDate(date),
-        date,
-    }))
 )
