@@ -5,7 +5,7 @@ import PageConfigContext from '../../../../../../contexts/PageConfig'
 import Anchor from '../../../../../../components/Anchor'
 import Flex from '../../../../../../components/Flex'
 import Svg from '../../../../../../components/Svg'
-import popupClose from '../../../../../../assets/svgs/app/popupClose'
+import arrow from '../../../../../../assets/svgs/app/arrow'
 import { getPagePathFromConfig } from '../../../../../../utils/pages/config'
 import './style'
 
@@ -45,18 +45,19 @@ const DirectionPageLink = ({ direction, directionPage }) => {
                             className: cx(
                                 'link__icon',
                             ),
-                            src: popupClose,
+                            src: arrow,
                         }}
                     />
                 )}
                 {title}
                 {direction === 1 && (
                     <Svg
+                        reverse
                         {...{
                             className: cx(
                                 'link__icon',
                             ),
-                            src: popupClose,
+                            src: arrow,
                         }}
                     />
                 )}

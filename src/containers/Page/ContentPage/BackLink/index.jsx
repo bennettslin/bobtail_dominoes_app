@@ -8,7 +8,7 @@ import StyledBackLink from '../../../../components/Styled/TabbedBackLink'
 import Flex from '../../../../components/Flex'
 import Svg from '../../../../components/Svg'
 import StyledButtonText from '../../../../components/Styled/ButtonText'
-import popupClose from '../../../../assets/svgs/app/popupClose'
+import backLink from '../../../../assets/svgs/app/backLink'
 import { getMapShowBackLink } from '../../../../redux/page/selector'
 import { getCapitalizedText } from '../../../../utils/format'
 import './style'
@@ -37,7 +37,7 @@ const BackLink = ({ isStyledText }) => {
                             className: cx(
                                 'link__icon',
                             ),
-                            src: popupClose,
+                            src: backLink,
                         }}
                     />
                     <div
