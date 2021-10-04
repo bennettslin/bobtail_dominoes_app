@@ -1,16 +1,35 @@
-import { differenceInMilliseconds } from 'date-fns'
+import { addDays, differenceInMilliseconds } from 'date-fns'
+import { getFromStorage, setInStorage } from '../../storage'
+import { getIsServerSide } from '../../browser'
 import { getDateObjectForDate } from '..'
-import { getBoolFromStorage } from '../../storage'
 
-const SHOW_ADMIN =
-    // This is only ever set manually in console.
-    getBoolFromStorage('showAdmin') &&
-    // Never show in production.
-    !IS_PRODUCTION
+// Establish consistent date for entire session.
+const CURRENT_DATE = new Date()
+
+// When not in production, allow admin to change current date.
+if (!IS_PRODUCTION) {
+    const ADMIN_INCREMENT_KEY = 'adminIncrement'
+    global.adminCurrentDate = addDays(
+        CURRENT_DATE,
+        getFromStorage(ADMIN_INCREMENT_KEY) || 0,
+    )
+
+    global.addToDate = increment => {
+        setInStorage(ADMIN_INCREMENT_KEY, increment)
+        const newDate = addDays(CURRENT_DATE, increment)
+        global.adminCurrentDate = newDate
+        return newDate
+    }
+}
 
 export const getIsPastOrPresentDate = date => (
-    SHOW_ADMIN ||
-    differenceInMilliseconds(new Date(), getDateObjectForDate(date)) >= 0
+    // Render all dates on server side.
+    getIsServerSide() ||
+
+    differenceInMilliseconds(
+        IS_PRODUCTION ? CURRENT_DATE : global.adminCurrentDate,
+        getDateObjectForDate(date),
+    ) >= 0
 )
 
 export const filterPastAndPresentDates = entities => (

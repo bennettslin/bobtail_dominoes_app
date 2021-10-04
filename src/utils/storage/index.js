@@ -1,8 +1,12 @@
 import { getWindow } from '../browser'
 
-export const getWindowStorage = () => {
-    return getWindow().localStorage
-}
+export const getWindowStorage = () => (
+    getWindow().localStorage
+)
+
+export const getFromStorage = key => (
+    getWindowStorage()[key]
+)
 
 export const setInStorage = (key, value) => {
     getWindowStorage()[key] = value

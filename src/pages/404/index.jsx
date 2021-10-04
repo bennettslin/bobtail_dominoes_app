@@ -1,13 +1,8 @@
 import React from 'react'
-import Page from '../../containers/Page'
+import NotFoundPage from '../../containers/Pages/NotFound'
 
 const Component = () => (
-    <Page
-        {...{
-            pageHeading: 'Page not found',
-            noShare: true,
-        }}
-    />
+    <NotFoundPage />
 )
 
 export default Component

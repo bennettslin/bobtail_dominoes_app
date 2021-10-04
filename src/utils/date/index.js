@@ -1,6 +1,6 @@
 import { addDays, getDate, getMonth, getYear } from 'date-fns'
 
-const getDateForDateObject = dateObject => ({
+export const getDateForDateObject = dateObject => ({
     year: getYear(dateObject),
     month: getMonth(dateObject) + 1,
     day: getDate(dateObject),
