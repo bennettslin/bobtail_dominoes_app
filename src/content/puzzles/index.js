@@ -1,11 +1,8 @@
-import { getLinkConfigsByDate } from '../../utils/pages/puzzles'
+import { getLinksMaps } from '../../utils/pages/puzzles'
 import PAGES_MAPS_2021 from './2021'
 
-const PAGES_LIST = [
-    {
-        heading: 2021,
-        pages: getLinkConfigsByDate(PAGES_MAPS_2021),
-    },
+const PAGES_MAPS_LIST = [
+    PAGES_MAPS_2021,
 ]
 
-export default PAGES_LIST
+export default getLinksMaps(PAGES_MAPS_LIST)

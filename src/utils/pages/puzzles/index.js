@@ -1,8 +1,8 @@
 import { addDaysToDate } from '../../date'
 import { formatWeekLinkForDate } from '../../date/format'
+import { filterPastAndPresentDates } from '../../date/puzzles'
 import { getPagesMap } from '../config'
 import { PUZZLES_PAGE } from '../../../constants/pages'
-import { filterPastAndPresentDates } from '../../date/puzzles'
 
 const PAGE_IDS = [
     { id: 'monday' },
@@ -30,10 +30,13 @@ export const getPagesMapsForDates = pathDates => (
     ))
 )
 
-export const getLinkConfigsByDate = pagesMaps => (
-    pagesMaps.map(({ monday: { date } }) => ({
-        id: 'monday',
-        title: formatWeekLinkForDate(date),
-        date,
+export const getLinksMaps = pagesMapsList => (
+    pagesMapsList.map(pagesMaps => ({
+        heading: 2021,
+        pages: pagesMaps.map(({ monday: { date } }) => ({
+            id: 'monday',
+            title: formatWeekLinkForDate(date),
+            date,
+        })),
     }))
 )
