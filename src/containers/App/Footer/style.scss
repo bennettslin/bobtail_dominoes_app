@@ -8,7 +8,7 @@
     height: $height__appFooter;
     background-color: $colour__background__dark;
 
-    @media (min-width: $breakpoint__md) {
+    @media (min-width: $breakpoint__sm) {
         background-color: transparent;
     }
 }

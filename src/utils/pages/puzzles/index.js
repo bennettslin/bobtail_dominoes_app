@@ -1,6 +1,5 @@
 import { addDaysToDate } from '../../date'
 import { formatWeekLinkForDate } from '../../date/format'
-import { filterPastAndPresentDates } from '../../date/puzzles'
 import { getPagesMap } from '../config'
 import { PUZZLES_PAGE } from '../../../constants/pages'
 
@@ -12,19 +11,15 @@ const PAGE_IDS = [
 ]
 
 export const getPagesMapsForDates = pathDates => (
-    // Filter out future week.
-    filterPastAndPresentDates(pathDates).map(pathDate => (
+    pathDates.map(pathDate => (
         getPagesMap(
-            // Filter out future day.
-            filterPastAndPresentDates(
-                PAGE_IDS.map(({ id, increment }) => ({
-                    id,
+            PAGE_IDS.map(({ id, increment }) => ({
+                id,
+                pathDate,
+                date: increment ?
+                    addDaysToDate(pathDate, increment) :
                     pathDate,
-                    date: increment ?
-                        addDaysToDate(pathDate, increment) :
-                        pathDate,
-                })),
-            ),
+            })),
             PUZZLES_PAGE,
         )
     ))
