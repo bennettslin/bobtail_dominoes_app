@@ -59,7 +59,6 @@ const PuzzleSvg = ({
 }
 
 PuzzleSvg.propTypes = {
-    didMount: PropTypes.bool.isRequired,
     answer: PropTypes.string.isRequired,
     puzzle: PropTypes.string.isRequired,
 }
