@@ -21,6 +21,8 @@ module.exports = {
         describe: true,
         expect: true,
         it: true,
+        beforeAll: true,
+        afterAll: true,
     },
     parser: '@babel/eslint-parser',
     parserOptions: {

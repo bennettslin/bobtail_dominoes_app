@@ -1,7 +1,7 @@
 import { format } from 'date-fns'
 import { addDaysToDate, getDateObjectForDate } from '..'
 
-export const formatHeaderFromDate = date => (
+export const formatHeadingForDate = date => (
     Boolean(date) && format(getDateObjectForDate(date), 'MMMM d, yyyy')
 )
 

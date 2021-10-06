@@ -10,6 +10,10 @@ module.exports = {
     transformIgnorePatterns: [`node_modules/(?!(gatsby)/)`],
     globals: {
         __PATH_PREFIX__: ``,
+        IS_PRODUCTION: false,
+        window: {
+            localStorage: {},
+        },
     },
     testURL: `http://localhost`,
     // setupFiles: [`<rootDir>/loadershim.js`],
