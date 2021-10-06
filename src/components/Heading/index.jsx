@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import { getLinkId } from '../../utils/format/markdown'
+import { getSlugForLinkId } from '../../utils/format/markdown'
 import './style'
 
 const Heading = ({
@@ -17,7 +17,7 @@ const Heading = ({
                     'Heading',
                     'font__heading',
                 ),
-                id: getLinkId(children),
+                id: getSlugForLinkId(children),
             }}
         >
             {children}
