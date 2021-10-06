@@ -18,6 +18,9 @@ module.exports = {
         logServe: true,
         logSuccess: true,
         process: true,
+        describe: true,
+        expect: true,
+        it: true,
     },
     parser: '@babel/eslint-parser',
     parserOptions: {
