@@ -14,10 +14,10 @@ const VALID_CHORD_MAP = {
     '0348': { label: 'augmented major seventh', rootIndex: 2 },
 }
 
-export const getIsValidChord = pitchSet => (
-    Boolean(VALID_CHORD_MAP[getPrimeFormKey(pitchSet)])
+export const getValidChord = pitchSet => (
+    VALID_CHORD_MAP[getPrimeFormKey(pitchSet)] || null
 )
 
 export const getIsLegalRow = pitchSet => (
-    pitchSet.size <= 2 || getIsValidChord(pitchSet)
+    pitchSet.size <= 2 || Boolean(getValidChord(pitchSet))
 )

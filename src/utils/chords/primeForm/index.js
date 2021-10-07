@@ -1,4 +1,4 @@
-import { mod12 } from '../general'
+import { mod12 } from '../math'
 
 const getNormalForm = pitchSet => {
     /**
