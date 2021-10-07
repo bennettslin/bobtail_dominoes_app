@@ -31,7 +31,7 @@ const getArrayOfTextsWithFlatSeparator = children => {
     return texts.filter(text => Boolean(text))
 }
 
-export const getTextWithFlatsSeparated = children => (
+export const getTextWithAccidentalsSeparated = children => (
     getArrayOfTextsWithFlatSeparator(children).map((text, index) => (
         text === FLAT || text === SHARP ? (
             <span

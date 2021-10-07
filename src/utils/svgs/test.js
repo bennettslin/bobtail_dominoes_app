@@ -2,7 +2,7 @@ import { getMergedStyles, hsl } from '.'
 
 describe('getMergedStyles', () => {
     it('returns merged styles', () => {
-        const styleGroups = [
+        expect(getMergedStyles([
             {
                 fill: {
                     classA: 'styleA',
@@ -23,8 +23,7 @@ describe('getMergedStyles', () => {
                     classH: 'styleH',
                 },
             },
-        ]
-        expect(getMergedStyles(styleGroups)).toStrictEqual({
+        ])).toStrictEqual({
             fill: {
                 classA: 'styleA',
                 classB: 'styleB',
