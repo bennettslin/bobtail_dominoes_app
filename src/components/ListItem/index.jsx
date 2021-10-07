@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { getTextWithFlatsSeparated } from '../../utils/format/music'
+import { getTextWithAccidentalsSeparated } from '../../utils/format/music'
 
 const ListItem = ({ children }) => (
-    <li>{getTextWithFlatsSeparated(children)}</li>
+    <li>{getTextWithAccidentalsSeparated(children)}</li>
 )
 
 ListItem.propTypes = {
