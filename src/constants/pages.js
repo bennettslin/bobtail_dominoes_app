@@ -14,6 +14,7 @@ export const LINKS_PAGE = 'links'
 export const TABBED_PAGES_SET = new Set([
     ABOUT_PAGE,
     RULES_PAGE,
+    CHORDS_PAGE,
     PUZZLES_PAGE,
 ])
 
@@ -23,5 +24,6 @@ export const BACK_LINKED_PAGES_SET = new Set([
 
 export const INITIAL_CHILD_PAGES = {
     [ABOUT_PAGE]: 'story',
+    [CHORDS_PAGE]: 'checker',
     [RULES_PAGE]: 'setup',
 }

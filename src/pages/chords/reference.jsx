@@ -1,19 +1,23 @@
 import React from 'react'
-import { FLAT, SHARP } from '../../constants/music'
 import Page from '../../containers/Page'
+import PAGES_MAP from '../../content/chords'
+import { FLAT, SHARP } from '../../constants/music'
+
+const ID = 'reference'
 
 const Component = () => (
     <Page
         {...{
+            ...PAGES_MAP[ID],
             body: `
-### Triads
+##### Triads
 
 - Minor triad (1, ${FLAT}3, 5)
 - Major triad (1, 3, 5)
 - Diminished triad (1, ${FLAT}3, ${FLAT}5)
 - Augmented triad (1, 3, ${SHARP}5)
 
-### Seventh chords
+##### Seventh chords
 
 - Minor seventh (1, ${FLAT}3, 5, ${FLAT}7)
 - Dominant seventh (1, 3, 5, ${FLAT}7)
