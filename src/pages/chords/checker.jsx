@@ -1,4 +1,5 @@
 import React from 'react'
+import ChordChecker from '../../components/ChordChecker'
 import Page from '../../containers/Page'
 import PAGES_MAP from '../../content/chords'
 
@@ -8,10 +9,14 @@ const Component = () => (
     <Page
         {...{
             ...PAGES_MAP[ID],
-            body: `
+            body: [
+                `
 ### Chord checker
-
             `,
+                (
+                    <ChordChecker />
+                ),
+            ],
         }}
     />
 )

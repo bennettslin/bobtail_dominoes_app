@@ -1,3 +1,9 @@
+const PITCH_COUNT = 12
+
 export const mod12 = number => (
-    (number + 12) % 12
+    (number + PITCH_COUNT) % PITCH_COUNT
+)
+
+export const getArrayOfPitches = () => (
+    Array.from({ length: PITCH_COUNT }, (v, i) => i)
 )
