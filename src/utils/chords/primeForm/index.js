@@ -1,4 +1,6 @@
 import { mod12 } from '../math'
+import { getRootIndex } from '../music/chord'
+import { getIsChord } from '../valid'
 
 const getNormalForm = pitchSet => {
     /**
@@ -77,3 +79,16 @@ export const getPrimeFormKey = (pitchSet = new Set()) => (
         }
     }).join('')
 )
+
+export const getRoot = pitchSet => {
+    // Only valid chords have a root.
+    if (!getIsChord(pitchSet)) {
+        return -1
+    }
+
+    const
+        normalForm = getNormalForm(pitchSet),
+        rootIndex = getRootIndex(getPrimeFormKey(pitchSet))
+
+    return normalForm[rootIndex]
+}
