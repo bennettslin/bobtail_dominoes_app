@@ -1,8 +1,7 @@
 import { mod12 } from '../math'
-import { getRootIndex } from '../music/chord'
 import { getIsChord } from '../valid'
 
-const getNormalForm = pitchSet => {
+export const getNormalForm = pitchSet => {
     /**
      * The normal form is the most compressed ordering of a pitch set.
      * Example: Set {4, 1, 8, 11} => [8, 11, 1, 4]
@@ -56,7 +55,7 @@ const getNormalForm = pitchSet => {
     return orderedPitchSets[0]
 }
 
-const getPrimeForm = pitchSet => {
+export const getPrimeForm = (pitchSet = new Set()) => {
     /**
      * The prime form is an ordered pitch set transposed to begin with 0.
      * Example: Set {4, 1, 8, 11} => [0, 3, 5, 8]
@@ -85,10 +84,20 @@ export const getRoot = pitchSet => {
     if (!getIsChord(pitchSet)) {
         return -1
     }
+    const normalForm = getNormalForm(pitchSet)
 
-    const
-        normalForm = getNormalForm(pitchSet),
-        rootIndex = getRootIndex(getPrimeFormKey(pitchSet))
+    // Only seventh chord can have root that's not first pitch of normal form.
+    if (pitchSet.size >= 4) {
+        let index = 0
+        while (index < pitchSet.size) {
+            index++
 
-    return normalForm[rootIndex]
+            // Distance between root and seventh is whole tone or less.
+            if (mod12(normalForm[index] - normalForm[index - 1]) <= 2) {
+                return normalForm[index]
+            }
+        }
+    }
+
+    return normalForm[0]
 }

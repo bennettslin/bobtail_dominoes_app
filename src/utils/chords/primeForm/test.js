@@ -1,4 +1,92 @@
-import { getPrimeFormKey, getRoot } from '.'
+import { getNormalForm, getPrimeForm, getPrimeFormKey, getRoot } from '.'
+
+describe('getNormalForm', () => {
+    test.each([
+        // Empty set.
+        [new Set(), []],
+        // Single pitch.
+        [new Set([0]), [0]],
+        [new Set([6]), [6]],
+        // Dyad.
+        [new Set([1, 5]), [1, 5]], // Simple.
+        [new Set([2, 11]), [11, 2]], // Modulus.
+        [new Set([9, 3]), [3, 9]], // Symmetric.
+        // Triad.
+        [new Set([1, 4, 8]), [1, 4, 8]], // Simple.
+        [new Set([9, 6, 2]), [2, 6, 9]], // Reverse.
+        [new Set([2, 8, 11]), [8, 11, 2]], // Modulus.
+        [new Set([0, 9, 5]), [5, 9, 0]], // Reverse and modulus.
+        [new Set([10, 6, 2]), [2, 6, 10]], // Symmetric.
+        [new Set([6, 8, 3]), [3, 6, 8]], // Non-chord.
+        [new Set([11, 9, 1]), [9, 11, 1]], // Non-chord.
+        // Tetrad.
+        [new Set([1, 5, 7, 10]), [5, 7, 10, 1]], // Simple
+        [new Set([5, 1, 8, 11]), [5, 8, 11, 1]], // Reverse.
+        [new Set([0, 4, 7, 11]), [11, 0, 4, 7]], // Modulus.
+        [new Set([10, 1, 5, 8]), [5, 8, 10, 1]], // Reverse.
+        [new Set([10, 4, 7, 1]), [1, 4, 7, 10]], // Symmetric.
+        [new Set([2, 7, 4, 9]), [2, 4, 7, 9]], // Non-chord.
+        [new Set([11, 9, 7, 1]), [7, 9, 11, 1]], // Non-chord.
+        // Other.
+        [new Set([9, 5, 1, 8, 4, 0]), [0, 1, 4, 5, 8, 9]], // Symmetric.
+        [new Set([11, 9, 7, 5, 3, 1]), [1, 3, 5, 7, 9, 11]], // Symmetric.
+        [
+            new Set([9, 6, 3, 0, 11, 8, 5, 2]),
+            [2, 3, 5, 6, 8, 9, 11, 0],
+        ], // Symmetric.
+        [
+            new Set([11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]),
+            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        ], // All.
+    ])('%p returns normal form %p', (set, normalForm) => {
+        expect(getNormalForm(set)).toStrictEqual(normalForm)
+    })
+})
+
+describe('getPrimeForm', () => {
+    test.each([
+        // Undefined.
+        [undefined, []],
+        // Empty set.
+        [new Set(), []],
+        // Single pitch.
+        [new Set([0]), [0]],
+        [new Set([6]), [0]],
+        // Dyad.
+        [new Set([1, 5]), [0, 4]], // Simple.
+        [new Set([2, 11]), [0, 3]], // Modulus.
+        [new Set([9, 3]), [0, 6]], // Symmetric.
+        // Triad.
+        [new Set([1, 4, 8]), [0, 3, 7]], // Simple.
+        [new Set([9, 6, 2]), [0, 4, 7]], // Reverse.
+        [new Set([2, 8, 11]), [0, 3, 6]], // Modulus.
+        [new Set([0, 9, 5]), [0, 4, 7]], // Reverse and modulus.
+        [new Set([10, 6, 2]), [0, 4, 8]], // Symmetric.
+        [new Set([6, 8, 3]), [0, 3, 5]], // Non-chord.
+        [new Set([11, 9, 1]), [0, 2, 4]], // Non-chord.
+        // Tetrad.
+        [new Set([1, 5, 7, 10]), [0, 2, 5, 8]], // Simple
+        [new Set([5, 1, 8, 11]), [0, 3, 6, 8]], // Reverse.
+        [new Set([0, 4, 7, 11]), [0, 1, 5, 8]], // Modulus.
+        [new Set([10, 1, 5, 8]), [0, 3, 5, 8]], // Reverse.
+        [new Set([10, 4, 7, 1]), [0, 3, 6, 9]], // Symmetric.
+        [new Set([2, 7, 4, 9]), [0, 2, 5, 7]], // Non-chord.
+        [new Set([11, 9, 7, 1]), [0, 2, 4, 6]], // Non-chord.
+        // Other.
+        [new Set([9, 5, 1, 8, 4, 0]), [0, 1, 4, 5, 8, 9]], // Symmetric.
+        [new Set([11, 9, 7, 5, 3, 1]), [0, 2, 4, 6, 8, 10]], // Symmetric.
+        [
+            new Set([9, 6, 3, 0, 11, 8, 5, 2]),
+            [0, 1, 3, 4, 6, 7, 9, 10],
+        ], // Symmetric.
+        [
+            new Set([11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]),
+            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        ], // All.
+    ])('%p returns prime form %p', (set, normalForm) => {
+        expect(getPrimeForm(set)).toStrictEqual(normalForm)
+    })
+})
 
 describe('getPrimeFormKey', () => {
     test.each([

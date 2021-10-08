@@ -1,5 +1,5 @@
 import { getPrimeFormKey } from '../primeForm'
-import { CHORD_MAP } from '../music/chord'
+import { CHORD_MAP } from '../label'
 
 export const getIsChord = pitchSet => (
     Boolean(CHORD_MAP[getPrimeFormKey(pitchSet)])
