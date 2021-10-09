@@ -1,15 +1,17 @@
-import React, { useState } from 'react'
-// import PropTypes from 'prop-types'
+import React from 'react'
 import cx from 'classnames'
-import Button from '../Button'
+import { useDispatch, useSelector } from 'react-redux'
 import Flex from '../Flex'
 import CheckerDisplay from './Display'
-import CheckerPitchButton from './PitchButton'
-import { getArrayOfPitches } from '../../utils/chords/math'
+import CheckerPitchButtons from './PitchButtons'
+import { updateCurrentPitchSet } from '../../redux/chords/action'
+import { mapCurrentPitchSet } from '../../redux/chords/selector'
 import './style'
 
 const ChordChecker = () => {
-    const [currentPitchSet, setCurrentPitchSet] = useState(new Set())
+    const
+        dispatch = useDispatch(),
+        currentPitchSet = useSelector(mapCurrentPitchSet)
 
     const onClick = pitch => {
         const newPitchSet = new Set(currentPitchSet)
@@ -18,11 +20,12 @@ const ChordChecker = () => {
         } else {
             newPitchSet.add(pitch)
         }
-        setCurrentPitchSet(newPitchSet)
+
+        dispatch(updateCurrentPitchSet(newPitchSet))
     }
 
     const reset = () => {
-        setCurrentPitchSet(new Set())
+        dispatch(updateCurrentPitchSet(new Set()))
     }
 
     return (
@@ -34,32 +37,15 @@ const ChordChecker = () => {
                 flexDirection: 'column',
             }}
         >
-            <CheckerDisplay {...{ currentPitchSet }} />
-            <Flex>
-                {getArrayOfPitches().map(pitch => (
-                    <CheckerPitchButton
-                        {...{
-                            key: pitch,
-                            pitch,
-                            isOn: currentPitchSet.has(pitch),
-                            onClick,
-                        }}
-                    />
-                ))}
-                <Button
-                    {...{
-                        handleButtonClick: reset,
-                    }}
-                >
-                reset
-                </Button>
-            </Flex>
+            <CheckerDisplay />
+            <CheckerPitchButtons
+                {...{
+                    onClick,
+                    reset,
+                }}
+            />
         </Flex>
     )
 }
-
-// ChordChecker.propTypes = {
-
-// }
 
 export default ChordChecker

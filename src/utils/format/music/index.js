@@ -2,13 +2,11 @@ import React from 'react'
 import cx from 'classnames'
 import { FLAT, SHARP } from '../../../constants/music'
 
-const getArrayOfTextsWithFlatSeparator = children => {
-    const
-        text = Array.isArray(children) ? children[0] : children,
-        texts = []
+const getArrayOfTextsWithFlatSeparator = text => {
+    const texts = []
 
     if (typeof text !== 'string') {
-        return children
+        return [text]
     }
 
     let indexStart = 0,
@@ -31,8 +29,10 @@ const getArrayOfTextsWithFlatSeparator = children => {
     return texts.filter(text => Boolean(text))
 }
 
-export const getTextWithAccidentalsSeparated = children => (
-    getArrayOfTextsWithFlatSeparator(children).map((text, index) => (
+export const getTextWithAccidentalsSeparated = text => (
+    getArrayOfTextsWithFlatSeparator(
+        Array.isArray(text) ? text[0] : text,
+    ).map((text, index) => (
         text === FLAT || text === SHARP ? (
             <span
                 {...{
