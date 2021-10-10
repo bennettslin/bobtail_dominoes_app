@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Flex from '../Flex'
 import CheckerDisplay from './Display'
 import CheckerPitchButtons from './PitchButtons'
+import CheckerOptionButtons from './OptionButtons'
 import { updateCurrentPitchSet } from '../../redux/chords/action'
 import { mapCurrentPitchSet } from '../../redux/chords/selector'
 import './style'
@@ -38,12 +39,16 @@ const ChordChecker = () => {
             }}
         >
             <CheckerDisplay />
-            <CheckerPitchButtons
+            <Flex
                 {...{
-                    onClick,
-                    reset,
+                    className: cx(
+                        'ChordChecker__',
+                    ),
                 }}
-            />
+            >
+                <CheckerPitchButtons {...{ onClick }} />
+                <CheckerOptionButtons {...{ reset }} />
+            </Flex>
         </Flex>
     )
 }

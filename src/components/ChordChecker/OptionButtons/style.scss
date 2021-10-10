@@ -1,0 +1,12 @@
+@import '../../../scss/constants/responsive';
+
+.OptionButtons {
+    position: relative;
+    height: 100%;
+    background-color: #b8b;
+    flex-wrap: wrap;
+}
+
+.OptionButtons__reset {
+    background-color: #b88;
+}

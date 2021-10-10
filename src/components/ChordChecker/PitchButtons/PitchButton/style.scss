@@ -4,8 +4,6 @@ $length__pitchButton: 80px;
 
 .CheckerPitchButton {
     position: absolute;
-    top: 0;
-    left: 0;
     width: $length__pitchButton;
     height: $length__pitchButton;
 
@@ -20,7 +18,7 @@ $length__pitchButton: 80px;
 }
 
 .CheckerPitchButton__top0 {
-    top: calc(0% - #{$length__pitchButton * 0});
+    top: 0;
 }
 
 .CheckerPitchButton__top1 {
@@ -44,11 +42,11 @@ $length__pitchButton: 80px;
 }
 
 .CheckerPitchButton__top6 {
-    top: calc(100% - #{$length__pitchButton * 1});
+    bottom: 0;
 }
 
 .CheckerPitchButton__left0 {
-    left: calc(0% - #{$length__pitchButton * 0});
+    left: 0;
 }
 
 .CheckerPitchButton__left1 {
@@ -72,5 +70,5 @@ $length__pitchButton: 80px;
 }
 
 .CheckerPitchButton__left6 {
-    left: calc(100% - #{$length__pitchButton * 1});
+    right: 0;
 }
