@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import ValidIcon from './ValidIcon'
+import StyledPlatform from '../../Styled/Platform'
 import CheckerPitchButton from './PitchButton'
 import { mapCurrentPitchSet } from '../../../redux/chords/selector'
 import { getArrayOfPitches } from '../../../utils/chords/math'
@@ -15,25 +16,35 @@ const CheckerPitchButtons = ({
     const currentPitchSet = useSelector(mapCurrentPitchSet)
 
     return (
-        <div
-            {...{
-                className: cx(
-                    'CheckerPitchButtons',
-                ),
-            }}
-        >
-            {getArrayOfPitches().map(pitch => (
-                <CheckerPitchButton
+        <StyledPlatform>
+            <div
+                {...{
+                    className: cx(
+                        'CheckerPitchButtons',
+                    ),
+                }}
+            >
+                <div
                     {...{
-                        key: pitch,
-                        pitch,
-                        isOn: currentPitchSet.has(pitch),
-                        onClick,
+                        className: cx(
+                            'CheckerPitchButtons__buttons',
+                        ),
                     }}
-                />
-            ))}
-            <ValidIcon />
-        </div>
+                >
+                    {getArrayOfPitches().map(pitch => (
+                        <CheckerPitchButton
+                            {...{
+                                key: pitch,
+                                pitch,
+                                isOn: currentPitchSet.has(pitch),
+                                onClick,
+                            }}
+                        />
+                    ))}
+                    <ValidIcon />
+                </div>
+            </div>
+        </StyledPlatform>
     )
 }
 

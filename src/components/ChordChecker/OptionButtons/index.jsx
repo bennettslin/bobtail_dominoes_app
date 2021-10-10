@@ -2,30 +2,33 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Button from '../../Button'
+import StyledPlatform from '../../Styled/Platform'
 import Flex from '../../Flex'
 import './style'
 
 const OptionButtons = ({
     reset,
 }) => (
-    <Flex
-        {...{
-            className: cx(
-                'OptionButtons',
-            ),
-        }}
-    >
-        <Button
+    <StyledPlatform>
+        <Flex
             {...{
                 className: cx(
-                    'OptionButtons__reset',
+                    'OptionButtons',
                 ),
-                handleButtonClick: reset,
             }}
         >
-            reset
-        </Button>
-    </Flex>
+            <Button
+                {...{
+                    className: cx(
+                        'OptionButtons__reset',
+                    ),
+                    handleButtonClick: reset,
+                }}
+            >
+                reset
+            </Button>
+        </Flex>
+    </StyledPlatform>
 )
 
 OptionButtons.propTypes = {

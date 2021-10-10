@@ -36,14 +36,17 @@ const ChordChecker = () => {
                     'ChordChecker',
                 ),
                 flexDirection: 'column',
+                justifyContent: 'normal',
+                alignItems: 'normal',
             }}
         >
             <CheckerDisplay />
             <Flex
                 {...{
                     className: cx(
-                        'ChordChecker__',
+                        'ChordChecker__bottomRow',
                     ),
+                    alignItems: 'normal',
                 }}
             >
                 <CheckerPitchButtons {...{ onClick }} />

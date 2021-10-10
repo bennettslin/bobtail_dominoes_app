@@ -1,0 +1,22 @@
+@import '../../../scss/constants/borders';
+@import '../../../scss/constants/colours';
+@import '../../../scss/constants/responsive';
+
+$length__base: $margin__xs * 0.5;
+
+.StyledPlatform {
+    position: relative;
+    border-radius: $borderRadius__lg;
+    background-color: $colour__platform__dark;
+
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% - #{$length__base});
+        border-radius: $borderRadius__lg;
+        background-color: $colour__platform__medium;
+        content: '';
+    }
+}

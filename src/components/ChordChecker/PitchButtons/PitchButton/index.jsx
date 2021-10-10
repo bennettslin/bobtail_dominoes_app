@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Button from '../../../Button'
+import DominoSvg from '../../../Svgs/Domino'
+import cPitchButton from '../../../../assets/svgs/chords/cPitchButton'
 import './style'
 
 const CheckerPitchButton = ({ pitch, isOn, onClick }) => {
@@ -25,7 +27,13 @@ const CheckerPitchButton = ({ pitch, isOn, onClick }) => {
                 handleButtonClick,
             }}
         >
-            {pitch}
+
+            <DominoSvg
+                {...{
+                    src: cPitchButton,
+                    isFigure: false,
+                }}
+            />
         </Button>
     )
 }
