@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Button from '../../Button'
-import Flex from '../../Flex'
 import CheckerPitchButton from './PitchButton'
 import { mapCurrentPitchSet } from '../../../redux/chords/selector'
 import { getArrayOfPitches } from '../../../utils/chords/math'
@@ -17,10 +16,10 @@ const CheckerPitchButtons = ({
     const currentPitchSet = useSelector(mapCurrentPitchSet)
 
     return (
-        <Flex
+        <div
             {...{
                 className: cx(
-                    'CheckerDisplay',
+                    'CheckerPitchButtons',
                 ),
             }}
         >
@@ -36,12 +35,15 @@ const CheckerPitchButtons = ({
             ))}
             <Button
                 {...{
+                    className: cx(
+                        'CheckerPitchButtons__reset',
+                    ),
                     handleButtonClick: reset,
                 }}
             >
                 reset
             </Button>
-        </Flex>
+        </div>
     )
 }
 

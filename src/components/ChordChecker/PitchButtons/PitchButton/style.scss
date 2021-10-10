@@ -1,5 +1,76 @@
 @import '../../../../scss/constants/responsive';
 
+$length__pitchButton: 80px;
+
+.CheckerPitchButton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $length__pitchButton;
+    height: $length__pitchButton;
+
+    background-color: #bb8;
+    border: 1px solid blue;
+    border-radius: 50%;
+}
+
 .CheckerPitchButton__on {
-    color: orange;
+    color: white;
+    background-color: #488;
+}
+
+.CheckerPitchButton__top0 {
+    top: calc(0% - #{$length__pitchButton * 0});
+}
+
+.CheckerPitchButton__top1 {
+    top: calc(6.7% - #{$length__pitchButton * 0.067});
+}
+
+.CheckerPitchButton__top2 {
+    top: calc(25% - #{$length__pitchButton * 0.25});
+}
+
+.CheckerPitchButton__top3 {
+    top: calc(50% - #{$length__pitchButton * 0.5});
+}
+
+.CheckerPitchButton__top4 {
+    top: calc(75% - #{$length__pitchButton * 0.75});
+}
+
+.CheckerPitchButton__top5 {
+    top: calc(93.3% - #{$length__pitchButton * 0.933});
+}
+
+.CheckerPitchButton__top6 {
+    top: calc(100% - #{$length__pitchButton * 1});
+}
+
+.CheckerPitchButton__left0 {
+    left: calc(0% - #{$length__pitchButton * 0});
+}
+
+.CheckerPitchButton__left1 {
+    left: calc(6.7% - #{$length__pitchButton * 0.067});
+}
+
+.CheckerPitchButton__left2 {
+    left: calc(25% - #{$length__pitchButton * 0.25});
+}
+
+.CheckerPitchButton__left3 {
+    left: calc(50% - #{$length__pitchButton * 0.5});
+}
+
+.CheckerPitchButton__left4 {
+    left: calc(75% - #{$length__pitchButton * 0.75});
+}
+
+.CheckerPitchButton__left5 {
+    left: calc(93.3% - #{$length__pitchButton * 0.933});
+}
+
+.CheckerPitchButton__left6 {
+    left: calc(100% - #{$length__pitchButton * 1});
 }

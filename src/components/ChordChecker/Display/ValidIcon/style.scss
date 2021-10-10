@@ -1,1 +1,10 @@
-// @import '../../../../scss/constants/responsive';
+@import '../../../../scss/constants/borders';
+@import '../../../../scss/constants/responsive';
+
+.ValidIcon {
+    width: 80px;
+    height: 80px;
+    padding: $margin__xs;
+    border-radius: $borderRadius__sm;
+    background-color: #48b;
+}

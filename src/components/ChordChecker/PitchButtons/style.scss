@@ -1,1 +1,15 @@
-// @import '../../../scss/constants/responsive';
+@import '../../../scss/constants/responsive';
+
+.CheckerPitchButtons {
+    position: relative;
+    width: $length__chordChecker;
+    height: $length__chordChecker;
+    background-color: #88b;
+    flex-wrap: wrap;
+}
+
+.CheckerPitchButtons__reset {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}

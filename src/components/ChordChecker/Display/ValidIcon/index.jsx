@@ -18,9 +18,9 @@ const ValidIcon = () => {
             }}
         >
             {getIsLegalRow(currentPitchSet) ? (
-                getIsChord(currentPitchSet) && 'valid'
+                getIsChord(currentPitchSet) && 'V'
             ) : (
-                'invalid chord'
+                'X'
             )}
         </Flex>
     )

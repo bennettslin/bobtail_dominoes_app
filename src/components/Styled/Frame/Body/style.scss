@@ -2,7 +2,7 @@
 @import '../../../../scss/constants/responsive';
 
 $length__base: $margin__xs;
-$borderRadius__inner: $borderRadius__wide - $length__base * 0.66;
+$borderRadius__inner: $borderRadius__lg - $length__base * 0.66;
 
 .StyledFrameBody {
     position: relative;

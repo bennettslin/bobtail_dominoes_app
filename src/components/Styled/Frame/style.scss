@@ -8,8 +8,8 @@ $length__frame: $length__base * 0.75;
 $length__inset__top: $length__base * 0.33;
 $length__inset__side: $length__base * 0.125;
 
-$borderRadius__outer: $borderRadius__wide;
-$borderRadius__inner: $borderRadius__wide - $length__base * 0.66;
+$borderRadius__outer: $borderRadius__lg;
+$borderRadius__inner: $borderRadius__lg - $length__base * 0.66;
 
 .StyledFrame {
     position: relative;

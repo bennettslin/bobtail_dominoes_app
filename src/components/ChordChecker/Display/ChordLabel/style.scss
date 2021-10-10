@@ -1,1 +1,10 @@
-// @import '../../../../scss/constants/responsive';
+@import '../../../../scss/constants/borders';
+@import '../../../../scss/constants/responsive';
+
+.ChordLabel {
+    flex-grow: 1;
+    height: 80px;
+    padding: $margin__xs;
+    border-radius: $borderRadius__sm;
+    background-color: #b84;
+}

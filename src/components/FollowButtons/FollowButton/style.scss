@@ -20,7 +20,7 @@
     padding: $margin__xs $margin__xs * 1.5;
     gap: 0 $margin__xs;
 
-    border-radius: $borderRadius__medium;
+    border-radius: $borderRadius__md;
 
     @media (min-width: $breakpoint__md) {
         font-size: 1.25em;

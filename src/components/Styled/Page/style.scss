@@ -7,8 +7,8 @@ $length__base: $margin__xs;
 $length__top__edge: $length__base * 0.25;
 $length__side__edge: $length__base * 0.5;
 $length__bottom__edge: $length__base * 0.5;
-$borderRadius__outer: $borderRadius__wide;
-$borderRadius__inner: $borderRadius__wide - $length__base * 0.25;
+$borderRadius__outer: $borderRadius__lg;
+$borderRadius__inner: $borderRadius__lg - $length__base * 0.25;
 
 .StyledPage {
     flex-grow: 1;

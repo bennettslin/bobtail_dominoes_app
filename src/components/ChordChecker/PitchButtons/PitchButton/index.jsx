@@ -14,8 +14,14 @@ const CheckerPitchButton = ({ pitch, isOn, onClick }) => {
             {...{
                 className: cx(
                     'CheckerPitchButton',
+                    `CheckerPitchButton__${pitch}`,
+                    `CheckerPitchButton__top${6 - Math.abs(6 - pitch)}`,
+                    `CheckerPitchButton__left${Math.abs(6 - (pitch + 9) % 12)}`,
                     isOn && 'CheckerPitchButton__on',
                 ),
+                style: {
+
+                },
                 handleButtonClick,
             }}
         >

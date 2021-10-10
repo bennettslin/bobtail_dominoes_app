@@ -26,8 +26,8 @@ $margin__shadow: $margin__xs * 0.3;
             top: 0;
             height: calc(100% - #{$margin__shadow});
             border-radius:
-                $borderRadius__medium
-                $borderRadius__medium
+                $borderRadius__md
+                $borderRadius__md
                 0 0;
             box-shadow: $boxShadow__above;
         }
