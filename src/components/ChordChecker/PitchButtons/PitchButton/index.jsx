@@ -6,7 +6,7 @@ import DominoSvg from '../../../Svgs/Domino'
 import cPitchButton from '../../../../assets/svgs/chords/cPitchButton'
 import './style'
 
-const CheckerPitchButton = ({ pitch, isOn, onClick }) => {
+const PitchButton = ({ pitch, isOn, onClick }) => {
     const handleButtonClick = () => {
         onClick(pitch)
     }
@@ -15,7 +15,7 @@ const CheckerPitchButton = ({ pitch, isOn, onClick }) => {
         <Button
             {...{
                 className: cx(
-                    'CheckerPitchButton',
+                    'PitchButton',
                     `CheckerPitchButton__${pitch}`,
                     `CheckerPitchButton__top${6 - Math.abs(6 - pitch)}`,
                     `CheckerPitchButton__left${Math.abs(6 - (pitch + 9) % 12)}`,
@@ -38,10 +38,10 @@ const CheckerPitchButton = ({ pitch, isOn, onClick }) => {
     )
 }
 
-CheckerPitchButton.propTypes = {
+PitchButton.propTypes = {
     pitch: PropTypes.number.isRequired,
     isOn: PropTypes.bool.isRequired,
     onClick: PropTypes.func.isRequired,
 }
 
-export default CheckerPitchButton
+export default PitchButton

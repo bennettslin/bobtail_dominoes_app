@@ -2,11 +2,11 @@ import React from 'react'
 import cx from 'classnames'
 import { useDispatch, useSelector } from 'react-redux'
 import Flex from '../Flex'
-import CheckerDisplay from './Display'
-import CheckerPitchButtons from './PitchButtons'
+import PitchButtons from './PitchButtons'
 import CheckerOptionButtons from './OptionButtons'
 import { updateCurrentPitchSet } from '../../redux/chords/action'
 import { mapCurrentPitchSet } from '../../redux/chords/selector'
+import { margin__sm } from '../../constants/responsive'
 import './style'
 
 const ChordChecker = () => {
@@ -38,18 +38,16 @@ const ChordChecker = () => {
                 flexDirection: 'column',
                 justifyContent: 'normal',
                 alignItems: 'normal',
+                gap: margin__sm,
             }}
         >
-            <CheckerDisplay />
             <Flex
                 {...{
-                    className: cx(
-                        'ChordChecker__bottomRow',
-                    ),
                     alignItems: 'normal',
+                    gap: margin__sm,
                 }}
             >
-                <CheckerPitchButtons {...{ onClick }} />
+                <PitchButtons {...{ onClick }} />
                 <CheckerOptionButtons {...{ reset }} />
             </Flex>
         </Flex>

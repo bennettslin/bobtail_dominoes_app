@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
-import ValidIcon from './ValidIcon'
 import StyledPlatform from '../../Styled/Platform'
-import CheckerPitchButton from './PitchButton'
+import ChordDisplay from '../ChordDisplay'
+import PitchButton from './PitchButton'
 import { mapCurrentPitchSet } from '../../../redux/chords/selector'
 import { getArrayOfPitches } from '../../../utils/chords/math'
 import './style'
 
-const CheckerPitchButtons = ({
+const PitchButtons = ({
     onClick,
 
 }) => {
@@ -20,36 +20,28 @@ const CheckerPitchButtons = ({
             <div
                 {...{
                     className: cx(
-                        'CheckerPitchButtons',
+                        'PitchButtons',
                     ),
                 }}
             >
-                <div
-                    {...{
-                        className: cx(
-                            'CheckerPitchButtons__buttons',
-                        ),
-                    }}
-                >
-                    {getArrayOfPitches().map(pitch => (
-                        <CheckerPitchButton
-                            {...{
-                                key: pitch,
-                                pitch,
-                                isOn: currentPitchSet.has(pitch),
-                                onClick,
-                            }}
-                        />
-                    ))}
-                    <ValidIcon />
-                </div>
+                {getArrayOfPitches().map(pitch => (
+                    <PitchButton
+                        {...{
+                            key: pitch,
+                            pitch,
+                            isOn: currentPitchSet.has(pitch),
+                            onClick,
+                        }}
+                    />
+                ))}
+                <ChordDisplay />
             </div>
         </StyledPlatform>
     )
 }
 
-CheckerPitchButtons.propTypes = {
+PitchButtons.propTypes = {
     onClick: PropTypes.func.isRequired,
 }
 
-export default CheckerPitchButtons
+export default PitchButtons

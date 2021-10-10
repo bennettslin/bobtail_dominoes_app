@@ -1,11 +1,8 @@
 @import '../../../scss/constants/responsive';
 
-.CheckerPitchButtons {
-    padding: $margin__md;
-}
-
-.CheckerPitchButtons__buttons {
+.PitchButtons {
     position: relative;
+    margin: $margin__sm;
     width: $length__chordChecker;
     height: $length__chordChecker;
 }

@@ -4,6 +4,7 @@ import cx from 'classnames'
 import Button from '../../Button'
 import Flex from '../../Flex'
 import { getCapitalizedText } from '../../../utils/format'
+import { margin__xs } from '../../../constants/responsive'
 import './style'
 
 const FollowButton = ({
@@ -32,6 +33,7 @@ const FollowButton = ({
                     'font__text',
                     'text__light',
                 ),
+                gap: margin__xs,
             }}
         >
             {children}

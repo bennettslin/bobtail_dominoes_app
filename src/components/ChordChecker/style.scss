@@ -3,12 +3,7 @@
 @import '../../scss/constants/responsive';
 
 .ChordChecker {
-    padding: $margin__xs;
-    gap: $margin__sm 0;
+    padding: $margin__sm;
     border-radius: $borderRadius__lg;
     background-color: $colour__background__dark;
-}
-
-.ChordChecker__bottomRow {
-    gap: 0 $margin__sm;
 }
