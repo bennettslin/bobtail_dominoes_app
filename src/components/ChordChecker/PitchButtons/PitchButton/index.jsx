@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import Button from '../../../Button'
+import StyledCheckerButton from '../../../Styled/CheckerButton'
 import DominoSvg from '../../../Svgs/Domino'
 import cPitchButton from '../../../../assets/svgs/chords/cPitchButton'
 import './style'
+
+const COORDINATES = [0, 6.7, 25, 50, 75, 93.3, 100]
 
 const PitchButton = ({ pitch, isOn, onClick }) => {
     const handleButtonClick = () => {
@@ -12,29 +14,26 @@ const PitchButton = ({ pitch, isOn, onClick }) => {
     }
 
     return (
-        <Button
+        <StyledCheckerButton
             {...{
                 className: cx(
                     'PitchButton',
-                    `CheckerPitchButton__${pitch}`,
-                    `CheckerPitchButton__top${6 - Math.abs(6 - pitch)}`,
-                    `CheckerPitchButton__left${Math.abs(6 - (pitch + 9) % 12)}`,
-                    isOn && 'CheckerPitchButton__on',
                 ),
                 style: {
-
+                    top: `${COORDINATES[6 - Math.abs(6 - pitch)]}%`,
+                    left: `${COORDINATES[Math.abs(6 - (pitch + 9) % 12)]}%`,
                 },
+                isOn,
                 handleButtonClick,
             }}
         >
-
             <DominoSvg
                 {...{
                     src: cPitchButton,
                     isFigure: false,
                 }}
             />
-        </Button>
+        </StyledCheckerButton>
     )
 }
 

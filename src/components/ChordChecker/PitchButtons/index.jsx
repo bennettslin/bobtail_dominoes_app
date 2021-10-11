@@ -6,7 +6,7 @@ import StyledPlatform from '../../Styled/Platform'
 import ChordDisplay from '../ChordDisplay'
 import PitchButton from './PitchButton'
 import { mapCurrentPitchSet } from '../../../redux/chords/selector'
-import { getArrayOfPitches } from '../../../utils/chords/math'
+import { getArrayOfPitchesForCircleOfFifths } from '../../../utils/chords/math'
 import './style'
 
 const PitchButtons = ({
@@ -24,7 +24,7 @@ const PitchButtons = ({
                     ),
                 }}
             >
-                {getArrayOfPitches().map(pitch => (
+                {getArrayOfPitchesForCircleOfFifths().map(pitch => (
                     <PitchButton
                         {...{
                             key: pitch,

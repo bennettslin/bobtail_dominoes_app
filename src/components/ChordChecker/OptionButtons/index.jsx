@@ -1,9 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import Button from '../../Button'
+import StyledCheckerButton from '../../Styled/CheckerButton'
 import StyledPlatform from '../../Styled/Platform'
 import Flex from '../../Flex'
+import DominoSvg from '../../Svgs/Domino'
+import cPitchButton from '../../../assets/svgs/chords/cPitchButton'
 import './style'
 
 const OptionButtons = ({
@@ -17,7 +19,7 @@ const OptionButtons = ({
                 ),
             }}
         >
-            <Button
+            <StyledCheckerButton
                 {...{
                     className: cx(
                         'OptionButtons__reset',
@@ -25,8 +27,13 @@ const OptionButtons = ({
                     handleButtonClick: reset,
                 }}
             >
-                reset
-            </Button>
+                <DominoSvg
+                    {...{
+                        src: cPitchButton,
+                        isFigure: false,
+                    }}
+                />
+            </StyledCheckerButton>
         </Flex>
     </StyledPlatform>
 )

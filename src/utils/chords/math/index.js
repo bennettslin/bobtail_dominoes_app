@@ -7,3 +7,9 @@ export const mod12 = number => (
 export const getArrayOfPitches = () => (
     Array.from({ length: PITCH_COUNT }, (v, i) => i)
 )
+
+export const getArrayOfPitchesForCircleOfFifths = () => (
+    Array.from({ length: PITCH_COUNT }, (v, i) => (
+        mod12(Math.ceil(i / 2) * (i % 2 === 0 ? 1 : -1))
+    ))
+)

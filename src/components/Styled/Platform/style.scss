@@ -6,6 +6,7 @@ $length__base: $margin__xs * 0.5;
 
 .StyledPlatform {
     position: relative;
+    padding: $margin__xs;
     border-radius: $borderRadius__lg;
     background-color: $colour__platform__dark;
 

@@ -2,12 +2,15 @@ $width__sm: 480px;
 $width__lg: 960px;
 
 $height__appFooter: 48px;
-$length__chordChecker: 440px;
 
 $length__icon__xs: 18px;
 $length__icon__sm: 24px;
 $length__icon__md: 32px;
 $length__icon__lg: 44px;
+
+$length__checkerButton__sm: $length__icon__lg;
+$length__checkerButton__md: 66px;
+$length__checkerButton__lg: 88px;
 
 $margin__xs: 8px;
 $margin__sm: 16px;

@@ -22,6 +22,7 @@ const Button = forwardRef(({
     handleButtonClick = () => {},
     handleTooltipHide = () => {},
     children,
+    ...rest
 
 }, ref) => {
     const
@@ -70,6 +71,7 @@ const Button = forwardRef(({
                 },
                 disabled: isSelected,
                 Tag,
+                ...rest,
             }}
         >
             <ButtonAnimatable {...{ isSelected, dropShadow }}>

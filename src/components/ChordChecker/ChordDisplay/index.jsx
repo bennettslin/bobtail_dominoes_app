@@ -1,6 +1,5 @@
 import React from 'react'
 import cx from 'classnames'
-import Flex from '../../Flex'
 import StyledDisplay from '../../Styled/Display'
 import ValidIcon from './ValidIcon'
 import ChordLabel from './ChordLabel'
@@ -8,17 +7,17 @@ import { margin__xs } from '../../../constants/responsive'
 import './style'
 
 const ChordDisplay = () => (
-    <StyledDisplay
+    <div
         {...{
             className: cx(
-                'ChordDisplay',
+                'ChordDisplay__container',
             ),
         }}
     >
-        <Flex
+        <StyledDisplay
             {...{
                 className: cx(
-                    'ChordDisplay__child',
+                    'ChordDisplay',
                 ),
                 flexDirection: 'column',
                 justifyContent: 'space-between',
@@ -27,8 +26,8 @@ const ChordDisplay = () => (
         >
             <ValidIcon />
             <ChordLabel />
-        </Flex>
-    </StyledDisplay>
+        </StyledDisplay>
+    </div>
 )
 
 export default ChordDisplay

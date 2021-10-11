@@ -1,0 +1,52 @@
+@import '../../../scss/constants/borders';
+@import '../../../scss/constants/colours';
+@import '../../../scss/constants/responsive';
+@import '../../../scss/constants/shadows';
+@import '../../../scss/mixins/reflection';
+
+$length__base: $margin__xs * 0.5;
+
+.StyledCheckerButton__frame {
+    position: relative;
+    width: $length__checkerButton__sm;
+    height: $length__checkerButton__sm;
+
+    @media (min-width: $breakpoint__sm) {
+        width: $length__checkerButton__md;
+        height: $length__checkerButton__md;
+    }
+
+    @media (min-width: $breakpoint__md) {
+        width: $length__checkerButton__lg;
+        height: $length__checkerButton__lg;
+    }
+
+    background-color: $colour__frame__dark;
+    border-radius: 50%;
+
+    &:before {
+        position: absolute;
+        top: -$length__base;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $colour__frame__medium;
+        border-radius: 50%;
+        @include mixin__reflection(
+            $colour__frame__medium,
+            $colour__frame__light,
+        );
+        content: '';
+    }
+}
+
+.StyledCheckerButton {
+    position: relative;
+    top: calc(-10% - #{$length__base * 0.5});
+    width: 90%;
+    height: 90%;
+}
+
+.StyledCheckerButton__on {
+    filter: $dropShadow__lightHover;
+}

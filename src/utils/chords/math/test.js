@@ -1,4 +1,4 @@
-import { mod12, getArrayOfPitches } from '.'
+import { mod12, getArrayOfPitches, getArrayOfPitchesForCircleOfFifths } from '.'
 
 describe('mod12', () => {
     it('returns correct number for less than zero', () => {
@@ -23,5 +23,13 @@ describe('getArrayOfPitches', () => {
         expect(
             getArrayOfPitches(),
         ).toStrictEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
+    })
+})
+
+describe('getArrayOfPitches', () => {
+    it('returns array of all twelve pitches', () => {
+        expect(
+            getArrayOfPitchesForCircleOfFifths(),
+        ).toStrictEqual([0, 11, 1, 10, 2, 9, 3, 8, 4, 7, 5, 6])
     })
 })

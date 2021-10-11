@@ -2,7 +2,19 @@
 
 .PitchButtons {
     position: relative;
-    margin: $margin__sm;
-    width: $length__chordChecker;
-    height: $length__chordChecker;
+    margin: $length__checkerButton__sm * 0.5;
+    width: $length__checkerButton__sm * 4;
+    height: $length__checkerButton__sm * 4;
+
+    @media (min-width: $breakpoint__sm) {
+        margin: $length__checkerButton__md * 0.5;
+        width: $length__checkerButton__md * 4;
+        height: $length__checkerButton__md * 4;
+    }
+
+    @media (min-width: $breakpoint__md) {
+        margin: $length__checkerButton__lg * 0.5;
+        width: $length__checkerButton__lg * 4;
+        height: $length__checkerButton__lg * 4;
+    }
 }

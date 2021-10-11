@@ -5,6 +5,8 @@
 $length__base: $margin__xs * 0.25;
 
 .StyledDisplay {
+    position: relative;
+    top: -$length__base;
     border-radius: $borderRadius__lg;
     background-color: $colour__platform__dark;
 
