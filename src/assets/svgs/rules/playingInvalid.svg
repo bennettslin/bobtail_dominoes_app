@@ -303,25 +303,25 @@
       </g>
     </g>
   </g>
-  <g class="errorShadowLine">
+  <g class="shadowLine">
     <g class="wide">
       <line x1="2057.25" y1="542.66" x2="1844.75" y2="910.72"/>
       <line x1="344.75" y1="542.66" x2="657.25" y2="1083.92"/>
     </g>
   </g>
-  <g class="errorLine">
-    <g class="wide">
-      <line x1="2056.25" y1="537.66" x2="1843.75" y2="905.72"/>
-      <line x1="343.75" y1="537.66" x2="656.25" y2="1078.92"/>
-    </g>
-  </g>
-  <g class="errorShadow">
+  <g class="shadow">
     <g class="text">
       <text transform="translate(655.85 868.44)">not a valid<tspan x="78.41" y="100.8">chord</tspan></text>
       <text transform="translate(2037.76 868.83)">duplicate<tspan x="68.25" y="100.8">faces</tspan></text>
     </g>
     <polygon points="468.5 245.46 449.21 226.18 401 274.39 352.79 226.18 333.5 245.46 381.71 293.68 333.5 341.89 352.79 361.18 401 312.96 449.21 361.18 468.5 341.89 420.29 293.68 468.5 245.46"/>
     <polygon points="1668.5 245.46 1649.22 226.18 1601 274.39 1552.79 226.18 1533.5 245.46 1581.72 293.68 1533.5 341.89 1552.79 361.18 1601 312.96 1649.22 361.18 1668.5 341.89 1620.29 293.68 1668.5 245.46"/>
+  </g>
+  <g class="errorLine">
+    <g class="wide">
+      <line x1="2056.25" y1="537.66" x2="1843.75" y2="905.72"/>
+      <line x1="343.75" y1="537.66" x2="656.25" y2="1078.92"/>
+    </g>
   </g>
   <g class="error">
     <g class="text">

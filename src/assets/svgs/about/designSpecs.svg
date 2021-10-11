@@ -38,14 +38,14 @@
       </g>
     </g>
   </g>
-  <g class="infoShadowLine">
+  <g class="shadowLine">
     <path d="M351.5,1390.64c-127.95-22.55,37.23-407.38-70-461.88,107.23-54.49-57.95-439.33,70-461.88" transform="translate(-0.5 0)"/>
     <path d="M2046.5,1248c45.7-3.38-11.75-53.1,25-69.28-36.75-16.18,20.7-65.9-25-69.28" transform="translate(-0.5 0)"/>
     <path d="M2001.5,1445c-39,221.62-705.61-64.49-800,121.24-94.39-185.73-760.95,100.38-800-121.24" transform="translate(-0.5 0)"/>
     <line x1="1201.02" y1="457.8" x2="1201.02" y2="766.49"/>
     <path d="M401.52,407.8c24.5,112.33,104.13,263,198.78,353.26" transform="translate(-0.5 0)"/>
   </g>
-  <g class="infoShadow">
+  <g class="shadow">
     <g class="text">
       <text transform="translate(164.09 266.57)">circle of fifths<tspan x="-107.39" y="100.8">maps to color wheel</tspan></text>
       <text transform="translate(971.6 214.07)">pips between<tspan x="-99.91" y="100.8">faces show interval</tspan><tspan x="-66.11" y="201.6">size and direction</tspan></text>
