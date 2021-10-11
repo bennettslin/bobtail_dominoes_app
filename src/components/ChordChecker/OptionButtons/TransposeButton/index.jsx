@@ -6,7 +6,7 @@ import StyledCheckerButton from '../../../Styled/CheckerButton'
 import DominoSvg from '../../../Svgs/Domino'
 import { updateCurrentPitchSet } from '../../../../redux/chords/action'
 import { mapCurrentPitchSet } from '../../../../redux/chords/selector'
-import cPitchButton from '../../../../assets/svgs/chords/cPitchButton'
+import checkerButton from '../../../../assets/svgs/chords/checkerButton'
 import styleConfigOption from '../../../../styles/checker/option'
 import { transpose } from '../../../../utils/chords/math'
 
@@ -32,7 +32,7 @@ const TransposeButton = ({ direction }) => {
         >
             <DominoSvg
                 {...{
-                    src: cPitchButton,
+                    src: checkerButton,
                     isFigure: false,
                     styleConfig: styleConfigOption,
                 }}

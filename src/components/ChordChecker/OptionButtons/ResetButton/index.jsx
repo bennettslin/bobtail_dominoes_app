@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import StyledCheckerButton from '../../../Styled/CheckerButton'
 import DominoSvg from '../../../Svgs/Domino'
 import { updateCurrentPitchSet } from '../../../../redux/chords/action'
-import cPitchButton from '../../../../assets/svgs/chords/cPitchButton'
+import checkerButton from '../../../../assets/svgs/chords/checkerButton'
 import styleConfigError from '../../../../styles/checker/error'
 
 const ResetButton = () => {
@@ -25,7 +25,7 @@ const ResetButton = () => {
         >
             <DominoSvg
                 {...{
-                    src: cPitchButton,
+                    src: checkerButton,
                     isFigure: false,
                     styleConfig: styleConfigError,
                 }}

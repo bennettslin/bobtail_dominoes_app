@@ -1,0 +1,8 @@
+<svg viewBox="0 0 400 430">
+  <path class="right" d="M328,383.68A199.18,199.18,0,0,1,200,430V200H328Z"/>
+  <path class="rightFar" d="M328,200h72v30a199.58,199.58,0,0,1-72,153.68Z"/>
+  <path class="left" d="M200,430A199.18,199.18,0,0,1,72,383.68V200H200Z"/>
+  <path class="leftFar" d="M72,200H0v30A199.58,199.58,0,0,0,72,383.68Z"/>
+  <circle class="edge" cx="200" cy="200" r="200"/>
+  <circle class="face" cx="200" cy="200" r="192"/>
+</svg>

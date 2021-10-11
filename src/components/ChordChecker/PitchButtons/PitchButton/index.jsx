@@ -8,7 +8,7 @@ import { updateCurrentPitchSet } from '../../../../redux/chords/action'
 import { mapCurrentPitchSet } from '../../../../redux/chords/selector'
 import styleConfigPitch from '../../../../styles/checker/pitch'
 import styleConfigPitchOn from '../../../../styles/checker/pitchOn'
-import cPitchButton from '../../../../assets/svgs/chords/cPitchButton'
+import checkerButton from '../../../../assets/svgs/chords/checkerButton'
 import './style'
 
 const COORDINATES = [0, 6.7, 25, 50, 75, 93.3, 100]
@@ -47,7 +47,7 @@ const PitchButton = ({ pitch }) => {
             <DominoSvg
                 {...{
                     key: isOn,
-                    src: cPitchButton,
+                    src: checkerButton,
                     isFigure: false,
                     styleConfig: isOn ? styleConfigPitchOn : styleConfigPitch,
                 }}
