@@ -1,9 +1,16 @@
-import board from './board'
-import { getStyleConfig } from '../../../utils/svgs'
+/* eslint-disable key-spacing */
+import { hsl, getStyleConfig } from '../../../utils/svgs'
 
 export default getStyleConfig(
     'pitch',
-    [
-        board,
-    ],
+    {
+        fill: {
+            rightFar:   hsl(30, 13, 27),
+            right:      hsl(30, 13, 32),
+            leftFar:    hsl(30, 13, 37),
+            left:       hsl(30, 13, 42),
+            edge:       hsl(30, 13, 52),
+            face:       hsl(30, 13, 62),
+        },
+    },
 )

@@ -1,47 +1,62 @@
 import { getStyleConfig, hsl } from '.'
 
+const
+    MOCK_STYLES_0 = {
+        fill: {
+            classA: 'styleA',
+            classB: 'styleB',
+        },
+        stroke: {
+            classC: 'styleC',
+            classD: 'styleD',
+        },
+    },
+    MOCK_STYLES_1 = {
+        fill: {
+            classE: 'styleE',
+            classF: 'styleF',
+        },
+        stroke: {
+            classG: 'styleG',
+            classH: 'styleH',
+        },
+    },
+    MERGED_STYLES = {
+        fill: {
+            classA: 'styleA',
+            classB: 'styleB',
+            classE: 'styleE',
+            classF: 'styleF',
+        },
+        stroke: {
+            classC: 'styleC',
+            classD: 'styleD',
+            classG: 'styleG',
+            classH: 'styleH',
+        },
+    }
+
 describe('getStyleConfig', () => {
-    it('returns style config', () => {
+    it('returns style config for single styles object', () => {
+        expect(getStyleConfig(
+            'mockClassName',
+            MOCK_STYLES_0,
+        )).toStrictEqual({
+            className: 'mockClassName',
+            styles: MOCK_STYLES_0,
+        })
+    })
+
+    it('returns style config for array of styles objects', () => {
         expect(getStyleConfig(
             'mockClassName',
             [
-                {
-                    fill: {
-                        classA: 'styleA',
-                        classB: 'styleB',
-                    },
-                    stroke: {
-                        classC: 'styleC',
-                        classD: 'styleD',
-                    },
-                },
-                {
-                    fill: {
-                        classE: 'styleE',
-                        classF: 'styleF',
-                    },
-                    stroke: {
-                        classG: 'styleG',
-                        classH: 'styleH',
-                    },
-                },
+                MOCK_STYLES_0,
+                MOCK_STYLES_1,
             ],
         )).toStrictEqual({
             className: 'mockClassName',
-            styles: {
-                fill: {
-                    classA: 'styleA',
-                    classB: 'styleB',
-                    classE: 'styleE',
-                    classF: 'styleF',
-                },
-                stroke: {
-                    classC: 'styleC',
-                    classD: 'styleD',
-                    classG: 'styleG',
-                    classH: 'styleH',
-                },
-            },
+            styles: MERGED_STYLES,
         })
     })
 })

@@ -1,12 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import cx from 'classnames'
 import { useDispatch, useSelector } from 'react-redux'
 import StyledCheckerButton from '../../../Styled/CheckerButton'
-import DominoSvg from '../../../Svgs/Domino'
 import { updateCurrentPitchSet } from '../../../../redux/chords/action'
 import { mapCurrentPitchSet } from '../../../../redux/chords/selector'
-import checkerButton from '../../../../assets/svgs/chords/checkerButton'
+import transposeUp from '../../../../assets/svgs/chords/transposeUp'
+import transposeDown from '../../../../assets/svgs/chords/transposeDown'
 import styleConfigOption from '../../../../styles/checker/option'
 import { transpose } from '../../../../utils/chords/math'
 
@@ -15,7 +14,7 @@ const TransposeButton = ({ direction }) => {
         dispatch = useDispatch(),
         currentPitchSet = useSelector(mapCurrentPitchSet)
 
-    const handleButtonClick = () => {
+    const onClick = () => {
         dispatch(updateCurrentPitchSet(
             transpose(currentPitchSet, direction),
         ))
@@ -24,20 +23,11 @@ const TransposeButton = ({ direction }) => {
     return (
         <StyledCheckerButton
             {...{
-                className: cx(
-                    'TransposeButton',
-                ),
-                handleButtonClick,
+                faceSrc: direction === 1 ? transposeUp : transposeDown,
+                styleConfig: styleConfigOption,
+                onClick,
             }}
-        >
-            <DominoSvg
-                {...{
-                    src: checkerButton,
-                    isFigure: false,
-                    styleConfig: styleConfigOption,
-                }}
-            />
-        </StyledCheckerButton>
+        />
     )
 }
 

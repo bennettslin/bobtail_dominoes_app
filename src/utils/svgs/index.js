@@ -12,9 +12,12 @@ const getMergedStyles = styleGroups => {
     return mergedStyles
 }
 
-export const getStyleConfig = (className, styleGroups) => ({
+export const getStyleConfig = (className, stylesEntity) => ({
     className,
-    styles: getMergedStyles(styleGroups),
+    styles:
+        Array.isArray(stylesEntity) ?
+            getMergedStyles(stylesEntity) :
+            stylesEntity,
 })
 
 export const hsl = (h, s, l, a) => (

@@ -1,22 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import Button from '../../Button'
 import Flex from '../../Flex'
+import Svg from '../../Svg'
+import CheckerButtonSvg from '../../Svgs/CheckerButton'
+import styleConfigFaces from '../../../styles/checker/faces'
+import styleConfigPitch from '../../../styles/checker/pitch'
+import styleConfigPitchOn from '../../../styles/checker/pitchOn'
 import './style'
 
 const StyledCheckerButton = ({
     className,
+    faceSrc,
     isOn,
-    children,
+    styleConfig,
+    style,
     ...rest
 }) => (
-    <Button
+    <div
         {...{
             className: cx(
                 className,
             ),
-            ...rest,
+            style,
         }}
     >
         <Flex
@@ -26,24 +32,54 @@ const StyledCheckerButton = ({
                 ),
             }}
         >
-            <div
+            <button
                 {...{
                     className: cx(
                         'StyledCheckerButton',
                         isOn && 'StyledCheckerButton__on',
                     ),
+                    ...rest,
                 }}
             >
-                {children}
-            </div>
+                <div
+                    {...{
+                        className: cx(
+                            'StyledCheckerButton__animatable',
+                        ),
+                    }}
+                >
+                    <CheckerButtonSvg
+                        {...{
+                            isOn,
+                            className: cx(
+                                'StyledCheckerButton__button',
+                            ),
+                            styleConfig: styleConfig || (
+                                isOn ? styleConfigPitchOn : styleConfigPitch
+                            ),
+                        }}
+                    />
+                    <Svg
+                        {...{
+                            className: cx(
+                                'StyledCheckerButton__face',
+                            ),
+                            src: faceSrc,
+                            styleConfig: styleConfigFaces,
+                        }}
+                    />
+                </div>
+            </button>
         </Flex>
-    </Button>
+    </div>
 )
 
 StyledCheckerButton.propTypes = {
     className: PropTypes.string,
+    faceSrc: PropTypes.string.isRequired,
     isOn: PropTypes.bool,
-    children: PropTypes.node.isRequired,
+    styleConfig: PropTypes.object,
+    style: PropTypes.object,
 }
 
 export default StyledCheckerButton
