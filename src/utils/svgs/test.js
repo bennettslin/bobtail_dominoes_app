@@ -1,40 +1,46 @@
-import { getMergedStyles, hsl } from '.'
+import { getStyleConfig, hsl } from '.'
 
-describe('getMergedStyles', () => {
-    it('returns merged styles', () => {
-        expect(getMergedStyles([
-            {
+describe('getStyleConfig', () => {
+    it('returns style config', () => {
+        expect(getStyleConfig(
+            'mockClassName',
+            [
+                {
+                    fill: {
+                        classA: 'styleA',
+                        classB: 'styleB',
+                    },
+                    stroke: {
+                        classC: 'styleC',
+                        classD: 'styleD',
+                    },
+                },
+                {
+                    fill: {
+                        classE: 'styleE',
+                        classF: 'styleF',
+                    },
+                    stroke: {
+                        classG: 'styleG',
+                        classH: 'styleH',
+                    },
+                },
+            ],
+        )).toStrictEqual({
+            className: 'mockClassName',
+            styles: {
                 fill: {
                     classA: 'styleA',
                     classB: 'styleB',
-                },
-                stroke: {
-                    classC: 'styleC',
-                    classD: 'styleD',
-                },
-            },
-            {
-                fill: {
                     classE: 'styleE',
                     classF: 'styleF',
                 },
                 stroke: {
+                    classC: 'styleC',
+                    classD: 'styleD',
                     classG: 'styleG',
                     classH: 'styleH',
                 },
-            },
-        ])).toStrictEqual({
-            fill: {
-                classA: 'styleA',
-                classB: 'styleB',
-                classE: 'styleE',
-                classF: 'styleF',
-            },
-            stroke: {
-                classC: 'styleC',
-                classD: 'styleD',
-                classG: 'styleG',
-                classH: 'styleH',
             },
         })
     })

@@ -1,4 +1,4 @@
-export const getMergedStyles = styleGroups => {
+const getMergedStyles = styleGroups => {
     const mergedStyles = {}
     styleGroups.forEach(styleGroup => {
         Object.keys(styleGroup).forEach(styleKey => {
