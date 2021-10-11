@@ -7,7 +7,7 @@ import { getArrayOfPitchesForCircleOfFifths } from '../../../utils/chords/math'
 import './style'
 
 const PitchButtons = () => (
-    <StyledPlatform>
+    <StyledPlatform isLeftPlatform>
         <div
             {...{
                 className: cx(

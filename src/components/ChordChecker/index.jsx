@@ -20,8 +20,10 @@ const ChordChecker = () => (
     >
         <Flex
             {...{
+                className: cx(
+                    'ChordChecker__bottomRow',
+                ),
                 alignItems: 'normal',
-                gap: margin__sm,
             }}
         >
             <PitchButtons />

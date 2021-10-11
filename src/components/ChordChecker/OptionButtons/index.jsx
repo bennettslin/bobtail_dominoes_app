@@ -7,6 +7,7 @@ import { margin__md, margin__xs } from '../../../constants/responsive'
 
 const OptionButtons = () => (
     <StyledPlatform
+        isRightPlatform
         {...{
             flexDirection: 'column',
             gap: margin__md,

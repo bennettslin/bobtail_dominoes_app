@@ -4,11 +4,19 @@ import cx from 'classnames'
 import Flex from '../../Flex'
 import './style'
 
-const StyledPlatform = ({ className, children, ...rest }) => (
+const StyledPlatform = ({
+    className,
+    isLeftPlatform,
+    isRightPlatform,
+    children,
+    ...rest
+}) => (
     <Flex
         {...{
             className: cx(
                 'StyledPlatform',
+                isLeftPlatform && 'StyledPlatform__left',
+                isRightPlatform && 'StyledPlatform__right',
                 className,
             ),
             flexGrow: 1,
@@ -21,6 +29,8 @@ const StyledPlatform = ({ className, children, ...rest }) => (
 
 StyledPlatform.propTypes = {
     className: PropTypes.string,
+    isLeftPlatform: PropTypes.bool,
+    isRightPlatform: PropTypes.bool,
     children: PropTypes.node.isRequired,
 }
 
