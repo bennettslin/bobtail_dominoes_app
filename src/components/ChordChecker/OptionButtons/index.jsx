@@ -15,12 +15,11 @@ const OptionButtons = () => (
     >
         <Flex
             {...{
-                flexDirection: 'column',
                 gap: margin__xs,
             }}
         >
-            <TransposeButton {...{ direction: 1 }} />
             <TransposeButton {...{ direction: -1 }} />
+            <TransposeButton {...{ direction: 1 }} />
         </Flex>
         <ResetButton />
     </StyledPlatform>
