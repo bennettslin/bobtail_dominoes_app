@@ -1,5 +1,5 @@
 /* eslint-disable key-spacing */
-import { hsl } from '../../../../../utils/svgs'
+import { hsl } from '../../../utils/svgs'
 
 export default {
     fill: {

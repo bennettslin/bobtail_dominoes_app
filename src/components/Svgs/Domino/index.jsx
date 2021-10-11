@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Flex from '../../Flex'
 import Svg from '../../Svg'
-import styles from './styles'
+import stylesDominoes from '../../../styles/dominoes'
 import './style'
 
 const DOMINO_SCALE_FACTOR = 0.225
@@ -13,6 +13,7 @@ const DominoSvg = ({
     className,
     isFigure = true,
     scaleFactor = 1,
+    styles = stylesDominoes,
     onLoad,
 }) => {
     const [isLoaded, setIsLoaded] = useState(false)
@@ -56,6 +57,7 @@ DominoSvg.propTypes = {
     className: PropTypes.string,
     isFigure: PropTypes.bool,
     scaleFactor: PropTypes.number,
+    styles: PropTypes.object,
     onLoad: PropTypes.func,
 }
 
