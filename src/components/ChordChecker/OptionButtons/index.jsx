@@ -1,27 +1,28 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import cx from 'classnames'
-import StyledPlatform from '../../Styled/Platform'
 import Flex from '../../Flex'
+import StyledPlatform from '../../Styled/Platform'
 import ResetButton from './ResetButton'
-import './style'
+import TransposeButton from './TransposeButton'
+import { margin__md, margin__xs } from '../../../constants/responsive'
 
 const OptionButtons = () => (
-    <StyledPlatform>
+    <StyledPlatform
+        {...{
+            flexDirection: 'column',
+            gap: margin__md,
+        }}
+    >
         <Flex
             {...{
-                className: cx(
-                    'OptionButtons',
-                ),
+                flexDirection: 'column',
+                gap: margin__xs,
             }}
         >
-            <ResetButton />
+            <TransposeButton {...{ direction: 1 }} />
+            <TransposeButton {...{ direction: -1 }} />
         </Flex>
+        <ResetButton />
     </StyledPlatform>
 )
-
-OptionButtons.propTypes = {
-    reset: PropTypes.func.isRequired,
-}
 
 export default OptionButtons

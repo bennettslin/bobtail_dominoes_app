@@ -44,7 +44,7 @@ Flex.propTypes = {
     justifyContent: PropTypes.string,
     alignItems: PropTypes.string,
     flexWrap: PropTypes.string,
-    gap: PropTypes.string,
+    gap: PropTypes.number,
     children: PropTypes.node.isRequired,
     Tag: PropTypes.any,
 }

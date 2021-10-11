@@ -13,3 +13,11 @@ export const getArrayOfPitchesForCircleOfFifths = () => (
         mod12(Math.ceil(i / 2) * (i % 2 === 0 ? 1 : -1))
     ))
 )
+
+export const transpose = (pitchSet = new Set(), direction = 0) => {
+    const newPitchSet = new Set()
+    pitchSet.forEach(pitch => {
+        newPitchSet.add(mod12(pitch + direction))
+    })
+    return newPitchSet
+}

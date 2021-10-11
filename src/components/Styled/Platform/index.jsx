@@ -4,13 +4,15 @@ import cx from 'classnames'
 import Flex from '../../Flex'
 import './style'
 
-const StyledPlatform = ({ children }) => (
+const StyledPlatform = ({ className, children, ...rest }) => (
     <Flex
         {...{
             className: cx(
                 'StyledPlatform',
+                className,
             ),
             flexGrow: 1,
+            ...rest,
         }}
     >
         {children}
@@ -18,6 +20,7 @@ const StyledPlatform = ({ children }) => (
 )
 
 StyledPlatform.propTypes = {
+    className: PropTypes.string,
     children: PropTypes.node.isRequired,
 }
 
