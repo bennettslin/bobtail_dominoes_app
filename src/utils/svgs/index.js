@@ -12,6 +12,11 @@ export const getMergedStyles = styleGroups => {
     return mergedStyles
 }
 
+export const getStyleConfig = (className, styleGroups) => ({
+    className,
+    styles: getMergedStyles(styleGroups),
+})
+
 export const hsl = (h, s, l, a) => (
     Number.isFinite(a) ?
         `hsla(${h},${s}%,${l}%,${a})` :

@@ -52,7 +52,11 @@ const getClassStyles = ({ svgString, styles }) => {
     return classStyles
 }
 
-const getClassStylesString = ({ svgString, styles }) => {
+const getClassStylesString = ({
+    styleClassName,
+    svgString,
+    styles,
+}) => {
     if (!styles) {
         return null
     }
@@ -67,16 +71,24 @@ const getClassStylesString = ({ svgString, styles }) => {
             `${styleKey}:${classStyle}`
         ))
 
-        return `.${className}{${styleStrings.join('; ')}}`
+        return `.${styleClassName} .${className}{${styleStrings.join('; ')}}`
     }).join(' ')
 }
 
-export const getSvgWithClassStyles = ({ svgString, styles }) => {
+export const getSvgWithClassStyles = ({
+    styleClassName,
+    svgString,
+    styles,
+}) => {
     const
-        stylesString = getClassStylesString({ svgString, styles }),
+        stylesString = getClassStylesString({
+            styleClassName,
+            svgString,
+            styles,
+        }),
         stylesIndex = svgString.indexOf('>') + 1
 
-    if (!stylesString) {
+    if (!styleClassName || !stylesString) {
         return svgString
     }
 

@@ -6,6 +6,8 @@ import StyledCheckerButton from '../../../Styled/CheckerButton'
 import DominoSvg from '../../../Svgs/Domino'
 import { updateCurrentPitchSet } from '../../../../redux/chords/action'
 import { mapCurrentPitchSet } from '../../../../redux/chords/selector'
+import styleConfigPitch from '../../../../styles/checker/pitch'
+import styleConfigPitchOn from '../../../../styles/checker/pitchOn'
 import cPitchButton from '../../../../assets/svgs/chords/cPitchButton'
 import './style'
 
@@ -44,8 +46,10 @@ const PitchButton = ({ pitch }) => {
         >
             <DominoSvg
                 {...{
+                    key: isOn,
                     src: cPitchButton,
                     isFigure: false,
+                    styleConfig: isOn ? styleConfigPitchOn : styleConfigPitch,
                 }}
             />
         </StyledCheckerButton>

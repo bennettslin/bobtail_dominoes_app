@@ -23,22 +23,6 @@ describe('mod12', () => {
     })
 })
 
-describe('getArrayOfPitches', () => {
-    it('returns array of all twelve pitches', () => {
-        expect(
-            getArrayOfPitches(),
-        ).toStrictEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
-    })
-})
-
-describe('getArrayOfPitches', () => {
-    it('returns array of all twelve pitches', () => {
-        expect(
-            getArrayOfPitchesForCircleOfFifths(),
-        ).toStrictEqual([0, 11, 1, 10, 2, 9, 3, 8, 4, 7, 5, 6])
-    })
-})
-
 describe('transpose', () => {
     test.each([
         // Undefined.
@@ -55,5 +39,21 @@ describe('transpose', () => {
         [new Set([2, 4, 7, 11]), -3, new Set([11, 1, 4, 8])], // Chord.
     ])('%p transposed by %p yields %p', (set, direction, result) => {
         expect(transpose(set, direction)).toStrictEqual(result)
+    })
+})
+
+describe('getArrayOfPitches', () => {
+    it('returns array of all twelve pitches', () => {
+        expect(
+            getArrayOfPitches(),
+        ).toStrictEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
+    })
+})
+
+describe('getArrayOfPitches', () => {
+    it('returns array of all twelve pitches', () => {
+        expect(
+            getArrayOfPitchesForCircleOfFifths(),
+        ).toStrictEqual([0, 11, 1, 10, 2, 9, 3, 8, 4, 7, 5, 6])
     })
 })

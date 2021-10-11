@@ -11,12 +11,16 @@ const Svg = ({
     className,
     reverse,
     scaleFactor,
-    styles,
+    styleConfig: {
+        className: styleClassName,
+        styles,
+    } = {},
     onLoad,
 
 }) => {
     const preProcessor = svgString => {
         return getSvgWithClassStyles({
+            styleClassName,
             svgString: getSvgWithDimensions({
                 svgString,
                 scaleFactor,
@@ -33,6 +37,7 @@ const Svg = ({
                 className: cx(
                     reverse && 'Svg__reverse',
                     className,
+                    styleClassName,
                 ),
                 preProcessor,
                 onLoad,
@@ -46,8 +51,9 @@ Svg.propTypes = {
     className: PropTypes.string,
     reverse: PropTypes.bool,
     scaleFactor: PropTypes.number,
-    styles: PropTypes.shape({
-        fill: PropTypes.object,
+    styleConfig: PropTypes.shape({
+        className: PropTypes.string.isRequired,
+        styles: PropTypes.object.isRequired,
     }),
     onLoad: PropTypes.func,
 }
