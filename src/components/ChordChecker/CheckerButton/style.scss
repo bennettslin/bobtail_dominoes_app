@@ -6,10 +6,6 @@ $length__base: $margin__xs * 0.5;
 .CheckerButton {
     & svg {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
     }
 }
 

@@ -1,8 +1,11 @@
 .CheckerFaceSvg {
+    // -7% * 0.5, where 7% is how much the unclicked button is raised.
+    top: -3.5%;
+
     .CheckerButton__off:active
     &,
     .CheckerButton__on:not(:active)
     & {
-        top: 4%;
+        top: 3.5%;
     }
 }

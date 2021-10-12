@@ -5,8 +5,8 @@ export default getStyleConfig(
     'pitchOn',
     {
         fill: {
-            rightFar:   hsl(30, 13, 42),
-            right:      hsl(30, 13, 47),
+            rightFar:   hsl(30, 13, 47),
+            right:      hsl(30, 13, 52),
             leftFar:    hsl(30, 13, 52),
             left:       hsl(30, 13, 57),
             edge:       hsl(30, 13, 77),

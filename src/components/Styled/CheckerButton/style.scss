@@ -4,6 +4,8 @@
 
 $length__base: $margin__xs * 0.5;
 
+$percentage__checkerSvg: 7%;
+
 .StyledCheckerButton {
     position: relative;
     width: $length__checkerButton__sm;
@@ -38,8 +40,11 @@ $length__base: $margin__xs * 0.5;
     }
 
     > * {
-        position: relative;
-        top: -10%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        // 50% - 7% * 0.5, where 7% is how much the unclicked button is raised.
+        top: calc(46.5% - #{$length__base});
+        left: 50%;
         width: 90%;
         height: 90%;
     }

@@ -5,8 +5,8 @@ export default {
     fill: {
         rightFar:   hsl(30, 13, 37),
         right:      hsl(30, 13, 42),
-        leftFar:    hsl(30, 13, 47),
-        left:       hsl(30, 13, 52),
+        leftFar:    hsl(30, 13, 42),
+        left:       hsl(30, 13, 47),
         edge:       hsl(30, 13, 72),
         face:       hsl(30, 13, 82),
 

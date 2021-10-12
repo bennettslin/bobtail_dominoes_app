@@ -7,8 +7,8 @@ export default getStyleConfig(
         fill: {
             rightFar:   hsl(320, 18, 37),
             right:      hsl(320, 18, 42),
-            leftFar:    hsl(320, 18, 47),
-            left:       hsl(320, 18, 52),
+            leftFar:    hsl(320, 18, 42),
+            left:       hsl(320, 18, 47),
             edge:       hsl(320, 18, 67),
             face:       hsl(320, 18, 77),
         },
