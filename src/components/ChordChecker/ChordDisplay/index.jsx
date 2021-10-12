@@ -2,8 +2,8 @@ import React from 'react'
 import cx from 'classnames'
 import StyledDisplay from '../../Styled/Display'
 import ValidIcon from './ValidIcon'
+import ChordAbbreviation from './ChordAbbreviation'
 import ChordLabel from './ChordLabel'
-import { margin__xs } from '../../../constants/responsive'
 import './style'
 
 const ChordDisplay = () => (
@@ -20,11 +20,12 @@ const ChordDisplay = () => (
                     'ChordDisplay',
                 ),
                 flexDirection: 'column',
-                justifyContent: 'space-between',
-                gap: margin__xs,
+                justifyContent: 'start',
+                // gap: margin__xs,
             }}
         >
             <ValidIcon />
+            <ChordAbbreviation />
             <ChordLabel />
         </StyledDisplay>
     </div>

@@ -8,7 +8,7 @@ const StyledText = ({
     isInset,
     isShadow,
     children,
-}) => (
+}) => children && (
     <>
         <span
             {...{
@@ -41,7 +41,7 @@ StyledText.propTypes = {
     isInteractive: PropTypes.bool,
     isInset: PropTypes.bool,
     isShadow: PropTypes.bool,
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node,
 }
 
 export default StyledText

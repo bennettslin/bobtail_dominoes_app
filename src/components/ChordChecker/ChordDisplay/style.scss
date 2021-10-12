@@ -6,12 +6,12 @@ $length__display: 200px;
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 50%;
-    height: 50%;
+    width: 56%;
+    height: 56%;
     transform: translate(-50%, -50%);
 }
 
 .ChordDisplay {
     height: 100%;
-    padding: $margin__sm;
+    padding: $margin__sm $margin__xs;
 }

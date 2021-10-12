@@ -1,13 +1,11 @@
 @import '../../../../scss/constants/responsive';
 
-.ChordLabel {
+.ChordAbbreviation {
     display: none;
     position: relative;
+    font-size: 1em;
 
-    font-size: 0.3em;
-    
-    @media (min-width: $breakpoint__md) {
-        font-size: 0.65em;
+    @media (min-width: $breakpoint__sm) {
         display: block;
     }
 }

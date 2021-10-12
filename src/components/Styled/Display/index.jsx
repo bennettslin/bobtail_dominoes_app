@@ -19,7 +19,7 @@ const StyledDisplay = ({ className, children, ...rest }) => (
 )
 
 StyledDisplay.propTypes = {
-    className: PropTypes.string.isRequired,
+    className: PropTypes.string,
     children: PropTypes.node.isRequired,
 }
 

@@ -3,6 +3,8 @@ import cx from 'classnames'
 import Flex from '../Flex'
 import PitchButtons from './PitchButtons'
 import OptionButtons from './OptionButtons'
+import StyledPlatform from '../Styled/Platform'
+import StyledDisplay from '../Styled/Display'
 import { margin__sm } from '../../constants/responsive'
 import './style'
 
@@ -29,6 +31,11 @@ const ChordChecker = () => (
             <PitchButtons />
             <OptionButtons />
         </Flex>
+        <StyledPlatform>
+            <StyledDisplay>
+                testing
+            </StyledDisplay>
+        </StyledPlatform>
     </Flex>
 )
 
