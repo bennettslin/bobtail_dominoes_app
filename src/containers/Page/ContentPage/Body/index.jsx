@@ -24,7 +24,6 @@ const Body = () => {
             {...{
                 className: cx(
                     'Body',
-                    'fontSize__md',
                 ),
                 flexDirection: 'column',
                 justifyContent: 'normal',

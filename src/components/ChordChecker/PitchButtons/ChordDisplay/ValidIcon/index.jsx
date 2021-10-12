@@ -1,7 +1,6 @@
 import React from 'react'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
-import Flex from '../../../../Flex'
 import DominoSvg from '../../../../Svgs/Domino'
 import { mapCurrentPitchSet } from '../../../../../redux/chords/selector'
 import { getIsChord, getIsLegalRow } from '../../../../../utils/chords/valid'
@@ -12,32 +11,17 @@ import './style'
 const ValidIcon = () => {
     const currentPitchSet = useSelector(mapCurrentPitchSet)
 
-    return (
-        <Flex
+    return (!getIsLegalRow(currentPitchSet) || getIsChord(currentPitchSet)) && (
+        <DominoSvg
             {...{
+                key: getIsChord(currentPitchSet),
                 className: cx(
                     'ValidIcon',
                 ),
+                src: getIsChord(currentPitchSet) ? iconValid : iconInvalid,
+                isFigure: false,
             }}
-        >
-            {getIsLegalRow(currentPitchSet) ? (
-                getIsChord(currentPitchSet) && (
-                    <DominoSvg
-                        {...{
-                            src: iconValid,
-                            isFigure: false,
-                        }}
-                    />
-                )
-            ) : (
-                <DominoSvg
-                    {...{
-                        src: iconInvalid,
-                        isFigure: false,
-                    }}
-                />
-            )}
-        </Flex>
+        />
     )
 }
 

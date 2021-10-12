@@ -16,7 +16,9 @@ const ChordLabel = () => {
             {...{
                 className: cx(
                     'ChordLabel',
+                    'fontSize__md',
                 ),
+                flexDirection: 'column',
             }}
         >
             <StyledText isShadow>

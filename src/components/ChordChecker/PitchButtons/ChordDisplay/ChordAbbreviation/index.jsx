@@ -22,6 +22,7 @@ const ChordAbbreviation = () => {
             {...{
                 className: cx(
                     'ChordAbbreviation',
+                    'fontSize__lg',
                 ),
             }}
         >

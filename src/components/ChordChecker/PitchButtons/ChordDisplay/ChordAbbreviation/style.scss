@@ -1,11 +1,5 @@
 @import '../../../../../scss/constants/responsive';
 
 .ChordAbbreviation {
-    display: none;
     position: relative;
-    font-size: 1em;
-
-    @media (min-width: $breakpoint__sm) {
-        display: block;
-    }
 }

@@ -1,3 +1,14 @@
+@import '../../../scss/constants/responsive';
+
 .ChordDisplay {
     width: 100%;
+    height: $margin__md;
+
+    @media (min-width: $breakpoint__sm) {
+        height: $margin__lg;
+    }
+
+    @media (min-width: $breakpoint__md) {
+        height: $margin__xl;
+    }
 }
