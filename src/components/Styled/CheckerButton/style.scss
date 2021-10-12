@@ -48,31 +48,41 @@ $length__base: $margin__xs * 0.5;
     height: 90%;
 }
 
-.StyledCheckerButton__animatable {
-    position: relative;
+.StyledCheckerButton__child {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+}
 
-    .StyledCheckerButton:hover
+.StyledCheckerButton__button__clicked {
+    display: none;
+
+    .StyledCheckerButton__off:active
+    &,
+    .StyledCheckerButton__on:not(:active)
     & {
-        animation: bounceHover $transitionDuration__slow;
+        display: block;
     }
 }
 
-.StyledCheckerButton__button {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.StyledCheckerButton__button__unclicked {
+    .StyledCheckerButton__off:active
+    &,
+    .StyledCheckerButton__on:not(:active)
+    & {
+        display: none;
+    }
 }
 
 .StyledCheckerButton__face {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    .StyledCheckerButton__off:active
+    &,
+    .StyledCheckerButton__on:not(:active)
+    & {
+        top: 4%;
+    }
 }
 
 .StyledCheckerButton__on {

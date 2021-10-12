@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Flex from '../../Flex'
+import Button from '../../Button'
 import Svg from '../../Svg'
 import CheckerButtonSvg from '../../Svgs/CheckerButton'
 import styleConfigFaces from '../../../styles/checker/faces'
@@ -32,44 +33,53 @@ const StyledCheckerButton = ({
                 ),
             }}
         >
-            <button
+            <Button
                 {...{
                     className: cx(
                         'StyledCheckerButton',
-                        isOn && 'StyledCheckerButton__on',
+                        isOn ?
+                            'StyledCheckerButton__on' :
+                            'StyledCheckerButton__off',
                     ),
                     ...rest,
                 }}
             >
-                <div
+                <CheckerButtonSvg
+                    isClicked
                     {...{
+                        key: isOn,
                         className: cx(
-                            'StyledCheckerButton__animatable',
+                            'StyledCheckerButton__child',
+                            'StyledCheckerButton__button__clicked',
+                        ),
+                        styleConfig: styleConfig || (
+                            isOn ? styleConfigPitchOn : styleConfigPitch
                         ),
                     }}
-                >
-                    <CheckerButtonSvg
-                        {...{
-                            isOn,
-                            className: cx(
-                                'StyledCheckerButton__button',
-                            ),
-                            styleConfig: styleConfig || (
-                                isOn ? styleConfigPitchOn : styleConfigPitch
-                            ),
-                        }}
-                    />
-                    <Svg
-                        {...{
-                            className: cx(
-                                'StyledCheckerButton__face',
-                            ),
-                            src: faceSrc,
-                            styleConfig: styleConfigFaces,
-                        }}
-                    />
-                </div>
-            </button>
+                />
+                <CheckerButtonSvg
+                    {...{
+                        key: isOn,
+                        className: cx(
+                            'StyledCheckerButton__child',
+                            'StyledCheckerButton__button__unclicked',
+                        ),
+                        styleConfig: styleConfig || (
+                            isOn ? styleConfigPitchOn : styleConfigPitch
+                        ),
+                    }}
+                />
+                <Svg
+                    {...{
+                        className: cx(
+                            'StyledCheckerButton__child',
+                            'StyledCheckerButton__face',
+                        ),
+                        src: faceSrc,
+                        styleConfig: styleConfigFaces,
+                    }}
+                />
+            </Button>
         </Flex>
     </div>
 )

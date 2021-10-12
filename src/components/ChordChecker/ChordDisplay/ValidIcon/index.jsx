@@ -5,8 +5,8 @@ import Flex from '../../../Flex'
 import DominoSvg from '../../../Svgs/Domino'
 import { mapCurrentPitchSet } from '../../../../redux/chords/selector'
 import { getIsChord, getIsLegalRow } from '../../../../utils/chords/valid'
-import checkerValid from '../../../../assets/svgs/chords/checkerValid'
-import checkerInvalid from '../../../../assets/svgs/chords/checkerInvalid'
+import iconValid from '../../../../assets/svgs/chords/iconValid'
+import iconInvalid from '../../../../assets/svgs/chords/iconInvalid'
 import './style'
 
 const ValidIcon = () => {
@@ -24,7 +24,7 @@ const ValidIcon = () => {
                 getIsChord(currentPitchSet) && (
                     <DominoSvg
                         {...{
-                            src: checkerValid,
+                            src: iconValid,
                             isFigure: false,
                         }}
                     />
@@ -32,7 +32,7 @@ const ValidIcon = () => {
             ) : (
                 <DominoSvg
                     {...{
-                        src: checkerInvalid,
+                        src: iconInvalid,
                         isFigure: false,
                     }}
                 />
