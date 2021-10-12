@@ -1,0 +1,11 @@
+@import '../../../../scss/constants/responsive';
+
+.PitchChordDisplay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 54%;
+    height: 54%;
+    transform: translate(-50%, -50%);
+    padding: $margin__sm $margin__xs;
+}

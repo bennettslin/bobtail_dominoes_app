@@ -1,13 +1,6 @@
 @import '../../../../scss/constants/responsive';
 
 .ChordLabel {
-    display: none;
     position: relative;
-
-    font-size: 0.3em;
-    
-    @media (min-width: $breakpoint__md) {
-        font-size: 0.65em;
-        display: block;
-    }
+    // padding: $margin__xs;
 }

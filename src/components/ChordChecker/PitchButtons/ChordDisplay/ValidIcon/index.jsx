@@ -1,12 +1,12 @@
 import React from 'react'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
-import Flex from '../../../Flex'
-import DominoSvg from '../../../Svgs/Domino'
-import { mapCurrentPitchSet } from '../../../../redux/chords/selector'
-import { getIsChord, getIsLegalRow } from '../../../../utils/chords/valid'
-import iconValid from '../../../../assets/svgs/chords/iconValid'
-import iconInvalid from '../../../../assets/svgs/chords/iconInvalid'
+import Flex from '../../../../Flex'
+import DominoSvg from '../../../../Svgs/Domino'
+import { mapCurrentPitchSet } from '../../../../../redux/chords/selector'
+import { getIsChord, getIsLegalRow } from '../../../../../utils/chords/valid'
+import iconValid from '../../../../../assets/svgs/chords/iconValid'
+import iconInvalid from '../../../../../assets/svgs/chords/iconInvalid'
 import './style'
 
 const ValidIcon = () => {

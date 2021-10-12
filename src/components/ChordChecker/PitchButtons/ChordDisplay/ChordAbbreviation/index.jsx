@@ -1,12 +1,12 @@
 import React from 'react'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
-import Flex from '../../../Flex'
-import StyledText from '../../../Styled/Text'
-import { mapCurrentPitchSet } from '../../../../redux/chords/selector'
-import { getChordAbbreviation } from '../../../../utils/chords/label'
+import Flex from '../../../../Flex'
+import StyledText from '../../../../Styled/Text'
+import { mapCurrentPitchSet } from '../../../../../redux/chords/selector'
+import { getChordAbbreviation } from '../../../../../utils/chords/label'
 import './style'
-import { getTextWithAccidentalsSeparated } from '../../../../utils/format/music'
+import { getTextWithAccidentalsSeparated } from '../../../../../utils/format/music'
 
 const ChordAbbreviation = () => {
     const
