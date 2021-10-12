@@ -1,13 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useDispatch, useSelector } from 'react-redux'
-import StyledCheckerButton from '../../../Styled/CheckerButton'
+import CheckerButton from '../../CheckerButton'
 import { updateCurrentPitchSet } from '../../../../redux/chords/action'
 import { mapCurrentPitchSet } from '../../../../redux/chords/selector'
-import transposeUp from '../../../../assets/svgs/chords/transposeUp'
-import transposeDown from '../../../../assets/svgs/chords/transposeDown'
+import transpose from '../../../../assets/svgs/chords/transpose'
 import styleConfigOption from '../../../../styles/checker/option'
-import { transpose } from '../../../../utils/chords/math'
+import { transposePitchSet } from '../../../../utils/chords/math'
 
 const TransposeButton = ({ direction }) => {
     const
@@ -16,14 +15,15 @@ const TransposeButton = ({ direction }) => {
 
     const onClick = () => {
         dispatch(updateCurrentPitchSet(
-            transpose(currentPitchSet, direction),
+            transposePitchSet(currentPitchSet, direction),
         ))
     }
 
     return (
-        <StyledCheckerButton
+        <CheckerButton
             {...{
-                faceSrc: direction === 1 ? transposeUp : transposeDown,
+                faceSrc: transpose,
+                reverse: direction === -1,
                 styleConfig: styleConfigOption,
                 onClick,
             }}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import ReactInlineSvg from 'react-inlinesvg'
@@ -15,9 +15,11 @@ const Svg = ({
         className: styleClassName,
         styles,
     } = {},
-    onLoad,
+    onLoad = () => {},
 
 }) => {
+    const [isLoaded, setIsLoaded] = useState(false)
+
     const preProcessor = svgString => {
         return getSvgWithClassStyles({
             styleClassName,
@@ -35,12 +37,19 @@ const Svg = ({
                 xmlns: 'http://www.w3.org/2000/svg',
                 src,
                 className: cx(
+                    [
+                        'hidden',
+                        isLoaded && 'shown',
+                    ],
                     reverse && 'Svg__reverse',
                     className,
                     styleClassName,
                 ),
                 preProcessor,
-                onLoad,
+                onLoad: () => {
+                    setIsLoaded(true)
+                    onLoad()
+                },
             }}
         />
     )

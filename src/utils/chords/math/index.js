@@ -4,7 +4,7 @@ export const mod12 = number => (
     (number + PITCH_COUNT) % PITCH_COUNT
 )
 
-export const transpose = (pitchSet = new Set(), direction = 0) => {
+export const transposePitchSet = (pitchSet = new Set(), direction = 0) => {
     const newPitchSet = new Set()
     pitchSet.forEach(pitch => {
         newPitchSet.add(mod12(pitch + direction))

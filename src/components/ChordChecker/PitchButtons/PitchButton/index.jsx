@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { useDispatch, useSelector } from 'react-redux'
-import StyledCheckerButton from '../../../Styled/CheckerButton'
+import CheckerButton from '../../CheckerButton'
 import { updateCurrentPitchSet } from '../../../../redux/chords/action'
 import { mapCurrentPitchSet } from '../../../../redux/chords/selector'
 import faceC from '../../../../assets/svgs/chords/faceC'
@@ -41,7 +41,7 @@ const PitchButton = ({ pitch }) => {
     }
 
     return (
-        <StyledCheckerButton
+        <CheckerButton
             {...{
                 className: cx(
                     'PitchButton',

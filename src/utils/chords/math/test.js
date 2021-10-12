@@ -2,7 +2,7 @@ import {
     mod12,
     getArrayOfPitches,
     getArrayOfPitchesForCircleOfFifths,
-    transpose,
+    transposePitchSet,
 } from '.'
 
 describe('mod12', () => {
@@ -23,7 +23,7 @@ describe('mod12', () => {
     })
 })
 
-describe('transpose', () => {
+describe('transposePitchSet', () => {
     test.each([
         // Undefined.
         [undefined, 0, new Set()],
@@ -38,7 +38,7 @@ describe('transpose', () => {
         // Tetrad.
         [new Set([2, 4, 7, 11]), -3, new Set([11, 1, 4, 8])], // Chord.
     ])('%p transposed by %p yields %p', (set, direction, result) => {
-        expect(transpose(set, direction)).toStrictEqual(result)
+        expect(transposePitchSet(set, direction)).toStrictEqual(result)
     })
 })
 

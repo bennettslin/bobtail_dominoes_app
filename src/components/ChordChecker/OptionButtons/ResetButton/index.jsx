@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import StyledCheckerButton from '../../../Styled/CheckerButton'
+import CheckerButton from '../../CheckerButton'
 import { updateCurrentPitchSet } from '../../../../redux/chords/action'
 import pitchReset from '../../../../assets/svgs/chords/pitchReset'
 import styleConfigReset from '../../../../styles/checker/reset'
@@ -13,7 +13,7 @@ const ResetButton = () => {
     }
 
     return (
-        <StyledCheckerButton
+        <CheckerButton
             {...{
                 faceSrc: pitchReset,
                 styleConfig: styleConfigReset,

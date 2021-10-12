@@ -1,0 +1,19 @@
+.CheckerButtonSvg {
+    .CheckerButton__off:active
+    &,
+    .CheckerButton__on:not(:active)
+    & {
+        display: none;
+    }
+}
+
+.CheckerButtonSvg__clicked {
+    display: none;
+
+    .CheckerButton__off:active
+    &,
+    .CheckerButton__on:not(:active)
+    & {
+        display: block;
+    }
+}

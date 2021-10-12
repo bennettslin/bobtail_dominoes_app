@@ -1,0 +1,8 @@
+.CheckerFaceSvg {
+    .CheckerButton__off:active
+    &,
+    .CheckerButton__on:not(:active)
+    & {
+        top: 4%;
+    }
+}

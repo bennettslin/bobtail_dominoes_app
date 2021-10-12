@@ -1,13 +1,10 @@
-@import '../../../scss/constants/borders';
 @import '../../../scss/constants/colours';
 @import '../../../scss/constants/responsive';
-@import '../../../scss/constants/shadows';
-@import '../../../scss/constants/transition';
 @import '../../../scss/mixins/reflection';
 
 $length__base: $margin__xs * 0.5;
 
-.StyledCheckerButton__frame {
+.StyledCheckerButton {
     position: relative;
     width: $length__checkerButton__sm;
     height: $length__checkerButton__sm;
@@ -39,52 +36,11 @@ $length__base: $margin__xs * 0.5;
         );
         content: '';
     }
-}
 
-.StyledCheckerButton {
-    position: relative;
-    top: calc(-10% - #{$length__base * 0.5});
-    width: 90%;
-    height: 90%;
-}
-
-.StyledCheckerButton__child {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.StyledCheckerButton__button__clicked {
-    display: none;
-
-    .StyledCheckerButton__off:active
-    &,
-    .StyledCheckerButton__on:not(:active)
-    & {
-        display: block;
+    > * {
+        position: relative;
+        top: -10%;
+        width: 90%;
+        height: 90%;
     }
-}
-
-.StyledCheckerButton__button__unclicked {
-    .StyledCheckerButton__off:active
-    &,
-    .StyledCheckerButton__on:not(:active)
-    & {
-        display: none;
-    }
-}
-
-.StyledCheckerButton__face {
-    .StyledCheckerButton__off:active
-    &,
-    .StyledCheckerButton__on:not(:active)
-    & {
-        top: 4%;
-    }
-}
-
-.StyledCheckerButton__on {
-    filter: $dropShadow__lightHover;
 }
