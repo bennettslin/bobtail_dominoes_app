@@ -9,3 +9,7 @@ export const getIsChord = pitchSet => (
 export const getIsLegalRow = (pitchSet = new Set()) => (
     pitchSet.size <= 2 || getIsChord(pitchSet)
 )
+
+export const getIsIllegalRow = pitchSet => (
+    !getIsLegalRow(pitchSet)
+)

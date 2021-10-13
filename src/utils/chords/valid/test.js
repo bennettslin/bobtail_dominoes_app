@@ -1,4 +1,4 @@
-import { getIsChord, getIsLegalRow } from '.'
+import { getIsChord, getIsIllegalRow, getIsLegalRow } from '.'
 
 describe('getIsChord', () => {
     test.each([
@@ -54,5 +54,28 @@ describe('getIsLegalRow', () => {
         [new Set([9, 3, 7, 1, 5]), false],
     ])('%p returns %p', (set, result) => {
         expect(getIsLegalRow(set)).toBe(result)
+    })
+})
+
+describe('getIsIllegalRow', () => {
+    test.each([
+        // Undefined.
+        [undefined, false],
+        // Empty set.
+        [new Set(), false],
+        // Single pitch.
+        [new Set([3]), false],
+        // Dyad.
+        [new Set([3, 10]), false],
+        // Triad.
+        [new Set([0, 3, 7]), false], // Chord.
+        [new Set([8, 5, 3]), true], // Non-chord.
+        // Tetrad.
+        [new Set([2, 4, 7, 11]), false], // Chord.
+        [new Set([6, 11, 0, 5]), true], // Non-chord.
+        // Greater.
+        [new Set([9, 3, 7, 1, 5]), true],
+    ])('%p returns %p', (set, result) => {
+        expect(getIsIllegalRow(set)).toBe(result)
     })
 })
