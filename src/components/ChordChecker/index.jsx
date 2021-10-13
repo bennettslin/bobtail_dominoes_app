@@ -1,9 +1,9 @@
 import React from 'react'
 import cx from 'classnames'
 import Flex from '../Flex'
-import PitchButtons from './PitchButtons'
-import OptionButtons from './OptionButtons'
 import ChordDisplay from './ChordDisplay'
+import OptionButtons from './OptionButtons'
+import PitchButtons from './PitchButtons'
 import './style'
 
 const ChordChecker = () => (

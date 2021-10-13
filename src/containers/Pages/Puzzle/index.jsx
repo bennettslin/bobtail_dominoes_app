@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import getDidMountHoc from '../../../hocs/DidMountHoc'
+import PuzzleSvg from '../../../components/Svgs/Puzzle'
 import Page from '../../Page'
 import NotFoundPage from '../NotFound'
-import PuzzleSvg from '../../../components/Svgs/Puzzle'
 
 const PuzzlePage = ({
     didMount,

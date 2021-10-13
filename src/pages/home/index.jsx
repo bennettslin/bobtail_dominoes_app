@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import cx from 'classnames'
-import Page from '../../containers/Page'
 import Flex from '../../components/Flex'
 import StyledParagraph from '../../components/Styled/Paragraph'
 import DominoSvg from '../../components/Svgs/Domino'
+import Page from '../../containers/Page'
 import homeDominoes from '../../assets/svgs/home/homeDominoes'
 import './style'
 

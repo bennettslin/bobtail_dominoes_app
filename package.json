@@ -75,6 +75,7 @@
     "jsdom": "^16.7.0",
     "redux-devtools-extension": "^2.13.9",
     "sass": "^1.38.0",
-    "webpack": "^5.51.1"
+    "webpack": "^5.51.1",
+    "webpack-filter-warnings-plugin": "^1.2.1"
   }
 }

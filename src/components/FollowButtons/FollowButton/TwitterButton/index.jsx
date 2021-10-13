@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
-import FollowButton from '..'
 import Svg from '../../../Svg'
+import FollowButton from '..'
 import twitter from '../../../../assets/svgs/socialMedia/twitter'
 import { openSocialMediaPopup } from '../../../../utils/socialMedia'
 import { TWITTER_KEY } from '../../../../constants/socialMedia'

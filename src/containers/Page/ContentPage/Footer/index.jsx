@@ -2,7 +2,7 @@ import React from 'react'
 import cx from 'classnames'
 import Flex from '../../../../components/Flex'
 import DirectionRow from './DirectionRow'
-import BackLinkShareRow from './TopLevelShareRow'
+import TopLevelShareRow from './TopLevelShareRow'
 import './style'
 
 const PageFooter = () => (
@@ -16,7 +16,7 @@ const PageFooter = () => (
         }}
     >
         <DirectionRow />
-        <BackLinkShareRow />
+        <TopLevelShareRow />
     </Flex>
 )
 

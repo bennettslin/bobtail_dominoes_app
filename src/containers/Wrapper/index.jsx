@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import Main from '../Main'
 import Flex from '../../components/Flex'
 import Popups from '../../components/Popups'
+import Main from '../Main'
 import './style'
 
 const Wrapper = ({ children }) => (

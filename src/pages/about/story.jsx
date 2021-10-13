@@ -1,6 +1,6 @@
 import React from 'react'
-import Page from '../../containers/Page'
 import Image from '../../components/Image'
+import Page from '../../containers/Page'
 import PAGES_MAP from '../../content/about'
 import prototype_reduced from '../../assets/images/prototype_reduced.jpg'
 

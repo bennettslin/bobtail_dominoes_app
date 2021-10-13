@@ -1,8 +1,8 @@
 import React from 'react'
 import cx from 'classnames'
 import StyledDisplay from '../../../Styled/Display'
-import ValidIcon from './ValidIcon'
 import DisplayChordLabel from './ChordLabel'
+import ValidIcon from './ValidIcon'
 import './style'
 
 const PitchChordDisplay = () => (
