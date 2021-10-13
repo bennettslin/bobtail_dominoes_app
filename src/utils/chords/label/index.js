@@ -30,7 +30,7 @@ const CHORD_TYPE_MAP = {
     '0348': 'augmented major',
 }
 
-const CHORD_CONFIG_MAP = {
+const CHORD_ABBREVIATION_MAP = {
     '037': { type: 'm' },
     '047': null,
     '036': { sup: 'o' },
@@ -54,7 +54,7 @@ export const getChordAbbreviation = pitchSet => {
         {
             type,
             sup,
-        } = CHORD_CONFIG_MAP[getPrimeFormKey(pitchSet)] || {}
+        } = CHORD_ABBREVIATION_MAP[getPrimeFormKey(pitchSet)] || {}
 
     return {
         ...rootNote && { root: rootNote },
