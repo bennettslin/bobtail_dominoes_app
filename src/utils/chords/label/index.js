@@ -44,7 +44,7 @@ const CHORD_LABEL_MAP = {
     '0348': { quality: AUG, name: 'augmented major', type: '+', sup: 'M7' },
 }
 
-export const getRootLetter = pitchSet => {
+const getRootLetter = pitchSet => {
     const
         { quality } = CHORD_LABEL_MAP[getPrimeFormKey(pitchSet)] || {},
         root = getRoot(pitchSet),
@@ -66,7 +66,7 @@ export const getChordAbbreviation = pitchSet => {
         } = CHORD_LABEL_MAP[getPrimeFormKey(pitchSet)] || {}
 
     return {
-        ...rootLetter && { rootLetter },
+        ...rootLetter && { root: rootLetter },
         ...type && { type },
         ...sup && { sup },
     }

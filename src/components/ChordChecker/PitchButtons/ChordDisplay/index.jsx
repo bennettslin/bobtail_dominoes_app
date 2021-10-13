@@ -2,7 +2,7 @@ import React from 'react'
 import cx from 'classnames'
 import StyledDisplay from '../../../Styled/Display'
 import ValidIcon from './ValidIcon'
-import ChordAbbreviation from './ChordAbbreviation'
+import DisplayChordLabel from './ChordLabel'
 import './style'
 
 const PitchChordDisplay = () => (
@@ -15,7 +15,7 @@ const PitchChordDisplay = () => (
         }}
     >
         <ValidIcon />
-        <ChordAbbreviation />
+        <DisplayChordLabel />
     </StyledDisplay>
 )
 

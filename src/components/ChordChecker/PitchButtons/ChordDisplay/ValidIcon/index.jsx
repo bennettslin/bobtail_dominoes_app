@@ -9,16 +9,17 @@ import iconInvalid from '../../../../../assets/svgs/chords/iconInvalid'
 import './style'
 
 const ValidIcon = () => {
-    const currentPitchSet = useSelector(mapCurrentPitchSet)
+    const currentPitchSet = useSelector(mapCurrentPitchSet),
+        isChord = getIsChord(currentPitchSet)
 
-    return (!getIsLegalRow(currentPitchSet) || getIsChord(currentPitchSet)) && (
+    return (!getIsLegalRow(currentPitchSet) || isChord) && (
         <DominoSvg
             {...{
-                key: getIsChord(currentPitchSet),
+                key: isChord,
                 className: cx(
                     'ValidIcon',
                 ),
-                src: getIsChord(currentPitchSet) ? iconValid : iconInvalid,
+                src: isChord ? iconValid : iconInvalid,
                 isFigure: false,
             }}
         />
