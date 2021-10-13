@@ -12,7 +12,7 @@ const ChordAbbreviation = () => {
     const
         currentPitchSet = useSelector(mapCurrentPitchSet),
         {
-            root,
+            rootLetter,
             type,
             sup,
         } = getChordAbbreviation(currentPitchSet)
@@ -27,7 +27,7 @@ const ChordAbbreviation = () => {
             }}
         >
             <StyledText isShadow>
-                {getTextWithAccidentalsSeparated(root)}{type}
+                {getTextWithAccidentalsSeparated(rootLetter)}{type}
                 {/* Always render sup tag for line height consistency. */}
                 <sup>{sup}</sup>
             </StyledText>

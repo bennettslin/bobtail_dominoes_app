@@ -1,10 +1,12 @@
 .text__flat {
-    font-size: 1.125em;
+    left: 0.05em;
     bottom: 0.175em;
+    font-size: 1.125em;
+    letter-spacing: 0.075em;
 }
 
 .text__sharp {
-    font-size: 1em;
+    left: 0.05em;
     bottom: 0.325em;
-    letter-spacing: 0.025em;
+    letter-spacing: 0.1em;
 }
