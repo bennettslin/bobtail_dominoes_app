@@ -5,12 +5,13 @@ import Paragraph from '../../Paragraph'
 import StyledText from '../Text'
 import './style'
 
-const StyledParagraph = ({ children }) => (
+const StyledParagraph = ({ className, children }) => (
     <Paragraph
         {...{
             className: cx(
                 'StyledParagraph',
                 'fontSize__md',
+                className,
             ),
         }}
     >
@@ -21,6 +22,7 @@ const StyledParagraph = ({ children }) => (
 )
 
 StyledParagraph.propTypes = {
+    className: PropTypes.string,
     children: PropTypes.node.isRequired,
 }
 

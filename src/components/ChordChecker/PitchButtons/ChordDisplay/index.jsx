@@ -12,7 +12,6 @@ const PitchChordDisplay = () => (
                 'PitchChordDisplay',
             ),
             flexDirection: 'column',
-            justifyContent: 'space-between',
         }}
     >
         <ValidIcon />

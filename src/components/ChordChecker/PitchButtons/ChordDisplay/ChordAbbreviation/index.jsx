@@ -2,7 +2,7 @@ import React from 'react'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Flex from '../../../../Flex'
-import StyledText from '../../../../Styled/Text'
+import StyledParagraph from '../../../../Styled/Paragraph'
 import { mapCurrentPitchSet } from '../../../../../redux/chords/selector'
 import { getChordAbbreviation } from '../../../../../utils/chords/label'
 import './style'
@@ -22,15 +22,21 @@ const ChordAbbreviation = () => {
             {...{
                 className: cx(
                     'ChordAbbreviation',
-                    'fontSize__lg',
+                    'fontSize__md',
                 ),
             }}
         >
-            <StyledText isShadow>
+            <StyledParagraph
+                {...{
+                    className: cx(
+                        'ChordAbbreviation__paragraph',
+                    ),
+                }}
+            >
                 {getTextWithAccidentalsSeparated(rootLetter)}{type}
                 {/* Always render sup tag for line height consistency. */}
                 <sup>{sup}</sup>
-            </StyledText>
+            </StyledParagraph>
         </Flex>
     )
 }
