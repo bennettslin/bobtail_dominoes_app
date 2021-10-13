@@ -8,6 +8,7 @@ const StyledPlatform = ({
     className,
     isLeftPlatform,
     isRightPlatform,
+    isBottomPlatform,
     children,
     ...rest
 }) => (
@@ -17,6 +18,8 @@ const StyledPlatform = ({
                 'StyledPlatform',
                 isLeftPlatform && 'StyledPlatform__left',
                 isRightPlatform && 'StyledPlatform__right',
+                (isLeftPlatform || isRightPlatform) && 'StyledPlatform__side',
+                isBottomPlatform && 'StyledPlatform__bottom',
                 className,
             ),
             flexGrow: 1,
@@ -31,6 +34,7 @@ StyledPlatform.propTypes = {
     className: PropTypes.string,
     isLeftPlatform: PropTypes.bool,
     isRightPlatform: PropTypes.bool,
+    isBottomPlatform: PropTypes.bool,
     children: PropTypes.node.isRequired,
 }
 

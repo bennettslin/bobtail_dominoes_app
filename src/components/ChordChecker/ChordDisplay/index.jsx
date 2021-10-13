@@ -6,7 +6,7 @@ import ChordLabel from './ChordLabel'
 import './style'
 
 const ChordDisplay = () => (
-    <StyledPlatform>
+    <StyledPlatform isBottomPlatform>
         <StyledDisplay
             {...{
                 className: cx(

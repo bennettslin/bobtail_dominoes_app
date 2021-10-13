@@ -4,7 +4,6 @@ import Flex from '../Flex'
 import PitchButtons from './PitchButtons'
 import OptionButtons from './OptionButtons'
 import ChordDisplay from './ChordDisplay'
-import { margin__sm } from '../../constants/responsive'
 import './style'
 
 const ChordChecker = () => (
@@ -16,7 +15,6 @@ const ChordChecker = () => (
             flexDirection: 'column',
             justifyContent: 'normal',
             alignItems: 'normal',
-            gap: margin__sm,
         }}
     >
         <Flex
