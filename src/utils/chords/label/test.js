@@ -1,5 +1,4 @@
 import { getChordAbbreviation, getChordLabel } from '.'
-import { FLAT, SHARP } from '../../../constants/music'
 
 describe('getChordAbbreviation', () => {
     test.each([
@@ -12,7 +11,7 @@ describe('getChordAbbreviation', () => {
         // Dyad.
         [new Set([3, 10]), {}],
         // Triad.
-        [new Set([3, 6, 10]), { root: `D${SHARP}`, type: 'm' }],
+        [new Set([3, 6, 10]), { root: `D♯`, type: 'm' }],
         [new Set([11, 7, 2]), { root: 'G' }],
         [new Set([5, 8, 2]), { root: 'D', sup: 'o' }],
         [new Set([4, 0, 8]), { root: 'C', type: '+' }],
@@ -20,11 +19,11 @@ describe('getChordAbbreviation', () => {
         // Tetrad.
         [new Set([2, 4, 7, 11]), { root: 'E', type: 'm', sup: '7' }],
         [new Set([11, 9, 6, 3]), { root: 'B', sup: '7' }],
-        [new Set([1, 6, 5, 10]), { root: `G${FLAT}`, type: 'maj', sup: '7' }],
+        [new Set([1, 6, 5, 10]), { root: `G♭`, type: 'maj', sup: '7' }],
         [new Set([9, 4, 8, 0]), { root: 'A', type: 'm', sup: 'M7' }],
-        [new Set([11, 2, 6, 8]), { root: `G${SHARP}`, sup: 'ø7' }],
-        [new Set([10, 7, 4, 1]), { root: `C${SHARP}`, sup: 'o7' }],
-        [new Set([2, 9, 6, 10]), { root: `B${FLAT}`, type: '+', sup: 'M7' }],
+        [new Set([11, 2, 6, 8]), { root: `G♯`, sup: 'ø7' }],
+        [new Set([10, 7, 4, 1]), { root: `C♯`, sup: 'o7' }],
+        [new Set([2, 9, 6, 10]), { root: `B♭`, type: '+', sup: 'M7' }],
         [new Set([2, 0, 7, 5]), {}],
         // Greater.
         [new Set([9, 3, 7, 1, 5]), {}],
@@ -44,7 +43,7 @@ describe('getChordLabel', () => {
         // Dyad.
         [new Set([3, 10]), null],
         // Triad.
-        [new Set([3, 6, 10]), `D${SHARP} minor triad`],
+        [new Set([3, 6, 10]), `D♯ minor triad`],
         [new Set([11, 7, 2]), 'G major triad'],
         [new Set([5, 8, 2]), 'D diminished triad'],
         [new Set([4, 0, 8]), `C augmented triad`],
@@ -52,11 +51,11 @@ describe('getChordLabel', () => {
         // Tetrad.
         [new Set([2, 4, 7, 11]), 'E minor seventh'],
         [new Set([11, 9, 6, 3]), 'B dominant seventh'],
-        [new Set([1, 6, 5, 10]), `G${FLAT} major seventh`],
+        [new Set([1, 6, 5, 10]), `G♭ major seventh`],
         [new Set([9, 4, 8, 0]), `A minor-major seventh`],
-        [new Set([11, 2, 6, 8]), `G${SHARP} half-diminished seventh`],
-        [new Set([10, 7, 4, 1]), `C${SHARP} diminished seventh`],
-        [new Set([2, 9, 6, 10]), `B${FLAT} augmented major seventh`],
+        [new Set([11, 2, 6, 8]), `G♯ half-diminished seventh`],
+        [new Set([10, 7, 4, 1]), `C♯ diminished seventh`],
+        [new Set([2, 9, 6, 10]), `B♭ augmented major seventh`],
         [new Set([2, 0, 7, 5]), null],
         // Greater.
         [new Set([9, 3, 7, 1, 5]), null],

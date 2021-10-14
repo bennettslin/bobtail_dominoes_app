@@ -3,7 +3,7 @@
 
 @font-face {
     font-family: Fresca;
-    src: url('../assets/fonts/Fresca/Fresca-Regular.ttf');
+    src: url('../assets/fonts/Fresca/FrescaMusic-Regular.ttf');
 }
 
 @font-face {
@@ -21,11 +21,6 @@
     src: url('../assets/fonts/Rancho/Rancho-Regular.ttf');
 }
 
-@font-face {
-    font-family: Maestro;
-    src: url('../assets/fonts/Maestro/Maestro.ttf');
-}
-
 .font__text {
     font-family: Fresca, Arial;
     letter-spacing: 0.025em;
@@ -39,11 +34,6 @@
 .font__button {
     font-family: Chicle, Arial;
     letter-spacing: 0.05em;
-}
-
-.font__accidental {
-    position: relative;
-    font-family: Maestro;
 }
 
 .fontSize__md {

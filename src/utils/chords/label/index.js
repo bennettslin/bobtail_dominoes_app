@@ -1,7 +1,8 @@
 import { getPrimeFormKey, getRoot } from '../primeForm'
-import { FLAT, SHARP } from '../../../constants/music'
 
 const
+    FLAT = '♭',
+    SHARP = '♯',
     MINOR = 'minor',
     MAJOR = 'major',
     DIM = 'diminished',

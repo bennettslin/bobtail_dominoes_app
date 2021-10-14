@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux'
 import StyledChordLabel from '../../../../Styled/ChordLabel'
 import { mapCurrentPitchSet } from '../../../../../redux/chords/selector'
 import { getChordAbbreviation } from '../../../../../utils/chords/label'
-import { getTextWithAccidentalsSeparated } from '../../../../../utils/format/music'
 
 const DisplayChordLabel = () => {
     const
@@ -23,7 +22,7 @@ const DisplayChordLabel = () => {
                 ),
             }}
         >
-            {getTextWithAccidentalsSeparated(root)}{type}
+            {root}{type}
             {/* Always render sup tag for line height consistency. */}
             <sup>{sup}</sup>
         </StyledChordLabel>
