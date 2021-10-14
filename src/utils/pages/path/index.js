@@ -26,7 +26,12 @@ export const getLinkFromPath = path => (
 
 export const getUrlFromPath = path => {
     // Include ending forward slash because Twitter warns about redirects.
-    const finalSlash = path === HOME_PAGE ? '' : '/'
+    const finalSlash = (
+        path === HOME_PAGE ||
+
+        // Exclude if it's a file path.
+        path.includes('.')
+    ) ? '' : '/'
 
     return `${DOMAIN_NAME}${getLinkFromPath(path)}${finalSlash}`
 }
