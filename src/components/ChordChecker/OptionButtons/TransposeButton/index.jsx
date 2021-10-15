@@ -21,6 +21,7 @@ const TransposeButton = ({ direction }) => {
 
     return (
         <CheckerButton
+            enableWithSonority
             {...{
                 faceSrc: transpose,
                 reverse: direction === -1,

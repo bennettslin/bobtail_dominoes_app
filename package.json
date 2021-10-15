@@ -48,7 +48,8 @@
     "react-transition-group": "^4.4.2",
     "redux": "^4.1.1",
     "remove-markdown": "^0.3.0",
-    "reselect": "^4.0.0"
+    "reselect": "^4.0.0",
+    "tone": "^14.7.77"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",

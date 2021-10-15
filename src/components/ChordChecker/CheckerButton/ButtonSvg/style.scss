@@ -2,6 +2,8 @@
     .CheckerButton__off:active
     &,
     .CheckerButton__on:not(:active)
+    &,
+    .CheckerButton:disabled
     & {
         display: none;
     }
@@ -13,6 +15,8 @@
     .CheckerButton__off:active
     &,
     .CheckerButton__on:not(:active)
+    &,
+    .CheckerButton:disabled
     & {
         display: block;
     }

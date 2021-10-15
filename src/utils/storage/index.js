@@ -25,3 +25,7 @@ export const getBoolFromStorage = key => {
 export const setBoolInStorage = (key, value) => {
     getWindowStorage()[key] = value ? 'true' : 'false'
 }
+
+export const getIntegerFromStorage = key => (
+    parseInt(getWindowStorage()[key]) || 0
+)

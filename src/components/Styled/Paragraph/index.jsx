@@ -23,7 +23,7 @@ const StyledParagraph = ({ className, children }) => (
 
 StyledParagraph.propTypes = {
     className: PropTypes.string,
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node,
 }
 
 export default StyledParagraph

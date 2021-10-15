@@ -1,15 +1,15 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import CheckerButton from '../../CheckerButton'
-import { updateCurrentPitchSet } from '../../../../redux/chords/action'
+import { updateQueuedPlay } from '../../../../redux/audio/action'
 import pitchReset from '../../../../assets/svgs/chords/pitchReset'
-import styleConfigReset from '../../../../styles/checker/reset'
+import styleConfigAudio from '../../../../styles/checker/audio'
 
-const ResetButton = () => {
+const PlayButton = () => {
     const dispatch = useDispatch()
 
     const onClick = () => {
-        dispatch(updateCurrentPitchSet(new Set()))
+        dispatch(updateQueuedPlay(true))
     }
 
     return (
@@ -17,11 +17,11 @@ const ResetButton = () => {
             enableWithSonority
             {...{
                 faceSrc: pitchReset,
-                styleConfig: styleConfigReset,
+                styleConfig: styleConfigAudio,
                 onClick,
             }}
         />
     )
 }
 
-export default ResetButton
+export default PlayButton

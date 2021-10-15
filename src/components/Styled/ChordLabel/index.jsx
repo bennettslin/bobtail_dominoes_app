@@ -28,7 +28,7 @@ const StyledChordLabel = ({ className, children }) => (
 
 StyledChordLabel.propTypes = {
     className: PropTypes.string,
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node,
 }
 
 export default StyledChordLabel

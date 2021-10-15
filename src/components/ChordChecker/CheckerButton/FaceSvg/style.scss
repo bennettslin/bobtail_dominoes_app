@@ -5,6 +5,8 @@
     .CheckerButton__off:active
     &,
     .CheckerButton__on:not(:active)
+    &,
+    .CheckerButton:disabled
     & {
         top: 3.5%;
     }

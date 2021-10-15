@@ -8,14 +8,17 @@
 }
 
 .ButtonAnimatable__enabled {
-    cursor: pointer;
+    .Button:not(:disabled)
+    & {
+        cursor: pointer;
+    }
 
-    .Button:hover
+    .Button:not(:disabled):hover
     & {
         animation: bounceHover $transitionDuration__slow;
     }
 
-    .Button:active
+    .Button:not(:disabled):active
     & {
         transform: scale(0.9);
     }
@@ -24,7 +27,7 @@
 .ButtonAnimatable__dropShadow {
     filter: $dropShadow;
 
-    .Button:hover
+    .Button:not(:disabled):hover
     & {
         filter: $dropShadow__lightHover;
     }
