@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Flex from '../../components/Flex'
 import StyledBackground from '../../components/Styled/Background'
-import Audio from '../Audio'
 import Wrapper from '../Wrapper'
 import AppFooter from './Footer'
 import './style'
@@ -20,7 +19,6 @@ const App = ({ children }) => (
             alignItems: 'normal',
         }}
     >
-        <Audio />
         <StyledBackground />
         <Wrapper>{children}</Wrapper>
         <AppFooter />

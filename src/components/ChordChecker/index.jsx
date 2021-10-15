@@ -1,6 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 import Flex from '../Flex'
+import Audio from './Audio'
 import ChordDisplay from './ChordDisplay'
 import OptionButtons from './OptionButtons'
 import PitchButtons from './PitchButtons'
@@ -17,6 +18,7 @@ const ChordChecker = () => (
             alignItems: 'normal',
         }}
     >
+        <Audio />
         <Flex
             {...{
                 className: cx(
