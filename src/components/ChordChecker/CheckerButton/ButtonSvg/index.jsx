@@ -5,7 +5,7 @@ import Svg from '../../../Svg'
 import styleConfigPitch from '../../../../styles/checker/pitch'
 import styleConfigOn from '../../../../styles/checker/on'
 import button from '../../../../assets/svgs/chords/button'
-import buttonClicked from '../../../../assets/svgs/chords/buttonClicked'
+import buttonPressed from '../../../../assets/svgs/chords/buttonPressed'
 import './style'
 
 const CheckerButtonSvg = ({
@@ -18,10 +18,10 @@ const CheckerButtonSvg = ({
             key: isOn,
             className: cx(
                 'CheckerButtonSvg',
-                isClicked && 'CheckerButtonSvg__clicked',
+                isClicked && 'CheckerButtonSvg__pressed',
             ),
             src: isClicked ?
-                buttonClicked :
+                buttonPressed :
                 button,
             styleConfig: isOn ?
                 styleConfigOn :
