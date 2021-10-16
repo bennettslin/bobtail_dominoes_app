@@ -1,11 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { start } from 'tone'
 import Button from '../../Button'
 import StyledCheckerButton from '../../Styled/CheckerButton'
 import CheckerButtonSvg from './ButtonSvg'
 import CheckerFaceSvg from './FaceSvg'
+import { updateIsAudioStarted } from '../../../redux/audio/action'
+import { mapIsAudioStarted } from '../../../redux/audio/selector'
 import { mapHasSonority } from '../../../redux/chords/selector'
 import './style'
 
@@ -22,9 +25,14 @@ const CheckerButton = ({
     onClick,
     ...rest
 }) => {
-    const hasSonority = useSelector(mapHasSonority)
+    const
+        dispatch = useDispatch(),
+        isAudioStarted = useSelector(mapIsAudioStarted),
+        hasSonority = useSelector(mapHasSonority)
 
-    const handleButtonClick = () => {
+    const onClickWithStart = async () => {
+        await start()
+        dispatch(updateIsAudioStarted(true))
         onClick()
     }
 
@@ -46,7 +54,9 @@ const CheckerButton = ({
                     ...enableWithSonority && {
                         disabled: !hasSonority || disabled,
                     },
-                    handleButtonClick,
+                    handleButtonClick: isAudioStarted ?
+                        onClick :
+                        onClickWithStart,
                     ...rest,
                 }}
             >
