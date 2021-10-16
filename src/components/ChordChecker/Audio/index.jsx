@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Synth } from 'tone'
+import { PolySynth, Synth } from 'tone'
 import { updateQueuedPlay } from '../../../redux/audio/action'
 import { mapIsAutoplayOn, mapQueuedPlay } from '../../../redux/audio/selector'
 import { mapCurrentPitchSet, mapHasSonority } from '../../../redux/chords/selector'
@@ -15,7 +15,8 @@ const Audio = () => {
         hasSonority = useSelector(mapHasSonority)
 
     const initializeSynth = () => {
-        const newSynth = new Synth().toDestination()
+        const newSynth = new PolySynth(Synth).toDestination()
+
         newSynth.volume.value = -10 // By ear.
         setSynth(newSynth)
         return newSynth
