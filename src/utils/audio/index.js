@@ -1,58 +1,36 @@
+import { mod12 } from '../chords/math'
+
 const
-    LOWEST_PITCH = {
-        root: 0,
-        register: 3,
-    },
-    HIGHEST_PITCH = {
-        root: 11,
-        register: 5,
-    }
+    LOWEST_PITCH = 36, // C3.
+    HIGHEST_PITCH = 71 // B5.
 
 const AUDIO_PITCHES = [
-    'C',
-    'C#',
-    'D',
-    'D#',
-    'E',
-    'F',
-    'F#',
-    'G',
-    'G#',
-    'A',
-    'A#',
-    'B',
+    'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B',
 ]
 
-const getPitchIndex = ({ root, register }) => (
-    register * AUDIO_PITCHES.length + root
-)
+export const getPitchConfig = pitchIndex => ({
+    register: Math.floor(pitchIndex / 12),
+    pitch: pitchIndex === -1 ? pitchIndex : mod12(pitchIndex),
+})
 
-export const getAudioPitches = pitchSet => {
-    const audioPitches = []
-    let {
-        root,
-        register,
-    } = LOWEST_PITCH
+export const getPitchIndices = pitchSet => {
+    const pitchIndices = []
+    let pitchIndex = LOWEST_PITCH
 
-    while (
-        getPitchIndex({ root, register }) <= getPitchIndex(HIGHEST_PITCH)
-    ) {
-        // Add to pitches if it's in set.
-        if (pitchSet.has(root)) {
-            audioPitches.push(`${AUDIO_PITCHES[root]}${register}`)
+    while (pitchIndex <= HIGHEST_PITCH) {
+        const { pitch } = getPitchConfig(pitchIndex)
+
+        if (pitchSet.has(pitch)) {
+            pitchIndices.push(pitchIndex)
         }
 
-        // Increment.
-        root++
-        if (root === AUDIO_PITCHES.length) {
-            root = 0
-            register++
-        }
+        pitchIndex++
     }
 
-    return audioPitches
+    return pitchIndices
 }
 
-// export const getDuration = pitchSet => (
-
-// )
+export const getPitchLetter = pitchIndex => {
+    const { register, pitch } = getPitchConfig(pitchIndex)
+    return `${AUDIO_PITCHES[pitch]}${register}`
+}

@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { now, PolySynth, FMSynth } from 'tone'
-import { updateQueuedPlay } from '../../redux/audio/action'
+import { updateCurrentPitchIndex, queuePlay } from '../../redux/audio/action'
 import { mapIsAutoplayOn, mapQueuedPlay } from '../../redux/audio/selector'
 import { mapCurrentPitchSet, mapHasSonority } from '../../redux/chords/selector'
-import { getAudioPitches } from '../../utils/audio'
+import { getPitchIndices, getPitchLetter } from '../../utils/audio'
 
 const Audio = () => {
     const
@@ -26,24 +26,37 @@ const Audio = () => {
         return synth || initializeSynth()
     }
 
-    const play = () => {
-        getAudioPitches(currentPitchSet).forEach((audioPitch, index) => {
+    const getAttackTime = (index, multiplier = 1) => (
+        index * 0.25 / currentPitchSet.size * multiplier // By ear.
+    )
+
+    const soundPitches = pitchIndices => {
+        pitchIndices.forEach((pitchIndex, index) => {
             getSynth().triggerAttackRelease(
-                audioPitch,
-                0.1,
-                now() + index * 0.2 / currentPitchSet.size,
+                getPitchLetter(pitchIndex),
+                0.1, // Sound duration, by ear.
+                now() + getAttackTime(index),
             )
         })
+    }
 
-        // TODO: Reset queued play after last pitch.
-        setTimeout(() => {
-            dispatch(updateQueuedPlay())
-        }, 500)
+    const timePitches = pitchIndices => {
+        [...pitchIndices, -1].forEach((pitchIndex, index) => {
+            setTimeout(() => {
+                dispatch(updateCurrentPitchIndex(pitchIndex))
+            }, getAttackTime(index, 1000))
+        })
+    }
+
+    const play = () => {
+        const pitchIndices = getPitchIndices(currentPitchSet)
+        soundPitches(pitchIndices)
+        timePitches(pitchIndices)
     }
 
     useEffect(() => {
         if (isAutoplayOn && hasSonority && !queuedPlay) {
-            dispatch(updateQueuedPlay(true))
+            dispatch(queuePlay())
         }
     }, [currentPitchSet])
 

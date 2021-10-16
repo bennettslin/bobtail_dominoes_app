@@ -2,6 +2,18 @@ import { setBoolInStorage } from '../../utils/storage'
 import { AUDIO_STORE } from '../../constants/store'
 import { AUDIO_DEFAULT } from './default'
 
+export const updateCurrentPitchIndex = (
+    currentPitchIndex = AUDIO_DEFAULT.currentPitchIndex,
+) => ({
+    type: AUDIO_STORE,
+    payload: {
+        currentPitchIndex,
+        ...currentPitchIndex === -1 && {
+            queuedPlay: AUDIO_DEFAULT.queuedPlay,
+        },
+    },
+})
+
 export const updateIsAudioStarted = (
     isAudioStarted = AUDIO_DEFAULT.isAudioStarted,
 ) => ({
@@ -20,9 +32,7 @@ export const updateIsAutoplayOn = (
     }
 }
 
-export const updateQueuedPlay = (
-    queuedPlay = AUDIO_DEFAULT.queuedPlay,
-) => ({
+export const queuePlay = () => ({
     type: AUDIO_STORE,
-    payload: { queuedPlay },
+    payload: { queuedPlay: true },
 })

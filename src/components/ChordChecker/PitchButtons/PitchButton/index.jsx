@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import CheckerButton from '../../CheckerButton'
 import { updateCurrentPitchSet } from '../../../../redux/chords/action'
 import { mapCurrentPitchSet } from '../../../../redux/chords/selector'
+import { getMapIsCurrentPitch } from '../../../../redux/audio/selector'
+import styleConfigAudioOn from '../../../../styles/checker/audioOn'
 import faceC from '../../../../assets/svgs/chords/faceC'
 import faceCD from '../../../../assets/svgs/chords/faceCD'
 import faceD from '../../../../assets/svgs/chords/faceD'
@@ -27,6 +29,7 @@ const PitchButton = ({ pitch }) => {
     const
         dispatch = useDispatch(),
         currentPitchSet = useSelector(mapCurrentPitchSet),
+        isCurrentPitch = useSelector(getMapIsCurrentPitch(pitch)),
         isOn = currentPitchSet.has(pitch)
 
     const onClick = () => {
@@ -52,6 +55,9 @@ const PitchButton = ({ pitch }) => {
                     left: `${COORDINATES[Math.abs(6 - (pitch + 9) % 12)]}%`,
                 },
                 isOn,
+                ...isCurrentPitch && {
+                    styleConfigOn: styleConfigAudioOn,
+                },
                 onClick,
             }}
         />
