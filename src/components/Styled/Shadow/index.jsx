@@ -3,20 +3,20 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import './style'
 
-const StyledText = ({
+const StyledShadow = ({
     isInteractive,
     isInset,
-    isShadow,
     children,
 }) => children && (
     <>
         <span
             {...{
                 className: cx(
-                    'StyledText__rear',
-                    isInteractive && 'StyledText__interactive',
-                    isInset && 'StyledText__rearInset',
-                    isShadow && 'StyledText__rearShadow',
+                    'StyledShadow__rear',
+                    isInteractive && 'StyledShadow__interactive',
+                    isInset ?
+                        'StyledShadow__rearInset' :
+                        'StyledShadow__rearShadow',
                 ),
             }}
         >
@@ -25,10 +25,11 @@ const StyledText = ({
         <span
             {...{
                 className: cx(
-                    'StyledText__front',
-                    isInteractive && 'StyledText__interactive',
-                    isInset && 'StyledText__frontInset',
-                    isShadow && 'StyledText__frontShadow',
+                    'StyledShadow__front',
+                    isInteractive && 'StyledShadow__interactive',
+                    isInset ?
+                        'StyledShadow__frontInset' :
+                        'StyledShadow__frontShadow',
                 ),
             }}
         >
@@ -37,11 +38,10 @@ const StyledText = ({
     </>
 )
 
-StyledText.propTypes = {
+StyledShadow.propTypes = {
     isInteractive: PropTypes.bool,
     isInset: PropTypes.bool,
-    isShadow: PropTypes.bool,
     children: PropTypes.node,
 }
 
-export default StyledText
+export default StyledShadow

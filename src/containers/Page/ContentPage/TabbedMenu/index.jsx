@@ -23,7 +23,7 @@ const TabbedMenu = () => {
             }}
         >
             {showBackLink && (
-                <BackLink isStyledText />
+                <BackLink isStyledShadow />
             )}
             {pages.map(({
                 id,

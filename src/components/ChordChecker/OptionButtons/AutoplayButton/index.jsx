@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import getDidMountHoc from '../../../../hocs/DidMountHoc'
 import CheckerButton from '../../CheckerButton'
 import { updateIsAutoplayOn } from '../../../../redux/audio/action'
-import pitchReset from '../../../../assets/svgs/chords/pitchReset'
+import autoplay from '../../../../assets/svgs/chords/autoplay'
 import styleConfigAudio from '../../../../styles/checker/audio'
 import styleConfigAudioOn from '../../../../styles/checker/audioOn'
 import { mapIsAutoplayOn } from '../../../../redux/audio/selector'
@@ -21,7 +21,7 @@ const AutoplayButton = ({ didMount }) => {
     return (
         <CheckerButton
             {...{
-                faceSrc: pitchReset,
+                faceSrc: autoplay,
                 styleConfig: styleConfigAudio,
                 styleConfigOn: styleConfigAudioOn,
                 isOn: didMount && isAutoplayOn,

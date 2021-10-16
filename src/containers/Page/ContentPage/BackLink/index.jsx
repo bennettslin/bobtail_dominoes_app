@@ -13,12 +13,12 @@ import { getCapitalizedText } from '../../../../utils/format'
 import backLink from '../../../../assets/svgs/app/backLink'
 import './style'
 
-const BackLink = ({ isStyledText }) => {
+const BackLink = ({ isStyledShadow }) => {
     const
         { topLevelPage } = useContext(PageConfigContext),
         showBackLink = useSelector(getMapShowBackLink(topLevelPage)),
-        Tag = isStyledText ? StyledBackLink : Anchor,
-        TextTag = isStyledText ? StyledButtonText : Fragment
+        Tag = isStyledShadow ? StyledBackLink : Anchor,
+        TextTag = isStyledShadow ? StyledButtonText : Fragment
 
     return showBackLink && (
         <Tag
@@ -56,7 +56,7 @@ const BackLink = ({ isStyledText }) => {
 }
 
 BackLink.propTypes = {
-    isStyledText: PropTypes.bool,
+    isStyledShadow: PropTypes.bool,
 }
 
 export default BackLink

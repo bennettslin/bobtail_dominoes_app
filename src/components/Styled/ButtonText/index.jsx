@@ -1,21 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import StyledText from '../Text'
+import StyledShadow from '../Shadow'
 
 const StyledButtonText = ({
     isSelected,
     children,
 
 }) => (
-    <StyledText
+    <StyledShadow
         isInteractive
         {...{
             isInset: isSelected,
-            isShadow: !isSelected,
         }}
     >
         {children}
-    </StyledText>
+    </StyledShadow>
 )
 
 StyledButtonText.propTypes = {

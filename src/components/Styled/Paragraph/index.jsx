@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Paragraph from '../../Paragraph'
-import StyledText from '../Text'
+import StyledShadow from '../Shadow'
 import './style'
 
 const StyledParagraph = ({ className, children }) => (
@@ -15,9 +15,9 @@ const StyledParagraph = ({ className, children }) => (
             ),
         }}
     >
-        <StyledText isShadow >
+        <StyledShadow >
             {children}
-        </StyledText>
+        </StyledShadow>
     </Paragraph>
 )
 
