@@ -2,8 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Svg from '../../../Svg'
-import styleConfigPitch from '../../../../styles/checker/pitch'
-import styleConfigPitchOn from '../../../../styles/checker/pitchOn'
 import button from '../../../../assets/svgs/chords/button'
 import buttonPressed from '../../../../assets/svgs/chords/buttonPressed'
 import './style'
@@ -25,8 +23,8 @@ const CheckerButtonSvg = ({
                 buttonPressed :
                 button,
             styleConfig: isOn ?
-                styleConfigOn || styleConfigPitchOn :
-                styleConfig || styleConfigPitch,
+                styleConfigOn :
+                styleConfig,
         }}
     />
 )
@@ -34,7 +32,7 @@ const CheckerButtonSvg = ({
 CheckerButtonSvg.propTypes = {
     isClicked: PropTypes.bool,
     isOn: PropTypes.bool,
-    styleConfig: PropTypes.object,
+    styleConfig: PropTypes.object.isRequired,
     styleConfigOn: PropTypes.object,
 }
 

@@ -1,4 +1,23 @@
-import { getChordAbbreviation, getChordLabel } from '.'
+import { getChordAbbreviation, getChordLabel, getIsPitchBlack } from '.'
+
+describe('getIsPitchBlack', () => {
+    test.each([
+        [0, false],
+        [1, true],
+        [2, false],
+        [3, true],
+        [4, false],
+        [5, false],
+        [6, true],
+        [7, false],
+        [8, true],
+        [9, false],
+        [10, true],
+        [11, false],
+    ])('%p returns %p', (pitch, result) => {
+        expect(getIsPitchBlack(pitch)).toBe(result)
+    })
+})
 
 describe('getChordAbbreviation', () => {
     test.each([

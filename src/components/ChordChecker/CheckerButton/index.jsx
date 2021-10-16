@@ -93,7 +93,7 @@ CheckerButton.propTypes = {
     isOn: PropTypes.bool,
     reverse: PropTypes.bool,
     disabled: PropTypes.bool,
-    styleConfig: PropTypes.object,
+    styleConfig: PropTypes.object.isRequired,
     styleConfigOn: PropTypes.object,
     style: PropTypes.object,
     onClick: PropTypes.func,

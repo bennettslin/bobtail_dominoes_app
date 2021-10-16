@@ -7,6 +7,9 @@ import { updateCurrentPitchSet } from '../../../../redux/chords/action'
 import { mapCurrentPitchSet } from '../../../../redux/chords/selector'
 import { getMapIsCurrentPitch } from '../../../../redux/audio/selector'
 import styleConfigAudioOn from '../../../../styles/checker/audioOn'
+import styleConfigPitchBlack from '../../../../styles/checker/pitchBlack'
+import styleConfigPitchWhite from '../../../../styles/checker/pitchWhite'
+import styleConfigPitchOn from '../../../../styles/checker/pitchOn'
 import faceC from '../../../../assets/svgs/chords/faceC'
 import faceCD from '../../../../assets/svgs/chords/faceCD'
 import faceD from '../../../../assets/svgs/chords/faceD'
@@ -20,6 +23,7 @@ import faceA from '../../../../assets/svgs/chords/faceA'
 import faceAB from '../../../../assets/svgs/chords/faceAB'
 import faceB from '../../../../assets/svgs/chords/faceB'
 import './style'
+import { getIsPitchBlack } from '../../../../utils/chords/label'
 
 const
     COORDINATES = [0, 6.7, 25, 50, 75, 93.3, 100],
@@ -58,6 +62,12 @@ const PitchButton = ({ pitch }) => {
                 ...isCurrentPitch && {
                     styleConfigOn: styleConfigAudioOn,
                 },
+                styleConfig: getIsPitchBlack(pitch) ?
+                    styleConfigPitchBlack :
+                    styleConfigPitchWhite,
+                styleConfigOn: isCurrentPitch ?
+                    styleConfigAudioOn :
+                    styleConfigPitchOn,
                 onClick,
             }}
         />

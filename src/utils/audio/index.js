@@ -30,7 +30,7 @@ export const getPitchIndices = pitchSet => {
     return pitchIndices
 }
 
-export const getPitchLetter = pitchIndex => {
+export const getAudioPitchSymbol = pitchIndex => {
     const { register, pitch } = getPitchConfig(pitchIndex)
     return `${AUDIO_PITCHES[pitch]}${register}`
 }

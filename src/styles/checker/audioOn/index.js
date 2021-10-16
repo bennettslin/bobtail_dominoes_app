@@ -5,12 +5,12 @@ export default getStyleConfig(
     'audioOn',
     {
         fill: {
-            rightFar:   hsl(240, 63, 52),
-            right:      hsl(240, 63, 57),
-            leftFar:    hsl(240, 63, 57),
-            left:       hsl(240, 63, 62),
-            edge:       hsl(240, 63, 82),
-            face:       hsl(240, 63, 92),
+            rightFar:   hsl(240, 63, 57),
+            right:      hsl(240, 63, 62),
+            leftFar:    hsl(240, 63, 62),
+            left:       hsl(240, 63, 67),
+            edge:       hsl(240, 93, 87),
+            face:       hsl(240, 93, 97),
         },
     },
 )

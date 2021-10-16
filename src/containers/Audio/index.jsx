@@ -4,7 +4,7 @@ import { now, PolySynth, FMSynth } from 'tone'
 import { updateCurrentPitchIndex, queuePlay } from '../../redux/audio/action'
 import { mapIsAutoplayOn, mapQueuedPlay } from '../../redux/audio/selector'
 import { mapCurrentPitchSet, mapHasSonority } from '../../redux/chords/selector'
-import { getPitchIndices, getPitchLetter } from '../../utils/audio'
+import { getPitchIndices, getAudioPitchSymbol } from '../../utils/audio'
 
 const Audio = () => {
     const
@@ -33,7 +33,7 @@ const Audio = () => {
     const soundPitches = pitchIndices => {
         pitchIndices.forEach((pitchIndex, index) => {
             getSynth().triggerAttackRelease(
-                getPitchLetter(pitchIndex),
+                getAudioPitchSymbol(pitchIndex),
                 0.1, // Sound duration, by ear.
                 now() + getAttackTime(index),
             )

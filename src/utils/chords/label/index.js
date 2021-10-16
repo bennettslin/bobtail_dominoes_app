@@ -45,6 +45,10 @@ const CHORD_LABEL_MAP = {
     '0348': { quality: AUG, name: 'augmented major', type: '+', sup: 'M7' },
 }
 
+export const getIsPitchBlack = pitch => (
+    typeof ROOT_LETTERS[pitch] === 'object'
+)
+
 const getRootLetter = pitchSet => {
     const
         { quality } = CHORD_LABEL_MAP[getPrimeFormKey(pitchSet)] || {},
