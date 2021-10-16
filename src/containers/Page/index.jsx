@@ -40,6 +40,7 @@ Page.propTypes = {
     }),
     body: PropTypes.oneOfType([
         PropTypes.array,
+        PropTypes.node,
         PropTypes.string,
     ]),
 }

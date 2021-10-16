@@ -15,11 +15,18 @@ const CheckerButton = ({
     enableWithSonority,
     isOn,
     reverse,
+    disabled,
     styleConfig,
+    styleConfigOn,
     style,
+    onClick,
     ...rest
 }) => {
     const hasSonority = useSelector(mapHasSonority)
+
+    const handleButtonClick = () => {
+        onClick()
+    }
 
     return (
         <StyledCheckerButton
@@ -37,8 +44,9 @@ const CheckerButton = ({
                             'CheckerButton__off',
                     ),
                     ...enableWithSonority && {
-                        disabled: !hasSonority,
+                        disabled: !hasSonority || disabled,
                     },
+                    handleButtonClick,
                     ...rest,
                 }}
             >
@@ -47,12 +55,14 @@ const CheckerButton = ({
                     {...{
                         isOn,
                         styleConfig,
+                        styleConfigOn,
                     }}
                 />
                 <CheckerButtonSvg
                     {...{
                         isOn,
                         styleConfig,
+                        styleConfigOn,
                     }}
                 />
                 <CheckerFaceSvg
@@ -72,8 +82,11 @@ CheckerButton.propTypes = {
     enableWithSonority: PropTypes.bool,
     isOn: PropTypes.bool,
     reverse: PropTypes.bool,
+    disabled: PropTypes.bool,
     styleConfig: PropTypes.object,
+    styleConfigOn: PropTypes.object,
     style: PropTypes.object,
+    onClick: PropTypes.func,
 }
 
 export default CheckerButton

@@ -9,14 +9,9 @@ const Component = () => (
     <Page
         {...{
             ...PAGES_MAP[ID],
-            body: [
-                `
-### Chord checker
-            `,
-                (
-                    <ChordChecker />
-                ),
-            ],
+            body: (
+                <ChordChecker />
+            ),
         }}
     />
 )

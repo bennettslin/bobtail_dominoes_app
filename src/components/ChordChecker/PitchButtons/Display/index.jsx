@@ -5,11 +5,11 @@ import DisplayChordLabel from './ChordLabel'
 import ValidIcon from './ValidIcon'
 import './style'
 
-const PitchChordDisplay = () => (
+const PitchButtonsDisplay = () => (
     <StyledDisplay
         {...{
             className: cx(
-                'PitchChordDisplay',
+                'PitchButtonsDisplay',
             ),
             flexDirection: 'column',
         }}
@@ -19,4 +19,4 @@ const PitchChordDisplay = () => (
     </StyledDisplay>
 )
 
-export default PitchChordDisplay
+export default PitchButtonsDisplay

@@ -6,6 +6,7 @@ import CheckerButton from '../../CheckerButton'
 import { updateIsAutoplayOn } from '../../../../redux/audio/action'
 import pitchReset from '../../../../assets/svgs/chords/pitchReset'
 import styleConfigAudio from '../../../../styles/checker/audio'
+import styleConfigAudioOn from '../../../../styles/checker/audioOn'
 import { mapIsAutoplayOn } from '../../../../redux/audio/selector'
 
 const AutoplayButton = ({ didMount }) => {
@@ -22,6 +23,7 @@ const AutoplayButton = ({ didMount }) => {
             {...{
                 faceSrc: pitchReset,
                 styleConfig: styleConfigAudio,
+                styleConfigOn: styleConfigAudioOn,
                 isOn: didMount && isAutoplayOn,
                 onClick,
             }}

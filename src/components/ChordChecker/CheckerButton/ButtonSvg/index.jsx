@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Svg from '../../../Svg'
 import styleConfigPitch from '../../../../styles/checker/pitch'
-import styleConfigOn from '../../../../styles/checker/on'
+import styleConfigPitchOn from '../../../../styles/checker/pitchOn'
 import button from '../../../../assets/svgs/chords/button'
 import buttonPressed from '../../../../assets/svgs/chords/buttonPressed'
 import './style'
@@ -12,6 +12,7 @@ const CheckerButtonSvg = ({
     isClicked,
     isOn,
     styleConfig,
+    styleConfigOn,
 }) => (
     <Svg
         {...{
@@ -24,7 +25,7 @@ const CheckerButtonSvg = ({
                 buttonPressed :
                 button,
             styleConfig: isOn ?
-                styleConfigOn :
+                styleConfigOn || styleConfigPitchOn :
                 styleConfig || styleConfigPitch,
         }}
     />
@@ -34,6 +35,7 @@ CheckerButtonSvg.propTypes = {
     isClicked: PropTypes.bool,
     isOn: PropTypes.bool,
     styleConfig: PropTypes.object,
+    styleConfigOn: PropTypes.object,
 }
 
 export default CheckerButtonSvg

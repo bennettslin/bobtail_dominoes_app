@@ -5,13 +5,14 @@ import StyledPlatform from '../../Styled/Platform'
 import ChordLabel from './ChordLabel'
 import './style'
 
-const ChordDisplay = () => (
+const CheckerDisplay = () => (
     <StyledPlatform isBottomPlatform>
         <StyledDisplay
             {...{
                 className: cx(
-                    'ChordDisplay',
+                    'CheckerDisplay',
                 ),
+                flexDirection: 'column',
             }}
         >
             <ChordLabel />
@@ -19,4 +20,4 @@ const ChordDisplay = () => (
     </StyledPlatform>
 )
 
-export default ChordDisplay
+export default CheckerDisplay

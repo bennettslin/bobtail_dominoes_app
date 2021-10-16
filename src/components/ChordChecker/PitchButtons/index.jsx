@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 import StyledPlatform from '../../Styled/Platform'
-import PitchChordDisplay from './ChordDisplay'
+import PitchButtonsDisplay from './Display'
 import PitchButton from './PitchButton'
 import { getArrayOfPitchesForCircleOfFifths } from '../../../utils/chords/math'
 import './style'
@@ -23,7 +23,7 @@ const PitchButtons = () => (
                     }}
                 />
             ))}
-            <PitchChordDisplay />
+            <PitchButtonsDisplay />
         </div>
     </StyledPlatform>
 )
