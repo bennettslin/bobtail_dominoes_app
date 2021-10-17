@@ -5,12 +5,12 @@ export default getStyleConfig(
     'pitchOn',
     {
         fill: {
-            rightFar:   hsl(30, 63, 57),
-            right:      hsl(30, 63, 62),
-            leftFar:    hsl(30, 63, 62),
-            left:       hsl(30, 63, 67),
-            edge:       hsl(30, 93, 87),
-            face:       hsl(30, 93, 97),
+            rightFar:   hsl(30, 63, 32),
+            right:      hsl(30, 63, 37),
+            leftFar:    hsl(30, 63, 37),
+            left:       hsl(30, 63, 42),
+            edge:       hsl(30, 63, 62),
+            face:       hsl(30, 63, 72),
         },
     },
 )
