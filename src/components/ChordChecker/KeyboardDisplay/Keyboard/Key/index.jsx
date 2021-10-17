@@ -1,18 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { getPitchConfig } from '../../../../../utils/audio'
-import './style'
-import { getIsPitchBlack } from '../../../../../utils/chords/label'
 import { useSelector } from 'react-redux'
-import { getMapIsCurrentPitchIndex } from '../../../../../redux/audio/selector'
-import { getMapHasPitch } from '../../../../../redux/chords/selector'
+import { getPitchConfig } from '../../../../../utils/audio'
+import { getIsPitchBlack } from '../../../../../utils/chords/label'
+import { getMapIsPlayedPitchIndex } from '../../../../../redux/audio/selector'
+import { getMapHasCurrentPitch } from '../../../../../redux/chords/selector'
+import './style'
 
 const KeyboardKey = ({ pitchIndex }) => {
     const
         { pitch } = getPitchConfig(pitchIndex),
-        hasPitch = useSelector(getMapHasPitch(pitch)),
-        isCurrentPitchIndex = useSelector(getMapIsCurrentPitchIndex(pitchIndex))
+        hasCurrentPitch = useSelector(getMapHasCurrentPitch(pitch)),
+        isPlayedPitchIndex = useSelector(getMapIsPlayedPitchIndex(pitchIndex))
 
     return (
         <div
@@ -22,8 +22,8 @@ const KeyboardKey = ({ pitchIndex }) => {
                     getIsPitchBlack(pitch) ?
                         'KeyboardKey__black' :
                         'KeyboardKey__white',
-                    hasPitch && 'KeyboardKey__on',
-                    isCurrentPitchIndex && 'KeyboardKey__current',
+                    hasCurrentPitch && 'KeyboardKey__on',
+                    isPlayedPitchIndex && 'KeyboardKey__current',
                 ),
             }}
         />

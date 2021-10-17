@@ -3,8 +3,8 @@ import { getPitchConfig } from '../../utils/audio'
 import { AUDIO_STORE } from './reducer'
 
 export const mapCurrentPitchIndex = (
-    { [AUDIO_STORE]: { currentPitchIndex } },
-) => currentPitchIndex
+    { [AUDIO_STORE]: { playedPitchIndex } },
+) => playedPitchIndex
 
 export const mapIsAudioStarted = (
     { [AUDIO_STORE]: { isAudioStarted } },
@@ -18,15 +18,15 @@ export const mapQueuedPlay = (
     { [AUDIO_STORE]: { queuedPlay } },
 ) => queuedPlay
 
-export const getMapIsCurrentPitchIndex = pitchIndex => createSelector(
+export const getMapIsPlayedPitchIndex = pitchIndex => createSelector(
     mapCurrentPitchIndex,
-    currentPitchIndex => pitchIndex === currentPitchIndex,
+    playedPitchIndex => pitchIndex === playedPitchIndex,
 )
 
-export const getMapIsCurrentPitch = pitch => createSelector(
+export const getMapIsPlayedPitch = pitch => createSelector(
     mapCurrentPitchIndex,
-    currentPitchIndex => {
-        const { pitch: currentPitch } = getPitchConfig(currentPitchIndex)
+    playedPitchIndex => {
+        const { pitch: currentPitch } = getPitchConfig(playedPitchIndex)
         return pitch === currentPitch
     },
 )

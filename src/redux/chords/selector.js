@@ -10,7 +10,7 @@ export const mapHasSonority = createSelector(
     currentPitchSet => Boolean(currentPitchSet.size),
 )
 
-export const getMapHasPitch = pitch => createSelector(
+export const getMapHasCurrentPitch = pitch => createSelector(
     mapCurrentPitchSet,
     currentPitchSet => currentPitchSet.has(pitch),
 )

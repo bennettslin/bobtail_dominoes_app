@@ -4,8 +4,8 @@ import cx from 'classnames'
 import { useDispatch, useSelector } from 'react-redux'
 import CheckerButton from '../../CheckerButton'
 import { togglePitch } from '../../../../redux/chords/action'
-import { getMapHasPitch } from '../../../../redux/chords/selector'
-import { getMapIsCurrentPitch } from '../../../../redux/audio/selector'
+import { getMapHasCurrentPitch } from '../../../../redux/chords/selector'
+import { getMapIsPlayedPitch } from '../../../../redux/audio/selector'
 import { getIsPitchBlack } from '../../../../utils/chords/label'
 import { getButtonPositionStyle, getFaceSrc } from './helper'
 import styleConfigAudioOn from '../../../../styles/checker/audioOn'
@@ -17,8 +17,8 @@ import './style'
 const PitchButton = ({ pitch }) => {
     const
         dispatch = useDispatch(),
-        hasPitch = useSelector(getMapHasPitch(pitch)),
-        isCurrentPitch = useSelector(getMapIsCurrentPitch(pitch))
+        hasCurrentPitch = useSelector(getMapHasCurrentPitch(pitch)),
+        isPlayedPitch = useSelector(getMapIsPlayedPitch(pitch))
 
     const onClick = () => {
         dispatch(togglePitch(pitch))
@@ -32,14 +32,14 @@ const PitchButton = ({ pitch }) => {
                 ),
                 faceSrc: getFaceSrc(pitch),
                 style: getButtonPositionStyle(pitch),
-                isOn: hasPitch,
-                ...isCurrentPitch && {
+                isOn: hasCurrentPitch,
+                ...isPlayedPitch && {
                     styleConfigOn: styleConfigAudioOn,
                 },
                 styleConfig: getIsPitchBlack(pitch) ?
                     styleConfigPitchBlack :
                     styleConfigPitchWhite,
-                styleConfigOn: isCurrentPitch ?
+                styleConfigOn: isPlayedPitch ?
                     styleConfigAudioOn :
                     styleConfigPitchOn,
                 onClick,

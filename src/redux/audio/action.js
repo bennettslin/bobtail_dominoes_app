@@ -2,13 +2,13 @@ import { setBoolInStorage } from '../../utils/storage'
 import { AUDIO_DEFAULT } from './default'
 import { AUDIO_STORE } from './reducer'
 
-export const updateCurrentPitchIndex = (
-    currentPitchIndex = AUDIO_DEFAULT.currentPitchIndex,
+export const updatePlayedPitchIndex = (
+    playedPitchIndex = AUDIO_DEFAULT.playedPitchIndex,
 ) => ({
     type: AUDIO_STORE,
     payload: {
-        currentPitchIndex,
-        ...currentPitchIndex === -1 && {
+        playedPitchIndex,
+        ...playedPitchIndex === -1 && {
             queuedPlay: AUDIO_DEFAULT.queuedPlay,
         },
     },

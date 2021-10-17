@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { now, PolySynth, FMSynth } from 'tone'
-import { updateCurrentPitchIndex, queuePlay } from '../../redux/audio/action'
+import { updatePlayedPitchIndex, queuePlay } from '../../redux/audio/action'
 import { mapIsAutoplayOn, mapQueuedPlay } from '../../redux/audio/selector'
 import { mapCurrentPitchSet, mapHasSonority } from '../../redux/chords/selector'
 import { getPitchIndices, getAudioPitchSymbol } from '../../utils/audio'
@@ -43,7 +43,7 @@ const Audio = () => {
     const timePitches = pitchIndices => {
         [...pitchIndices, -1].forEach((pitchIndex, index) => {
             setTimeout(() => {
-                dispatch(updateCurrentPitchIndex(pitchIndex))
+                dispatch(updatePlayedPitchIndex(pitchIndex))
             }, getAttackTime(index, 1000))
         })
     }
