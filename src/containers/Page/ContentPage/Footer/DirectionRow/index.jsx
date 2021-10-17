@@ -4,7 +4,7 @@ import PageConfigContext from '../../../../../contexts/PageConfig'
 import PageFooterRow from '../FooterRow'
 import DirectionPageLink from './DirectionPageLink'
 import { mapSelectedPagePath } from '../../../../../redux/page/selector'
-import { getDirectionPage } from './helper'
+import { getDirectionPage } from './util'
 
 const DirectionRow = () => {
     const

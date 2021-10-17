@@ -4,7 +4,7 @@ import CheckerButton from '../../CheckerButton'
 import { queuePlay } from '../../../../redux/audio/action'
 import { mapQueuedPlay } from '../../../../redux/audio/selector'
 import styleConfigAudio from '../../../../styles/checker/audio'
-import play from '../../../../assets/svgs/chords/play'
+import facePlay from '../../../../assets/svgs/chords/facePlay'
 
 const PlayButton = () => {
     const
@@ -19,7 +19,7 @@ const PlayButton = () => {
         <CheckerButton
             enableWithSonority
             {...{
-                faceSrc: play,
+                faceSrc: facePlay,
                 disabled: queuedPlay,
                 styleConfig: styleConfigAudio,
                 onClick,

@@ -1,5 +1,5 @@
 import { mod12 } from '../chords/math'
-import { HIGHEST_PITCH, LOWEST_PITCH } from '../../constants/audio'
+import { HIGHEST_PITCH_INDEX, LOWEST_PITCH_INDEX } from '../../constants/audio'
 
 const AUDIO_PITCHES = [
     'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B',
@@ -12,9 +12,9 @@ export const getPitchConfig = pitchIndex => ({
 
 export const getPitchIndices = pitchSet => {
     const pitchIndices = []
-    let pitchIndex = LOWEST_PITCH
+    let pitchIndex = LOWEST_PITCH_INDEX
 
-    while (pitchIndex <= HIGHEST_PITCH) {
+    while (pitchIndex <= HIGHEST_PITCH_INDEX) {
         const { pitch } = getPitchConfig(pitchIndex)
 
         if (pitchSet.has(pitch)) {

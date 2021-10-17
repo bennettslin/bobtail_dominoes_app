@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import CheckerButton from '../../CheckerButton'
 import { updateTransposedPitchSet } from '../../../../redux/chords/action'
 import styleConfigOption from '../../../../styles/checker/option'
-import transpose from '../../../../assets/svgs/chords/transpose'
+import faceTranspose from '../../../../assets/svgs/chords/faceTranspose'
 
 const TransposeButton = ({ direction }) => {
     const dispatch = useDispatch()
@@ -17,7 +17,7 @@ const TransposeButton = ({ direction }) => {
         <CheckerButton
             enableWithSonority
             {...{
-                faceSrc: transpose,
+                faceSrc: faceTranspose,
                 reverse: direction === -1,
                 styleConfig: styleConfigOption,
                 onClick,

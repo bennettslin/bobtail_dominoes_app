@@ -3,11 +3,11 @@ import { useSelector } from 'react-redux'
 import { Helmet as ReactHelmet } from 'react-helmet'
 import PageConfigContext from '../../contexts/PageConfig'
 import { mapSelectedPagePath } from '../../redux/page/selector'
+import { getCapitalizedText } from '../../utils/format'
 import {
     getMetaTitle,
     getMetaTags,
-} from './helper'
-import { getCapitalizedText } from '../../utils/format'
+} from './util'
 
 const Helmet = () => {
     const

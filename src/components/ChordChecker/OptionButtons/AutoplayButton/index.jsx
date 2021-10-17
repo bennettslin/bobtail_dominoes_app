@@ -7,7 +7,7 @@ import { updateIsAutoplayOn } from '../../../../redux/audio/action'
 import { mapIsAutoplayOn } from '../../../../redux/audio/selector'
 import styleConfigAudio from '../../../../styles/checker/audio'
 import styleConfigAudioOn from '../../../../styles/checker/audioOn'
-import autoplay from '../../../../assets/svgs/chords/autoplay'
+import faceAutoplay from '../../../../assets/svgs/chords/faceAutoplay'
 
 const AutoplayButton = ({ didMount }) => {
     const
@@ -21,7 +21,7 @@ const AutoplayButton = ({ didMount }) => {
     return (
         <CheckerButton
             {...{
-                faceSrc: autoplay,
+                faceSrc: faceAutoplay,
                 styleConfig: styleConfigAudio,
                 styleConfigOn: styleConfigAudioOn,
                 isOn: didMount && isAutoplayOn,
