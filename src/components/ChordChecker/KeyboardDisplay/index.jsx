@@ -3,21 +3,23 @@ import cx from 'classnames'
 import StyledDisplay from '../../Styled/Display'
 import StyledPlatform from '../../Styled/Platform'
 import ChordLabel from './ChordLabel'
+import Keyboard from './Keyboard'
 import './style'
 
-const CheckerDisplay = () => (
+const KeyboardDisplay = () => (
     <StyledPlatform isBottomPlatform>
         <StyledDisplay
             {...{
                 className: cx(
-                    'CheckerDisplay',
+                    'KeyboardDisplay',
                 ),
                 flexDirection: 'column',
             }}
         >
+            <Keyboard />
             <ChordLabel />
         </StyledDisplay>
     </StyledPlatform>
 )
 
-export default CheckerDisplay
+export default KeyboardDisplay

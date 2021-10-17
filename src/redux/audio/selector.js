@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect'
 import { getPitchConfig } from '../../utils/audio'
-import { AUDIO_STORE } from '../../constants/store'
+import { AUDIO_STORE } from './reducer'
 
 export const mapCurrentPitchIndex = (
     { [AUDIO_STORE]: { currentPitchIndex } },
@@ -17,6 +17,11 @@ export const mapIsAutoplayOn = (
 export const mapQueuedPlay = (
     { [AUDIO_STORE]: { queuedPlay } },
 ) => queuedPlay
+
+export const getMapIsCurrentPitchIndex = pitchIndex => createSelector(
+    mapCurrentPitchIndex,
+    currentPitchIndex => pitchIndex === currentPitchIndex,
+)
 
 export const getMapIsCurrentPitch = pitch => createSelector(
     mapCurrentPitchIndex,

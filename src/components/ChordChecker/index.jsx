@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 import Flex from '../Flex'
-import CheckerDisplay from './CheckerDisplay'
+import KeyboardDisplay from './KeyboardDisplay'
 import OptionButtons from './OptionButtons'
 import PitchButtons from './PitchButtons'
 import './style'
@@ -17,7 +17,7 @@ const ChordChecker = () => (
             alignItems: 'normal',
         }}
     >
-        <CheckerDisplay />
+        <KeyboardDisplay />
         <Flex
             {...{
                 className: cx(

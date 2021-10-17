@@ -1,5 +1,6 @@
-import { PAGE_STORE } from '../../constants/store'
 import { getPageDefaults } from './default'
+
+export const PAGE_STORE = 'page'
 
 export const getPageReducer = ({ initialPage }) => (
     state = getPageDefaults({ initialPage }),

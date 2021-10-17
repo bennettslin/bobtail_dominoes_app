@@ -1,6 +1,6 @@
 import { setBoolInStorage } from '../../utils/storage'
-import { AUDIO_STORE } from '../../constants/store'
 import { AUDIO_DEFAULT } from './default'
+import { AUDIO_STORE } from './reducer'
 
 export const updateCurrentPitchIndex = (
     currentPitchIndex = AUDIO_DEFAULT.currentPitchIndex,

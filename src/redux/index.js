@@ -1,14 +1,8 @@
 import { combineReducers } from 'redux'
-import { audioReducer } from './audio/reducer'
-import { chordsReducer } from './chords/reducer'
-import { optionReducer } from './option/reducer'
-import { getPageReducer } from './page/reducer'
-import {
-    AUDIO_STORE,
-    CHORDS_STORE,
-    OPTION_STORE,
-    PAGE_STORE,
-} from '../constants/store'
+import { audioReducer, AUDIO_STORE } from './audio/reducer'
+import { chordsReducer, CHORDS_STORE } from './chords/reducer'
+import { optionReducer, OPTION_STORE } from './option/reducer'
+import { getPageReducer, PAGE_STORE } from './page/reducer'
 
 export const getReducers = ({ initialPage }) => combineReducers({
     [AUDIO_STORE]: audioReducer,

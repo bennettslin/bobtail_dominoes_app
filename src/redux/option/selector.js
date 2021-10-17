@@ -1,4 +1,4 @@
-import { OPTION_STORE } from '../../constants/store'
+import { OPTION_STORE } from './reducer'
 
 export const mapIsUpsellDisabled = (
     { [OPTION_STORE]: { isUpsellDisabled } },

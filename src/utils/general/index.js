@@ -11,3 +11,13 @@ export const getAreSetsEqual = (set1, set2) => {
 
     return true
 }
+
+export const getArrayOfIndices = (
+    length,
+    indexBase = 0,
+) => (
+    Array.from(
+        { length },
+        (nothing, i) => i + indexBase,
+    )
+)

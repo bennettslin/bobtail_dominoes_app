@@ -1,5 +1,6 @@
-import { AUDIO_STORE } from '../../constants/store'
 import { AUDIO_DEFAULT } from './default'
+
+export const AUDIO_STORE = 'audio'
 
 export const audioReducer = (
     state = AUDIO_DEFAULT,

@@ -4,10 +4,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import getDidMountHoc from '../../../../hocs/DidMountHoc'
 import CheckerButton from '../../CheckerButton'
 import { updateIsAutoplayOn } from '../../../../redux/audio/action'
-import autoplay from '../../../../assets/svgs/chords/autoplay'
+import { mapIsAutoplayOn } from '../../../../redux/audio/selector'
 import styleConfigAudio from '../../../../styles/checker/audio'
 import styleConfigAudioOn from '../../../../styles/checker/audioOn'
-import { mapIsAutoplayOn } from '../../../../redux/audio/selector'
+import autoplay from '../../../../assets/svgs/chords/autoplay'
 
 const AutoplayButton = ({ didMount }) => {
     const

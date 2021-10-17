@@ -1,0 +1,16 @@
+@import '../../../../scss/constants/responsive';
+
+.Keyboard {
+    position: relative;
+    width: 100%;
+    height: $margin__md;
+    margin-top: $margin__xs;
+
+    @media (min-width: $breakpoint__sm) {
+        height: $margin__lg;
+    }
+
+    @media (min-width: $breakpoint__md) {
+        height: $margin__xl;
+    }
+}

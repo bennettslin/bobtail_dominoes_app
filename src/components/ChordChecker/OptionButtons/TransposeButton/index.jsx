@@ -1,22 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import CheckerButton from '../../CheckerButton'
-import { updateCurrentPitchSet } from '../../../../redux/chords/action'
-import { mapCurrentPitchSet } from '../../../../redux/chords/selector'
-import transpose from '../../../../assets/svgs/chords/transpose'
+import { updateTransposedPitchSet } from '../../../../redux/chords/action'
 import styleConfigOption from '../../../../styles/checker/option'
-import { transposePitchSet } from '../../../../utils/chords/math'
+import transpose from '../../../../assets/svgs/chords/transpose'
 
 const TransposeButton = ({ direction }) => {
-    const
-        dispatch = useDispatch(),
-        currentPitchSet = useSelector(mapCurrentPitchSet)
+    const dispatch = useDispatch()
 
     const onClick = () => {
-        dispatch(updateCurrentPitchSet(
-            transposePitchSet(currentPitchSet, direction),
-        ))
+        dispatch(updateTransposedPitchSet(direction))
     }
 
     return (

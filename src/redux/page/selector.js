@@ -4,7 +4,7 @@ import {
     getIsTabbedPath,
     getTopLevelPageFromPath,
 } from '../../utils/pages/path'
-import { PAGE_STORE } from '../../constants/store'
+import { PAGE_STORE } from './reducer'
 
 export const mapSelectedPagePath = (
     { [PAGE_STORE]: { selectedPagePath } },

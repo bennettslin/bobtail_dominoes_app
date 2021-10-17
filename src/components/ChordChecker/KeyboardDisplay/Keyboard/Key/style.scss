@@ -1,0 +1,30 @@
+@import '../../../../../scss/constants/responsive';
+
+.KeyboardKey {
+    width: 10px;
+    height: $margin__md;
+
+    @media (min-width: $breakpoint__sm) {
+        height: $margin__lg;
+    }
+
+    @media (min-width: $breakpoint__md) {
+        height: $margin__xl;
+    }
+}
+
+.KeyboardKey__white {
+    background-color: hsl(30, 23%, 67%);
+}
+
+.KeyboardKey__black {
+    background-color: hsl(30, 13%, 57%); 
+}
+
+.KeyboardKey__on {
+    background-color: hsl(30, 93%, 97%);
+}
+
+.KeyboardKey__current {
+    background-color: hsl(240, 93%, 97%);
+}

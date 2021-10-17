@@ -1,8 +1,5 @@
 import { mod12 } from '../chords/math'
-
-const
-    LOWEST_PITCH = 36, // C3.
-    HIGHEST_PITCH = 71 // B5.
+import { HIGHEST_PITCH, LOWEST_PITCH } from '../../constants/audio'
 
 const AUDIO_PITCHES = [
     'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B',
