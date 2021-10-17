@@ -1,0 +1,6 @@
+<svg viewBox="0 0 92 275">
+  <rect class="edge" width="92" height="275"/>
+  <rect class="face" x="8" y="8" width="76" height="259"/>
+  <rect class="gaBottom" x="14" y="211" width="64" height="48" rx="15"/>
+  <rect class="gaFace" x="14" y="216" width="64" height="43" rx="15"/>
+</svg>

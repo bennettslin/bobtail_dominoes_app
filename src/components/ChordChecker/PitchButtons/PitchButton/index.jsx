@@ -8,10 +8,10 @@ import { getMapHasCurrentPitch } from '../../../../redux/chords/selector'
 import { getMapIsPlayedPitch } from '../../../../redux/audio/selector'
 import { getIsPitchBlack } from '../../../../utils/chords/label'
 import { getButtonPositionStyle, getFaceSrc } from './util'
-import styleConfigAudioOn from '../../../../styles/checker/audioOn'
 import styleConfigPitchBlack from '../../../../styles/checker/pitchBlack'
-import styleConfigPitchWhite from '../../../../styles/checker/pitchWhite'
 import styleConfigPitchOn from '../../../../styles/checker/pitchOn'
+import styleConfigPitchWhite from '../../../../styles/checker/pitchWhite'
+import styleConfigPlayedOn from '../../../../styles/checker/playedOn'
 import './style'
 
 const PitchButton = ({ pitch }) => {
@@ -34,13 +34,13 @@ const PitchButton = ({ pitch }) => {
                 style: getButtonPositionStyle(pitch),
                 isOn: hasCurrentPitch,
                 ...isPlayedPitch && {
-                    styleConfigOn: styleConfigAudioOn,
+                    styleConfigOn: styleConfigPlayedOn,
                 },
                 styleConfig: getIsPitchBlack(pitch) ?
                     styleConfigPitchBlack :
                     styleConfigPitchWhite,
                 styleConfigOn: isPlayedPitch ?
-                    styleConfigAudioOn :
+                    styleConfigPlayedOn :
                     styleConfigPitchOn,
                 onClick,
             }}

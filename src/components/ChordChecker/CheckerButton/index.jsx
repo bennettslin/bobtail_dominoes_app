@@ -61,14 +61,6 @@ const CheckerButton = ({
                 }}
             >
                 <CheckerButtonSvg
-                    isClicked
-                    {...{
-                        isOn,
-                        styleConfig,
-                        styleConfigOn,
-                    }}
-                />
-                <CheckerButtonSvg
                     {...{
                         isOn,
                         styleConfig,

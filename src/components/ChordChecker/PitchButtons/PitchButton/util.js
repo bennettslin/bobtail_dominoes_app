@@ -12,12 +12,10 @@ import faceAB from '../../../../assets/svgs/chords/faceAB'
 import faceB from '../../../../assets/svgs/chords/faceB'
 
 const
-    COORDINATES = [0, 6.7, 25, 50, 75, 93.3, 100],
-    FACES = [faceC, faceCD, faceD, faceDE, faceE, faceF, faceFG, faceG, faceGA, faceA, faceAB, faceB]
+    FACES = [faceC, faceCD, faceD, faceDE, faceE, faceF, faceFG, faceG, faceGA, faceA, faceAB, faceB],
+    COORDINATES = [0, 6.7, 25, 50, 75, 93.3, 100]
 
-export const getFaceSrc = pitch => (
-    FACES[pitch]
-)
+export const getFaceSrc = pitch => FACES[pitch]
 
 export const getButtonPositionStyle = pitch => ({
     top: `${COORDINATES[6 - Math.abs(6 - pitch)]}%`,
