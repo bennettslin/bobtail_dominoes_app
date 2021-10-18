@@ -7,12 +7,12 @@ export default getStyleConfig(
     [
         {
             fill: {
-                rightFar:   hsl(30, 78, 32),
-                right:      hsl(30, 78, 37),
-                leftFar:    hsl(30, 78, 37),
-                left:       hsl(30, 78, 42),
-                edge:       hsl(30, 78, 62),
-                face:       hsl(30, 78, 72),
+                rightFar:   hsl(180, 58, 32),
+                right:      hsl(180, 58, 37),
+                leftFar:    hsl(180, 58, 37),
+                left:       hsl(180, 58, 42),
+                edge:       hsl(180, 58, 57),
+                face:       hsl(180, 58, 67),
             },
         },
         pitches,

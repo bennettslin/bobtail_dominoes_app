@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect'
+import { getRoot } from '../../utils/chords/primeForm'
 import { CHORDS_STORE } from './reducer'
 
 export const mapCurrentPitchSet = (
@@ -13,4 +14,9 @@ export const mapHasSonority = createSelector(
 export const getMapHasCurrentPitch = pitch => createSelector(
     mapCurrentPitchSet,
     currentPitchSet => currentPitchSet.has(pitch),
+)
+
+export const getMapIsRoot = pitch => createSelector(
+    mapCurrentPitchSet,
+    currentPitchSet => pitch === getRoot(currentPitchSet),
 )

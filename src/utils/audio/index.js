@@ -10,6 +10,11 @@ export const getPitchConfig = pitchIndex => ({
     pitch: pitchIndex === -1 ? pitchIndex : mod12(pitchIndex),
 })
 
+export const getAudioPitchSymbol = pitchIndex => {
+    const { register, pitch } = getPitchConfig(pitchIndex)
+    return `${AUDIO_PITCHES[pitch]}${register}`
+}
+
 export const getPitchIndices = pitchSet => {
     const pitchIndices = []
     let pitchIndex = LOWEST_PITCH_INDEX
@@ -25,9 +30,4 @@ export const getPitchIndices = pitchSet => {
     }
 
     return pitchIndices
-}
-
-export const getAudioPitchSymbol = pitchIndex => {
-    const { register, pitch } = getPitchConfig(pitchIndex)
-    return `${AUDIO_PITCHES[pitch]}${register}`
 }
