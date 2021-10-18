@@ -15,9 +15,10 @@ export const getAreSetsEqual = (set1, set2) => {
 export const getArrayOfIndices = (
     length,
     indexBase = 0,
+    mapFunction = (nothing, i) => i + indexBase,
 ) => (
     Array.from(
         { length },
-        (nothing, i) => i + indexBase,
+        mapFunction,
     )
 )

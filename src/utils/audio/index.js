@@ -15,7 +15,7 @@ export const getAudioPitchSymbol = pitchIndex => {
     return `${AUDIO_PITCHES[pitch]}${register}`
 }
 
-export const getPitchIndices = pitchSet => {
+export const getPitchIndices = (pitchSet = new Set()) => {
     const pitchIndices = []
     let pitchIndex = LOWEST_PITCH_INDEX
 

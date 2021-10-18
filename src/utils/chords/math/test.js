@@ -50,7 +50,7 @@ describe('getArrayOfPitches', () => {
     })
 })
 
-describe('getArrayOfPitches', () => {
+describe('getArrayOfPitchesForCircleOfFifths', () => {
     it('returns array of all twelve pitches', () => {
         expect(
             getArrayOfPitchesForCircleOfFifths(),

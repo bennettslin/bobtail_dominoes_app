@@ -1,3 +1,5 @@
+import { getArrayOfIndices } from '../../general'
+
 const PITCH_COUNT = 12
 
 export const mod12 = number => (
@@ -13,11 +15,11 @@ export const transposePitchSet = (pitchSet = new Set(), direction = 0) => {
 }
 
 export const getArrayOfPitches = () => (
-    Array.from({ length: PITCH_COUNT }, (v, i) => i)
+    getArrayOfIndices(PITCH_COUNT)
 )
 
 export const getArrayOfPitchesForCircleOfFifths = () => (
-    Array.from({ length: PITCH_COUNT }, (v, i) => (
+    getArrayOfIndices(PITCH_COUNT, 0, (v, i) => (
         mod12(Math.ceil(i / 2) * (i % 2 === 0 ? 1 : -1))
     ))
 )
