@@ -1,4 +1,4 @@
-import { getPrimeFormKey, getRoot } from '../primeForm'
+import { getPrimeFormKey, getRoots } from '../primeForm'
 
 const
     FLAT = '♭',
@@ -49,29 +49,29 @@ export const getIsPitchBlack = pitch => (
     typeof ROOT_LETTERS[pitch] === 'object'
 )
 
-const getRootLetter = pitchSet => {
-    const
-        { quality } = CHORD_LABEL_MAP[getPrimeFormKey(pitchSet)] || {},
-        root = getRoot(pitchSet),
-        accidental = ACCIDENTAL_MAP[root]?.[quality]
+const getRootLetters = pitchSet => {
+    const { quality } = CHORD_LABEL_MAP[getPrimeFormKey(pitchSet)] || {}
 
-    return (
-        accidental ?
-            `${ROOT_LETTERS[root][accidental]}${accidental}` :
-            ROOT_LETTERS[root]
-    )
+    return Array.from(getRoots(pitchSet)).map(root => {
+        const accidental = ACCIDENTAL_MAP[root]?.[quality]
+        return (
+            accidental ?
+                `${ROOT_LETTERS[root][accidental]}${accidental}` :
+                ROOT_LETTERS[root]
+        )
+    }).join('/')
 }
 
 export const getChordAbbreviation = pitchSet => {
     const
-        rootLetter = getRootLetter(pitchSet),
+        rootLetters = getRootLetters(pitchSet),
         {
             type,
             sup,
         } = CHORD_LABEL_MAP[getPrimeFormKey(pitchSet)] || {}
 
     return {
-        ...rootLetter && { root: rootLetter },
+        ...rootLetters && { root: rootLetters },
         ...type && { type },
         ...sup && { sup },
     }
@@ -79,11 +79,11 @@ export const getChordAbbreviation = pitchSet => {
 
 export const getChordLabel = pitchSet => {
     const
-        rootLetter = getRootLetter(pitchSet),
+        rootLetters = getRootLetters(pitchSet),
         { name } = CHORD_LABEL_MAP[getPrimeFormKey(pitchSet)] || {}
 
-    return rootLetter && name ?
-        `${rootLetter} ${name} ${
+    return rootLetters && name ?
+        `${rootLetters} ${name} ${
             pitchSet.size === 3 ? 'triad' : 'seventh'
         }` : null
 }

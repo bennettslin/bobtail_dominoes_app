@@ -79,10 +79,10 @@ export const getPrimeFormKey = (pitchSet = new Set()) => (
     }).join('')
 )
 
-export const getRoot = pitchSet => {
+export const getRoots = pitchSet => {
     // Only valid chords have a root.
     if (!getIsChord(pitchSet)) {
-        return -1
+        return new Set([-1])
     }
     const normalForm = getNormalForm(pitchSet)
 
@@ -94,10 +94,10 @@ export const getRoot = pitchSet => {
 
             // Distance between root and seventh is whole tone or less.
             if (mod12(normalForm[index] - normalForm[index - 1]) <= 2) {
-                return normalForm[index]
+                return new Set([normalForm[index]])
             }
         }
     }
 
-    return normalForm[0]
+    return new Set([normalForm[0]])
 }

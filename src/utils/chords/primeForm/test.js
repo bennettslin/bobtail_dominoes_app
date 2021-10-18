@@ -1,4 +1,4 @@
-import { getNormalForm, getPrimeForm, getPrimeFormKey, getRoot } from '.'
+import { getNormalForm, getPrimeForm, getPrimeFormKey, getRoots } from '.'
 
 describe('getNormalForm', () => {
     test.each([
@@ -130,34 +130,34 @@ describe('getPrimeFormKey', () => {
     })
 })
 
-describe('getRoot', () => {
+describe('getRoots', () => {
     test.each([
         // Undefined.
-        [undefined, -1],
+        [undefined, new Set([-1])],
         // Empty set.
-        [new Set(), -1],
+        [new Set(), new Set([-1])],
         // Single pitch.
-        [new Set([3]), -1],
+        [new Set([3]), new Set([-1])],
         // Dyad.
-        [new Set([3, 10]), -1],
+        [new Set([3, 10]), new Set([-1])],
         // Triad.
-        [new Set([0, 3, 7]), 0], // Minor.
-        [new Set([11, 7, 2]), 7], // Major.
-        [new Set([5, 8, 2]), 2], // Diminished.
-        [new Set([5, 1, 9]), 1], // Augmented.
-        [new Set([11, 0, 6]), -1], // Non-chord.
+        [new Set([0, 3, 7]), new Set([0])], // Minor.
+        [new Set([11, 7, 2]), new Set([7])], // Major.
+        [new Set([5, 8, 2]), new Set([2])], // Diminished.
+        [new Set([5, 1, 9]), new Set([1])], // Augmented.
+        [new Set([11, 0, 6]), new Set([-1])], // Non-chord.
         // Tetrad.
-        [new Set([2, 4, 7, 11]), 4], // Minor
-        [new Set([11, 9, 6, 3]), 11], // Dominant.
-        [new Set([1, 6, 5, 10]), 6], // Major.
-        [new Set([8, 1, 4, 0]), 1], // Minor-major.
-        [new Set([11, 2, 6, 8]), 8], // Half-diminished.
-        [new Set([9, 6, 3, 0]), 0], // Diminished.
-        [new Set([2, 9, 6, 10]), 10], // Augmented major.
-        [new Set([2, 0, 7, 5]), -1], // Non-chord.
+        [new Set([2, 4, 7, 11]), new Set([4])], // Minor
+        [new Set([11, 9, 6, 3]), new Set([11])], // Dominant.
+        [new Set([1, 6, 5, 10]), new Set([6])], // Major.
+        [new Set([8, 1, 4, 0]), new Set([1])], // Minor-major.
+        [new Set([11, 2, 6, 8]), new Set([8])], // Half-diminished.
+        [new Set([9, 6, 3, 0]), new Set([0])], // Diminished.
+        [new Set([2, 9, 6, 10]), new Set([10])], // Augmented major.
+        [new Set([2, 0, 7, 5]), new Set([-1])], // Non-chord.
         // Greater.
-        [new Set([9, 3, 7, 1, 5]), -1],
+        [new Set([9, 3, 7, 1, 5]), new Set([-1])],
     ])('%p returns root %p', (set, result) => {
-        expect(getRoot(set)).toEqual(result)
+        expect(getRoots(set)).toEqual(result)
     })
 })
