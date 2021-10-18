@@ -1,0 +1,7 @@
+@import '../../../../../scss/constants/responsive';
+
+.DisplayChordLabel {
+    @media (min-width: $breakpoint__md) {
+        font-size: 1.5em;
+    }
+}

@@ -29,7 +29,9 @@ const KeyboardKey = ({ pitchIndex }) => {
             {...{
                 className: cx(
                     'KeyboardKey',
-                    isPitchBlack && 'KeyboardKey__black',
+                    isPitchBlack ?
+                        'KeyboardKey__black' :
+                        'KeyboardKey__white',
                 ),
                 ...isPitchBlack && {
                     style: getBlackKeyPosition(pitchIndex),
@@ -59,6 +61,7 @@ const KeyboardKey = ({ pitchIndex }) => {
                                 styleConfigPitchBlack :
                                 styleConfigPitchWhite
                         ),
+                        scaleFactor: 0.2,
                     }}
                 />
             </StyledShadow>

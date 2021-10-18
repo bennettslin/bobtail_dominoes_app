@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import StyledChordLabel from '../../../../Styled/ChordLabel'
 import { mapCurrentPitchSet } from '../../../../../redux/chords/selector'
 import { getChordAbbreviation } from '../../../../../utils/chords/label'
+import './style'
 
 const DisplayChordLabel = () => {
     const
@@ -18,7 +19,7 @@ const DisplayChordLabel = () => {
         <StyledChordLabel
             {...{
                 className: cx(
-                    'fontSize__md',
+                    'DisplayChordLabel',
                 ),
             }}
         >
