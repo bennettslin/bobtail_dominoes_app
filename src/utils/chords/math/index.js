@@ -1,9 +1,8 @@
+import { OCTAVE_RANGE } from '../../../constants/audio'
 import { getArrayOfIndices } from '../../general'
 
-const PITCH_COUNT = 12
-
 export const mod12 = number => (
-    (number + PITCH_COUNT) % PITCH_COUNT
+    (number + OCTAVE_RANGE) % OCTAVE_RANGE
 )
 
 export const transposePitchSet = (pitchSet = new Set(), direction = 0) => {
@@ -15,11 +14,11 @@ export const transposePitchSet = (pitchSet = new Set(), direction = 0) => {
 }
 
 export const getArrayOfPitches = () => (
-    getArrayOfIndices(PITCH_COUNT)
+    getArrayOfIndices(OCTAVE_RANGE)
 )
 
 export const getArrayOfPitchesForCircleOfFifths = () => (
-    getArrayOfIndices(PITCH_COUNT, 0, (v, i) => (
+    getArrayOfIndices(OCTAVE_RANGE, 0, (v, i) => (
         mod12(Math.ceil(i / 2) * (i % 2 === 0 ? 1 : -1))
     ))
 )

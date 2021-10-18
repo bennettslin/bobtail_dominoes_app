@@ -10,6 +10,7 @@ import faceGA from '../../../../assets/svgs/chords/faceGA'
 import faceA from '../../../../assets/svgs/chords/faceA'
 import faceAB from '../../../../assets/svgs/chords/faceAB'
 import faceB from '../../../../assets/svgs/chords/faceB'
+import { mod12 } from '../../../../utils/chords/math'
 
 const
     FACES = [faceC, faceCD, faceD, faceDE, faceE, faceF, faceFG, faceG, faceGA, faceA, faceAB, faceB],
@@ -19,5 +20,5 @@ export const getFaceSrc = pitch => FACES[pitch]
 
 export const getButtonPositionStyle = pitch => ({
     top: `${COORDINATES[6 - Math.abs(6 - pitch)]}%`,
-    left: `${COORDINATES[Math.abs(6 - (pitch + 9) % 12)]}%`,
+    left: `${COORDINATES[Math.abs(6 - mod12((pitch + 9)))]}%`,
 })

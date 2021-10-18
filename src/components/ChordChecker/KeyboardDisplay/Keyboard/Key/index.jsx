@@ -4,11 +4,11 @@ import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import StyledShadow from '../../../../Styled/Shadow'
 import Svg from '../../../../Svg'
-import { getPitchConfig } from '../../../../../utils/audio'
+import { getPitchConfig } from '../../../../../utils/audio/pitch'
 import { getIsPitchBlack } from '../../../../../utils/chords/label'
 import { getMapIsPlayedPitchIndex } from '../../../../../redux/audio/selector'
 import { getMapHasCurrentPitch, getMapIsRoot } from '../../../../../redux/chords/selector'
-import { getBlackKeyPosition, getKeySrc } from './util'
+import { getBlackKeyPositionStyle, getKeySrc } from './util'
 import styleConfigPitchBlack from '../../../../../styles/checker/pitchBlack'
 import styleConfigPitchOn from '../../../../../styles/checker/pitchOn'
 import styleConfigPitchWhite from '../../../../../styles/checker/pitchWhite'
@@ -34,7 +34,7 @@ const KeyboardKey = ({ pitchIndex }) => {
                         'KeyboardKey__white',
                 ),
                 ...isPitchBlack && {
-                    style: getBlackKeyPosition(pitchIndex),
+                    style: getBlackKeyPositionStyle(pitchIndex),
                 },
             }}
         >

@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect'
-import { getPitchConfig } from '../../utils/audio'
+import { getPitchConfig } from '../../utils/audio/pitch'
 import { AUDIO_STORE } from './reducer'
 
 export const mapCurrentPitchIndex = (

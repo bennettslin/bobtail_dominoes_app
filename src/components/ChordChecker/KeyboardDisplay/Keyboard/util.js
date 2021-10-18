@@ -1,4 +1,4 @@
-import { getPitchIndices } from '../../../../utils/audio'
+import { getPitchIndices } from '../../../../utils/audio/pitch'
 import { getArrayOfPitches } from '../../../../utils/chords/math'
 
 export const GAP_KEYBOARD = 2

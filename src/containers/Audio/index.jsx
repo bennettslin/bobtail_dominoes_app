@@ -4,7 +4,8 @@ import { now, PolySynth, FMSynth } from 'tone'
 import { updatePlayedPitchIndex, queuePlay } from '../../redux/audio/action'
 import { mapIsAutoplayOn, mapQueuedPlay } from '../../redux/audio/selector'
 import { mapCurrentPitchSet, mapHasSonority } from '../../redux/chords/selector'
-import { getPitchIndices, getAudioPitchSymbol } from '../../utils/audio'
+import { getPitchIndices, getAudioPitchSymbol } from '../../utils/audio/pitch'
+import { getAttackTime } from '../../utils/audio/time'
 
 const Audio = () => {
     const
@@ -26,16 +27,12 @@ const Audio = () => {
         return synth || initializeSynth()
     }
 
-    const getAttackTime = (index, multiplier = 1) => (
-        index * 0.25 / currentPitchSet.size * multiplier // By ear.
-    )
-
     const soundPitches = pitchIndices => {
         pitchIndices.forEach((pitchIndex, index) => {
             getSynth().triggerAttackRelease(
                 getAudioPitchSymbol(pitchIndex),
                 0.1, // Sound duration, by ear.
-                now() + getAttackTime(index),
+                now() + getAttackTime({ index, pitchSet: currentPitchSet }),
             )
         })
     }
@@ -44,7 +41,11 @@ const Audio = () => {
         [...pitchIndices, -1].forEach((pitchIndex, index) => {
             setTimeout(() => {
                 dispatch(updatePlayedPitchIndex(pitchIndex))
-            }, getAttackTime(index, 1000))
+            }, getAttackTime({
+                index,
+                pitchSet: currentPitchSet,
+                multiplier: 1000, // Milliseconds.
+            }))
         })
     }
 
