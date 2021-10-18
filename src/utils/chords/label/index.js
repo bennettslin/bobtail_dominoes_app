@@ -45,8 +45,14 @@ const CHORD_LABEL_MAP = {
     '0348': { quality: AUG, name: 'augmented major', type: '+', sup: 'M7' },
 }
 
+const SYMMETRICAL_CHORDS = new Set(['048', '0369'])
+
 export const getIsPitchBlack = pitch => (
     typeof ROOT_LETTERS[pitch] === 'object'
+)
+
+export const getIsSymmetricalChord = pitchSet => (
+    SYMMETRICAL_CHORDS.has(getPrimeFormKey(pitchSet))
 )
 
 const getRootLetters = pitchSet => {

@@ -144,7 +144,7 @@ describe('getRoots', () => {
         [new Set([0, 3, 7]), new Set([0])], // Minor.
         [new Set([11, 7, 2]), new Set([7])], // Major.
         [new Set([5, 8, 2]), new Set([2])], // Diminished.
-        [new Set([5, 1, 9]), new Set([1])], // Augmented.
+        [new Set([5, 1, 9]), new Set([1, 5, 9])], // Augmented.
         [new Set([11, 0, 6]), new Set([-1])], // Non-chord.
         // Tetrad.
         [new Set([2, 4, 7, 11]), new Set([4])], // Minor
@@ -152,7 +152,7 @@ describe('getRoots', () => {
         [new Set([1, 6, 5, 10]), new Set([6])], // Major.
         [new Set([8, 1, 4, 0]), new Set([1])], // Minor-major.
         [new Set([11, 2, 6, 8]), new Set([8])], // Half-diminished.
-        [new Set([9, 6, 3, 0]), new Set([0])], // Diminished.
+        [new Set([9, 6, 3, 0]), new Set([0, 3, 6, 9])], // Diminished.
         [new Set([2, 9, 6, 10]), new Set([10])], // Augmented major.
         [new Set([2, 0, 7, 5]), new Set([-1])], // Non-chord.
         // Greater.

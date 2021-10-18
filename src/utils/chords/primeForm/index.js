@@ -1,3 +1,4 @@
+import { getIsSymmetricalChord } from '../label'
 import { mod12 } from '../math'
 import { getIsChord } from '../valid'
 
@@ -84,7 +85,14 @@ export const getRoots = pitchSet => {
     if (!getIsChord(pitchSet)) {
         return new Set([-1])
     }
+
     const normalForm = getNormalForm(pitchSet)
+
+    // If it's a symmetrical chord, all its pitches are roots.
+    if (getIsSymmetricalChord(getPrimeFormKey(pitchSet))) {
+        // Return in order.
+        return new Set(normalForm)
+    }
 
     // Only seventh chord can have root that's not first pitch of normal form.
     if (pitchSet.size >= 4) {
