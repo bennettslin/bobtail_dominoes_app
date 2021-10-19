@@ -1,13 +1,11 @@
 import { mod12 } from '../../chords/math'
 import {
-    BASE_PITCH_INDEX,
-    OCTAVE_COUNT,
     OCTAVE_RANGE,
+    BASE_PITCH_INDEX,
+    HIGHEST_PITCH_INDEX,
 } from '../../../constants/audio'
 
-const
-    AUDIO_PITCHES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'],
-    HIGHEST_PITCH_INDEX = BASE_PITCH_INDEX + OCTAVE_RANGE * OCTAVE_COUNT - 1
+const AUDIO_PITCHES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
 
 export const getPitchConfig = pitchIndex => ({
     register: Math.floor(pitchIndex / OCTAVE_RANGE),

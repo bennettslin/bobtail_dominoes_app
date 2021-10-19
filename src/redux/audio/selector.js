@@ -1,10 +1,25 @@
 import { createSelector } from 'reselect'
-import { getPitchConfig } from '../../utils/audio/pitch'
+import { getRoots } from '../../utils/chords/primeForm'
 import { AUDIO_STORE } from './reducer'
 
-export const mapCurrentPitchIndex = (
-    { [AUDIO_STORE]: { playedPitchIndex } },
-) => playedPitchIndex
+export const mapCurrentPitchSet = (
+    { [AUDIO_STORE]: { currentPitchSet } },
+) => currentPitchSet
+
+export const mapHasSonority = createSelector(
+    mapCurrentPitchSet,
+    currentPitchSet => Boolean(currentPitchSet.size),
+)
+
+export const getMapHasCurrentPitch = pitch => createSelector(
+    mapCurrentPitchSet,
+    currentPitchSet => currentPitchSet.has(pitch),
+)
+
+export const getMapIsRoot = pitch => createSelector(
+    mapCurrentPitchSet,
+    currentPitchSet => getRoots(currentPitchSet).has(pitch),
+)
 
 export const mapIsAudioStarted = (
     { [AUDIO_STORE]: { isAudioStarted } },
@@ -14,19 +29,11 @@ export const mapIsAutoplayOn = (
     { [AUDIO_STORE]: { isAutoplayOn } },
 ) => isAutoplayOn
 
-export const mapQueuedPlay = (
-    { [AUDIO_STORE]: { queuedPlay } },
-) => queuedPlay
+export const mapPitchIndexConfig = (
+    { [AUDIO_STORE]: { pitchIndexConfig } },
+) => pitchIndexConfig
 
-export const getMapIsPlayedPitchIndex = pitchIndex => createSelector(
-    mapCurrentPitchIndex,
-    playedPitchIndex => pitchIndex === playedPitchIndex,
-)
-
-export const getMapIsPlayedPitch = pitch => createSelector(
-    mapCurrentPitchIndex,
-    playedPitchIndex => {
-        const { pitch: currentPitch } = getPitchConfig(playedPitchIndex)
-        return pitch === currentPitch
-    },
+export const mapIsPlaying = createSelector(
+    mapPitchIndexConfig,
+    pitchIndexConfig => Boolean(pitchIndexConfig),
 )

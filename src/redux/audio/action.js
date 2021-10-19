@@ -1,17 +1,22 @@
 import { setBoolInStorage } from '../../utils/storage'
-import { AUDIO_DEFAULT } from './default'
+import { AUDIO_DEFAULT, QUEUE_PLAY, TOGGLE_PITCH, TRANSPOSE_PITCH_SET } from './default'
 import { AUDIO_STORE } from './reducer'
 
-export const updatePlayedPitchIndex = (
-    playedPitchIndex = AUDIO_DEFAULT.playedPitchIndex,
+export const updateCurrentPitchSet = (
+    currentPitchSet = AUDIO_DEFAULT.currentPitchSet,
 ) => ({
     type: AUDIO_STORE,
-    payload: {
-        playedPitchIndex,
-        ...playedPitchIndex === -1 && {
-            queuedPlay: AUDIO_DEFAULT.queuedPlay,
-        },
-    },
+    payload: { currentPitchSet },
+})
+
+export const togglePitch = pitch => ({
+    type: TOGGLE_PITCH,
+    payload: { pitch },
+})
+
+export const updateTransposedPitchSet = direction => ({
+    type: TRANSPOSE_PITCH_SET,
+    payload: { direction },
 })
 
 export const updateIsAudioStarted = (
@@ -32,7 +37,7 @@ export const updateIsAutoplayOn = (
     }
 }
 
-export const queuePlay = () => ({
-    type: AUDIO_STORE,
-    payload: { queuedPlay: true },
+export const queuePlay = queuedPlay => ({
+    type: QUEUE_PLAY,
+    payload: { queuedPlay },
 })

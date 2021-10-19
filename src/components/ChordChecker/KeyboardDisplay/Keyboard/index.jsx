@@ -2,7 +2,8 @@ import React from 'react'
 import cx from 'classnames'
 import Flex from '../../../Flex'
 import KeyboardKey from './Key'
-import { ALL_PITCH_INDICES, GAP_KEYBOARD } from './util'
+import { ALL_PITCH_INDICES } from '../../../../constants/audio'
+import { GAP_KEYBOARD } from './util'
 import './style'
 
 const Keyboard = () => {

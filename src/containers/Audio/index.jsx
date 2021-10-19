@@ -1,19 +1,20 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { now, PolySynth, FMSynth } from 'tone'
-import { updatePlayedPitchIndex, queuePlay } from '../../redux/audio/action'
-import { mapIsAutoplayOn, mapQueuedPlay } from '../../redux/audio/selector'
-import { mapCurrentPitchSet, mapHasSonority } from '../../redux/chords/selector'
-import { getPitchIndices, getAudioPitchSymbol } from '../../utils/audio/pitch'
-import { getAttackTime } from '../../utils/audio/time'
+import { OCTAVE_COUNT } from '../../constants/audio'
+import { queuePlay } from '../../redux/audio/action'
+import { mapCurrentPitchSet, mapHasSonority, mapIsAutoplayOn, mapIsPlaying, mapPitchIndexConfig } from '../../redux/audio/selector'
+import { getAudioPitchSymbol } from '../../utils/audio/pitch'
+import { OCTAVE_DURATION_TIME } from '../../utils/audio/time'
 
 const Audio = () => {
     const
         dispatch = useDispatch(),
         [synth, setSynth] = useState(null),
         isAutoplayOn = useSelector(mapIsAutoplayOn),
-        queuedPlay = useSelector(mapQueuedPlay),
         currentPitchSet = useSelector(mapCurrentPitchSet),
+        pitchIndexConfig = useSelector(mapPitchIndexConfig),
+        isPlaying = useSelector(mapIsPlaying),
         hasSonority = useSelector(mapHasSonority)
 
     const initializeSynth = () => {
@@ -27,45 +28,35 @@ const Audio = () => {
         return synth || initializeSynth()
     }
 
-    const soundPitches = pitchIndices => {
-        pitchIndices.forEach((pitchIndex, index) => {
+    const soundPitches = () => {
+        Object.values(pitchIndexConfig).forEach(({ pitchIndex, attack }) => {
             getSynth().triggerAttackRelease(
                 getAudioPitchSymbol(pitchIndex),
                 0.1, // Sound duration, by ear.
-                now() + getAttackTime({ index, pitchSet: currentPitchSet }),
+                now() + attack,
             )
         })
     }
 
-    const timePitches = pitchIndices => {
-        [...pitchIndices, -1].forEach((pitchIndex, index) => {
-            setTimeout(() => {
-                dispatch(updatePlayedPitchIndex(pitchIndex))
-            }, getAttackTime({
-                index,
-                pitchSet: currentPitchSet,
-                multiplier: 1000, // Milliseconds.
-            }))
-        })
-    }
-
-    const play = () => {
-        const pitchIndices = getPitchIndices(currentPitchSet)
-        soundPitches(pitchIndices)
-        timePitches(pitchIndices)
+    const timePitches = () => {
+        setTimeout(() => {
+            dispatch(queuePlay(false))
+        }, OCTAVE_COUNT * OCTAVE_DURATION_TIME * 1000)
     }
 
     useEffect(() => {
-        if (isAutoplayOn && hasSonority && !queuedPlay) {
-            dispatch(queuePlay())
+        if (isAutoplayOn && hasSonority && !isPlaying) {
+            dispatch(queuePlay(true))
         }
-    }, [currentPitchSet])
+    }, [isAutoplayOn, currentPitchSet])
 
     useEffect(() => {
-        if (hasSonority && queuedPlay) {
-            play()
+        if (hasSonority && pitchIndexConfig) {
+            soundPitches()
+            timePitches()
+            console.log('pitch index config', pitchIndexConfig)
         }
-    }, [queuedPlay])
+    }, [pitchIndexConfig])
 
     return null
 }

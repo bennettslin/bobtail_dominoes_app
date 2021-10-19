@@ -8,8 +8,7 @@ import StyledCheckerButton from '../../Styled/CheckerButton'
 import CheckerButtonSvg from './ButtonSvg'
 import CheckerFaceSvg from './FaceSvg'
 import { updateIsAudioStarted } from '../../../redux/audio/action'
-import { mapIsAudioStarted } from '../../../redux/audio/selector'
-import { mapHasSonority } from '../../../redux/chords/selector'
+import { mapHasSonority, mapIsAudioStarted } from '../../../redux/audio/selector'
 import './style'
 
 const CheckerButton = ({
