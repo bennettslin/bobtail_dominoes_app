@@ -2,14 +2,14 @@
 
 .Keyboard {
     position: relative;
-    // height: $margin__xl;
     margin-top: $margin__xs;
+    height: $margin__md * 2;
 
     @media (min-width: $breakpoint__sm) {
-        // height: $margin__xl * 1.5;
+        height: $margin__lg * 2;
     }
 
     @media (min-width: $breakpoint__md) {
-        // height: $margin__xl * 2;
+        height: $margin__lg * 3;
     }
 }

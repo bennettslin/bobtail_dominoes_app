@@ -56,7 +56,6 @@ const KeyboardKey = ({ pitchIndex }) => {
                                 styleConfigPitchBlack :
                                 styleConfigPitchWhite
                         ),
-                        scaleFactor: 0.2,
                     }}
                 />
             </StyledShadow>
