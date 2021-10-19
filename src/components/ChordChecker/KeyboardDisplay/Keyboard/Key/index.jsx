@@ -6,7 +6,10 @@ import StyledShadow from '../../../../Styled/Shadow'
 import Svg from '../../../../Svg'
 import { getPitchConfig } from '../../../../../utils/audio/pitch'
 import { getIsPitchBlack } from '../../../../../utils/chords/label'
-import { getMapHasCurrentPitch, getMapIsRoot } from '../../../../../redux/audio/selector'
+import {
+    getMapHasCurrentPitch,
+    getMapIsRoot,
+} from '../../../../../redux/audio/selector'
 import { getBlackKeyPositionStyle, getKeySrc } from './util'
 import styleConfigPitchBlack from '../../../../../styles/checker/pitchBlack'
 import styleConfigPitchOn from '../../../../../styles/checker/pitchOn'
@@ -26,12 +29,12 @@ const KeyboardKey = ({ pitchIndex }) => {
             {...{
                 className: cx(
                     'KeyboardKey',
-                    isPitchBlack ?
-                        'KeyboardKey__black' :
-                        'KeyboardKey__white',
                 ),
                 ...isPitchBlack && {
-                    style: getBlackKeyPositionStyle(pitchIndex),
+                    style: {
+                        position: 'absolute',
+                        ...getBlackKeyPositionStyle(pitchIndex),
+                    },
                 },
             }}
         >

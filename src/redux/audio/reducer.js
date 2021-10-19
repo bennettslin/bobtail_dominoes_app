@@ -1,4 +1,4 @@
-import { getPitchIndexConfig } from '../../utils/audio/time'
+import { getPlayedPitchConfig } from '../../utils/audio/time'
 import { transposePitchSet } from '../../utils/chords/math'
 import { AUDIO_DEFAULT, QUEUE_PLAY, TOGGLE_PITCH, TRANSPOSE_PITCH_SET } from './default'
 
@@ -46,13 +46,13 @@ export const audioReducer = (
             const
                 { currentPitchSet } = state,
                 { queuedPlay } = payload,
-                pitchIndexConfig = queuedPlay ?
-                    getPitchIndexConfig(currentPitchSet) :
+                playedPitchConfig = queuedPlay ?
+                    getPlayedPitchConfig(currentPitchSet) :
                     null
 
             return {
                 ...state,
-                pitchIndexConfig,
+                playedPitchConfig,
             }
         }
         default:

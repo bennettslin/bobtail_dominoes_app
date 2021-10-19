@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { now, PolySynth, FMSynth } from 'tone'
 import { OCTAVE_COUNT } from '../../constants/audio'
 import { queuePlay } from '../../redux/audio/action'
-import { mapCurrentPitchSet, mapHasSonority, mapIsAutoplayOn, mapIsPlaying, mapPitchIndexConfig } from '../../redux/audio/selector'
+import { mapCurrentPitchSet, mapHasSonority, mapIsAutoplayOn, mapIsPlaying, mapPlayedPitchConfig } from '../../redux/audio/selector'
 import { getAudioPitchSymbol } from '../../utils/audio/pitch'
 import { OCTAVE_DURATION_TIME } from '../../utils/audio/time'
 
@@ -13,7 +13,7 @@ const Audio = () => {
         [synth, setSynth] = useState(null),
         isAutoplayOn = useSelector(mapIsAutoplayOn),
         currentPitchSet = useSelector(mapCurrentPitchSet),
-        pitchIndexConfig = useSelector(mapPitchIndexConfig),
+        playedPitchConfig = useSelector(mapPlayedPitchConfig),
         isPlaying = useSelector(mapIsPlaying),
         hasSonority = useSelector(mapHasSonority)
 
@@ -24,17 +24,20 @@ const Audio = () => {
         return newSynth
     }
 
-    const getSynth = () => {
-        return synth || initializeSynth()
-    }
+    const getSynth = () => synth || initializeSynth()
 
     const soundPitches = () => {
-        Object.values(pitchIndexConfig).forEach(({ pitchIndex, attack }) => {
-            getSynth().triggerAttackRelease(
-                getAudioPitchSymbol(pitchIndex),
-                0.1, // Sound duration, by ear.
-                now() + attack,
-            )
+        Object.values(playedPitchConfig).forEach(pitchIndexConfig => {
+            Object.values(pitchIndexConfig).forEach(({
+                pitchIndex,
+                attack,
+            }) => {
+                getSynth().triggerAttackRelease(
+                    getAudioPitchSymbol(pitchIndex),
+                    0.1, // Sound duration, by ear.
+                    now() + attack,
+                )
+            })
         })
     }
 
@@ -51,12 +54,12 @@ const Audio = () => {
     }, [isAutoplayOn, currentPitchSet])
 
     useEffect(() => {
-        if (hasSonority && pitchIndexConfig) {
+        if (hasSonority && playedPitchConfig) {
             soundPitches()
             timePitches()
-            console.log('pitch index config', pitchIndexConfig)
+            console.log('played pitch config', playedPitchConfig)
         }
-    }, [pitchIndexConfig])
+    }, [playedPitchConfig])
 
     return null
 }

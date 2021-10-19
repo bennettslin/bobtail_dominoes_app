@@ -29,11 +29,11 @@ export const mapIsAutoplayOn = (
     { [AUDIO_STORE]: { isAutoplayOn } },
 ) => isAutoplayOn
 
-export const mapPitchIndexConfig = (
-    { [AUDIO_STORE]: { pitchIndexConfig } },
-) => pitchIndexConfig
+export const mapPlayedPitchConfig = (
+    { [AUDIO_STORE]: { playedPitchConfig } },
+) => playedPitchConfig
 
 export const mapIsPlaying = createSelector(
-    mapPitchIndexConfig,
-    pitchIndexConfig => Boolean(pitchIndexConfig),
+    mapPlayedPitchConfig,
+    playedPitchConfig => Boolean(playedPitchConfig),
 )

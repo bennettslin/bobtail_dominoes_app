@@ -9,7 +9,7 @@ const AUDIO_PITCHES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#
 
 export const getPitchConfig = pitchIndex => ({
     register: Math.floor(pitchIndex / OCTAVE_RANGE),
-    pitch: pitchIndex === -1 ? pitchIndex : mod12(pitchIndex),
+    pitch: mod12(pitchIndex),
 })
 
 export const getAudioPitchSymbol = pitchIndex => {

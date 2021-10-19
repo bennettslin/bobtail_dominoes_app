@@ -1,12 +1,3 @@
-@import '../../../../../scss/constants/responsive';
-
 .KeyboardKey {
     position: relative;
-}
-
-.KeyboardKey__black {
-    position: absolute;
-    top: 0;
-    height: 61.15%;
-    transform: translateX(-50%);
 }

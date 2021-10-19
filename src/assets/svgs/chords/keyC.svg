@@ -1,6 +1,6 @@
-<svg viewBox="0 0 108 450">
-  <polygon class="edge" points="108 450 0 450 0 0 48 0 48 283 108 283 108 450"/>
-  <polygon class="face" points="100 442 8 442 8 8 40 8 40 291 100 291 100 442"/>
-  <rect class="cBottom" x="22" y="386" width="64" height="48" rx="15"/>
-  <rect class="cFace" x="22" y="391" width="64" height="43" rx="15"/>
+<svg viewBox="0 0 116 480">
+  <polygon class="edge" points="112 480 4 480 4 0 48 0 48 296 112 296 112 480"/>
+  <polygon class="face" points="104 472 12 472 12 8 40 8 40 304 104 304 104 472"/>
+  <rect class="cBottom" x="26" y="416" width="64" height="48" rx="15"/>
+  <rect class="cFace" x="26" y="421" width="64" height="43" rx="15"/>
 </svg>

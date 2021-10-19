@@ -9,5 +9,5 @@ export const AUDIO_DEFAULT = {
     currentPitchSet: new Set(),
     isAudioStarted: false,
     isAutoplayOn: INITIAL_IS_AUTOPLAY_ON,
-    pitchIndexConfig: null,
+    playedPitchConfig: null,
 }

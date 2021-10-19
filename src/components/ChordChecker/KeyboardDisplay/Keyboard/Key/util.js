@@ -36,6 +36,8 @@ export const getBlackKeyPositionStyle = pitchIndex => {
             Math.floor((mod12(pitch - LOWEST_PITCH) + 1) / 2) +
             // Add extra white key if needed.
             ((pitch % 2 === LOWEST_PITCH % 2) || pitch < LOWEST_PITCH)
+            // Accommodate the way svgs are spaced.
+            - 1
 
     return {
         left: `${leftWhiteKeysCount / WHITE_KEYS_COUNT * 100}%`,

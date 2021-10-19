@@ -1,6 +1,6 @@
-<svg viewBox="0 0 92 275">
-  <rect class="edge" width="92" height="275"/>
-  <rect class="face" x="8" y="8" width="76" height="259"/>
-  <rect class="deBottom" x="14" y="211" width="64" height="48" rx="15"/>
-  <rect class="deFace" x="14" y="216" width="64" height="43" rx="15"/>
+<svg viewBox="0 0 176 480">
+  <rect class="edge" x="80" width="96" height="288"/>
+  <rect class="face" x="88" y="8" width="80" height="272"/>
+  <rect class="deBottom" x="96" y="224" width="64" height="48" rx="15"/>
+  <rect class="deFace" x="96" y="229" width="64" height="43" rx="15"/>
 </svg>
