@@ -6,8 +6,8 @@ export const TRANSPOSE_PITCH_SET = 'transpose'
 const INITIAL_IS_AUTOPLAY_ON = getBoolFromStorage('isAutoplayOn')
 
 export const AUDIO_DEFAULT = {
-    currentPitchSet: new Set(),
-    isAudioStarted: false,
     isAutoplayOn: INITIAL_IS_AUTOPLAY_ON,
-    playedPitchConfig: null,
+    isAudioStarted: false,
+    currentPitchSet: new Set(),
+    playedPitchConfigs: null,
 }

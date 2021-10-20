@@ -1,4 +1,4 @@
-import { getPlayedPitchConfig } from '../../utils/audio/time'
+import { getPlayedPitchConfigs } from '../../utils/audio/time'
 import { transposePitchSet } from '../../utils/chords/math'
 import { AUDIO_DEFAULT, QUEUE_PLAY, TOGGLE_PITCH, TRANSPOSE_PITCH_SET } from './default'
 
@@ -34,25 +34,23 @@ export const audioReducer = (
         case TRANSPOSE_PITCH_SET: {
             const
                 { currentPitchSet: prevPitchSet } = state,
-                { direction } = payload,
-                currentPitchSet = transposePitchSet(prevPitchSet, direction)
+                { direction } = payload
 
             return {
                 ...state,
-                currentPitchSet,
+                currentPitchSet: transposePitchSet(prevPitchSet, direction),
             }
         }
         case QUEUE_PLAY: {
             const
                 { currentPitchSet } = state,
-                { queuedPlay } = payload,
-                playedPitchConfig = queuedPlay ?
-                    getPlayedPitchConfig(currentPitchSet) :
-                    null
+                { queuedPlay } = payload
 
             return {
                 ...state,
-                playedPitchConfig,
+                playedPitchConfigs: queuedPlay ?
+                    getPlayedPitchConfigs(currentPitchSet) :
+                    null,
             }
         }
         default:

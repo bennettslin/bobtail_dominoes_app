@@ -4,7 +4,7 @@ import cx from 'classnames'
 import { useDispatch, useSelector } from 'react-redux'
 import CheckerButton from '../../CheckerButton'
 import { togglePitch } from '../../../../redux/audio/action'
-import { getMapHasCurrentPitch, getMapIsRoot } from '../../../../redux/audio/selector'
+import { getMapHasCurrentPitch, getMapIsRoot, getMapPlayedPitchConfig } from '../../../../redux/audio/selector'
 import { getIsPitchBlack } from '../../../../utils/chords/label'
 import { getButtonPositionStyle, getFaceSrc } from './util'
 import styleConfigPitchBlack from '../../../../styles/checker/pitchBlack'
@@ -17,7 +17,8 @@ const PitchButton = ({ pitch }) => {
     const
         dispatch = useDispatch(),
         isRoot = useSelector(getMapIsRoot(pitch)),
-        hasCurrentPitch = useSelector(getMapHasCurrentPitch(pitch))
+        hasCurrentPitch = useSelector(getMapHasCurrentPitch(pitch)),
+        playedPitchConfig = useSelector(getMapPlayedPitchConfig(pitch))
 
     const onClick = () => {
         dispatch(togglePitch(pitch))
@@ -29,6 +30,7 @@ const PitchButton = ({ pitch }) => {
                 key: isRoot,
                 className: cx(
                     'PitchButton',
+                    playedPitchConfig && 'testing',
                 ),
                 faceSrc: getFaceSrc(pitch),
                 style: getButtonPositionStyle(pitch),

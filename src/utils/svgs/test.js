@@ -1,61 +1,61 @@
 import { getStyleConfig, hsl } from '.'
 
 const
-    MOCK_STYLES_0 = {
+    MOCK_STYLES_A = {
         fill: {
-            classA: 'styleA',
-            classB: 'styleB',
+            car: 'red',
+            plane: 'blue',
         },
         stroke: {
-            classC: 'styleC',
-            classD: 'styleD',
+            tree: 'purple',
+            rock: 'green',
         },
     },
-    MOCK_STYLES_1 = {
+    MOCK_STYLES_B = {
         fill: {
-            classE: 'styleE',
-            classF: 'styleF',
+            tree: 'orange',
+            rock: 'yellow',
         },
         stroke: {
-            classG: 'styleG',
-            classH: 'styleH',
+            house: 'turquoise',
+            garage: 'magenta',
         },
     },
     MERGED_STYLES = {
         fill: {
-            classA: 'styleA',
-            classB: 'styleB',
-            classE: 'styleE',
-            classF: 'styleF',
+            car: 'red',
+            plane: 'blue',
+            tree: 'orange',
+            rock: 'yellow',
         },
         stroke: {
-            classC: 'styleC',
-            classD: 'styleD',
-            classG: 'styleG',
-            classH: 'styleH',
+            tree: 'purple',
+            rock: 'green',
+            house: 'turquoise',
+            garage: 'magenta',
         },
     }
 
 describe('getStyleConfig', () => {
     it('returns style config for single styles object', () => {
         expect(getStyleConfig(
-            'mockClassName',
-            MOCK_STYLES_0,
+            'scenery',
+            MOCK_STYLES_A,
         )).toStrictEqual({
-            className: 'mockClassName',
-            styles: MOCK_STYLES_0,
+            className: 'scenery',
+            styles: MOCK_STYLES_A,
         })
     })
 
     it('returns style config for array of styles objects', () => {
         expect(getStyleConfig(
-            'mockClassName',
+            'scenery',
             [
-                MOCK_STYLES_0,
-                MOCK_STYLES_1,
+                MOCK_STYLES_A,
+                MOCK_STYLES_B,
             ],
         )).toStrictEqual({
-            className: 'mockClassName',
+            className: 'scenery',
             styles: MERGED_STYLES,
         })
     })

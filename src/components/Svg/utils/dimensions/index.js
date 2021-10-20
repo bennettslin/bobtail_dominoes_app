@@ -1,5 +1,7 @@
+import { getFixed } from '../../../../utils/general'
+
 const getStyleString = ({ style, length, scaleFactor }) => (
-    `${style}:${(parseFloat(length) * scaleFactor).toFixed(2)}px;`
+    `${style}:${getFixed(parseFloat(length) * scaleFactor, 2)}px;`
 )
 
 export const getSvgWithDimensions = ({ svgString, scaleFactor }) => {

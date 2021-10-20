@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import ReactInlineSvg from 'react-inlinesvg'
-import { getSvgWithDimensions } from './helpers/dimensions'
-import { getSvgWithClassStyles } from './helpers/styles'
+import { getSvgWithDimensions } from './utils/dimensions'
+import { getSvgWithClassStyles } from './utils/styles'
 import './style'
 
 const Svg = ({

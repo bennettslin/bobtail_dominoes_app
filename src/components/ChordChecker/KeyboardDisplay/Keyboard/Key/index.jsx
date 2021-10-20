@@ -9,6 +9,7 @@ import { getIsPitchBlack } from '../../../../../utils/chords/label'
 import {
     getMapHasCurrentPitch,
     getMapIsRoot,
+    getMapPlayedPitchIndexConfig,
 } from '../../../../../redux/audio/selector'
 import { getBlackKeyPositionStyle, getKeySrc } from './util'
 import styleConfigPitchBlack from '../../../../../styles/checker/pitchBlack'
@@ -20,15 +21,19 @@ import './style'
 const KeyboardKey = ({ pitchIndex }) => {
     const
         { pitch } = getPitchConfig(pitchIndex),
+        isPitchBlack = getIsPitchBlack(pitch),
         isRoot = useSelector(getMapIsRoot(pitch)),
         hasCurrentPitch = useSelector(getMapHasCurrentPitch(pitch)),
-        isPitchBlack = getIsPitchBlack(pitch)
+        playedPitchIndexConfig = useSelector(
+            getMapPlayedPitchIndexConfig(pitchIndex),
+        )
 
     return (
         <div
             {...{
                 className: cx(
                     'KeyboardKey',
+                    playedPitchIndexConfig && 'testing',
                 ),
                 ...isPitchBlack && {
                     style: {

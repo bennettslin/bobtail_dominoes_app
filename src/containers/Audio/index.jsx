@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { now, PolySynth, FMSynth } from 'tone'
 import { OCTAVE_COUNT } from '../../constants/audio'
 import { queuePlay } from '../../redux/audio/action'
-import { mapCurrentPitchSet, mapHasSonority, mapIsAutoplayOn, mapIsPlaying, mapPlayedPitchConfig } from '../../redux/audio/selector'
+import { mapCurrentPitchSet, mapHasSonority, mapIsAutoplayOn, mapIsPlaying, mapPlayedPitchConfigs } from '../../redux/audio/selector'
 import { getAudioPitchSymbol } from '../../utils/audio/pitch'
 import { OCTAVE_DURATION_TIME } from '../../utils/audio/time'
 
@@ -13,7 +13,7 @@ const Audio = () => {
         [synth, setSynth] = useState(null),
         isAutoplayOn = useSelector(mapIsAutoplayOn),
         currentPitchSet = useSelector(mapCurrentPitchSet),
-        playedPitchConfig = useSelector(mapPlayedPitchConfig),
+        playedPitchConfigs = useSelector(mapPlayedPitchConfigs),
         isPlaying = useSelector(mapIsPlaying),
         hasSonority = useSelector(mapHasSonority)
 
@@ -27,7 +27,7 @@ const Audio = () => {
     const getSynth = () => synth || initializeSynth()
 
     const soundPitches = () => {
-        Object.values(playedPitchConfig).forEach(pitchIndexConfig => {
+        Object.values(playedPitchConfigs).forEach(pitchIndexConfig => {
             Object.values(pitchIndexConfig).forEach(({
                 pitchIndex,
                 attack,
@@ -54,12 +54,11 @@ const Audio = () => {
     }, [isAutoplayOn, currentPitchSet])
 
     useEffect(() => {
-        if (hasSonority && playedPitchConfig) {
+        if (hasSonority && playedPitchConfigs) {
             soundPitches()
             timePitches()
-            console.log('played pitch config', playedPitchConfig)
         }
-    }, [playedPitchConfig])
+    }, [playedPitchConfigs])
 
     return null
 }
