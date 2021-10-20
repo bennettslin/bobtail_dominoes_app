@@ -4,29 +4,35 @@ import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import StyledShadow from '../../../../Styled/Shadow'
 import Svg from '../../../../Svg'
-import { getPitchConfig } from '../../../../../utils/audio/pitch'
-import { getIsPitchBlack } from '../../../../../utils/chords/label'
 import {
     getMapHasCurrentPitch,
     getMapIsRoot,
     getMapPlayedPitchIndexConfig,
 } from '../../../../../redux/audio/selector'
-import { getBlackKeyPositionStyle, getKeySrc } from './util'
-import styleConfigPitchBlack from '../../../../../styles/checker/pitchBlack'
-import styleConfigPitchOn from '../../../../../styles/checker/pitchOn'
-import styleConfigPitchWhite from '../../../../../styles/checker/pitchWhite'
-import styleConfigRootOn from '../../../../../styles/checker/rootOn'
+import { getPitchConfig } from '../../../../../utils/audio/pitch'
+import { getIsPitchBlack } from '../../../../../utils/chords/label'
+import {
+    getBlackKeyPositionStyle,
+    getKeySrc,
+    getKeyStyleConfig,
+} from './util'
 import './style'
 
 const KeyboardKey = ({ pitchIndex }) => {
     const
         { pitch } = getPitchConfig(pitchIndex),
         isPitchBlack = getIsPitchBlack(pitch),
-        isRoot = useSelector(getMapIsRoot(pitch)),
         hasCurrentPitch = useSelector(getMapHasCurrentPitch(pitch)),
+        isRoot = useSelector(getMapIsRoot(pitch)),
         playedPitchIndexConfig = useSelector(
             getMapPlayedPitchIndexConfig(pitchIndex),
-        )
+        ),
+        styleConfig = getKeyStyleConfig({
+            isPitchBlack,
+            hasCurrentPitch,
+            isRoot,
+            playedPitchIndexConfig,
+        })
 
     return (
         <div
@@ -46,21 +52,9 @@ const KeyboardKey = ({ pitchIndex }) => {
             <StyledShadow>
                 <Svg
                     {...{
-                        key: [
-                            isRoot,
-                            hasCurrentPitch,
-                        ].join(''),
+                        key: styleConfig.className,
                         src: getKeySrc(pitch),
-                        // eslint-disable-next-line no-nested-ternary
-                        styleConfig: hasCurrentPitch ? (
-                            isRoot ?
-                                styleConfigRootOn :
-                                styleConfigPitchOn
-                        ) : (
-                            isPitchBlack ?
-                                styleConfigPitchBlack :
-                                styleConfigPitchWhite
-                        ),
+                        styleConfig,
                     }}
                 />
             </StyledShadow>

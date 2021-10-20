@@ -15,7 +15,7 @@ const CheckerButtonSvg = ({
         {/* Two svgs allows for showing pressed UI when button is active. */}
         <Svg
             {...{
-                key: `pressed_${isOn}`,
+                key: ['pressed', isOn].join(''),
                 className: cx(
                     'CheckerButtonSvg',
                     'CheckerButtonSvg__pressed',

@@ -1,10 +1,10 @@
 /* eslint-disable key-spacing */
-import { hsl, getStyleConfig } from '../../../utils/svgs'
+import { hsl, getMergedStyles } from '../../../utils/svgs'
 import pitches from '../../dominoes/pitches'
 
-export default getStyleConfig(
-    'pitchWhite',
-    [
+export default {
+    className: 'pitchWhite',
+    styles: getMergedStyles([
         {
             fill: {
                 rightFar:   hsl(30, 23, 47),
@@ -16,5 +16,5 @@ export default getStyleConfig(
             },
         },
         pitches,
-    ],
-)
+    ]),
+}

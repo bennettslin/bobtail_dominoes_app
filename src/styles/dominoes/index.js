@@ -2,14 +2,14 @@ import board from './board'
 import figures from './figures'
 import logo from './logo'
 import pitches from './pitches'
-import { getStyleConfig } from '../../utils/svgs'
+import { getMergedStyles } from '../../utils/svgs'
 
-export default getStyleConfig(
-    'dominoes',
-    [
+export default {
+    className: 'dominoes',
+    styles: getMergedStyles([
         board,
         figures,
         logo,
         pitches,
-    ],
-)
+    ]),
+}

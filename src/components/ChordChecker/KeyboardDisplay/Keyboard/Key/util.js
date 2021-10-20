@@ -1,5 +1,11 @@
 import { getPitchConfig } from '../../../../../utils/audio/pitch'
+import { getAnimatedStyleConfig } from '../../../../../utils/audio/style'
 import { getIsPitchBlack } from '../../../../../utils/chords/label'
+import styleConfigPitchBlack from '../../../../../styles/checker/pitchBlack'
+import styleConfigPitchOn from '../../../../../styles/checker/pitchOn'
+import styleConfigPitchWhite from '../../../../../styles/checker/pitchWhite'
+import styleConfigRootOn from '../../../../../styles/checker/rootOn'
+import './style'
 import { mod12 } from '../../../../../utils/chords/math'
 import keyC from '../../../../../assets/svgs/chords/keyC'
 import keyCD from '../../../../../assets/svgs/chords/keyCD'
@@ -25,6 +31,30 @@ const
     )
 
 export const getKeySrc = pitch => KEYS[pitch]
+
+export const getKeyStyleConfig = ({
+    isPitchBlack,
+    hasCurrentPitch,
+    isRoot,
+    playedPitchIndexConfig,
+
+}) => {
+    let styleConfig = isPitchBlack ?
+        styleConfigPitchBlack :
+        styleConfigPitchWhite
+
+    if (hasCurrentPitch) {
+        styleConfig = isRoot ?
+            styleConfigRootOn :
+            styleConfigPitchOn
+    }
+
+    // This returns the default if there is no played config.
+    return getAnimatedStyleConfig(
+        styleConfig,
+        playedPitchIndexConfig,
+    )
+}
 
 export const getBlackKeyPositionStyle = pitchIndex => {
     const

@@ -44,7 +44,7 @@ const Audio = () => {
     const timePitches = () => {
         setTimeout(() => {
             dispatch(queuePlay(false))
-        }, OCTAVE_COUNT * OCTAVE_DURATION_TIME * 1000)
+        }, OCTAVE_DURATION_TIME * OCTAVE_COUNT * 1000)
     }
 
     useEffect(() => {

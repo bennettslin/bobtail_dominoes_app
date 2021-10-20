@@ -4,13 +4,18 @@ import cx from 'classnames'
 import { useDispatch, useSelector } from 'react-redux'
 import CheckerButton from '../../CheckerButton'
 import { togglePitch } from '../../../../redux/audio/action'
-import { getMapHasCurrentPitch, getMapIsRoot, getMapPlayedPitchConfig } from '../../../../redux/audio/selector'
+import {
+    getMapHasCurrentPitch,
+    getMapIsRoot,
+    getMapPlayedPitchConfig,
+} from '../../../../redux/audio/selector'
 import { getIsPitchBlack } from '../../../../utils/chords/label'
-import { getButtonPositionStyle, getFaceSrc } from './util'
-import styleConfigPitchBlack from '../../../../styles/checker/pitchBlack'
-import styleConfigPitchOn from '../../../../styles/checker/pitchOn'
-import styleConfigPitchWhite from '../../../../styles/checker/pitchWhite'
-import styleConfigRootOn from '../../../../styles/checker/rootOn'
+import {
+    getButtonOnStyleConfig,
+    getButtonPositionStyle,
+    getButtonStyleConfig,
+    getFaceSrc,
+} from './util'
 import './style'
 
 const PitchButton = ({ pitch }) => {
@@ -18,7 +23,12 @@ const PitchButton = ({ pitch }) => {
         dispatch = useDispatch(),
         isRoot = useSelector(getMapIsRoot(pitch)),
         hasCurrentPitch = useSelector(getMapHasCurrentPitch(pitch)),
-        playedPitchConfig = useSelector(getMapPlayedPitchConfig(pitch))
+        playedPitchConfig = useSelector(getMapPlayedPitchConfig(pitch)),
+        styleConfig = getButtonStyleConfig(getIsPitchBlack(pitch)),
+        styleConfigOn = getButtonOnStyleConfig({
+            isRoot,
+            playedPitchConfig,
+        })
 
     const onClick = () => {
         dispatch(togglePitch(pitch))
@@ -27,7 +37,9 @@ const PitchButton = ({ pitch }) => {
     return (
         <CheckerButton
             {...{
-                key: isRoot,
+                key: hasCurrentPitch ?
+                    styleConfigOn.className :
+                    styleConfig.className,
                 className: cx(
                     'PitchButton',
                     playedPitchConfig && 'testing',
@@ -35,13 +47,8 @@ const PitchButton = ({ pitch }) => {
                 faceSrc: getFaceSrc(pitch),
                 style: getButtonPositionStyle(pitch),
                 isOn: hasCurrentPitch,
-                styleConfig: getIsPitchBlack(pitch) ?
-                    styleConfigPitchBlack :
-                    styleConfigPitchWhite,
-                // eslint-disable-next-line no-nested-ternary
-                styleConfigOn: isRoot ?
-                    styleConfigRootOn :
-                    styleConfigPitchOn,
+                styleConfig,
+                styleConfigOn,
                 onClick,
             }}
         />

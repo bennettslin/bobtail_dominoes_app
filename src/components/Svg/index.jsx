@@ -13,6 +13,7 @@ const Svg = ({
     scaleFactor,
     styleConfig: {
         className: styleClassName,
+        keyframes,
         styles,
     } = {},
     onLoad = () => {},
@@ -20,16 +21,17 @@ const Svg = ({
 }) => {
     const [isLoaded, setIsLoaded] = useState(false)
 
-    const preProcessor = svgString => {
-        return getSvgWithClassStyles({
+    const preProcessor = svgString => (
+        getSvgWithClassStyles({
             styleClassName,
             svgString: getSvgWithDimensions({
                 svgString,
                 scaleFactor,
             }),
+            keyframes,
             styles,
         })
-    }
+    )
 
     return (
         <ReactInlineSvg

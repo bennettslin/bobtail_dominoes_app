@@ -1,4 +1,4 @@
-import { getStyleConfig, hsl } from '.'
+import { getMergedStyles, hsl } from '.'
 
 const
     MOCK_STYLES_A = {
@@ -36,28 +36,18 @@ const
         },
     }
 
-describe('getStyleConfig', () => {
-    it('returns style config for single styles object', () => {
-        expect(getStyleConfig(
-            'scenery',
+describe('getMergedStyles', () => {
+    it('returns single styles for single styles object', () => {
+        expect(getMergedStyles(
             MOCK_STYLES_A,
-        )).toStrictEqual({
-            className: 'scenery',
-            styles: MOCK_STYLES_A,
-        })
+        )).toStrictEqual(MOCK_STYLES_A)
     })
 
-    it('returns style config for array of styles objects', () => {
-        expect(getStyleConfig(
-            'scenery',
-            [
-                MOCK_STYLES_A,
-                MOCK_STYLES_B,
-            ],
-        )).toStrictEqual({
-            className: 'scenery',
-            styles: MERGED_STYLES,
-        })
+    it('returns merged styles for array of styles objects', () => {
+        expect(getMergedStyles([
+            MOCK_STYLES_A,
+            MOCK_STYLES_B,
+        ])).toStrictEqual(MERGED_STYLES)
     })
 })
 

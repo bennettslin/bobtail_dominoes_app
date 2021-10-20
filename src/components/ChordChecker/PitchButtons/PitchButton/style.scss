@@ -2,11 +2,3 @@
     position: absolute;
     transform: translate(-50%, -50%);
 }
-
-.testing {
-    .face {
-        animation: christmas 0.75s;
-    }
-}
-
-@keyframes christmas { 0% { fill: green; } 20% { fill: red; } 40% { fill: green; } 60% { fill: red; } 80% { fill: green; } 100% { fill: red; } }

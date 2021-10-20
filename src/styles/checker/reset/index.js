@@ -1,9 +1,9 @@
 /* eslint-disable key-spacing */
-import { hsl, getStyleConfig } from '../../../utils/svgs'
+import { hsl } from '../../../utils/svgs'
 
-export default getStyleConfig(
-    'error',
-    {
+export default {
+    className: 'error',
+    styles: {
         fill: {
             rightFar:   hsl(0, 33, 32),
             right:      hsl(0, 33, 37),
@@ -13,4 +13,4 @@ export default getStyleConfig(
             face:       hsl(0, 33, 67),
         },
     },
-)
+}

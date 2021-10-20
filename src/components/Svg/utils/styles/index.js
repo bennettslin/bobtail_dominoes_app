@@ -1,7 +1,7 @@
 const CLASS_REGEX = /class="/g
 // The first quotation mark after the class is at index 7.
 const FIRST_QUOTE_INDEX = 7
-const STYLE_KEYS = ['fill', 'stroke']
+const STYLE_KEYS = ['animation', 'fill', 'stroke']
 
 const getClassIndices = svgString => {
     let current
@@ -75,9 +75,15 @@ const getClassStylesString = ({
     }).join(' ')
 }
 
+// TODO: Get string from object.
+const getKeyframesString = keyframes => (
+    keyframes ? `@keyframes ${keyframes} ` : ''
+)
+
 export const getSvgWithClassStyles = ({
     styleClassName,
     svgString,
+    keyframes = '',
     styles,
 }) => {
     const
@@ -94,7 +100,9 @@ export const getSvgWithClassStyles = ({
 
     return (
         svgString.substring(0, stylesIndex) +
-        `<style>${stylesString}</style>` +
+        '<style>' +
+        [getKeyframesString(keyframes), stylesString].join(' ') +
+        '</style>' +
         svgString.substring(stylesIndex)
     )
 }

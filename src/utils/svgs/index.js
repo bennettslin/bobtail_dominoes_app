@@ -1,4 +1,8 @@
-const getMergedStyles = styleGroups => {
+export const getMergedStyles = styleGroups => {
+    if (!Array.isArray(styleGroups)) {
+        return styleGroups
+    }
+
     const mergedStyles = {}
     styleGroups.forEach(styleGroup => {
         Object.keys(styleGroup).forEach(styleKey => {
@@ -11,14 +15,6 @@ const getMergedStyles = styleGroups => {
 
     return mergedStyles
 }
-
-export const getStyleConfig = (className, stylesEntity) => ({
-    className,
-    styles:
-        Array.isArray(stylesEntity) ?
-            getMergedStyles(stylesEntity) :
-            stylesEntity,
-})
 
 export const hsl = (h, s, l, a) => (
     Number.isFinite(a) ?

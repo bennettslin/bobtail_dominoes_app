@@ -1,9 +1,9 @@
 /* eslint-disable key-spacing */
-import { hsl, getStyleConfig } from '../../../utils/svgs'
+import { hsl } from '../../../utils/svgs'
 
-export default getStyleConfig(
-    'audio',
-    {
+export default {
+    className: 'audio',
+    styles: {
         fill: {
             rightFar:   hsl(30, 58, 32),
             right:      hsl(30, 58, 37),
@@ -13,4 +13,4 @@ export default getStyleConfig(
             face:       hsl(30, 58, 67),
         },
     },
-)
+}

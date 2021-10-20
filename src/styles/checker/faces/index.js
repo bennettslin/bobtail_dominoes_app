@@ -1,10 +1,10 @@
 /* eslint-disable key-spacing */
-import { hsl, getStyleConfig } from '../../../utils/svgs'
+import { hsl, getMergedStyles } from '../../../utils/svgs'
 import pitches from '../../dominoes/pitches'
 
-export default getStyleConfig(
-    'faces',
-    [
+export default {
+    className: 'faces',
+    styles: getMergedStyles([
         {
             fill: {
                 audioBottom:   hsl(30, 43, 37),
@@ -16,5 +16,5 @@ export default getStyleConfig(
             },
         },
         pitches,
-    ],
-)
+    ]),
+}
