@@ -34,7 +34,7 @@ const Audio = () => {
             }) => {
                 getSynth().triggerAttackRelease(
                     getAudioPitchSymbol(pitchIndex),
-                    0.1, // Sound duration, by ear.
+                    0.125, // Sound duration, by ear.
                     now() + attack,
                 )
             })

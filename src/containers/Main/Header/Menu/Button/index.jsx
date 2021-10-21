@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import StyledButton from '../../../../../components/Styled/Button'
 import StyledButtonText from '../../../../../components/Styled/ButtonText'
 import { getMapIsSelectedOrTabbedPagePath } from '../../../../../redux/page/selector'
-import { getFilteredAndJoinedList } from '../../../../../utils/format'
+import { join } from '../../../../../utils/general'
 import { getInitialChildPage } from '../../../../../utils/pages/path'
 
 const MenuButton = ({
@@ -26,7 +26,7 @@ const MenuButton = ({
                     'fontSize__lg',
                     className,
                 ),
-                pagePath: getFilteredAndJoinedList([
+                pagePath: join([
                     topLevelPage,
                     getInitialChildPage(topLevelPage),
                 ], '/'),

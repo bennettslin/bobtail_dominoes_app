@@ -1,3 +1,5 @@
+import { join } from '../../../../utils/general'
+
 const CLASS_REGEX = /class="/g
 // The first quotation mark after the class is at index 7.
 const FIRST_QUOTE_INDEX = 7
@@ -63,7 +65,7 @@ const getClassStylesString = ({
 
     const classStyles = getClassStyles({ svgString, styles })
 
-    return Object.keys(classStyles).map(className => {
+    return join(Object.keys(classStyles).map(className => {
         const styleStrings = classStyles[className].map(({
             styleKey,
             classStyle,
@@ -71,19 +73,24 @@ const getClassStylesString = ({
             `${styleKey}:${classStyle}`
         ))
 
-        return `.${styleClassName} .${className}{${styleStrings.join('; ')}}`
-    }).join(' ')
+        return `.${styleClassName} .${className}{${join(styleStrings, ';')}}`
+    }))
 }
 
-// TODO: Get string from object.
-const getKeyframesString = keyframes => (
-    keyframes ? `@keyframes ${keyframes} ` : ''
+export const getKeyframesString = (keyframes = []) => (
+    join(keyframes.map(({ animationName, sequence }) => (
+        `@keyframes ${animationName}{` +
+        join(sequence.map(({ percentage, fillStyle }) => (
+            `${percentage}%{fill:${fillStyle}}`
+        ))) +
+        '}'
+    )))
 )
 
 export const getSvgWithClassStyles = ({
     styleClassName,
     svgString,
-    keyframes = '',
+    keyframes = [],
     styles,
 }) => {
     const
@@ -101,7 +108,7 @@ export const getSvgWithClassStyles = ({
     return (
         svgString.substring(0, stylesIndex) +
         '<style>' +
-        [getKeyframesString(keyframes), stylesString].join(' ') +
+        join([getKeyframesString(keyframes), stylesString], ' ') +
         '</style>' +
         svgString.substring(stylesIndex)
     )

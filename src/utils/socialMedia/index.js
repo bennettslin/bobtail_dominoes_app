@@ -1,5 +1,6 @@
 import qs from 'qs'
 import { getUrlFromPath } from '../pages/path'
+import { join } from '../general'
 import {
     FACEBOOK_ACCOUNT,
     FACEBOOK_KEY,
@@ -55,9 +56,9 @@ const
     }
 
 const getWindowFeatures = features => (
-    Object.keys(features).map(key => (
+    join(Object.keys(features).map(key => (
         features[key] === true ? key : `${key}=${features[key]}`
-    )).join(',')
+    )), ',')
 )
 
 export const openSocialMediaPopup = ({

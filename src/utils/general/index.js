@@ -37,3 +37,16 @@ export const getFixed = (number, digits = 2) => {
     }
     return fixed
 }
+
+export const join = (array = [], separator = '') => (
+    array.filter(entry => (
+        Boolean(entry) || Number.isFinite(entry)
+    )).join(separator)
+)
+
+export const round = (number, decimalPlaces = 3) => {
+    const multiplier = Math.pow(10, decimalPlaces)
+    return (
+        Math.round(number * multiplier) / multiplier
+    )
+}

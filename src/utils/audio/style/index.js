@@ -1,19 +1,12 @@
-import { OCTAVE_COUNT } from '../../../constants/audio'
-import { getFixed } from '../../general'
+import { getFixed, join } from '../../general'
 import { getMergedStyles } from '../../svgs'
-import { OCTAVE_DURATION_TIME } from '../time'
 import styleConfigPlayedOn from '../../../styles/checker/playedOn'
+import { OCTAVE_COUNT } from '../../../constants/audio'
+import { OCTAVE_DURATION_TIME } from '../time'
 
 const
     TOTAL_DURATION = OCTAVE_DURATION_TIME * OCTAVE_COUNT,
-    {
-        styles: {
-            fill: {
-                edge: PLAYED_EDGE_STYLE,
-                face: PLAYED_FACE_STYLE,
-            },
-        },
-    } = styleConfigPlayedOn
+    PATH_CLASS_NAMES = ['edge', 'face']
 
 export const getNestedAttacks = configEntity => {
     if (!configEntity) {
@@ -27,21 +20,63 @@ export const getNestedAttacks = configEntity => {
     })
 }
 
-export const getAnimationName = (attacks, className) => (
+export const getAnimationName = ({
+    attacks,
+    className,
+    pathClassName,
+}) => (
     // Name doesn't really matter. It just needs to be unique.
-    [
+    join([
         className,
-        [getFixed(attacks[0]).replace('.', ''), attacks.length].join('_'),
-    ].join('_')
+        pathClassName,
+        join([
+            getFixed(attacks[0]).replace('.', ''),
+            attacks.length,
+        ], '_'),
+    ], '_')
 )
 
-// TODO: Return object.
-export const getKeyframes = (attacks, styleConfig, playedConfigEntity) => {
-    console.log('playedConfigEntity', playedConfigEntity, styleConfig)
-    const { styles: { fill: { face, edge } } } = styleConfig
-    return (
-        `{ 0% { fill: ${face}; } 20% { fill: ${PLAYED_FACE_STYLE}; } 40% { fill: ${face}; } 60% { fill: ${PLAYED_FACE_STYLE}; } 80% { fill: ${face}; } 100% { fill: ${PLAYED_FACE_STYLE}; } }`
-    )
+const getStyleFromConfig = (
+    styleConfig,
+    pathClassName,
+) => styleConfig.styles.fill[pathClassName]
+
+export const getKeyframesSequence = ({
+    attacks,
+    styleConfig,
+    pathClassName,
+    playedConfigEntity,
+}) => {
+    const
+        defaultStyle = getStyleFromConfig(styleConfig, pathClassName),
+        playedStyle = getStyleFromConfig(styleConfigPlayedOn, pathClassName)
+
+    return [
+        {
+            percentage: 0,
+            fillStyle: defaultStyle,
+        },
+        {
+            percentage: 20,
+            fillStyle: playedStyle,
+        },
+        {
+            percentage: 40,
+            fillStyle: defaultStyle,
+        },
+        {
+            percentage: 60,
+            fillStyle: playedStyle,
+        },
+        {
+            percentage: 80,
+            fillStyle: defaultStyle,
+        },
+        {
+            percentage: 100,
+            fillStyle: playedStyle,
+        },
+    ]
 }
 
 export const getAnimatedStyleConfig = (
@@ -54,21 +89,37 @@ export const getAnimatedStyleConfig = (
 
     const
         { className, styles } = styleConfig,
-        attacks = getNestedAttacks(playedConfigEntity),
-        animationName = getAnimationName(attacks, className)
+        attacks = getNestedAttacks(playedConfigEntity)
 
     return {
-        className: [className, animationName].join(''),
-        keyframes: [
-            animationName,
-            getKeyframes(attacks, styleConfig, playedConfigEntity),
-        ].join(' '),
+        className: getAnimationName({ attacks, className }),
+        keyframes: PATH_CLASS_NAMES.map(pathClassName => ({
+            animationName: getAnimationName({
+                attacks,
+                className,
+                pathClassName,
+            }),
+            sequence: getKeyframesSequence({
+                attacks,
+                styleConfig,
+                pathClassName,
+                playedConfigEntity,
+            }),
+        })),
         styles: getMergedStyles([
             {
-                animation: {
-                    edge: `${animationName} ${TOTAL_DURATION}s`,
-                    face: `${animationName} ${TOTAL_DURATION}s`,
-                },
+                animation: PATH_CLASS_NAMES.reduce((config, pathClassName) => {
+                    const animationName = getAnimationName({
+                        attacks,
+                        className,
+                        pathClassName,
+                    })
+                    config[pathClassName] = join([
+                        animationName,
+                        `${TOTAL_DURATION}s`,
+                    ], ' ')
+                    return config
+                }, {}),
             },
             styles,
         ]),

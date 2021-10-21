@@ -1,4 +1,4 @@
-import { getTruncatedText, getCapitalizedText, getFilteredAndJoinedList } from '.'
+import { getTruncatedText, getCapitalizedText } from '.'
 
 describe('getTruncatedText', () => {
     it('returns empty text', () => {
@@ -29,24 +29,6 @@ describe('getCapitalizedText', () => {
     it('returns capitalized text', () => {
         expect(getCapitalizedText(
             `hI, hOw ArE yOu?`,
-        )).toBe(`Hi, how are you?`)
-    })
-})
-
-describe('getFilteredAndJoinedList', () => {
-    it('returns empty text for no input', () => {
-        expect(getFilteredAndJoinedList()).toBe('')
-    })
-
-    it('returns filtered and joined list for default separator', () => {
-        expect(getFilteredAndJoinedList(
-            ['a', 'b', 'c'],
-        )).toBe('abc')
-    })
-
-    it('returns filtered and joined list for custom separator', () => {
-        expect(getFilteredAndJoinedList(
-            ['Hi,', 'how', 'are', 'you?'], ' ',
         )).toBe(`Hi, how are you?`)
     })
 })

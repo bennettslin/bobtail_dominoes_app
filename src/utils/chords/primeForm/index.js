@@ -1,3 +1,4 @@
+import { join } from '../../general'
 import { getIsSymmetricalChord } from '../label'
 import { mod12 } from '../math'
 import { getIsChord } from '../valid'
@@ -68,7 +69,7 @@ export const getPrimeForm = (pitchSet = new Set()) => {
 }
 
 export const getPrimeFormKey = (pitchSet = new Set()) => (
-    getPrimeForm(pitchSet).map(pitch => {
+    join(getPrimeForm(pitchSet).map(pitch => {
         switch (pitch) {
             case 10:
                 return 't'
@@ -77,7 +78,7 @@ export const getPrimeFormKey = (pitchSet = new Set()) => (
             default:
                 return pitch
         }
-    }).join('')
+    }))
 )
 
 export const getRoots = pitchSet => {

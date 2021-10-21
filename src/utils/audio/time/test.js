@@ -1,21 +1,29 @@
-// import { getPlayedPitchConfigs } from '.'
+import { getPlayedPitchConfigs } from '.'
 
-// describe('getPlayedPitchConfigs', () => {
-//     test.each([
-//         [0, { pitch: 0, register: 0 }],
-//         [5, { pitch: 5, register: 0 }],
-//         [10, { pitch: 10, register: 0 }],
-//         [15, { pitch: 3, register: 1 }],
-//         [20, { pitch: 8, register: 1 }],
-//         [25, { pitch: 1, register: 2 }],
-//         [30, { pitch: 6, register: 2 }],
-//         [35, { pitch: 11, register: 2 }],
-//         [40, { pitch: 4, register: 3 }],
-//         [45, { pitch: 9, register: 3 }],
-//         [50, { pitch: 2, register: 4 }],
-//         [55, { pitch: 7, register: 4 }],
-//     ])('%p returns %p', (pitchIndex, result) => {
-//         expect(getPlayedPitchConfigs(pitchIndex)).toBe(result)
-//     })
-// })
-
+describe('getPlayedPitchConfigs', () => {
+    test.each([
+        [undefined, {}],
+        [new Set(), {}],
+        [new Set([6]), {
+            6: {
+                42: { attack: 0, duration: 0.33, pitchIndex: 42 },
+                54: { attack: 0.33, duration: 0.33, pitchIndex: 54 },
+                66: { attack: 0.66, duration: 0.33, pitchIndex: 66 },
+            },
+        }],
+        [new Set([2, 11]), {
+            2: {
+                38: { attack: 0, duration: 0.165, pitchIndex: 38 },
+                50: { attack: 0.33, duration: 0.165, pitchIndex: 50 },
+                62: { attack: 0.66, duration: 0.165, pitchIndex: 62 },
+            },
+            11: {
+                47: { attack: 0.165, duration: 0.165, pitchIndex: 47 },
+                59: { attack: 0.495, duration: 0.165, pitchIndex: 59 },
+                71: { attack: 0.825, duration: 0.165, pitchIndex: 71 },
+            },
+        }],
+    ])('%p returns played pitch config %p', (set, result) => {
+        expect(getPlayedPitchConfigs(set)).toStrictEqual(result)
+    })
+})

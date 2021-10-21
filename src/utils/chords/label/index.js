@@ -1,3 +1,4 @@
+import { join } from '../../general'
 import { getPrimeFormKey, getRoots } from '../primeForm'
 
 const
@@ -58,14 +59,14 @@ export const getIsSymmetricalChord = pitchSet => (
 const getRootLetters = pitchSet => {
     const { quality } = CHORD_LABEL_MAP[getPrimeFormKey(pitchSet)] || {}
 
-    return Array.from(getRoots(pitchSet)).map(root => {
+    return join(Array.from(getRoots(pitchSet)).map(root => {
         const accidental = ACCIDENTAL_MAP[root]?.[quality]
         return (
             accidental ?
                 `${ROOT_LETTERS[root][accidental]}${accidental}` :
                 ROOT_LETTERS[root]
         )
-    }).join('/')
+    }), '/')
 }
 
 export const getChordAbbreviation = pitchSet => {

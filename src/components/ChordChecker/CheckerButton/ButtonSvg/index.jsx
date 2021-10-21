@@ -4,6 +4,7 @@ import cx from 'classnames'
 import Svg from '../../../Svg'
 import button from '../../../../assets/svgs/chords/button'
 import buttonPressed from '../../../../assets/svgs/chords/buttonPressed'
+import { join } from '../../../../utils/general'
 import './style'
 
 const CheckerButtonSvg = ({
@@ -15,7 +16,7 @@ const CheckerButtonSvg = ({
         {/* Two svgs allows for showing pressed UI when button is active. */}
         <Svg
             {...{
-                key: ['pressed', isOn].join(''),
+                key: join(['pressed', isOn]),
                 className: cx(
                     'CheckerButtonSvg',
                     'CheckerButtonSvg__pressed',

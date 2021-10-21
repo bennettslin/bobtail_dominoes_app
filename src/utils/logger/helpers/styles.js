@@ -1,3 +1,4 @@
+import { join } from '../../general'
 import {
     ANALYTICS__FAILURE,
     ANALYTICS__SUCCESS,
@@ -58,7 +59,7 @@ const _getStyles = (styles) => {
 
         stylesArray.push(`${dashedKey}: ${styles[key]};`)
     }
-    return stylesArray.join(' ')
+    return join(stylesArray, ' ')
 }
 
 export const getStyleForAnalyticsLog = category => (
