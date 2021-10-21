@@ -1,40 +1,56 @@
 import { OCTAVE_COUNT } from '../../../constants/audio'
+import { getFixed } from '../../general'
 import { getMergedStyles } from '../../svgs'
 import { OCTAVE_DURATION_TIME } from '../time'
 
 const TOTAL_DURATION = OCTAVE_DURATION_TIME * OCTAVE_COUNT
 
 export const getNestedAttacks = configEntity => {
-    return configEntity ? Object.values(configEntity).map(entity => {
-        return Number.isFinite(entity.attack) ?
-            // It's a pitch index config.
-            entity.attack :
-            // It's a pitch config.
-            getNestedAttacks(entity)
-    }).flat() : null
+    if (!configEntity) {
+        return null
+    }
+    if (Number.isFinite(configEntity.attack)) {
+        return [configEntity.attack]
+    }
+    return Object.values(configEntity).map(entity => {
+        return entity.attack
+    })
 }
 
-// TODO.
-export const getAnimationName = attacks => (
-    'abcdefg'
+export const getAnimationName = (attacks, className) => (
+    // Name doesn't really matter. It just needs to be unique.
+    [
+        className,
+        [getFixed(attacks[0]).replace('.', ''), attacks.length].join('_'),
+    ].join('_')
 )
 
 // TODO: Return object.
-export const getKeyframes = attacks => (
-    `{ 0% { fill: green; } 20% { fill: red; } 40% { fill: green; } 60% { fill: red; } 80% { fill: green; } 100% { fill: red; } }`
-)
+export const getKeyframes = (attacks, playedConfigEntity) => {
+    return (
+        `{ 0% { fill: green; } 20% { fill: red; } 40% { fill: green; } 60% { fill: red; } 80% { fill: green; } 100% { fill: red; } }`
+    )
+}
 
 export const getAnimatedStyleConfig = (
     styleConfig,
     playedConfigEntity,
 ) => {
-    const
-        attacks = getNestedAttacks(playedConfigEntity),
-        animationName = getAnimationName(attacks)
+    if (!playedConfigEntity) {
+        return styleConfig
+    }
 
-    return playedConfigEntity ? ({
-        className: [styleConfig.className, animationName].join(''),
-        keyframes: [animationName, getKeyframes(attacks)].join(' '),
+    const
+        { className, styles } = styleConfig,
+        attacks = getNestedAttacks(playedConfigEntity),
+        animationName = getAnimationName(attacks, className)
+
+    return {
+        className: [className, animationName].join(''),
+        keyframes: [
+            animationName,
+            getKeyframes(attacks, playedConfigEntity),
+        ].join(' '),
         styles: getMergedStyles([
             {
                 animation: {
@@ -42,7 +58,7 @@ export const getAnimatedStyleConfig = (
                     face: `${animationName} ${TOTAL_DURATION}s`,
                 },
             },
-            styleConfig.styles,
+            styles,
         ]),
-    }) : styleConfig
+    }
 }

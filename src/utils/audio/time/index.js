@@ -1,7 +1,7 @@
 import { getPitchConfig, getPitchIndices } from '../pitch'
 
 // Each octave lasts a quarter of a second.
-export const OCTAVE_DURATION_TIME = 0.25
+export const OCTAVE_DURATION_TIME = 0.33
 
 const getAttackTime = ({
     index,
