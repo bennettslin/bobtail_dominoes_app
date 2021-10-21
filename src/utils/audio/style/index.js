@@ -2,8 +2,18 @@ import { OCTAVE_COUNT } from '../../../constants/audio'
 import { getFixed } from '../../general'
 import { getMergedStyles } from '../../svgs'
 import { OCTAVE_DURATION_TIME } from '../time'
+import styleConfigPlayedOn from '../../../styles/checker/playedOn'
 
-const TOTAL_DURATION = OCTAVE_DURATION_TIME * OCTAVE_COUNT
+const
+    TOTAL_DURATION = OCTAVE_DURATION_TIME * OCTAVE_COUNT,
+    {
+        styles: {
+            fill: {
+                edge: PLAYED_EDGE_STYLE,
+                face: PLAYED_FACE_STYLE,
+            },
+        },
+    } = styleConfigPlayedOn
 
 export const getNestedAttacks = configEntity => {
     if (!configEntity) {
@@ -26,9 +36,11 @@ export const getAnimationName = (attacks, className) => (
 )
 
 // TODO: Return object.
-export const getKeyframes = (attacks, playedConfigEntity) => {
+export const getKeyframes = (attacks, styleConfig, playedConfigEntity) => {
+    console.log('playedConfigEntity', playedConfigEntity, styleConfig)
+    const { styles: { fill: { face, edge } } } = styleConfig
     return (
-        `{ 0% { fill: green; } 20% { fill: red; } 40% { fill: green; } 60% { fill: red; } 80% { fill: green; } 100% { fill: red; } }`
+        `{ 0% { fill: ${face}; } 20% { fill: ${PLAYED_FACE_STYLE}; } 40% { fill: ${face}; } 60% { fill: ${PLAYED_FACE_STYLE}; } 80% { fill: ${face}; } 100% { fill: ${PLAYED_FACE_STYLE}; } }`
     )
 }
 
@@ -49,7 +61,7 @@ export const getAnimatedStyleConfig = (
         className: [className, animationName].join(''),
         keyframes: [
             animationName,
-            getKeyframes(attacks, playedConfigEntity),
+            getKeyframes(attacks, styleConfig, playedConfigEntity),
         ].join(' '),
         styles: getMergedStyles([
             {

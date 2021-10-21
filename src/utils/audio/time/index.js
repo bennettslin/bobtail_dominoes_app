@@ -3,11 +3,15 @@ import { getPitchConfig, getPitchIndices } from '../pitch'
 // Each octave lasts a quarter of a second.
 export const OCTAVE_DURATION_TIME = 0.33
 
+const getDurationTime = pitchSet => (
+    OCTAVE_DURATION_TIME / pitchSet.size // By ear.
+)
+
 const getAttackTime = ({
     index,
     pitchSet,
 }) => (
-    index * OCTAVE_DURATION_TIME / pitchSet.size // By ear.
+    index * getDurationTime(pitchSet)
 )
 
 export const getPlayedPitchConfigs = (pitchSet = new Set()) => (
@@ -17,6 +21,7 @@ export const getPlayedPitchConfigs = (pitchSet = new Set()) => (
         config[pitch][pitchIndex] = {
             pitchIndex,
             attack: getAttackTime({ index, pitchSet }),
+            duration: getDurationTime(pitchSet),
         }
 
         return config
