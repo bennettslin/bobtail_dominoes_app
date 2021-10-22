@@ -8,20 +8,24 @@ const
     TOTAL_DURATION = OCTAVE_DURATION_TIME * OCTAVE_COUNT,
     PATH_CLASS_NAMES = ['edge', 'face']
 
-export const getNestedAttacks = configEntity => {
+const getSoundFromEntity = ({ attack, duration }) => ({
+    attack, duration,
+})
+
+export const getSounds = configEntity => {
     if (!configEntity) {
         return null
     }
     if (Number.isFinite(configEntity.attack)) {
-        return [configEntity.attack]
+        return [getSoundFromEntity(configEntity)]
     }
     return Object.values(configEntity).map(entity => {
-        return entity.attack
+        return getSoundFromEntity(entity)
     })
 }
 
 export const getAnimationName = ({
-    attacks,
+    sounds,
     className,
     pathClassName,
 }) => (
@@ -30,8 +34,8 @@ export const getAnimationName = ({
         className,
         pathClassName,
         join([
-            getFixed(attacks[0]).replace('.', ''),
-            attacks.length,
+            getFixed(sounds[0].attack).replace('.', ''),
+            sounds.length,
         ], '_'),
     ], '_')
 )
@@ -42,10 +46,8 @@ const getStyleFromConfig = (
 ) => styleConfig.styles.fill[pathClassName]
 
 export const getKeyframesSequence = ({
-    attacks,
     styleConfig,
     pathClassName,
-    playedConfigEntity,
 }) => {
     const
         defaultStyle = getStyleFromConfig(styleConfig, pathClassName),
@@ -89,28 +91,26 @@ export const getAnimatedStyleConfig = (
 
     const
         { className, styles } = styleConfig,
-        attacks = getNestedAttacks(playedConfigEntity)
+        sounds = getSounds(playedConfigEntity)
 
     return {
-        className: getAnimationName({ attacks, className }),
+        className: getAnimationName({ sounds, className }),
         keyframes: PATH_CLASS_NAMES.map(pathClassName => ({
             animationName: getAnimationName({
-                attacks,
+                sounds,
                 className,
                 pathClassName,
             }),
             sequence: getKeyframesSequence({
-                attacks,
                 styleConfig,
                 pathClassName,
-                playedConfigEntity,
             }),
         })),
         styles: getMergedStyles([
             {
                 animation: PATH_CLASS_NAMES.reduce((config, pathClassName) => {
                     const animationName = getAnimationName({
-                        attacks,
+                        sounds,
                         className,
                         pathClassName,
                     })
