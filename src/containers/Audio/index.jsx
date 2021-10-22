@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { now, PolySynth, FMSynth } from 'tone'
-import { OCTAVE_COUNT } from '../../constants/audio'
+import { ANIMATED_TOTAL_DURATION } from '../../constants/audio'
 import { queuePlay } from '../../redux/audio/action'
 import { mapCurrentPitchSet, mapHasSonority, mapIsAutoplayOn, mapIsPlaying, mapPlayedPitchConfigs } from '../../redux/audio/selector'
 import { getAudioPitchSymbol } from '../../utils/audio/pitch'
-import { OCTAVE_DURATION_TIME } from '../../utils/audio/time'
 
 const Audio = () => {
     const
@@ -44,7 +43,7 @@ const Audio = () => {
     const timePitches = () => {
         setTimeout(() => {
             dispatch(queuePlay(false))
-        }, OCTAVE_DURATION_TIME * OCTAVE_COUNT * 1000)
+        }, ANIMATED_TOTAL_DURATION * 1000)
     }
 
     useEffect(() => {

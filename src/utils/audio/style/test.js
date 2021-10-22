@@ -1,4 +1,4 @@
-import { getAnimatedStyleConfig, getAnimationName, getSounds } from '.'
+import { getAnimatedStyleConfig, getAnimationName, getAttacks } from '.'
 
 const MOCK_STYLE_CONFIG = {
     className: 'mockClassName',
@@ -10,51 +10,49 @@ const MOCK_STYLE_CONFIG = {
     },
 }
 
-const MOCK_PITCH_INDEX_CONFIG = { pitchIndex: 36, attack: 0.1, duration: 0.25 }
+const MOCK_PITCH_INDEX_CONFIG = {
+    pitchIndex: 36, attack: 0.1,
+}
 
 const MOCK_PITCH_CONFIG = {
     36: MOCK_PITCH_INDEX_CONFIG,
-    48: { pitchIndex: 48, attack: 0.35, duration: 0.25 },
-    60: { pitchIndex: 60, attack: 0.6, duration: 0.25 },
+    48: { pitchIndex: 48, attack: 0.35 },
+    60: { pitchIndex: 60, attack: 0.6 },
 }
 
-const MOCK_SOUNDS = [
-    { attack: 0.1, duration: 0.25 },
-    { attack: 0.35, duration: 0.25 },
-    { attack: 0.6, duration: 0.25 },
-]
+const MOCK_ATTACKS = [0.1, 0.35, 0.6]
 
-describe('getSounds', () => {
+describe('getAttacks', () => {
     it('returns null for no played config', () => {
-        expect(getSounds()).toBeNull()
+        expect(getAttacks()).toBeNull()
     })
 
     it('returns array of attacks for played pitch index config', () => {
-        expect(getSounds(MOCK_PITCH_INDEX_CONFIG)).toStrictEqual(
-            [MOCK_SOUNDS[0]],
+        expect(getAttacks(MOCK_PITCH_INDEX_CONFIG)).toStrictEqual(
+            [MOCK_ATTACKS[0]],
         )
     })
 
     it('returns array of attacks for played pitch config', () => {
-        expect(getSounds(
+        expect(getAttacks(
             MOCK_PITCH_CONFIG,
-        )).toStrictEqual(MOCK_SOUNDS)
+        )).toStrictEqual(MOCK_ATTACKS)
     })
 })
 
 describe('getAnimationName', () => {
     test.each([
         [{
-            sounds: MOCK_SOUNDS,
+            attacks: MOCK_ATTACKS,
             className: 'mockClassName',
         }, 'mockClassName_01_3'],
         [{
-            sounds: [MOCK_SOUNDS[0]],
+            attacks: [MOCK_ATTACKS[0]],
             className: 'mockClassName',
             pathClassName: 'edge',
         }, 'mockClassName_edge_01_1'],
         [{
-            sounds: MOCK_SOUNDS,
+            attacks: MOCK_ATTACKS,
             className: 'mockClassName',
             pathClassName: 'face',
         }, 'mockClassName_face_01_3'],

@@ -1,11 +1,9 @@
+import { OCTAVE_DURATION } from '../../../constants/audio'
 import { round } from '../../general'
 import { getPitchConfig, getPitchIndices } from '../pitch'
 
-// Each octave lasts a third of a second.
-export const OCTAVE_DURATION_TIME = 0.33
-
 const getDurationTime = pitchSet => (
-    round(OCTAVE_DURATION_TIME / pitchSet.size)
+    round(OCTAVE_DURATION / pitchSet.size)
 )
 
 const getAttackTime = ({
@@ -20,7 +18,6 @@ export const getPlayedPitchConfigs = (pitchSet = new Set()) => (
         config[pitch][pitchIndex] = {
             pitchIndex,
             attack: getAttackTime({ index, pitchSet }),
-            duration: getDurationTime(pitchSet),
         }
 
         return config

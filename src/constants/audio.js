@@ -10,3 +10,11 @@ export const ALL_PITCH_INDICES = getArrayOfIndices(
     OCTAVE_RANGE * OCTAVE_COUNT,
     BASE_PITCH_INDEX,
 )
+
+export const OCTAVE_DURATION = 0.3 // Fraction of second.
+export const ANIMATED_NOTE_DURATION = 0.12 // Fraction of second.
+
+// Allow for animation of final notes to complete.
+export const ANIMATED_TOTAL_DURATION =
+    OCTAVE_DURATION * OCTAVE_COUNT
+    + ANIMATED_NOTE_DURATION

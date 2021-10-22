@@ -1,31 +1,29 @@
-import { getFixed, join } from '../../general'
+import { getFixed, join, round } from '../../general'
 import { getMergedStyles } from '../../svgs'
 import styleConfigPlayedOn from '../../../styles/checker/playedOn'
-import { OCTAVE_COUNT } from '../../../constants/audio'
-import { OCTAVE_DURATION_TIME } from '../time'
+import {
+    ANIMATED_NOTE_DURATION,
+    ANIMATED_TOTAL_DURATION,
+} from '../../../constants/audio'
 
 const
-    TOTAL_DURATION = OCTAVE_DURATION_TIME * OCTAVE_COUNT,
-    PATH_CLASS_NAMES = ['edge', 'face']
+    PATH_CLASS_NAMES = ['edge', 'face'],
+    ANIMATED_BUFFER_DURATION = 0.001
 
-const getSoundFromEntity = ({ attack, duration }) => ({
-    attack, duration,
-})
-
-export const getSounds = configEntity => {
+export const getAttacks = configEntity => {
     if (!configEntity) {
         return null
     }
     if (Number.isFinite(configEntity.attack)) {
-        return [getSoundFromEntity(configEntity)]
+        return [configEntity.attack]
     }
     return Object.values(configEntity).map(entity => {
-        return getSoundFromEntity(entity)
+        return entity.attack
     })
 }
 
 export const getAnimationName = ({
-    sounds,
+    attacks,
     className,
     pathClassName,
 }) => (
@@ -34,8 +32,8 @@ export const getAnimationName = ({
         className,
         pathClassName,
         join([
-            getFixed(sounds[0].attack).replace('.', ''),
-            sounds.length,
+            getFixed(attacks[0]).replace('.', ''),
+            attacks.length,
         ], '_'),
     ], '_')
 )
@@ -45,7 +43,13 @@ const getStyleFromConfig = (
     pathClassName,
 ) => styleConfig.styles.fill[pathClassName]
 
+const getAnimationEntry = (fillStyle, value, adjust = 0) => ({
+    percentage: round(value / ANIMATED_TOTAL_DURATION * 100 + adjust, 3),
+    fillStyle,
+})
+
 export const getKeyframesSequence = ({
+    attacks,
     styleConfig,
     pathClassName,
 }) => {
@@ -53,32 +57,42 @@ export const getKeyframesSequence = ({
         defaultStyle = getStyleFromConfig(styleConfig, pathClassName),
         playedStyle = getStyleFromConfig(styleConfigPlayedOn, pathClassName)
 
-    return [
-        {
-            percentage: 0,
-            fillStyle: defaultStyle,
-        },
-        {
-            percentage: 20,
-            fillStyle: playedStyle,
-        },
-        {
-            percentage: 40,
-            fillStyle: defaultStyle,
-        },
-        {
-            percentage: 60,
-            fillStyle: playedStyle,
-        },
-        {
-            percentage: 80,
-            fillStyle: defaultStyle,
-        },
-        {
-            percentage: 100,
-            fillStyle: playedStyle,
-        },
-    ]
+    const sequence = []
+    let counter = 0,
+        previousAttackEnd = 0
+
+    while (counter <= attacks.length) {
+        const attack = attacks[counter]
+
+        /**
+         * Add entries if subsequent attack and previous attack ended, or
+         * final iteration.
+         */
+        if (
+            (counter && attack > previousAttackEnd) ||
+            counter === attacks.length
+        ) {
+            sequence.push(getAnimationEntry(playedStyle, previousAttackEnd, -ANIMATED_BUFFER_DURATION))
+            sequence.push(getAnimationEntry(defaultStyle, previousAttackEnd))
+        }
+
+        /**
+         * Add entries if first attack, or not final iteration and previous
+         * attack ended.
+         */
+        if (
+            !counter ||
+            (attack > previousAttackEnd && counter !== attacks.length)
+        ) {
+            sequence.push(getAnimationEntry(defaultStyle, attack))
+            sequence.push(getAnimationEntry(playedStyle, attack, ANIMATED_BUFFER_DURATION))
+        }
+
+        previousAttackEnd = attack + ANIMATED_NOTE_DURATION
+        counter++
+    }
+
+    return sequence
 }
 
 export const getAnimatedStyleConfig = (
@@ -91,17 +105,18 @@ export const getAnimatedStyleConfig = (
 
     const
         { className, styles } = styleConfig,
-        sounds = getSounds(playedConfigEntity)
+        attacks = getAttacks(playedConfigEntity)
 
     return {
-        className: getAnimationName({ sounds, className }),
+        className: getAnimationName({ attacks, className }),
         keyframes: PATH_CLASS_NAMES.map(pathClassName => ({
             animationName: getAnimationName({
-                sounds,
+                attacks,
                 className,
                 pathClassName,
             }),
             sequence: getKeyframesSequence({
+                attacks,
                 styleConfig,
                 pathClassName,
             }),
@@ -110,13 +125,13 @@ export const getAnimatedStyleConfig = (
             {
                 animation: PATH_CLASS_NAMES.reduce((config, pathClassName) => {
                     const animationName = getAnimationName({
-                        sounds,
+                        attacks,
                         className,
                         pathClassName,
                     })
                     config[pathClassName] = join([
                         animationName,
-                        `${TOTAL_DURATION}s`,
+                        `${ANIMATED_TOTAL_DURATION}s`,
                     ], ' ')
                     return config
                 }, {}),
