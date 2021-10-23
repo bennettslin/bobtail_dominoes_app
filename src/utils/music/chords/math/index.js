@@ -1,5 +1,5 @@
-import { OCTAVE_RANGE } from '../../../constants/audio'
-import { getArrayOfIndices } from '../../general'
+import { OCTAVE_RANGE } from '../../../../constants/audio'
+import { getArrayOfIndices } from '../../../general'
 
 export const mod12 = number => (
     (number + OCTAVE_RANGE) % OCTAVE_RANGE

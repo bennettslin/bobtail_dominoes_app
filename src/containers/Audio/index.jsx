@@ -4,7 +4,7 @@ import { now, PolySynth, FMSynth } from 'tone'
 import { ANIMATED_TOTAL_DURATION } from '../../constants/audio'
 import { queuePlay } from '../../redux/audio/action'
 import { mapCurrentPitchSet, mapHasSonority, mapIsAutoplayOn, mapIsPlaying, mapPlayedPitchConfigs } from '../../redux/audio/selector'
-import { getAudioPitchSymbol } from '../../utils/audio/pitch'
+import { getAudioPitchSymbol } from '../../utils/music/audio/pitch'
 
 const Audio = () => {
     const

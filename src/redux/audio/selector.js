@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect'
-import { getPitchConfig } from '../../utils/audio/pitch'
-import { getRoots } from '../../utils/chords/primeForm'
+import { getPitchConfig } from '../../utils/music/audio/pitch'
+import { getRoots } from '../../utils/music/chords/primeForm'
 import { AUDIO_STORE } from './reducer'
 
 export const mapIsAutoplayOn = (

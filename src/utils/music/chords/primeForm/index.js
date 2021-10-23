@@ -1,4 +1,4 @@
-import { join } from '../../general'
+import { join } from '../../../general'
 import { getIsSymmetricalChord } from '../label'
 import { mod12 } from '../math'
 import { getIsChord } from '../valid'

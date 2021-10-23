@@ -1,4 +1,4 @@
-import { getAnimatedStyleConfig } from '../../../../utils/audio/style'
+import { getAnimatedStyleConfig } from '../../../../utils/music/audio/style'
 import styleConfigPitchBlack from '../../../../styles/checker/pitchBlack'
 import styleConfigPitchOn from '../../../../styles/checker/pitchOn'
 import styleConfigPitchWhite from '../../../../styles/checker/pitchWhite'
@@ -15,7 +15,7 @@ import faceGA from '../../../../assets/svgs/chords/faceGA'
 import faceA from '../../../../assets/svgs/chords/faceA'
 import faceAB from '../../../../assets/svgs/chords/faceAB'
 import faceB from '../../../../assets/svgs/chords/faceB'
-import { mod12 } from '../../../../utils/chords/math'
+import { mod12 } from '../../../../utils/music/chords/math'
 
 const
     FACES = [faceC, faceCD, faceD, faceDE, faceE, faceF, faceFG, faceG, faceGA, faceA, faceAB, faceB],

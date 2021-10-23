@@ -9,7 +9,7 @@ import {
     getMapIsRoot,
     getMapPlayedPitchConfig,
 } from '../../../../redux/audio/selector'
-import { getIsPitchBlack } from '../../../../utils/chords/label'
+import { getIsPitchBlack } from '../../../../utils/music/chords/label'
 import {
     getButtonOnStyleConfig,
     getButtonPositionStyle,

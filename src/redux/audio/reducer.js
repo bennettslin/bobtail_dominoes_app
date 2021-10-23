@@ -1,5 +1,5 @@
-import { getPlayedPitchConfigs } from '../../utils/audio/time'
-import { transposePitchSet } from '../../utils/chords/math'
+import { getPlayedPitchConfigs } from '../../utils/music/audio/time'
+import { transposePitchSet } from '../../utils/music/chords/math'
 import { AUDIO_DEFAULT, QUEUE_PLAY, TOGGLE_PITCH, TRANSPOSE_PITCH_SET } from './default'
 
 export const AUDIO_STORE = 'audio'

@@ -3,7 +3,7 @@ import cx from 'classnames'
 import StyledPlatform from '../../Styled/Platform'
 import PitchButtonsDisplay from './Display'
 import PitchButton from './PitchButton'
-import { getArrayOfPitchesForCircleOfFifths } from '../../../utils/chords/math'
+import { getArrayOfPitchesForCircleOfFifths } from '../../../utils/music/chords/math'
 import './style'
 
 const PitchButtons = () => (

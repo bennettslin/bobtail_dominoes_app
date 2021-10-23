@@ -1,40 +1,32 @@
 # Generator notes
-* Board is array of placed dominoes in order, each with
-    * domino index
-    * board position: [x, y]
-    * orientation: 0 through 5
-
-e.g.
-[
-    {
-        dominoIndex: 5,
-        position: [-4, 3],
-        orientation: 5
-    }
-]
-
-* Util to convert board to matrix
-
-* Matrix is object of placed faces
-    * Top level is x
-    * Next level is y
-    * Final level is pitch
-
-e.g.
-{
-    0: {
-        -1: 5,
-        0: 6,
-    },
-    -1: {
-        1, 2,
-        2: 3,
-    }
-}
-
-* Util to add domino to board
-    * Only checks if face isn't already occupied
-
+* getAllValidPlacements
+    * Placement is pair of two coordinates, first is lower pitch, second is higher pitch.
+    * Return all valid placements
+    * (dominoIndex, board) => [
+        {
+            placement: [0, 0],
+            points: 3
+        }
+    ]
+    * getAllPossiblePlacements
+    * Return all possible placements
+        * (dominoIndex, board) => [
+            [[0, 0], [1, 0]],
+        ]
+    * getPointsFromPlacement
+        * Return points from placement
+        * (dominoIndex, placement, board) => true or false
+        * Return value
+            * If -1, invalid sonorities
+            * If 0, no invalid sonorities but also no valid chords
+            * If greater than 0, valid chords
+        * getAllRowsFromPlacement
+            * Return all rows formed from placement
+            * (dominoIndex, placement, board) => [
+                pitchSet,
+                pitchSet,
+                pitchSet
+            ]
 
 * Basic UI that shows board and matrix
     * Generator page
@@ -43,7 +35,5 @@ e.g.
             * Helper to retrieve for orientation
     * Already have pitch svgs, but move under faces
     * Rename and reorganise svgs
-
-* Util to place domino on board
 
 * Helper to get

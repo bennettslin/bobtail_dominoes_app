@@ -9,8 +9,8 @@ import {
     getMapIsRoot,
     getMapPlayedPitchIndexConfig,
 } from '../../../../../redux/audio/selector'
-import { getPitchConfig } from '../../../../../utils/audio/pitch'
-import { getIsPitchBlack } from '../../../../../utils/chords/label'
+import { getPitchConfig } from '../../../../../utils/music/audio/pitch'
+import { getIsPitchBlack } from '../../../../../utils/music/chords/label'
 import {
     getBlackKeyPositionStyle,
     getKeySrc,

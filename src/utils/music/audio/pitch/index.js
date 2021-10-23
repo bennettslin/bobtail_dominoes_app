@@ -3,7 +3,7 @@ import {
     OCTAVE_RANGE,
     BASE_PITCH_INDEX,
     HIGHEST_PITCH_INDEX,
-} from '../../../constants/audio'
+} from '../../../../constants/audio'
 
 const AUDIO_PITCHES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
 

@@ -1,4 +1,4 @@
-import { join } from '../../general'
+import { join } from '../../../general'
 import { getPrimeFormKey, getRoots } from '../primeForm'
 
 const

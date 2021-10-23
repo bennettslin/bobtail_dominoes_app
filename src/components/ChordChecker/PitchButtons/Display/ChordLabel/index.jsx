@@ -3,7 +3,7 @@ import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import StyledChordLabel from '../../../../Styled/ChordLabel'
 import { mapCurrentPitchSet } from '../../../../../redux/audio/selector'
-import { getChordAbbreviation } from '../../../../../utils/chords/label'
+import { getChordAbbreviation } from '../../../../../utils/music/chords/label'
 import './style'
 
 const DisplayChordLabel = () => {
