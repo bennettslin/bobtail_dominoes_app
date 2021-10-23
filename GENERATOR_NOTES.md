@@ -2,14 +2,14 @@
 * Board is array of placed dominoes in order, each with
     * domino index
     * board position: [x, y]
-    * orientation: [X Y or XY, -1 or 1]
+    * orientation: 0 through 5
 
 e.g.
 [
     {
         dominoIndex: 5,
         position: [-4, 3],
-        orientation: [X, -1]
+        orientation: 5
     }
 ]
 
