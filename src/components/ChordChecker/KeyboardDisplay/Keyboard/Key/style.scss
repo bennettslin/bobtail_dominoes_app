@@ -1,4 +1,9 @@
 .KeyboardKey {
     position: relative;
     height: 100%;
+
+    & svg {
+        // Needed by Safari.
+        width: auto;
+    }
 }
