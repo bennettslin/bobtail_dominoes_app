@@ -1,9 +1,9 @@
-import { getAllPossiblePlacements, getAllRowsFromPlacement, getAllValidPlacements, getPointsFromPlacement } from '.'
+import { getAllPossiblePlacements, getAllValidPlacements, getPointsForPlacement } from '.'
 
 /**
  *      -4  -3  -2  -1   0   1   2
  *
- *  2  Db- Ab          F
+ *  2  Bb- Ab          F
  *                    /
  *  1        C - F#  A   D
  *                        \
@@ -19,62 +19,6 @@ const MOCK_BOARD = [
     { dominoIndex: 30, placement: [[1, 1], [2, 0]] }, // D-B.
     { dominoIndex: 18, placement: [[-4, 2], [-3, 2]] }, // Db-Ab.
 ]
-
-describe('getAllRowsFromPlacement', () => {
-    it('returns null for empty board', () => {
-        expect(getAllRowsFromPlacement({
-            dominoIndex: 0, placement: [[0, 0], 0, 0], board: [],
-        })).toBeNull()
-    })
-
-    it('returns null for overlapping placement', () => {
-        expect(getAllRowsFromPlacement({
-            dominoIndex: 0, placement: [[0, 0], 0, 0], board: MOCK_BOARD,
-        })).toStrictEqual([])
-    })
-
-    it('returns array of rows for isolated placement', () => {
-        expect(getAllRowsFromPlacement({
-            dominoIndex: 0, placement: [[0, 0], 0, 0], board: MOCK_BOARD,
-        })).toStrictEqual([
-            [],
-        ])
-    })
-
-    it('returns array of rows for valid placement', () => {
-        expect(getAllRowsFromPlacement({
-            dominoIndex: 0, placement: [[0, 0], 0, 0], board: MOCK_BOARD,
-        })).toStrictEqual([
-            [],
-        ])
-    })
-})
-
-describe('getPointsFromPlacement', () => {
-    it('returns -1 for any invalid sonorities', () => {
-        expect(getPointsFromPlacement({
-            dominoIndex: 0, placement: [[0, 0], 0, 0], board: MOCK_BOARD,
-        })).toStrictEqual(-1)
-    })
-
-    it('returns 0 for no valid chords', () => {
-        expect(getPointsFromPlacement({
-            dominoIndex: 0, placement: [[0, 0], 0, 0], board: MOCK_BOARD,
-        })).toStrictEqual(0)
-    })
-
-    it('returns points for one valid chord', () => {
-        expect(getPointsFromPlacement({
-            dominoIndex: 0, placement: [[0, 0], 0, 0], board: MOCK_BOARD,
-        })).toStrictEqual(3)
-    })
-
-    it('returns points for multiple valid chords', () => {
-        expect(getPointsFromPlacement({
-            dominoIndex: 0, placement: [[0, 0], 0, 0], board: MOCK_BOARD,
-        })).toStrictEqual(6)
-    })
-})
 
 describe('getAllPossiblePlacements', () => {
     it('returns null for empty board', () => {

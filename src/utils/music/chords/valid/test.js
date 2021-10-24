@@ -1,6 +1,6 @@
-import { getIsChord, getIsIllegalRow, getIsLegalRow } from '.'
+import { getIsValidChord, getIsInvalidSonority, getIsValidSonority } from '.'
 
-describe('getIsChord', () => {
+describe('getIsValidChord', () => {
     test.each([
         // Undefined.
         [undefined, false],
@@ -30,11 +30,11 @@ describe('getIsChord', () => {
         // Greater.
         [new Set([9, 3, 7, 1, 5]), false],
     ])('%p returns %p', (set, result) => {
-        expect(getIsChord(set)).toBe(result)
+        expect(getIsValidChord(set)).toBe(result)
     })
 })
 
-describe('getIsLegalRow', () => {
+describe('getIsValidSonority', () => {
     test.each([
         // Undefined.
         [undefined, true],
@@ -53,11 +53,11 @@ describe('getIsLegalRow', () => {
         // Greater.
         [new Set([9, 3, 7, 1, 5]), false],
     ])('%p returns %p', (set, result) => {
-        expect(getIsLegalRow(set)).toBe(result)
+        expect(getIsValidSonority(set)).toBe(result)
     })
 })
 
-describe('getIsIllegalRow', () => {
+describe('getIsInvalidSonority', () => {
     test.each([
         // Undefined.
         [undefined, false],
@@ -76,6 +76,6 @@ describe('getIsIllegalRow', () => {
         // Greater.
         [new Set([9, 3, 7, 1, 5]), true],
     ])('%p returns %p', (set, result) => {
-        expect(getIsIllegalRow(set)).toBe(result)
+        expect(getIsInvalidSonority(set)).toBe(result)
     })
 })

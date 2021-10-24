@@ -1,7 +1,7 @@
 import { join } from '../../../general'
 import { getIsSymmetricalChord } from '../label'
 import { mod12 } from '../math'
-import { getIsChord } from '../valid'
+import { getIsValidChord } from '../valid'
 
 export const getNormalForm = pitchSet => {
     /**
@@ -83,7 +83,7 @@ export const getPrimeFormKey = (pitchSet = new Set()) => (
 
 export const getRoots = pitchSet => {
     // Only valid chords have a root.
-    if (!getIsChord(pitchSet)) {
+    if (!getIsValidChord(pitchSet)) {
         return new Set([-1])
     }
 

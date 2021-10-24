@@ -1,5 +1,5 @@
-import { getIsChord } from '../valid'
+import { getIsValidChord } from '../valid'
 
 export const getPoints = pitchSet => (
-    getIsChord(pitchSet) ? pitchSet.size : 0
+    getIsValidChord(pitchSet) ? pitchSet.size : 0
 )

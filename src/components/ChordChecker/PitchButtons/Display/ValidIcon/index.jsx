@@ -5,7 +5,7 @@ import Flex from '../../../../Flex'
 import StyledShadow from '../../../../Styled/Shadow'
 import Svg from '../../../../Svg'
 import { mapCurrentPitchSet } from '../../../../../redux/audio/selector'
-import { getIsChord, getIsIllegalRow } from '../../../../../utils/music/chords/valid'
+import { getIsValidChord, getIsInvalidSonority } from '../../../../../utils/music/chords/valid'
 import styleConfigDominoes from '../../../../../styles/dominoes'
 import iconValid from '../../../../../assets/svgs/chords/iconValid'
 import iconInvalid from '../../../../../assets/svgs/chords/iconInvalid'
@@ -13,9 +13,9 @@ import './style'
 
 const ValidIcon = () => {
     const currentPitchSet = useSelector(mapCurrentPitchSet),
-        isChord = getIsChord(currentPitchSet)
+        isValidChord = getIsValidChord(currentPitchSet)
 
-    return (getIsIllegalRow(currentPitchSet) || isChord) && (
+    return (getIsInvalidSonority(currentPitchSet) || isValidChord) && (
         <Flex
             {...{
                 className: cx(
@@ -26,11 +26,11 @@ const ValidIcon = () => {
             <StyledShadow>
                 <Svg
                     {...{
-                        key: isChord,
+                        key: isValidChord,
                         className: cx(
                             'ValidIcon__icon',
                         ),
-                        src: isChord ? iconValid : iconInvalid,
+                        src: isValidChord ? iconValid : iconInvalid,
                         styleConfig: styleConfigDominoes,
                     }}
                 />

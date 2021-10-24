@@ -13,20 +13,6 @@
         * (dominoIndex, board) => [
             [[0, 0], [1, 0]],
         ]
-    * getPointsFromPlacement
-        * Return points from placement
-        * (dominoIndex, placement, board) => true or false
-        * Return value
-            * If -1, invalid sonorities
-            * If 0, no invalid sonorities but also no valid chords
-            * If greater than 0, valid chords
-        * getAllRowsFromPlacement
-            * Return all rows formed from placement
-            * (dominoIndex, placement, board) => [
-                pitchSet,
-                pitchSet,
-                pitchSet
-            ]
 
 * Basic UI that shows board and matrix
     * Generator page
