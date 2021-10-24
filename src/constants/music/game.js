@@ -1,4 +1,4 @@
-import { getArrayOfIndices } from '../utils/general'
+import { getArrayOfIndices } from '../../utils/general'
 import { OCTAVE_RANGE } from './audio'
 
 export const DOMINO_INDICES = [
@@ -10,4 +10,13 @@ export const DOMINO_INDICES = [
             firstPitch + 1,
         ).map(secondPitch => [firstPitch, secondPitch])
     )).flat(),
+]
+
+export const DIRECTION_X = [1, 0]
+export const DIRECTION_Y = [0, 1]
+export const DIRECTION_XY = [-1, 1]
+export const SURROUNDING_DIRECTIONS = [
+    DIRECTION_X,
+    DIRECTION_Y,
+    DIRECTION_XY,
 ]

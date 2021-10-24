@@ -1,50 +1,43 @@
-import { getAllPossiblePlacements, getAllValidPlacements, getPointsForPlacement } from '.'
+import { getAllPhysicalPlacements, getAllValidPlacements, getSurroundingCoordinates } from '.'
+import { MOCK_BOARD } from '../board/test'
 
-/**
- *      -4  -3  -2  -1   0   1   2
- *
- *  2  Bb- Ab          F
- *                    /
- *  1        C - F#  A   D
- *                        \
- *  0          G   C - E   B
- *              \
- * -1            Eb
- */
-const MOCK_BOARD = [
-    { dominoIndex: 4, placement: [[0, 0], [1, 0]] }, // C-E.
-    { dominoIndex: 49, placement: [[0, 2], [0, 1]] }, // F-A.
-    { dominoIndex: 34, placement: [[0, -1], [-1, 0]] }, // Eb-G.
-    { dominoIndex: 6, placement: [[-2, 1], [-1, 1]] }, // C-F#.
-    { dominoIndex: 30, placement: [[1, 1], [2, 0]] }, // D-B.
-    { dominoIndex: 18, placement: [[-4, 2], [-3, 2]] }, // Db-Ab.
-]
+describe('getSurroundingCoordinates', () => {
+    it('returns empty array for empty board', () => {
+        expect(getSurroundingCoordinates([])).toStrictEqual([])
+    })
 
-describe('getAllPossiblePlacements', () => {
+    it('returns array of coordinates for board with single domino', () => {
+        expect(getSurroundingCoordinates([MOCK_BOARD[0]])).toStrictEqual([
+            [0, 1], [0, -1], [1, 1], [1, -1], [2, 0], [2, -1], [-1, 0], [-1, 1],
+        ])
+    })
+
+    it('returns array of coordinates for board with many dominoes', () => {
+        expect(getSurroundingCoordinates(MOCK_BOARD)).toStrictEqual([
+            [0, 3], [0, -2], [1, 2], [1, -1], [1, -2], [2, 1], [2, -1], [3, 0], [3, -1], [-1, 2], [-1, 3], [-1, -1], [-2, 0], [-2, 4], [-3, 1], [-3, 2], [-3, 3], [-3, 4],
+        ])
+    })
+})
+
+describe.skip('getAllPhysicalPlacements', () => {
     it('returns null for empty board', () => {
-        expect(getAllPossiblePlacements({
-            dominoIndex: 0, board: [],
-        })).toBeNull()
+        expect(getAllPhysicalPlacements([])).toBeNull()
     })
 
     it('returns array of placements for board with single domino', () => {
-        expect(getAllPossiblePlacements({
-            dominoIndex: 0, board: [],
-        })).toStrictEqual([
+        expect(getAllPhysicalPlacements([MOCK_BOARD[0]])).toStrictEqual([
             [[0, 0], [1, 0]],
         ])
     })
 
     it('returns array of placements for board with many dominoes', () => {
-        expect(getAllPossiblePlacements({
-            dominoIndex: 0, board: MOCK_BOARD,
-        })).toStrictEqual([
+        expect(getAllPhysicalPlacements(MOCK_BOARD)).toStrictEqual([
             [[0, 0], [1, 0]],
         ])
     })
 })
 
-describe('getAllValidPlacements', () => {
+describe.skip('getAllValidPlacements', () => {
     it('returns default for empty board', () => {
         expect(getAllValidPlacements({
             dominoIndex: 0, board: [],

@@ -1,4 +1,4 @@
-import { getArrayOfIndices } from '../utils/general'
+import { getArrayOfIndices } from '../../utils/general'
 
 export const OCTAVE_RANGE = 12
 export const OCTAVE_COUNT = 3

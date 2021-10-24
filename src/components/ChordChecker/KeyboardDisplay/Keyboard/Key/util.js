@@ -19,7 +19,7 @@ import keyGA from '../../../../../assets/svgs/chords/keyGA'
 import keyA from '../../../../../assets/svgs/chords/keyA'
 import keyAB from '../../../../../assets/svgs/chords/keyAB'
 import keyB from '../../../../../assets/svgs/chords/keyB'
-import { ALL_PITCH_INDICES, BASE_PITCH_INDEX } from '../../../../../constants/audio'
+import { ALL_PITCH_INDICES, BASE_PITCH_INDEX } from '../../../../../constants/music/audio'
 
 const
     KEYS = [keyC, keyCD, keyD, keyDE, keyE, keyF, keyFG, keyG, keyGA, keyA, keyAB, keyB],

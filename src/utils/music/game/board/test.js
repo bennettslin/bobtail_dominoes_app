@@ -13,7 +13,7 @@ import { getBoardMatrix } from '.'
  *          \
  * -1        Eb
  */
-const MOCK_BOARD = [
+export const MOCK_BOARD = [
     { dominoIndex: 4, placement: [[0, 0], [1, 0]] }, // C-E.
     { dominoIndex: 54, placement: [[0, 2], [0, 1]] }, // F#-A.
     { dominoIndex: 34, placement: [[0, -1], [-1, 0]] }, // Eb-G.

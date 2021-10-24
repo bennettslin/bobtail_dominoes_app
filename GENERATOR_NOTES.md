@@ -1,4 +1,13 @@
 # Generator notes
+* Unit tests
+    * board
+        * addToMatrix
+        * addDominoToMatrix
+    * coordinates
+        * all
+    * placement
+        * getSurroundingCoordinates
+
 * getAllValidPlacements
     * Placement is pair of two coordinates, first is lower pitch, second is higher pitch.
     * Return all valid placements
@@ -8,8 +17,8 @@
             points: 3
         }
     ]
-    * getAllPossiblePlacements
-    * Return all possible placements
+    * getAllPhysicalPlacements
+    * Return all possible placements of a domino on a board
         * (dominoIndex, board) => [
             [[0, 0], [1, 0]],
         ]

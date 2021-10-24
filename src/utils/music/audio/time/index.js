@@ -1,4 +1,4 @@
-import { OCTAVE_DURATION } from '../../../../constants/audio'
+import { OCTAVE_DURATION } from '../../../../constants/music/audio'
 import { round } from '../../../general'
 import { getPitchConfig, getPitchIndices } from '../pitch'
 

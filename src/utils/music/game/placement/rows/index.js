@@ -1,34 +1,27 @@
-import { addToMatrix, getBoardMatrix } from '../../board'
+import { addDominoToMatrix, getBoardMatrix } from '../../board'
 import { getDominoPitches } from '../../dominoes'
+import {
+    getHasPitchAtCoordinates,
+    getNextCoordinates,
+    getPitchAtCoordinates,
+} from '../coordinates'
+import {
+    DIRECTION_X,
+    DIRECTION_XY,
+    DIRECTION_Y,
+    SURROUNDING_DIRECTIONS,
+} from '../../../../../constants/music/game'
 
-const
-    ORIENTATION_X = 'x',
-    ORIENTATION_Y = 'y',
-    ORIENTATION_XY = 'xy'
-
-const getOrientation = placement => {
+const getDominoOrientation = placement => {
+    // Use direction to signify orientation.
     if (placement[0][1] === placement[1][1]) {
-        return ORIENTATION_X
+        return DIRECTION_X
     }
     if (placement[0][0] === placement[1][0]) {
-        return ORIENTATION_Y
+        return DIRECTION_Y
     }
-    return ORIENTATION_XY
+    return DIRECTION_XY
 }
-
-const getNextCoordinates = (coordinates, direction, sign = 1) => (
-    coordinates.map((coordinate, index) => (
-        coordinate + direction[index] * sign
-    ))
-)
-
-const getPitchAtCoordinates = (coordinates, matrix) => (
-    matrix[coordinates[0]]?.[coordinates[1]]
-)
-
-const getHasPitchAtCoordinates = (coordinates, matrix) => (
-    Number.isFinite(getPitchAtCoordinates(coordinates, matrix))
-)
 
 const getRow = ({ pitch, coordinates, direction, matrix }) => {
     const row = [pitch]
@@ -64,24 +57,23 @@ export const getRowsForPlacement = ({ dominoIndex, placement, board }) => {
     }
 
     // If not, add domino to matrix.
-    const matrix = addToMatrix({ dominoIndex, placement }, initialMatrix)
+    const matrix = addDominoToMatrix({
+        domino: { dominoIndex, placement },
+        matrix: initialMatrix,
+    })
 
     const
         pitches = getDominoPitches(dominoIndex),
-        orientation = getOrientation(placement)
+        orientation = getDominoOrientation(placement)
 
     return placement.map((coordinates, index) => {
         const pitch = pitches[index]
 
-        return [
+        return SURROUNDING_DIRECTIONS.map(direction => (
             // For second pitch, avoid duplicate row with first pitch.
-            (!index || orientation !== ORIENTATION_X) &&
-                getRow({ pitch, coordinates, direction: [1, 0], matrix }),
-            (!index || orientation !== ORIENTATION_Y) &&
-                getRow({ pitch, coordinates, direction: [0, 1], matrix }),
-            (!index || orientation !== ORIENTATION_XY) &&
-                getRow({ pitch, coordinates, direction: [-1, 1], matrix }),
-        ]
+            (!index || orientation !== direction) &&
+            getRow({ pitch, coordinates, direction, matrix })
+        ))
     })
         .flat()
         // Don't bother passing false rows or rows of a single pitch.

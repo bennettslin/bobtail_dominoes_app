@@ -1,4 +1,4 @@
-import { OCTAVE_RANGE } from '../../../../constants/audio'
+import { OCTAVE_RANGE } from '../../../../constants/music/audio'
 import { getArrayOfIndices } from '../../../general'
 
 export const mod12 = number => (

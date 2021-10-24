@@ -4,7 +4,7 @@ import styleConfigPlayedOn from '../../../../styles/checker/playedOn'
 import {
     ANIMATED_NOTE_DURATION,
     ANIMATED_TOTAL_DURATION,
-} from '../../../../constants/audio'
+} from '../../../../constants/music/audio'
 
 const
     PATH_CLASS_NAMES = ['edge', 'face'],
