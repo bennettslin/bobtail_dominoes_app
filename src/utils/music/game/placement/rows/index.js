@@ -14,6 +14,14 @@ import {
     ADJACENT_SIGNS,
 } from '../../../../../constants/music/game'
 
+const addSafeDominoToBoardMatrix = ({ dominoIndex, placement, board }) => {
+    const boardMatrix = getBoardMatrix(board)
+    // Ensure there is no placement conflict. If so, return null.
+    return !getHasPitchAtPlacement(placement, boardMatrix) && (
+        addDominoToMatrix({ dominoIndex, placement, boardMatrix })
+    )
+}
+
 const getOrientation = placement => {
     // Use direction to signify orientation.
     if (placement[0][1] === placement[1][1]) {
@@ -42,32 +50,31 @@ const getRow = ({ pitch, coordinates, direction, boardMatrix }) => {
 }
 
 export const getRowsForPlacement = ({ dominoIndex, placement, board }) => {
-    // First determine if there is conflict with initial board matrix.
-    const initialBoardMatrix = getBoardMatrix(board)
-    if (getHasPitchAtPlacement(placement, initialBoardMatrix)) {
+    const boardMatrix = addSafeDominoToBoardMatrix({
+        dominoIndex, placement, board,
+    })
+
+    if (!boardMatrix) {
         return null
     }
-
-    // If not, add domino to board matrix.
-    const boardMatrix = addDominoToMatrix({
-        domino: { dominoIndex, placement },
-        boardMatrix: initialBoardMatrix,
-    })
 
     const
         pitches = getDominoPitches(dominoIndex),
         orientation = getOrientation(placement)
 
-    return placement.map((coordinates, index) => {
-        const pitch = pitches[index]
+    return (
+        placement
+            .map((coordinates, index) => {
+                const pitch = pitches[index]
 
-        return ADJACENT_DIRECTIONS.map(direction => (
-            // For second pitch, avoid duplicate row with first pitch.
-            (!index || orientation !== direction) &&
-            getRow({ pitch, coordinates, direction, boardMatrix })
-        ))
-    })
-        .flat()
-        // Don't bother passing false rows or rows of a single pitch.
-        .filter(row => row.length > 1)
+                return ADJACENT_DIRECTIONS.map(direction => (
+                // For second pitch, avoid duplicate row with first pitch.
+                    (!index || orientation !== direction) &&
+                getRow({ pitch, coordinates, direction, boardMatrix })
+                ))
+            })
+            .flat()
+            // Don't bother passing false rows or rows of a single pitch.
+            .filter(row => row.length > 1)
+    )
 }

@@ -10,11 +10,12 @@
     * coordinates
         * all
     * adjacent
-        * done, just manually text after printing hexagons
+        * done, just manually test after printing hexagons
     * placement
+        * done, just manually test after printing hexagons
 
 
-* getAllValidPlacements
+* getValidPlacements
     * Placement is pair of two coordinates, first is lower pitch, second is higher pitch.
     * Return all valid placements
     * (dominoIndex, board) => [

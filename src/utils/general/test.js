@@ -1,5 +1,15 @@
 import { getAreSetsEqual, getArrayOfIndices, getFixed, join, round } from '.'
 
+describe('getArrayOfIndices', () => {
+    it('returns array with given length', () => {
+        expect(getArrayOfIndices(6)).toStrictEqual([0, 1, 2, 3, 4, 5])
+    })
+
+    it('returns array with given base index', () => {
+        expect(getArrayOfIndices(3, 7)).toStrictEqual([7, 8, 9])
+    })
+})
+
 describe('getAreSetsEqual', () => {
     it('returns false for sets of unequal size', () => {
         expect(getAreSetsEqual(
@@ -20,16 +30,6 @@ describe('getAreSetsEqual', () => {
             new Set([0, 1, 2, 3, 4]),
             new Set([0, 1, 2, 3, 4]),
         )).toBe(true)
-    })
-})
-
-describe('getArrayOfIndices', () => {
-    it('returns array with given length', () => {
-        expect(getArrayOfIndices(6)).toStrictEqual([0, 1, 2, 3, 4, 5])
-    })
-
-    it('returns array with given base index', () => {
-        expect(getArrayOfIndices(3, 7)).toStrictEqual([7, 8, 9])
     })
 })
 
