@@ -1,5 +1,5 @@
 import { getPointsForPlacement } from '.'
-import { MOCK_BOARD } from '../../board/test'
+import { MOCK_BOARD } from '../../../../../__mocks__/board'
 
 const getProps = (dominoIndex, placement, board = MOCK_BOARD) => ({
     dominoIndex, placement, board,

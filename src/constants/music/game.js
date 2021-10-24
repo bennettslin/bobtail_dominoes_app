@@ -15,8 +15,5 @@ export const DOMINO_INDICES = [
 export const DIRECTION_X = [1, 0]
 export const DIRECTION_Y = [0, 1]
 export const DIRECTION_XY = [-1, 1]
-export const SURROUNDING_DIRECTIONS = [
-    DIRECTION_X,
-    DIRECTION_Y,
-    DIRECTION_XY,
-]
+export const ADJACENT_DIRECTIONS = [DIRECTION_X, DIRECTION_Y, DIRECTION_XY]
+export const ADJACENT_SIGNS = [-1, 1]

@@ -6,10 +6,10 @@ export const addToMatrix = ({ coordinates, matrix, value = true }) => {
     return matrix
 }
 
-export const getFlattenedMatrix = (matrix, parse = parseInt) => (
+export const getFlattenedMatrix = (matrix, parseFunction = parseInt) => (
     Object.keys(matrix).map(xCoord => (
         Object.keys(matrix[xCoord]).map(yCoord => (
-            [parse(xCoord), parse(yCoord)]
+            [parseFunction(xCoord), parseFunction(yCoord)]
         ))
     )).flat()
 )

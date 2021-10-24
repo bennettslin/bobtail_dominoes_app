@@ -1,15 +1,18 @@
 # Generator notes
+* Print out hexagons
+
 * Unit tests
     * board
-        * addToMatrix
         * addDominoToMatrix
     * matrix
         * addToMatrix
         * getFlattenedMatrix
     * coordinates
         * all
+    * adjacent
+        * done, just manually text after printing hexagons
     * placement
-        * getSurroundingCoordinates
+
 
 * getAllValidPlacements
     * Placement is pair of two coordinates, first is lower pitch, second is higher pitch.
@@ -20,11 +23,6 @@
             points: 3
         }
     ]
-    * getAllPhysicalPlacements
-    * Return all possible placements of a domino on a board
-        * (dominoIndex, board) => [
-            [[0, 0], [1, 0]],
-        ]
 
 * Basic UI that shows board and matrix
     * Generator page

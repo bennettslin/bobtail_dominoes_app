@@ -2,6 +2,7 @@ import { addDominoToMatrix, getBoardMatrix } from '../../board'
 import { getDominoPitches } from '../../dominoes'
 import {
     getHasPitchAtCoordinates,
+    getHasPitchAtPlacement,
     getNextCoordinates,
     getPitchAtCoordinates,
 } from '../coordinates'
@@ -9,10 +10,11 @@ import {
     DIRECTION_X,
     DIRECTION_XY,
     DIRECTION_Y,
-    SURROUNDING_DIRECTIONS,
+    ADJACENT_DIRECTIONS,
+    ADJACENT_SIGNS,
 } from '../../../../../constants/music/game'
 
-const getDominoOrientation = placement => {
+const getOrientation = placement => {
     // Use direction to signify orientation.
     if (placement[0][1] === placement[1][1]) {
         return DIRECTION_X
@@ -23,56 +25,46 @@ const getDominoOrientation = placement => {
     return DIRECTION_XY
 }
 
-const getRow = ({ pitch, coordinates, direction, matrix }) => {
+const getRow = ({ pitch, coordinates, direction, boardMatrix }) => {
     const row = [pitch]
 
-    // Get all pitches in forward direction.
-    let current = getNextCoordinates(coordinates, direction)
-    while (getHasPitchAtCoordinates(current, matrix)) {
-        row.push(getPitchAtCoordinates(current, matrix))
-        current = getNextCoordinates(current, direction)
-    }
-
-    // Get all pitches in reverse direction.
-    current = getNextCoordinates(coordinates, direction, -1)
-    while (getHasPitchAtCoordinates(current, matrix)) {
-        row.unshift(getPitchAtCoordinates(current, matrix))
-        current = getNextCoordinates(current, direction, -1)
-    }
+    // Add all pitches first in forward direction, then in reverse direction.
+    ADJACENT_SIGNS.forEach(sign => {
+        const arrayFunction = sign === 1 ? 'push' : 'unshift'
+        let current = getNextCoordinates(coordinates, direction, sign)
+        while (getHasPitchAtCoordinates(current, boardMatrix)) {
+            row[arrayFunction](getPitchAtCoordinates(current, boardMatrix))
+            current = getNextCoordinates(current, direction, sign)
+        }
+    })
 
     return row
 }
 
-const getHasPlacementConflict = (placement, matrix) => {
-    return placement.reduce((hasPitchAtCoordinates, coordinates) => (
-        hasPitchAtCoordinates || getHasPitchAtCoordinates(coordinates, matrix)
-    ), false)
-}
-
 export const getRowsForPlacement = ({ dominoIndex, placement, board }) => {
-    // First determine if there is conflict with initial matrix.
-    const initialMatrix = getBoardMatrix(board)
-    if (getHasPlacementConflict(placement, initialMatrix)) {
+    // First determine if there is conflict with initial board matrix.
+    const initialBoardMatrix = getBoardMatrix(board)
+    if (getHasPitchAtPlacement(placement, initialBoardMatrix)) {
         return null
     }
 
-    // If not, add domino to matrix.
-    const matrix = addDominoToMatrix({
+    // If not, add domino to board matrix.
+    const boardMatrix = addDominoToMatrix({
         domino: { dominoIndex, placement },
-        matrix: initialMatrix,
+        boardMatrix: initialBoardMatrix,
     })
 
     const
         pitches = getDominoPitches(dominoIndex),
-        orientation = getDominoOrientation(placement)
+        orientation = getOrientation(placement)
 
     return placement.map((coordinates, index) => {
         const pitch = pitches[index]
 
-        return SURROUNDING_DIRECTIONS.map(direction => (
+        return ADJACENT_DIRECTIONS.map(direction => (
             // For second pitch, avoid duplicate row with first pitch.
             (!index || orientation !== direction) &&
-            getRow({ pitch, coordinates, direction, matrix })
+            getRow({ pitch, coordinates, direction, boardMatrix })
         ))
     })
         .flat()
