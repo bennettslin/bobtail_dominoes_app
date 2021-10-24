@@ -3,6 +3,9 @@
     * board
         * addToMatrix
         * addDominoToMatrix
+    * matrix
+        * addToMatrix
+        * getFlattenedMatrix
     * coordinates
         * all
     * placement

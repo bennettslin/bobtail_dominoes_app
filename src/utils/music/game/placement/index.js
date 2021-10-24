@@ -1,4 +1,5 @@
-import { addToMatrix, getBoardMatrix } from '../board'
+import { getBoardMatrix } from '../board'
+import { addToMatrix, getFlattenedMatrix } from '../matrix'
 import { getHasPitchAtCoordinates, getNextCoordinates } from './coordinates'
 import { SURROUNDING_DIRECTIONS } from '../../../../constants/music/game'
 
@@ -29,19 +30,28 @@ const getSurroundingMatrix = board => {
     }, {})
 }
 
-export const getSurroundingCoordinates = board => {
-    const surroundingMatrix = getSurroundingMatrix(board)
+export const getSurroundingCoordinates = board => (
     // Convert matrix of surrounding coordinates to array.
-    return Object.keys(surroundingMatrix).map(xCoord => (
-        Object.keys(surroundingMatrix[xCoord]).map(yCoord => (
-            [parseInt(xCoord), parseInt(yCoord)]
-        ))
-    )).flat()
-}
+    getFlattenedMatrix(getSurroundingMatrix(board))
+)
 
 export const getAllPhysicalPlacements = board => {
     // These are the surrounding coordinates.
-    return getSurroundingCoordinates(board)
+    const surroundingCoordinates = getSurroundingCoordinates(board)
+
+    // TODO: Initialise empty matrix of physical placements.
+
+    // TODO: For each surrounding coordinate, get *its* surrounding coordinates.
+
+    // TODO: Rule out the ones that are occupied by a domino.
+
+    // TODO: Convert each coordinate to a string.
+
+    // TODO: Add to matrix of physical placements, with lower coordinate first.
+
+    // TODO: Convert matrix to array.
+
+    // TODO: Return array.
 }
 
 export const getAllValidPlacements = ({ dominoIndex, board }) => {
