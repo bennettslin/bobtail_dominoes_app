@@ -1,36 +1,20 @@
 # Generator notes
 * Print out hexagons
+* Consider first domino, and adjust utils and unit tests accordingly.
 
 * Unit tests
-    * board
-        * addDominoToMatrix
-    * matrix
-        * addToMatrix
-        * getFlattenedMatrix
-    * coordinates
-        * all
+    * All failing
     * adjacent
         * done, just manually test after printing hexagons
     * placement
         * done, just manually test after printing hexagons
 
-
-* getValidPlacements
-    * Placement is pair of two coordinates, first is lower pitch, second is higher pitch.
-    * Return all valid placements
-    * (dominoIndex, board) => [
-        {
-            placement: [0, 0],
-            points: 3
-        }
-    ]
+* Start thinking about play utils
 
 * Basic UI that shows board and matrix
-    * Generator page
+    * Demo page
     * Need blank domino svgs
         * All possible intervals * three orientations = 18 total
             * Helper to retrieve for orientation
     * Already have pitch svgs, but move under faces
     * Rename and reorganise svgs
-
-* Helper to get

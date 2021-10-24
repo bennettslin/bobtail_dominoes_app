@@ -1,11 +1,10 @@
-import { addDominoToMatrix, getBoardMatrix } from '../../board'
-import { getDominoPitches } from '../../dominoes'
+import { addSafeDominoToBoardMatrix } from '../../board'
 import {
     getHasPitchAtCoordinates,
-    getHasPitchAtPlacement,
     getNextCoordinates,
     getPitchAtCoordinates,
-} from '../coordinates'
+} from '../../coordinates'
+import { getDominoPitches } from '../../dominoes'
 import {
     DIRECTION_X,
     DIRECTION_XY,
@@ -13,14 +12,6 @@ import {
     ADJACENT_DIRECTIONS,
     ADJACENT_SIGNS,
 } from '../../../../../constants/music/game'
-
-const addSafeDominoToBoardMatrix = ({ dominoIndex, placement, board }) => {
-    const boardMatrix = getBoardMatrix(board)
-    // Ensure there is no placement conflict. If so, return null.
-    return !getHasPitchAtPlacement(placement, boardMatrix) && (
-        addDominoToMatrix({ dominoIndex, placement, boardMatrix })
-    )
-}
 
 const getOrientation = placement => {
     // Use direction to signify orientation.

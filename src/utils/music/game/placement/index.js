@@ -13,6 +13,7 @@ export const getValidPlacements = ({ dominoIndex, board }) => (
             placement,
             points: getPointsForPlacement({ dominoIndex, placement, board }),
         }))
+        // TODO: Consider first domino.
         .filter(({ points }) => points > 0)
         .sort(sortByHighestPoints)
 )

@@ -1,6 +1,6 @@
 import { getBoardMatrix } from '../../board'
 import { addToMatrix, getFlattenedMatrix } from '../../matrix'
-import { getHasPitchAtCoordinates, getNextCoordinates } from '../coordinates'
+import { getHasPitchAtCoordinates, getNextCoordinates } from '../../coordinates'
 import { ADJACENT_DIRECTIONS, ADJACENT_SIGNS } from '../../../../../constants/music/game'
 
 const addToMatrixFromAdjacent = ({

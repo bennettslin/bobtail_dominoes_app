@@ -1,4 +1,4 @@
-import { getBoardMatrix } from '.'
+import { addSafeDominoToBoardMatrix, getBoardMatrix } from '.'
 import { MOCK_BOARD } from '../../../../__mocks__/board'
 
 describe('getBoardMatrix', () => {
@@ -33,5 +33,23 @@ describe('getBoardMatrix', () => {
             },
             2: { 0: 11 },
         })
+    })
+})
+
+describe('addSafeDominoToBoardMatrix', () => {
+    it('returns null if not safe addition', () => {
+        expect(addSafeDominoToBoardMatrix({
+            dominoIndex: 20,
+            placement: [[0, 0], [0, 1]],
+            board: MOCK_BOARD,
+        })).toBeNull()
+    })
+
+    it('returns matrix with domino added if safe addition', () => {
+        expect(addSafeDominoToBoardMatrix({
+            dominoIndex: 20,
+            placement: [[0, 0], [0, 1]],
+            board: MOCK_BOARD,
+        })).toStrictEqual({})
     })
 })
