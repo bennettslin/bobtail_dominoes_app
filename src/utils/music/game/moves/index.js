@@ -6,7 +6,7 @@ const sortByHighestPoints = (
     { points: secondPoints },
 ) => secondPoints - firstPoints
 
-export const getValidPlacements = ({ dominoIndex, board }) => (
+export const getValidMoves = ({ dominoIndex, board = [] }) => (
     getAdjacentPlacements(board)
         .map(placement => {
             const { pitchSets, points } = getChordsForPlacement({
@@ -24,7 +24,7 @@ export const getValidPlacements = ({ dominoIndex, board }) => (
                 },
             })
         })
-        // Allow placements with no points for first domino.
+        // Allow moves with no points for first domino.
         .filter(({ points }) => (board.length ? points > 0 : true))
         .sort(sortByHighestPoints)
 )

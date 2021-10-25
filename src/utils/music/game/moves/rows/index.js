@@ -1,4 +1,4 @@
-import { addSafeDominoToBoardMatrix } from '../boardMatrix'
+import { addSafeMoveToBoardMatrix } from '../boardMatrix'
 import {
     getHasPitchAtCoordinates,
     getNextCoordinates,
@@ -41,7 +41,7 @@ const getRow = ({ pitch, coordinates, direction, boardMatrix }) => {
 }
 
 export const getRowsForPlacement = ({ dominoIndex, placement, board }) => {
-    const boardMatrix = addSafeDominoToBoardMatrix({
+    const boardMatrix = addSafeMoveToBoardMatrix({
         dominoIndex, placement, board,
     })
 

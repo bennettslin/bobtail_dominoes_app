@@ -3,7 +3,7 @@ import { addToMatrix, getFlattenedMatrix } from '.'
 const MOCK_MATRIX = { 15: { '-15': 5, '-16': 2 } }
 
 describe('addToMatrix', () => {
-    it('returns original matrix if value already present', () => {
+    it('returns same matrix if value already present', () => {
         const
             matrix = JSON.parse(JSON.stringify(MOCK_MATRIX)),
             result = addToMatrix({
@@ -11,7 +11,6 @@ describe('addToMatrix', () => {
                 matrix,
                 value: 5,
             })
-        expect(result).toBe(matrix)
         expect(result).toStrictEqual({ 15: { '-15': 5, '-16': 2 } })
     })
 
@@ -23,8 +22,18 @@ describe('addToMatrix', () => {
                 matrix,
                 value: 9,
             })
-        expect(result).toBe(matrix)
         expect(result).toStrictEqual({ 15: { '-14': 9, '-15': 5, '-16': 2 } })
+    })
+
+    it('returns mutated matrix', () => {
+        const
+            matrix = JSON.parse(JSON.stringify(MOCK_MATRIX)),
+            result = addToMatrix({
+                coordinates: [15, -14],
+                matrix,
+                value: 9,
+            })
+        expect(result).toBe(matrix)
     })
 })
 

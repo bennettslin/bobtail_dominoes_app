@@ -2,21 +2,6 @@
 * Under Play
     * Utils to handle pool, board, hands, and turns, and general play
 
-    * Pool
-        * Util to generate pool
-            * Create set
-        * Util to remove random domino from pool
-        * Util to exchange dominoes
-            * You can only exchange however many are in the pool
-
-    * Board
-        * Util to add domino to board
-
-    * Hands
-        * Util to draw into hand
-        * Util to play hand
-        * Util to exchange hand
-
     * Turns
         * Index 0 is placement of first domino
         * Each turn stores handIndex, dominoes in hand, dominoes played, dominoes drawn, chords and points

@@ -2,7 +2,7 @@ import { getDominoPitches } from '../../dominoes'
 import { addToMatrix } from '../matrix'
 import { getHasPitchAtPlacement } from '../coordinates'
 
-const addDominoToMatrix = ({ dominoIndex, placement, boardMatrix }) => (
+const addMoveToMatrix = ({ dominoIndex, placement, boardMatrix }) => (
     getDominoPitches(dominoIndex).reduce(
         (boardMatrix, pitch, index) => (
             addToMatrix({
@@ -15,13 +15,12 @@ const addDominoToMatrix = ({ dominoIndex, placement, boardMatrix }) => (
 )
 
 export const getBoardMatrix = (board = []) => (
-    board.reduce((boardMatrix, domino) => {
-        const { dominoIndex, placement } = domino
-        return addDominoToMatrix({ dominoIndex, placement, boardMatrix })
-    }, {})
+    board.reduce((boardMatrix, { dominoIndex, placement }) => (
+        addMoveToMatrix({ dominoIndex, placement, boardMatrix })
+    ), {})
 )
 
-export const addSafeDominoToBoardMatrix = ({
+export const addSafeMoveToBoardMatrix = ({
     dominoIndex,
     placement,
     board,
@@ -30,5 +29,5 @@ export const addSafeDominoToBoardMatrix = ({
     // Ensure there is no placement conflict. If so, return null.
     return getHasPitchAtPlacement(placement, boardMatrix) ?
         null :
-        addDominoToMatrix({ dominoIndex, placement, boardMatrix })
+        addMoveToMatrix({ dominoIndex, placement, boardMatrix })
 }

@@ -1,5 +1,5 @@
-import { DOMINO_INDICES } from '../../../../constants/music/game'
+import { DOMINOES_PITCHES } from '../../../../constants/music/game'
 
 export const getDominoPitches = dominoIndex => (
-    DOMINO_INDICES[dominoIndex]
+    DOMINOES_PITCHES[dominoIndex]
 )

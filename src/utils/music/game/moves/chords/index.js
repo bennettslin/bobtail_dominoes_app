@@ -7,22 +7,22 @@ const getIsIsolatedPlacement = ({ rows, board }) => (
 )
 
 const getHasDuplicates = rows => (
-    rows.reduce((hasDuplicates, row) => (
-        hasDuplicates || (row.length > new Set(row).size)
-    ), false)
+    rows.some(row => (
+        row.length > new Set(row).size
+    ))
 )
 
 const getMoveHasNoValidChords = ({ rows, board }) => (
     // Make sure it's not the first domino placement.
-    board.length && !rows.reduce((hasValidChord, row) => (
-        hasValidChord || getIsValidChord(new Set(row))
-    ), false)
+    board.length && !rows.some(row => (
+        getIsValidChord(new Set(row))
+    ))
 )
 
 const getHasInvalidSonorities = rows => (
-    rows.reduce((hasInvalidChords, row) => (
-        hasInvalidChords || getIsInvalidSonority(new Set(row))
-    ), false)
+    rows.some(row => (
+        getIsInvalidSonority(new Set(row))
+    ))
 )
 
 export const getChordsForPlacement = ({ dominoIndex, placement, board }) => {

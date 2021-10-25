@@ -1,4 +1,4 @@
-import { addSafeDominoToBoardMatrix, getBoardMatrix } from '.'
+import { addSafeMoveToBoardMatrix, getBoardMatrix } from '.'
 import { MOCK_BOARD } from '../../../../../__mocks__/board'
 
 describe('getBoardMatrix', () => {
@@ -36,17 +36,17 @@ describe('getBoardMatrix', () => {
     })
 })
 
-describe('addSafeDominoToBoardMatrix', () => {
+describe('addSafeMoveToBoardMatrix', () => {
     it('returns null if not safe addition', () => {
-        expect(addSafeDominoToBoardMatrix({
+        expect(addSafeMoveToBoardMatrix({
             dominoIndex: 60,
             placement: [[0, 0], [0, 1]],
             board: [MOCK_BOARD[0]],
         })).toBeNull()
     })
 
-    it('returns matrix with domino added if safe addition', () => {
-        expect(addSafeDominoToBoardMatrix({
+    it('returns matrix with move added if safe addition', () => {
+        expect(addSafeMoveToBoardMatrix({
             dominoIndex: 60,
             placement: [[0, 1], [-1, 2]],
             board: [MOCK_BOARD[0]],

@@ -13,7 +13,7 @@ export const getHasPitchAtCoordinates = (coordinates, matrix) => (
 )
 
 export const getHasPitchAtPlacement = (placement, matrix) => (
-    placement.reduce((hasPitchAtCoordinates, coordinates) => (
-        hasPitchAtCoordinates || getHasPitchAtCoordinates(coordinates, matrix)
-    ), false)
+    placement.some(coordinates => (
+        getHasPitchAtCoordinates(coordinates, matrix)
+    ))
 )

@@ -1,7 +1,7 @@
 import { getArrayOfIndices } from '../../utils/general'
 import { OCTAVE_RANGE } from './audio'
 
-export const DOMINO_INDICES = [
+export const DOMINOES_PITCHES = [
     // Reserve index 0 for no domino.
     null,
     ...getArrayOfIndices(OCTAVE_RANGE).map(firstPitch => (
@@ -11,6 +11,7 @@ export const DOMINO_INDICES = [
         ).map(secondPitch => [firstPitch, secondPitch])
     )).flat(),
 ]
+export const DOMINOES_COUNT = DOMINOES_PITCHES.length
 
 export const DIRECTION_X = [1, 0]
 export const DIRECTION_Y = [0, 1]

@@ -20,10 +20,13 @@ module.exports = {
         process: true,
         describe: true,
         expect: true,
+        jest: true,
         it: true,
         test: true,
         beforeAll: true,
+        beforeEach: true,
         afterAll: true,
+        afterEach: true,
     },
     parser: '@babel/eslint-parser',
     parserOptions: {

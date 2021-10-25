@@ -1,10 +1,10 @@
-import { getValidPlacements } from '.'
+import { getValidMoves } from '.'
 import { MOCK_BOARD } from '../../../../__mocks__/board'
 
-describe('getValidPlacements', () => {
+describe('getValidMoves', () => {
     it('returns array for first domino', () => {
-        expect(getValidPlacements({
-            dominoIndex: 20, board: [],
+        expect(getValidMoves({
+            dominoIndex: 20,
         })).toStrictEqual([
             { dominoIndex: 20, placement: [[-1, 0], [0, 0]] },
             { dominoIndex: 20, placement: [[0, 0], [1, 0]] },
@@ -15,14 +15,14 @@ describe('getValidPlacements', () => {
         ])
     })
 
-    it('returns empty array if no valid placements', () => {
-        expect(getValidPlacements({
+    it('returns empty array if no valid moves', () => {
+        expect(getValidMoves({
             dominoIndex: 13, board: [MOCK_BOARD[0]],
         })).toStrictEqual([])
     })
 
-    it('returns array of single valid placement', () => {
-        expect(getValidPlacements({
+    it('returns array of single valid move', () => {
+        expect(getValidMoves({
             dominoIndex: 20, board: [MOCK_BOARD[0]],
         })).toStrictEqual([
             {
@@ -52,8 +52,8 @@ describe('getValidPlacements', () => {
         ])
     })
 
-    it('returns array of multiple valid placements', () => {
-        expect(getValidPlacements({
+    it('returns array of multiple valid moves', () => {
+        expect(getValidMoves({
             dominoIndex: 20, board: MOCK_BOARD,
         })).toStrictEqual([
             {
