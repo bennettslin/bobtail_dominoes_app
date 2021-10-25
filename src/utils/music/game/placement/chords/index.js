@@ -25,22 +25,32 @@ const getHasInvalidSonorities = rows => (
     ), false)
 )
 
-export const getPointsForPlacement = ({ dominoIndex, placement, board }) => {
+export const getChordsForPlacement = ({ dominoIndex, placement, board }) => {
     const rows = getRowsForPlacement({ dominoIndex, placement, board })
 
     if (
-        // If illegal move, return -1.
+        // If illegal move, return null.
         !rows ||
         getIsIsolatedPlacement({ rows, board }) ||
         getHasDuplicates(rows) ||
         getMoveHasNoValidChords({ rows, board }) ||
         getHasInvalidSonorities(rows)
     ) {
-        return -1
+        return null
     }
 
-    // If first domino, return 0. Otherwise, return points.
-    return rows.reduce((points, row) => (
-        points += getPoints(new Set(row))
-    ), 0)
+    // Return if there are chords and points. First domino will be empty.
+    return rows.reduce(({ pitchSets, points }, row) => {
+        const pitchSet = new Set(row)
+
+        if (getIsValidChord(pitchSet)) {
+            pitchSets.push(pitchSet)
+        }
+
+        return {
+            pitchSets,
+            points: points += getPoints(pitchSet),
+        }
+
+    }, { pitchSets: [], points: 0 })
 }
