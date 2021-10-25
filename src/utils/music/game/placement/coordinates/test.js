@@ -1,5 +1,5 @@
 import { getHasPitchAtCoordinates, getHasPitchAtPlacement, getNextCoordinates, getPitchAtCoordinates } from '.'
-import { DIRECTION_X, DIRECTION_XY, DIRECTION_Y } from '../../../../constants/music/game'
+import { DIRECTION_X, DIRECTION_XY, DIRECTION_Y } from '../../../../../constants/music/game'
 
 const MOCK_MATRIX = { '-25': { 25: 6, 26: 0 } }
 

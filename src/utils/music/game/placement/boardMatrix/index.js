@@ -1,4 +1,4 @@
-import { getDominoPitches } from '../dominoes'
+import { getDominoPitches } from '../../dominoes'
 import { addToMatrix } from '../matrix'
 import { getHasPitchAtPlacement } from '../coordinates'
 

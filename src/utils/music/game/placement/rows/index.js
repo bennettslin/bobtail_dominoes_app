@@ -1,9 +1,9 @@
-import { addSafeDominoToBoardMatrix } from '../../board'
+import { addSafeDominoToBoardMatrix } from '../boardMatrix'
 import {
     getHasPitchAtCoordinates,
     getNextCoordinates,
     getPitchAtCoordinates,
-} from '../../coordinates'
+} from '../coordinates'
 import { getDominoPitches } from '../../dominoes'
 import {
     DIRECTION_X,
@@ -55,15 +55,17 @@ export const getRowsForPlacement = ({ dominoIndex, placement, board }) => {
 
     return (
         placement
-            .map((coordinates, index) => {
-                const pitch = pitches[index]
-
-                return ADJACENT_DIRECTIONS.map(direction => (
-                // For second pitch, avoid duplicate row with first pitch.
-                    (!index || orientation !== direction) &&
-                getRow({ pitch, coordinates, direction, boardMatrix })
+            .map((coordinates, index) => (
+                ADJACENT_DIRECTIONS.map(direction => (
+                    // For second pitch, avoid duplicate row with first pitch.
+                    (!index || orientation !== direction) && getRow({
+                        pitch: pitches[index],
+                        coordinates,
+                        direction,
+                        boardMatrix,
+                    })
                 ))
-            })
+            ))
             .flat()
             // Don't bother passing false rows or rows of a single pitch.
             .filter(row => row.length > 1)
