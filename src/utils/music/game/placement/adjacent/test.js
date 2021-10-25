@@ -2,8 +2,8 @@ import { getAdjacentPlacements, getAdjacentCoordinates } from '.'
 import { MOCK_BOARD } from '../../../../../__mocks__/board'
 
 describe('getAdjacentCoordinates', () => {
-    it('returns empty array for empty board', () => {
-        expect(getAdjacentCoordinates([])).toStrictEqual([])
+    it('returns array with centre coordinate for first domino', () => {
+        expect(getAdjacentCoordinates([])).toStrictEqual([[0, 0]])
     })
 
     it('returns array of coordinates for board with single domino', () => {
@@ -20,8 +20,15 @@ describe('getAdjacentCoordinates', () => {
 })
 
 describe('getAdjacentPlacements', () => {
-    it('returns empty array for empty board', () => {
-        expect(getAdjacentPlacements([])).toStrictEqual([])
+    it('returns array of placements for first domino', () => {
+        expect(getAdjacentPlacements([])).toStrictEqual([
+            [[-1, 0], [0, 0]],
+            [[0, 0], [1, 0]],
+            [[0, 0], [0, 1]],
+            [[0, 0], [-1, 1]],
+            [[0, -1], [0, 0]],
+            [[1, -1], [0, 0]],
+        ])
     })
 
     it('returns array of placements for board with single domino', () => {

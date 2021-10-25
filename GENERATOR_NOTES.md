@@ -1,5 +1,4 @@
 # Generator notes
-* Consider first domino, and adjust utils and unit tests accordingly.
 * Start thinking about play utils
 
 * Basic UI that shows board and matrix

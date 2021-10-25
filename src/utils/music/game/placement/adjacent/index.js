@@ -36,7 +36,7 @@ export const getAdjacentCoordinates = (
     boardMatrix = getBoardMatrix(board),
 ) => (
     // First create a matrix to avoid duplicates, then flatten to array.
-    getFlattenedMatrix(
+    board.length ? getFlattenedMatrix(
         board.reduce((adjacentMatrix, domino) => (
             domino.placement.reduce((adjacentMatrix, coordinates) => (
                 addToMatrixFromAdjacent({
@@ -52,7 +52,8 @@ export const getAdjacentCoordinates = (
                 })
             ), adjacentMatrix)
         ), {}),
-    )
+    // If it's the first domino, return the origin.
+    ) : [[0, 0]]
 )
 
 const stringifyCoordinates = coordinates => {

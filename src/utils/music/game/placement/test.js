@@ -2,10 +2,17 @@ import { getValidPlacements } from '.'
 import { MOCK_BOARD } from '../../../../__mocks__/board'
 
 describe('getValidPlacements', () => {
-    it('returns empty array for empty board', () => {
+    it('returns array for first domino', () => {
         expect(getValidPlacements({
             dominoIndex: 20, board: [],
-        })).toStrictEqual([])
+        })).toStrictEqual([
+            { dominoIndex: 20, placement: [[-1, 0], [0, 0]], points: 0 },
+            { dominoIndex: 20, placement: [[0, 0], [1, 0]], points: 0 },
+            { dominoIndex: 20, placement: [[0, 0], [0, 1]], points: 0 },
+            { dominoIndex: 20, placement: [[0, 0], [-1, 1]], points: 0 },
+            { dominoIndex: 20, placement: [[0, -1], [0, 0]], points: 0 },
+            { dominoIndex: 20, placement: [[1, -1], [0, 0]], points: 0 },
+        ])
     })
 
     it('returns empty array if no valid placements', () => {
