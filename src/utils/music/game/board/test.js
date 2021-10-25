@@ -39,17 +39,24 @@ describe('getBoardMatrix', () => {
 describe('addSafeDominoToBoardMatrix', () => {
     it('returns null if not safe addition', () => {
         expect(addSafeDominoToBoardMatrix({
-            dominoIndex: 20,
+            dominoIndex: 60,
             placement: [[0, 0], [0, 1]],
-            board: MOCK_BOARD,
+            board: [MOCK_BOARD[0]],
         })).toBeNull()
     })
 
     it('returns matrix with domino added if safe addition', () => {
         expect(addSafeDominoToBoardMatrix({
-            dominoIndex: 20,
-            placement: [[0, 0], [0, 1]],
-            board: MOCK_BOARD,
-        })).toStrictEqual({})
+            dominoIndex: 60,
+            placement: [[0, 1], [-1, 2]],
+            board: [MOCK_BOARD[0]],
+        })).toStrictEqual({
+            '-1': { 2: 11 },
+            0: {
+                0: 0,
+                1: 7,
+            },
+            1: { 0: 4 },
+        })
     })
 })

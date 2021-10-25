@@ -1,19 +1,30 @@
 import { addToMatrix, getFlattenedMatrix } from '.'
-// import { MOCK_BOARD } from '../../../../__mocks__/board'
+
+const MOCK_MATRIX = { 15: { '-15': 5, '-16': 2 } }
 
 describe('addToMatrix', () => {
     it('returns original matrix if value already present', () => {
-        expect(addToMatrix({
-            coordinates: [[0, 0], [0, 1]],
-            matrix: {},
-        })).toBe({})
+        const
+            matrix = JSON.parse(JSON.stringify(MOCK_MATRIX)),
+            result = addToMatrix({
+                coordinates: [15, -15],
+                matrix,
+                value: 5,
+            })
+        expect(result).toBe(matrix)
+        expect(result).toStrictEqual({ 15: { '-15': 5, '-16': 2 } })
     })
 
     it('returns mutated matrix if value is new addition', () => {
-        expect(addToMatrix({
-            coordinates: [[0, 0], [0, 1]],
-            matrix: {},
-        })).toBe({})
+        const
+            matrix = JSON.parse(JSON.stringify(MOCK_MATRIX)),
+            result = addToMatrix({
+                coordinates: [15, -14],
+                matrix,
+                value: 9,
+            })
+        expect(result).toBe(matrix)
+        expect(result).toStrictEqual({ 15: { '-14': 9, '-15': 5, '-16': 2 } })
     })
 })
 
@@ -23,6 +34,8 @@ describe('getFlattenedMatrix', () => {
     })
 
     it('returns flattened array for matrix', () => {
-        expect(getFlattenedMatrix({})).toStrictEqual([])
+        expect(getFlattenedMatrix(MOCK_MATRIX)).toStrictEqual([
+            [15, -15], [15, -16],
+        ])
     })
 })
