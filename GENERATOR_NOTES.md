@@ -1,4 +1,7 @@
 # Generator notes
+* getBestMovesForTurn
+    * Make more efficient
+
 * Under Play
     * Utils to handle pool, board, hands, and turns, and general play
 
@@ -16,10 +19,6 @@
             * Each player replenishes their hand
         * When no player can make a move, game ends
         * Calculate scores and determine winner 
-
-* Moves
-    * Do after hands
-    * getBestMovesForTurn
 
 * Demo
     * Maintains state of pool, board, hands, and turns

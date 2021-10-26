@@ -19,7 +19,7 @@ const getMoveHasNoValidChords = ({ rows, board }) => (
     ))
 )
 
-const getHasInvalidSonorities = rows => (
+const getIsLongSonority = rows => (
     rows.some(row => (
         getIsInvalidSonority(new Set(row))
     ))
@@ -31,10 +31,10 @@ export const getChordsForPlacement = ({ dominoIndex, placement, board }) => {
     if (
         // If illegal move, return null.
         !rows ||
+        getIsLongSonority(rows) ||
         getIsIsolatedPlacement({ rows, board }) ||
         getHasDuplicates(rows) ||
-        getMoveHasNoValidChords({ rows, board }) ||
-        getHasInvalidSonorities(rows)
+        getMoveHasNoValidChords({ rows, board })
     ) {
         return null
     }
