@@ -1,17 +1,13 @@
 import { getRandomEntry } from '../../../../general'
 import { getValidMoves } from '../../moves'
-import { getRandomDomino } from '../pool'
+import { getRandomDominoIndex } from '../pool'
 
-export const generateBoard = pool => {
-    const { dominoIndex } = getRandomDomino(pool)
-
-    return {
-        board: [
-            getRandomEntry(getValidMoves({ dominoIndex })),
-        ],
-        pool,
-    }
-}
+export const generateBoard = pool => [
+    // Randomly place first domino on board.
+    getRandomEntry(
+        getValidMoves({ dominoIndex: getRandomDominoIndex(pool) }),
+    ),
+]
 
 export const addMoveToBoard = (move, board) => {
     if (

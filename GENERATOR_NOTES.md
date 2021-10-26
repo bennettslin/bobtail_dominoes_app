@@ -17,10 +17,9 @@
         * When no player can make a move, game ends
         * Calculate scores and determine winner 
 
-* Placement
+* Moves
     * Do after hands
-    * Util to play best move for hand
-        * Include bonus for using all dominoes
+    * getBestMovesForTurn
 
 * Demo
     * Maintains state of pool, board, hands, and turns

@@ -5,9 +5,9 @@ export const generatePool = () => (
     new Set(getArrayOfIndices(DOMINOES_COUNT - 1, 1))
 )
 
-export const getRandomDomino = pool => {
+export const getRandomDominoIndex = pool => {
     if (!pool.size) {
-        return null
+        return 0
     }
 
     const
@@ -15,10 +15,10 @@ export const getRandomDomino = pool => {
         dominoIndex = Array.from(pool)[poolIndex]
 
     pool.delete(dominoIndex)
-    return { dominoIndex, pool }
+    return dominoIndex
 }
 
-export const exchangeDominoes = ({ dominoIndices, pool }) => {
+export const exchangeDominoIndices = ({ dominoIndices, pool }) => {
     if (
         // Pool cannot already have domino indices.
         dominoIndices.some(dominoIndex => (
@@ -32,8 +32,8 @@ export const exchangeDominoes = ({ dominoIndices, pool }) => {
     }
 
     // Draw new dominoes first.
-    const newDominoes = dominoIndices.map(() => (
-        getRandomDomino(pool).dominoIndex
+    const newDominoIndices = dominoIndices.map(() => (
+        getRandomDominoIndex(pool)
     ))
 
     // Then put back dominoes from hand.
@@ -41,5 +41,5 @@ export const exchangeDominoes = ({ dominoIndices, pool }) => {
         pool.add(dominoIndex)
     })
 
-    return { dominoIndices: newDominoes, pool }
+    return newDominoIndices
 }

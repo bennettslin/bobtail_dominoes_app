@@ -1,4 +1,4 @@
-import { exchangeDominoes, generatePool, getRandomDomino } from '.'
+import { exchangeDominoIndices, generatePool, getRandomDominoIndex } from '.'
 import { MOCK_POOL_LIST } from '../../../../../__mocks__/pool'
 
 describe('generatePool', () => {
@@ -9,7 +9,7 @@ describe('generatePool', () => {
     })
 })
 
-describe('getRandomDomino', () => {
+describe('getRandomDominoIndex', () => {
     beforeEach(() => {
         jest.spyOn(global.Math, 'random').mockReturnValue(0.123456789)
     })
@@ -17,33 +17,28 @@ describe('getRandomDomino', () => {
         jest.spyOn(global.Math, 'random').mockRestore()
     })
 
-    it('returns null if pool empty', () => {
-        expect(getRandomDomino(new Set([]))).toBeNull()
+    it('returns 0 if pool is empty', () => {
+        const pool = new Set([])
+        expect(getRandomDominoIndex(pool)).toBe(0)
+        expect(pool).toStrictEqual(new Set([]))
     })
 
-    it('returns lone domino and empty pool', () => {
-        expect(getRandomDomino(new Set([46]))).toStrictEqual({
-            dominoIndex: 46,
-            pool: new Set([]),
-        })
+    it('returns last domino removed from pool', () => {
+        const pool = new Set([46])
+        expect(getRandomDominoIndex(pool)).toBe(46)
+        expect(pool).toStrictEqual(new Set([]))
     })
 
     it('returns domino removed from pool', () => {
-        expect(getRandomDomino(new Set(MOCK_POOL_LIST))).toStrictEqual({
-            dominoIndex: 11,
-            pool: new Set([4, 13, 16, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
-        })
-    })
-
-    it('returns mutated pool', () => {
-        const
-            pool = new Set(MOCK_POOL_LIST),
-            { pool: returnedPool } = getRandomDomino(pool)
-        expect(returnedPool).toBe(pool)
+        const pool = new Set(MOCK_POOL_LIST)
+        expect(getRandomDominoIndex(pool)).toBe(11)
+        expect(pool).toStrictEqual(
+            new Set([4, 13, 16, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
+        )
     })
 })
 
-describe('exchangeDominoes', () => {
+describe('exchangeDominoIndices', () => {
     beforeEach(() => {
         jest.spyOn(global.Math, 'random').mockReturnValue(0.123456789)
     })
@@ -52,56 +47,47 @@ describe('exchangeDominoes', () => {
     })
 
     it('returns null if exchanged dominoes are already in pool', () => {
-        expect(exchangeDominoes({
+        expect(exchangeDominoIndices({
             dominoIndices: [1, 21],
             pool: new Set(MOCK_POOL_LIST),
         })).toBeNull()
     })
 
     it('returns null if exchanged dominoes are greater than pool size', () => {
-        expect(exchangeDominoes({
+        expect(exchangeDominoIndices({
             dominoIndices: [1, 21],
             pool: new Set([10]),
         })).toBeNull()
     })
 
     it('returns for one-to-one swap', () => {
-        expect(exchangeDominoes({
+        const pool = new Set([7, 12, 17])
+        expect(exchangeDominoIndices({
             dominoIndices: [5, 10, 15],
-            pool: new Set([7, 12, 17]),
-        })).toStrictEqual({
-            dominoIndices: [7, 12, 17],
-            pool: new Set([5, 10, 15]),
-        })
+            pool,
+        })).toStrictEqual([7, 12, 17])
+        expect(pool).toStrictEqual(new Set([5, 10, 15]))
     })
 
     it('returns for exchange of single domino', () => {
-        expect(exchangeDominoes({
+        const pool = new Set(MOCK_POOL_LIST)
+        expect(exchangeDominoIndices({
             dominoIndices: [5],
-            pool: new Set(MOCK_POOL_LIST),
-        })).toStrictEqual({
-            dominoIndices: [11],
-            pool: new Set([4, 5, 13, 16, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
-        })
+            pool,
+        })).toStrictEqual([11])
+        expect(pool).toStrictEqual(
+            new Set([4, 5, 13, 16, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
+        )
     })
 
     it('returns for exchange of multiple dominoes', () => {
-        expect(exchangeDominoes({
+        const pool = new Set(MOCK_POOL_LIST)
+        expect(exchangeDominoIndices({
             dominoIndices: [5, 10, 15],
-            pool: new Set(MOCK_POOL_LIST),
-        })).toStrictEqual({
-            dominoIndices: [11, 13, 16],
-            pool: new Set([4, 5, 10, 15, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
-        })
-    })
-
-    it('returns mutated pool', () => {
-        const
-            pool = new Set(MOCK_POOL_LIST),
-            { pool: returnedPool } = exchangeDominoes({
-                dominoIndices: [5, 10, 15],
-                pool,
-            })
-        expect(returnedPool).toBe(pool)
+            pool,
+        })).toStrictEqual([11, 13, 16])
+        expect(pool).toStrictEqual(
+            new Set([4, 5, 10, 15, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
+        )
     })
 })

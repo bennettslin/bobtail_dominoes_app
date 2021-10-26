@@ -1,26 +1,51 @@
-import { HAND_DOMINOES_COUNT } from '../../../../../constants/music/play'
+import { HAND_COUNT } from '../../../../../constants/music/play'
 import { getArrayOfIndices } from '../../../../general'
-import { getRandomDomino } from '../pool'
+import { exchangeDominoIndices, getRandomDominoIndex } from '../pool'
 
 export const generateHands = ({
     handsCount,
-    dominoesCount = HAND_DOMINOES_COUNT,
+    handCount = HAND_COUNT,
     pool,
 }) => (
     getArrayOfIndices(handsCount).map(() => ((
-        getArrayOfIndices(dominoesCount).map(() => (
-            getRandomDomino(pool).dominoIndex
-        ))
+        new Set(getArrayOfIndices(handCount).map(() => (
+            getRandomDominoIndex(pool)
+        )))
     )))
 )
 
-// export const drawNewHand = ({
-//     handIndex,
-//     hands,
-//     pool,
-// }) =>
+export const fillHand = ({
+    hand,
+    handCount = HAND_COUNT,
+    pool,
+}) => {
+    while (hand.size < handCount && pool.size) {
+        hand.add(getRandomDominoIndex(pool))
+    }
+    return hand
+}
 
-// * Hands
-// * Util to draw into hand
-// * Util to play hand
-// * Util to exchange hand
+export const exchangeHand = ({
+    exchangedIndices,
+    hand,
+    pool,
+}) => {
+    const newIndices = exchangeDominoIndices({
+        dominoIndices: exchangedIndices,
+        pool,
+    })
+
+    if (!newIndices) {
+        return null
+    }
+
+    exchangedIndices.forEach(dominoIndex => {
+        hand.delete(dominoIndex)
+    })
+
+    newIndices.forEach(newIndex => {
+        hand.add(newIndex)
+    })
+
+    return hand
+}

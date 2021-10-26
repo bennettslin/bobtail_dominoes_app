@@ -1,1 +1,1 @@
-export const HAND_DOMINOES_COUNT = 3
+export const HAND_COUNT = 3

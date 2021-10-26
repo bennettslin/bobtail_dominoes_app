@@ -10,19 +10,12 @@ describe('generateBoard', () => {
         jest.spyOn(global.Math, 'random').mockRestore()
     })
 
-    it('generates board with first domino placed', () => {
+    it('generates board with first domino removed from pool and placed', () => {
         const pool = generatePool()
-        expect(generateBoard(pool)).toStrictEqual({
-            board: [{ dominoIndex: 9, placement: [[-1, 0], [0, 0]] }],
-            pool: new Set([1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66]),
-        })
-    })
-
-    it('returns mutated pool', () => {
-        const
-            pool = generatePool(),
-            { pool: returnedPool } = generateBoard(pool)
-        expect(returnedPool).toBe(pool)
+        expect(generateBoard(pool)).toStrictEqual([
+            { dominoIndex: 9, placement: [[-1, 0], [0, 0]] },
+        ])
+        expect(pool).toStrictEqual(new Set([1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66]))
     })
 })
 
