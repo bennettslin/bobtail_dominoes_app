@@ -45,27 +45,34 @@ const recurseThroughValidMoves = ({
     board,
     moves = [],
     totalPoints = 0,
-}) => {
-    if (!hand.size) {
-        return { moves, points: totalPoints }
-    }
+}) => (
+    hand.size ? (
+        Array.from(hand).map(dominoIndex => {
+            const
+                validMoves = getValidMoves({ dominoIndex, board }),
+                nextHand = new Set(hand)
 
-    return Array.from(hand).map(dominoIndex => {
-        const nextHand = new Set(hand)
-        nextHand.delete(dominoIndex)
+            nextHand.delete(dominoIndex)
 
-        return getValidMoves({ dominoIndex, board }).map(move => (
-            recurseThroughValidMoves({
-                hand: nextHand,
-                board: addMoveToBoard(move, [...board]),
-                moves: [...moves, move],
-                totalPoints: totalPoints + move.points,
-            })
-        ))
-    })
-        .flat()
-        .flat()
-}
+            return validMoves.length ? (
+                validMoves.map(move => (
+                    recurseThroughValidMoves({
+                        hand: nextHand,
+                        board: addMoveToBoard(move, [...board]),
+                        moves: [...moves, move],
+                        totalPoints: totalPoints + move.points,
+                    })
+                ))
+            ) : (
+                // Base case when there are no valid moves.
+                { moves, points: totalPoints }
+            )
+        }).flat()
+    ).flat() : (
+        // Base case when hand is empty.
+        { moves, points: totalPoints }
+    )
+)
 
 export const getBestMovesForTurn = ({ hand, board }) => (
     recurseThroughValidMoves({ hand, board })
