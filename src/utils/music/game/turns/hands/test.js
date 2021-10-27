@@ -1,4 +1,4 @@
-import { fillHand, exchangeHand, generateHands } from '.'
+import { exchangeHand, generateHands, playHand } from '.'
 import { MOCK_POOL_LIST } from '../../../../../__mocks__/pool'
 
 describe('generateHands', () => {
@@ -50,7 +50,7 @@ describe('generateHands', () => {
     })
 })
 
-describe('fillHand', () => {
+describe('playHand', () => {
     beforeEach(() => {
         jest.spyOn(global.Math, 'random').mockReturnValue(0.123456789)
     })
@@ -58,60 +58,71 @@ describe('fillHand', () => {
         jest.spyOn(global.Math, 'random').mockRestore()
     })
 
-    it('returns for full hand', () => {
+    it('plays entire hand', () => {
         const pool = new Set(MOCK_POOL_LIST)
-        expect(fillHand({ hand: new Set([5, 10, 15]), pool })).toStrictEqual(
-            new Set([5, 10, 15]),
-        )
-        expect(pool).toStrictEqual(
-            new Set([4, 11, 13, 16, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
-        )
-    })
-
-    it('returns for empty hand', () => {
-        const pool = new Set(MOCK_POOL_LIST)
-        expect(fillHand({ hand: new Set([]), pool })).toStrictEqual(
-            new Set([11, 13, 16]),
-        )
+        expect(playHand({
+            hand: new Set([5, 10, 15]),
+            moves: [
+                { dominoIndex: 5 },
+                { dominoIndex: 10 },
+                { dominoIndex: 15 },
+            ],
+            pool,
+        })).toStrictEqual(new Set([11, 13, 16]))
         expect(pool).toStrictEqual(
             new Set([4, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
         )
     })
 
-    it('returns for incomplete hand', () => {
+    it('plays partial hand', () => {
         const pool = new Set(MOCK_POOL_LIST)
-        expect(fillHand({ hand: new Set([1]), pool })).toStrictEqual(
-            new Set([1, 11, 13]),
-        )
+        expect(playHand({
+            hand: new Set([5, 10, 15]),
+            moves: [
+                { dominoIndex: 10 },
+                { dominoIndex: 15 },
+            ],
+            pool,
+        })).toStrictEqual(new Set([5, 11, 13]))
         expect(pool).toStrictEqual(
             new Set([4, 16, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
         )
     })
 
-    it('returns for empty pool', () => {
+    it('returns remaining hand if empty pool', () => {
         const pool = new Set([])
-        expect(fillHand({ hand: new Set([1]), pool })).toStrictEqual(
-            new Set([1]),
-        )
+        expect(playHand({
+            hand: new Set([5, 10]),
+            moves: [{ dominoIndex: 5 }],
+            pool,
+        })).toStrictEqual(new Set([10]))
         expect(pool).toStrictEqual(new Set([]))
     })
 
     it('returns for almost empty pool', () => {
         const pool = new Set([5])
-        expect(fillHand({ hand: new Set([]), pool })).toStrictEqual(
-            new Set([5]),
-        )
+        expect(playHand({
+            hand: new Set([10, 15]),
+            moves: [{ dominoIndex: 10 }],
+            pool,
+        })).toStrictEqual(new Set([5, 15]))
         expect(pool).toStrictEqual(new Set([]))
     })
 
     it('returns for custom hand count', () => {
         const pool = new Set(MOCK_POOL_LIST)
-        expect(fillHand({
-            hand: new Set([]),
-            handCount: 7,
+        expect(playHand({
+            hand: new Set([5, 10, 15, 20]),
+            moves: [
+                { dominoIndex: 5 },
+                { dominoIndex: 10 },
+                { dominoIndex: 15 },
+                { dominoIndex: 20 },
+            ],
+            handCount: 4,
             pool,
-        })).toStrictEqual(new Set([11, 13, 16, 21, 25, 4, 33]))
-        expect(pool).toStrictEqual(new Set([34, 40, 46, 49, 55, 61]))
+        })).toStrictEqual(new Set([11, 13, 16, 21]))
+        expect(pool).toStrictEqual(new Set([4, 25, 33, 34, 40, 46, 49, 55, 61]))
     })
 })
 
@@ -126,7 +137,7 @@ describe('exchangeHand', () => {
     it('returns null if pool already has domino indices', () => {
         const pool = new Set(MOCK_POOL_LIST)
         expect(exchangeHand({
-            exchangedIndices: [11],
+            discardedIndices: [11],
             hand: new Set([11, 13, 16]),
             pool,
         })).toBeNull()
@@ -135,7 +146,7 @@ describe('exchangeHand', () => {
     it('returns null if exchanged indices is greater than pool size', () => {
         const pool = new Set([20])
         expect(exchangeHand({
-            exchangedIndices: [10, 15],
+            discardedIndices: [10, 15],
             hand: new Set([5, 10, 15]),
             pool,
         })).toBeNull()
@@ -144,7 +155,7 @@ describe('exchangeHand', () => {
     it('returns if some domino indices are exchanged', () => {
         const pool = new Set(MOCK_POOL_LIST)
         expect(exchangeHand({
-            exchangedIndices: [10, 15],
+            discardedIndices: [10, 15],
             hand: new Set([5, 10, 15]),
             pool,
         })).toStrictEqual(new Set([5, 11, 13]))
@@ -156,7 +167,6 @@ describe('exchangeHand', () => {
     it('returns if all domino indices are exchanged', () => {
         const pool = new Set(MOCK_POOL_LIST)
         expect(exchangeHand({
-            exchangedIndices: [5, 10, 15],
             hand: new Set([5, 10, 15]),
             pool,
         })).toStrictEqual(new Set([11, 13, 16]))
@@ -168,7 +178,6 @@ describe('exchangeHand', () => {
     it('returns if custom number of domino indices are exchanged', () => {
         const pool = new Set(MOCK_POOL_LIST)
         expect(exchangeHand({
-            exchangedIndices: [5, 10, 15, 20],
             hand: new Set([5, 10, 15, 20]),
             pool,
         })).toStrictEqual(new Set([11, 13, 16, 21]))

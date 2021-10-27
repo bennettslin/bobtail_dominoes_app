@@ -14,24 +14,31 @@ export const generateHands = ({
     )))
 )
 
-export const fillHand = ({
+export const playHand = ({
     hand,
     handCount = HAND_COUNT,
+    moves,
     pool,
 }) => {
+    moves.forEach(({ dominoIndex }) => {
+        hand.delete(dominoIndex)
+    })
+
+    // Refill hand.
     while (hand.size < handCount && pool.size) {
         hand.add(getRandomDominoIndex(pool))
     }
+
     return hand
 }
 
 export const exchangeHand = ({
-    exchangedIndices,
     hand,
+    discardedIndices = Array.from(hand),
     pool,
 }) => {
     const newIndices = exchangeDominoIndices({
-        dominoIndices: exchangedIndices,
+        discardedIndices,
         pool,
     })
 
@@ -39,7 +46,7 @@ export const exchangeHand = ({
         return null
     }
 
-    exchangedIndices.forEach(dominoIndex => {
+    discardedIndices.forEach(dominoIndex => {
         hand.delete(dominoIndex)
     })
 

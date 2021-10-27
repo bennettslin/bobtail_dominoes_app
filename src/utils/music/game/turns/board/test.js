@@ -1,6 +1,6 @@
 import { MOCK_BOARD } from '../../../../../__mocks__/board'
-import { addMoveToBoard, generateBoard } from '.'
-import { generatePool } from '../pool'
+import { addMovesToBoard, addMoveToBoard, generateBoard } from '.'
+import { generateExtendedPool } from '../pool'
 
 describe('generateBoard', () => {
     beforeEach(() => {
@@ -11,7 +11,7 @@ describe('generateBoard', () => {
     })
 
     it('generates board with first domino removed from pool and placed', () => {
-        const pool = generatePool()
+        const pool = generateExtendedPool()
         expect(generateBoard(pool)).toStrictEqual([
             { dominoIndex: 9, placement: [[0, 0], [1, 0]] },
         ])
@@ -20,13 +20,6 @@ describe('generateBoard', () => {
 })
 
 describe('addMoveToBoard', () => {
-    it('returns null if domino is already on board', () => {
-        expect(addMoveToBoard(
-            { dominoIndex: 49, placement: [[-2, 3], [-2, 2]] },
-            [...MOCK_BOARD],
-        )).toBeNull()
-    })
-
     it('returns board with new move added', () => {
         expect(addMoveToBoard(
             { dominoIndex: 20, placement: [[-1, 2], [-1, 3]] },
@@ -40,5 +33,15 @@ describe('addMoveToBoard', () => {
             { dominoIndex: 49, placement: [[-2, 3], [-2, 2]] },
             { dominoIndex: 20, placement: [[-1, 2], [-1, 3]] },
         ])
+    })
+})
+
+describe.skip('addMovesToBoard', () => {
+    it('returns board with new moves added', () => {
+        expect(addMovesToBoard({
+            handIndex: 0,
+            moves: [],
+            board: [],
+        })).toStrictEqual()
     })
 })

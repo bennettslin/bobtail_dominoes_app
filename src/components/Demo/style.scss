@@ -1,0 +1,18 @@
+@import '../../scss/constants/borders';
+@import '../../scss/constants/colours';
+@import '../../scss/constants/responsive';
+
+.Demo {
+    width: 100%;
+    padding: $margin__md;
+    background-color: $colour__display;
+    border-radius: $borderRadius__lg;
+}
+
+.Demo__child {
+    position: relative;
+}
+
+.Demo__grandchild {
+    position: relative;
+}

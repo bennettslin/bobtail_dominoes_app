@@ -1,41 +1,47 @@
 # Generator notes
-* Under Play
-    * Hands
-        * Util to play hand?
+* Figure out why adding long sonority rule to rows increases the points for a unit test
+    * See if this still happens without limit
 
-    * Turns
-        * Util to add turn
-            * Turn is either first domino
-            * Or regular play
-            * Or exchange
-        * Turn 0 is placement of first domino
-        * Each turn stores
-            * handIndex
-            * moves
-            * dominoes in hand
-            * If no points, no dominoes played and just dominoes drawn, this means hand was exchanged
+* Scores
+    * generateScores
+    * addScore
 
-    * Play
-        * Util for player to play turn
-            * Each player plays their best move
-            * If a player cannot play a move, they exchange all their dominoes
-            * Each player replenishes their hand
-        * When no player can make a move, game ends
-        * Calculate scores and determine winner
+* Turns
+    * A turn is:
+        * First domino
+        * Or play
+        * Or exchange
+    * Each turn stores
+        * handIndex
+        * moves
+        * dominoes in hand
+        * dominoes played or dominoes exchanged
+    * exchangeTurn
+    * playTurn
+        * Knows when bonus was awarded
+        * Returns if game ended
+
+* Handle end game
+    * Either everyone exchanges twice
+    * Or after pool is empty
+        * Every player gets one more turn
+
+* Board
+    * Add full moves to mock board
+    * Add moves to board
+        * Unit test
 
 * Demo component
     * Maintains state of pool, board, hands, and turns
     * Plays a full game
         * Upon load
             * Generate pool, board, hands, turns
-        * Plays the best move for each player
         * Finishes game
         * Calculates score and determines winner
     * Renders human-readable logs from turns
 
 * getBestMovesForTurn
     * Make more efficient
-    * Return when no moves can be made
     * Know when there are ties, and select randomly from them
 * Eventual AI
     * Know in advance what pitches are possible in adjacent coordinates, and don't bother trying those that are impossible?

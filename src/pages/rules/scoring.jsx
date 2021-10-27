@@ -39,7 +39,7 @@ The order of placement sometimes matters. In the above example, had you switched
                 `
 At the end of your turn, add up the total points from each domino placement. Include any points earned from chords built by rotating dominoes.
 
-If you play all the dominoes in a complete hand on any turn, you get a bonus of 7 points!
+If you play all the dominoes in a complete hand on any turn, you get a bonus of 2 points!
 
 The player with the highest score wins the game. A tie is possible.
             `,
