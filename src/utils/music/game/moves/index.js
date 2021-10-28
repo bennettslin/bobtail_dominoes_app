@@ -1,4 +1,4 @@
-import { addMoveToBoard } from '../turns/board'
+import { addMoveToBoard } from '../play/board'
 import { getAdjacentPlacements } from './adjacent'
 import { getChordsForPlacement } from './chords'
 

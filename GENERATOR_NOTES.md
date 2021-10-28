@@ -2,10 +2,6 @@
 * Figure out why adding long sonority rule to rows increases the points for a unit test
     * See if this still happens without limit
 
-* Scores
-    * generateScores
-    * addScore
-
 * Turns
     * A turn is:
         * First domino
@@ -16,6 +12,7 @@
         * moves
         * dominoes in hand
         * dominoes played or dominoes exchanged
+        * points
     * exchangeTurn
     * playTurn
         * Knows when bonus was awarded
@@ -25,11 +22,6 @@
     * Either everyone exchanges twice
     * Or after pool is empty
         * Every player gets one more turn
-
-* Board
-    * Add full moves to mock board
-    * Add moves to board
-        * Unit test
 
 * Demo component
     * Maintains state of pool, board, hands, and turns
