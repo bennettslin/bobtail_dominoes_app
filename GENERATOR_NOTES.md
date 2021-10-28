@@ -35,6 +35,8 @@
         * Calculates score and determines winner
     * Renders human-readable logs from turns
 
+* Ensure that pitch sets in moves are always in order, both in orientation and in direction
+
 * getBestMovesForTurn
     * Make more efficient
     * Know when there are ties, and select randomly from them
