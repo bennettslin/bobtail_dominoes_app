@@ -1,45 +1,35 @@
 # Generator notes
-* Figure out why adding long sonority rule to rows increases the points for a unit test
-    * See if this still happens without limit
 
+# TODO: next
+* Render logs from turns rather than board
 * Play utils return if game ended
-
-* For storing, return new copies of everything
-
-* Points are calculated from moves, including bonus
-    * getScoreFromMoves
+* Get domino label for pitches, by interval
+    * Separated by -
 
 * Turns
     * A turn is:
-        * First domino
-        * Or play
-        * Or exchange
-    * Each turn stores
-        * handIndex
-        * moves
-        * dominoes in hand
-        * dominoes played or dominoes exchanged
-        * points
+        * First domino (only has dominoIndex)
+        * Or play (has hand, playerIndex, and moves)
+        * Or exchange (Only has hand and playerIndex)
+    * Unit tests
 
-* Unit tests for play, turns, scores
-
-* Handle end game
-    * Either everyone exchanges twice
-    * Or after pool is empty
-        * Every player gets one more turn
+* Play
+    * Utils return if game ended
+        * Either everyone exchanges twice
+        * Or after pool is empty
+            * Every player gets one more turn
+    * Unit tests
 
 * Demo component
-    * Maintains state of pool, board, hands, and turns
     * Plays a full game
-        * Upon load
-            * Generate pool, board, hands, turns
         * Finishes game
         * Calculates score and determines winner
-    * Renders human-readable logs from turns
 
 * Ensure that pitch sets in moves are always in order, both in orientation and in direction
 
-* getBestMovesForTurn
+* getBestPointedMovesForTurn
+    * Figure out why adding long sonority rule to rows increases the points for a unit test
+        * See if this still happens without limit
     * Make more efficient
     * Know when there are ties, and select randomly from them
 * Eventual AI

@@ -1,53 +1,45 @@
-import { addMovesToBoard, generateBoard } from './board'
-import { exchangeHand, generateHands, playHand } from './hands'
-import { generateExtendedPool, generateStandardPool } from './pool'
-import { addToScore, generateScores } from './scores'
-import { addExchangedTurn, addPlayedTurn, generateTurns } from './turns'
+import { addMovesToBoard, getInitialBoard } from './board'
+import { exchangeHand, getInitialHands, playHand } from './hands'
+import { getInitialExtendedPool, getInitialStandardPool } from './pool'
+import { addToScores, getInitialScores } from './scores'
+import { addTurn, getInitialTurns } from './turns'
 import { HAND_COUNT } from '../../../../constants/music/play'
 
-const generateGame = ({
-    handsCount,
-    handCount = HAND_COUNT,
+export const getInitialGame = ({
     isExtendedGame = false,
+    playersCount,
+    handCount = HAND_COUNT,
 }) => {
-    const pool = isExtendedGame ?
-        generateExtendedPool() :
-        generateStandardPool()
+    const
+        pool = isExtendedGame ?
+            getInitialExtendedPool() :
+            getInitialStandardPool(),
+        board = getInitialBoard(pool)
 
     return {
         pool,
-        board: generateBoard(pool),
-        hands: generateHands({ handsCount, handCount, pool }),
-        turns: generateTurns(),
-        scores: generateScores(handsCount),
+        board: getInitialBoard(pool),
+        hands: getInitialHands({ playersCount, handCount, pool }),
+        turns: getInitialTurns(board),
+        scores: getInitialScores(playersCount),
     }
 }
-
-export const generateStandardGame = ({
-    handsCount,
-    handCount = HAND_COUNT,
-}) => generateGame({ handsCount, handCount })
-
-export const generateExtendedGame = ({
-    handsCount,
-    handCount = HAND_COUNT,
-}) => generateGame({ handsCount, handCount, isExtendedGame: true })
 
 export const playTurn = ({
     pool,
     board,
     moves,
     hands,
-    handIndex,
+    playerIndex,
     handCount = HAND_COUNT,
     turns,
     scores,
 
 }) => {
-    const hand = hands[handIndex]
-    addMovesToBoard({ handIndex, moves, board })
-    addToScore({ handIndex, scores })
-    addPlayedTurn({ hand, handIndex, moves, points: 5, turns })
+    const hand = hands[playerIndex]
+    addMovesToBoard({ playerIndex, moves, board })
+    addToScores({ playerIndex, handCount, moves, scores })
+    addTurn({ hand, playerIndex, moves, turns })
     playHand({ hand, handCount, moves, pool })
 
     return {
@@ -62,12 +54,12 @@ export const playTurn = ({
 export const exchangeTurn = ({
     pool,
     hands,
-    handIndex,
+    playerIndex,
     turns,
 
 }) => {
-    const hand = hands[handIndex]
-    addExchangedTurn({ hand, handIndex, turns })
+    const hand = hands[playerIndex]
+    addTurn({ hand, playerIndex, turns })
     exchangeHand({ hand, pool })
 
     return {

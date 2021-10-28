@@ -1,20 +1,15 @@
-export const generateTurns = () => ([])
+export const getInitialTurns = board => ([
+    // Initialize with first domino placed on board.
+    { dominoIndex: board[0].dominoIndex },
+])
 
-export const addPlayedTurn = ({ hand, handIndex, moves, points, turns }) => {
+export const addTurn = ({ hand, playerIndex, moves, turns }) => {
     turns.push({
         hand: new Set(hand),
-        handIndex,
+        playerIndex,
+
+        // Exchange will not pass moves.
         moves,
-        points,
-    })
-
-    return turns
-}
-
-export const addExchangedTurn = ({ hand, handIndex, turns }) => {
-    turns.push({
-        hand: new Set(hand),
-        handIndex,
     })
 
     return turns

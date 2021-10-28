@@ -7,7 +7,7 @@ const sortByHighestPoints = (
     { points: secondPoints },
 ) => secondPoints - firstPoints
 
-export const getValidMoves = ({ dominoIndex, board = [], limit }) => {
+export const getValidPointedMoves = ({ dominoIndex, board = [], limit }) => {
     const adjacentPlacements = getAdjacentPlacements(board)
 
     return (
@@ -42,7 +42,7 @@ export const getValidMoves = ({ dominoIndex, board = [], limit }) => {
     )
 }
 
-const recurseThroughValidMoves = ({
+const recurseThroughValidPointedMoves = ({
     hand,
     board,
     limit,
@@ -52,14 +52,14 @@ const recurseThroughValidMoves = ({
     hand.size ? (
         Array.from(hand).map(dominoIndex => {
             const
-                validMoves = getValidMoves({ dominoIndex, board, limit }),
+                validMoves = getValidPointedMoves({ dominoIndex, board, limit }),
                 nextHand = new Set(hand)
 
             nextHand.delete(dominoIndex)
 
             return validMoves.length ? (
                 validMoves.map(move => (
-                    recurseThroughValidMoves({
+                    recurseThroughValidPointedMoves({
                         hand: nextHand,
                         board: addMoveToBoard(move, [...board]),
                         limit,
@@ -78,11 +78,12 @@ const recurseThroughValidMoves = ({
     )
 )
 
-export const getBestMovesForTurn = ({ hand, board, limit }) => {
+export const getBestPointedMovesForTurn = ({ hand, board, limit }) => {
     if (!hand.size) {
         return null
     }
 
-    return recurseThroughValidMoves({ hand, board, limit })
+    // AI returns moves with points for better visibility.
+    return recurseThroughValidPointedMoves({ hand, board, limit })
         .sort(sortByHighestPoints)[0]
 }

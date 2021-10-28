@@ -66,7 +66,7 @@ const getRootLetters = pitchSet => {
                 `${ROOT_LETTERS[root][accidental]}${accidental}` :
                 ROOT_LETTERS[root]
         )
-    }), '/')
+    }), '-')
 }
 
 export const getChordAbbreviation = pitchSet => {

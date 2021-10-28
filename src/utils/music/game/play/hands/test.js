@@ -1,8 +1,8 @@
-import { exchangeHand, generateHands, playHand } from '.'
+import { exchangeHand, getInitialHands, playHand } from '.'
 import { MOCK_POOL_LIST } from '../../../../../__mocks__/pool'
 import { HAND_COUNT } from '../../../../../constants/music/play'
 
-describe('generateHands', () => {
+describe('getInitialHands', () => {
     beforeEach(() => {
         jest.spyOn(global.Math, 'random').mockReturnValue(0.123456789)
     })
@@ -12,8 +12,8 @@ describe('generateHands', () => {
 
     it('generates one hand', () => {
         const pool = new Set(MOCK_POOL_LIST)
-        expect(generateHands({
-            handsCount: 1,
+        expect(getInitialHands({
+            playersCount: 1,
             handCount: HAND_COUNT,
             pool,
         })).toStrictEqual([
@@ -26,8 +26,8 @@ describe('generateHands', () => {
 
     it('generates four hands', () => {
         const pool = new Set(MOCK_POOL_LIST)
-        expect(generateHands({
-            handsCount: 4,
+        expect(getInitialHands({
+            playersCount: 4,
             handCount: HAND_COUNT,
             pool,
         })).toStrictEqual([
@@ -41,8 +41,8 @@ describe('generateHands', () => {
 
     it('generates for custom hand count', () => {
         const pool = new Set(MOCK_POOL_LIST)
-        expect(generateHands({
-            handsCount: 2,
+        expect(getInitialHands({
+            playersCount: 2,
             handCount: 5,
             pool,
         })).toStrictEqual([

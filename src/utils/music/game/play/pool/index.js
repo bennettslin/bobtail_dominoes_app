@@ -1,7 +1,7 @@
 import { DOMINOES_COUNT, DOMINOES_PITCHES } from '../../../../../constants/music/game'
 import { getArrayOfIndices, getRandomInteger } from '../../../../general'
 
-export const generateStandardPool = () => (
+export const getInitialStandardPool = () => (
     new Set(
         DOMINOES_PITCHES.map((pitches, pitchIndex) => ({
             pitches,
@@ -22,7 +22,7 @@ export const generateStandardPool = () => (
     )
 )
 
-export const generateExtendedPool = () => (
+export const getInitialExtendedPool = () => (
     new Set(getArrayOfIndices(DOMINOES_COUNT - 1, 1))
 )
 

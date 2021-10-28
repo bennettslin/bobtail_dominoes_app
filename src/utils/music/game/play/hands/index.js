@@ -1,12 +1,12 @@
 import { getArrayOfIndices } from '../../../../general'
 import { exchangeDominoIndices, getRandomDominoIndex } from '../pool'
 
-export const generateHands = ({
-    handsCount,
+export const getInitialHands = ({
+    playersCount,
     handCount,
     pool,
 }) => (
-    getArrayOfIndices(handsCount).map(() => ((
+    getArrayOfIndices(playersCount).map(() => ((
         new Set(getArrayOfIndices(handCount).map(() => (
             getRandomDominoIndex(pool)
         )))

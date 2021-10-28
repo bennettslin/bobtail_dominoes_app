@@ -1,4 +1,4 @@
-import { getPoints } from '../../../chords/score'
+import { getPoints } from '../../../chords/points'
 import { getIsInvalidSonority, getIsValidChord } from '../../../chords/valid'
 import { getRowsForPlacement } from '../rows'
 

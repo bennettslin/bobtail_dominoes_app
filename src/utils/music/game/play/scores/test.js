@@ -1,29 +1,37 @@
-import { addToScore, generateScores } from '.'
+import { addToScores, getInitialScores } from '.'
 
-describe('generateScores', () => {
+describe('getInitialScores', () => {
     it('generates scores for one hand', () => {
-        expect(generateScores(1)).toStrictEqual([0])
+        expect(getInitialScores(1)).toStrictEqual([0])
     })
 
     it('generates scores for four hands', () => {
-        expect(generateScores(4)).toStrictEqual([0, 0, 0, 0])
+        expect(getInitialScores(4)).toStrictEqual([0, 0, 0, 0])
     })
 })
 
-describe('addToScore', () => {
-    it('adds score to one hand', () => {
-        expect(addToScore({
-            handIndex: 0,
-            points: 5,
+describe('addToScores', () => {
+    it('adds score for game with one hand', () => {
+        expect(addToScores({
+            handCount: 3,
+            moves: [
+                { pitchSets: [new Set([0, 3, 7]), new Set([2, 4, 7, 11])] },
+                { pitchSets: [new Set([7, 10, 2])] },
+            ],
             scores: [17],
-        })).toStrictEqual([22])
+        })).toStrictEqual([27])
     })
 
-    it('adds score to multiple hands', () => {
-        expect(addToScore({
-            handIndex: 2,
-            points: 12,
+    it('adds score for game with multiple hands', () => {
+        expect(addToScores({
+            playerIndex: 2,
+            handCount: 3,
+            moves: [
+                { pitchSets: [new Set([0, 3, 7]), new Set([2, 4, 7, 11])] },
+                { pitchSets: [new Set([7, 10, 2])] },
+                { pitchSets: [new Set([10, 2, 5, 9])] },
+            ],
             scores: [5, 3, 0],
-        })).toStrictEqual([5, 3, 12])
+        })).toStrictEqual([5, 3, 16])
     })
 })

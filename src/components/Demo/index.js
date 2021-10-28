@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import cx from 'classnames'
-import Button from '../Button'
 import Flex from '../Flex'
 import StyledShadow from '../Styled/Shadow'
-import { getBestMovesForTurn } from '../../utils/music/game/moves'
-import { exchangeTurn, generateStandardGame, playTurn } from '../../utils/music/game/play'
-import { margin__lg, margin__sm } from '../../constants/responsive'
+import { getPointsForPitchSets } from '../../utils/music/chords/points'
+import { getBestPointedMovesForTurn } from '../../utils/music/game/ai'
+import { getDominoPitches } from '../../utils/music/game/dominoes'
+import { exchangeTurn, getInitialGame, playTurn } from '../../utils/music/game/play'
+import { margin__lg } from '../../constants/responsive'
 import './style'
 
-const HANDS_COUNT = 3
+const PLAYERS_COUNT = 4
 
 const {
     pool,
@@ -16,29 +17,28 @@ const {
     hands,
     turns,
     scores,
-} = generateStandardGame({ handsCount: HANDS_COUNT })
+} = getInitialGame({ playersCount: PLAYERS_COUNT })
 
 const Demo = () => {
-    const [handIndex, setHandIndex] = useState(0)
-    const hand = hands[handIndex]
+    const [playerIndex, setHandIndex] = useState(0)
+    const hand = hands[playerIndex]
 
     const logGame = () => {
         hands.forEach((hand, index) => {
             console.log(`hand ${index}`, JSON.stringify(Array.from(hand)))
         })
         console.log('pool', JSON.stringify(Array.from(pool)))
-        console.log('turns', JSON.stringify(turns))
     }
 
     const playTurnForHand = () => {
-        const { moves } = getBestMovesForTurn({ hand, board, limit: 3 })
+        const { moves } = getBestPointedMovesForTurn({ hand, board, limit: 3 })
 
         // If player can't make any moves, exchange hand.
         if (!moves.length) {
             exchangeTurn({
                 pool,
                 hands,
-                handIndex,
+                playerIndex,
                 turns,
             })
 
@@ -49,7 +49,7 @@ const Demo = () => {
                 board,
                 moves,
                 hands,
-                handIndex,
+                playerIndex,
                 turns,
                 scores,
             })
@@ -61,7 +61,7 @@ const Demo = () => {
         if (!pool.size && !hand.size) {
             endGame()
         } else {
-            setTimeout(() => setHandIndex((handIndex + 1) % HANDS_COUNT), 100)
+            setTimeout(() => setHandIndex((playerIndex + 1) % PLAYERS_COUNT), 100)
         }
     }
 
@@ -71,7 +71,7 @@ const Demo = () => {
 
     useEffect(() => {
         playTurnForHand()
-    }, [handIndex])
+    }, [playerIndex])
 
     return (
         <Flex
@@ -94,43 +94,47 @@ const Demo = () => {
                 }}
             >
                 {board.map(({
-                    handIndex,
+                    playerIndex,
                     dominoIndex,
-                    points,
-                }, index) => (
-                    <Flex
-                        {...{
-                            key: index,
-                            className: cx(
-                                'Demo__grandchild',
-                            ),
-                        }}
-                    >
-                        <StyledShadow>
-                            {points ? (
-                                `Player ${handIndex} played domino ${dominoIndex} for ${points} points.`
-                            ) : (
-                                `Domino ${dominoIndex} placed to start the board.`
-                            )}
-                        </StyledShadow>
-                    </Flex>
-                ))}
+                    pitchSets = [],
+                }, index) => {
+                    const
+                        dominoPitches = getDominoPitches(dominoIndex),
+                        dominoLabel = dominoPitches.map(pitch => (
+                            pitch
+                        )).join('-')
+                    return (
+                        <Flex
+                            {...{
+                                key: index,
+                                className: cx(
+                                    'Demo__grandchild',
+                                ),
+                            }}
+                        >
+                            <StyledShadow>
+                                {pitchSets.length ? (
+                                    `Player ${playerIndex} played domino ${dominoLabel} for ${getPointsForPitchSets(pitchSets)} points.`
+                                ) : (
+                                    `Domino ${dominoLabel} placed to start the board.`
+                                )}
+                            </StyledShadow>
+                        </Flex>
+                    )
+                })}
             </Flex>
             <Flex
                 {...{
-                    gap: margin__sm,
+                    className: cx(
+                        'Demo__child',
+                    ),
                 }}
             >
-                <Button
-                    {...{
-                        handleButtonClick: logGame,
-                    }}
-                >
-                    Log current state
-                </Button>
-                {scores.map((score, index) => (
-                    `Player ${index}: ${score} pts`
-                ))}
+                <StyledShadow>
+                    {scores.map((score, index) => (
+                        `Player ${index}: ${score} pts`
+                    )).join(', ')}
+                </StyledShadow>
             </Flex>
         </Flex>
     )

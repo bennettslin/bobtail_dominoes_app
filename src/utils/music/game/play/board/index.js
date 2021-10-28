@@ -1,11 +1,11 @@
 import { getRandomEntry } from '../../../../general'
-import { getValidMoves } from '../../moves'
+import { getValidPointedMoves } from '../../ai'
 import { getRandomDominoIndex } from '../pool'
 
-export const generateBoard = pool => ([
+export const getInitialBoard = pool => ([
     // Randomly place first domino on board.
     getRandomEntry(
-        getValidMoves({ dominoIndex: getRandomDominoIndex(pool) }),
+        getValidPointedMoves({ dominoIndex: getRandomDominoIndex(pool) }),
     ),
 ])
 
@@ -14,9 +14,9 @@ export const addMoveToBoard = (move, board) => {
     return board
 }
 
-export const addMovesToBoard = ({ handIndex, moves, board }) => {
+export const addMovesToBoard = ({ playerIndex, moves, board }) => {
     moves.forEach(move => {
-        move.handIndex = handIndex
+        move.playerIndex = playerIndex
         addMoveToBoard(move, board)
     })
 

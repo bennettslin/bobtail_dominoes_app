@@ -5,6 +5,7 @@ import PAGES_MAP from '../../content/rules'
 import scoringPoints from '../../assets/svgs/rules/scoringPoints'
 import scoringExtend from '../../assets/svgs/rules/scoringExtend'
 import scoringOrder from '../../assets/svgs/rules/scoringOrder'
+import { BINGO_POINTS } from '../../constants/music/play'
 
 const ID = 'scoring'
 
@@ -39,7 +40,7 @@ The order of placement sometimes matters. In the above example, had you switched
                 `
 At the end of your turn, add up the total points from each domino placement. Include any points earned from chords built by rotating dominoes.
 
-If you play all the dominoes in a complete hand on any turn, you get a bonus of 2 points!
+If you play all the dominoes in a complete hand on any turn, you get a bonus of ${BINGO_POINTS} points!
 
 The player with the highest score wins the game. A tie is possible.
             `,
