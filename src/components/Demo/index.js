@@ -14,6 +14,8 @@ const {
     pool,
     board,
     hands,
+    turns,
+    scores,
 } = generateStandardGame({ handsCount: HANDS_COUNT })
 
 const Demo = () => {
@@ -25,6 +27,7 @@ const Demo = () => {
             console.log(`hand ${index}`, JSON.stringify(Array.from(hand)))
         })
         console.log('pool', JSON.stringify(Array.from(pool)))
+        console.log('turns', JSON.stringify(turns))
     }
 
     const playTurnForHand = () => {
@@ -32,11 +35,24 @@ const Demo = () => {
 
         // If player can't make any moves, exchange hand.
         if (!moves.length) {
-            exchangeTurn({ pool, hands, handIndex })
+            exchangeTurn({
+                pool,
+                hands,
+                handIndex,
+                turns,
+            })
 
         // Otherwise, play hand.
         } else {
-            playTurn({ pool, board, moves, hands, handIndex })
+            playTurn({
+                pool,
+                board,
+                moves,
+                hands,
+                handIndex,
+                turns,
+                scores,
+            })
         }
 
         logGame()
@@ -112,6 +128,9 @@ const Demo = () => {
                 >
                     Log current state
                 </Button>
+                {scores.map((score, index) => (
+                    `Player ${index}: ${score} pts`
+                ))}
             </Flex>
         </Flex>
     )

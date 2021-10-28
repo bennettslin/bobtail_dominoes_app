@@ -2,6 +2,13 @@
 * Figure out why adding long sonority rule to rows increases the points for a unit test
     * See if this still happens without limit
 
+* Play utils return if game ended
+
+* For storing, return new copies of everything
+
+* Points are calculated from moves, including bonus
+    * getScoreFromMoves
+
 * Turns
     * A turn is:
         * First domino
@@ -13,13 +20,8 @@
         * dominoes in hand
         * dominoes played or dominoes exchanged
         * points
-    * addExchangedTurn
-    * addPlayedTurn
-        * Knows when bonus was awarded
-        * Returns if game ended
 
-* Include turns and scores in play utils
-    * Unit tests
+* Unit tests for play, turns, scores
 
 * Handle end game
     * Either everyone exchanges twice

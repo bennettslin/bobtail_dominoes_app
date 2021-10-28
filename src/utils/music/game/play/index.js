@@ -1,8 +1,8 @@
 import { addMovesToBoard, generateBoard } from './board'
 import { exchangeHand, generateHands, playHand } from './hands'
 import { generateExtendedPool, generateStandardPool } from './pool'
-import { generateScores } from './scores'
-import { generateTurns } from './turns'
+import { addToScore, generateScores } from './scores'
+import { addExchangedTurn, addPlayedTurn, generateTurns } from './turns'
 import { HAND_COUNT } from '../../../../constants/music/play'
 
 const generateGame = ({
@@ -40,15 +40,22 @@ export const playTurn = ({
     hands,
     handIndex,
     handCount = HAND_COUNT,
+    turns,
+    scores,
 
 }) => {
-    playHand({ hand: hands[handIndex], handCount, moves, pool })
+    const hand = hands[handIndex]
     addMovesToBoard({ handIndex, moves, board })
+    addToScore({ handIndex, scores })
+    addPlayedTurn({ hand, handIndex, moves, points: 5, turns })
+    playHand({ hand, handCount, moves, pool })
 
     return {
         pool,
         board,
         hands,
+        turns,
+        scores,
     }
 }
 
@@ -56,12 +63,16 @@ export const exchangeTurn = ({
     pool,
     hands,
     handIndex,
+    turns,
 
 }) => {
-    exchangeHand({ hand: hands[handIndex], pool })
+    const hand = hands[handIndex]
+    addExchangedTurn({ hand, handIndex, turns })
+    exchangeHand({ hand, pool })
 
     return {
         pool,
         hands,
+        turns,
     }
 }
