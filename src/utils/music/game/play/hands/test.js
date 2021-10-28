@@ -1,5 +1,6 @@
 import { exchangeHand, generateHands, playHand } from '.'
 import { MOCK_POOL_LIST } from '../../../../../__mocks__/pool'
+import { HAND_COUNT } from '../../../../../constants/music/play'
 
 describe('generateHands', () => {
     beforeEach(() => {
@@ -13,6 +14,7 @@ describe('generateHands', () => {
         const pool = new Set(MOCK_POOL_LIST)
         expect(generateHands({
             handsCount: 1,
+            handCount: HAND_COUNT,
             pool,
         })).toStrictEqual([
             new Set([11, 13, 16]),
@@ -26,6 +28,7 @@ describe('generateHands', () => {
         const pool = new Set(MOCK_POOL_LIST)
         expect(generateHands({
             handsCount: 4,
+            handCount: HAND_COUNT,
             pool,
         })).toStrictEqual([
             new Set([11, 13, 16]),
@@ -62,6 +65,7 @@ describe('playHand', () => {
         const pool = new Set(MOCK_POOL_LIST)
         expect(playHand({
             hand: new Set([5, 10, 15]),
+            handCount: HAND_COUNT,
             moves: [
                 { dominoIndex: 5 },
                 { dominoIndex: 10 },
@@ -78,6 +82,7 @@ describe('playHand', () => {
         const pool = new Set(MOCK_POOL_LIST)
         expect(playHand({
             hand: new Set([5, 10, 15]),
+            handCount: HAND_COUNT,
             moves: [
                 { dominoIndex: 10 },
                 { dominoIndex: 15 },
@@ -93,6 +98,7 @@ describe('playHand', () => {
         const pool = new Set([])
         expect(playHand({
             hand: new Set([5, 10]),
+            handCount: HAND_COUNT,
             moves: [{ dominoIndex: 5 }],
             pool,
         })).toStrictEqual(new Set([10]))
@@ -103,6 +109,7 @@ describe('playHand', () => {
         const pool = new Set([5])
         expect(playHand({
             hand: new Set([10, 15]),
+            handCount: HAND_COUNT,
             moves: [{ dominoIndex: 10 }],
             pool,
         })).toStrictEqual(new Set([5, 15]))
@@ -113,13 +120,13 @@ describe('playHand', () => {
         const pool = new Set(MOCK_POOL_LIST)
         expect(playHand({
             hand: new Set([5, 10, 15, 20]),
+            handCount: 4,
             moves: [
                 { dominoIndex: 5 },
                 { dominoIndex: 10 },
                 { dominoIndex: 15 },
                 { dominoIndex: 20 },
             ],
-            handCount: 4,
             pool,
         })).toStrictEqual(new Set([11, 13, 16, 21]))
         expect(pool).toStrictEqual(new Set([4, 25, 33, 34, 40, 46, 49, 55, 61]))

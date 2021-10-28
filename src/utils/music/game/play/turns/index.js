@@ -1,6 +1,6 @@
 export const generateTurns = () => ({})
 
-export const exchangeTurn = ({ handIndex, dominoIndices, turns }) => {
+export const addExchangedTurn = ({ handIndex, dominoIndices, turns }) => {
     turns.push({
         handIndex,
         dominoIndices,
@@ -9,7 +9,7 @@ export const exchangeTurn = ({ handIndex, dominoIndices, turns }) => {
     return turns
 }
 
-export const playTurn = ({ handIndex, moves, points, turns }) => {
+export const addPlayedTurn = ({ handIndex, moves, points, turns }) => {
     turns.push({
         handIndex,
         moves,

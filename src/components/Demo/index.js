@@ -4,19 +4,19 @@ import Button from '../Button'
 import Flex from '../Flex'
 import StyledShadow from '../Styled/Shadow'
 import { getBestMovesForTurn } from '../../utils/music/game/moves'
-import { addMovesToBoard, generateBoard } from '../../utils/music/game/play/board'
-import { exchangeHand, generateHands, playHand } from '../../utils/music/game/play/hands'
-import { generateStandardPool } from '../../utils/music/game/play/pool'
+import { exchangeTurn, generateStandardGame, playTurn } from '../../utils/music/game/play'
 import { margin__lg, margin__sm } from '../../constants/responsive'
 import './style'
 
 const HANDS_COUNT = 3
-const pool = generateStandardPool()
-const initialBoard = generateBoard(pool)
-const hands = generateHands({ handsCount: HANDS_COUNT, pool })
+
+const {
+    pool,
+    board,
+    hands,
+} = generateStandardGame({ handsCount: HANDS_COUNT })
 
 const Demo = () => {
-    const [board, setBoard] = useState(initialBoard)
     const [handIndex, setHandIndex] = useState(0)
     const hand = hands[handIndex]
 
@@ -27,22 +27,21 @@ const Demo = () => {
         console.log('pool', JSON.stringify(Array.from(pool)))
     }
 
-    const playTurn = () => {
+    const playTurnForHand = () => {
         const { moves } = getBestMovesForTurn({ hand, board, limit: 3 })
 
         // If player can't make any moves, exchange hand.
         if (!moves.length) {
-            console.log(`Player ${handIndex} needs to exchange.`)
-            exchangeHand({ hand, pool })
+            exchangeTurn({ pool, hands, handIndex })
 
         // Otherwise, play hand.
         } else {
-            playHand({ hand, moves, pool })
-            setBoard([...addMovesToBoard({ handIndex, moves, board })])
+            playTurn({ pool, board, moves, hands, handIndex })
         }
 
         logGame()
 
+        // TODO: Get game end from exchangeTurn and playTurn.
         if (!pool.size && !hand.size) {
             endGame()
         } else {
@@ -55,7 +54,7 @@ const Demo = () => {
     }
 
     useEffect(() => {
-        playTurn()
+        playTurnForHand()
     }, [handIndex])
 
     return (

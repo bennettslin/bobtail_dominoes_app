@@ -1,10 +1,9 @@
-import { HAND_COUNT } from '../../../../../constants/music/play'
 import { getArrayOfIndices } from '../../../../general'
 import { exchangeDominoIndices, getRandomDominoIndex } from '../pool'
 
 export const generateHands = ({
     handsCount,
-    handCount = HAND_COUNT,
+    handCount,
     pool,
 }) => (
     getArrayOfIndices(handsCount).map(() => ((
@@ -16,7 +15,7 @@ export const generateHands = ({
 
 export const playHand = ({
     hand,
-    handCount = HAND_COUNT,
+    handCount,
     moves,
     pool,
 }) => {

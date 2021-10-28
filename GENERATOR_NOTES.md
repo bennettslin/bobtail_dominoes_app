@@ -13,10 +13,13 @@
         * dominoes in hand
         * dominoes played or dominoes exchanged
         * points
-    * exchangeTurn
-    * playTurn
+    * addExchangedTurn
+    * addPlayedTurn
         * Knows when bonus was awarded
         * Returns if game ended
+
+* Include turns and scores in play utils
+    * Unit tests
 
 * Handle end game
     * Either everyone exchanges twice
