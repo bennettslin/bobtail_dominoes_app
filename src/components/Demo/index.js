@@ -8,6 +8,7 @@ import { getDominoPitches } from '../../utils/music/game/dominoes'
 import { exchangeTurn, getInitialGame, playTurn } from '../../utils/music/game/play'
 import { margin__lg } from '../../constants/responsive'
 import './style'
+import { getDominoLabel } from '../../utils/music/chords/label'
 
 const PLAYERS_COUNT = 4
 
@@ -98,11 +99,7 @@ const Demo = () => {
                     dominoIndex,
                     pitchSets = [],
                 }, index) => {
-                    const
-                        dominoPitches = getDominoPitches(dominoIndex),
-                        dominoLabel = dominoPitches.map(pitch => (
-                            pitch
-                        )).join('-')
+                    const dominoLabel = getDominoLabel(getDominoPitches(dominoIndex))
                     return (
                         <Flex
                             {...{
@@ -114,7 +111,7 @@ const Demo = () => {
                         >
                             <StyledShadow>
                                 {pitchSets.length ? (
-                                    `Player ${playerIndex} played domino ${dominoLabel} for ${getPointsForPitchSets(pitchSets)} points.`
+                                    `Player ${playerIndex} played ${dominoLabel} for ${getPointsForPitchSets(pitchSets)} points.`
                                 ) : (
                                     `Domino ${dominoLabel} placed to start the board.`
                                 )}

@@ -94,3 +94,16 @@ export const getChordLabel = pitchSet => {
             pitchSet.size === 3 ? 'triad' : 'seventh'
         }` : null
 }
+
+export const getDominoLabel = pitches => (
+    pitches.map(pitch => {
+        if (getIsPitchBlack(pitch)) {
+            return [
+                `${ROOT_LETTERS[pitch][SHARP]}${SHARP}`,
+                `${ROOT_LETTERS[pitch][FLAT]}${FLAT}`,
+            ].join('/')
+        } else {
+            return ROOT_LETTERS[pitch]
+        }
+    }).join('-')
+)

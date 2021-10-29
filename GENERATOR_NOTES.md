@@ -3,8 +3,6 @@
 # TODO: next
 * Render logs from turns rather than board
 * Play utils return if game ended
-* Get domino label for pitches, by interval
-    * Separated by -
 
 * Turns
     * A turn is:

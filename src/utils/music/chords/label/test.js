@@ -1,4 +1,4 @@
-import { getChordAbbreviation, getChordLabel, getIsPitchBlack, getIsSymmetricalChord } from '.'
+import { getChordAbbreviation, getChordLabel, getDominoLabel, getIsPitchBlack, getIsSymmetricalChord } from '.'
 
 describe('getIsPitchBlack', () => {
     test.each([
@@ -90,5 +90,17 @@ describe('getChordLabel', () => {
         [new Set([9, 3, 7, 1, 5]), null],
     ])('%p returns %p', (primeFormKey, result) => {
         expect(getChordLabel(primeFormKey)).toBe(result)
+    })
+})
+
+describe('getDominoLabel', () => {
+    test.each([
+        // Undefined.
+        [[7, 2], 'G-D'],
+        [[0, 6], 'C-F♯/G♭'],
+        [[1, 5], 'C♯/D♭-F'],
+        [[3, 8], 'D♯/E♭-G♯/A♭'],
+    ])('%p returns %p', (primeFormKey, result) => {
+        expect(getDominoLabel(primeFormKey)).toBe(result)
     })
 })
