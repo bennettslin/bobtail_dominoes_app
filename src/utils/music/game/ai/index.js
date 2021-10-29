@@ -49,6 +49,7 @@ const recurseThroughValidPointedMoves = ({
     moves = [],
     totalPoints = 0,
 }) => (
+    // eslint-disable-next-line no-nested-ternary
     hand.size ? (
         Array.from(hand).map(dominoIndex => {
             const
@@ -57,6 +58,7 @@ const recurseThroughValidPointedMoves = ({
 
             nextHand.delete(dominoIndex)
 
+            // eslint-disable-next-line no-nested-ternary
             return validMoves.length ? (
                 validMoves.map(move => (
                     recurseThroughValidPointedMoves({
@@ -69,12 +71,14 @@ const recurseThroughValidPointedMoves = ({
                 ))
             ).flat() : (
                 // Base case when there are no valid moves.
-                { moves, points: totalPoints }
+                totalPoints ? { moves, points: totalPoints } : null
             )
-        }).flat()
+        })
+            .flat()
+            .filter(entry => Boolean(entry))
     ) : (
         // Base case when hand is empty.
-        { moves, points: totalPoints }
+        totalPoints ? { moves, points: totalPoints } : null
     )
 )
 
@@ -84,6 +88,11 @@ export const getBestPointedMovesForTurn = ({ hand, board, limit }) => {
     }
 
     // AI returns moves with points for better visibility.
-    return recurseThroughValidPointedMoves({ hand, board, limit })
-        .sort(sortByHighestPoints)[0]
+    const validPointedMoves = recurseThroughValidPointedMoves({
+        hand, board, limit,
+    })
+
+    return validPointedMoves.length ?
+        validPointedMoves.sort(sortByHighestPoints)[0].moves :
+        null
 }

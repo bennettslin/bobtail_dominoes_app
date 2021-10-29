@@ -20,51 +20,46 @@ export const getInitialGame = ({
         pool,
         board: getInitialBoard(pool),
         hands: getInitialHands({ playersCount, handCount, pool }),
-        turns: getInitialTurns(board),
         scores: getInitialScores(playersCount),
+        turns: getInitialTurns(board),
     }
 }
 
-export const playTurn = ({
+export const registerTurn = ({
     pool,
     board,
-    moves,
     hands,
-    playerIndex,
-    handCount = HAND_COUNT,
-    turns,
     scores,
-
+    turns,
+    moves,
+    playerIndex,
+    playersCount,
+    handCount = HAND_COUNT,
 }) => {
     const hand = hands[playerIndex]
-    addMovesToBoard({ playerIndex, moves, board })
-    addToScores({ playerIndex, handCount, moves, scores })
-    addTurn({ hand, playerIndex, moves, turns })
-    playHand({ hand, handCount, moves, pool })
+
+    if (moves) {
+        addMovesToBoard({ playerIndex, moves, board })
+        addToScores({ playerIndex, handCount, moves, scores })
+        playHand({ hand, handCount, moves, pool })
+    } else {
+        exchangeHand({ hand, pool, playersCount })
+    }
+
+    const { isFinalTurn } = addTurn({
+        pool,
+        turns,
+        moves,
+        playerIndex,
+        playersCount,
+    })
 
     return {
         pool,
         board,
         hands,
-        turns,
         scores,
-    }
-}
-
-export const exchangeTurn = ({
-    pool,
-    hands,
-    playerIndex,
-    turns,
-
-}) => {
-    const hand = hands[playerIndex]
-    addTurn({ hand, playerIndex, turns })
-    exchangeHand({ hand, pool })
-
-    return {
-        pool,
-        hands,
         turns,
+        isFinalTurn,
     }
 }

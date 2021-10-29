@@ -3,7 +3,6 @@
 @import '../../../scss/constants/shadows';
 
 .StyledTabbedMenu {
-    position: relative;
     width: calc(100% + #{$margin__xs * 2});
     padding: 0 $margin__xs;
 

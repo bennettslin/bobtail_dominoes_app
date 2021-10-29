@@ -20,7 +20,7 @@ describe('getInitialHands', () => {
             new Set([11, 13, 16]),
         ])
         expect(pool).toStrictEqual(
-            new Set([4, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
+            new Set([3, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
         )
     })
 
@@ -32,7 +32,7 @@ describe('getInitialHands', () => {
             pool,
         })).toStrictEqual([
             new Set([11, 13, 16]),
-            new Set([21, 25, 4]),
+            new Set([21, 25, 3]),
             new Set([33, 34, 40]),
             new Set([46, 49, 55]),
         ])
@@ -47,7 +47,7 @@ describe('getInitialHands', () => {
             pool,
         })).toStrictEqual([
             new Set([11, 13, 16, 21, 25]),
-            new Set([4, 33, 34, 40, 46]),
+            new Set([3, 33, 34, 40, 46]),
         ])
         expect(pool).toStrictEqual(new Set([49, 55, 61]))
     })
@@ -74,7 +74,7 @@ describe('playHand', () => {
             pool,
         })).toStrictEqual(new Set([11, 13, 16]))
         expect(pool).toStrictEqual(
-            new Set([4, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
+            new Set([3, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
         )
     })
 
@@ -90,7 +90,7 @@ describe('playHand', () => {
             pool,
         })).toStrictEqual(new Set([5, 11, 13]))
         expect(pool).toStrictEqual(
-            new Set([4, 16, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
+            new Set([3, 16, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
         )
     })
 
@@ -129,7 +129,7 @@ describe('playHand', () => {
             ],
             pool,
         })).toStrictEqual(new Set([11, 13, 16, 21]))
-        expect(pool).toStrictEqual(new Set([4, 25, 33, 34, 40, 46, 49, 55, 61]))
+        expect(pool).toStrictEqual(new Set([3, 25, 33, 34, 40, 46, 49, 55, 61]))
     })
 })
 
@@ -167,7 +167,7 @@ describe('exchangeHand', () => {
             pool,
         })).toStrictEqual(new Set([5, 11, 13]))
         expect(pool).toStrictEqual(
-            new Set([4, 10, 15, 16, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
+            new Set([3, 10, 15, 16, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
         )
     })
 
@@ -178,7 +178,7 @@ describe('exchangeHand', () => {
             pool,
         })).toStrictEqual(new Set([11, 13, 16]))
         expect(pool).toStrictEqual(
-            new Set([4, 5, 10, 15, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
+            new Set([3, 5, 10, 15, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
         )
     })
 
@@ -189,7 +189,7 @@ describe('exchangeHand', () => {
             pool,
         })).toStrictEqual(new Set([11, 13, 16, 21]))
         expect(pool).toStrictEqual(
-            new Set([4, 5, 10, 15, 20, 25, 33, 34, 40, 46, 49, 55, 61]),
+            new Set([3, 5, 10, 15, 20, 25, 33, 34, 40, 46, 49, 55, 61]),
         )
     })
 })

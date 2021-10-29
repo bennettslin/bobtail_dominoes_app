@@ -1,16 +1,23 @@
+import { getIsFinalTurn } from '../end'
+
 export const getInitialTurns = board => ([
     // Initialize with first domino placed on board.
     { dominoIndex: board[0].dominoIndex },
 ])
 
-export const addTurn = ({ hand, playerIndex, moves, turns }) => {
-    turns.push({
-        hand: new Set(hand),
+export const addTurn = ({ pool, turns, moves, playerIndex, playersCount }) => {
+    const turn = {
         playerIndex,
+        ...moves && { moves },
+    }
 
-        // Exchange will not pass moves.
-        moves,
-    })
+    turns.push(turn)
 
-    return turns
+    // At this point, hand has already been refilled from pool.
+    const isFinalTurn = getIsFinalTurn({ pool, turns, playersCount })
+
+    return {
+        turns,
+        isFinalTurn,
+    }
 }

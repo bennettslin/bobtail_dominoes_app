@@ -1,15 +1,20 @@
 # Generator notes
 
 # TODO: next
-* Render logs from turns rather than board
+* Turn log says played full hand or not
+
 * Play utils return if game ended
+    * Last turn is a turn, has winner indices
+    * Unit tests
 
 * Turns
-    * A turn is:
-        * First domino (only has dominoIndex)
-        * Or play (has hand, playerIndex, and moves)
-        * Or exchange (Only has hand and playerIndex)
+    * Distinguish between exchange and pass
+        * Can't just be based on moves, for eventual play
     * Unit tests
+
+* Other utils
+    * getChordsTextList (Make chord abbreviations, smallest interval size)
+        * Unit tests
 
 * Play
     * Utils return if game ended
@@ -21,11 +26,10 @@
 * Demo component
     * Plays a full game
         * Finishes game
-        * Calculates score and determines winner
-
-* Ensure that pitch sets in moves are always in order, both in orientation and in direction
+        * Calculates score from last turn and determines winner
 
 * getBestPointedMovesForTurn
+    * Starting to look ugly, refactor
     * Figure out why adding long sonority rule to rows increases the points for a unit test
         * See if this still happens without limit
     * Make more efficient

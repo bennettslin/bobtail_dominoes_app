@@ -12,7 +12,6 @@ $borderRadius__inner: $borderRadius__lg - $length__base * 0.25;
 
 .StyledPage {
     flex-grow: 1;
-    position: relative;
     width: 100%;
 
     @media (min-width: $breakpoint__sm) {
@@ -40,7 +39,6 @@ $borderRadius__inner: $borderRadius__lg - $length__base * 0.25;
 }
 
 .StyledPage__body {
-    position: relative;
     padding: $margin__xs;
 
     @media (min-width: $breakpoint__sm) {

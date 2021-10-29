@@ -16,3 +16,11 @@ export const addToScores = ({
     scores[playerIndex] += points
     return scores
 }
+
+export const getWinnerIndices = scores => {
+    const highScore = Math.max(...scores)
+    // Ties are possible.
+    return scores.map((score, index) => (
+        score === highScore ? index : -1
+    )).filter(index => index > -1)
+}

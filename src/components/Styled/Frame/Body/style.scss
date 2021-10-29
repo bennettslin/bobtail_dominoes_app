@@ -5,7 +5,6 @@ $length__base: $margin__xs;
 $borderRadius__inner: $borderRadius__lg - $length__base * 0.66;
 
 .StyledFrameBody {
-    position: relative;
     @media (min-width: $breakpoint__sm) {
         border-radius: $borderRadius__inner;
     }

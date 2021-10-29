@@ -30,7 +30,7 @@ The remaining dominoes in your hand may be played in the same manner until none 
 
 Instead of placing dominoes on the board, you may use your turn to exchange all, some, or none of the dominoes in your hand. Draw the new dominoes from the pool, return your discarded ones, and reshuffle. This ends your turn.
 
-The game ends when no dominoes are left in the pool and a player empties their hand, or when no possible plays are left to be made.
+Once the pool is empty, each player gets one more turn before the game ends. The game also ends after each player has exchanged their hand twice in a row.
 
 Don't forget to take a picture of the final board!
                 `,

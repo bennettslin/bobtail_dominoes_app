@@ -41,7 +41,7 @@ describe('getRandomDominoIndex', () => {
         const pool = new Set(MOCK_POOL_LIST)
         expect(getRandomDominoIndex(pool)).toBe(11)
         expect(pool).toStrictEqual(
-            new Set([4, 13, 16, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
+            new Set([3, 13, 16, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
         )
     })
 })
@@ -84,7 +84,7 @@ describe('exchangeDominoIndices', () => {
             pool,
         })).toStrictEqual([11])
         expect(pool).toStrictEqual(
-            new Set([4, 5, 13, 16, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
+            new Set([3, 5, 13, 16, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
         )
     })
 
@@ -95,7 +95,7 @@ describe('exchangeDominoIndices', () => {
             pool,
         })).toStrictEqual([11, 13, 16])
         expect(pool).toStrictEqual(
-            new Set([4, 5, 10, 15, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
+            new Set([3, 5, 10, 15, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
         )
     })
 })
