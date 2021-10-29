@@ -8,6 +8,7 @@
     * Unit tests
 
 * Turns
+    * Turns don't need player index?
     * Distinguish between exchange and pass
         * Can't just be based on moves, for eventual play
     * Unit tests
