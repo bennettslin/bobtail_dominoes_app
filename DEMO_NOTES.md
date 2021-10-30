@@ -1,5 +1,8 @@
 # Generator notes
 
+# TODO: demo page
+* 
+
 # TODO: next
 * Play
     * Unit tests

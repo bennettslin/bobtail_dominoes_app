@@ -1,4 +1,5 @@
 import React from 'react'
+import Array from '../../../../components/Array'
 import ChordAbbreviations from '../../../../components/ChordAbbreviations'
 import { getCommaSeparatedList } from '../../../format'
 import { getArrayOfIndices } from '../../../general'
@@ -25,7 +26,12 @@ export const getLogForTurn = ({
         const winnersList = winnerIndices.map(winnerIndex => (
             playerNames[winnerIndex]
         ))
-        return `${getCommaSeparatedList(winnersList)} ${winnersList.length > 1 ? 'win' : 'wins'} the game!`
+        return (
+            <>
+                <Array {...{ list: getCommaSeparatedList(winnersList) }} />
+                {` ${winnersList.length > 1 ? 'win' : 'wins'} the game!`}
+            </>
+        )
 
     } else {
         const playerIndex = getPlayerIndex({ turnIndex, playersCount })
