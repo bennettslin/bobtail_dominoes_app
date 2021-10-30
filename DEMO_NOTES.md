@@ -13,8 +13,6 @@
 * Turns
     * Unit tests
 
-* Move ChordAbbreviations component out of log util?
-
 * getBestPointedMovesForTurn
     * Starting to look ugly, refactor
     * Figure out why adding long sonority rule to rows increases the points for a unit test

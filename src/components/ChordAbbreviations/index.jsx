@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Array from '../Array'
+import StaticArray from '../StaticArray'
 
 const Entry = ({ entry }) => (
     typeof entry === 'string' ? entry : (
@@ -24,7 +24,7 @@ Entry.propTypes = {
 }
 
 const ChordAbbreviations = ({ abbreviations }) => (
-    <Array
+    <StaticArray
         {...{
             list: abbreviations,
             Entry,

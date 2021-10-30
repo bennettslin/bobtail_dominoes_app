@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Flex from '../../Flex'
 import StyledShadow from '../../Styled/Shadow'
-import { getLogForMove, getLogForTurn } from '../../../utils/music/game/log'
+import MoveLog from './MoveLog'
+import { TurnLog } from './TurnLog'
 import { margin__xs } from '../../../constants/responsive'
 import './style'
 
@@ -25,12 +26,12 @@ const DemoLog = ({ turns, playersCount, handCount }) => (
             >
                 <Flex {...{ key: turnIndex }} >
                     <StyledShadow>
-                        {getLogForTurn({
+                        <TurnLog {...{
                             turn,
                             turnIndex,
                             playersCount,
                             handCount,
-                        })}
+                        }} />
                     </StyledShadow>
                 </Flex>
                 {turn.moves && (
@@ -38,7 +39,7 @@ const DemoLog = ({ turns, playersCount, handCount }) => (
                         {turn.moves.map((move, index) => (
                             <Flex {...{ key: index }}>
                                 <StyledShadow>
-                                    <li>{getLogForMove(move)}</li>
+                                    <MoveLog {...move} />
                                 </StyledShadow>
                             </Flex>
                         ))}
