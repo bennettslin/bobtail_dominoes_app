@@ -16,14 +16,14 @@ const {
 } = getInitialGame({ playersCount: PLAYERS_COUNT, handCount: HAND_COUNT })
 
 const Demo = () => {
-    const [isGameEnded, setIsGameEnded] = useState(false)
+    const [hasGameEnded, setHasGameEnded] = useState(false)
     const [playerIndex, setPlayerIndex] = useState(0)
     const hand = hands[playerIndex]
 
     const playTurnForHand = () => {
         const moves = getBestPointedMovesForTurn({ hand, board, limit: 3 })
 
-        const { isFinalTurn } = registerTurn({
+        const { isGameEnd } = registerTurn({
             pool,
             board,
             hands,
@@ -33,12 +33,13 @@ const Demo = () => {
             playerIndex,
             playersCount: PLAYERS_COUNT,
             handCount: HAND_COUNT,
+
+            // These are ignored if there are moves.
+            discardedIndices: Array.from(hand),
         })
 
-        console.log('turns', turns)
-
-        if (isFinalTurn) {
-            setIsGameEnded(true)
+        if (isGameEnd) {
+            setHasGameEnded(true)
         }
 
         return setTimeout(() => {
@@ -47,7 +48,7 @@ const Demo = () => {
     }
 
     useEffect(() => {
-        if (!isGameEnded) {
+        if (!hasGameEnded) {
             const timeoutIndex = playTurnForHand()
 
             // Safely unmount.
@@ -67,7 +68,13 @@ const Demo = () => {
                 gap: margin__lg,
             }}
         >
-            <DemoLog {...{ turns }} />
+            <DemoLog
+                {...{
+                    turns,
+                    playersCount: PLAYERS_COUNT,
+                    handCount: HAND_COUNT,
+                }}
+            />
             <Flex>
                 <StyledShadow>
                     {scores.map((score, playerIndex) => (

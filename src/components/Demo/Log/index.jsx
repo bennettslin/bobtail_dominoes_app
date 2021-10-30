@@ -5,7 +5,7 @@ import StyledShadow from '../../Styled/Shadow'
 import { getLogForMove, getLogForTurn } from './util'
 import './style'
 
-const DemoLog = ({ turns }) => (
+const DemoLog = ({ turns, playersCount, handCount }) => (
     <Flex
         {...{
             className: 'DemoLog',
@@ -17,7 +17,12 @@ const DemoLog = ({ turns }) => (
             <Fragment {...{ key: turnIndex }}>
                 <Flex {...{ key: turnIndex }} >
                     <StyledShadow>
-                        {getLogForTurn(turn)}
+                        {getLogForTurn({
+                            turn,
+                            turnIndex,
+                            playersCount,
+                            handCount,
+                        })}
                     </StyledShadow>
                 </Flex>
                 {turn.moves && (
@@ -57,6 +62,8 @@ DemoLog.propTypes = {
             ),
         }),
     ),
+    playersCount: PropTypes.number.isRequired,
+    handCount: PropTypes.number.isRequired,
 }
 
 export default DemoLog

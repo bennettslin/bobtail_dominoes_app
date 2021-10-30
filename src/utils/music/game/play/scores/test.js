@@ -1,4 +1,4 @@
-import { addToScores, getInitialScores, getWinnerIndices } from '.'
+import { addMovesToScores, getInitialScores, getWinnerIndices } from '.'
 
 describe('getInitialScores', () => {
     it('generates scores for one hand', () => {
@@ -10,9 +10,9 @@ describe('getInitialScores', () => {
     })
 })
 
-describe('addToScores', () => {
+describe('addMovesToScores', () => {
     it('adds score for game with one hand', () => {
-        expect(addToScores({
+        expect(addMovesToScores({
             handCount: 3,
             moves: [
                 { pitchSets: [new Set([0, 3, 7]), new Set([2, 4, 7, 11])] },
@@ -23,7 +23,7 @@ describe('addToScores', () => {
     })
 
     it('adds score for game with multiple hands', () => {
-        expect(addToScores({
+        expect(addMovesToScores({
             playerIndex: 2,
             handCount: 3,
             moves: [

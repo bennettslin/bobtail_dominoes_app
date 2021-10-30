@@ -33,7 +33,7 @@ export const playHand = ({
 
 export const exchangeHand = ({
     hand,
-    discardedIndices = Array.from(hand),
+    discardedIndices,
     pool,
 }) => {
     const newIndices = exchangeDominoIndices({

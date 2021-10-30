@@ -1,7 +1,7 @@
 import { addMovesToBoard, getInitialBoard } from './board'
 import { exchangeHand, getInitialHands, playHand } from './hands'
 import { getInitialExtendedPool, getInitialStandardPool } from './pool'
-import { addToScores, getInitialScores } from './scores'
+import { addMovesToScores, getInitialScores } from './scores'
 import { addTurn, getInitialTurns } from './turns'
 import { HAND_COUNT } from '../../../../constants/music/play'
 
@@ -35,23 +35,26 @@ export const registerTurn = ({
     playerIndex,
     playersCount,
     handCount = HAND_COUNT,
+    discardedIndices,
 }) => {
     const hand = hands[playerIndex]
 
     if (moves) {
-        addMovesToBoard({ playerIndex, moves, board })
-        addToScores({ playerIndex, handCount, moves, scores })
-        playHand({ hand, handCount, moves, pool })
+        playHand({ pool, hand, moves, handCount })
+        addMovesToBoard({ board, moves, playerIndex })
+        addMovesToScores({ scores, moves, playerIndex, handCount })
     } else {
-        exchangeHand({ hand, pool, playersCount })
+        exchangeHand({ pool, hand, discardedIndices })
     }
 
-    const { isFinalTurn } = addTurn({
+    const { isGameEnd } = addTurn({
         pool,
+        hands,
         turns,
         moves,
-        playerIndex,
         playersCount,
+        discardedIndices,
+        scores,
     })
 
     return {
@@ -60,6 +63,6 @@ export const registerTurn = ({
         hands,
         scores,
         turns,
-        isFinalTurn,
+        isGameEnd,
     }
 }

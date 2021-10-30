@@ -5,7 +5,7 @@ export const getInitialScores = playersCount => (
     getArrayOfIndices(playersCount).map(() => 0)
 )
 
-export const addToScores = ({
+export const addMovesToScores = ({
     playerIndex = 0,
     handCount,
     moves,

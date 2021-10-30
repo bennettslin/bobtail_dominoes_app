@@ -174,6 +174,7 @@ describe('exchangeHand', () => {
     it('returns if all domino indices are exchanged', () => {
         const pool = new Set(MOCK_POOL_LIST)
         expect(exchangeHand({
+            discardedIndices: [5, 10, 15],
             hand: new Set([5, 10, 15]),
             pool,
         })).toStrictEqual(new Set([11, 13, 16]))
@@ -185,6 +186,7 @@ describe('exchangeHand', () => {
     it('returns if custom number of domino indices are exchanged', () => {
         const pool = new Set(MOCK_POOL_LIST)
         expect(exchangeHand({
+            discardedIndices: [5, 10, 15, 20],
             hand: new Set([5, 10, 15, 20]),
             pool,
         })).toStrictEqual(new Set([11, 13, 16, 21]))
