@@ -1,8 +1,9 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import Flex from '../../Flex'
 import StyledShadow from '../../Styled/Shadow'
 import { getLogForMove, getLogForTurn } from './util'
+import { margin__xs } from '../../../constants/responsive'
 import './style'
 
 const DemoLog = ({ turns, playersCount, handCount }) => (
@@ -11,10 +12,17 @@ const DemoLog = ({ turns, playersCount, handCount }) => (
             className: 'DemoLog',
             flexDirection: 'column',
             alignItems: 'normal',
+            gap: margin__xs,
         }}
     >
         {turns.map((turn, turnIndex) => (
-            <Fragment {...{ key: turnIndex }}>
+            <Flex
+                {...{
+                    key: turnIndex,
+                    flexDirection: 'column',
+                    alignItems: 'normal',
+                }}
+            >
                 <Flex {...{ key: turnIndex }} >
                     <StyledShadow>
                         {getLogForTurn({
@@ -36,7 +44,7 @@ const DemoLog = ({ turns, playersCount, handCount }) => (
                         ))}
                     </ul>
                 )}
-            </Fragment>
+            </Flex>
         ))}
     </Flex>
 )

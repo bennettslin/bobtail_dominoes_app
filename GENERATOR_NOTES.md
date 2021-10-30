@@ -12,11 +12,12 @@
     * Unit tests
 
 * Other utils
-    * getChordsTextList (Make chord abbreviations, smallest interval size)
+    * getDominoesLabel (make smallest interval)
+    * getChordAbbreviationsList
         * Unit tests
+    * getCommaSeparatedList
 
-* Demo component
-    * Log for game end
+* Move demo log utils into game utils.
 
 * getBestPointedMovesForTurn
     * Starting to look ugly, refactor

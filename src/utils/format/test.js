@@ -1,4 +1,4 @@
-import { getTruncatedText, getCapitalizedText } from '.'
+import { getTruncatedText, getCapitalizedText, getCommaSeparatedList } from '.'
 
 describe('getTruncatedText', () => {
     it('returns empty text', () => {
@@ -30,5 +30,24 @@ describe('getCapitalizedText', () => {
         expect(getCapitalizedText(
             `hI, hOw ArE yOu?`,
         )).toBe(`Hi, how are you?`)
+    })
+})
+
+describe('getCommaSeparatedList', () => {
+    test.each([
+        [undefined, []],
+        [[], []],
+        [['red'], ['red']],
+        [['red', 'orange'], ['red', ' and ', 'orange']],
+        [
+            ['red', 'orange', 'yellow'],
+            ['red', ', ', 'orange', ', and ', 'yellow'],
+        ],
+        [
+            ['red', 'orange', 'yellow', 'green', 'blue'],
+            ['red', ', ', 'orange', ', ', 'yellow', ', ', 'green', ', and ', 'blue'],
+        ],
+    ])('%p returns %p', (list, result) => {
+        expect(getCommaSeparatedList(list)).toStrictEqual(result)
     })
 })

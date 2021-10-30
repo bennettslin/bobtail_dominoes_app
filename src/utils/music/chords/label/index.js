@@ -1,3 +1,4 @@
+import { getCommaSeparatedList } from '../../../format'
 import { join } from '../../../general'
 import { getPrimeFormKey, getRoots } from '../primeForm'
 
@@ -96,31 +97,22 @@ export const getChordLabel = pitchSet => {
 }
 
 export const getDominoLabel = pitches => (
-    pitches.map(pitch => {
-        if (getIsPitchBlack(pitch)) {
-            return [
+    pitches.map(pitch => (
+        getIsPitchBlack(pitch) ? (
+            [
                 `${ROOT_LETTERS[pitch][SHARP]}${SHARP}`,
                 `${ROOT_LETTERS[pitch][FLAT]}${FLAT}`,
             ].join('/')
-        } else {
-            return ROOT_LETTERS[pitch]
-        }
-    }).join('-')
+        ) : (
+            ROOT_LETTERS[pitch]
+        )
+    )).join('-')
 )
 
-export const getChordsTextList = pitchSets => {
-    const chords = pitchSets.map(pitchSet => (
-        getChordLabel(pitchSet)
-    ))
-
-    if (chords.length === 1) {
-        return chords[0]
-    } else if (chords.length === 2) {
-        return chords.join(' and ')
-    } else {
-        return [
-            chords.slice(0, chords.length - 1).join(', '),
-            chords[chords.length - 1],
-        ].join(', and ')
-    }
-}
+export const getChordAbbreviationsList = pitchSets => (
+    getCommaSeparatedList(
+        pitchSets.map(pitchSet => (
+            getChordAbbreviation(pitchSet)
+        )),
+    )
+)

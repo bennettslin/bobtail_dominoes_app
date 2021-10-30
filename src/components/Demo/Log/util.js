@@ -1,7 +1,10 @@
-import { getChordsTextList, getDominoLabel } from '../../../utils/music/chords/label'
+import React from 'react'
+import ChordAbbreviations from '../../ChordAbbreviations'
+import { getChordAbbreviationsList, getDominoLabel } from '../../../utils/music/chords/label'
 import { getPointsForMoves, getPointsForPitchSets } from '../../../utils/music/chords/points'
 import { getDominoPitches } from '../../../utils/music/game/dominoes'
 import { getPlayerIndex } from '../../../utils/music/game/play/turns'
+import { getCommaSeparatedList } from '../../../utils/format'
 
 export const getLogForTurn = ({
     turn,
@@ -15,7 +18,10 @@ export const getLogForTurn = ({
         return `${getDominoLabel(getDominoPitches(dominoIndex))} starts the board.`
 
     } else if (winnerIndices) {
-        return `TODO: Winners!`
+        const winnersList = winnerIndices.map(winnerIndex => (
+            `Player ${winnerIndex + 1}`
+        ))
+        return `${getCommaSeparatedList(winnersList)} ${winnersList.length > 1 ? 'win' : 'wins'} the game!`
 
     } else {
         const playerIndex = getPlayerIndex({ turnIndex, playersCount })
@@ -31,5 +37,11 @@ export const getLogForMove = ({
     dominoIndex,
     pitchSets,
 }) => (
-    `${getDominoLabel(getDominoPitches(dominoIndex))} builds ${getChordsTextList(pitchSets)} for ${getPointsForPitchSets(pitchSets)} points.`
+    <>
+        {`${getDominoLabel(getDominoPitches(dominoIndex))} builds `}
+        <ChordAbbreviations
+            {...{ abbreviations: getChordAbbreviationsList(pitchSets) }}
+        />
+        {` for ${getPointsForPitchSets(pitchSets)} points.`}
+    </>
 )
