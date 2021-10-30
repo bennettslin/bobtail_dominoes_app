@@ -19,7 +19,7 @@ ChordAbbreviations.propTypes = {
     abbreviations: PropTypes.arrayOf(
         PropTypes.oneOfType([
             PropTypes.shape({
-                root: PropTypes.string.isRequired,
+                root: PropTypes.string,
                 type: PropTypes.string,
                 sup: PropTypes.string,
             }),

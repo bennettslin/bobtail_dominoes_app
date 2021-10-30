@@ -10,7 +10,7 @@ import './style'
 const DisplayChordLabel = () => {
     const
         currentPitchSet = useSelector(mapCurrentPitchSet),
-        abbreviation = getChordAbbreviation(currentPitchSet)
+        abbreviations = [getChordAbbreviation(currentPitchSet)]
 
     return (
         <StyledChordLabel
@@ -20,7 +20,7 @@ const DisplayChordLabel = () => {
                 ),
             }}
         >
-            <ChordAbbreviations {...{ abbreviations: [abbreviation] }} />
+            <ChordAbbreviations {...{ abbreviations }} />
         </StyledChordLabel>
     )
 }
