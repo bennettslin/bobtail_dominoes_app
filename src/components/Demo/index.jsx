@@ -38,6 +38,8 @@ const Demo = () => {
             discardedIndices: Array.from(hand),
         })
 
+        console.log('turns', turns)
+
         if (isGameEnd) {
             setHasGameEnded(true)
         }

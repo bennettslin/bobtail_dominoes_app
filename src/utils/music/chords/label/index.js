@@ -1,6 +1,7 @@
 import { getCommaSeparatedList } from '../../../format'
 import { join } from '../../../general'
 import { getPrimeFormKey, getRoots } from '../primeForm'
+import { OCTAVE_RANGE } from '../../../../constants/music/audio'
 
 const
     FLAT = '♭',
@@ -97,7 +98,11 @@ export const getChordLabel = pitchSet => {
 }
 
 export const getDominoLabel = pitches => (
-    pitches.map(pitch => (
+    (
+        (pitches[1] - pitches[0]) <= (OCTAVE_RANGE / 2) ?
+            pitches :
+            [...pitches.reverse()]
+    ).map(pitch => (
         getIsPitchBlack(pitch) ? (
             [
                 `${ROOT_LETTERS[pitch][SHARP]}${SHARP}`,
@@ -109,7 +114,7 @@ export const getDominoLabel = pitches => (
     )).join('-')
 )
 
-export const getChordAbbreviationsList = pitchSets => (
+export const getChordAbbreviationsList = (pitchSets = []) => (
     getCommaSeparatedList(
         pitchSets.map(pitchSet => (
             getChordAbbreviation(pitchSet)

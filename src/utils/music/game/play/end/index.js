@@ -2,26 +2,40 @@ const getHasNoDominoes = ({ pool, hands }) => (
     !pool.size && !hands.some(hand => Boolean(hand.size))
 )
 
-const getHasNoMoves = ({ turns, playersCount }) => {
-    // End game after each player has exchanged twice in a row.
-    const maxTurnsWithoutMoves = playersCount * 2
-    const latestTurns = turns.slice(1).slice(-maxTurnsWithoutMoves)
+const getHasMetGameEndCondition = ({
+    turns,
+    maxLatestTurnsCount,
+    falseConditionFunction,
+}) => {
+    const latestTurns = turns.slice(1).slice(-maxLatestTurnsCount)
 
     // Game hasn't ended if there aren't enough latest turns to count.
-    if (latestTurns.length < maxTurnsWithoutMoves) {
+    if (latestTurns.length < maxLatestTurnsCount) {
         return false
     }
 
-    // Game hasn't ended if at least one of the latest turns has moves.
-    return !latestTurns.some(({ moves }) => Boolean(moves))
+    // Game hasn't ended if any latest turn meets the false condition.
+    return !latestTurns.some(falseConditionFunction)
 }
 
-const getIsLastTurnAfterEmptyPool = ({ pool, turns, playersCount }) => {
-    return false
-}
+const getHasNoMoves = ({ turns, playersCount }) => (
+    getHasMetGameEndCondition({
+        turns,
+        maxLatestTurnsCount: playersCount * 2,
+        falseConditionFunction: ({ moves }) => Boolean(moves),
+    })
+)
+
+const getIsLastTurnAfterEmptyPool = ({ turns, playersCount }) => (
+    getHasMetGameEndCondition({
+        turns,
+        maxLatestTurnsCount: playersCount,
+        falseConditionFunction: ({ isEmptyPool }) => !isEmptyPool,
+    })
+)
 
 export const getIsGameEnd = ({ pool, hands, turns, playersCount }) => (
     getHasNoDominoes({ pool, hands }) ||
     getHasNoMoves({ turns, playersCount }) ||
-    getIsLastTurnAfterEmptyPool({ pool, turns, playersCount })
+    getIsLastTurnAfterEmptyPool({ turns, playersCount })
 )

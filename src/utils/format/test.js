@@ -47,6 +47,7 @@ describe('getCommaSeparatedList', () => {
             ['red', 'orange', 'yellow', 'green', 'blue'],
             ['red', ', ', 'orange', ', ', 'yellow', ', ', 'green', ', and ', 'blue'],
         ],
+        [[1, 2, 3], [1, ', ', 2, ', and ', 3]],
     ])('%p returns %p', (list, result) => {
         expect(getCommaSeparatedList(list)).toStrictEqual(result)
     })

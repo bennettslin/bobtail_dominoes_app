@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Flex from '../../Flex'
 import StyledShadow from '../../Styled/Shadow'
-import { getLogForMove, getLogForTurn } from './util'
+import { getLogForMove, getLogForTurn } from '../../../utils/music/game/log'
 import { margin__xs } from '../../../constants/responsive'
 import './style'
 

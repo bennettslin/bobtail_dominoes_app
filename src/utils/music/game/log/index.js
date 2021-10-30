@@ -1,15 +1,19 @@
 import React from 'react'
-import ChordAbbreviations from '../../ChordAbbreviations'
-import { getChordAbbreviationsList, getDominoLabel } from '../../../utils/music/chords/label'
-import { getPointsForMoves, getPointsForPitchSets } from '../../../utils/music/chords/points'
-import { getDominoPitches } from '../../../utils/music/game/dominoes'
-import { getPlayerIndex } from '../../../utils/music/game/play/turns'
-import { getCommaSeparatedList } from '../../../utils/format'
+import ChordAbbreviations from '../../../../components/ChordAbbreviations'
+import { getCommaSeparatedList } from '../../../format'
+import { getArrayOfIndices } from '../../../general'
+import { getChordAbbreviationsList, getDominoLabel } from '../../chords/label'
+import { getPointsForMoves, getPointsForPitchSets } from '../../chords/points'
+import { getDominoPitches } from '../dominoes'
+import { getPlayerIndex } from '../play/turns'
 
 export const getLogForTurn = ({
     turn,
     turnIndex,
     playersCount,
+    playerNames = getArrayOfIndices(playersCount).map(playerIndex => (
+        `Player ${playerIndex + 1}`
+    )),
     handCount,
 }) => {
     const { moves, dominoIndex, discardedIndices, winnerIndices } = turn
@@ -19,16 +23,16 @@ export const getLogForTurn = ({
 
     } else if (winnerIndices) {
         const winnersList = winnerIndices.map(winnerIndex => (
-            `Player ${winnerIndex + 1}`
+            playerNames[winnerIndex]
         ))
         return `${getCommaSeparatedList(winnersList)} ${winnersList.length > 1 ? 'win' : 'wins'} the game!`
 
     } else {
         const playerIndex = getPlayerIndex({ turnIndex, playersCount })
         return moves ? (
-            `Player ${playerIndex + 1} plays ${moves.length === handCount ? 'full hand ' : ''}for ${getPointsForMoves({ moves })} points.`
+            `${playerNames[playerIndex]} plays ${moves.length === handCount ? 'full hand ' : ''}for ${getPointsForMoves({ moves })} points.`
         ) : (
-            `Player ${playerIndex + 1} ${discardedIndices.length ? 'exchanges on' : 'passes'} their turn.`
+            `${playerNames[playerIndex]} ${discardedIndices.length ? 'exchanges on' : 'passes'} their turn.`
         )
     }
 }

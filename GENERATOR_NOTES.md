@@ -5,19 +5,12 @@
     * Unit tests
 
 * End
-    * Last turn after pool empties
     * Unit tests
 
 * Turns
     * Unit tests
 
-* Other utils
-    * getDominoesLabel (make smallest interval)
-    * getChordAbbreviationsList
-        * Unit tests
-    * getCommaSeparatedList
-
-* Move demo log utils into game utils.
+* Move ChordAbbreviations component out of log util?
 
 * getBestPointedMovesForTurn
     * Starting to look ugly, refactor

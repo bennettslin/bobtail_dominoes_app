@@ -15,7 +15,10 @@ export const addTurn = ({
     discardedIndices = [],
     scores,
 }) => {
-    turns.push({ ...moves ? { moves } : { discardedIndices } })
+    turns.push({
+        ...moves ? { moves } : { discardedIndices },
+        ...!pool.size && { isEmptyPool: true },
+    })
 
     // At this point, hand has already been refilled from pool.
     const isGameEnd = getIsGameEnd({
