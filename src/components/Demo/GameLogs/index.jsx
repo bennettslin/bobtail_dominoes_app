@@ -4,7 +4,6 @@ import Flex from '../../Flex'
 import TurnLog from './TurnLog'
 import { mapHandCount, mapPlayersCount, mapTurnsCount } from '../../../redux/game/selector'
 import { getArrayOfIndices } from '../../../utils/general'
-import { margin__xs } from '../../../constants/responsive'
 import './style'
 
 const GameLogs = () => {
@@ -20,7 +19,10 @@ const GameLogs = () => {
                 flexDirection: 'column',
                 justifyContent: 'start',
                 alignItems: 'start',
-                gap: margin__xs,
+                gap: 'xs',
+                style: {
+                    border: '1px solid yellow',
+                },
             }}
         >
             {getArrayOfIndices(turnsCount).map(turnIndex => (

@@ -3,7 +3,6 @@ import cx from 'classnames'
 import Flex from '../Flex'
 import FacebookButton from './FollowButton/FacebookButton'
 import TwitterButton from './FollowButton/TwitterButton'
-import { margin__xs } from '../../constants/responsive'
 
 const FollowButtons = () => (
     <Flex
@@ -13,7 +12,7 @@ const FollowButtons = () => (
             ),
             flexDirection: 'column',
             alignItems: 'normal',
-            gap: margin__xs,
+            gap: 'xs',
         }}
     >
         <label>Follow the Bobtail Yearlings:</label>
@@ -22,7 +21,7 @@ const FollowButtons = () => (
                 className: cx(
                     'FollowButtons__buttons',
                 ),
-                gap: margin__xs * 0.5,
+                gap: 'xxs',
             }}
         >
             <FacebookButton />

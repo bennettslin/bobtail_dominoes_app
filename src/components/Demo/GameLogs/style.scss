@@ -3,7 +3,19 @@
 .GameLogs {
     width: 400px;
     padding: $margin__md 0;
+
     overflow-y: scroll;
+
+    font-size: 0.75em;
+
+    @media (min-width: $breakpoint__md) {
+        font-size: 0.85em;
+    }
+
+    @media (min-width: $breakpoint__lg) {
+        font-size: 1em;
+    }
+
     mask-image: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0),

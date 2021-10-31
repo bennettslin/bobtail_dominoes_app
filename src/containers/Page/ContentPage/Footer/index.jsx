@@ -13,6 +13,7 @@ const PageFooter = () => (
             ),
             flexDirection: 'column',
             justifyContent: 'space-between',
+            gap: 'md',
         }}
     >
         <DirectionRow />

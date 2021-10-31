@@ -28,6 +28,7 @@ const MainHeader = () => {
                         'MainHeader',
                     ),
                     justifyContent: 'space-between',
+                    gap: 'xs',
                 }}
             >
                 <HomeButton {...{ onLoad }} />

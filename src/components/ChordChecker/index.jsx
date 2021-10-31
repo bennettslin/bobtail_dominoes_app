@@ -15,6 +15,7 @@ const ChordChecker = () => (
             flexDirection: 'column',
             justifyContent: 'normal',
             alignItems: 'normal',
+            gap: { xs: 'sm' },
         }}
     >
         <KeyboardDisplay />
@@ -24,6 +25,7 @@ const ChordChecker = () => (
                     'ChordChecker__bottomRow',
                 ),
                 alignItems: 'normal',
+                gap: { xs: 'sm' },
             }}
         >
             <PitchButtons />

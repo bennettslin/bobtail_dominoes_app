@@ -38,13 +38,7 @@ const DirectionPageLink = ({ direction, directionPage }) => {
                 }),
             }}
         >
-            <Flex
-                {...{
-                    className: cx(
-                        'DirectionPageLink__flex',
-                    ),
-                }}
-            >
+            <Flex {...{ gap: 'xxs' }} >
                 {direction === -1 && (
                     <Svg
                         {...{

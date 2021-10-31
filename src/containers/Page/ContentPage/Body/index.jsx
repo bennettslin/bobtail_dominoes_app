@@ -25,9 +25,11 @@ const Body = () => {
                 className: cx(
                     'Body',
                 ),
+                flexGrow: 1,
                 flexDirection: 'column',
                 justifyContent: 'normal',
                 alignItems: 'normal',
+                gap: 'md',
             }}
         >
             <Heading>

@@ -37,6 +37,7 @@ const MainFooter = ({ didMount }) => {
                             'MainFooter',
                         ),
                         justifyContent: 'space-between',
+                        gap: 'sm',
                     }}
                 >
                     <MailingList />

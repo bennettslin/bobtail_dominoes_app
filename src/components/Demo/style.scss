@@ -1,4 +1,3 @@
-@import '../../scss/constants/borders';
 @import '../../scss/constants/colours';
 @import '../../scss/constants/responsive';
 
@@ -8,9 +7,4 @@
     padding: $margin__md $margin__xl;
     background-color: $colour__board;
     overflow: hidden;
-}
-
-.Demo__column {
-    // Allows logs to scroll.
-    // height: 100%;
 }

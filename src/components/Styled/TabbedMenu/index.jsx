@@ -15,6 +15,7 @@ const StyledTabbedMenu = ({
                 className,
             ),
             justifyContent: 'start',
+            columnGap: { default: 'sm', xs: 'md' },
         }}
     >
         {children}

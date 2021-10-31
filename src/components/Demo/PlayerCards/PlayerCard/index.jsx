@@ -5,7 +5,6 @@ import Flex from '../../../Flex'
 import { getMapHand, getMapScore } from '../../../../redux/game/selector'
 import { getDominoPitches } from '../../../../utils/music/game/dominoes'
 import { getDominoLabel } from '../../../../utils/music/chords/label'
-import { margin__xs } from '../../../../constants/responsive'
 
 const PlayerCard = ({ playerIndex }) => {
     const
@@ -18,17 +17,13 @@ const PlayerCard = ({ playerIndex }) => {
                 className: 'PlayerCard',
                 flexDirection: 'column',
                 alignItems: 'start',
-                gap: margin__xs,
+                gap: 'xs',
             }}
         >
             <Flex>
                 Player {playerIndex + 1}: {score}
             </Flex>
-            <Flex
-                {...{
-                    gap: margin__xs,
-                }}
-            >
+            <Flex {...{ gap: 'xs' }} >
                 {Array.from(hand).map(dominoIndex => (
                     getDominoLabel(getDominoPitches(dominoIndex))
                 )).join(' ')}

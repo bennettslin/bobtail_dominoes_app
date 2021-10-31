@@ -22,8 +22,10 @@ const ContentPage = ({ className }) => {
                     'ContentPage',
                     className,
                 ),
+                flexGrow: 1,
                 flexDirection: 'column',
                 justifyContent: 'normal',
+                gap: 'md',
                 showTabbedMenu,
             }}
         >

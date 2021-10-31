@@ -1,9 +1,0 @@
-@import '../../../../scss/constants/responsive';
-
-.Menu {
-    gap: 0 $margin__sm;
-
-    @media (min-width: $breakpoint__xs) {
-        gap: 0 $margin__md;
-    }
-}

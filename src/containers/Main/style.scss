@@ -3,10 +3,6 @@
 .Main {
     flex-grow: 1;
     width: 100%;
-
-    @media (min-width: $breakpoint__xs) {
-        gap: $margin__xs;
-    }
 }
 
 .Main__defaultPage {

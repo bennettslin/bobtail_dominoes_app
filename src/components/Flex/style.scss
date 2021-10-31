@@ -1,6 +1,22 @@
+@import '../../scss/constants/responsive';
+
 .Flex {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &.gap__xxs { gap: $margin__xs * 0.5; }
+    &.gap__xs { gap: $margin__xs; }
+    &.gap__sm { gap: $margin__sm; }
+    &.gap__md { gap: $margin__md; }
+
+    &.columnGap__sm { gap: $margin__sm; }
+
+    @media (min-width: $breakpoint__xs) {
+        &.xs__gap__xs { gap: $margin__xs; }
+        &.xs__gap__sm { gap: $margin__sm; }
+
+        &.xs__columnGap__md { gap: $margin__md; }
+    }
 }

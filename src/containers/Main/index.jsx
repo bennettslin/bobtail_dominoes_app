@@ -22,6 +22,7 @@ const Main = ({ children }) => {
                         'Main__defaultPage',
                 ),
                 flexDirection: 'column',
+                gap: { xs: 'xs' },
             }}
         >
             <Audio />

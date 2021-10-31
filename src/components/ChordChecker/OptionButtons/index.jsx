@@ -5,7 +5,6 @@ import PlayButton from './PlayButton'
 import ResetButton from './ResetButton'
 import TransposeButton from './TransposeButton'
 import AutoplayButton from './AutoplayButton'
-import { margin__md, margin__xs } from '../../../constants/responsive'
 
 const OptionButtons = () => (
     <StyledPlatform
@@ -14,22 +13,14 @@ const OptionButtons = () => (
             flexDirection: 'column',
             justifyContent: 'space-evenly',
             alignItems: 'normal',
-            gap: margin__md,
+            gap: 'md',
         }}
     >
-        <Flex
-            {...{
-                gap: margin__xs,
-            }}
-        >
+        <Flex {...{ gap: 'xs' }} >
             <PlayButton />
             <AutoplayButton />
         </Flex>
-        <Flex
-            {...{
-                gap: margin__xs,
-            }}
-        >
+        <Flex {...{ gap: 'xs' }} >
             <TransposeButton {...{ direction: -1 }} />
             <TransposeButton {...{ direction: 1 }} />
         </Flex>

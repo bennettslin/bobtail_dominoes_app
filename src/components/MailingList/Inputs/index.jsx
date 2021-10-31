@@ -4,7 +4,6 @@ import Flex from '../../Flex'
 import MailingListHoneypot from './Honeypot'
 import MailingListEmailField from './EmailField'
 import MailingListSubmitButton from './SubmitButton'
-import './style'
 
 const MailingListInputs = () => {
     const [isValidEmail, setIsValidEmail] = useState(false)
@@ -15,6 +14,7 @@ const MailingListInputs = () => {
                 className: cx(
                     'MailingListInputs',
                 ),
+                gap: 'xs',
             }}
         >
             <MailingListEmailField {...{ setIsValidEmail }} />

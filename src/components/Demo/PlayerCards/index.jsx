@@ -2,7 +2,6 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import Flex from '../../Flex'
 import PlayerCard from './PlayerCard'
-import { margin__xs } from '../../../constants/responsive'
 import { mapPlayersCount } from '../../../redux/game/selector'
 import { getArrayOfIndices } from '../../../utils/general'
 import './style'
@@ -16,7 +15,7 @@ const PlayerCards = () => {
                 className: 'PlayerCards',
                 flexDirection: 'column',
                 alignItems: 'normal',
-                gap: margin__xs,
+                gap: 'xs',
                 style: {
                     border: '1px solid lavender',
                 },

@@ -1,11 +1,5 @@
-@import '../../../scss/constants/responsive';
-
 .ContentPage {
-    flex-grow: 1;
     width: 100%;
-
-    gap: $margin__md;
-
     overflow-x: hidden;
     overflow-y: scroll;
 }

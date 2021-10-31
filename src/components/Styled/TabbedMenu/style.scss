@@ -6,14 +6,10 @@
     width: calc(100% + #{$margin__xs * 2});
     padding: 0 $margin__xs;
 
-    gap: 0 $margin__sm;
-
     @media (min-width: $breakpoint__xs) {
         width: calc(100% + #{$margin__sm * 2});
         padding: 0 $margin__md;
         padding-top: $margin__xs;
-
-        gap: 0 $margin__md;
     }
 
     @media (min-width: $breakpoint__sm) {

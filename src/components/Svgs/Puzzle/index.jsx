@@ -30,6 +30,7 @@ const PuzzleSvg = ({
                 ),
                 flexDirection: 'column',
                 alignItems: 'normal',
+                gap: 'xs',
             }}
         >
             <DominoSvg

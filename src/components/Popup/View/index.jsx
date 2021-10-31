@@ -35,6 +35,7 @@ const PopupView = ({
                         'hidden',
                     ),
                     flexDirection: 'column',
+                    gap: 'sm',
                     onClick,
                 }}
             >
