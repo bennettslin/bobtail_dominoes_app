@@ -18,6 +18,10 @@ const PlayerCard = ({ playerIndex }) => {
                 flexDirection: 'column',
                 alignItems: 'start',
                 gap: 'xs',
+                style: {
+                    minHeight: '100px',
+                    border: '1px solid #dfd',
+                },
             }}
         >
             <Flex>
