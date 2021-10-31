@@ -11,6 +11,7 @@ const ChildrenPage = ({ className, children }) => (
                 'ChildrenPage',
                 className,
             ),
+            flexGrow: 1,
             flexDirection: 'column',
         }}
     >

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import * as EmailValidator from 'email-validator'
+import Flex from '../../../Flex'
 import {
     EMAIL_NAME,
     EMAIL_ID,
@@ -21,13 +22,15 @@ const MailingListEmailField = ({ setIsValidEmail }) => {
     }, [emailValue])
 
     return (
-        <input
+        <Flex
             required
             {...{
                 className: cx(
                     'MailingListEmailField',
                     'font__text',
                 ),
+                Tag: 'input',
+                flexGrow: 1,
                 id: EMAIL_ID,
                 name: EMAIL_NAME,
                 type: 'text',

@@ -21,6 +21,7 @@ const Main = ({ children }) => {
                         'Main__fullPage' :
                         'Main__defaultPage',
                 ),
+                flexGrow: 1,
                 flexDirection: 'column',
                 gap: { xs: 'xs' },
             }}

@@ -4,7 +4,6 @@ import cx from 'classnames'
 import Flex from '../../components/Flex'
 import Popups from '../../components/Popups'
 import Main from '../Main'
-import './style'
 
 const Wrapper = ({ children }) => (
     <Flex
@@ -12,6 +11,7 @@ const Wrapper = ({ children }) => (
             className: cx(
                 'Wrapper',
             ),
+            flexGrow: 1,
             flexDirection: 'column-reverse',
         }}
     >

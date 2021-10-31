@@ -10,6 +10,7 @@ const StyledPage = ({ className, showTabbedMenu, ...rest }) => (
             className: cx(
                 'StyledPage',
             ),
+            flexGrow: 1,
             justifyContent: 'normal',
             alignItems: 'normal',
         }}
