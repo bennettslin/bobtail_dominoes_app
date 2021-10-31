@@ -1,3 +1,4 @@
+import { createSelector } from 'reselect'
 import { GAME_STORE } from './reducer'
 
 export const mapPool = (
@@ -24,9 +25,9 @@ export const mapIsGamePlaying = (
     { [GAME_STORE]: { isGamePlaying } },
 ) => isGamePlaying
 
-export const mapPlayerIndex = (
-    { [GAME_STORE]: { playerIndex } },
-) => playerIndex
+export const mapCurrentPlayerIndex = (
+    { [GAME_STORE]: { currentPlayerIndex } },
+) => currentPlayerIndex
 
 export const mapPlayersCount = (
     { [GAME_STORE]: { playersCount } },
@@ -35,3 +36,13 @@ export const mapPlayersCount = (
 export const mapHandCount = (
     { [GAME_STORE]: { handCount } },
 ) => handCount
+
+export const getMapHand = playerIndex => createSelector(
+    mapHands,
+    hands => hands[playerIndex],
+)
+
+export const getMapScore = playerIndex => createSelector(
+    mapScores,
+    scores => scores[playerIndex],
+)

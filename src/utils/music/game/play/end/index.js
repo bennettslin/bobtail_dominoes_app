@@ -29,7 +29,8 @@ const getHasNoMoves = ({ turns, playersCount }) => (
 const getIsLastTurnAfterEmptyPool = ({ turns, playersCount }) => (
     getHasMetGameEndCondition({
         turns,
-        maxLatestTurnsCount: playersCount,
+        // Include the turn that emptied the pool.
+        maxLatestTurnsCount: playersCount + 1,
         falseConditionFunction: ({ isEmptyPool }) => !isEmptyPool,
     })
 )

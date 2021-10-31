@@ -1,17 +1,14 @@
 # Generator notes
 
 # TODO: demo page
-* Players/Pool component
-    * Players
-        * Show hand and points
-    * Pool
-        * Show all dominoes left
-        * Show all pitches left
+* Log component
+    * Takes up height of parent
+    * Keeps scrolling to bottom if more than height of parent and already scrolled to bottom
+    * Highlights most recent log
 * Board component
     * Just displays board log for now.
     * Have max x and max y?
 * Allow full page treatment
-* Log on right
 * Demo (not game) reveals one domino at a time
 
 # TODO: next

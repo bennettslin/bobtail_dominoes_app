@@ -27,7 +27,7 @@ export const getInitialGame = ({
         playersCount,
         handCount,
         isGamePlaying: true,
-        playerIndex: 0,
+        currentPlayerIndex: 0,
     }
 }
 
@@ -70,6 +70,6 @@ export const registerTurn = ({
         scores,
         turns,
         isGamePlaying: !isGameEnd,
-        playerIndex: (playerIndex + 1) % playersCount,
+        currentPlayerIndex: (playerIndex + 1) % playersCount,
     }
 }

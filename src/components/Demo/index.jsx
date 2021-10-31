@@ -2,10 +2,12 @@ import React, { useEffect } from 'react'
 import cx from 'classnames'
 import { useDispatch, useSelector } from 'react-redux'
 import Flex from '../Flex'
-import DemoLog from './Log'
+import GameLogs from './GameLogs'
+import PlayerCards from './PlayerCards'
+import PoolSection from './PoolSection'
 import { updateGame } from '../../redux/game/action'
 import {
-    mapBoard, mapHands, mapIsGamePlaying, mapPlayerIndex, mapPool, mapScores, mapTurns,
+    mapBoard, mapHands, mapIsGamePlaying, mapCurrentPlayerIndex, mapPool, mapScores, mapTurns,
 } from '../../redux/game/selector'
 import { getBestPointedMovesForTurn } from '../../utils/music/game/ai'
 import { getInitialGame, registerTurn } from '../../utils/music/game/play'
@@ -19,11 +21,11 @@ const Demo = () => {
     const hands = useSelector(mapHands)
     const scores = useSelector(mapScores)
     const turns = useSelector(mapTurns)
+    const currentPlayerIndex = useSelector(mapCurrentPlayerIndex)
     const isGamePlaying = useSelector(mapIsGamePlaying)
-    const playerIndex = useSelector(mapPlayerIndex)
 
     const registerHandTurn = () => {
-        const hand = hands[playerIndex]
+        const hand = hands[currentPlayerIndex]
 
         dispatch(updateGame(registerTurn({
             pool,
@@ -31,7 +33,7 @@ const Demo = () => {
             hands,
             scores,
             turns,
-            playerIndex,
+            playerIndex: currentPlayerIndex,
 
             // Discarded indices are registered only if there are no moves.
             moves: getBestPointedMovesForTurn({ hand, board }),
@@ -40,13 +42,13 @@ const Demo = () => {
     }
 
     useEffect(() => {
-        if (playerIndex > -1 && isGamePlaying) {
+        if (currentPlayerIndex > -1 && isGamePlaying) {
             const turnTimeoutIndex = setTimeout(() => registerHandTurn(), 500)
 
             // Return callback to clear timeout upon unmount.
             return () => clearTimeout(turnTimeoutIndex)
         }
-    }, [playerIndex])
+    }, [currentPlayerIndex])
 
     useEffect(() => {
         if (!isGamePlaying) {
@@ -70,7 +72,18 @@ const Demo = () => {
                 gap: margin__lg,
             }}
         >
-            <DemoLog />
+            <Flex
+                {...{
+                    flexGrow: 1,
+                    flexDirection: 'column',
+                    alignItems: 'start',
+                    gap: margin__lg,
+                }}
+            >
+                <PlayerCards />
+                <PoolSection />
+            </Flex>
+            <GameLogs />
         </Flex>
     )
 }

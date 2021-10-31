@@ -8,7 +8,7 @@ import { margin__xs } from '../../../constants/responsive'
 import './style'
 import { mapHandCount, mapPlayersCount, mapTurns } from '../../../redux/game/selector'
 
-const DemoLog = () => {
+const GameLogs = () => {
     const turns = useSelector(mapTurns)
     const playersCount = useSelector(mapPlayersCount)
     const handCount = useSelector(mapHandCount)
@@ -16,7 +16,7 @@ const DemoLog = () => {
     return (
         <Flex
             {...{
-                className: 'DemoLog',
+                className: 'GameLogs',
                 flexDirection: 'column',
                 alignItems: 'normal',
                 gap: margin__xs,
@@ -57,7 +57,7 @@ const DemoLog = () => {
     )
 }
 
-// DemoLog.propTypes = {
+// GameLogs.propTypes = {
 //     turns: PropTypes.arrayOf(
 //         PropTypes.shape({
 //             dominoIndex: PropTypes.number,
@@ -82,4 +82,4 @@ const DemoLog = () => {
 //     handCount: PropTypes.number.isRequired,
 // }
 
-export default DemoLog
+export default GameLogs
