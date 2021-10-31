@@ -1,7 +1,6 @@
-import { GAME_DEFAULT } from './default'
-import { GAME_STORE } from './reducer'
+import { GAME_DEFAULT, UPDATE_GAME } from './default'
 
 export const updateGame = (payload = GAME_DEFAULT) => ({
-    type: GAME_STORE,
+    type: UPDATE_GAME,
     payload,
 })

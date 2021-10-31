@@ -1,6 +1,7 @@
 @import '../../../scss/constants/responsive';
 
 .GameLogs {
+    width: 400px;
     padding: $margin__md 0;
     overflow-y: scroll;
     mask-image: linear-gradient(

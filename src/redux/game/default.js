@@ -1,3 +1,5 @@
+export const UPDATE_GAME = 'updateGame'
+
 export const GAME_DEFAULT = {
     pool: new Set([]),
     board: [],

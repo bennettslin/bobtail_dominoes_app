@@ -8,14 +8,9 @@
     padding: $margin__md $margin__xl;
     background-color: $colour__board;
     overflow: hidden;
-
-    // TODO: Delete later.
-    & > * {
-        max-width: 33%;
-    }
 }
 
-.Demo__rightColumn {
+.Demo__column {
     // Allows logs to scroll.
-    height: 100%;
+    // height: 100%;
 }

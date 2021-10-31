@@ -2,14 +2,14 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import Flex from '../../Flex'
 import TurnLog from './TurnLog'
-import { mapHandCount, mapPlayersCount, mapTurns } from '../../../redux/game/selector'
+import { mapHandCount, mapPlayersCount, mapTurnsCount } from '../../../redux/game/selector'
 import { getArrayOfIndices } from '../../../utils/general'
 import { margin__xs } from '../../../constants/responsive'
 import './style'
 
 const GameLogs = () => {
     const
-        turns = useSelector(mapTurns),
+        turnsCount = useSelector(mapTurnsCount),
         playersCount = useSelector(mapPlayersCount),
         handCount = useSelector(mapHandCount)
 
@@ -23,7 +23,7 @@ const GameLogs = () => {
                 gap: margin__xs,
             }}
         >
-            {getArrayOfIndices(turns.length).map(turnIndex => (
+            {getArrayOfIndices(turnsCount).map(turnIndex => (
                 <Flex
                     {...{
                         key: turnIndex,

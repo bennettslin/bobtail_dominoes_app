@@ -5,6 +5,7 @@ import PlayerCard from './PlayerCard'
 import { margin__xs } from '../../../constants/responsive'
 import { mapPlayersCount } from '../../../redux/game/selector'
 import { getArrayOfIndices } from '../../../utils/general'
+import './style'
 
 const PlayerCards = () => {
     const playersCount = useSelector(mapPlayersCount)
@@ -16,6 +17,9 @@ const PlayerCards = () => {
                 flexDirection: 'column',
                 alignItems: 'normal',
                 gap: margin__xs,
+                style: {
+                    border: '1px solid lavender',
+                },
             }}
         >
             {getArrayOfIndices(playersCount).map(playerIndex => (

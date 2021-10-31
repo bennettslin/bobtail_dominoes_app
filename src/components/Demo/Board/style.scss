@@ -1,0 +1,9 @@
+.Board {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100vh;
+    height: 100vh;
+
+    transform: translateX(-50%);
+}

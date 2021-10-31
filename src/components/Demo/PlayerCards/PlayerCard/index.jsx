@@ -31,7 +31,7 @@ const PlayerCard = ({ playerIndex }) => {
             >
                 {Array.from(hand).map(dominoIndex => (
                     getDominoLabel(getDominoPitches(dominoIndex))
-                ))}
+                )).join(' ')}
             </Flex>
         </Flex>
     )

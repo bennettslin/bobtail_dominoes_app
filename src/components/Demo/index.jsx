@@ -14,7 +14,7 @@ import {
 } from '../../redux/game/selector'
 import { getBestPointedMovesForTurn } from '../../utils/music/game/ai'
 import { getInitialGame, registerTurn } from '../../utils/music/game/play'
-import { margin__lg, margin__sm } from '../../constants/responsive'
+import { margin__sm } from '../../constants/responsive'
 import './style'
 
 const Demo = () => {
@@ -72,35 +72,47 @@ const Demo = () => {
                 ),
                 flexGrow: 1,
                 justifyContent: 'space-between',
-                alignItems: 'start',
-                gap: margin__lg,
+                alignItems: 'normal',
             }}
         >
-            <Flex
-                {...{
-                    flexDirection: 'column',
-                    alignItems: 'start',
-                    gap: margin__lg,
-                }}
-            >
-                <HomeButton />
-                <PlayerCards />
-                <Pool />
-            </Flex>
             <Board />
             <Flex
                 {...{
-                    className: cx(
-                        'Demo__rightColumn',
-                    ),
+                    flexDirection: 'column',
+                    justifyContent: 'start',
+                    alignItems: 'start',
+                    gap: margin__sm,
+                    style: {
+                        border: '1px solid yellow',
+                    },
+                }}
+            >
+                <HomeButton />
+                <GameLogs />
+            </Flex>
+            <Flex
+                {...{
                     flexDirection: 'column',
                     justifyContent: 'start',
                     alignItems: 'end',
                     gap: margin__sm,
+                    style: {
+                        border: '1px solid blue',
+                    },
                 }}
             >
                 <Menu />
-                <GameLogs />
+                <Flex
+                    {...{
+                        flexDirection: 'column',
+                        justifyContent: 'space-between',
+                        flexGrow: 1,
+                        gap: margin__sm,
+                    }}
+                >
+                    <PlayerCards />
+                    <Pool />
+                </Flex>
             </Flex>
         </Flex>
     )

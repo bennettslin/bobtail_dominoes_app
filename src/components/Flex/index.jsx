@@ -11,6 +11,7 @@ const Flex = forwardRef(({
     alignItems,
     flexWrap,
     gap,
+    style,
     children,
     Tag = 'div',
     ...rest
@@ -29,6 +30,7 @@ const Flex = forwardRef(({
                 ...alignItems && { alignItems },
                 ...flexWrap && { flexWrap },
                 ...gap && { gap },
+                ...style,
             },
             ...rest,
         }}
@@ -45,6 +47,7 @@ Flex.propTypes = {
     alignItems: PropTypes.string,
     flexWrap: PropTypes.string,
     gap: PropTypes.number,
+    style: PropTypes.object,
     children: PropTypes.node.isRequired,
     Tag: PropTypes.any,
 }
