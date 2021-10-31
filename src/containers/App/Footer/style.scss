@@ -7,7 +7,9 @@
     width: 100%;
     height: $height__appFooter;
     background-color: $colour__background__dark;
+}
 
+.AppFooter__defaultPage {
     @media (min-width: $breakpoint__sm) {
         background-color: transparent;
     }
