@@ -3,7 +3,7 @@
 .Menu {
     gap: 0 $margin__sm;
 
-    @media (min-width: $breakpoint__sm) {
+    @media (min-width: $breakpoint__xs) {
         gap: 0 $margin__md;
     }
 }

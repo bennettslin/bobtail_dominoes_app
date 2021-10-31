@@ -10,12 +10,12 @@ $percentage__checkerSvg: 7%;
     width: $length__checkerButton__sm;
     height: $length__checkerButton__sm;
 
-    @media (min-width: $breakpoint__sm) {
+    @media (min-width: $breakpoint__xs) {
         width: $length__checkerButton__md;
         height: $length__checkerButton__md;
     }
 
-    @media (min-width: $breakpoint__md) {
+    @media (min-width: $breakpoint__sm) {
         width: $length__checkerButton__lg;
         height: $length__checkerButton__lg;
     }

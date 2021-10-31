@@ -2,7 +2,7 @@
     width: $length__icon__xs;
     height: $length__icon__xs;
 
-    @media (min-width: $breakpoint__md) {
+    @media (min-width: $breakpoint__sm) {
         width: $length__icon__sm;
         height: $length__icon__sm;
     }

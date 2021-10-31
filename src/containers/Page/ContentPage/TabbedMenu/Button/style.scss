@@ -1,11 +1,11 @@
 @import '../../../../../scss/constants/responsive';
 
 .TabbedMenuButton {
-    @media (min-width: $breakpoint__sm) {
+    @media (min-width: $breakpoint__xs) {
         font-size: 1.25em;
     }
 
-    @media (min-width: $breakpoint__md) {
+    @media (min-width: $breakpoint__sm) {
         font-size: 1.5em;
     }
 }

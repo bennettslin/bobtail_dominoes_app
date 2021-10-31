@@ -17,7 +17,7 @@
             $colour__home__primary
         );
 
-    @media (min-width: $breakpoint__sm) {
+    @media (min-width: $breakpoint__xs) {
         filter:
             drop-shadow(
                 0 0
@@ -26,7 +26,7 @@
             );
     }
 
-    @media (min-width: $breakpoint__md) {
+    @media (min-width: $breakpoint__sm) {
         filter:
             drop-shadow(
                 0 0
@@ -54,7 +54,7 @@
             $colour__home__secondary;
     }
 
-    @media (min-width: $breakpoint__sm) {
+    @media (min-width: $breakpoint__xs) {
         &:before {
             box-shadow:
                 0 0
@@ -64,7 +64,7 @@
         }
     }
 
-    @media (min-width: $breakpoint__md) {
+    @media (min-width: $breakpoint__sm) {
         &:before {
             box-shadow:
                 0 0

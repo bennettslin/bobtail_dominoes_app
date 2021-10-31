@@ -3,11 +3,11 @@
 .HomeButton {
     width: $margin__xl * 4;
 
-    @media (min-width: $breakpoint__sm) {
+    @media (min-width: $breakpoint__xs) {
         width: $margin__xl * 5;
     }
 
-    @media (min-width: $breakpoint__md) {
+    @media (min-width: $breakpoint__sm) {
         width: auto;
     }
 }

@@ -15,7 +15,7 @@ $borderRadius__inner: $borderRadius__lg - $length__base * 0.66;
     position: relative;
     width: 100%;
 
-    @media (min-width: $breakpoint__sm) {
+    @media (min-width: $breakpoint__xs) {
         padding:
             $length__frame + $length__inset__top
             $length__frame + $length__inset__side
@@ -40,7 +40,7 @@ $borderRadius__inner: $borderRadius__lg - $length__base * 0.66;
 }
 
 .StyledFrame__inset {
-    @media (min-width: $breakpoint__sm) {
+    @media (min-width: $breakpoint__xs) {
         position: absolute;
         top: 0;
         left: 0;

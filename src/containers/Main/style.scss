@@ -4,7 +4,7 @@
     flex-grow: 1;
     width: 100%;
 
-    @media (min-width: $breakpoint__sm) {
+    @media (min-width: $breakpoint__xs) {
         gap: $margin__xs;
     }
 }
@@ -12,11 +12,11 @@
 .Main__defaultPage {
     max-width: $width__lg;
 
-    @media (min-width: $breakpoint__sm) {
+    @media (min-width: $breakpoint__xs) {
         padding: $margin__xs;
     }
 
-    @media (min-width: $breakpoint__md) {
+    @media (min-width: $breakpoint__sm) {
         padding: $margin__sm;
     }
 }

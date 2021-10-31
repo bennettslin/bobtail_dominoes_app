@@ -4,11 +4,11 @@
     margin-top: $margin__xs;
     height: $margin__md * 2;
 
-    @media (min-width: $breakpoint__sm) {
+    @media (min-width: $breakpoint__xs) {
         height: $margin__lg * 2;
     }
 
-    @media (min-width: $breakpoint__md) {
+    @media (min-width: $breakpoint__sm) {
         height: $margin__lg * 3;
     }
 }

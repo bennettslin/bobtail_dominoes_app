@@ -9,7 +9,7 @@
     & {        
         display: none;
         
-        @media (min-width: $breakpoint__md) {
+        @media (min-width: $breakpoint__sm) {
             display: block;
         }
     }

@@ -4,11 +4,11 @@
     width: 100%;
     height: $margin__md;
 
-    @media (min-width: $breakpoint__sm) {
+    @media (min-width: $breakpoint__xs) {
         height: $margin__lg;
     }
 
-    @media (min-width: $breakpoint__md) {
+    @media (min-width: $breakpoint__sm) {
         height: $margin__xl;
     }
 }

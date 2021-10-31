@@ -10,7 +10,7 @@
 }
 
 .AppFooter__defaultPage {
-    @media (min-width: $breakpoint__sm) {
+    @media (min-width: $breakpoint__xs) {
         background-color: transparent;
     }
 }

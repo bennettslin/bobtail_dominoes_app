@@ -10,7 +10,7 @@
 
     background-color: $colour__background__dark;
 
-    @media (min-width: $breakpoint__md) {
+    @media (min-width: $breakpoint__sm) {
         flex-direction: row;
     }
 }
