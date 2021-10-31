@@ -46,3 +46,16 @@ export const getMapScore = playerIndex => createSelector(
     mapScores,
     scores => scores[playerIndex],
 )
+
+export const mapTurnsCount = createSelector(
+    mapTurns,
+    turns => {
+        console.log('selector', turns, turns.length)
+        return turns.length
+    },
+)
+
+export const getMapTurn = turnIndex => createSelector(
+    mapTurns,
+    turns => turns[turnIndex],
+)

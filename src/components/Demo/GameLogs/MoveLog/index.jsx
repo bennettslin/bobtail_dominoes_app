@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ChordAbbreviations from '../../../ChordAbbreviations'
+import Flex from '../../../Flex'
+import StyledShadow from '../../../Styled/Shadow'
 import { getChordAbbreviationsList, getDominoLabel } from '../../../../utils/music/chords/label'
 import { getDominoPitches } from '../../../../utils/music/game/dominoes'
 import { getPointsForPitchSets } from '../../../../utils/music/chords/points'
@@ -8,14 +10,21 @@ import { getPointsForPitchSets } from '../../../../utils/music/chords/points'
 const MoveLog = ({
     dominoIndex,
     pitchSets,
+
 }) => (
-    <li>
-        {`${getDominoLabel(getDominoPitches(dominoIndex))} builds `}
-        <ChordAbbreviations
-            {...{ abbreviations: getChordAbbreviationsList(pitchSets) }}
-        />
-        {` for ${getPointsForPitchSets(pitchSets)} points.`}
-    </li>
+    <Flex>
+        <StyledShadow>
+            <li>
+                {`${getDominoLabel(getDominoPitches(dominoIndex))} builds `}
+                <ChordAbbreviations
+                    {...{
+                        abbreviations: getChordAbbreviationsList(pitchSets),
+                    }}
+                />
+                {` for ${getPointsForPitchSets(pitchSets)} points.`}
+            </li>
+        </StyledShadow>
+    </Flex>
 )
 
 MoveLog.propTypes = {

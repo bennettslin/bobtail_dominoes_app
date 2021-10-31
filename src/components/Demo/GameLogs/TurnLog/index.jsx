@@ -1,15 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Flex from '../../../Flex'
 import StaticArray from '../../../StaticArray'
+import StyledShadow from '../../../Styled/Shadow'
+import MoveLog from '../MoveLog'
 import { getArrayOfIndices } from '../../../../utils/general'
 import { getDominoLabel } from '../../../../utils/music/chords/label'
 import { getDominoPitches } from '../../../../utils/music/game/dominoes'
 import { getCommaSeparatedList } from '../../../../utils/format'
 import { getPlayerIndex } from '../../../../utils/music/game/play/turns'
 import { getPointsForMoves } from '../../../../utils/music/chords/points'
+import { useSelector } from 'react-redux'
+import { getMapTurn } from '../../../../redux/game/selector'
 
-export const TurnLog = ({
-    turn,
+const TurnLog = ({
     turnIndex,
     playersCount,
     playerNames = getArrayOfIndices(playersCount).map(playerIndex => (
@@ -17,16 +21,20 @@ export const TurnLog = ({
     )),
     handCount,
 }) => {
-    const { moves, dominoIndex, discardedIndices, winnerIndices } = turn
+    const
+        turn = useSelector(getMapTurn(turnIndex)),
+        { moves, dominoIndex, discardedIndices, winnerIndices } = turn
+
+    let log
 
     if (Number.isFinite(dominoIndex)) {
-        return `${getDominoLabel(getDominoPitches(dominoIndex))} starts the board.`
+        log = `${getDominoLabel(getDominoPitches(dominoIndex))} starts the board.`
 
     } else if (winnerIndices) {
         const winnersList = winnerIndices.map(winnerIndex => (
             playerNames[winnerIndex]
         ))
-        return (
+        log = (
             <>
                 <StaticArray
                     {...{ list: getCommaSeparatedList(winnersList) }}
@@ -37,24 +45,32 @@ export const TurnLog = ({
 
     } else {
         const playerIndex = getPlayerIndex({ turnIndex, playersCount })
-        return moves ? (
+        log = moves ? (
             `${playerNames[playerIndex]} plays ${moves.length === handCount ? 'full hand ' : ''}for ${getPointsForMoves({ moves, handCount })} points.`
         ) : (
             `${playerNames[playerIndex]} ${discardedIndices.length ? 'exchanges on' : 'passes'} their turn.`
         )
     }
+
+    return (
+        <>
+            <Flex>
+                <StyledShadow>
+                    {log}
+                </StyledShadow>
+            </Flex>
+            {moves && (
+                <ul>
+                    {moves.map((move, index) => (
+                        <MoveLog {...{ key: index, ...move }} />
+                    ))}
+                </ul>
+            )}
+        </>
+    )
 }
 
 TurnLog.propTypes = {
-    turn: PropTypes.shape({
-        moves: PropTypes.arrayOf(
-            PropTypes.shape({
-                pitchSets: PropTypes.arrayOf(
-                    PropTypes.object.isRequired,
-                ).isRequired,
-            }).isRequired,
-        ),
-    }).isRequired,
     turnIndex: PropTypes.number.isRequired,
     playersCount: PropTypes.number.isRequired,
     playerNames: PropTypes.arrayOf(
@@ -63,3 +79,4 @@ TurnLog.propTypes = {
     handCount: PropTypes.number.isRequired,
 }
 
+export default TurnLog

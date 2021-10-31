@@ -1,15 +1,16 @@
 # Demo notes
 
 # TODO: demo page
+* Clone before dispatch
+    * Turn logs should get from turnsCount selector
 * Responsive
 * Need way to know difference between game playing and game ended
-* Demo page takes time to load
+* Look into web workers for JavaScript calculations
+    * Demo page takes time to load
 
 * Log component
-    * Takes up height of parent
-    * Keeps scrolling to bottom if more than height of parent and already scrolled to bottom
+    * Scrolls to very bottom if more than height of parent and already scrolled to bottom
     * Highlights most recent log
-* Demo (not game) reveals one domino at a time
 * Analytics call
 
 # TODO: next

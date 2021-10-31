@@ -8,8 +8,9 @@ import { getDominoLabel } from '../../../../utils/music/chords/label'
 import { margin__xs } from '../../../../constants/responsive'
 
 const PlayerCard = ({ playerIndex }) => {
-    const hand = useSelector(getMapHand(playerIndex))
-    const score = useSelector(getMapScore(playerIndex))
+    const
+        hand = useSelector(getMapHand(playerIndex)),
+        score = useSelector(getMapScore(playerIndex))
 
     return (
         <Flex

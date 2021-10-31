@@ -14,18 +14,19 @@ import {
 } from '../../redux/game/selector'
 import { getBestPointedMovesForTurn } from '../../utils/music/game/ai'
 import { getInitialGame, registerTurn } from '../../utils/music/game/play'
-import { margin__lg } from '../../constants/responsive'
+import { margin__lg, margin__sm } from '../../constants/responsive'
 import './style'
 
 const Demo = () => {
-    const dispatch = useDispatch()
-    const pool = useSelector(mapPool)
-    const board = useSelector(mapBoard)
-    const hands = useSelector(mapHands)
-    const scores = useSelector(mapScores)
-    const turns = useSelector(mapTurns)
-    const currentPlayerIndex = useSelector(mapCurrentPlayerIndex)
-    const isGamePlaying = useSelector(mapIsGamePlaying)
+    const
+        dispatch = useDispatch(),
+        pool = useSelector(mapPool),
+        board = useSelector(mapBoard),
+        hands = useSelector(mapHands),
+        scores = useSelector(mapScores),
+        turns = useSelector(mapTurns),
+        currentPlayerIndex = useSelector(mapCurrentPlayerIndex),
+        isGamePlaying = useSelector(mapIsGamePlaying)
 
     const registerHandTurn = () => {
         const hand = hands[currentPlayerIndex]
@@ -93,8 +94,9 @@ const Demo = () => {
                         'Demo__rightColumn',
                     ),
                     flexDirection: 'column',
+                    justifyContent: 'start',
                     alignItems: 'end',
-                    gap: margin__lg,
+                    gap: margin__sm,
                 }}
             >
                 <Menu />
