@@ -5,13 +5,13 @@ import { mapPool } from '../../../redux/game/selector'
 import { getDominoLabel } from '../../../utils/music/chords/label'
 import { getDominoPitches } from '../../../utils/music/game/dominoes'
 
-const PoolSection = () => {
+const Pool = () => {
     const pool = useSelector(mapPool)
 
     return (
         <Flex
             {...{
-                className: 'PoolSection',
+                className: 'Pool',
             }}
         >
             Pool:
@@ -22,4 +22,4 @@ const PoolSection = () => {
     )
 }
 
-export default PoolSection
+export default Pool

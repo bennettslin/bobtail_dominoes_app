@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import Flex from '../Flex'
 import GameLogs from './GameLogs'
 import PlayerCards from './PlayerCards'
-import PoolSection from './PoolSection'
+import Board from './Board'
+import Pool from './Pool'
 import { updateGame } from '../../redux/game/action'
 import {
     mapBoard, mapHands, mapIsGamePlaying, mapCurrentPlayerIndex, mapPool, mapScores, mapTurns,
@@ -81,8 +82,9 @@ const Demo = () => {
                 }}
             >
                 <PlayerCards />
-                <PoolSection />
+                <Pool />
             </Flex>
+            <Board />
             <GameLogs />
         </Flex>
     )

@@ -7,4 +7,9 @@
     padding: $margin__md;
     background-color: $colour__display;
     border-radius: $borderRadius__lg;
+
+    // TODO: Delete later.
+    & > * {
+        max-width: 33%;
+    }
 }
