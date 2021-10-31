@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import cx from 'classnames'
 import { useDispatch, useSelector } from 'react-redux'
+import HomeButton from '../../containers/Main/Header/HomeButton'
+import Menu from '../../containers/Main/Header/Menu'
 import Flex from '../Flex'
 import GameLogs from './GameLogs'
 import PlayerCards from './PlayerCards'
@@ -75,17 +77,29 @@ const Demo = () => {
         >
             <Flex
                 {...{
-                    flexGrow: 1,
                     flexDirection: 'column',
                     alignItems: 'start',
                     gap: margin__lg,
                 }}
             >
+                <HomeButton />
                 <PlayerCards />
                 <Pool />
             </Flex>
             <Board />
-            <GameLogs />
+            <Flex
+                {...{
+                    className: cx(
+                        'Demo__rightColumn',
+                    ),
+                    flexDirection: 'column',
+                    alignItems: 'end',
+                    gap: margin__lg,
+                }}
+            >
+                <Menu />
+                <GameLogs />
+            </Flex>
         </Flex>
     )
 }

@@ -10,7 +10,7 @@ export default {
         edge:       hsl(30, 13, 72),
         face:       hsl(30, 13, 82),
 
-        background: hsl(160, 30, 42),
+        background: hsl(160, 23, 47),
 
         edgeNew:    hsl(200, 35, 62),
         faceNew:    hsl(200, 35, 72),

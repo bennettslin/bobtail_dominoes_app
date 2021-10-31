@@ -18,7 +18,9 @@ const GameLogs = () => {
             {...{
                 className: 'GameLogs',
                 flexDirection: 'column',
+                justifyContent: 'normal',
                 alignItems: 'normal',
+                flexGrow: 1,
                 gap: margin__xs,
             }}
         >

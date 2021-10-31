@@ -5,18 +5,15 @@ import StyledFrameBody from '../../../components/Styled/Frame/Body'
 import HomeButton from './HomeButton'
 import Menu from './Menu'
 import './style'
-import { useSelector } from 'react-redux'
-import { mapIsFullPage } from '../../../redux/page/selector'
 
 const MainHeader = () => {
-    const isFullPage = useSelector(mapIsFullPage)
     const [isLoaded, setIsLoaded] = useState(false)
 
     const onLoad = () => {
         setIsLoaded(true)
     }
 
-    return !isFullPage && (
+    return (
         <StyledFrame
             {...{
                 className: cx(

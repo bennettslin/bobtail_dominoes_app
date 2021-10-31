@@ -4,12 +4,18 @@
 
 .Demo {
     width: 100%;
-    padding: $margin__md;
-    background-color: $colour__display;
-    border-radius: $borderRadius__lg;
+    height: 100vh;
+    padding: $margin__md $margin__xl;
+    background-color: $colour__board;
+    overflow: hidden;
 
     // TODO: Delete later.
     & > * {
         max-width: 33%;
     }
+}
+
+.Demo__rightColumn {
+    // Allows logs to scroll.
+    height: 100%;
 }

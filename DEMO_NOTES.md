@@ -1,9 +1,9 @@
-# Generator notes
+# Demo notes
 
 # TODO: demo page
-* Allow full page treatment
 * Responsive
 * Need way to know difference between game playing and game ended
+* Demo page takes time to load
 
 * Log component
     * Takes up height of parent
