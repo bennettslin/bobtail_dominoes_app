@@ -1,0 +1,37 @@
+import { GAME_STORE } from './reducer'
+
+export const mapPool = (
+    { [GAME_STORE]: { pool } },
+) => pool
+
+export const mapBoard = (
+    { [GAME_STORE]: { board } },
+) => board
+
+export const mapHands = (
+    { [GAME_STORE]: { hands } },
+) => hands
+
+export const mapScores = (
+    { [GAME_STORE]: { scores } },
+) => scores
+
+export const mapTurns = (
+    { [GAME_STORE]: { turns } },
+) => turns
+
+export const mapIsGamePlaying = (
+    { [GAME_STORE]: { isGamePlaying } },
+) => isGamePlaying
+
+export const mapPlayerIndex = (
+    { [GAME_STORE]: { playerIndex } },
+) => playerIndex
+
+export const mapPlayersCount = (
+    { [GAME_STORE]: { playersCount } },
+) => playersCount
+
+export const mapHandCount = (
+    { [GAME_STORE]: { handCount } },
+) => handCount

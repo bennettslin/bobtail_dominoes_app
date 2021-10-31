@@ -1,62 +1,62 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import cx from 'classnames'
+import { useDispatch, useSelector } from 'react-redux'
 import Flex from '../Flex'
-import StyledShadow from '../Styled/Shadow'
 import DemoLog from './Log'
+import { updateGame } from '../../redux/game/action'
+import {
+    mapBoard, mapHands, mapIsGamePlaying, mapPlayerIndex, mapPool, mapScores, mapTurns,
+} from '../../redux/game/selector'
 import { getBestPointedMovesForTurn } from '../../utils/music/game/ai'
 import { getInitialGame, registerTurn } from '../../utils/music/game/play'
 import { margin__lg } from '../../constants/responsive'
 import './style'
 
-const PLAYERS_COUNT = 4
-const HAND_COUNT = 3
-
-const {
-    pool, board, hands, scores, turns,
-} = getInitialGame({ playersCount: PLAYERS_COUNT, handCount: HAND_COUNT })
-
 const Demo = () => {
-    const [hasGameEnded, setHasGameEnded] = useState(false)
-    const [playerIndex, setPlayerIndex] = useState(0)
-    const hand = hands[playerIndex]
+    const dispatch = useDispatch()
+    const pool = useSelector(mapPool)
+    const board = useSelector(mapBoard)
+    const hands = useSelector(mapHands)
+    const scores = useSelector(mapScores)
+    const turns = useSelector(mapTurns)
+    const isGamePlaying = useSelector(mapIsGamePlaying)
+    const playerIndex = useSelector(mapPlayerIndex)
 
-    const playTurnForHand = () => {
-        const moves = getBestPointedMovesForTurn({ hand, board, limit: 3 })
+    const registerHandTurn = () => {
+        const hand = hands[playerIndex]
 
-        const { isGameEnd } = registerTurn({
+        dispatch(updateGame(registerTurn({
             pool,
             board,
             hands,
             scores,
             turns,
-            moves,
             playerIndex,
-            playersCount: PLAYERS_COUNT,
-            handCount: HAND_COUNT,
 
-            // These are ignored if there are moves.
+            // Discarded indices are registered only if there are no moves.
+            moves: getBestPointedMovesForTurn({ hand, board }),
             discardedIndices: Array.from(hand),
-        })
-
-        console.log('turns', turns)
-
-        if (isGameEnd) {
-            setHasGameEnded(true)
-        }
-
-        return setTimeout(() => {
-            setPlayerIndex((playerIndex + 1) % PLAYERS_COUNT)
-        }, 250)
+        })))
     }
 
     useEffect(() => {
-        if (!hasGameEnded) {
-            const timeoutIndex = playTurnForHand()
+        if (playerIndex > -1 && isGamePlaying) {
+            const turnTimeoutIndex = setTimeout(() => registerHandTurn(), 500)
 
-            // Safely unmount.
-            return () => clearTimeout(timeoutIndex)
+            // Return callback to clear timeout upon unmount.
+            return () => clearTimeout(turnTimeoutIndex)
         }
     }, [playerIndex])
+
+    useEffect(() => {
+        if (!isGamePlaying) {
+            // Start new game upon loading this page.
+            dispatch(updateGame(getInitialGame()))
+        } else {
+            // Continue game if navigating from a different page.
+            registerHandTurn()
+        }
+    }, [])
 
     return (
         <Flex
@@ -65,25 +65,12 @@ const Demo = () => {
                     'Demo',
                 ),
                 flexGrow: 1,
-                flexDirection: 'column',
                 justifyContent: 'space-between',
+                alignItems: 'start',
                 gap: margin__lg,
             }}
         >
-            <DemoLog
-                {...{
-                    turns,
-                    playersCount: PLAYERS_COUNT,
-                    handCount: HAND_COUNT,
-                }}
-            />
-            <Flex>
-                <StyledShadow>
-                    {scores.map((score, playerIndex) => (
-                        `Player ${playerIndex + 1}: ${score} pts`
-                    )).join(', ')}
-                </StyledShadow>
-            </Flex>
+            <DemoLog />
         </Flex>
     )
 }

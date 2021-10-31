@@ -1,4 +1,5 @@
 import { getPoints, getPointsForMoves, getPointsForPitchSets } from '.'
+import { HAND_COUNT } from '../../../../constants/music/play'
 
 describe('getPoints', () => {
     test.each([
@@ -38,12 +39,14 @@ describe('getPointsForMoves', () => {
         [undefined, 0],
         [{}, 0],
         [{
+            handCount: HAND_COUNT,
             moves: [
                 { pitchSets: [new Set([0, 3, 7]), new Set([2, 4, 7, 11])] },
                 { pitchSets: [new Set([7, 10, 2])] },
             ],
         }, 10], // No bingo.
         [{
+            handCount: HAND_COUNT,
             moves: [
                 { pitchSets: [new Set([0, 3, 7]), new Set([2, 4, 7, 11])] },
                 { pitchSets: [new Set([7, 10, 2])] },

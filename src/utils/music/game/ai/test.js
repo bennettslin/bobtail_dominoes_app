@@ -29,21 +29,21 @@ describe('getValidPointedMoves', () => {
 
     it('returns array of single valid move', () => {
         expect(getValidPointedMoves({
-            dominoIndex: 20, board: [MOCK_BOARD[0]], limit: 2,
-        })).toStrictEqual([
-            { dominoIndex: 20, pitchSets: [new Set([4, 1, 10])], placement: [[0, 1], [-1, 2]], points: 3 }, { dominoIndex: 20, pitchSets: [new Set([1, 10, 4])], placement: [[1, -2], [1, -1]], points: 3 },
-        ])
-    })
-
-    it('returns array of single valid move with different limit', () => {
-        expect(getValidPointedMoves({
             dominoIndex: 20, board: [MOCK_BOARD[0]], limit: 3,
         })).toStrictEqual([
             { dominoIndex: 20, pitchSets: [new Set([4, 1, 10])], placement: [[0, 1], [-1, 2]], points: 3 }, { dominoIndex: 20, pitchSets: [new Set([1, 10, 4])], placement: [[1, -2], [1, -1]], points: 3 }, { dominoIndex: 20, pitchSets: [new Set([4, 1, 10])], placement: [[1, 1], [1, 2]], points: 3 },
         ])
     })
 
-    it('returns array of multiple valid moves', () => {
+    it('returns array of single valid move with custom limit', () => {
+        expect(getValidPointedMoves({
+            dominoIndex: 20, board: [MOCK_BOARD[0]], limit: 2,
+        })).toStrictEqual([
+            { dominoIndex: 20, pitchSets: [new Set([4, 1, 10])], placement: [[0, 1], [-1, 2]], points: 3 }, { dominoIndex: 20, pitchSets: [new Set([1, 10, 4])], placement: [[1, -2], [1, -1]], points: 3 },
+        ])
+    })
+
+    it('returns array of multiple valid moves with custom limit', () => {
         expect(getValidPointedMoves({
             dominoIndex: 20, board: MOCK_BOARD, limit: 2,
         })).toStrictEqual([
@@ -71,7 +71,6 @@ describe('getBestPointedMovesForTurn', () => {
         expect(getBestPointedMovesForTurn({
             hand: new Set([1, 2, 10]),
             board: MOCK_BOARD,
-            limit: 3,
         })).toStrictEqual([
             {
                 dominoIndex: 1,
@@ -95,7 +94,6 @@ describe('getBestPointedMovesForTurn', () => {
         expect(getBestPointedMovesForTurn({
             hand: new Set([18, 20, 38]),
             board: MOCK_BOARD,
-            limit: 3,
         })).toStrictEqual([
             {
                 dominoIndex: 18,

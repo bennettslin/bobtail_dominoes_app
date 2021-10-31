@@ -8,6 +8,7 @@ export const NOT_FOUND_PAGE = '404'
 export const ABOUT_PAGE = 'about'
 export const RULES_PAGE = 'rules'
 export const CHORDS_PAGE = 'chords'
+export const DEMO_PAGE = 'demo'
 export const PUZZLES_PAGE = 'puzzles'
 export const LINKS_PAGE = 'links'
 

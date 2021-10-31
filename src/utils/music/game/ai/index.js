@@ -82,7 +82,7 @@ const recurseThroughValidPointedMoves = ({
     )
 )
 
-export const getBestPointedMovesForTurn = ({ hand, board, limit }) => {
+export const getBestPointedMovesForTurn = ({ hand, board, limit = 3 }) => {
     if (!hand.size) {
         return null
     }

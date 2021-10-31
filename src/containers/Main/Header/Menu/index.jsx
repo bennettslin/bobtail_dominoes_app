@@ -6,6 +6,7 @@ import {
     ABOUT_PAGE,
     RULES_PAGE,
     CHORDS_PAGE,
+    DEMO_PAGE,
     // PUZZLES_PAGE,
 } from '../../../../constants/pages'
 import './style'
@@ -27,6 +28,9 @@ const Menu = () => (
         </MenuButton>
         <MenuButton {...{ topLevelPage: CHORDS_PAGE }}>
             Chords
+        </MenuButton>
+        <MenuButton {...{ topLevelPage: DEMO_PAGE }}>
+            Demo
         </MenuButton>
         {/* <MenuButton {...{ topLevelPage: PUZZLES_PAGE }}>
             Puzzles

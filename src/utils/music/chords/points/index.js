@@ -1,5 +1,5 @@
 import { getIsValidChord } from '../valid'
-import { BINGO_POINTS, HAND_COUNT } from '../../../../constants/music/play'
+import { BINGO_POINTS } from '../../../../constants/music/play'
 
 export const getPoints = pitchSet => (
     getIsValidChord(pitchSet) ? pitchSet.size : 0
@@ -12,7 +12,7 @@ export const getPointsForPitchSets = (pitchSets = []) => (
 )
 
 export const getPointsForMoves = ({
-    handCount = HAND_COUNT,
+    handCount,
     moves = [],
 } = {}) => (
     moves.reduce((sum, { pitchSets }) => (
