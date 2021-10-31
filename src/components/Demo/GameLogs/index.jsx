@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 import Flex from '../../Flex'
 import TurnLog from './TurnLog'
@@ -8,13 +8,32 @@ import './style'
 
 const GameLogs = () => {
     const
+        gameLogsRef = useRef(),
         turnsCount = useSelector(mapTurnsCount),
         playersCount = useSelector(mapPlayersCount),
-        handCount = useSelector(mapHandCount)
+        handCount = useSelector(mapHandCount),
+        [scrollHeight, setScrollHeight] = useState(0)
+
+    useEffect(() => {
+        const {
+            scrollTop,
+            clientHeight,
+            scrollHeight: nextScrollHeight,
+        } = gameLogsRef?.current
+
+        // If we're scrolled to the bottom for the current scroll height...
+        if (scrollTop + clientHeight === scrollHeight) {
+            // Scroll to the bottom for the next scroll height.
+            gameLogsRef.current.scrollTop = nextScrollHeight - clientHeight
+        }
+
+        setScrollHeight(nextScrollHeight)
+    }, [turnsCount])
 
     return (
         <Flex
             {...{
+                ref: gameLogsRef,
                 className: 'GameLogs',
                 flexDirection: 'column',
                 justifyContent: 'start',

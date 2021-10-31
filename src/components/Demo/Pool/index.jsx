@@ -13,6 +13,7 @@ const Pool = () => {
         <Flex
             {...{
                 className: 'Pool',
+                flexGrow: 1,
                 style: {
                     border: '1px solid pink',
                 },

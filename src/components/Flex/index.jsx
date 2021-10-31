@@ -71,7 +71,7 @@ Flex.propTypes = {
         }),
     ]),
     style: PropTypes.object,
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node,
     Tag: PropTypes.any,
 }
 

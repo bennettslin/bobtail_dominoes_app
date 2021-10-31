@@ -1,13 +1,11 @@
 # Demo notes
 
 # TODO: demo page
-* Need way to know difference between game playing and game ended
 * Look into web workers for JavaScript calculations
     * Demo page takes time to load
 * Responsive
 
 * Log component
-    * Scrolls to very bottom if more than height of parent and already scrolled to bottom
     * Highlights most recent log
 * Analytics call
 

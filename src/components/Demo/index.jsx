@@ -54,12 +54,9 @@ const Demo = () => {
     }, [currentPlayerIndex])
 
     useEffect(() => {
-        if (!isGamePlaying) {
+        if (currentPlayerIndex === -1 && !isGamePlaying) {
             // Start new game upon loading this page.
             dispatch(updateGame(getInitialGame()))
-        } else {
-            // Continue game if navigating from a different page.
-            registerHandTurn()
         }
     }, [])
 
@@ -103,6 +100,7 @@ const Demo = () => {
                     {...{
                         flexDirection: 'column',
                         justifyContent: 'space-between',
+                        gap: 'md',
                         style: {
                             border: '1px solid blue',
                         },
