@@ -15,6 +15,7 @@ const Board = () => {
                 className: 'Board',
                 style: {
                     border: '1px solid orange',
+                    backgroundColor: 'hsla(30, 50%, 50%, 0.1)',
                 },
             }}
         >

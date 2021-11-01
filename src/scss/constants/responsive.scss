@@ -18,7 +18,7 @@ $margin__md: 24px;
 $margin__lg: 32px;
 $margin__xl: 40px;
 
-$breakpoint__xs: 481px;
-$breakpoint__sm: 769px;
-$breakpoint__md: 1025px;
-$breakpoint__lg: 1367px;
+$breakpoint__xs: 480px;
+$breakpoint__sm: 769px; // iPad narrow length.
+$breakpoint__md: 1024px; // iPad wide length.
+$breakpoint__lg: 1366px;

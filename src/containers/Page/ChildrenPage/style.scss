@@ -1,14 +1,21 @@
+@import '../../../scss/constants/colours';
 @import '../../../scss/constants/responsive';
 
 .ChildrenPage {
     width: 100%;
     padding: $margin__xs;
-
+    
     @media (min-width: $breakpoint__xs) {
         padding: $margin__sm;
     }
-
+    
     @media (min-width: $breakpoint__sm) {
         padding: $margin__md;
     }
+}
+
+.ChildrenPage__fullPage {
+    width: 100vw;
+    height: 100vh;
+    background-color: $colour__board;
 }

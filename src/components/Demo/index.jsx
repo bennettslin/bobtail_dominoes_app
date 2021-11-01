@@ -86,9 +86,17 @@ const Demo = () => {
             </Flex>
             <Flex
                 {...{
+                    className: cx(
+                        'Demo__bottomRow',
+                    ),
                     justifyContent: 'spaceBetween',
-                    alignItems: 'normal',
-                    flexGrow: 1,
+                    alignItems: { md: 'normal' },
+                    flexDirection: {
+                        default: 'column',
+                        sm: 'row',
+                        md: 'column',
+                        lg: 'row',
+                    },
                     style: {
                         border: '1px solid brown',
                         overflow: 'hidden',
@@ -98,7 +106,11 @@ const Demo = () => {
                 <GameLogs />
                 <Flex
                     {...{
-                        flexDirection: 'column',
+                        flexDirection: {
+                            default: 'columnReverse',
+                            md: 'row',
+                            lg: 'columnReverse',
+                        },
                         justifyContent: 'spaceBetween',
                         gap: 'md',
                         style: {
@@ -106,8 +118,8 @@ const Demo = () => {
                         },
                     }}
                 >
-                    <PlayerCards />
                     <Pool />
+                    <PlayerCards />
                 </Flex>
             </Flex>
         </Flex>

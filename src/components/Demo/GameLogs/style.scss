@@ -1,7 +1,8 @@
 @import '../../../scss/constants/responsive';
 
 .GameLogs {
-    width: 400px;
+    width: 320px;
+    height: 100%; // Needed for auto scroll.
     padding: $margin__md 0;
 
     overflow-y: scroll;
@@ -9,10 +10,12 @@
     font-size: 0.75em;
 
     @media (min-width: $breakpoint__md) {
+        width: 360px;
         font-size: 0.85em;
     }
 
     @media (min-width: $breakpoint__lg) {
+        width: 400px;
         font-size: 1em;
     }
 

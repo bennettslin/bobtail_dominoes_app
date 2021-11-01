@@ -1,6 +1,7 @@
 # Demo notes
 
 # TODO: demo page
+* Move demo menu to regular main menu?
 * Look into web workers for JavaScript calculations
     * Demo page takes time to load
 * Responsive

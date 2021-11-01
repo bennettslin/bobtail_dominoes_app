@@ -34,4 +34,20 @@
 
         &.xs__columnGap__md { gap: $margin__md; }
     }
+
+    @media (min-width: $breakpoint__sm) {
+        .sm__fD__row { flex-direction: row; }
+    }
+
+    @media (min-width: $breakpoint__md) {
+        .md__fD__row { flex-direction: row; }
+        .md__fD__column { flex-direction: column; }
+        .md__aI__normal {align-items: normal; }
+    }
+
+    @media (min-width: $breakpoint__lg) {
+        .lg__fD__row { flex-direction: row; }
+        .lg__fD__column { flex-direction: column; }
+        .lg__fD__columnReverse { flex-direction: column-reverse; }
+    }
 }

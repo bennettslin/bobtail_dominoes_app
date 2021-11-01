@@ -13,7 +13,7 @@ const PlayerCards = () => {
         <Flex
             {...{
                 className: 'PlayerCards',
-                flexDirection: 'column',
+                flexDirection: { lg: 'column' },
                 alignItems: 'normal',
                 gap: 'xs',
                 style: {
