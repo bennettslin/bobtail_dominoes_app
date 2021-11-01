@@ -2,9 +2,13 @@
 
 # TODO: demo page
 * Move demo menu to regular main menu?
+* Basic responsive layout
+    * Experiment with combining height and width media queries
+    * Stick with regular CSS *first*
+    * Then add to Flex component
+
 * Look into web workers for JavaScript calculations
     * Demo page takes time to load
-* Responsive
 
 * Log component
     * Highlights most recent log

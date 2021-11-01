@@ -26,13 +26,13 @@
     &.gap__sm { gap: $margin__sm; }
     &.gap__md { gap: $margin__md; }
 
-    &.columnGap__sm { gap: $margin__sm; }
+    &.columnGap__sm { column-gap: $margin__sm; }
 
     @media (min-width: $breakpoint__xs) {
         &.xs__gap__xs { gap: $margin__xs; }
         &.xs__gap__sm { gap: $margin__sm; }
 
-        &.xs__columnGap__md { gap: $margin__md; }
+        &.xs__columnGap__md { column-gap: $margin__md; }
     }
 
     @media (min-width: $breakpoint__sm) {

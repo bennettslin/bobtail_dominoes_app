@@ -76,6 +76,7 @@ const Demo = () => {
             <Flex
                 {...{
                     justifyContent: 'spaceBetween',
+                    gap: 'md',
                     style: {
                         border: '1px solid cyan',
                     },
