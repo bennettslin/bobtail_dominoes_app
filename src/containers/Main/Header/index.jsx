@@ -27,7 +27,7 @@ const MainHeader = () => {
                     className: cx(
                         'MainHeader',
                     ),
-                    justifyContent: 'space-between',
+                    justifyContent: 'spaceBetween',
                     gap: 'xs',
                 }}
             >

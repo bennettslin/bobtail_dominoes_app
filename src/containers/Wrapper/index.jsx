@@ -12,7 +12,7 @@ const Wrapper = ({ children }) => (
                 'Wrapper',
             ),
             flexGrow: 1,
-            flexDirection: 'column-reverse',
+            flexDirection: 'columnReverse',
         }}
     >
         <Main>{children}</Main>

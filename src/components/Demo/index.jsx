@@ -68,14 +68,14 @@ const Demo = () => {
                 ),
                 flexGrow: 1,
                 flexDirection: 'column',
-                justifyContent: 'space-between',
+                justifyContent: 'spaceBetween',
                 alignItems: 'normal',
             }}
         >
             <Board />
             <Flex
                 {...{
-                    justifyContent: 'space-between',
+                    justifyContent: 'spaceBetween',
                     style: {
                         border: '1px solid cyan',
                     },
@@ -86,7 +86,7 @@ const Demo = () => {
             </Flex>
             <Flex
                 {...{
-                    justifyContent: 'space-between',
+                    justifyContent: 'spaceBetween',
                     alignItems: 'normal',
                     flexGrow: 1,
                     style: {
@@ -99,7 +99,7 @@ const Demo = () => {
                 <Flex
                     {...{
                         flexDirection: 'column',
-                        justifyContent: 'space-between',
+                        justifyContent: 'spaceBetween',
                         gap: 'md',
                         style: {
                             border: '1px solid blue',

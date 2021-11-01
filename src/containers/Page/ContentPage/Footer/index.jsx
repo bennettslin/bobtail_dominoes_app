@@ -12,7 +12,7 @@ const PageFooter = () => (
                 'PageFooter',
             ),
             flexDirection: 'column',
-            justifyContent: 'space-between',
+            justifyContent: 'spaceBetween',
             gap: 'md',
         }}
     >

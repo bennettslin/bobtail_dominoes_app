@@ -28,7 +28,7 @@ const Component = () => {
                     className: cx(
                         'HomePage',
                     ),
-                    flexDirection: 'column-reverse',
+                    flexDirection: 'columnReverse',
                     flexGrow: 1,
                 }}
             >

@@ -36,7 +36,7 @@ const MainFooter = ({ didMount }) => {
                         className: cx(
                             'MainFooter',
                         ),
-                        justifyContent: 'space-between',
+                        justifyContent: 'spaceBetween',
                         gap: 'sm',
                     }}
                 >

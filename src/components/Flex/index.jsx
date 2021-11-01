@@ -12,7 +12,6 @@ const Flex = forwardRef(({
     flexWrap,
     gap,
     columnGap,
-    style,
     children,
     Tag = 'div',
     ...rest
@@ -22,28 +21,34 @@ const Flex = forwardRef(({
             ref,
             className: cx(
                 'Flex',
-                gap && [
-                    gap === 'xxs' && 'gap__xxs',
-                    gap === 'xs' && 'gap__xs',
-                    gap === 'sm' && 'gap__sm',
-                    gap === 'md' && 'gap__md',
-                    gap?.xs === 'xs' && 'xs__gap__xs',
-                    gap?.xs === 'sm' && 'xs__gap__sm',
-                ],
-                columnGap && [
-                    columnGap?.default === 'sm' && 'columnGap__sm',
-                    columnGap?.xs === 'md' && 'xs__columnGap__md',
-                ],
+
+                flexGrow === 1 && 'fG__1',
+
+                flexDirection === 'column' && 'fD__column',
+                flexDirection === 'columnReverse' && 'fD__columnReverse',
+
+                justifyContent === 'normal' && 'jC__normal',
+                justifyContent === 'spaceBetween' && 'jC__spaceBetween',
+                justifyContent === 'spaceEvenly' && 'jC__spaceEvenly',
+                justifyContent === 'start' && 'jC__start',
+
+                alignItems === 'normal' && 'aI__normal',
+                alignItems === 'start' && 'aI__start',
+
+                flexWrap === 'wrap' && 'fW__wrap',
+
+                gap === 'xxs' && 'gap__xxs',
+                gap === 'xs' && 'gap__xs',
+                gap === 'sm' && 'gap__sm',
+                gap === 'md' && 'gap__md',
+                gap?.xs === 'xs' && 'xs__gap__xs',
+                gap?.xs === 'sm' && 'xs__gap__sm',
+
+                columnGap?.default === 'sm' && 'columnGap__sm',
+                columnGap?.xs === 'md' && 'xs__columnGap__md',
+
                 className,
             ),
-            style: {
-                ...flexGrow && { flexGrow },
-                ...flexDirection && { flexDirection },
-                ...justifyContent && { justifyContent },
-                ...alignItems && { alignItems },
-                ...flexWrap && { flexWrap },
-                ...style,
-            },
             ...rest,
         }}
     >
@@ -53,11 +58,13 @@ const Flex = forwardRef(({
 
 Flex.propTypes = {
     className: PropTypes.string,
-    flexGrow: PropTypes.number,
-    flexDirection: PropTypes.string,
-    justifyContent: PropTypes.string,
-    alignItems: PropTypes.string,
-    flexWrap: PropTypes.string,
+    flexGrow: PropTypes.oneOf([1]),
+    flexDirection: PropTypes.oneOf(['column', 'columnReverse']),
+    justifyContent: PropTypes.oneOf([
+        'normal', 'spaceBetween', 'spaceEvenly', 'start',
+    ]),
+    alignItems: PropTypes.oneOf(['normal', 'start']),
+    flexWrap: PropTypes.oneOf(['wrap']),
     gap: PropTypes.oneOfType([
         PropTypes.oneOf(['xxs', 'xs', 'sm', 'md']),
         PropTypes.shape({
@@ -70,7 +77,6 @@ Flex.propTypes = {
             xs: PropTypes.oneOf(['md']),
         }),
     ]),
-    style: PropTypes.object,
     children: PropTypes.node,
     Tag: PropTypes.any,
 }

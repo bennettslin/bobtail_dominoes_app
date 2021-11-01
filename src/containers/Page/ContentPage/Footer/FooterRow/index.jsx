@@ -11,7 +11,7 @@ const PageFooterRow = ({ leftChild, rightChild, isBottomRow }) => (
                 'PageFooterRow',
                 isBottomRow && 'PageFooterRow__bottom',
             ),
-            justifyContent: 'space-between',
+            justifyContent: 'spaceBetween',
         }}
     >
         <Flex>

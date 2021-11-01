@@ -6,6 +6,21 @@
     justify-content: center;
     align-items: center;
 
+    &.fG__1 { flex-grow: 1; }
+
+    &.fD__column { flex-direction: column; }
+    &.fD__columnReverse { flex-direction: column-reverse; }
+
+    &.jC__normal { justify-content: normal; }
+    &.jC__spaceBetween { justify-content: space-between; }
+    &.jC__spaceEvenly { justify-content: space-evenly; }
+    &.jC__start { justify-content: start; }
+
+    &.aI__normal { align-items: normal; }
+    &.aI__start { align-items: start; }
+
+    &.fW__wrap { flex-wrap: wrap; }
+
     &.gap__xxs { gap: $margin__xs * 0.5; }
     &.gap__xs { gap: $margin__xs; }
     &.gap__sm { gap: $margin__sm; }

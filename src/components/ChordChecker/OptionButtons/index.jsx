@@ -11,7 +11,7 @@ const OptionButtons = () => (
         isRightPlatform
         {...{
             flexDirection: 'column',
-            justifyContent: 'space-evenly',
+            justifyContent: 'spaceEvenly',
             alignItems: 'normal',
             gap: 'md',
         }}
