@@ -9,6 +9,7 @@ import {
     DEMO_PAGE,
     // PUZZLES_PAGE,
 } from '../../../../constants/pages'
+import './style'
 
 const Menu = () => (
     <Flex

@@ -1,0 +1,29 @@
+@import '../../../../scss/constants/responsive';
+
+.Menu {
+    margin: $margin__xs;
+
+    @media (min-width: $breakpoint__xs) and (min-height: $breakpoint__xs) {
+        margin: $margin__sm;
+    }
+
+    @media (min-width: $breakpoint__sm) {
+        margin: $margin__sm;
+    }
+
+    @media (min-width: $breakpoint__sm) and (min-height: $breakpoint__sm) {
+        margin: $margin__md;
+    }
+
+    @media (min-width: $breakpoint__md) {
+        margin: $margin__md;
+    }
+
+    @media (min-width: $breakpoint__md) and (min-height: $breakpoint__md) {
+        margin: $margin__lg;
+    }
+
+    @media (min-width: $breakpoint__lg) {
+        margin: $margin__lg;
+    }
+}

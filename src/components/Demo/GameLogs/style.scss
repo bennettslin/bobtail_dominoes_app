@@ -1,22 +1,37 @@
 @import '../../../scss/constants/responsive';
 
 .GameLogs {
-    width: 320px;
     height: 100%; // Needed for auto scroll.
     padding: $margin__md 0;
 
     overflow-y: scroll;
 
-    font-size: 0.75em;
+    @media (min-width: $breakpoint__xs) {
+        display: none;
+    }
+
+    @media (min-width: $breakpoint__xs) and (min-height: $breakpoint__sm) {
+        display: flex;
+    }
+
+    @media (min-width: $breakpoint__sm) {
+        display: none;
+    }
+
+    @media (min-width: $breakpoint__sm) and (min-height: $breakpoint__md) {
+        display: flex;
+    }
 
     @media (min-width: $breakpoint__md) {
-        width: 360px;
-        font-size: 0.85em;
+        display: none;
+    }
+
+    @media (min-width: $breakpoint__md) and (min-height: $breakpoint__lg) {
+        display: flex;
     }
 
     @media (min-width: $breakpoint__lg) {
-        width: 400px;
-        font-size: 1em;
+        display: flex;
     }
 
     mask-image: linear-gradient(

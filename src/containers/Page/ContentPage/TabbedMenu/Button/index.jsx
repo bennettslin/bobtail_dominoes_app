@@ -6,7 +6,6 @@ import StyledButtonText from '../../../../../components/Styled/ButtonText'
 import StyledTabButton from '../../../../../components/Styled/TabButton'
 import { getMapIsSelectedOrTabbedPagePath } from '../../../../../redux/page/selector'
 import { getPagePathFromConfig } from '../../../../../utils/pages/config'
-import './style'
 
 const TabbedMenuButton = ({
     id,
@@ -24,6 +23,7 @@ const TabbedMenuButton = ({
                 className: cx(
                     'TabbedMenuButton',
                     'font__button',
+                    'fontSize__md',
                 ),
                 pagePath,
                 isSelected,

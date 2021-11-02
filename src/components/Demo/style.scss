@@ -5,10 +5,84 @@
     height: 100%;
 }
 
-.Demo__bottomRow {
-    max-height: 30%;
+.Demo__content {
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: normal;
+    overflow: hidden;
+
+    @media (min-width: $breakpoint__xs) {
+        flex-direction: row-reverse;
+    }
+
+    @media (min-width: $breakpoint__xs) and (min-height: $breakpoint__xs) {
+        flex-direction: column;
+    }
+
+    @media (min-width: $breakpoint__sm) {
+        flex-direction: row-reverse;
+    }
+
+    @media (min-width: $breakpoint__sm) and (min-height: $breakpoint__sm) {
+        flex-direction: column;
+    }
 
     @media (min-width: $breakpoint__md) {
-        max-height: 100%;
+        flex-direction: row-reverse;
     }
+
+    @media (min-width: $breakpoint__md) and (min-height: $breakpoint__md) {
+        flex-direction: column;
+    }
+
+    @media (min-width: $breakpoint__lg) {
+        flex-direction: row-reverse;
+    }
+}
+
+.Demo__info {
+    flex-grow: 1;
+    overflow: hidden;
+
+    @media (min-width: $breakpoint__xs) and (min-height: $breakpoint__xs) {
+        display: none;
+    }
+
+    @media (min-width: $breakpoint__xs) and (min-height: $breakpoint__sm) {
+        display: flex;
+    }
+
+    @media (min-width: $breakpoint__sm) {
+        display: flex;
+    }
+
+    @media (min-width: $breakpoint__sm) and (min-height: $breakpoint__sm) {
+        display: none;
+    }
+
+    @media (min-width: $breakpoint__sm) and (min-height: $breakpoint__md) {
+        display: flex;
+    }
+
+    @media (min-width: $breakpoint__md) {
+        display: flex;
+    }
+
+    @media (min-width: $breakpoint__md) and (min-height: $breakpoint__md) {
+        display: none;
+    }
+
+    @media (min-width: $breakpoint__md) and (min-height: $breakpoint__lg) {
+        display: flex;
+    }
+
+    @media (min-width: $breakpoint__lg) {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.Demo__dominoes {
+    height: 100%;
+    flex-direction: column;
 }

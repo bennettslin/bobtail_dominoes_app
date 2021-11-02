@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Flex from '../../Flex'
 import TurnLog from './TurnLog'
@@ -34,13 +35,16 @@ const GameLogs = () => {
         <Flex
             {...{
                 ref: gameLogsRef,
-                className: 'GameLogs',
+                className: cx(
+                    'GameLogs',
+                    'fontSize__sm',
+                ),
                 flexDirection: 'column',
                 justifyContent: 'start',
                 alignItems: 'start',
                 gap: 'xs',
                 style: {
-                    border: '1px solid yellow',
+                    backgroundColor: '#ddb',
                 },
             }}
         >

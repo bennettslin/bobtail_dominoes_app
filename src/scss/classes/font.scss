@@ -36,26 +36,74 @@
     letter-spacing: 0.05em;
 }
 
+.fontSize__sm {
+    font-size: 0.5em;
+
+    @media (min-width: $breakpoint__xs) and (min-height: $breakpoint__xs) {
+        font-size: 0.66;
+    }
+
+    @media (min-width: $breakpoint__sm) {
+        font-size: 0.66em;
+    }
+
+    @media (min-width: $breakpoint__sm) and (min-height: $breakpoint__sm) {
+        font-size: 0.83em;
+    }
+
+    @media (min-width: $breakpoint__md) {
+        font-size: 0.83em;
+    }
+
+    @media (min-width: $breakpoint__md) and (min-height: $breakpoint__md) {
+        font-size: 1;
+    }
+}
+
 .fontSize__md {
     line-height: 1.5em;
 
-    @media (min-width: $breakpoint__xs) {
-        font-size: 1.25em;
+    @media (min-width: $breakpoint__xs) and (min-height: $breakpoint__xs) {
+        font-size: 1.16em;
+    }
+
+    @media (min-width: $breakpoint__sm) {
+        font-size: 1.16em;
+    }
+
+    @media (min-width: $breakpoint__sm) and (min-height: $breakpoint__sm) {
+        font-size: 1.33em;
+    }
+
+    @media (min-width: $breakpoint__md) {
+        font-size: 1.33em;
+    }
+
+    @media (min-width: $breakpoint__md) and (min-height: $breakpoint__md) {
+        font-size: 1.5;
+    }
+}
+
+.fontSize__lg {
+    font-size: 1.25em;
+
+    @media (min-width: $breakpoint__xs) and (min-height: $breakpoint__xs) {
+        font-size: 1.5em;
     }
 
     @media (min-width: $breakpoint__sm) {
         font-size: 1.5em;
     }
-}
 
-.fontSize__lg {
-    font-size: 1.33em;
-
-    @media (min-width: $breakpoint__xs) {
-        font-size: 1.66em;
+    @media (min-width: $breakpoint__sm) and (min-height: $breakpoint__sm) {
+        font-size: 1.75em;
     }
 
-    @media (min-width: $breakpoint__sm) {
+    @media (min-width: $breakpoint__md) {
+        font-size: 1.75em;
+    }
+
+    @media (min-width: $breakpoint__md) and (min-height: $breakpoint__md) {
         font-size: 2em;
     }
 }

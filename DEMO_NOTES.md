@@ -1,11 +1,14 @@
 # Demo notes
 
 # TODO: demo page
-* Move demo menu to regular main menu?
-* Basic responsive layout
-    * Experiment with combining height and width media queries
-    * Stick with regular CSS *first*
-    * Then add to Flex component
+* Styled button padding
+
+* Max widths for logs, players, and pool
+* Domino component
+* Logs
+* Player cards
+    * In flex containers
+        * Min width
 
 * Look into web workers for JavaScript calculations
     * Demo page takes time to load

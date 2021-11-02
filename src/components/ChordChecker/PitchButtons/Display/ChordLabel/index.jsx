@@ -5,7 +5,6 @@ import ChordAbbreviations from '../../../../ChordAbbreviations'
 import StyledChordLabel from '../../../../Styled/ChordLabel'
 import { mapCurrentPitchSet } from '../../../../../redux/audio/selector'
 import { getChordAbbreviation } from '../../../../../utils/music/chords/label'
-import './style'
 
 const DisplayChordLabel = () => {
     const
@@ -17,6 +16,8 @@ const DisplayChordLabel = () => {
             {...{
                 className: cx(
                     'DisplayChordLabel',
+                    // This applies the font size twice.
+                    'fontSize__md',
                 ),
             }}
         >

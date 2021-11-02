@@ -24,14 +24,8 @@ const Flex = forwardRef(({
 
                 flexGrow === 1 && 'fG__1',
 
-                (flexDirection === 'column' || flexDirection?.default === 'column') && 'fD__column',
-                (flexDirection === 'columnReverse' || flexDirection?.default === 'columnReverse') && 'fD__columnReverse',
-                flexDirection?.sm === 'row' && 'sm__fD__row',
-                flexDirection?.md === 'row' && 'md__fD__row',
-                flexDirection?.md === 'column' && 'md__fD__column',
-                flexDirection?.lg === 'row' && 'lg__fD__row',
-                flexDirection?.lg === 'column' && 'lg__fD__column',
-                flexDirection?.lg === 'columnReverse' && 'lg__fD__columnReverse',
+                flexDirection === 'column' && 'fD__column',
+                flexDirection === 'columnReverse' && 'fD__columnReverse',
 
                 justifyContent === 'normal' && 'jC__normal',
                 justifyContent === 'spaceBetween' && 'jC__spaceBetween',
@@ -40,7 +34,6 @@ const Flex = forwardRef(({
 
                 alignItems === 'normal' && 'aI__normal',
                 alignItems === 'start' && 'aI__start',
-                alignItems?.md === 'normal' && 'md__aI__normal',
 
                 flexWrap === 'wrap' && 'fW__wrap',
 
@@ -68,20 +61,12 @@ Flex.propTypes = {
     flexGrow: PropTypes.oneOf([1]),
     flexDirection: PropTypes.oneOfType([
         PropTypes.oneOf(['column', 'columnReverse']),
-        PropTypes.shape({
-            sm: PropTypes.oneOf(['row']),
-            md: PropTypes.oneOf(['column', 'row']),
-            lg: PropTypes.oneOf(['column', 'columnReverse', 'row']),
-        }),
     ]),
     justifyContent: PropTypes.oneOf([
         'normal', 'spaceBetween', 'spaceEvenly', 'start',
     ]),
     alignItems: PropTypes.oneOfType([
         PropTypes.oneOf(['normal', 'start']),
-        PropTypes.shape({
-            md: PropTypes.oneOf(['normal']),
-        }),
     ]),
     flexWrap: PropTypes.oneOf(['wrap']),
     gap: PropTypes.oneOfType([

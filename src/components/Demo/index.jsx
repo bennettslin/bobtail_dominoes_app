@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import cx from 'classnames'
 import { useDispatch, useSelector } from 'react-redux'
 import HomeButton from '../../containers/Main/Header/HomeButton'
 import Menu from '../../containers/Main/Header/Menu'
@@ -63,64 +62,38 @@ const Demo = () => {
     return (
         <Flex
             {...{
-                className: cx(
-                    'Demo',
-                ),
-                flexGrow: 1,
+                className: 'Demo',
                 flexDirection: 'column',
-                justifyContent: 'spaceBetween',
                 alignItems: 'normal',
             }}
         >
-            <Board />
             <Flex
                 {...{
                     justifyContent: 'spaceBetween',
-                    gap: 'md',
                     style: {
-                        border: '1px solid cyan',
+                        backgroundColor: '#bdb',
                     },
                 }}
             >
                 <HomeButton />
                 <Menu />
             </Flex>
-            <Flex
-                {...{
-                    className: cx(
-                        'Demo__bottomRow',
-                    ),
-                    justifyContent: 'spaceBetween',
-                    alignItems: { md: 'normal' },
-                    flexDirection: {
-                        default: 'column',
-                        sm: 'row',
-                        md: 'column',
-                        lg: 'row',
-                    },
-                    style: {
-                        border: '1px solid brown',
-                        overflow: 'hidden',
-                    },
-                }}
-            >
-                <GameLogs />
-                <Flex
-                    {...{
-                        flexDirection: {
-                            default: 'columnReverse',
-                            md: 'row',
-                            lg: 'columnReverse',
-                        },
-                        justifyContent: 'spaceBetween',
-                        gap: 'md',
-                        style: {
-                            border: '1px solid blue',
-                        },
-                    }}
-                >
-                    <Pool />
-                    <PlayerCards />
+            <Flex {...{ className: 'Demo__content' }} >
+                <Board />
+                <Flex {...{ className: 'Demo__info' }} >
+                    <Flex
+                        {...{
+                            className: 'Demo__dominoes',
+                            alignItems: 'normal',
+                            style: {
+                                backgroundColor: '#9bb',
+                            },
+                        }}
+                    >
+                        <PlayerCards />
+                        <Pool />
+                    </Flex>
+                    <GameLogs />
                 </Flex>
             </Flex>
         </Flex>

@@ -1,29 +1,42 @@
 @import '../../../scss/constants/responsive';
 
 .Board {
-    position: absolute;
-    top: 0;
-    width: calc(100vw - #{$margin__xs * 2});
-    height: calc(100vw - #{$margin__xs * 2});
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
 
     @media (min-width: $breakpoint__xs) {
-        width: calc(100vw - #{$margin__sm * 2});
-        height: calc(100vw - #{$margin__sm * 2});
+        height: 100%;
+        padding-bottom: 0;
+    }
+
+    @media (min-width: $breakpoint__xs) and (min-height: $breakpoint__sm) {
+        height: 0;
+        padding-bottom: 100%;
     }
 
     @media (min-width: $breakpoint__sm) {
-        width: calc(100vw - #{$margin__md * 2});
-        height: calc(100vw - #{$margin__md * 2});
+        height: 100%;
+        padding-bottom: 0;
+    }
+
+    @media (min-width: $breakpoint__sm) and (min-height: $breakpoint__md) {
+        height: 0;
+        padding-bottom: 100%;
     }
 
     @media (min-width: $breakpoint__md) {
-        right: 0;
-        width: calc(100vh - #{$margin__md * 2});
-        height: calc(100vh - #{$margin__md * 2});
+        height: 100%;
+        padding-bottom: 0;
     }
-    
+
+    @media (min-width: $breakpoint__md) and (min-height: $breakpoint__lg) {
+        height: 0;
+        padding-bottom: 100%;
+    }
+
     @media (min-width: $breakpoint__lg) {
-        left: 50%;
-        transform: translateX(-50%);
+        position: absolute;
+        height: 100%;
     }
 }
