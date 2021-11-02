@@ -16,7 +16,7 @@ $margin__shadow: $margin__xs * 0.3;
             background-color: $colour__background__light;
             content: '';
 
-            @media (min-width: $breakpoint__xs) {
+            @media (min-width: $breakpoint__sm) {
                 left: -$margin__sm;
                 width: calc(100% + #{$margin__sm * 2});
             }

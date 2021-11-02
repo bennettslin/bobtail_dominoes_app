@@ -37,26 +37,30 @@
 }
 
 .fontSize__sm {
-    font-size: 0.5em;
+    font-size: 0.66em;
 
     @media (min-width: $breakpoint__xs) and (min-height: $breakpoint__xs) {
-        font-size: 0.66;
+        font-size: 0.75em;
     }
 
     @media (min-width: $breakpoint__sm) {
-        font-size: 0.66em;
+        font-size: 0.75em;
     }
 
     @media (min-width: $breakpoint__sm) and (min-height: $breakpoint__sm) {
-        font-size: 0.83em;
+        font-size: 0.88em;
     }
 
     @media (min-width: $breakpoint__md) {
-        font-size: 0.83em;
+        font-size: 0.88em;
     }
 
     @media (min-width: $breakpoint__md) and (min-height: $breakpoint__md) {
-        font-size: 1;
+        font-size: 1em;
+    }
+
+    @media (min-width: $breakpoint__lg) {
+        font-size: 1em;
     }
 }
 
@@ -80,19 +84,23 @@
     }
 
     @media (min-width: $breakpoint__md) and (min-height: $breakpoint__md) {
-        font-size: 1.5;
+        font-size: 1.5em;
+    }
+
+    @media (min-width: $breakpoint__lg) {
+        font-size: 1.5em;
     }
 }
 
 .fontSize__lg {
-    font-size: 1.25em;
+    font-size: 1.15em;
 
     @media (min-width: $breakpoint__xs) and (min-height: $breakpoint__xs) {
-        font-size: 1.5em;
+        font-size: 1.4em;
     }
 
     @media (min-width: $breakpoint__sm) {
-        font-size: 1.5em;
+        font-size: 1.4em;
     }
 
     @media (min-width: $breakpoint__sm) and (min-height: $breakpoint__sm) {
@@ -104,6 +112,10 @@
     }
 
     @media (min-width: $breakpoint__md) and (min-height: $breakpoint__md) {
+        font-size: 2em;
+    }
+
+    @media (min-width: $breakpoint__lg) {
         font-size: 2em;
     }
 }

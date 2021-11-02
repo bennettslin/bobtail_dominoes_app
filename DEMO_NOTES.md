@@ -1,8 +1,6 @@
 # Demo notes
 
 # TODO: demo page
-* Styled button padding
-
 * Max widths for logs, players, and pool
 * Domino component
 * Logs

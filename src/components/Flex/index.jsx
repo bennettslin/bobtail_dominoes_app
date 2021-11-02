@@ -46,7 +46,6 @@ const Flex = forwardRef(({
 
                 columnGap?.default === 'sm' && 'columnGap__sm',
                 columnGap?.xs === 'md' && 'xs__columnGap__md',
-
                 className,
             ),
             ...rest,
