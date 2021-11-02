@@ -86,7 +86,7 @@ const Demo = () => {
                             className: 'Demo__dominoes',
                             alignItems: 'normal',
                             style: {
-                                backgroundColor: '#9bb',
+                                backgroundColor: '#8bb',
                             },
                         }}
                     >
