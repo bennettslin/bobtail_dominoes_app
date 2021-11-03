@@ -1,7 +1,6 @@
 # Demo notes
 
 # TODO: demo page
-* Menu buttons don't need min height media queries, consistent with button padding and menu gaps
 * Max widths for logs, players, and pool
 * Domino component
 * Logs
