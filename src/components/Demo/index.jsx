@@ -7,11 +7,11 @@ import GameLogs from './GameLogs'
 import PlayerCards from './PlayerCards'
 import Board from './Board'
 import Pool from './Pool'
+import aiWorker from './aiWorker'
 import { updateGame } from '../../redux/game/action'
 import {
     mapBoard, mapHands, mapIsGamePlaying, mapCurrentPlayerIndex, mapPool, mapScores, mapTurns,
 } from '../../redux/game/selector'
-import { getBestPointedMovesForTurn } from '../../utils/music/game/ai'
 import { getInitialGame, registerTurn } from '../../utils/music/game/play'
 import './style'
 
@@ -29,18 +29,22 @@ const Demo = () => {
     const registerHandTurn = () => {
         const hand = hands[currentPlayerIndex]
 
-        dispatch(updateGame(registerTurn({
-            pool,
-            board,
-            hands,
-            scores,
-            turns,
-            playerIndex: currentPlayerIndex,
+        aiWorker.getBestPointedMovesForTurnFromWorker({ hand, board })
+            .then(moves => (
+                dispatch(updateGame(registerTurn({
+                    pool,
+                    board,
+                    hands,
+                    scores,
+                    turns,
+                    playerIndex: currentPlayerIndex,
 
-            // Discarded indices are registered only if there are no moves.
-            moves: getBestPointedMovesForTurn({ hand, board }),
-            discardedIndices: Array.from(hand),
-        })))
+                    moves,
+                    // Discarded indices are registered if there are no moves.
+                    discardedIndices: Array.from(hand),
+                })))
+            ))
+
     }
 
     useEffect(() => {

@@ -1,15 +1,13 @@
 # Demo notes
 
 # TODO: demo page
+* Menu buttons don't need min height media queries, consistent with button padding and menu gaps
 * Max widths for logs, players, and pool
 * Domino component
 * Logs
 * Player cards
     * In flex containers
         * Min width
-
-* Look into web workers for JavaScript calculations
-    * Demo page takes time to load
 
 * Log component
     * Highlights most recent log

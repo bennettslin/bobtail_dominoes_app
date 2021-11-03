@@ -45,5 +45,6 @@ export default {
                 openAnalyzer: false,
             },
         },
+        `gatsby-plugin-workerize-loader`,
     ],
 }
