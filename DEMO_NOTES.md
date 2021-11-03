@@ -9,16 +9,12 @@
         * Min width
 
 * Log component
-    * Revisit auto scroll again, seems broken after web workers?
     * Highlights most recent log
 * Analytics call
 
 # TODO: next
-* Turns
-    * Unit tests (just accommodate end game logic)
-
 * Play
-    * Unit tests
+    * Finish registerTurns unit tests
 
 * getBestPointedMovesForTurn
     * Starting to look ugly, refactor
