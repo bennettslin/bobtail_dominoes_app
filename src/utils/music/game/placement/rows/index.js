@@ -1,10 +1,10 @@
+import { getDominoPitches } from '../../dominoes'
 import { addSafeMoveToBoardMatrix } from '../boardMatrix'
 import {
     getHasPitchAtCoordinates,
     getNextCoordinates,
     getPitchAtCoordinates,
 } from '../coordinates'
-import { getDominoPitches } from '../../dominoes'
 import {
     DIRECTION_X,
     DIRECTION_XY,

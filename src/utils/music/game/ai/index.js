@@ -1,6 +1,6 @@
 import { addMoveToBoard } from '../play/board'
+import { getChordsForPlacement } from '../placement/chords'
 import { getAdjacentPlacements } from './adjacent'
-import { getChordsForPlacement } from './chords'
 
 const sortByHighestPoints = (
     { points: firstPoints },

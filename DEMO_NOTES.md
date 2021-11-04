@@ -1,6 +1,5 @@
 # Demo notes
 * Real moves should not pass pitch sets to game?
-* Separate general placement methods from ai folder.
 
 # TODO: demo page
 * Max widths for logs, players, and pool
