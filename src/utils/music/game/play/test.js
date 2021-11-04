@@ -3,6 +3,31 @@ import { MOCK_BOARD } from '../../../../__mocks__/board'
 import { MOCK_POOL_LIST } from '../../../../__mocks__/pool'
 import { MOCK_TURNS } from '../../../../__mocks__/turns'
 
+const MOCK_PLAYED_TURN = {
+    pool: new Set(MOCK_POOL_LIST),
+    hands: [new Set([10]), new Set([15]), new Set([30, 45, 49]), new Set([50, 60])],
+    moves: [
+        {
+            dominoIndex: 30,
+            placement: [[1, 1], [2, 0]],
+            pitchSets: [
+                new Set([0, 5, 9, 2]),
+                new Set([11, 2, 6]),
+                new Set([7, 0, 4, 11]),
+            ],
+        },
+        {
+            dominoIndex: 49,
+            placement: [[-2, 3], [-2, 2]],
+            pitchSets: [
+                new Set([0, 9, 5]),
+                new Set([0, 5, 9]),
+            ],
+        },
+    ],
+    playerIndex: 2,
+}
+
 describe('getInitialGame', () => {
     beforeEach(() => {
         jest.spyOn(global.Math, 'random').mockReturnValue(0.123456789)
@@ -96,29 +121,39 @@ describe('registerTurn', () => {
         })
     })
 
-    it.skip('registers played turn', () => {
+    it('registers played turn', () => {
         expect(registerTurn({
-            playerIndex: 2,
-            handCount: 3,
-            moves: [
-                { pitchSets: [new Set([0, 3, 7]), new Set([2, 4, 7, 11])] },
-                { pitchSets: [new Set([7, 10, 2])] },
-                { pitchSets: [new Set([10, 2, 5, 9])] },
-            ],
-            scores: [5, 3, 0],
-        })).toStrictEqual()
+            ...MOCK_PLAYED_TURN,
+            board: [MOCK_BOARD[0], MOCK_BOARD[1], MOCK_BOARD[2], MOCK_BOARD[3]],
+            scores: [15, 22, 18, 7],
+            turns: [...MOCK_TURNS],
+        })).toStrictEqual({
+            board: MOCK_BOARD,
+            currentPlayerIndex: 3,
+            hands: [new Set([10]), new Set([15]), new Set([45, 11, 13]), new Set([50, 60])],
+            isGamePlaying: true,
+            pool: new Set([3, 16, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
+            scores: [15, 22, 35, 7],
+            turns: [{ dominoIndex: 29 }, { moves: [{ dominoIndex: 62, pitchSets: [new Set([4, 1, 8, 0])], placement: [[0, 2], [0, 3]], playerIndex: 0 }] }, { moves: [{ dominoIndex: 30, pitchSets: [new Set([0, 5, 9, 2]), new Set([11, 2, 6]), new Set([7, 0, 4, 11])], placement: [[1, 1], [2, 0]], playerIndex: 2 }, { dominoIndex: 49, pitchSets: [new Set([0, 9, 5]), new Set([0, 5, 9])], placement: [[-2, 3], [-2, 2]], playerIndex: 2 }] }],
+        })
     })
 
-    it.skip('registers game ending turn', () => {
+    it('registers game ending turn', () => {
         expect(registerTurn({
-            playerIndex: 2,
-            handCount: 3,
-            moves: [
-                { pitchSets: [new Set([0, 3, 7]), new Set([2, 4, 7, 11])] },
-                { pitchSets: [new Set([7, 10, 2])] },
-                { pitchSets: [new Set([10, 2, 5, 9])] },
-            ],
-            scores: [5, 3, 0],
-        })).toStrictEqual()
+            ...MOCK_PLAYED_TURN,
+            pool: new Set([]),
+            board: [MOCK_BOARD[0], MOCK_BOARD[1], MOCK_BOARD[2], MOCK_BOARD[3]],
+            hands: [new Set([]), new Set([]), new Set([30, 49]), new Set([])],
+            scores: [15, 22, 18, 7],
+            turns: [...MOCK_TURNS],
+        })).toStrictEqual({
+            board: MOCK_BOARD,
+            currentPlayerIndex: 3,
+            hands: [new Set([]), new Set([]), new Set([]), new Set([])],
+            isGamePlaying: false,
+            pool: new Set([]),
+            scores: [15, 22, 35, 7],
+            turns: [{ dominoIndex: 29 }, { moves: [{ dominoIndex: 62, pitchSets: [new Set([4, 1, 8, 0])], placement: [[0, 2], [0, 3]], playerIndex: 0 }] }, { isEmptyPool: true, moves: [{ dominoIndex: 30, pitchSets: [new Set([0, 5, 9, 2]), new Set([11, 2, 6]), new Set([7, 0, 4, 11])], placement: [[1, 1], [2, 0]], playerIndex: 2 }, { dominoIndex: 49, pitchSets: [new Set([0, 9, 5]), new Set([0, 5, 9])], placement: [[-2, 3], [-2, 2]], playerIndex: 2 }] }, { winnerIndices: [2] }],
+        })
     })
 })

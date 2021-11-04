@@ -1,4 +1,5 @@
 # Demo notes
+* Real moves should not pass pitch sets to game?
 
 # TODO: demo page
 * Max widths for logs, players, and pool
@@ -11,10 +12,6 @@
 * Log component
     * Highlights most recent log
 * Analytics call
-
-# TODO: next
-* Play
-    * Finish registerTurns unit tests
 
 * getBestPointedMovesForTurn
     * Starting to look ugly, refactor
