@@ -1,16 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { useSelector } from 'react-redux'
 import Flex from '../../../Flex'
 import StaticArray from '../../../StaticArray'
 import StyledShadow from '../../../Styled/Shadow'
 import MoveLog from '../MoveLog'
 import { getArrayOfIndices } from '../../../../utils/general'
 import { getDominoLabel } from '../../../../utils/music/chords/label'
-import { getDominoPitches } from '../../../../utils/music/game/dominoes'
 import { getCommaSeparatedList } from '../../../../utils/format'
 import { getPlayerIndex } from '../../../../utils/music/game/play/turns'
 import { getPointsForMoves } from '../../../../utils/music/chords/points'
-import { useSelector } from 'react-redux'
 import { getMapTurn } from '../../../../redux/game/selector'
 
 const TurnLog = ({
@@ -28,7 +27,7 @@ const TurnLog = ({
     let log
 
     if (Number.isFinite(dominoIndex)) {
-        log = `${getDominoLabel(getDominoPitches(dominoIndex))} starts the board.`
+        log = `${getDominoLabel(dominoIndex)} starts the board.`
 
     } else if (winnerIndices) {
         const winnersList = winnerIndices.map(winnerIndex => (

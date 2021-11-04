@@ -1,5 +1,6 @@
 import { getCommaSeparatedList } from '../../../format'
 import { join } from '../../../general'
+import { getDominoPitches } from '../../game/dominoes'
 import { getPrimeFormKey, getRoots } from '../primeForm'
 import { OCTAVE_RANGE } from '../../../../constants/music/audio'
 
@@ -97,22 +98,26 @@ export const getChordLabel = pitchSet => {
         }` : null
 }
 
-export const getDominoLabel = pitches => (
-    (
-        (pitches[1] - pitches[0]) <= (OCTAVE_RANGE / 2) ?
-            pitches :
-            [...pitches.reverse()]
-    ).map(pitch => (
-        getIsPitchBlack(pitch) ? (
-            [
-                `${ROOT_LETTERS[pitch][SHARP]}${SHARP}`,
-                `${ROOT_LETTERS[pitch][FLAT]}${FLAT}`,
-            ].join('/')
-        ) : (
-            ROOT_LETTERS[pitch]
-        )
-    )).join('-')
-)
+export const getDominoLabel = dominoIndex => {
+    const pitches = getDominoPitches(dominoIndex)
+
+    return (
+        (
+            (pitches[1] - pitches[0]) <= (OCTAVE_RANGE / 2) ?
+                pitches :
+                [...pitches.reverse()]
+        ).map(pitch => (
+            getIsPitchBlack(pitch) ? (
+                [
+                    `${ROOT_LETTERS[pitch][SHARP]}${SHARP}`,
+                    `${ROOT_LETTERS[pitch][FLAT]}${FLAT}`,
+                ].join('/')
+            ) : (
+                ROOT_LETTERS[pitch]
+            )
+        )).join('-')
+    )
+}
 
 export const getChordAbbreviationsList = (pitchSets = []) => (
     getCommaSeparatedList(

@@ -4,7 +4,6 @@ import ChordAbbreviations from '../../../ChordAbbreviations'
 import Flex from '../../../Flex'
 import StyledShadow from '../../../Styled/Shadow'
 import { getChordAbbreviationsList, getDominoLabel } from '../../../../utils/music/chords/label'
-import { getDominoPitches } from '../../../../utils/music/game/dominoes'
 import { getPointsForPitchSets } from '../../../../utils/music/chords/points'
 
 const MoveLog = ({
@@ -15,7 +14,7 @@ const MoveLog = ({
     <Flex>
         <StyledShadow>
             <li>
-                {`${getDominoLabel(getDominoPitches(dominoIndex))} builds `}
+                {`${getDominoLabel(dominoIndex)} builds `}
                 <ChordAbbreviations
                     {...{
                         abbreviations: getChordAbbreviationsList(pitchSets),

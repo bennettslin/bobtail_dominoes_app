@@ -72,14 +72,14 @@ describe('getChordLabel', () => {
 
 describe('getDominoLabel', () => {
     test.each([
-        [[0, 4], 'C-E'],
-        [[2, 9], 'A-D'],
-        [[0, 6], 'C-F♯/G♭'],
-        [[1, 7], 'C♯/D♭-G'],
-        [[3, 5], 'D♯/E♭-F'],
-        [[1, 8], 'G♯/A♭-C♯/D♭'],
-    ])('%p returns %p', (pitches, result) => {
-        expect(getDominoLabel(pitches)).toBe(result)
+        [4, 'C-E'],
+        [28, 'A-D'],
+        [6, 'C-F♯/G♭'],
+        [17, 'C♯/D♭-G'],
+        [32, 'D♯/E♭-F'],
+        [18, 'G♯/A♭-C♯/D♭'],
+    ])('%p returns %p', (dominoIndex, result) => {
+        expect(getDominoLabel(dominoIndex)).toBe(result)
     })
 })
 

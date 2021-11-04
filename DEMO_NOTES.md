@@ -1,13 +1,20 @@
 # Demo notes
+
+# TODO
 * Real moves should not pass pitch sets to game?
 
-# TODO: demo page
-* Max widths for logs, players, and pool
 * Domino component
-* Logs
-* Player cards
-    * In flex containers
-        * Min width
+    * Takes domino index and orientation
+    * Renders face svgs
+    * Rough absolute placement
+
+* Make players, pool, and logs responsive
+    * Logs really just need max width
+        * Fix shadow text?
+    * Players and pool
+        * Need max width
+        * Show domino components
+        * Pool needs order
 
 * Log component
     * Highlights most recent log
