@@ -6,6 +6,14 @@
 * Pool and players need max width
 
 * Util to position and size face
+    300
+    416.8234
+    404.144
+
+    400
+    243.6206
+    230.9413
+
     * Determine relative distances within svgs
         * Accommodate edges and bottoms
     * Inline styling
