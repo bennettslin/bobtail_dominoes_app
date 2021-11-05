@@ -17,7 +17,7 @@ const Board = () => {
                 },
             }}
         >
-            {Array.from(board).map(move => {
+            {board.map(move => {
                 const { dominoIndex, placement } = move
                 return (
                     <Domino

@@ -3,15 +3,16 @@
 # TODO
 * Real moves should not pass pitch sets to game?
 
-* Pool measures number of pitches, not dominoes
-    * Util to count pitches left
-    * Possibly measure intervals as well?
-        * Util to count intervals left
-
 * Util to position and size face
     * Determine relative distances within svgs
         * Accommodate edges and bottoms
     * Inline styling
+
+* Util to determine interval, and whether it's in reverse direction
+    * Maybe consolidate getSmallerInterval and getDominoLabel
+
+* Pool shows number of pitches and intervals, not dominoes
+
 * Util to position domino based on placement
 * Util to determine order of placement for z-axis placement
 
