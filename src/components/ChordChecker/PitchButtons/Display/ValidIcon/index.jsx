@@ -7,8 +7,8 @@ import Svg from '../../../../Svg'
 import { mapCurrentPitchSet } from '../../../../../redux/audio/selector'
 import { getIsValidChord, getIsInvalidSonority } from '../../../../../utils/music/chords/valid'
 import styleConfigDominoes from '../../../../../styles/dominoes'
-import iconValid from '../../../../../assets/svgs/chords/iconValid'
-import iconInvalid from '../../../../../assets/svgs/chords/iconInvalid'
+import iconValid from '../../../../../assets/svgs/checker/iconValid'
+import iconInvalid from '../../../../../assets/svgs/checker/iconInvalid'
 import './style'
 
 const ValidIcon = () => {

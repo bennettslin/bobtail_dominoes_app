@@ -7,7 +7,7 @@ import { updateIsAutoplayOn } from '../../../../redux/audio/action'
 import { mapIsAutoplayOn } from '../../../../redux/audio/selector'
 import styleConfigAudio from '../../../../styles/checker/audio'
 import styleConfigAudioOn from '../../../../styles/checker/audioOn'
-import faceAutoplay from '../../../../assets/svgs/chords/faceAutoplay'
+import faceAutoplay from '../../../../assets/svgs/checker/faceAutoplay'
 
 const AutoplayButton = ({ didMount }) => {
     const

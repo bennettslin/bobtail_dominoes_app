@@ -1,8 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import Flex from '../../Flex'
+import Domino from '../Domino'
 import { mapPool } from '../../../redux/game/selector'
-import { getDominoLabel } from '../../../utils/music/chords/label'
 import './style'
 
 const Pool = () => {
@@ -18,10 +18,9 @@ const Pool = () => {
                 },
             }}
         >
-            Pool:
             {Array.from(pool).map(dominoIndex => (
-                getDominoLabel(dominoIndex)
-            )).join(' ')}
+                <Domino {...{ key: dominoIndex, dominoIndex }} />
+            ))}
         </Flex>
     )
 }

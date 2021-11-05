@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useSelector } from 'react-redux'
 import Flex from '../../../Flex'
+import Domino from '../../Domino'
 import { getMapHand, getMapScore } from '../../../../redux/game/selector'
-import { getDominoLabel } from '../../../../utils/music/chords/label'
 
 const PlayerCard = ({ playerIndex }) => {
     const
@@ -28,8 +28,8 @@ const PlayerCard = ({ playerIndex }) => {
             </Flex>
             <Flex {...{ gap: 'xs' }} >
                 {Array.from(hand).map(dominoIndex => (
-                    getDominoLabel(dominoIndex)
-                )).join(' ')}
+                    <Domino {...{ key: dominoIndex, dominoIndex }} />
+                ))}
             </Flex>
         </Flex>
     )

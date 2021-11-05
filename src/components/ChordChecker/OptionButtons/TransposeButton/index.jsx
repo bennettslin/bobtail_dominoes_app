@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import CheckerButton from '../../CheckerButton'
 import { updateTransposedPitchSet } from '../../../../redux/audio/action'
 import styleConfigOption from '../../../../styles/checker/option'
-import faceTranspose from '../../../../assets/svgs/chords/faceTranspose'
+import faceTranspose from '../../../../assets/svgs/checker/faceTranspose'
 
 const TransposeButton = ({ direction }) => {
     const dispatch = useDispatch()

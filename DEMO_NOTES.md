@@ -4,13 +4,14 @@
 * Real moves should not pass pitch sets to game?
 
 * Domino component
-    * Takes domino index and orientation
-    * Renders face svgs
+    * Renders domino svgs based on orientation and interval
+        * Need interval helper
     * Rough absolute placement
 
 * Make players, pool, and logs responsive
     * Logs really just need max width
         * Fix shadow text?
+        * Fix auto scrolling
     * Players and pool
         * Need max width
         * Show domino components
@@ -35,4 +36,3 @@
         * All possible intervals * three orientations = 18 total
             * Helper to retrieve for orientation
     * Already have pitch svgs, but move under faces
-    * Rename and reorganise svgs

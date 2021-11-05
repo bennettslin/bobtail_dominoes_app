@@ -5,24 +5,11 @@ import {
     getNextCoordinates,
     getPitchAtCoordinates,
 } from '../coordinates'
+import { getOrientation } from '../orientation'
 import {
-    DIRECTION_X,
-    DIRECTION_XY,
-    DIRECTION_Y,
     ADJACENT_DIRECTIONS,
     ADJACENT_SIGNS,
 } from '../../../../../constants/music/game'
-
-const getOrientation = placement => {
-    // Use direction to signify orientation.
-    if (placement[0][1] === placement[1][1]) {
-        return DIRECTION_X
-    }
-    if (placement[0][0] === placement[1][0]) {
-        return DIRECTION_Y
-    }
-    return DIRECTION_XY
-}
 
 const getRow = ({ pitch, coordinates, direction, boardMatrix }) => {
     const row = [pitch]
