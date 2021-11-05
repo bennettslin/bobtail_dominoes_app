@@ -3,15 +3,17 @@
 # TODO
 * Real moves should not pass pitch sets to game?
 
+* Pool and players need max width
+
 * Util to position and size face
     * Determine relative distances within svgs
         * Accommodate edges and bottoms
     * Inline styling
 
-* Util to determine interval, and whether it's in reverse direction
-    * Maybe consolidate getSmallerInterval and getDominoLabel
-
-* Pool shows number of pitches and intervals, not dominoes
+* Pool has own svgs
+    * Hexagons for pitches
+    * Squares for intervals
+    * Interval faces
 
 * Util to position domino based on placement
 * Util to determine order of placement for z-axis placement
@@ -26,10 +28,9 @@
     * Will eventually want user to be able to hover over dominoes
 
 * Make players, pool, and logs responsive
-    * Logs really just need max width
+    * Logs
         * Fix auto scrolling
     * Players and pool
-        * Need max width
         * Show domino components
         * Pool needs order
 

@@ -1,8 +1,7 @@
 import { getCommaSeparatedList } from '../../../format'
 import { join } from '../../../general'
-import { getDominoPitches } from '../../game/dominoes'
+import { getDominoPitches, getIsReverseInterval } from '../../game/dominoes'
 import { getPrimeFormKey, getRoots } from '../primeForm'
-import { OCTAVE_RANGE } from '../../../../constants/music/audio'
 
 const
     FLAT = '♭',
@@ -103,9 +102,9 @@ export const getDominoLabel = dominoIndex => {
 
     return (
         (
-            (pitches[1] - pitches[0]) <= (OCTAVE_RANGE / 2) ?
-                pitches :
-                [...pitches.reverse()]
+            getIsReverseInterval(dominoIndex) ?
+                [...pitches].reverse() :
+                pitches
         ).map(pitch => (
             getIsPitchBlack(pitch) ? (
                 [
