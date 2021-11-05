@@ -3,11 +3,14 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Flex from '../../Flex'
 import Svg from '../../Svg'
-import { getDominoPitches } from '../../../utils/music/game/dominoes'
 import { getFaceSrc } from '../../ChordChecker/PitchButtons/PitchButton/util'
-import styleConfigFaces from '../../../styles/checker/faces'
-import './style'
+import { getDominoPitches } from '../../../utils/music/game/dominoes'
 import { getOrientation } from '../../../utils/music/game/placement/orientation'
+import { getDominoSrc } from './util'
+import styleConfigFaces from '../../../styles/checker/faces'
+import styleConfigDominoes from '../../../styles/dominoes'
+import { DIRECTION_X, DIRECTION_XY, DIRECTION_Y } from '../../../constants/music/game'
+import './style'
 
 const Domino = ({
     dominoIndex,
@@ -22,13 +25,26 @@ const Domino = ({
             {...{
                 className: cx(
                     'Domino',
+                    orientation === DIRECTION_X && 'Domino__orientationX',
+                    orientation === DIRECTION_Y && 'Domino__orientationY',
+                    orientation === DIRECTION_XY && 'Domino__orientationXY',
                 ),
             }}
         >
-            {pitches.map(pitch => (
+            <Svg
+                {...{
+                    src: getDominoSrc(orientation),
+                    styleConfig: styleConfigDominoes,
+                }}
+            />
+            {pitches.map((pitch, index) => (
                 <Svg
                     {...{
                         key: pitch,
+                        className: cx(
+                            'Domino__face',
+                            `Domino__face__${index}`,
+                        ),
                         src: getFaceSrc(pitch),
                         styleConfig: styleConfigFaces,
                     }}

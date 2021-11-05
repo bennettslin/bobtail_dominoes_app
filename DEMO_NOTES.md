@@ -3,14 +3,29 @@
 # TODO
 * Real moves should not pass pitch sets to game?
 
+* Pool measures number of pitches, not dominoes
+    * Util to count pitches left
+    * Possibly measure intervals as well?
+        * Util to count intervals left
+
+* Util to position and size face
+    * Determine relative distances within svgs
+        * Accommodate edges and bottoms
+    * Inline styling
+* Util to position domino based on placement
+* Util to determine order of placement for z-axis placement
+
 * Domino component
-    * Renders domino svgs based on orientation and interval
-        * Need interval helper
-    * Rough absolute placement
+    * Size of domino relative to board determined by JavaScript
+        * Based on number of hexagons in grid
+    * Need interval svgs
+        * Util to determine interval orientation
+
+* New solution for wide board
+    * Will eventually want user to be able to hover over dominoes
 
 * Make players, pool, and logs responsive
     * Logs really just need max width
-        * Fix shadow text?
         * Fix auto scrolling
     * Players and pool
         * Need max width

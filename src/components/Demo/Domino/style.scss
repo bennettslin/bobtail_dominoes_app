@@ -1,4 +1,52 @@
-.Domino {
-    max-width: 60px;
-    background-color: antiquewhite;
+$width__hexagon: 30px;
+
+$width__orientationX: $width__hexagon * 2;
+$width__orientationY: $width__hexagon * 1.5;
+
+.Domino__orientationX {
+    width: $width__orientationX;
+}
+
+.Domino__orientationY,
+.Domino__orientationXY {
+    width: $width__orientationY;
+}
+
+.Domino__face {
+    position: absolute;
+    width: 75%;
+    transform: translate(-50%, -50%);
+}
+
+.Domino__orientationX {
+    .Domino__face__0 {
+        top: 50%;
+        left: 25%;
+    }
+    .Domino__face__1 {
+        top: 50%;
+        left: 75%;
+    }
+}
+
+.Domino__orientationY {
+    .Domino__face__0 {
+        top: 71.43%;
+        left: 33.3%;
+    }
+    .Domino__face__1 {
+        top: 28.57%;
+        left: 66.6%;
+    }
+}
+
+.Domino__orientationXY {
+    .Domino__face__0 {
+        top: 71.43%;
+        left: 66.6%;
+    }
+    .Domino__face__1 {
+        top: 28.57%;
+        left: 33.3%;
+    }
 }
