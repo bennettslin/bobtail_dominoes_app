@@ -14,6 +14,7 @@ const PlayerCards = () => {
             {...{
                 className: 'PlayerCards',
                 flexGrow: 1,
+                flexDirection: 'column',
                 style: {
                     backgroundColor: '#bbd',
                 },

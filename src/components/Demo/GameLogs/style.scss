@@ -1,6 +1,8 @@
 @import '../../../scss/constants/responsive';
 
 .GameLogs {
+    max-width: 400px;
+
     height: 100%; // Needed for auto scroll.
     padding: $margin__md 0;
 
