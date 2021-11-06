@@ -1,4 +1,4 @@
-import { getBestPointedMovesForTurn } from '../utils/music/game/ai'
+import { getBestPointedMovesForTurn } from '../../utils/music/game/ai'
 
 export const getBestPointedMovesForTurnFromWorker = ({
     hand,

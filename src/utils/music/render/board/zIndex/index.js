@@ -1,7 +1,7 @@
 import { DIRECTION_XY } from '../../../../../constants/music/game'
-import { getOrientation } from '../../../../../utils/music/game/placement/orientation'
+import { getOrientation } from '../../../game/placement/orientation'
 
-export const getZIndexSortedDominoesList = board => (
+export const getZIndexDominoesList = board => (
     [...board].sort((
         { placement: firstPlacement },
         { placement: secondPlacement },

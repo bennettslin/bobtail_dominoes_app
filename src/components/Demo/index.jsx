@@ -7,7 +7,7 @@ import GameLogs from './GameLogs'
 import PlayerCards from './PlayerCards'
 import Board from './Board'
 import Pool from './Pool'
-import aiWorker from './aiWorker'
+import aiWorker from '../../workers/aiWorker'
 import { updateGame } from '../../redux/game/action'
 import {
     mapBoard, mapHands, mapIsGamePlaying, mapCurrentPlayerIndex, mapPool, mapScores, mapTurns,
