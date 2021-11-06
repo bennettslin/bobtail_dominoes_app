@@ -3,10 +3,10 @@
 # TODO
 * Real moves should not pass pitch sets to game?
 
+* Util to position domino based on placement
+
 * Pool and players need max width
     * Make responsive
-
-* Util to position domino based on placement
 
 * Util to position and size face
     * Works somewhat, but a little off

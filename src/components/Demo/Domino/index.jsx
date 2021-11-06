@@ -3,14 +3,14 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Flex from '../../Flex'
 import Svg from '../../Svg'
-import { getFaceSrc } from '../../ChordChecker/PitchButtons/PitchButton/util'
 import { getDominoPitches } from '../../../utils/music/game/dominoes'
 import { getOrientation } from '../../../utils/music/game/placement/orientation'
-import { getDominoSrc } from './utils/src'
-import { getFacePositionAndSizeStyling } from './utils/face'
+import { getFacePositionAndSizeStyling } from '../../../utils/music/render/face'
+import { getDominoSrc } from '../../../utils/src/dominoes'
+import { getFaceSrc } from '../../../utils/src/faces'
 import styleConfigFaces from '../../../styles/checker/faces'
 import styleConfigDominoes from '../../../styles/dominoes'
-import { DIRECTION_X, DIRECTION_XY, DIRECTION_Y } from '../../../constants/music/game'
+import { DIRECTION_X } from '../../../constants/music/game'
 import './style'
 
 const Domino = ({
@@ -26,9 +26,9 @@ const Domino = ({
             {...{
                 className: cx(
                     'Domino',
-                    orientation === DIRECTION_X && 'Domino__orientationX',
-                    orientation === DIRECTION_Y && 'Domino__orientationY',
-                    orientation === DIRECTION_XY && 'Domino__orientationXY',
+                    orientation === DIRECTION_X ?
+                        'Domino__horizontal' :
+                        'Domino__vertical',
                 ),
             }}
         >

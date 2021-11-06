@@ -1,18 +1,20 @@
 $width__hexagon: 30px;
-$width__orientationX: $width__hexagon * 2;
-$width__orientationY: $width__hexagon * 1.5;
+$width__horizontal: $width__hexagon * 2;
+$width__vertical: $width__hexagon * 1.5;
+
+// $height__hexagon: $width__hexagon * 1.1547;
+// $height__orientationX: $height__hexagon;
 
 .Domino {
     z-index: 1;
 }
 
-.Domino__orientationX {
-    width: $width__orientationX;
+.Domino__horizontal {
+    width: $width__horizontal;
 }
 
-.Domino__orientationY,
-.Domino__orientationXY {
-    width: $width__orientationY;
+.Domino__vertical {
+    width: $width__vertical;
 }
 
 .Domino__face {

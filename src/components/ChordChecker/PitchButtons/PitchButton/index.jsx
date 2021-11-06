@@ -10,11 +10,11 @@ import {
     getMapPlayedPitchConfig,
 } from '../../../../redux/audio/selector'
 import { getIsPitchBlack } from '../../../../utils/music/chords/label'
+import { getFaceSrc } from '../../../../utils/src/faces'
 import {
     getButtonOnStyleConfig,
     getButtonPositionStyle,
     getButtonStyleConfig,
-    getFaceSrc,
 } from './util'
 import './style'
 
