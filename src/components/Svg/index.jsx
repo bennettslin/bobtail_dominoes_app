@@ -17,6 +17,7 @@ const Svg = ({
         styles,
     } = {},
     onLoad = () => {},
+    ...rest
 
 }) => {
     const [isLoaded, setIsLoaded] = useState(false)
@@ -52,6 +53,7 @@ const Svg = ({
                     setIsLoaded(true)
                     onLoad()
                 },
+                ...rest,
             }}
         />
     )

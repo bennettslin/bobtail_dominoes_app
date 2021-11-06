@@ -4,27 +4,20 @@
 * Real moves should not pass pitch sets to game?
 
 * Pool and players need max width
+    * Make responsive
+
+* Util to position domino based on placement
+* Util to determine order of placement for z-axis placement
 
 * Util to position and size face
-    300
-    416.8234
-    404.144
-
-    400
-    243.6206
-    230.9413
-
-    * Determine relative distances within svgs
-        * Accommodate edges and bottoms
-    * Inline styling
+    * Works somewhat, but a little off
+        * Accommodate height buffer
+        * Figure out x axis
 
 * Pool has own svgs
     * Hexagons for pitches
     * Squares for intervals
     * Interval faces
-
-* Util to position domino based on placement
-* Util to determine order of placement for z-axis placement
 
 * Domino component
     * Size of domino relative to board determined by JavaScript

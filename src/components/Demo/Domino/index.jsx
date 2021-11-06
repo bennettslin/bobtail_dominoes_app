@@ -6,7 +6,8 @@ import Svg from '../../Svg'
 import { getFaceSrc } from '../../ChordChecker/PitchButtons/PitchButton/util'
 import { getDominoPitches } from '../../../utils/music/game/dominoes'
 import { getOrientation } from '../../../utils/music/game/placement/orientation'
-import { getDominoSrc } from './util'
+import { getDominoSrc } from './utils/src'
+import { getFacePositionAndSizeStyling } from './utils/face'
 import styleConfigFaces from '../../../styles/checker/faces'
 import styleConfigDominoes from '../../../styles/dominoes'
 import { DIRECTION_X, DIRECTION_XY, DIRECTION_Y } from '../../../constants/music/game'
@@ -37,16 +38,19 @@ const Domino = ({
                     styleConfig: styleConfigDominoes,
                 }}
             />
-            {pitches.map((pitch, index) => (
+            {pitches.map((pitch, pitchIndex) => (
                 <Svg
                     {...{
                         key: pitch,
                         className: cx(
                             'Domino__face',
-                            `Domino__face__${index}`,
                         ),
                         src: getFaceSrc(pitch),
                         styleConfig: styleConfigFaces,
+                        style: getFacePositionAndSizeStyling({
+                            pitchIndex,
+                            orientation,
+                        }),
                     }}
                 />
             ))}
