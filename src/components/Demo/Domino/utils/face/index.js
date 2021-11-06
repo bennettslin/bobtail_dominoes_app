@@ -1,14 +1,16 @@
 import { DIRECTION_X, DIRECTION_Y } from '../../../../../constants/music/game'
 
 const
-    HEIGHT_BUFFER_PERCENTAGE = 0,
     BASE_WIDTH_UNITS = {
         [true]: 100 / 4, // X.
         [false]: 100 / 3, // Y or XY.
     },
+    // Extra height for bottom perspective. Specific to svg.
+    HORIZONTAL_HEIGHT_BUFFER = 6.1,
+    VERTICAL_HEIGHT_BUFFER = 3.58,
     BASE_HEIGHT_UNITS = {
-        [true]: 100 / 2, // X.
-        [false]: (100 - HEIGHT_BUFFER_PERCENTAGE) / 3.5, // Y or XY.
+        [true]: (100 - HORIZONTAL_HEIGHT_BUFFER) / 2, // X.
+        [false]: (100 - VERTICAL_HEIGHT_BUFFER) / 3.5, // Y or XY.
     }
 
 export const getFacePositionAndSizeStyling = ({
