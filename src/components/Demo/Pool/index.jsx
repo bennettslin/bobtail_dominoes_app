@@ -23,10 +23,9 @@ const Pool = () => {
         >
             <Flex>
                 {getPitchCountsInPool(pool).map((pitchCount, pitch) => (
-                    <div>
+                    <div {...{ key: pitch }} >
                         <Svg
                             {...{
-                                key: pitch,
                                 src: getFaceSrc(pitch),
                                 styleConfig: styleConfigFaces,
                             }}
@@ -37,10 +36,9 @@ const Pool = () => {
             </Flex>
             <Flex>
                 {getIntervalCountsInPool(pool).map((intervalCount, index) => (
-                    <div>
+                    <div {...{ key: index }} >
                         <Svg
                             {...{
-                                key: index,
                                 src: getFaceSrc(index + 1),
                                 styleConfig: styleConfigFaces,
                             }}

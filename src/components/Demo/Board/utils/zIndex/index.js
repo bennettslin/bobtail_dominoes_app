@@ -16,12 +16,10 @@ export const getZIndexSortedDominoesList = board => (
         // If y is equal, sort by x. Higher x renders later by default.
         const xOrder = firstPlacement[0][0] - secondPlacement[0][0]
 
-        // Find the placement with higher x.
-
         // However, lower x renders later if higher x has orientation XY.
         return (
-            xOrder < 0 &&
-            getOrientation(secondPlacement) === DIRECTION_XY
+            (xOrder > 0 && getOrientation(firstPlacement) === DIRECTION_XY) ||
+            (xOrder < 0 && getOrientation(secondPlacement) === DIRECTION_XY)
         ) ? -xOrder : xOrder
     })
 )

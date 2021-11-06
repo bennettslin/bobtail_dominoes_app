@@ -7,7 +7,6 @@
     * Make responsive
 
 * Util to position domino based on placement
-* Util to determine order of placement for z-axis placement
 
 * Util to position and size face
     * Works somewhat, but a little off

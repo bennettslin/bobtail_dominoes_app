@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import Flex from '../../Flex'
 import Domino from '../Domino'
 import { mapBoard } from '../../../redux/game/selector'
+import { getZIndexSortedDominoesList } from './utils/zIndex'
 import './style'
 
 const Board = () => {
@@ -17,7 +18,7 @@ const Board = () => {
                 },
             }}
         >
-            {board.map(move => {
+            {getZIndexSortedDominoesList(board).map(move => {
                 const { dominoIndex, placement } = move
                 return (
                     <Domino
