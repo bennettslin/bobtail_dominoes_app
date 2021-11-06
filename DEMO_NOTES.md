@@ -14,6 +14,9 @@
         * Accommodate height buffer
         * Figure out x axis
 
+* Util to position and size intervals
+    * Need three orientations for each one
+
 * Pool has own svgs
     * Hexagons for pitches
     * Squares for intervals
@@ -25,7 +28,8 @@
     * Need interval svgs
         * Util to determine interval orientation
 
-* New solution for wide board
+* Permanent solution for wide board
+    * Other than z-index
     * Will eventually want user to be able to hover over dominoes
 
 * Make players, pool, and logs responsive
