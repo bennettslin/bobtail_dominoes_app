@@ -3,8 +3,6 @@
 # TODO
 * Real moves should not pass pitch sets to game?
 
-* Why is starting dominoIndex different in board and turns?
-
 * Util to position domino based on placement
     * Util to transform translate has errors
     * Unit test

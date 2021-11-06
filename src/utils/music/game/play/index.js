@@ -20,7 +20,7 @@ export const getInitialGame = ({
 
     return {
         pool,
-        board: getInitialBoard(pool),
+        board,
         hands: getInitialHands({ playersCount, handCount, pool }),
         scores: getInitialScores(playersCount),
         turns: getInitialTurns(board),
