@@ -1,6 +1,8 @@
+// See https://www.redblobgames.com/grids/hexagons for these numbers.
+
+export const HEXAGON_HEIGHT_RATIO = 2 / Math.sqrt(3)
+
 const
-    // See https://www.redblobgames.com/grids/hexagons for these numbers.
-    HEXAGON_HEIGHT_RATIO = 2 / Math.sqrt(3),
     HORIZONTAL_HEIGHT_MULTIPLIER = 2,
     VERTICAL_HEIGHT_MULTIPLIER = 3.5,
 

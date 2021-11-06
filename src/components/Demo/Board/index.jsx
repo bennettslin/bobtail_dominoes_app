@@ -9,6 +9,8 @@ import './style'
 const Board = () => {
     const board = useSelector(mapBoard)
 
+    console.log('board', board)
+
     return (
         <Flex
             {...{

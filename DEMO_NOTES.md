@@ -3,15 +3,14 @@
 # TODO
 * Real moves should not pass pitch sets to game?
 
+* Why is starting dominoIndex different in board and turns?
+
 * Util to position domino based on placement
+    * Util to transform translate has errors
+    * Unit test
 
 * Pool and players need max width
     * Make responsive
-
-* Util to position and size face
-    * Works somewhat, but a little off
-        * Accommodate height buffer
-        * Figure out x axis
 
 * Util to position and size intervals
     * Need three orientations for each one
@@ -22,8 +21,7 @@
     * Interval faces
 
 * Domino component
-    * Size of domino relative to board determined by JavaScript
-        * Based on number of hexagons in grid
+    * Board is responsible for number of faces per board
     * Need interval svgs
         * Util to determine interval orientation
 
@@ -34,9 +32,6 @@
 * Make players, pool, and logs responsive
     * Logs
         * Fix auto scrolling
-    * Players and pool
-        * Show domino components
-        * Pool needs order
 
 * Log component
     * Highlights most recent log

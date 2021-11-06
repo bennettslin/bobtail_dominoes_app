@@ -12,6 +12,7 @@ import styleConfigFaces from '../../../styles/checker/faces'
 import styleConfigDominoes from '../../../styles/dominoes'
 import { DIRECTION_X } from '../../../constants/music/game'
 import './style'
+import { getDominoCentreStyling, getDominoPositionStyling } from '../../../utils/music/render/board/coordinates'
 
 const Domino = ({
     dominoIndex,
@@ -26,10 +27,21 @@ const Domino = ({
             {...{
                 className: cx(
                     'Domino',
+                    placement && 'Domino__placed',
                     orientation === DIRECTION_X ?
                         'Domino__horizontal' :
                         'Domino__vertical',
                 ),
+                ...placement && {
+                    style: {
+                        ...getDominoPositionStyling({
+                            placement,
+                        }),
+                        ...getDominoCentreStyling({
+                            orientation,
+                        }),
+                    },
+                },
             }}
         >
             <Svg

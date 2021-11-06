@@ -1,12 +1,14 @@
-$width__hexagon: 30px;
+$width__hexagon: 100% / 20; // Divide by number of hexagons in board width.
 $width__horizontal: $width__hexagon * 2;
 $width__vertical: $width__hexagon * 1.5;
 
-// $height__hexagon: $width__hexagon * 1.1547;
-// $height__orientationX: $height__hexagon;
-
 .Domino {
     z-index: 1;
+}
+
+.Domino__placed {
+    position: absolute;
+    // transform: translate(-50%, -50%); // TODO: Style with JavaScript.
 }
 
 .Domino__horizontal {
