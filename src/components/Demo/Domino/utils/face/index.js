@@ -29,12 +29,12 @@ export const getFacePositionAndSizeStyling = ({
         left = baseWidthUnit * (pitchIndex ? 3 : 1)
 
     } else {
-        if (!pitchIndex) {
-            top = baseHeightUnit * 5 / 2
-            left = baseWidthUnit * (orientation === DIRECTION_Y ? 1 : 2)
-        } else {
+        if (pitchIndex) {
             top = baseHeightUnit * 1
             left = baseWidthUnit * (orientation === DIRECTION_Y ? 2 : 1)
+        } else {
+            top = baseHeightUnit * 5 / 2
+            left = baseWidthUnit * (orientation === DIRECTION_Y ? 1 : 2)
         }
     }
 

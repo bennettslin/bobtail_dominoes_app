@@ -13,6 +13,7 @@ const Board = () => {
         <Flex
             {...{
                 className: 'Board',
+                flexWrap: 'wrap',
                 style: {
                     backgroundColor: '#dbb',
                 },

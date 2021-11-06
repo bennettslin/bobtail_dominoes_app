@@ -1,11 +1,10 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import Flex from '../../Flex'
-import Svg from '../../Svg'
+import PoolInterval from './PoolInterval'
+import PoolPitch from './PoolPitch'
 import { mapPool } from '../../../redux/game/selector'
-import { getFaceSrc } from '../../ChordChecker/PitchButtons/PitchButton/util'
 import { getIntervalCountsInPool, getPitchCountsInPool } from '../../../utils/music/game/statistics'
-import styleConfigFaces from '../../../styles/checker/faces'
 import './style'
 
 const Pool = () => {
@@ -15,36 +14,41 @@ const Pool = () => {
         <Flex
             {...{
                 className: 'Pool',
+                flexDirection: 'column',
                 flexGrow: 1,
                 style: {
                     backgroundColor: '#bdd',
                 },
             }}
         >
-            <Flex>
+            <Flex
+                {...{
+                    gap: 'sm',
+                }}
+            >
                 {getPitchCountsInPool(pool).map((pitchCount, pitch) => (
-                    <div {...{ key: pitch }} >
-                        <Svg
-                            {...{
-                                src: getFaceSrc(pitch),
-                                styleConfig: styleConfigFaces,
-                            }}
-                        />
-                        {pitchCount}
-                    </div>
+                    <PoolPitch
+                        {...{
+                            key: pitch,
+                            pitch,
+                            pitchCount,
+                        }}
+                    />
                 ))}
             </Flex>
-            <Flex>
+            <Flex
+                {...{
+                    gap: 'sm',
+                }}
+            >
                 {getIntervalCountsInPool(pool).map((intervalCount, index) => (
-                    <div {...{ key: index }} >
-                        <Svg
-                            {...{
-                                src: getFaceSrc(index + 1),
-                                styleConfig: styleConfigFaces,
-                            }}
-                        />
-                        {intervalCount}
-                    </div>
+                    <PoolInterval
+                        {...{
+                            key: index,
+                            interval: index + 1,
+                            intervalCount,
+                        }}
+                    />
                 ))}
             </Flex>
         </Flex>

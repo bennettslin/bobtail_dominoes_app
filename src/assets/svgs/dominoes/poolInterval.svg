@@ -1,0 +1,5 @@
+<svg viewBox="0 0 200 215">
+  <rect class="left" y="15" width="200" height="200" rx="15"/>
+  <rect class="edge" width="200" height="200" rx="15"/>
+  <rect class="face" x="4" y="4" width="192" height="192" rx="11"/>
+</svg>

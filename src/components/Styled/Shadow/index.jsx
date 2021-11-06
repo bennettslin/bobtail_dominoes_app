@@ -7,7 +7,7 @@ const StyledShadow = ({
     isInteractive,
     isInset,
     children,
-}) => children && (
+}) => (children || Number.isFinite(children)) && (
     <>
         <span
             {...{
