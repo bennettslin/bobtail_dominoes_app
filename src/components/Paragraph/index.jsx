@@ -14,6 +14,7 @@ const Paragraph = ({
                 'Paragraph',
                 className,
             ),
+            justifyContent: 'normal',
             tag: 'p',
         }}
     >

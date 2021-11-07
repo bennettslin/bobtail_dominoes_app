@@ -7,7 +7,7 @@ export const NOT_FOUND_PAGE = '404'
 
 export const ABOUT_PAGE = 'about'
 export const RULES_PAGE = 'rules'
-export const CHORDS_PAGE = 'chords'
+export const GUIDES_PAGE = 'guides'
 export const DEMO_PAGE = 'demo'
 export const PUZZLES_PAGE = 'puzzles'
 export const LINKS_PAGE = 'links'
@@ -15,7 +15,7 @@ export const LINKS_PAGE = 'links'
 export const TABBED_PAGES_SET = new Set([
     ABOUT_PAGE,
     RULES_PAGE,
-    CHORDS_PAGE,
+    GUIDES_PAGE,
     PUZZLES_PAGE,
 ])
 
@@ -25,6 +25,6 @@ export const BACK_LINKED_PAGES_SET = new Set([
 
 export const INITIAL_CHILD_PAGES = {
     [ABOUT_PAGE]: 'story',
-    [CHORDS_PAGE]: 'checker',
+    [GUIDES_PAGE]: 'chords',
     [RULES_PAGE]: 'setup',
 }

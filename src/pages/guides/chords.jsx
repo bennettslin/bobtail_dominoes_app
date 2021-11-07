@@ -1,14 +1,20 @@
 import React from 'react'
+import ChordChecker from '../../components/ChordChecker'
 import Page from '../../containers/Page'
-import PAGES_MAP from '../../content/chords'
+import PAGES_MAP from '../../content/guides'
 
-const ID = 'reference'
+const ID = 'chords'
 
 const Component = () => (
     <Page
         {...{
             ...PAGES_MAP[ID],
-            body: `
+            titleHeading: 'Chord checker',
+            body: [
+                (
+                    <ChordChecker />
+                ),
+                `
 ##### Triads
 
 - Minor triad (1, ♭3, 5)
@@ -25,7 +31,8 @@ const Component = () => (
 - Half-diminished seventh (1, ♭3, ♭5, ♭7)
 - Diminished seventh (1, ♭3, ♭5, ♭♭7)
 - Augmented major seventh (1, 3, ♯5, 7)
-            `,
+                `,
+            ],
         }}
     />
 )
