@@ -4,7 +4,7 @@ import cx from 'classnames'
 import Flex from '../../Flex'
 import Svg from '../../Svg'
 import { getDominoPitches } from '../../../utils/music/game/dominoes'
-import { getOrientation } from '../../../utils/music/game/placement/orientation'
+import { getIsPlacementUpsideDown, getOrientation } from '../../../utils/music/game/placement/orientation'
 import { getFacePositionAndSizeStyling } from '../../../utils/music/render/face'
 import { getDominoSrc } from '../../../utils/src/dominoes'
 import { getFaceSrc } from '../../../utils/src/faces'
@@ -50,7 +50,11 @@ const Domino = ({
                     styleConfig: styleConfigDominoes,
                 }}
             />
-            {pitches.map((pitch, pitchIndex) => (
+            {(
+                getIsPlacementUpsideDown(placement) ?
+                    [...pitches].reverse() :
+                    pitches
+            ).map((pitch, pitchIndex) => (
                 <Svg
                     {...{
                         key: pitch,

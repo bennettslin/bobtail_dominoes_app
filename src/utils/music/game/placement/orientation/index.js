@@ -14,3 +14,22 @@ export const getOrientation = placement => {
     }
     return DIRECTION_XY
 }
+
+export const getIsPlacementUpsideDown = placement => {
+    if (!placement) {
+        return false
+    }
+
+    const orientation = getOrientation(placement)
+
+    if (orientation === DIRECTION_X) {
+        return placement[0][0] > placement[1][0]
+    } else if (orientation === DIRECTION_Y) {
+        return placement[0][1] > placement[1][1]
+    } else {
+        return (
+            placement[0][0] < placement[1][0] &&
+            placement[0][1] > placement[1][1]
+        )
+    }
+}

@@ -1,12 +1,20 @@
 import { DIRECTION_XY } from '../../../../../constants/music/game'
-import { getOrientation } from '../../../game/placement/orientation'
+import { getIsPlacementUpsideDown, getOrientation } from '../../../game/placement/orientation'
 
 export const getZIndexDominoesList = board => (
     [...board].sort((
         { placement: firstPlacement },
         { placement: secondPlacement },
     ) => {
-        const yOrder = secondPlacement[0][1] - firstPlacement[0][1]
+        // We want the coordinates for each lower face.
+        const
+            firstCoordinate = firstPlacement[
+                getIsPlacementUpsideDown(firstPlacement) ? 1 : 0
+            ],
+            secondCoordinate = secondPlacement[
+                getIsPlacementUpsideDown(secondPlacement) ? 1 : 0
+            ],
+            yOrder = secondCoordinate[1] - firstCoordinate[1]
 
         // Sort by y of lower face. Lower y always renders later.
         if (yOrder) {
@@ -14,7 +22,7 @@ export const getZIndexDominoesList = board => (
         }
 
         // If y is equal, sort by x. Higher x renders later by default.
-        const xOrder = firstPlacement[0][0] - secondPlacement[0][0]
+        const xOrder = firstCoordinate[0] - secondCoordinate[0]
 
         // However, lower x renders later if higher x has orientation XY.
         return (

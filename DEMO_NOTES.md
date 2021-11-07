@@ -3,9 +3,16 @@
 # TODO
 * Real moves should not pass pitch sets to game?
 
-* Util to position domino based on placement
-    * Util to transform translate has errors
-    * Unit test
+* Figure out responsive board thing now
+* Permanent solution for wide board
+    * Other than z-index
+    * Will eventually want user to be able to hover over dominoes
+
+* Unit tests
+    * getIsPlacementUpsideDown
+    * All render boards
+        * Update zIndex tests
+    * Confirm manually
 
 * Pool and players need max width
     * Make responsive
@@ -22,10 +29,6 @@
     * Board is responsible for number of faces per board
     * Need interval svgs
         * Util to determine interval orientation
-
-* Permanent solution for wide board
-    * Other than z-index
-    * Will eventually want user to be able to hover over dominoes
 
 * Make players, pool, and logs responsive
     * Logs
