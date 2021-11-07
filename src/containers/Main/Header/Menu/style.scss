@@ -3,7 +3,9 @@
 .Menu {
     margin: 0 $margin__xs;
 
-    @media (min-width: $breakpoint__sm) {
+    @media
+    (min-width: $breakpoint__sm) and (orientation: portrait),
+    (min-height: $breakpoint__sm) and (orientation: landscape) {
         margin: 0 $margin__sm;
     }
 }

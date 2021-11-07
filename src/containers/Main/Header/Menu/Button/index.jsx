@@ -7,6 +7,7 @@ import StyledButtonText from '../../../../../components/Styled/ButtonText'
 import { getMapIsSelectedOrTabbedPagePath } from '../../../../../redux/page/selector'
 import { join } from '../../../../../utils/general'
 import { getInitialChildPage } from '../../../../../utils/pages/path'
+import { getCapitalizedText } from '../../../../../utils/format'
 
 const MenuButton = ({
     className,
@@ -34,7 +35,7 @@ const MenuButton = ({
             }}
         >
             <StyledButtonText {...{ isSelected }}>
-                {children}
+                {children || getCapitalizedText(topLevelPage)}
             </StyledButtonText>
         </StyledButton>
     )
@@ -43,7 +44,7 @@ const MenuButton = ({
 MenuButton.propTypes = {
     className: PropTypes.string,
     topLevelPage: PropTypes.string.isRequired,
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node,
 }
 
 export default MenuButton

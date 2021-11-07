@@ -16,10 +16,13 @@ $margin__shadow: $margin__xs * 0.3;
             background-color: $colour__background__light;
             content: '';
 
-            @media (min-width: $breakpoint__sm) {
+            @media
+            (min-width: $breakpoint__sm) and (orientation: portrait),
+            (min-height: $breakpoint__sm) and (orientation: landscape) {
                 left: -$margin__sm;
                 width: calc(100% + #{$margin__sm * 2});
             }
+            
         }
 
         &:before {

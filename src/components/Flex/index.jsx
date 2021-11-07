@@ -12,6 +12,7 @@ const Flex = forwardRef(({
     flexWrap,
     gap,
     columnGap,
+    order,
     children,
     Tag = 'div',
     ...rest
@@ -48,6 +49,9 @@ const Flex = forwardRef(({
                 columnGap?.xs === 'md' && 'xs__columnGap__md',
                 className,
             ),
+            style: {
+                order,
+            },
             ...rest,
         }}
     >
@@ -80,6 +84,7 @@ Flex.propTypes = {
             xs: PropTypes.oneOf(['md']),
         }),
     ]),
+    order: PropTypes.number,
     children: PropTypes.node,
     Tag: PropTypes.any,
 }

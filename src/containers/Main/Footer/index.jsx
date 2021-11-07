@@ -29,6 +29,7 @@ const MainFooter = ({ didMount }) => {
                     className: cx(
                         'hidden',
                     ),
+                    order: 3,
                 }}
             >
                 <StyledFrameBody

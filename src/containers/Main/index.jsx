@@ -27,10 +27,10 @@ const Main = ({ children }) => {
             }}
         >
             <Audio />
+            {children}
             {!isFullPage && (
                 <MainHeader />
             )}
-            {children}
             {!isFullPage && (
                 <MainFooter />
             )}

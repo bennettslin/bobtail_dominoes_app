@@ -20,6 +20,7 @@ const MainHeader = () => {
                     'hidden',
                     isLoaded && 'shown',
                 ),
+                order: 1,
             }}
         >
             <StyledFrameBody

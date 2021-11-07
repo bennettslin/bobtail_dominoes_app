@@ -2,12 +2,12 @@ import React from 'react'
 import cx from 'classnames'
 import Flex from '../../../../components/Flex'
 import MenuButton from './Button'
-import { getCapitalizedText } from '../../../../utils/format'
 import {
     ABOUT_PAGE,
     RULES_PAGE,
     GUIDES_PAGE,
     DEMO_PAGE,
+    PUZZLES_PAGE,
 } from '../../../../constants/pages'
 import './style'
 
@@ -21,18 +21,11 @@ const Menu = () => (
             columnGap: { default: 'sm', xs: 'md' },
         }}
     >
-        <MenuButton {...{ topLevelPage: ABOUT_PAGE }}>
-            {getCapitalizedText(ABOUT_PAGE)}
-        </MenuButton>
-        <MenuButton {...{ topLevelPage: RULES_PAGE }}>
-            {getCapitalizedText(RULES_PAGE)}
-        </MenuButton>
-        <MenuButton {...{ topLevelPage: GUIDES_PAGE }}>
-            {getCapitalizedText(GUIDES_PAGE)}
-        </MenuButton>
-        <MenuButton {...{ topLevelPage: DEMO_PAGE }}>
-            {getCapitalizedText(DEMO_PAGE)}
-        </MenuButton>
+        <MenuButton {...{ topLevelPage: ABOUT_PAGE }} />
+        <MenuButton {...{ topLevelPage: RULES_PAGE }} />
+        <MenuButton {...{ topLevelPage: GUIDES_PAGE }} />
+        <MenuButton {...{ topLevelPage: DEMO_PAGE }} />
+        <MenuButton {...{ topLevelPage: PUZZLES_PAGE }} />
     </Flex>
 )
 

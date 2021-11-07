@@ -5,7 +5,9 @@ $length__base: $margin__xs;
 $borderRadius__inner: $borderRadius__lg - $length__base * 0.66;
 
 .StyledFrameBody {
-    @media (min-width: $breakpoint__xs) {
+    @media
+    (min-width: $breakpoint__xs) and (orientation: portrait),
+    (min-height: $breakpoint__xs) and (orientation: landscape) {
         border-radius: $borderRadius__inner;
     }
 }

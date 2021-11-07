@@ -5,13 +5,22 @@
 }
 
 .Main__defaultPage {
-    max-width: $width__lg;
+    max-width: 100%;
+}
 
-    @media (min-width: $breakpoint__xs) {
+@media
+(min-width: $breakpoint__xs) and (orientation: portrait),
+(min-height: $breakpoint__xs) and (orientation: landscape) {
+    .Main__defaultPage {
+        max-width: $width__lg;
         padding: $margin__xs;
     }
+}
 
-    @media (min-width: $breakpoint__sm) {
+@media
+(min-width: $breakpoint__sm) and (orientation: portrait),
+(min-height: $breakpoint__sm) and (orientation: landscape) {
+    .Main__defaultPage {
         padding: $margin__sm;
     }
 }
@@ -21,6 +30,7 @@
 }
 
 #gatsby-focus-wrapper {
+    order: 2;
     flex-grow: 1;
     min-width: 100%;
 

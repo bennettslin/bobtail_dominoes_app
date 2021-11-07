@@ -6,20 +6,20 @@
     padding: $margin__xs * 0.5;
 
     @media
-        (min-width: $breakpoint__xs) and (orientation: portrait),
-        (min-height: $breakpoint__xs) and (orientation: landscape) {
+    (min-width: $breakpoint__xs) and (orientation: portrait),
+    (min-height: $breakpoint__xs) and (orientation: landscape) {
         padding: $margin__xs;
     }
 
     @media
-        (min-width: $breakpoint__sm) and (orientation: portrait),
-        (min-height: $breakpoint__sm) and (orientation: landscape) {
+    (min-width: $breakpoint__sm) and (orientation: portrait),
+    (min-height: $breakpoint__sm) and (orientation: landscape) {
         padding: $margin__sm;
     }
 
     @media
-        (min-width: $breakpoint__md) and (orientation: portrait),
-        (min-height: $breakpoint__md) and (orientation: landscape) {
+    (min-width: $breakpoint__md) and (orientation: portrait),
+    (min-height: $breakpoint__md) and (orientation: landscape) {
         padding: $margin__md;
     }
 }

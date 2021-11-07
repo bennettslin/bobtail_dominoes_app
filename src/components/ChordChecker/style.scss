@@ -5,7 +5,9 @@
 .ChordChecker {
     padding: $margin__xs;
 
-    @media (min-width: $breakpoint__xs) {
+    @media
+    (min-width: $breakpoint__xs) and (orientation: portrait),
+    (min-height: $breakpoint__xs) and (orientation: landscape) {
         padding: $margin__sm;
     }
 

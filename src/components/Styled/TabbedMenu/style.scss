@@ -6,18 +6,6 @@
     width: calc(100% + #{$margin__xs * 2});
     padding: 0 $margin__xs;
 
-    @media (min-width: $breakpoint__xs) {
-        width: calc(100% + #{$margin__sm * 2});
-        padding: 0 $margin__md;
-        padding-top: $margin__xs;
-    }
-
-    @media (min-width: $breakpoint__sm) {
-        width: calc(100% + #{$margin__md * 2});
-        padding: 0 $margin__lg;
-        padding-top: $margin__sm;
-    }
-
     background-color: $colour__background__dark;
 
     &:before {
@@ -27,6 +15,26 @@
 
     &:after {
         bottom: -$margin__md;
+    }
+}
+
+@media
+(min-width: $breakpoint__xs) and (orientation: portrait),
+(min-height: $breakpoint__xs) and (orientation: landscape) {
+    .StyledTabbedMenu {
+        width: calc(100% + #{$margin__sm * 2});
+        padding: 0 $margin__md;
+        padding-top: $margin__xs;
+    }
+}
+
+@media
+(min-width: $breakpoint__sm) and (orientation: portrait),
+(min-height: $breakpoint__sm) and (orientation: landscape) {
+    .StyledTabbedMenu {
+        width: calc(100% + #{$margin__md * 2});
+        padding: 0 $margin__lg;
+        padding-top: $margin__sm;
     }
 }
 

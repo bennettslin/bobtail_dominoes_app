@@ -37,16 +37,6 @@ $length__base: $margin__xs * 0.5;
     }
 }
 
-.StyledPlatform__side {
-    @media (min-width: $breakpoint__xs) {
-        border-radius: $borderRadius__lg;
-
-        &:before {
-            border-radius: $borderRadius__lg;
-        }
-    }
-}
-
 .StyledPlatform__bottom {
     border-radius: $borderRadius__lg $borderRadius__lg 0 0;
 
@@ -54,13 +44,23 @@ $length__base: $margin__xs * 0.5;
         height: 100%;
         border-radius: $borderRadius__lg $borderRadius__lg 0 0;
     }
-    
-    @media (min-width: $breakpoint__xs) {
+}
+
+@media
+(min-width: $breakpoint__xs) and (orientation: portrait),
+(min-height: $breakpoint__xs) and (orientation: landscape) {
+    .StyledPlatform__side,
+    .StyledPlatform__bottom {
         border-radius: $borderRadius__lg;
-        
+
+        &:before {
+            border-radius: $borderRadius__lg;
+        }
+    }
+
+    .StyledPlatform__bottom {
         &:before {
             height: calc(100% - #{$length__base});
-            border-radius: $borderRadius__lg;
         }
     }
 }

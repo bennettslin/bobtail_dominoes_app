@@ -12,8 +12,17 @@ $borderRadius__inner: $borderRadius__lg - $length__base * 0.25;
 
 .StyledPage {
     width: 100%;
+}
 
-    @media (min-width: $breakpoint__xs) {
+.StyledPage__body {
+    padding: $margin__xs;
+    background-color: $colour__background__light;
+}
+
+@media
+(min-width: $breakpoint__xs) and (orientation: portrait),
+(min-height: $breakpoint__xs) and (orientation: landscape) {
+    .StyledPage {
         padding:
             $length__top__edge
             $length__side__edge
@@ -35,22 +44,20 @@ $borderRadius__inner: $borderRadius__lg - $length__base * 0.25;
             content: '';
         }
     }
-}
 
-.StyledPage__body {
-    padding: $margin__xs;
-
-    @media (min-width: $breakpoint__xs) {
+    .StyledPage__body {
         padding: $margin__sm;
         margin-bottom: $length__base;
         border-radius: $borderRadius__inner;
     }
+}
 
-    @media (min-width: $breakpoint__sm) {
+@media
+(min-width: $breakpoint__sm) and (orientation: portrait),
+(min-height: $breakpoint__sm) and (orientation: landscape) {
+    .StyledPage__body {
         padding: $margin__md;
     }
-
-    background-color: $colour__background__light;
 }
 
 .StyledPage__body__tabbedMenu {

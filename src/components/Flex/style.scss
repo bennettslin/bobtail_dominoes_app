@@ -27,8 +27,12 @@
     &.gap__md { gap: $margin__md; }
 
     &.columnGap__sm { column-gap: $margin__sm; }
+}
 
-    @media (min-width: $breakpoint__xs) {
+@media
+(min-width: $breakpoint__xs) and (orientation: portrait),
+(min-height: $breakpoint__xs) and (orientation: landscape) {
+    .Flex {
         &.xs__gap__xs { gap: $margin__xs; }
         &.xs__gap__sm { gap: $margin__sm; }
 
