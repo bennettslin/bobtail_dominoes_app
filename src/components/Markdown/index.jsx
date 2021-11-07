@@ -15,8 +15,6 @@ const Markdown = ({
         {...{
             className: cx(
                 'Markdown',
-                'fontSize__md',
-                'lineHeight__md',
             ),
             components: {
                 a: Anchor,

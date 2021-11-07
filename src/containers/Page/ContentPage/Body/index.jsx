@@ -24,6 +24,8 @@ const Body = () => {
             {...{
                 className: cx(
                     'Body',
+                    'fontSize__md',
+                    'lineHeight__md',
                 ),
                 flexGrow: 1,
                 flexDirection: 'column',

@@ -2,24 +2,21 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import './style'
-import Flex from '../Flex'
 
 const Paragraph = ({
     className,
     children,
 }) => (
-    <Flex
+    <p
         {...{
             className: cx(
                 'Paragraph',
                 className,
             ),
-            justifyContent: 'normal',
-            tag: 'p',
         }}
     >
         {children}
-    </Flex>
+    </p>
 )
 
 Paragraph.propTypes = {
