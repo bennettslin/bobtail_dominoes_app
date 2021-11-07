@@ -60,7 +60,7 @@ describe('getBestPointedMovesForTurn', () => {
         })).toBeNull()
     })
 
-    it.only('returns empty when no dominoes can be played', () => {
+    it('returns empty when no dominoes can be played', () => {
         expect(getBestPointedMovesForTurn({
             hand: new Set([14, 47, 64]),
             board: [{ dominoIndex: 2, placement: [[-1, 1], [0, 0]] }],

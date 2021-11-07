@@ -8,12 +8,6 @@
     * Other than z-index
     * Will eventually want user to be able to hover over dominoes
 
-* Unit tests
-    * getIsPlacementUpsideDown
-    * All render boards
-        * Update zIndex tests
-    * Confirm manually
-
 * Pool and players need max width
     * Make responsive
 
@@ -34,8 +28,12 @@
     * Logs
         * Fix auto scrolling
 
-* Log component
-    * Highlights most recent log
+* Highlight most recent dominoes and turns
+
+* Board positioning
+    * Centre board as dominoes are added
+    * Zoom out board when needed
+
 * Analytics call
 
 * getBestPointedMovesForTurn
