@@ -1,7 +1,7 @@
 @import '../../../scss/constants/responsive';
 
 .GameLogs {
-    max-width: 400px;
+    max-width: 400px; // TODO: Magic number.
 
     height: 100%; // Needed for auto scroll.
     padding: $margin__md 0;

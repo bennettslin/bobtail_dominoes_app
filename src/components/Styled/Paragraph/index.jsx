@@ -11,6 +11,7 @@ const StyledParagraph = ({ className, children }) => (
             className: cx(
                 'StyledParagraph',
                 'fontSize__md',
+                'lineHeight__md',
                 className,
             ),
         }}

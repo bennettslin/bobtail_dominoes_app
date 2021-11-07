@@ -41,7 +41,8 @@
 }
 
 .Demo__info {
-    flex-grow: 1;
+    width: 100%;
+    min-height: 150px; // TODO: Magic number.
     overflow: hidden;
 
     @media (min-width: $breakpoint__xs) and (min-height: $breakpoint__xs) {
@@ -53,6 +54,7 @@
     }
 
     @media (min-width: $breakpoint__sm) {
+        min-height: 200px; // TODO: Magic number.
         display: flex;
     }
 
@@ -65,6 +67,7 @@
     }
 
     @media (min-width: $breakpoint__md) {
+        min-height: 250px; // TODO: Magic number.
         display: flex;
     }
 
@@ -77,12 +80,14 @@
     }
 
     @media (min-width: $breakpoint__lg) {
+        min-height: 300px; // TODO: Magic number.
         display: flex;
         justify-content: space-between;
     }
 }
 
 .Demo__dominoes {
+    max-width: 250px; // TODO: Magic number
     height: 100%;
     flex-direction: column;
 }

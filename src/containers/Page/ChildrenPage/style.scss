@@ -5,27 +5,21 @@
     width: 100%;
     padding: $margin__xs * 0.5;
 
-    @media (min-width: $breakpoint__xs) and (min-height: $breakpoint__xs) {
+    @media
+        (min-width: $breakpoint__xs) and (orientation: portrait),
+        (min-height: $breakpoint__xs) and (orientation: landscape) {
         padding: $margin__xs;
     }
 
-    @media (min-width: $breakpoint__sm) {
-        padding: $margin__xs;
-    }
-
-    @media (min-width: $breakpoint__sm) and (min-height: $breakpoint__sm) {
+    @media
+        (min-width: $breakpoint__sm) and (orientation: portrait),
+        (min-height: $breakpoint__sm) and (orientation: landscape) {
         padding: $margin__sm;
     }
 
-    @media (min-width: $breakpoint__md) {
-        padding: $margin__sm;
-    }
-
-    @media (min-width: $breakpoint__md) and (min-height: $breakpoint__md) {
-        padding: $margin__md;
-    }
-
-    @media (min-width: $breakpoint__lg) {
+    @media
+        (min-width: $breakpoint__md) and (orientation: portrait),
+        (min-height: $breakpoint__md) and (orientation: landscape) {
         padding: $margin__md;
     }
 }

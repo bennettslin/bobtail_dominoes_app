@@ -29,6 +29,7 @@ const Component = () => {
                         'HomePage',
                     ),
                     flexDirection: 'columnReverse',
+                    justifyContent: 'spaceEvenly',
                     flexGrow: 1,
                 }}
             >
@@ -46,7 +47,6 @@ const Component = () => {
                         className: cx(
                             'HomeFlex',
                         ),
-                        flexGrow: 1,
                     }}
                 >
                     <StyledParagraph>
