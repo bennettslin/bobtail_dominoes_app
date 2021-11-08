@@ -1,6 +1,8 @@
 @import '../../scss/constants/responsive';
 
 .Paragraph {
+    position: relative;
+
     &:not(:first-child) {
         margin-top: $margin__md;
     }

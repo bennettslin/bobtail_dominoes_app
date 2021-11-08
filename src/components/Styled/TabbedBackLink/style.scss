@@ -9,7 +9,9 @@
     & {        
         display: none;
         
-        @media (min-width: $breakpoint__sm) {
+        @media
+        (min-width: $breakpoint__sm) and (orientation: portrait),
+        (min-height: $breakpoint__sm) and (orientation: landscape) {
             display: block;
         }
     }

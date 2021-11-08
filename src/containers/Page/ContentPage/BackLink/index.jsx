@@ -11,7 +11,6 @@ import Svg from '../../../../components/Svg'
 import { getMapShowBackLink } from '../../../../redux/page/selector'
 import { getCapitalizedText } from '../../../../utils/format'
 import backLink from '../../../../assets/svgs/app/backLink'
-import './style'
 
 const BackLink = ({ isStyledShadow }) => {
     const
@@ -31,7 +30,11 @@ const BackLink = ({ isStyledShadow }) => {
             }}
         >
             <TextTag>
-                <Flex>
+                <Flex
+                    {...{
+                        gap: 'xxs',
+                    }}
+                >
                     <Svg
                         {...{
                             className: cx(

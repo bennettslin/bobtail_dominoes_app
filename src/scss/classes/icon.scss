@@ -2,7 +2,9 @@
     width: $length__icon__xs;
     height: $length__icon__xs;
 
-    @media (min-width: $breakpoint__sm) {
+    @media
+    (min-width: $breakpoint__sm) and (orientation: portrait),
+    (min-height: $breakpoint__sm) and (orientation: landscape) {
         width: $length__icon__sm;
         height: $length__icon__sm;
     }

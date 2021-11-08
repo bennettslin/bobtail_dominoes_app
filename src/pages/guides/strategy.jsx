@@ -10,11 +10,8 @@ const Component = () => (
             ...PAGES_MAP[ID],
             titleHeading: 'Strategy and tips',
             body: `
-##### TODO
-
-- Tip 1
-- Tip 2
-- Tip 3
+- Any three notes make up a valid triad if each note is separated from the others by a minor third or greater.
+- Any four notes make up a valid seventh chord if only two notes at most are separated by a whole tone or less.
             `,
         }}
     />

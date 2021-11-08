@@ -43,6 +43,7 @@
 
     &.StyledShadow__interactive {
         color: $colour__link__light;
+        fill: $colour__link__light;
     }
 }
 
@@ -51,7 +52,9 @@
     top: 1px;
     left: 1px;
 
-    @media (min-width: $breakpoint__xs) {
+    @media
+    (min-width: $breakpoint__xs) and (orientation: portrait),
+    (min-height: $breakpoint__xs) and (orientation: landscape) {
         top: 2px;
     }
 }

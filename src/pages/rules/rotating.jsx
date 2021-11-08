@@ -17,7 +17,7 @@ const Component = () => (
                 `
 A domino that is already on the board may be shifted only by rotating in place.
 
-At any number of times during your turn, you may rotate a single domino on the board by pivoting around one of its faces, or by spinning around its center to swap its two faces.
+At any number of times during your turn, you may rotate a single domino on the board by pivoting around one of its notes, or by spinning around its center to swap its two notes.
                 `,
                 (
                     <DominoSvg {...{ src: rotatingValid }} />

@@ -8,7 +8,6 @@ import Svg from '../../../../../../components/Svg'
 import arrow from '../../../../../../assets/svgs/app/arrow'
 import { getCapitalizedText } from '../../../../../../utils/format'
 import { getPagePathFromConfig } from '../../../../../../utils/pages/config'
-import './style'
 
 const DirectionPageLink = ({ direction, directionPage }) => {
     if (!directionPage) {
@@ -30,6 +29,7 @@ const DirectionPageLink = ({ direction, directionPage }) => {
                 className: cx(
                     'DirectionPageLink',
                     'font__button',
+                    'fontSize__md',
                 ),
                 pagePath: getPagePathFromConfig({
                     topLevelPage,
