@@ -5,12 +5,14 @@ import './style'
 
 const Paragraph = ({
     className,
+    fontSize,
     children,
 }) => (
     <p
         {...{
             className: cx(
                 'Paragraph',
+                fontSize === 'md' && 'fontSize__md',
                 className,
             ),
         }}
@@ -21,6 +23,7 @@ const Paragraph = ({
 
 Paragraph.propTypes = {
     className: PropTypes.string,
+    fontSize: PropTypes.oneOf(['md']),
     children: PropTypes.node.isRequired,
 }
 

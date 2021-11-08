@@ -6,6 +6,7 @@ import './style'
 
 const Heading = ({
     level = 1,
+    fontSize,
     children,
 }) => {
     const Tag = `h${level}`
@@ -16,6 +17,7 @@ const Heading = ({
                 className: cx(
                     'Heading',
                     'font__heading',
+                    fontSize === 'md' && 'fontSize__md',
                 ),
                 id: getSlugForLinkId(children),
             }}
@@ -27,6 +29,7 @@ const Heading = ({
 
 Heading.propTypes = {
     level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
+    fontSize: PropTypes.oneOf(['md']),
     children: PropTypes.node.isRequired,
 }
 

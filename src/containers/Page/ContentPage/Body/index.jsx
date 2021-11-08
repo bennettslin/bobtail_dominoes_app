@@ -24,8 +24,6 @@ const Body = () => {
             {...{
                 className: cx(
                     'Body',
-                    'fontSize__md',
-                    'lineHeight__md',
                 ),
                 flexGrow: 1,
                 flexDirection: 'column',
@@ -34,13 +32,13 @@ const Body = () => {
                 gap: 'md',
             }}
         >
-            <Heading>
+            <Heading {...{ fontSize: 'md' }}>
                 {getSmartQuotedText(pageHeading)}
             </Heading>
-            <Heading {...{ level: 3 }}>
+            <Heading {...{ level: 3, fontSize: 'md' }}>
                 {getSmartQuotedText(titleHeading)}
             </Heading>
-            <Heading {...{ level: 5 }}>
+            <Heading {...{ level: 5, fontSize: 'md' }}>
                 {formatHeadingForDate(pageDate || date)}
             </Heading>
             {body && (

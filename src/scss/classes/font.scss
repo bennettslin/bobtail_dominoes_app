@@ -36,7 +36,7 @@
 }
 
 .fontSize__sm { font-size: 0.66em; }
-.fontSize__md { font-size: 1em; }
+.fontSize__md { font-size: 1em; line-height: 1.5em; }
 .fontSize__lg { font-size: 1.15em; }
 
 @media
@@ -62,5 +62,3 @@
     .fontSize__md { font-size: 1.5em; }
     .fontSize__lg { font-size: 2em; }
 }
-
-.lineHeight__md { line-height: 1.5em; }

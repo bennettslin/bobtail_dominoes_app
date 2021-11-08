@@ -5,15 +5,14 @@ import Paragraph from '../../Paragraph'
 import StyledShadow from '../Shadow'
 import './style'
 
-const StyledParagraph = ({ className, children }) => (
+const StyledParagraph = ({ className, children, ...rest }) => (
     <Paragraph
         {...{
             className: cx(
                 'StyledParagraph',
-                'fontSize__md',
-                'lineHeight__md',
                 className,
             ),
+            ...rest,
         }}
     >
         <StyledShadow >

@@ -49,7 +49,7 @@ const Component = () => {
                         ),
                     }}
                 >
-                    <StyledParagraph>
+                    <StyledParagraph {...{ fontSize: 'md' }}>
                         Bobtail Dominoes is the ultimate chord-building game for musicians of all skill levels. Challenge yourself or have fun playing with friends!
                     </StyledParagraph>
                 </Flex>
