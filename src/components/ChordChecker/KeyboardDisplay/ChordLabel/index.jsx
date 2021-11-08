@@ -14,7 +14,7 @@ const ChordLabel = () => {
             {...{
                 className: cx(
                     'ChordLabel',
-                    'fontSize__md',
+                    'labelFontSize__md',
                 ),
             }}
         >

@@ -35,9 +35,17 @@
     letter-spacing: 0.05em;
 }
 
+.labelFontSize__md { font-size: 1em; }
+.labelFontSize__lg { font-size: 1.15em; }
+
 .fontSize__sm { font-size: 0.66em; }
 .fontSize__md { font-size: 1em; line-height: 1.5em; }
 .fontSize__lg { font-size: 1.15em; }
+
+@media (min-width: $breakpoint__xs) {
+    .labelFontSize__md { font-size: 1.16em; }
+    .labelFontSize__lg { font-size: 1.4em; }
+}
 
 @media
 (min-width: $breakpoint__xs) and (orientation: portrait),
@@ -47,12 +55,22 @@
     .fontSize__lg { font-size: 1.4em; }
 }
 
+@media (min-width: $breakpoint__sm) {
+    .labelFontSize__md { font-size: 1.33em; }
+    .labelFontSize__lg { font-size: 1.75em; }
+}
+
 @media
 (min-width: $breakpoint__sm) and (orientation: portrait),
 (min-height: $breakpoint__sm) and (orientation: landscape) {
     .fontSize__sm { font-size: 0.88em; }
     .fontSize__md { font-size: 1.33em; }
     .fontSize__lg { font-size: 1.75em; }
+}
+
+@media (min-width: $breakpoint__md) {
+    .labelFontSize__md { font-size: 1.5em; }
+    .labelFontSize__lg { font-size: 2em; }
 }
 
 @media
