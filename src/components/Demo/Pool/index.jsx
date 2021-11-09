@@ -5,10 +5,13 @@ import PoolInterval from './PoolInterval'
 import PoolPitch from './PoolPitch'
 import { mapPool } from '../../../redux/game/selector'
 import { getIntervalCountsInPool, getPitchCountsInPool } from '../../../utils/music/game/statistics'
+import { OCTAVE_RANGE } from '../../../constants/music/audio'
 import './style'
 
 const Pool = () => {
-    const pool = useSelector(mapPool)
+    const
+        pool = useSelector(mapPool),
+        pitchCountsList = getPitchCountsInPool(pool)
 
     return (
         <Flex
@@ -16,31 +19,28 @@ const Pool = () => {
                 className: 'Pool',
                 flexDirection: 'column',
                 flexGrow: 1,
-                style: {
-                    backgroundColor: '#bdd',
-                },
+                gap: 'md',
             }}
         >
-            <Flex
-                {...{
-                    gap: 'sm',
-                }}
-            >
-                {getPitchCountsInPool(pool).map((pitchCount, pitch) => (
-                    <PoolPitch
-                        {...{
-                            key: pitch,
-                            pitch,
-                            pitchCount,
-                        }}
-                    />
+            <Flex {...{ flexDirection: 'column', gap: 'xs' }}>
+                {[
+                    pitchCountsList.slice(0, OCTAVE_RANGE / 2),
+                    pitchCountsList.slice(OCTAVE_RANGE / 2),
+                ].map((list, index) => (
+                    <Flex {...{ key: index, gap: 'sm' }}>
+                        {list.map((pitchCount, pitch) => (
+                            <PoolPitch
+                                {...{
+                                    key: pitch,
+                                    pitch: pitch + (index ? OCTAVE_RANGE / 2 : 0),
+                                    pitchCount,
+                                }}
+                            />
+                        ))}
+                    </Flex>
                 ))}
             </Flex>
-            <Flex
-                {...{
-                    gap: 'sm',
-                }}
-            >
+            <Flex {...{ gap: 'sm' }}>
                 {getIntervalCountsInPool(pool).map((intervalCount, index) => (
                     <PoolInterval
                         {...{

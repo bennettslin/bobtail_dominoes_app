@@ -22,6 +22,7 @@ const DemoBody = () => (
             {...{
                 className: 'DemoBody__dominoes',
                 flexDirection: 'column',
+                gap: 'xs',
                 style: {
                     overflow: 'hidden',
                 },

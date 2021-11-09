@@ -24,18 +24,24 @@ const Board = () => {
                     flexGrow: 1,
                 }}
             >
-                {getZIndexDominoesList(board).map(move => {
-                    const { dominoIndex, placement } = move
-                    return (
-                        <Domino
-                            {...{
-                                key: dominoIndex,
-                                dominoIndex,
-                                placement,
-                            }}
-                        />
-                    )
-                })}
+                <div
+                    {...{
+                        className: 'Board__movable',
+                    }}
+                >
+                    {getZIndexDominoesList(board).map(move => {
+                        const { dominoIndex, placement } = move
+                        return (
+                            <Domino
+                                {...{
+                                    key: dominoIndex,
+                                    dominoIndex,
+                                    placement,
+                                }}
+                            />
+                        )
+                    })}
+                </div>
             </Flex>
         </Flex>
     )

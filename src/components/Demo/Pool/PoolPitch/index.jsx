@@ -1,39 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Flex from '../../../Flex'
-import StyledShadow from '../../../Styled/Shadow'
-import Svg from '../../../Svg'
-import styleConfigDominoes from '../../../../styles/dominoes'
-import styleConfigFaces from '../../../../styles/checker/faces'
+import PoolIcon from '../PoolIcon'
 import { getFaceSrc } from '../../../../utils/src/faces'
 import poolPitch from '../../../../assets/svgs/dominoes/poolPitch'
-import './style'
 
 const PoolPitch = ({ pitch, pitchCount }) => (
-    <Flex
+    <PoolIcon
         {...{
-            gap: 'xs',
+            tileSrc: poolPitch,
+            faceSrc: getFaceSrc(pitch),
+            count: pitchCount,
         }}
-    >
-        <Svg
-            {...{
-                src: poolPitch,
-                styleConfig: styleConfigDominoes,
-            }}
-        />
-        <Svg
-            {...{
-                className: 'PoolPitch__pitch',
-                src: getFaceSrc(pitch),
-                styleConfig: styleConfigFaces,
-            }}
-        />
-        <Flex>
-            <StyledShadow>
-                {pitchCount}
-            </StyledShadow>
-        </Flex>
-    </Flex>
+    />
 )
 
 PoolPitch.propTypes = {
