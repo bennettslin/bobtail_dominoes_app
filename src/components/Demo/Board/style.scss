@@ -1,61 +1,112 @@
+@import '../../../scss/constants/demo';
+@import '../../../scss/constants/menu';
+@import '../../../scss/constants/page';
 @import '../../../scss/constants/responsive';
 
-.Board__container {
-    width: 100%;
-    height: 100%;
-
-    @media (min-width: $breakpoint__lg) {
-        position: absolute;
-    }
-}
-
-.BoardSvg {
-    display: flex;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    min-width: 100%;
-    min-height: 100%;
-    flex-grow: 1;
-}
-
 .Board {
-    width: 100%;
-    height: 0;
-    padding-bottom: 100%;
-
-    @media (min-width: $breakpoint__xs) {
+    @media (orientation: landscape) {
+        flex-grow: 1;
         height: 100%;
-        padding-bottom: 0;
     }
 
-    @media (min-width: $breakpoint__xs) and (min-height: $breakpoint__sm) {
-        height: 0;
-        padding-bottom: 100%;
-    }
-
-    @media (min-width: $breakpoint__sm) {
-        height: 100%;
-        padding-bottom: 0;
-    }
-
-    @media (min-width: $breakpoint__sm) and (min-height: $breakpoint__md) {
-        height: 0;
-        padding-bottom: 100%;
-    }
-
-    @media (min-width: $breakpoint__md) {
-        height: 100%;
-        padding-bottom: 0;
-    }
-
-    @media (min-width: $breakpoint__md) and (min-height: $breakpoint__lg) {
-        height: 0;
-        padding-bottom: 100%;
-    }
-
-    @media (min-width: $breakpoint__lg) {
+    @media (orientation: portrait) {
         position: absolute;
-        height: 100%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% - #{$height__info});
+        max-height: $portraitLength__board__xxs;
+
+        @media (min-width: $breakpoint__xs) {
+            max-height: $portraitLength__board__xs;
+        }
+        @media (min-width: $breakpoint__sm) {
+            max-height: $portraitLength__board__sm;
+        }
+        @media (min-width: $breakpoint__md) {
+            max-height: $portraitLength__board__md;
+        }
+    }
+}
+
+.Board__square {
+    aspect-ratio: 1 / 1;
+
+    /**
+     * This is needed because aspect ratio only prevents exceeding
+     * height, not width.
+    */
+    @media (orientation: portrait) {
+        // Screen height - page padding - menu height - info height.
+        max-width: calc(
+            100vh - #{
+                $padding__page__xxs * 2 +
+                $height__menu__xxs +
+                $height__info
+            }
+        );
+
+        @media (min-width: $breakpoint__xs) {
+            max-width: calc(
+                100vh - #{
+                    $padding__page__xs * 2 +
+                    $height__menu__xs +
+                    $height__info
+                }
+            );
+        }
+        @media (min-width: $breakpoint__sm) {
+            max-width: calc(
+                100vh - #{
+                    $padding__page__sm * 2 +
+                    $height__menu__sm +
+                    $height__info
+                }
+            );
+        }
+        @media (min-width: $breakpoint__md) {
+            max-width: calc(
+                100vh - #{
+                    $padding__page__md * 2 +
+                    $height__menu__md +
+                    $height__info
+                }
+            );
+        }
+    }
+
+    @media (orientation: landscape) {
+        // Screen height - page padding - menu height - info height.
+        max-width: calc(
+            100vh - #{
+                $padding__page__xxs * 2 +
+                $height__menu__xxs
+            }
+        );
+
+        @media (min-height: $breakpoint__xs) {
+            max-width: calc(
+                100vh - #{
+                    $padding__page__xs * 2 +
+                    $height__menu__xs
+                }
+            );
+        }
+        @media (min-height: $breakpoint__sm) {
+            max-width: calc(
+                100vh - #{
+                    $padding__page__sm * 2 +
+                    $height__menu__sm
+                }
+            );
+        }
+        @media (min-height: $breakpoint__md) {
+            max-width: calc(
+                100vh - #{
+                    $padding__page__md * 2 +
+                    $height__menu__md
+                }
+            );
+        }
     }
 }

@@ -1,0 +1,54 @@
+@import '../../../scss/constants/demo';
+@import '../../../scss/constants/menu';
+@import '../../../scss/constants/page';
+@import '../../../scss/constants/responsive';
+
+.DemoBody {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.DemoBody__dominoes,
+.GameLogs {
+    @media (orientation: portrait) {
+        height: calc(100% - #{$portraitLength__board__xxs});
+        min-height: $height__info;
+
+        @media (min-width: $breakpoint__xs) {
+            height: calc(100% - #{$portraitLength__board__xs});
+        }
+        @media (min-width: $breakpoint__sm) {
+            height: calc(100% - #{$portraitLength__board__sm});
+        }
+        @media (min-width: $breakpoint__md) {
+            height: calc(100% - #{$portraitLength__board__md});
+        }
+    }
+}
+
+.DemoBody__dominoes {
+    width: $width__dominoes__xxs;
+
+    @media
+    (min-width: $breakpoint__xs) and (orientation: portrait),
+    (min-height: $breakpoint__xs) and (orientation: landscape) {
+        width: $width__dominoes__xs;
+    }
+
+    @media
+    (min-width: $breakpoint__sm) and (orientation: portrait),
+    (min-height: $breakpoint__sm) and (orientation: landscape) {
+        width: $width__dominoes__sm;
+    }
+
+    @media
+    (min-width: $breakpoint__md) and (orientation: portrait),
+    (min-height: $breakpoint__md) and (orientation: landscape) {
+        width: $width__dominoes__md;
+    }
+
+    @media (orientation: landscape) {
+        height: 100%;
+    }
+}

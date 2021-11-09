@@ -5,10 +5,6 @@ $width__hexagon: math.div(100%, 20);
 $width__horizontal: $width__hexagon * 2;
 $width__vertical: $width__hexagon * 1.5;
 
-.Domino {
-    z-index: 1;
-}
-
 .Domino__placed {
     position: absolute;
 }

@@ -15,15 +15,15 @@ const HomeButton = ({ onLoad }) => {
     return (
         <Button
             {...{
-                className: cx(
-                    'HomeButton',
-                ),
                 pagePath: HOME_PAGE,
                 isSelected,
             }}
         >
             <DominoSvg
                 {...{
+                    className: cx(
+                        'HomeButton__svg',
+                    ),
                     src: logo,
                     isFigure: false,
                     onLoad,

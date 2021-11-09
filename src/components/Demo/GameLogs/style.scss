@@ -1,40 +1,9 @@
+@import '../../../scss/constants/demo';
 @import '../../../scss/constants/responsive';
 
 .GameLogs {
-    max-width: 400px; // TODO: Magic number.
-
-    height: 100%; // Needed for auto scroll.
     padding: $margin__md 0;
-
     overflow-y: scroll;
-
-    @media (min-width: $breakpoint__xs) {
-        display: none;
-    }
-
-    @media (min-width: $breakpoint__xs) and (min-height: $breakpoint__sm) {
-        display: flex;
-    }
-
-    @media (min-width: $breakpoint__sm) {
-        display: none;
-    }
-
-    @media (min-width: $breakpoint__sm) and (min-height: $breakpoint__md) {
-        display: flex;
-    }
-
-    @media (min-width: $breakpoint__md) {
-        display: none;
-    }
-
-    @media (min-width: $breakpoint__md) and (min-height: $breakpoint__lg) {
-        display: flex;
-    }
-
-    @media (min-width: $breakpoint__lg) {
-        display: flex;
-    }
 
     mask-image: linear-gradient(
         to bottom,
@@ -43,4 +12,33 @@
         rgba(0, 0, 0, 1) 97%,
         rgba(0, 0, 0, 0)
     );
+
+    width: $width__logs__xxs;
+
+    @media
+    (min-width: $breakpoint__xs) and (orientation: portrait),
+    (min-height: $breakpoint__xs) and (orientation: landscape) {
+        width: $width__logs__xs;
+    }
+
+    @media
+    (min-width: $breakpoint__sm) and (orientation: portrait),
+    (min-height: $breakpoint__sm) and (orientation: landscape) {
+        width: $width__logs__sm;
+    }
+
+    @media
+    (min-width: $breakpoint__md) and (orientation: portrait),
+    (min-height: $breakpoint__md) and (orientation: landscape) {
+        width: $width__logs__md;
+    }
+
+    @media (orientation: landscape) {
+        display: none;
+        height: 100%;
+
+        @media (min-width: $breakpoint__md) {
+            display: flex;
+        }
+    }
 }

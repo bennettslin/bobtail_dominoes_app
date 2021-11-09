@@ -1,0 +1,18 @@
+@import './page';
+
+$portraitLength__board__xxs: calc(100vw - #{$padding__page__xxs * 2});
+$portraitLength__board__xs: calc(100vw - #{$padding__page__xs * 2});
+$portraitLength__board__sm: calc(100vw - #{$padding__page__sm * 2});
+$portraitLength__board__md: calc(100vw - #{$padding__page__md * 2});
+
+$height__info: 200px; // TODO: Magic number.
+
+$width__dominoes__xxs: 280px;
+$width__dominoes__xs: 320px;
+$width__dominoes__sm: 360px;
+$width__dominoes__md: 400px;
+
+$width__logs__xxs: 280px;
+$width__logs__xs: 320px;
+$width__logs__sm: 360px;
+$width__logs__md: 400px;

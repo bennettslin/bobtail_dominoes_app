@@ -1,23 +1,22 @@
+@import '../../../../scss/constants/menu';
 @import '../../../../scss/constants/responsive';
 
-.HomeButton {
-    width: $margin__xl * 3.5;
+.HomeButton__svg {
+    height: $height__menu__xxs;
 
     @media
     (min-width: $breakpoint__xs) and (orientation: portrait),
     (min-height: $breakpoint__xs) and (orientation: landscape) {
-        width: $margin__xl * 4.2;
+        height: $height__menu__xs;
     }
     
     @media
     (min-width: $breakpoint__sm) and (orientation: portrait),
     (min-height: $breakpoint__sm) and (orientation: landscape) {
-        width: $margin__xl * 5;
+        height: $height__menu__sm;
     }
     
-    @media
-    (min-width: $breakpoint__md) and (orientation: portrait),
-    (min-height: $breakpoint__md) and (orientation: landscape) {
-        width: auto;
+    @media (min-width: $breakpoint__md) {
+        height: $height__menu__md;
     }
 }

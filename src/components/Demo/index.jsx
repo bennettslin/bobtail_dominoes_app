@@ -1,16 +1,18 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import HomeButton from '../../containers/Main/Header/HomeButton'
-import Menu from '../../containers/Main/Header/Menu'
 import Flex from '../Flex'
-import GameLogs from './GameLogs'
-import PlayerCards from './PlayerCards'
-import Board from './Board'
-import Pool from './Pool'
+import DemoBody from './Body'
+import DemoHeader from './Header'
 import aiWorker from '../../workers/aiWorker'
 import { updateGame } from '../../redux/game/action'
 import {
-    mapBoard, mapHands, mapIsGamePlaying, mapCurrentPlayerIndex, mapPool, mapScores, mapTurns,
+    mapBoard,
+    mapHands,
+    mapIsGamePlaying,
+    mapCurrentPlayerIndex,
+    mapPool,
+    mapScores,
+    mapTurns,
 } from '../../redux/game/selector'
 import { getInitialGame, registerTurn } from '../../utils/music/game/play'
 import './style'
@@ -49,7 +51,9 @@ const Demo = () => {
 
     useEffect(() => {
         if (currentPlayerIndex > -1 && isGamePlaying) {
-            const turnTimeoutIndex = setTimeout(() => registerHandTurn(), 500)
+            const turnTimeoutIndex = setTimeout(
+                () => registerHandTurn(), 500,
+            )
 
             // Return callback to clear timeout upon unmount.
             return () => clearTimeout(turnTimeoutIndex)
@@ -71,35 +75,8 @@ const Demo = () => {
                 alignItems: 'normal',
             }}
         >
-            <Flex
-                {...{
-                    justifyContent: 'spaceBetween',
-                    style: {
-                        backgroundColor: '#bdb',
-                    },
-                }}
-            >
-                <HomeButton />
-                <Menu />
-            </Flex>
-            <Flex {...{ className: 'Demo__content' }} >
-                <Board />
-                <Flex {...{ className: 'Demo__info' }} >
-                    <Flex
-                        {...{
-                            className: 'Demo__dominoes',
-                            alignItems: 'normal',
-                            style: {
-                                backgroundColor: '#8bb',
-                            },
-                        }}
-                    >
-                        <PlayerCards />
-                        <Pool />
-                    </Flex>
-                    <GameLogs />
-                </Flex>
-            </Flex>
+            <DemoHeader />
+            <DemoBody />
         </Flex>
     )
 }
