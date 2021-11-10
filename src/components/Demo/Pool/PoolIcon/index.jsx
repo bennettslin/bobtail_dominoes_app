@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cx from 'classnames'
 import Flex from '../../../Flex'
 import StyledShadow from '../../../Styled/Shadow'
 import Svg from '../../../Svg'
@@ -12,10 +13,24 @@ const PoolIcon = ({
     faceSrc,
     count,
 }) => (
-    <Flex {...{ gap: 'xxs' }}>
-        <Flex>
+    <Flex
+        {...{
+            gap: 'xxs',
+        }}
+    >
+        <Flex
+            {...{
+                className: cx(
+                    'link__icon',
+                    'pool__icon',
+                ),
+            }}
+        >
             <Svg
                 {...{
+                    className: cx(
+                        'PoolIcon__tile',
+                    ),
                     src: tileSrc,
                     styleConfig: styleConfigDominoes,
                 }}

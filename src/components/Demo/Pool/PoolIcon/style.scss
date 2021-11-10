@@ -9,6 +9,11 @@ $heightRatio: math.div(
     $heightHexagonsPixels + $heightBottomPixels
 );
 
+.PoolIcon__tile {
+    // width: 20px;
+    // height: 20px;
+}
+
 .PoolIcon__face {
     position: absolute;
     top: $heightRatio / 2 * 100%;
