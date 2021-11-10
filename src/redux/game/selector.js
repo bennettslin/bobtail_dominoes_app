@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect'
+import { getIsDominoInLatestTurn, getLatestTurnIndex } from '../../utils/music/render/turn'
 import { GAME_STORE } from './reducer'
 
 export const mapPool = (
@@ -55,4 +56,14 @@ export const mapTurnsCount = createSelector(
 export const getMapTurn = turnIndex => createSelector(
     mapTurns,
     turns => turns[turnIndex],
+)
+
+export const getMapIsLatestTurn = turnIndex => createSelector(
+    mapTurns,
+    turns => turnIndex === getLatestTurnIndex(turns),
+)
+
+export const getMapIsDominoInLatestTurn = dominoIndex => createSelector(
+    mapTurns,
+    turns => getIsDominoInLatestTurn({ dominoIndex, turns }),
 )

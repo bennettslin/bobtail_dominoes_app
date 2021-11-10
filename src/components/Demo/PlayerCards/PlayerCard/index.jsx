@@ -26,7 +26,7 @@ const PlayerCard = ({ playerIndex }) => {
             <Flex>
                 Player {playerIndex + 1}: {score}
             </Flex>
-            <Flex {...{ gap: 'xs' }} >
+            <Flex {...{ gap: 'xs' }}>
                 {Array.from(hand).map(dominoIndex => (
                     <Domino {...{ key: dominoIndex, dominoIndex }} />
                 ))}

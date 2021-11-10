@@ -10,7 +10,7 @@ import { getDominoLabel } from '../../../../utils/music/chords/label'
 import { getCommaSeparatedList } from '../../../../utils/format'
 import { getPlayerIndex } from '../../../../utils/music/game/play/turns'
 import { getPointsForMoves } from '../../../../utils/music/chords/points'
-import { getMapTurn } from '../../../../redux/game/selector'
+import { getMapIsLatestTurn, getMapTurn } from '../../../../redux/game/selector'
 
 const TurnLog = ({
     turnIndex,
@@ -22,6 +22,7 @@ const TurnLog = ({
 }) => {
     const
         turn = useSelector(getMapTurn(turnIndex)),
+        isLatestTurn = useSelector(getMapIsLatestTurn(turnIndex)),
         { moves, dominoIndex, discardedIndices, winnerIndices } = turn
 
     let log
@@ -52,20 +53,18 @@ const TurnLog = ({
     }
 
     return (
-        <>
-            <Flex>
-                <StyledShadow>
-                    {log}
-                </StyledShadow>
-            </Flex>
-            {moves && (
-                <ul>
-                    {moves.map((move, index) => (
-                        <MoveLog {...{ key: index, ...move }} />
-                    ))}
-                </ul>
-            )}
-        </>
+        <Flex>
+            <StyledShadow>
+                {log}
+                {moves && (
+                    <ul>
+                        {moves.map((move, index) => (
+                            <MoveLog {...{ key: index, ...move }} />
+                        ))}
+                    </ul>
+                )}
+            </StyledShadow>
+        </Flex>
     )
 }
 

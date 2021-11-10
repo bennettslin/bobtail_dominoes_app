@@ -13,7 +13,7 @@ const PoolIcon = ({
     faceSrc,
     count,
 }) => (
-    <Flex {...{ gap: 'xxs' }} >
+    <Flex {...{ gap: 'xxs' }}>
         <Flex
             {...{
                 className: cx(

@@ -16,11 +16,11 @@ const OptionButtons = () => (
             gap: 'md',
         }}
     >
-        <Flex {...{ gap: 'xs' }} >
+        <Flex {...{ gap: 'xs' }}>
             <PlayButton />
             <AutoplayButton />
         </Flex>
-        <Flex {...{ gap: 'xs' }} >
+        <Flex {...{ gap: 'xs' }}>
             <TransposeButton {...{ direction: -1 }} />
             <TransposeButton {...{ direction: 1 }} />
         </Flex>

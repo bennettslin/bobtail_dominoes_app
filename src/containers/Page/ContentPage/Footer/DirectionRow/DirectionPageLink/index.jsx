@@ -38,7 +38,7 @@ const DirectionPageLink = ({ direction, directionPage }) => {
                 }),
             }}
         >
-            <Flex {...{ gap: 'xxs' }} >
+            <Flex {...{ gap: 'xxs' }}>
                 {direction === -1 && (
                     <Svg
                         {...{

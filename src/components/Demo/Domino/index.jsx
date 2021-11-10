@@ -1,8 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import { useSelector } from 'react-redux'
 import Flex from '../../Flex'
 import Svg from '../../Svg'
+import { getMapIsDominoInLatestTurn } from '../../../redux/game/selector'
 import { getDominoPitches, getOrderedInterval } from '../../../utils/music/game/dominoes'
 import { getIsPlacementUpsideDown, getOrientation } from '../../../utils/music/game/placement/orientation'
 import { getFacePositionAndSizeStyling } from '../../../utils/music/render/face'
@@ -24,7 +26,8 @@ const Domino = ({
         pitches = getDominoPitches(dominoIndex),
         orientation = getOrientation(placement),
         orderedInterval = getOrderedInterval(dominoIndex),
-        isPlacementUpsideDown = getIsPlacementUpsideDown(placement)
+        isPlacementUpsideDown = getIsPlacementUpsideDown(placement),
+        isInLatestTurn = useSelector(getMapIsDominoInLatestTurn(dominoIndex))
 
     return (
         <Flex
