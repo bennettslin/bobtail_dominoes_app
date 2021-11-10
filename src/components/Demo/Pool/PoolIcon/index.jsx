@@ -13,24 +13,16 @@ const PoolIcon = ({
     faceSrc,
     count,
 }) => (
-    <Flex
-        {...{
-            gap: 'xxs',
-        }}
-    >
+    <Flex {...{ gap: 'xxs' }} >
         <Flex
             {...{
                 className: cx(
-                    'link__icon',
-                    'pool__icon',
+                    'PoolIcon',
                 ),
             }}
         >
             <Svg
                 {...{
-                    className: cx(
-                        'PoolIcon__tile',
-                    ),
                     src: tileSrc,
                     styleConfig: styleConfigDominoes,
                 }}

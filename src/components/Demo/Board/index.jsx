@@ -20,13 +20,17 @@ const Board = () => {
         >
             <Flex
                 {...{
-                    className: 'Board__square',
+                    className: cx(
+                        'Board__square',
+                    ),
                     flexGrow: 1,
                 }}
             >
                 <div
                     {...{
-                        className: 'Board__movable',
+                        className: cx(
+                            'Board__movable',
+                        ),
                     }}
                 >
                     {getZIndexDominoesList(board).map(move => {

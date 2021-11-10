@@ -1,5 +1,3 @@
-@import '../constants/responsive';
-
 .link__icon {
     width: $length__icon__xs;
     height: $length__icon__xs;
@@ -9,14 +7,5 @@
     (min-height: $breakpoint__sm) and (orientation: landscape) {
         width: $length__icon__sm;
         height: $length__icon__sm;
-    }
-}
-
-.pool__icon {
-    @media
-    (min-width: $breakpoint__md) and (orientation: portrait),
-    (min-height: $breakpoint__md) and (orientation: landscape) {
-        width: $length__icon__md;
-        height: $length__icon__md;
     }
 }
