@@ -3,12 +3,12 @@ import { getArrayOfIndices } from '../../../general'
 import { getLabelInterval, getDominoPitches } from '../dominoes'
 
 export const getPitchCountsInPool = pool => (
-    Array.from(pool).reduce((intervalsList, dominoIndex) => {
+    Array.from(pool).reduce((pitchesList, dominoIndex) => {
         const pitches = getDominoPitches(dominoIndex)
         pitches.forEach(pitch => {
-            intervalsList[pitch] += 1
+            pitchesList[pitch] += 1
         })
-        return intervalsList
+        return pitchesList
     }, getArrayOfIndices(OCTAVE_RANGE, 0, () => 0))
 )
 

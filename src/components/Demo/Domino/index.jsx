@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Flex from '../../Flex'
 import Svg from '../../Svg'
-import { getDominoPitches } from '../../../utils/music/game/dominoes'
+import { getDominoPitches, getOrderedInterval } from '../../../utils/music/game/dominoes'
 import { getIsPlacementUpsideDown, getOrientation } from '../../../utils/music/game/placement/orientation'
 import { getFacePositionAndSizeStyling } from '../../../utils/music/render/face'
 import { getDominoSrc } from '../../../utils/src/dominoes'
@@ -13,6 +13,8 @@ import styleConfigDominoes from '../../../styles/dominoes'
 import { DIRECTION_X } from '../../../constants/music/game'
 import './style'
 import { getDominoCentreStyling, getDominoPositionStyling } from '../../../utils/music/render/board/coordinates'
+import { getIntervalSrc } from '../../../utils/src/intervals'
+import { getIntervalPositionAndStyling } from '../../../utils/music/render/interval'
 
 const Domino = ({
     dominoIndex,
@@ -20,7 +22,9 @@ const Domino = ({
 }) => {
     const
         pitches = getDominoPitches(dominoIndex),
-        orientation = getOrientation(placement)
+        orientation = getOrientation(placement),
+        orderedInterval = getOrderedInterval(dominoIndex),
+        isPlacementUpsideDown = getIsPlacementUpsideDown(placement)
 
     return (
         <Flex
@@ -48,6 +52,20 @@ const Domino = ({
                 {...{
                     src: getDominoSrc(orientation),
                     styleConfig: styleConfigDominoes,
+                }}
+            />
+            <Svg
+                {...{
+                    className: cx(
+                        'Domino__face',
+                    ),
+                    src: getIntervalSrc({
+                        interval: orderedInterval,
+                        orientation,
+                        isPlacementUpsideDown,
+                    }),
+                    styleConfig: styleConfigDominoes,
+                    style: getIntervalPositionAndStyling(orientation),
                 }}
             />
             {(
