@@ -1,6 +1,12 @@
 import { getFixed } from '../../../../general'
 import { getIsPlacementUpsideDown } from '../../../game/placement/orientation'
-import { HEXAGON_HEIGHT_RATIO, HORIZONTAL_HEXAGON_HEIGHT_UNIT_RATIO, HORIZONTAL_HEXAGON_WIDTH_UNIT_RATIO, VERTICAL_HEXAGON_HEIGHT_UNIT_RATIO, VERTICAL_HEXAGON_WIDTH_UNIT_RATIO } from '../../../../../constants/music/domino'
+import {
+    HEXAGON_HEIGHT_RATIO,
+    HORIZONTAL_HEXAGON_HEIGHT_UNIT_RATIO,
+    HORIZONTAL_HEXAGON_WIDTH_UNIT_RATIO,
+    VERTICAL_HEXAGON_HEIGHT_UNIT_RATIO,
+    VERTICAL_HEXAGON_WIDTH_UNIT_RATIO,
+} from '../../../../../constants/music/domino'
 import { DIRECTION_X, DIRECTION_Y } from '../../../../../constants/music/game'
 import { BOARD_X_RANGE } from '../../../../../constants/music/play'
 

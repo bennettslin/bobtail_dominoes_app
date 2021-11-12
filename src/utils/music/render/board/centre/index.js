@@ -1,25 +1,19 @@
 import { getFixed } from '../../../../general'
+import { getCartesianX } from '../coordinates'
 import { HEXAGON_HEIGHT_RATIO } from '../../../../../constants/music/domino'
 import { BOARD_X_RANGE } from '../../../../../constants/music/play'
-import { getCartesianX } from '../coordinates'
 
-// TODO: Still wonky?
-export const getBoardCentreCoordinates = board => {
-    const {
-        minLeft,
-        maxLeft,
-        minTop,
-        maxTop,
-    } = board.reduce((ends, { placement }) => (
+export const getCartesianCentreCoordinates = board => {
+    const { minX, maxX, minY, maxY } = board.reduce((ends, { placement }) => (
         placement.reduce((ends, [x, y]) => ({
-            minLeft: Math.min(ends.minLeft, getCartesianX(x, y)),
-            maxLeft: Math.max(ends.maxLeft, getCartesianX(x, y)),
-            minTop: Math.min(ends.minTop, y),
-            maxTop: Math.max(ends.maxTop, y),
+            minX: Math.min(ends.minX, getCartesianX(x, y)),
+            maxX: Math.max(ends.maxX, getCartesianX(x, y)),
+            minY: Math.min(ends.minY, y),
+            maxY: Math.max(ends.maxY, y),
         }), ends)
-    ), { minLeft: null, maxLeft: null, minTop: null, maxTop: null })
+    ), { minX: null, maxX: null, minY: null, maxY: null })
 
-    return [(maxLeft + minLeft) / 2, (maxTop + minTop) / 2]
+    return [(maxX + minX) / 2, (maxY + minY) / 2]
 }
 
 export const getMovableBoardStyling = ({
@@ -29,14 +23,14 @@ export const getMovableBoardStyling = ({
     const
         hexagonWidth = 1 / xRange,
         hexagonHeight = hexagonWidth * HEXAGON_HEIGHT_RATIO * 3 / 4,
-        [x, y] = getBoardCentreCoordinates(board)
+        [cartesianX, cartesianY] = getCartesianCentreCoordinates(board)
 
     return {
         top: `${getFixed((
-            y * hexagonHeight + 0.5
+            cartesianY * hexagonHeight + 0.5
         ) * 100)}%`,
         left: `${getFixed((
-            getCartesianX(x, y) * -hexagonWidth + 0.5
+            cartesianX * -hexagonWidth + 0.5
         ) * 100)}%`,
     }
 }
