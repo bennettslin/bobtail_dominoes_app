@@ -4,6 +4,11 @@ import { HEXAGON_HEIGHT_RATIO, HORIZONTAL_HEXAGON_HEIGHT_UNIT_RATIO, HORIZONTAL_
 import { DIRECTION_X, DIRECTION_Y } from '../../../../../constants/music/game'
 import { BOARD_X_RANGE } from '../../../../../constants/music/play'
 
+export const getCartesianX = (x, y) => (
+    // Convert from hexagonal grid.
+    x + y * 0.5
+)
+
 export const getDominoPositionStyling = ({
     placement,
     xRange = BOARD_X_RANGE,
@@ -17,10 +22,9 @@ export const getDominoPositionStyling = ({
         top: `${getFixed((
             y * -hexagonHeight + 0.5
         ) * 100)}%`,
-        left: `${getFixed(((
-            x * hexagonWidth +
-            y * hexagonWidth * 0.5
-        ) + 0.5) * 100)}%`,
+        left: `${getFixed((
+            getCartesianX(x, y) * hexagonWidth + 0.5
+        ) * 100)}%`,
     }
 }
 

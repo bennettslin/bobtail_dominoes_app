@@ -1,4 +1,4 @@
-import { getDominoTranslateStyling, getDominoPositionStyling } from '.'
+import { getDominoPositionStyling, getDominoTranslateStyling } from '.'
 import { DIRECTION_X, DIRECTION_XY, DIRECTION_Y } from '../../../../../constants/music/game'
 
 describe('getDominoPositionStyling', () => {
