@@ -1,26 +1,30 @@
 import { getFixed } from '../../../../general'
+import { getIsPlacementUpsideDown } from '../../../game/placement/orientation'
 import { HEXAGON_HEIGHT_RATIO, HORIZONTAL_HEXAGON_HEIGHT_UNIT_RATIO, HORIZONTAL_HEXAGON_WIDTH_UNIT_RATIO, VERTICAL_HEXAGON_HEIGHT_UNIT_RATIO, VERTICAL_HEXAGON_WIDTH_UNIT_RATIO } from '../../../../../constants/music/domino'
 import { DIRECTION_X, DIRECTION_Y } from '../../../../../constants/music/game'
-import { getIsPlacementUpsideDown } from '../../../game/placement/orientation'
+import { BOARD_X_RANGE } from '../../../../../constants/music/play'
 
-export const getDominoPositionStyling = ({ placement, range = 20 }) => {
+export const getDominoPositionStyling = ({
+    placement,
+    xRange = BOARD_X_RANGE,
+}) => {
     const
-        hexagonWidth = 1 / range,
+        hexagonWidth = 1 / xRange,
         hexagonHeight = hexagonWidth * HEXAGON_HEIGHT_RATIO * 3 / 4,
-        coordinate = placement[getIsPlacementUpsideDown(placement) ? 1 : 0]
+        [x, y] = placement[getIsPlacementUpsideDown(placement) ? 1 : 0]
 
     return {
         top: `${getFixed((
-            coordinate[1] * -hexagonHeight + 0.5
+            y * -hexagonHeight + 0.5
         ) * 100)}%`,
         left: `${getFixed(((
-            coordinate[0] * hexagonWidth +
-            coordinate[1] * hexagonWidth * 0.5
+            x * hexagonWidth +
+            y * hexagonWidth * 0.5
         ) + 0.5) * 100)}%`,
     }
 }
 
-export const getDominoCentreStyling = ({ orientation }) => ({
+export const getDominoTranslateStyling = ({ orientation }) => ({
     transform: `translate(${[
         `-${getFixed((
             orientation === DIRECTION_X ?

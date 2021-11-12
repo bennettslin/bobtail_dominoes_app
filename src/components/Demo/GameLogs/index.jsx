@@ -42,7 +42,7 @@ const GameLogs = () => {
                 flexDirection: 'column',
                 justifyContent: 'start',
                 alignItems: 'start',
-                gap: 'xs',
+                gap: 'sm',
             }}
         >
             {getArrayOfIndices(turnsCount).map(turnIndex => (

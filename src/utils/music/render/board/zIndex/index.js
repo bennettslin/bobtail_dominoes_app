@@ -8,13 +8,13 @@ export const getZIndexDominoesList = board => (
     ) => {
         // We want the coordinates for each lower face.
         const
-            firstCoordinate = firstPlacement[
+            [firstX, firstY] = firstPlacement[
                 getIsPlacementUpsideDown(firstPlacement) ? 1 : 0
             ],
-            secondCoordinate = secondPlacement[
+            [secondX, secondY] = secondPlacement[
                 getIsPlacementUpsideDown(secondPlacement) ? 1 : 0
             ],
-            yOrder = secondCoordinate[1] - firstCoordinate[1]
+            yOrder = secondY - firstY
 
         // Sort by y of lower face. Lower y always renders later.
         if (yOrder) {
@@ -22,7 +22,7 @@ export const getZIndexDominoesList = board => (
         }
 
         // If y is equal, sort by x. Higher x renders later by default.
-        const xOrder = firstCoordinate[0] - secondCoordinate[0]
+        const xOrder = firstX - secondX
 
         // However, lower x renders later if higher x has orientation XY.
         return (

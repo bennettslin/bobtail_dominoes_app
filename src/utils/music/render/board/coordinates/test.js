@@ -1,4 +1,4 @@
-import { getDominoCentreStyling, getDominoPositionStyling } from '.'
+import { getDominoTranslateStyling, getDominoPositionStyling } from '.'
 import { DIRECTION_X, DIRECTION_XY, DIRECTION_Y } from '../../../../../constants/music/game'
 
 describe('getDominoPositionStyling', () => {
@@ -34,13 +34,13 @@ describe('getDominoPositionStyling', () => {
             { left: '67.5%', top: '45.67%' },
         ],
         [
-            // Custom range.
-            { placement: [[2, 0], [2, 1]], range: 10 },
+            // Custom x range.
+            { placement: [[2, 0], [2, 1]], xRange: 10 },
             { left: '70%', top: '50%' },
         ],
         [
-            // Custom range upside down.
-            { placement: [[2, 0], [2, -1]], range: 40 },
+            // Custom x range upside down.
+            { placement: [[2, 0], [2, -1]], xRange: 40 },
             { left: '53.75%', top: '52.17%' },
         ],
     ])('%p returns %p', (board, result) => {
@@ -48,7 +48,7 @@ describe('getDominoPositionStyling', () => {
     })
 })
 
-describe('getDominoCentreStyling', () => {
+describe('getDominoTranslateStyling', () => {
     test.each([
         [
             { orientation: DIRECTION_X },
@@ -63,6 +63,6 @@ describe('getDominoCentreStyling', () => {
             { transform: 'translate(-66.67%, -68.87%)' },
         ],
     ])('%p returns %p', (board, result) => {
-        expect(getDominoCentreStyling(board)).toStrictEqual(result)
+        expect(getDominoTranslateStyling(board)).toStrictEqual(result)
     })
 })

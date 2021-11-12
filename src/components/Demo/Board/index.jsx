@@ -5,6 +5,7 @@ import Flex from '../../Flex'
 import Domino from '../Domino'
 import { mapBoard } from '../../../redux/game/selector'
 import { getZIndexDominoesList } from '../../../utils/music/render/board/zIndex'
+import { getMovableBoardStyling } from '../../../utils/music/render/board/centre'
 import './style'
 
 const Board = () => {
@@ -31,6 +32,7 @@ const Board = () => {
                         className: cx(
                             'Board__movable',
                         ),
+                        style: getMovableBoardStyling({ board }),
                     }}
                 >
                     {getZIndexDominoesList(board).map(move => {

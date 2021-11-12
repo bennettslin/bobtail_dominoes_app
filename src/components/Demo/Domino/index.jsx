@@ -10,13 +10,13 @@ import { getIsPlacementUpsideDown, getOrientation } from '../../../utils/music/g
 import { getFacePositionAndSizeStyling } from '../../../utils/music/render/face'
 import { getDominoSrc } from '../../../utils/src/dominoes'
 import { getFaceSrc } from '../../../utils/src/faces'
+import { getDominoTranslateStyling, getDominoPositionStyling } from '../../../utils/music/render/board/coordinates'
+import { getIntervalSrc } from '../../../utils/src/intervals'
+import { getIntervalPositionAndStyling } from '../../../utils/music/render/interval'
 import styleConfigFaces from '../../../styles/checker/faces'
 import styleConfigDominoes from '../../../styles/dominoes'
 import { DIRECTION_X } from '../../../constants/music/game'
 import './style'
-import { getDominoCentreStyling, getDominoPositionStyling } from '../../../utils/music/render/board/coordinates'
-import { getIntervalSrc } from '../../../utils/src/intervals'
-import { getIntervalPositionAndStyling } from '../../../utils/music/render/interval'
 
 const Domino = ({
     dominoIndex,
@@ -44,7 +44,7 @@ const Domino = ({
                         ...getDominoPositionStyling({
                             placement,
                         }),
-                        ...getDominoCentreStyling({
+                        ...getDominoTranslateStyling({
                             orientation,
                         }),
                     },

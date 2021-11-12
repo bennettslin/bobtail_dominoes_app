@@ -2,7 +2,7 @@ import { getAdjacentPlacements, getAdjacentCoordinates } from '.'
 import { MOCK_BOARD } from '../../../../../__mocks__/board'
 
 describe('getAdjacentCoordinates', () => {
-    it('returns array with centre coordinate for first domino', () => {
+    it('returns array with centre coordinates for first domino', () => {
         expect(getAdjacentCoordinates([])).toStrictEqual([[0, 0]])
     })
 
