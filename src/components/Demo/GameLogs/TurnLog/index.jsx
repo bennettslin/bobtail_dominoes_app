@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Flex from '../../../Flex'
 import StaticArray from '../../../StaticArray'
@@ -11,6 +12,7 @@ import { getCommaSeparatedList } from '../../../../utils/format'
 import { getPlayerIndex } from '../../../../utils/music/game/play/turns'
 import { getPointsForMoves } from '../../../../utils/music/chords/points'
 import { getMapIsLatestTurn, getMapTurn } from '../../../../redux/game/selector'
+import './style'
 
 const TurnLog = ({
     turnIndex,
@@ -53,8 +55,20 @@ const TurnLog = ({
     }
 
     return (
-        <Flex>
-            <StyledShadow>
+        <Flex
+            {...{
+                className: cx(
+                    'TurnLog',
+                    isLatestTurn && 'TurnLog__latest',
+                ),
+            }}
+        >
+            <StyledShadow
+                {...{
+                    isInset: isLatestTurn,
+                    isHighlight: isLatestTurn,
+                }}
+            >
                 {log}
                 {moves && (
                     <ul>

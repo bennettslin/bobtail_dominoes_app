@@ -1,4 +1,5 @@
 @import '../constants/colours';
+@import '../constants/responsive';
 
 * {
     box-sizing: border-box;
@@ -24,6 +25,10 @@ label {
 svg {
     width: 100%;
     height: 100%;
+}
+
+ul {
+    padding-inline-start: $margin__sm;
 }
 
 a {

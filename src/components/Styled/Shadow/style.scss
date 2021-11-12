@@ -16,6 +16,10 @@
 }
 
 .StyledShadow__rearInset {
+    &.StyledShadow__highlight {
+        color: $colour__highlight__dark;
+    }
+
     &.StyledShadow__interactive {
         color: $colour__frame__dark;
     }
@@ -32,6 +36,10 @@
 
 .StyledShadow__frontInset {
     mix-blend-mode: screen;
+
+    &.StyledShadow__highlight {
+        color: $colour__highlight__dark;
+    }
 
     &.StyledShadow__interactive {
         color: $colour__frame__dark;

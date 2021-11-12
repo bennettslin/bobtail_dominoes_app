@@ -1,0 +1,28 @@
+@import '../../../../scss/constants/borders';
+@import '../../../../scss/constants/colours';
+@import '../../../../scss/constants/responsive';
+@import '../../../../scss/constants/shadows';
+
+.TurnLog__latest {
+    &:before {
+        position: absolute;
+        top: -$margin__xs * 0.5;
+        left: -$margin__xs;
+        width: calc(100% + #{$margin__xs * 2});
+        height: calc(100% + #{$margin__xs});
+
+        background-color: $colour__background__light;
+        border-radius: $borderRadius__md;
+        box-shadow: $boxShadow__above;
+        content: '';
+
+        @media
+        (min-width: $breakpoint__xs) and (orientation: portrait),
+        (min-height: $breakpoint__xs) and (orientation: landscape) {
+            top: -$margin__xs;
+            left: -$margin__sm;
+            width: calc(100% + #{$margin__sm * 2});
+            height: calc(100% + #{$margin__xs * 2});
+        }
+    }
+}

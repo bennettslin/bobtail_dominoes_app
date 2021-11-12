@@ -4,6 +4,7 @@ import cx from 'classnames'
 import './style'
 
 const StyledShadow = ({
+    isHighlight,
     isInteractive,
     isInset,
     children,
@@ -13,6 +14,7 @@ const StyledShadow = ({
             {...{
                 className: cx(
                     'StyledShadow__rear',
+                    isHighlight && 'StyledShadow__highlight',
                     isInteractive && 'StyledShadow__interactive',
                     isInset ?
                         'StyledShadow__rearInset' :
@@ -26,6 +28,7 @@ const StyledShadow = ({
             {...{
                 className: cx(
                     'StyledShadow__front',
+                    isHighlight && 'StyledShadow__highlight',
                     isInteractive && 'StyledShadow__interactive',
                     isInset ?
                         'StyledShadow__frontInset' :
@@ -39,6 +42,7 @@ const StyledShadow = ({
 )
 
 StyledShadow.propTypes = {
+    isHighlight: PropTypes.bool,
     isInteractive: PropTypes.bool,
     isInset: PropTypes.bool,
     children: PropTypes.node,
