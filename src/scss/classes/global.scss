@@ -1,5 +1,6 @@
 @import '../constants/colours';
 @import '../constants/responsive';
+@import '../constants/transition';
 
 * {
     box-sizing: border-box;
@@ -25,6 +26,10 @@ label {
 svg {
     width: 100%;
     height: 100%;
+
+    * {
+        transition: fill $transitionDuration__slow;
+    }
 }
 
 ul {

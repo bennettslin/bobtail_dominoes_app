@@ -15,6 +15,7 @@ import { getIntervalSrc } from '../../../utils/src/intervals'
 import { getIntervalPositionAndStyling } from '../../../utils/music/render/interval'
 import styleConfigFaces from '../../../styles/checker/faces'
 import styleConfigDominoes from '../../../styles/dominoes'
+import styleConfigPitchOn from '../../../styles/checker/pitchOn'
 import { DIRECTION_X } from '../../../constants/music/game'
 import './style'
 
@@ -54,7 +55,9 @@ const Domino = ({
             <Svg
                 {...{
                     src: getDominoSrc(orientation),
-                    styleConfig: styleConfigDominoes,
+                    styleConfig: isInLatestTurn ?
+                        styleConfigPitchOn :
+                        styleConfigDominoes,
                 }}
             />
             <Svg
