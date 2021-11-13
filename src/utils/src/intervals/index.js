@@ -1,3 +1,9 @@
+import intervalPool1 from '../../../assets/svgs/dominoes/intervalPool1'
+import intervalPool2 from '../../../assets/svgs/dominoes/intervalPool2'
+import intervalPool3 from '../../../assets/svgs/dominoes/intervalPool3'
+import intervalPool4 from '../../../assets/svgs/dominoes/intervalPool4'
+import intervalPool5 from '../../../assets/svgs/dominoes/intervalPool5'
+import intervalPool6 from '../../../assets/svgs/dominoes/intervalPool6'
 import intervalX1 from '../../../assets/svgs/dominoes/intervalX1'
 import intervalX2 from '../../../assets/svgs/dominoes/intervalX2'
 import intervalX3 from '../../../assets/svgs/dominoes/intervalX3'
@@ -39,6 +45,14 @@ import {
 import { OCTAVE_RANGE } from '../../../constants/music/audio'
 
 const INTERVALS = {
+    pool: [
+        intervalPool1,
+        intervalPool2,
+        intervalPool3,
+        intervalPool4,
+        intervalPool5,
+        intervalPool6,
+    ],
     [DIRECTION_X]: [
         intervalX1,
         intervalX2,
@@ -82,7 +96,7 @@ const INTERVALS = {
 
 export const getIntervalSrc = ({
     interval,
-    orientation = DIRECTION_X,
+    orientation = 'pool',
     isPlacementUpsideDown,
 }) => (
     INTERVALS[orientation][(
