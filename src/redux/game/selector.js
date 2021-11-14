@@ -72,3 +72,18 @@ export const getMapIsCurrentPlayer = playerIndex => createSelector(
     mapCurrentPlayerIndex,
     currentPlayerIndex => playerIndex === currentPlayerIndex,
 )
+
+export const getMapIsFocusedPlayer = playerIndex => createSelector(
+    mapTurns,
+    getMapIsCurrentPlayer(playerIndex),
+    (
+        turns,
+        isCurrentPlayer,
+    ) => {
+        const { winnerIndices } = turns[getLatestTurnIndex(turns)]
+
+        return winnerIndices ?
+            winnerIndices.some(winnerIndex => playerIndex === winnerIndex) :
+            isCurrentPlayer
+    },
+)

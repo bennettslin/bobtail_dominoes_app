@@ -45,9 +45,12 @@
 }
 
 .PlayerCard__player {
-    width: auto;
-    stroke-width: 0.8px;
-    stroke: hsla(0, 5%, 20%, 0.6);
+    height: 100%;
+
+    svg {
+        stroke-width: 0.8px;
+        stroke: hsla(0, 5%, 20%, 0.6);
+    }
 
     [class$=Line] {
         fill: none;

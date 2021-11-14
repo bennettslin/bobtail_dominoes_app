@@ -7,7 +7,7 @@ import StyledShadow from '../../../Styled/Shadow'
 import Svg from '../../../Svg'
 import Domino from '../../Domino'
 import DominoCard from '../../DominoCard'
-import { getMapHand, getMapIsCurrentPlayer, getMapScore } from '../../../../redux/game/selector'
+import { getMapHand, getMapIsFocusedPlayer, getMapScore } from '../../../../redux/game/selector'
 import { getPlayerSrc } from '../../../../utils/src/players'
 import { PLAYERS } from '../../../../constants/music/play'
 import styleConfigPlayers from '../../../../styles/players'
@@ -17,7 +17,7 @@ const PlayerCard = ({ playerIndex }) => {
     const
         hand = useSelector(getMapHand(playerIndex)),
         score = useSelector(getMapScore(playerIndex)),
-        isCurrentPlayer = useSelector(getMapIsCurrentPlayer(playerIndex))
+        isFocusedPlayer = useSelector(getMapIsFocusedPlayer(playerIndex))
 
     return (
         <DominoCard
@@ -25,6 +25,7 @@ const PlayerCard = ({ playerIndex }) => {
                 className: cx(
                     'PlayerCard',
                 ),
+                hasCardStyling: isFocusedPlayer,
                 label: (
                     <Flex
                         {...{
@@ -36,15 +37,22 @@ const PlayerCard = ({ playerIndex }) => {
                             flexGrow: 1,
                         }}
                     >
-                        <Svg
+                        <Flex
                             {...{
                                 className: cx(
                                     'PlayerCard__player',
                                 ),
-                                src: getPlayerSrc(playerIndex),
-                                styleConfig: styleConfigPlayers,
                             }}
-                        />
+                        >
+                            <StyledShadow>
+                                <Svg
+                                    {...{
+                                        src: getPlayerSrc(playerIndex),
+                                        styleConfig: styleConfigPlayers,
+                                    }}
+                                />
+                            </StyledShadow>
+                        </Flex>
                         <Flex
                             {...{
                                 flexDirection: 'column',
@@ -59,7 +67,12 @@ const PlayerCard = ({ playerIndex }) => {
                                     ),
                                 }}
                             >
-                                <StyledShadow isInset isInteractive>
+                                <StyledShadow
+                                    {...{
+                                        isInset: isFocusedPlayer,
+                                        isInteractive: isFocusedPlayer,
+                                    }}
+                                >
                                     {score}
                                 </StyledShadow>
                             </Flex>
@@ -70,7 +83,12 @@ const PlayerCard = ({ playerIndex }) => {
                                     ),
                                 }}
                             >
-                                <StyledShadow isInset isInteractive>
+                                <StyledShadow
+                                    {...{
+                                        isInset: isFocusedPlayer,
+                                        isInteractive: isFocusedPlayer,
+                                    }}
+                                >
                                     {PLAYERS[playerIndex]}
                                 </StyledShadow>
                             </Flex>

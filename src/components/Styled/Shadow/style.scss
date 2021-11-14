@@ -26,11 +26,12 @@
 }
 
 .StyledShadow__rearShadow {
-    color: $colour__opaque__medium;
+    color: $colour__neutral__dark;
 
     & * {
         // Override svg styling.
-        fill: $colour__opaque__medium !important;
+        fill: $colour__neutral__dark !important;
+        stroke: none;
     }
 }
 

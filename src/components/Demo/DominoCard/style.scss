@@ -6,6 +6,9 @@
 .DominoCard {
     width: 100%;
     padding: $margin__xs $margin__sm;
+}
+
+.DominoCard__styled {
     background-color: $colour__background__light;
     border-radius: $borderRadius__md;
     box-shadow: $boxShadow__above;
@@ -14,6 +17,9 @@
 .DominoCard__inset {
     padding: $margin__xs;
     min-height: $margin__xl + $margin__xxs;
+}
+
+.DominoCard__styledInset {
     background-color: $colour__board;
     border-radius: $borderRadius__md;
     box-shadow: inset $boxShadow__above;

@@ -1,7 +1,7 @@
 # Demo notes
 
 # TODO: Player cards
-* Distinguish current player, or else winning players.
+* Distinguish between current and winning colours.
 
 # TODO: Game options
 * Figure out parent arcade button component for checker and demo buttons.

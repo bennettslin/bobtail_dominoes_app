@@ -6,6 +6,7 @@ import './style'
 
 const DominoCard = ({
     className,
+    hasCardStyling = true,
     label,
     children,
     ...rest
@@ -14,6 +15,7 @@ const DominoCard = ({
         {...{
             className: cx(
                 'DominoCard',
+                hasCardStyling && 'DominoCard__styled',
                 className,
             ),
             flexDirection: 'column',
@@ -28,6 +30,7 @@ const DominoCard = ({
             {...{
                 className: cx(
                     'DominoCard__inset',
+                    hasCardStyling && 'DominoCard__styledInset',
                 ),
                 gap: 'xs',
             }}
@@ -39,6 +42,7 @@ const DominoCard = ({
 
 DominoCard.propTypes = {
     className: PropTypes.string,
+    hasCardStyling: PropTypes.bool,
     label: PropTypes.node.isRequired,
     children: PropTypes.node.isRequired,
 }
