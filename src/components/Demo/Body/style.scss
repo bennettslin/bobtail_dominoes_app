@@ -23,6 +23,7 @@
         
         @media (min-width: $breakpoint__xs) {
             width: $width__dominoes__xs;
+            min-height: $portraitHeight__info__xs;
             height: calc(100% - #{$portraitLength__board__xs});
         }
 

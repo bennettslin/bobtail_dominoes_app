@@ -8,9 +8,10 @@ import Svg from '../../../Svg'
 import Domino from '../../Domino'
 import DominoCard from '../../DominoCard'
 import { getMapHand, getMapIsCurrentPlayer, getMapScore } from '../../../../redux/game/selector'
-import './style'
-import { PLAYERS } from '../../../../constants/music/play'
 import { getPlayerSrc } from '../../../../utils/src/players'
+import { PLAYERS } from '../../../../constants/music/play'
+import styleConfigPlayers from '../../../../styles/players'
+import './style'
 
 const PlayerCard = ({ playerIndex }) => {
     const
@@ -39,7 +40,8 @@ const PlayerCard = ({ playerIndex }) => {
                                     'PlayerCard__player',
                                 ),
                                 src: getPlayerSrc(playerIndex),
-                                scaleFactor: 0.5,
+                                styleConfig: styleConfigPlayers,
+                                scaleFactor: 0.6,
                             }}
                         />
                         <Flex

@@ -6,7 +6,11 @@
     width: calc(50% - #{math.div($margin__xs, 2)});
     min-width: $width__playerCard;
     height: calc(50% - #{math.div($margin__xs, 2)});
-    min-height: $height__playerCard;
+    min-height: $height__playerCard__xxs;
+
+    @media (min-width: $breakpoint__xs) {
+        min-height: $height__playerCard__xs;
+    }
 
     @media (min-height: $breakpoint__md) and (orientation: landscape) {
         width: 100%;
@@ -15,6 +19,18 @@
 
 .PlayerCard__label {
     height: $margin__xl;
+
+    @media (min-width: $breakpoint__xs) {
+        height: $margin__xl + $margin__xs;
+    }
+
+    @media (min-width: $breakpoint__sm) {
+        height: $margin__xl + $margin__sm;
+    }
+
+    @media (min-width: $breakpoint__md) {
+        height: $margin__xl + $margin__md;
+    }
 }
 
 .DominoCard__inset {
@@ -27,4 +43,45 @@
 .PlayerCard__domino {
     width: calc(33.33% - #{math.div($margin__xs * 2, 3)});
     max-width: $margin__xl * 1.5;
+}
+
+.PlayerCard__player {
+    stroke-width: 0.8px;
+    stroke: hsla(0, 5%, 20%, 0.6);
+
+    [class$=Line] {
+        fill: none;
+    }
+
+    .sclera,
+    .pupil,
+    [class^=iris],
+    [class$=noStroke] {
+        stroke: none;
+    }
+    
+    .cheekLine {
+        stroke: hsla(0, 5%, 20%, 0.4);
+    }
+    
+    .eyeCornerLine,
+    .eyeFoldLine,
+    [class$=CreaseLine] {
+        stroke-width: 0.5px;
+    }
+    
+    [class^=eyebrow],
+    .gum,
+    .teeth,
+    .mouthInner,
+    [class^=lipFemale],
+    [class$=EdgeLine] {
+        stroke-width: 0.6px;
+    }
+    
+    .cheekLine,
+    .lipOverlapLine,
+    [class$=FoldLine] {
+        stroke-width: 0.7px;
+    }
 }

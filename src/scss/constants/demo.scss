@@ -12,9 +12,14 @@ $width__dominoes__sm: 360px;
 $width__dominoes__md: 400px;
 
 $width__playerCard: 96px; // Eyeballed.
-$height__playerCard:
+$height__playerCard__xxs:
     $margin__xs * 2 // Padding.
     + $margin__xl // Label.
+    + $margin__xs // Gap.
+    + $margin__xl; // Inset.
+$height__playerCard__xs:
+    $margin__xs * 2 // Padding.
+    + $margin__xl + $margin__xs // Label.
     + $margin__xs // Gap.
     + $margin__xl; // Inset.
 
@@ -23,10 +28,17 @@ $height__controls: 96px; // TODO: Magic number.
 
 $portraitHeight__info__xxs:
     $margin__xs // Padding top.
-    + $height__playerCard * 2 // Two rows of cards.
+    + $height__playerCard__xxs * 2 // Two rows of cards.
     + $margin__xs // Gap.
     + $margin__sm // Gap.
     + $height__controls;
+$portraitHeight__info__xs:
+    $margin__xs // Padding top.
+    + $height__playerCard__xs * 2 // Two rows of cards.
+    + $margin__xs // Gap.
+    + $margin__sm // Gap.
+    + $height__controls;
+
 $portraitHeight__info__sm:
     $margin__xs // Padding top.
     + $height__pool

@@ -19,6 +19,7 @@
         max-height: $portraitLength__board__xxs;
 
         @media (min-width: $breakpoint__xs) {
+            height: calc(100% - #{$portraitHeight__info__xs});
             max-height: $portraitLength__board__xs;
         }
         @media (min-width: $breakpoint__sm) {
@@ -53,7 +54,7 @@
                 100vh - #{
                     $padding__page__xs * 2 +
                     $height__menu__xs +
-                    $portraitHeight__info__xxs
+                    $portraitHeight__info__xs
                 }
             );
         }
