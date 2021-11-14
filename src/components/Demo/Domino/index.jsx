@@ -13,13 +13,14 @@ import { getFaceSrc } from '../../../utils/src/faces'
 import { getDominoTranslateStyling, getDominoPositionStyling } from '../../../utils/music/render/board/coordinates'
 import { getIntervalSrc } from '../../../utils/src/intervals'
 import { getIntervalPositionAndStyling } from '../../../utils/music/render/interval'
-import styleConfigFaces from '../../../styles/checker/faces'
 import styleConfigDominoes from '../../../styles/dominoes'
+import styleConfigFacesPitch from '../../../styles/faces/pitch'
 import styleConfigPitchOn from '../../../styles/checker/pitchOn'
 import { DIRECTION_X } from '../../../constants/music/game'
 import './style'
 
 const Domino = ({
+    className,
     dominoIndex,
     placement,
 }) => {
@@ -35,10 +36,13 @@ const Domino = ({
             {...{
                 className: cx(
                     'Domino',
-                    placement && 'Domino__placed',
-                    orientation === DIRECTION_X ?
-                        'Domino__horizontal' :
-                        'Domino__vertical',
+                    placement && [
+                        'Domino__placed',
+                        orientation === DIRECTION_X ?
+                            'Domino__horizontal' :
+                            'Domino__vertical',
+                    ],
+                    className,
                 ),
                 ...placement && {
                     style: {
@@ -86,7 +90,7 @@ const Domino = ({
                             'Domino__face',
                         ),
                         src: getFaceSrc(pitch),
-                        styleConfig: styleConfigFaces,
+                        styleConfig: styleConfigFacesPitch,
                         style: getFacePositionAndSizeStyling({
                             pitchIndex,
                             orientation,
@@ -99,6 +103,7 @@ const Domino = ({
 }
 
 Domino.propTypes = {
+    className: PropTypes.string,
     dominoIndex: PropTypes.number.isRequired,
     placement: PropTypes.arrayOf(
         PropTypes.arrayOf(

@@ -7,7 +7,13 @@
 
     @media
     (min-width: $breakpoint__sm) and (orientation: portrait),
-    (min-height: $breakpoint__xs) and (orientation: landscape) {
+    (min-height: $breakpoint__sm) and (orientation: landscape) {
         display: flex;
     }
+}
+
+.Pool__row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: $margin__xs;
 }

@@ -20,6 +20,7 @@ const CheckerButton = ({
     disabled,
     styleConfig,
     styleConfigOn,
+    faceStyleConfig,
     style,
     onClick,
     ...rest
@@ -69,6 +70,7 @@ const CheckerButton = ({
                 <CheckerFaceSvg
                     {...{
                         src: faceSrc,
+                        faceStyleConfig,
                         reverse,
                     }}
                 />
@@ -86,6 +88,7 @@ CheckerButton.propTypes = {
     disabled: PropTypes.bool,
     styleConfig: PropTypes.object.isRequired,
     styleConfigOn: PropTypes.object,
+    faceStyleConfig: PropTypes.object,
     style: PropTypes.object,
     onClick: PropTypes.func,
 }

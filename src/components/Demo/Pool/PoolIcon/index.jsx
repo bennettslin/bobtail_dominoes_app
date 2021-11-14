@@ -5,7 +5,7 @@ import Flex from '../../../Flex'
 import StyledShadow from '../../../Styled/Shadow'
 import Svg from '../../../Svg'
 import styleConfigDominoes from '../../../../styles/dominoes'
-import styleConfigFaces from '../../../../styles/checker/faces'
+import styleConfigFacesPitch from '../../../../styles/faces/pitch'
 import './style'
 
 const PoolIcon = ({
@@ -13,11 +13,19 @@ const PoolIcon = ({
     faceSrc,
     count,
 }) => (
-    <Flex {...{ gap: 'xxs' }}>
+    <Flex
+        {...{
+            className: cx(
+                'PoolIcon',
+            ),
+            justifyContent: 'start',
+            gap: 'xxs',
+        }}
+    >
         <Flex
             {...{
                 className: cx(
-                    'PoolIcon',
+                    'PoolIcon__icon',
                 ),
             }}
         >
@@ -29,13 +37,22 @@ const PoolIcon = ({
             />
             <Svg
                 {...{
-                    className: 'PoolIcon__face',
+                    className: cx(
+                        'PoolIcon__face',
+                    ),
                     src: faceSrc,
-                    styleConfig: styleConfigFaces,
+                    styleConfig: styleConfigFacesPitch,
                 }}
             />
         </Flex>
-        <Flex>
+        <Flex
+            {...{
+                className: cx(
+                    'PoolIcon__figure',
+                ),
+                gap: 'xxs',
+            }}
+        >
             <StyledShadow>
                 {count}
             </StyledShadow>

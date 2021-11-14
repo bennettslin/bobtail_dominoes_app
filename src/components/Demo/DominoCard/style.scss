@@ -16,8 +16,9 @@
 }
 
 .DominoCard__inset {
+    padding: $margin__xs;
     min-height: $margin__xl;
     background-color: $colour__board;
-    border-radius: $borderRadius__sm;
+    border-radius: $borderRadius__md;
     box-shadow: inset $boxShadow__above;
 }

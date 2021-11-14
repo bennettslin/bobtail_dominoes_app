@@ -11,5 +11,5 @@ $dropShadow: drop-shadow(0 2px 4px $colour__shadow__light);
 $colour__shadow__lightHover: hsla(24, 100%, 93%, 0.9);
 $dropShadow__lightHover: drop-shadow(0 2px 8px $colour__shadow__lightHover);
 
-$boxShadow__above: 0 2px 4px 1px $colour__shadow__light;
-$boxShadow__below: 0 -2px 4px 1px $colour__shadow__light;
+$boxShadow__above: 0 4px 4px 1px $colour__shadow__light;
+// $boxShadow__below: 0 -2px 4px 1px $colour__shadow__light;

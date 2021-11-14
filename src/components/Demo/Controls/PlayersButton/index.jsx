@@ -1,25 +1,22 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
-import CheckerButton from '../../CheckerButton'
-import { updateTransposedPitchSet } from '../../../../redux/audio/action'
+import CheckerButton from '../../../ChordChecker/CheckerButton'
+import { updateCurrentPitchSet } from '../../../../redux/audio/action'
+import faceTranspose from '../../../../assets/svgs/checker/faceTranspose'
 import styleConfigOption from '../../../../styles/checker/option'
 import styleConfigFacesOption from '../../../../styles/faces/option'
-import faceTranspose from '../../../../assets/svgs/checker/faceTranspose'
 
-const TransposeButton = ({ direction }) => {
+const PlayersButton = () => {
     const dispatch = useDispatch()
 
     const onClick = () => {
-        dispatch(updateTransposedPitchSet(direction))
+        dispatch(updateCurrentPitchSet())
     }
 
     return (
         <CheckerButton
-            enableWithSonority
             {...{
                 faceSrc: faceTranspose,
-                reverse: direction === -1,
                 styleConfig: styleConfigOption,
                 faceStyleConfig: styleConfigFacesOption,
                 onClick,
@@ -28,8 +25,4 @@ const TransposeButton = ({ direction }) => {
     )
 }
 
-TransposeButton.propTypes = {
-    direction: PropTypes.oneOf([-1, 1]).isRequired,
-}
-
-export default TransposeButton
+export default PlayersButton

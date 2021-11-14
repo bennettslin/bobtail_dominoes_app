@@ -1,20 +1,26 @@
 import React from 'react'
 import cx from 'classnames'
-import Flex from '../../Flex'
+import AutoplayButton from './AutoplayButton'
+import PlayersButton from './PlayersButton'
+import ResetButton from './ResetButton'
+import StyledPlatform from '../../Styled/Platform'
 import './style'
 
 const Controls = () => {
     return (
-        <Flex
+        <StyledPlatform
             {...{
                 className: cx(
                     'Controls',
                 ),
+                justifyContent: 'spaceEvenly',
                 flexGrow: 1,
             }}
         >
-            Hello
-        </Flex>
+            <PlayersButton />
+            <AutoplayButton />
+            <ResetButton />
+        </StyledPlatform>
     )
 }
 

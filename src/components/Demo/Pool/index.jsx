@@ -1,4 +1,5 @@
 import React from 'react'
+import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Flex from '../../Flex'
 import PoolInterval from './PoolInterval'
@@ -17,7 +18,9 @@ const Pool = () => {
     return (
         <DominoCard
             {...{
-                className: 'Pool',
+                className: cx(
+                    'Pool',
+                ),
                 label: 'pool',
                 flexGrow: 1,
             }}
@@ -33,7 +36,14 @@ const Pool = () => {
                         pitchCountsList.slice(0, OCTAVE_RANGE / 2),
                         pitchCountsList.slice(OCTAVE_RANGE / 2),
                     ].map((list, index) => (
-                        <Flex {...{ key: index, gap: 'sm' }}>
+                        <div
+                            {...{
+                                key: index,
+                                className: cx(
+                                    'Pool__row',
+                                ),
+                            }}
+                        >
                             {list.map((pitchCount, pitch) => (
                                 <PoolPitch
                                     {...{
@@ -43,10 +53,16 @@ const Pool = () => {
                                     }}
                                 />
                             ))}
-                        </Flex>
+                        </div>
                     ))}
                 </Flex>
-                <Flex {...{ gap: 'sm' }}>
+                <div
+                    {...{
+                        className: cx(
+                            'Pool__row',
+                        ),
+                    }}
+                >
                     {getIntervalCountsInPool(pool).map((intervalCount, index) => (
                         <PoolInterval
                             {...{
@@ -56,7 +72,7 @@ const Pool = () => {
                             }}
                         />
                     ))}
-                </Flex>
+                </div>
             </Flex>
         </DominoCard>
     )

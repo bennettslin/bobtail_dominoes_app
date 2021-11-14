@@ -2,12 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Svg from '../../../Svg'
-import styleConfigFaces from '../../../../styles/checker/faces'
+import styleConfigFacesPitch from '../../../../styles/faces/pitch'
 import './style'
 
 const CheckerFaceSvg = ({
     src,
     reverse,
+    faceStyleConfig,
 }) => (
     <Svg
         {...{
@@ -16,7 +17,7 @@ const CheckerFaceSvg = ({
             ),
             src,
             reverse,
-            styleConfig: styleConfigFaces,
+            styleConfig: faceStyleConfig || styleConfigFacesPitch,
         }}
     />
 )
@@ -24,6 +25,7 @@ const CheckerFaceSvg = ({
 CheckerFaceSvg.propTypes = {
     src: PropTypes.string.isRequired,
     reverse: PropTypes.bool,
+    faceStyleConfig: PropTypes.object,
 }
 
 export default CheckerFaceSvg

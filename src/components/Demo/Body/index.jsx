@@ -25,15 +25,16 @@ const DemoBody = () => (
                 justifyContent: 'spaceEvenly',
                 alignItems: 'normal',
                 flexGrow: 1,
-                gap: 'xs',
+                gap: 'sm',
             }}
         >
             <PlayerCards />
             <Flex
                 {...{
+                    className: 'DemoBody__poolControls',
                     flexDirection: 'column',
                     flexGrow: 1,
-                    gap: 'xs',
+                    gap: 'sm',
                 }}
             >
                 <Pool />

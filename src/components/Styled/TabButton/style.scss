@@ -6,7 +6,7 @@
 $margin__shadow: $margin__xs * 0.3;
 
 .StyledTabButton {
-    padding: $margin__xs * 0.5 0;
+    padding: $margin__xxs 0;
 
     &.Button__selected {
         &:before, &:after {

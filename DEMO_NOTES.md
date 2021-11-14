@@ -1,8 +1,9 @@
 # Demo notes
+* Distinguish current player, or else winning players.
+* Checker button class names are just face and bottom.
+* Make parent class for checker and demo buttons.
 
-* Responsive board challenge:
-    * Make board always square
-    * Make board in between info column and logs column
+* Distinguish between initialise game and start game.
 
 * getBestPointedMovesForTurn
     * Starting to look ugly, refactor

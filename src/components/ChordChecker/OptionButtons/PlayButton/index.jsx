@@ -4,6 +4,7 @@ import CheckerButton from '../../CheckerButton'
 import { queuePlay } from '../../../../redux/audio/action'
 import { mapIsPlaying } from '../../../../redux/audio/selector'
 import styleConfigAudio from '../../../../styles/checker/audio'
+import styleConfigFacesAudio from '../../../../styles/faces/audio'
 import facePlay from '../../../../assets/svgs/checker/facePlay'
 
 const PlayButton = () => {
@@ -22,6 +23,7 @@ const PlayButton = () => {
                 faceSrc: facePlay,
                 disabled: isPlaying,
                 styleConfig: styleConfigAudio,
+                faceStyleConfig: styleConfigFacesAudio,
                 onClick,
             }}
         />

@@ -6,11 +6,13 @@
 .DemoBody {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+
+    @media (orientation: landscape) {
+        overflow: hidden;
+    }
 }
 
 .DemoBody__dominoes {
-    overflow: hidden;
     flex-direction: column;
     
     @media (orientation: portrait) {
@@ -53,5 +55,11 @@
         @media (min-height: $breakpoint__md) {
             max-width: $width__dominoes__md;
         }
+    }
+}
+
+.DemoBody__poolControls {
+    @media (min-width: $breakpoint__sm) and (orientation: portrait) {
+        max-width: $width__dominoes__sm;
     }
 }

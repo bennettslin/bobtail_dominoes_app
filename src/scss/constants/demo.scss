@@ -21,19 +21,19 @@ $height__playerCard:
     $margin__xs * 2 // Padding.
     + $margin__md // Label.
     + $margin__xs // Gap.
-    + $margin__xl; // Inset.
+    + $margin__xl * 1.5; // Inset.
 
-$height__controls: 72px; // TODO: Magic number.
-$height__pool: 200px; // TODO: Magic number.
+$height__pool: 192px; // Eyeballed.
+$height__controls: 96px; // TODO: Magic number.
 
 $portraitHeight__info__xxs:
     $margin__xs // Padding top.
     + $height__playerCard * 2 // Two rows of cards.
     + $margin__xs // Gap.
-    + $margin__xs // Gap.
+    + $margin__sm // Gap.
     + $height__controls;
 $portraitHeight__info__sm:
     $margin__xs // Padding top.
     + $height__pool
-    + $margin__xs // Gap.
+    + $margin__sm // Gap.
     + $height__controls;

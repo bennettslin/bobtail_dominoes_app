@@ -25,7 +25,15 @@ const PlayerCard = ({ playerIndex }) => {
             }}
         >
             {Array.from(hand).map(dominoIndex => (
-                <Domino {...{ key: dominoIndex, dominoIndex }} />
+                <Domino
+                    {...{
+                        className: cx(
+                            'PlayerCard__domino',
+                        ),
+                        key: dominoIndex,
+                        dominoIndex,
+                    }}
+                />
             ))}
         </DominoCard>
     )

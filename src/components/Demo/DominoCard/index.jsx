@@ -15,6 +15,7 @@ const DominoCard = ({ className, label, figure, children, ...rest }) => (
             flexDirection: 'column',
             justifyContent: 'spaceEvenly',
             alignItems: 'normal',
+            gap: 'xs',
             ...rest,
         }}
     >
