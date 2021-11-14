@@ -18,9 +18,7 @@
         padding: $padding__page__sm;
     }
 
-    @media
-    (min-width: $breakpoint__md) and (orientation: portrait),
-    (min-height: $breakpoint__md) and (orientation: landscape) {
+    @media (min-width: $breakpoint__md) {
         padding: $padding__page__md;
     }
 }

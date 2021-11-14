@@ -5,7 +5,13 @@ import Flex from '../../Flex'
 import './style'
 import StyledShadow from '../../Styled/Shadow'
 
-const DominoCard = ({ className, label, figure, children, ...rest }) => (
+const DominoCard = ({
+    className,
+    label,
+    figure,
+    children,
+    ...rest
+}) => (
     <Flex
         {...{
             className: cx(

@@ -71,11 +71,7 @@
 @media (min-width: $breakpoint__md) {
     .labelFontSize__md { font-size: 1.5em; }
     .labelFontSize__lg { font-size: 2em; }
-}
 
-@media
-(min-width: $breakpoint__md) and (orientation: portrait),
-(min-height: $breakpoint__md) and (orientation: landscape) {
     .fontSize__sm { font-size: 1em; }
     .fontSize__md { font-size: 1.5em; }
     .fontSize__lg { font-size: 2em; }
