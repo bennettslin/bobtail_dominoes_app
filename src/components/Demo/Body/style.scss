@@ -44,15 +44,15 @@
         max-width: $width__dominoes__xxs;
         height: 100%;
 
-        @media (min-height: $breakpoint__xs) {
+        @media (min-width: $breakpoint__xs) {
             max-width: $width__dominoes__xs;
         }
     
-        @media (min-height: $breakpoint__sm) {
+        @media (min-width: $breakpoint__sm) {
             max-width: $width__dominoes__sm;
         }
     
-        @media (min-height: $breakpoint__md) {
+        @media (min-width: $breakpoint__md) {
             max-width: $width__dominoes__md;
         }
     }

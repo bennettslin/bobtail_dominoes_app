@@ -5,6 +5,6 @@ export const BOARD_X_RANGE = 20
 export const PLAYERS = [
     'Sita',
     'Bennett',
-    'Ashley',
+    'Catherine',
     'Khari',
 ]

@@ -3,7 +3,7 @@
 
 .GameLogs {
     display: none;
-    width: $width__logs__xxs;
+    width: $width__dominoes__md;
     height: 100%;
     padding: $margin__lg $margin__sm;
     overflow-y: scroll;
@@ -16,21 +16,7 @@
         rgba(0, 0, 0, 0)
     );
 
-    @media (orientation: landscape) {
-        @media (min-width: $breakpoint__md) {
-            display: flex;
-        }
-    
-        @media (min-height: $breakpoint__xs) {
-            width: $width__logs__xs;
-        }
-    
-        @media (min-height: $breakpoint__sm) {
-            width: $width__logs__sm;
-        }
-    
-        @media (min-height: $breakpoint__md) {
-            width: $width__logs__md;
-        }
+    @media (min-width: $breakpoint__md) and (orientation: landscape) {
+        display: flex;
     }
 }

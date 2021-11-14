@@ -4,11 +4,13 @@ import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Flex from '../../../Flex'
 import StyledShadow from '../../../Styled/Shadow'
+import Svg from '../../../Svg'
 import Domino from '../../Domino'
 import DominoCard from '../../DominoCard'
 import { getMapHand, getMapIsCurrentPlayer, getMapScore } from '../../../../redux/game/selector'
 import './style'
 import { PLAYERS } from '../../../../constants/music/play'
+import { getPlayerSrc } from '../../../../utils/src/players'
 
 const PlayerCard = ({ playerIndex }) => {
     const
@@ -28,32 +30,47 @@ const PlayerCard = ({ playerIndex }) => {
                             className: cx(
                                 'PlayerCard__label',
                             ),
-                            flexDirection: 'column',
-                            alignItems: 'end',
+                            justifyContent: 'spaceBetween',
                         }}
                     >
-                        <Flex
+                        <Svg
                             {...{
                                 className: cx(
-                                    'font__button',
-                                    'labelFontSize__lg',
+                                    'PlayerCard__player',
                                 ),
+                                src: getPlayerSrc(playerIndex),
+                                scaleFactor: 0.5,
                             }}
-                        >
-                            <StyledShadow isInset isInteractive>
-                                {score}
-                            </StyledShadow>
-                        </Flex>
+                        />
                         <Flex
                             {...{
-                                className: cx(
-                                    'labelFontSize__md',
-                                ),
+                                flexDirection: 'column',
+                                alignItems: 'end',
                             }}
                         >
-                            <StyledShadow isInset isInteractive>
-                                {PLAYERS[playerIndex]}
-                            </StyledShadow>
+                            <Flex
+                                {...{
+                                    className: cx(
+                                        'font__button',
+                                        'labelFontSize__lg',
+                                    ),
+                                }}
+                            >
+                                <StyledShadow isInset isInteractive>
+                                    {score}
+                                </StyledShadow>
+                            </Flex>
+                            <Flex
+                                {...{
+                                    className: cx(
+                                        'labelFontSize__md',
+                                    ),
+                                }}
+                            >
+                                <StyledShadow isInset isInteractive>
+                                    {PLAYERS[playerIndex]}
+                                </StyledShadow>
+                            </Flex>
                         </Flex>
                     </Flex>
                 ),
