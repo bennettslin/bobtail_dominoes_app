@@ -1,10 +1,12 @@
 # Demo notes
+# TODO: Player cards
 * Distinguish current player, or else winning players.
-* Figure out parent arcade button component for checker and demo buttons.
-* Make svg for players button.
 * Add faces to player cards.
 
-* Distinguish between initialise game and start game.
+# TODO: Game options
+* Figure out parent arcade button component for checker and demo buttons.
+* Make svg for players button.
+* Distinguish between initialise game and start game
 
 * getBestPointedMovesForTurn
     * Starting to look ugly, refactor
