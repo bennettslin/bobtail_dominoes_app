@@ -5,8 +5,8 @@ export default {
     className: 'facesOption',
     styles: {
         fill: {
-            optionBottom:   hsl(320, 33, 37),
-            optionFace:     hsl(320, 33, 47),
+            bottom: hsl(320, 33, 37),
+            face:   hsl(320, 33, 47),
         },
     },
 }

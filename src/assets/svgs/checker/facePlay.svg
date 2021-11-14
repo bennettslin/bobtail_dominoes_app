@@ -1,4 +1,4 @@
 <svg viewBox="0 0 200 200">
-  <polygon class="audioBottom" points="65.23 145 154.77 100 65.23 55 65.23 145"/>
-  <polygon class="audioFace" points="65.23 60 65.23 145 149.79 102.5 65.23 60"/>
+  <polygon class="bottom" points="65.23 145 154.77 100 65.23 55 65.23 145"/>
+  <polygon class="face" points="65.23 60 65.23 145 149.79 102.5 65.23 60"/>
 </svg>

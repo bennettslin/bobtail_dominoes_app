@@ -4,7 +4,7 @@ import cx from 'classnames'
 import Flex from '../../Flex'
 import './style'
 
-const StyledCheckerButton = ({
+const StyledArcadeButton = ({
     className,
     children,
     ...rest
@@ -12,7 +12,7 @@ const StyledCheckerButton = ({
     <Flex
         {...{
             className: cx(
-                'StyledCheckerButton',
+                'StyledArcadeButton',
                 className,
             ),
             ...rest,
@@ -22,9 +22,9 @@ const StyledCheckerButton = ({
     </Flex>
 )
 
-StyledCheckerButton.propTypes = {
+StyledArcadeButton.propTypes = {
     className: PropTypes.string,
     children: PropTypes.node.isRequired,
 }
 
-export default StyledCheckerButton
+export default StyledArcadeButton

@@ -5,8 +5,8 @@ export default {
     className: 'facesAudio',
     styles: {
         fill: {
-            audioBottom:   hsl(30, 43, 37),
-            audioFace:     hsl(30, 43, 47),
+            bottom: hsl(30, 43, 37),
+            face:   hsl(30, 43, 47),
         },
     },
 }

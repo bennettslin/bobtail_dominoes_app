@@ -2,6 +2,7 @@ import React from 'react'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Flex from '../../../components/Flex'
+import StyledShadow from '../../../components/Styled/Shadow'
 import { mapIsFullPage } from '../../../redux/page/selector'
 import './style'
 
@@ -17,7 +18,11 @@ const AppFooter = () => {
                 ),
             }}
         >
-            {`© ${new Date().getFullYear()} Dogies Almondine`}
+            <Flex>
+                <StyledShadow>
+                    {`© ${new Date().getFullYear()} Dogies Almondine`}
+                </StyledShadow>
+            </Flex>
         </Flex>
     )
 }

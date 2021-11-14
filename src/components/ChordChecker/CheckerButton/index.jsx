@@ -4,7 +4,7 @@ import cx from 'classnames'
 import { useDispatch, useSelector } from 'react-redux'
 import { start } from 'tone'
 import Button from '../../Button'
-import StyledCheckerButton from '../../Styled/CheckerButton'
+import StyledArcadeButton from '../../Styled/ArcadeButton'
 import CheckerButtonSvg from './ButtonSvg'
 import CheckerFaceSvg from './FaceSvg'
 import { updateIsAudioStarted } from '../../../redux/audio/action'
@@ -37,7 +37,7 @@ const CheckerButton = ({
     }
 
     return (
-        <StyledCheckerButton
+        <StyledArcadeButton
             {...{
                 className,
                 style,
@@ -75,7 +75,7 @@ const CheckerButton = ({
                     }}
                 />
             </Button>
-        </StyledCheckerButton>
+        </StyledArcadeButton>
     )
 }
 

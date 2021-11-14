@@ -6,20 +6,18 @@ import Flex from '../../../Flex'
 import StaticArray from '../../../StaticArray'
 import StyledShadow from '../../../Styled/Shadow'
 import MoveLog from '../MoveLog'
-import { getArrayOfIndices } from '../../../../utils/general'
 import { getDominoLabel } from '../../../../utils/music/chords/label'
 import { getCommaSeparatedList } from '../../../../utils/format'
 import { getPlayerIndex } from '../../../../utils/music/game/play/turns'
 import { getPointsForMoves } from '../../../../utils/music/chords/points'
 import { getMapIsLatestTurn, getMapTurn } from '../../../../redux/game/selector'
+import { PLAYERS } from '../../../../constants/music/play'
 import './style'
 
 const TurnLog = ({
     turnIndex,
     playersCount,
-    playerNames = getArrayOfIndices(playersCount).map(playerIndex => (
-        `Player ${playerIndex + 1}`
-    )),
+    playerNames = PLAYERS,
     handCount,
 }) => {
     const

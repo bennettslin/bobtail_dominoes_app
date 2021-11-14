@@ -1,7 +1,8 @@
 # Demo notes
 * Distinguish current player, or else winning players.
-* Checker button class names are just face and bottom.
-* Make parent class for checker and demo buttons.
+* Figure out parent arcade button component for checker and demo buttons.
+* Make svg for players button.
+* Add faces to player cards.
 
 * Distinguish between initialise game and start game.
 

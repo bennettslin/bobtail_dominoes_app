@@ -6,6 +6,7 @@ import Domino from '../../Domino'
 import DominoCard from '../../DominoCard'
 import { getMapHand, getMapIsCurrentPlayer, getMapScore } from '../../../../redux/game/selector'
 import './style'
+import { PLAYERS } from '../../../../constants/music/play'
 
 const PlayerCard = ({ playerIndex }) => {
     const
@@ -19,7 +20,7 @@ const PlayerCard = ({ playerIndex }) => {
                 className: cx(
                     'PlayerCard',
                 ),
-                label: `Player ${playerIndex + 1}`,
+                label: PLAYERS[playerIndex],
                 figure: score,
                 flexGrow: 1,
             }}

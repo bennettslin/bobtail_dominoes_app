@@ -5,8 +5,8 @@ export default {
     className: 'facesReset',
     styles: {
         fill: {
-            resetBottom:    hsl(0, 33, 37),
-            resetFace:      hsl(0, 33, 47),
+            bottom: hsl(0, 33, 37),
+            face:   hsl(0, 33, 47),
         },
     },
 }
