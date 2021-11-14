@@ -3,12 +3,10 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Flex from '../../Flex'
 import './style'
-import StyledShadow from '../../Styled/Shadow'
 
 const DominoCard = ({
     className,
     label,
-    figure,
     children,
     ...rest
 }) => (
@@ -25,41 +23,7 @@ const DominoCard = ({
             ...rest,
         }}
     >
-        <Flex
-            {...{
-                className: cx(
-                    'DominoCard__label',
-                ),
-                justifyContent: 'spaceBetween',
-                gap: 'xs',
-            }}
-        >
-            <Flex
-                {...{
-                    className: cx(
-                        'fontSize__md',
-                    ),
-                }}
-            >
-                <StyledShadow isInset isInteractive>
-                    {label}
-                </StyledShadow>
-            </Flex>
-            {(figure || Number.isFinite(figure)) && (
-                <Flex
-                    {...{
-                        className: cx(
-                            'font__button',
-                            'fontSize__lg',
-                        ),
-                    }}
-                >
-                    <StyledShadow isInset isInteractive>
-                        {figure}
-                    </StyledShadow>
-                </Flex>
-            )}
-        </Flex>
+        {label}
         <Flex
             {...{
                 className: cx(
@@ -76,7 +40,6 @@ const DominoCard = ({
 DominoCard.propTypes = {
     className: PropTypes.string,
     label: PropTypes.node.isRequired,
-    figure: PropTypes.node,
     children: PropTypes.node.isRequired,
 }
 

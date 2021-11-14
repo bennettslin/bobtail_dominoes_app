@@ -19,9 +19,9 @@ $width__logs__md: 400px;
 $width__playerCard: 96px; // Eyeballed.
 $height__playerCard:
     $margin__xs * 2 // Padding.
-    + $margin__md // Label.
+    + $margin__xl // Label.
     + $margin__xs // Gap.
-    + $margin__xl * 1.5; // Inset.
+    + $margin__xl; // Inset.
 
 $height__pool: 192px; // Eyeballed.
 $height__controls: 96px; // TODO: Magic number.

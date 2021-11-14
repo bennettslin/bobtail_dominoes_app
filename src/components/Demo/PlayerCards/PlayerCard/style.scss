@@ -13,6 +13,10 @@
     }
 }
 
+.PlayerCard__label {
+    height: $margin__xl;
+}
+
 .DominoCard__inset {
     .PlayerCard
     & {

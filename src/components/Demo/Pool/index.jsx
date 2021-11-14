@@ -2,13 +2,14 @@ import React from 'react'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Flex from '../../Flex'
+import StyledShadow from '../../Styled/Shadow'
+import DominoCard from '../DominoCard'
 import PoolInterval from './PoolInterval'
 import PoolPitch from './PoolPitch'
 import { mapPool } from '../../../redux/game/selector'
 import { getIntervalCountsInPool, getPitchCountsInPool } from '../../../utils/music/game/statistics'
 import { OCTAVE_RANGE } from '../../../constants/music/audio'
 import './style'
-import DominoCard from '../DominoCard'
 
 const Pool = () => {
     const
@@ -21,7 +22,20 @@ const Pool = () => {
                 className: cx(
                     'Pool',
                 ),
-                label: 'pool',
+                label: (
+                    <Flex
+                        {...{
+                            className: cx(
+                                'Pool__label',
+                                'labelFontSize__md',
+                            ),
+                        }}
+                    >
+                        <StyledShadow isInset isInteractive>
+                            pool
+                        </StyledShadow>
+                    </Flex>
+                ),
                 flexGrow: 1,
             }}
         >

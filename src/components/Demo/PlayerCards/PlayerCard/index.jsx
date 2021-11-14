@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
+import Flex from '../../../Flex'
+import StyledShadow from '../../../Styled/Shadow'
 import Domino from '../../Domino'
 import DominoCard from '../../DominoCard'
 import { getMapHand, getMapIsCurrentPlayer, getMapScore } from '../../../../redux/game/selector'
@@ -20,7 +22,41 @@ const PlayerCard = ({ playerIndex }) => {
                 className: cx(
                     'PlayerCard',
                 ),
-                label: PLAYERS[playerIndex],
+                label: (
+                    <Flex
+                        {...{
+                            className: cx(
+                                'PlayerCard__label',
+                            ),
+                            flexDirection: 'column',
+                            alignItems: 'end',
+                        }}
+                    >
+                        <Flex
+                            {...{
+                                className: cx(
+                                    'font__button',
+                                    'labelFontSize__lg',
+                                ),
+                            }}
+                        >
+                            <StyledShadow isInset isInteractive>
+                                {score}
+                            </StyledShadow>
+                        </Flex>
+                        <Flex
+                            {...{
+                                className: cx(
+                                    'labelFontSize__md',
+                                ),
+                            }}
+                        >
+                            <StyledShadow isInset isInteractive>
+                                {PLAYERS[playerIndex]}
+                            </StyledShadow>
+                        </Flex>
+                    </Flex>
+                ),
                 figure: score,
                 flexGrow: 1,
             }}
