@@ -32,6 +32,8 @@ const PlayerCard = ({ playerIndex }) => {
                                 'PlayerCard__label',
                             ),
                             justifyContent: 'spaceBetween',
+                            alignItems: 'start',
+                            flexGrow: 1,
                         }}
                     >
                         <Svg
@@ -41,7 +43,6 @@ const PlayerCard = ({ playerIndex }) => {
                                 ),
                                 src: getPlayerSrc(playerIndex),
                                 styleConfig: styleConfigPlayers,
-                                scaleFactor: 0.6,
                             }}
                         />
                         <Flex
@@ -65,7 +66,7 @@ const PlayerCard = ({ playerIndex }) => {
                             <Flex
                                 {...{
                                     className: cx(
-                                        'labelFontSize__md',
+                                        'labelFontSize__sm',
                                     ),
                                 }}
                             >

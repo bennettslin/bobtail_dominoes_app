@@ -13,9 +13,11 @@
 }
 
 .DemoBody__dominoes {
+    display: none;
     flex-direction: column;
-    
+
     @media (orientation: portrait) {
+        display: flex;
         width: $width__dominoes__xxs;
         height: calc(100% - #{$portraitLength__board__xxs});
         min-height: $portraitHeight__info__xxs;
@@ -39,23 +41,12 @@
             height: calc(100% - #{$portraitLength__board__md});
         }
     }
-    
-    @media (orientation: landscape) {
-        padding: $margin__xs 0;
-        max-width: $width__dominoes__xxs;
-        height: 100%;
 
-        @media (min-width: $breakpoint__xs) {
-            max-width: $width__dominoes__xs;
-        }
-    
-        @media (min-width: $breakpoint__sm) {
-            max-width: $width__dominoes__sm;
-        }
-    
-        @media (min-width: $breakpoint__md) {
-            max-width: $width__dominoes__md;
-        }
+    @media (min-width: $breakpoint__md) and (orientation: landscape) {
+        display: flex;
+        padding: $margin__xs 0;
+        max-width: $width__dominoes__md;
+        height: 100%;
     }
 }
 

@@ -1,16 +1,7 @@
 # Demo notes
 
-# TODO: Responsive
-* New design: hide dominoes and just show logs in landscape.
-* Don't bother with ever showing players in column in tall landscape.
-
 # TODO: Player cards
 * Distinguish current player, or else winning players.
-* Add faces to player cards.
-    * Adjust label layout to allow for heads to be as big without gap
-    * Adjust Sita hair
-    * Get presence with Indian instruments
-    * Domino inset height changes
 
 # TODO: Game options
 * Figure out parent arcade button component for checker and demo buttons.

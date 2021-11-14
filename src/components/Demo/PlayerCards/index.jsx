@@ -4,7 +4,6 @@ import Flex from '../../Flex'
 import PlayerCard from './PlayerCard'
 import { mapPlayersCount } from '../../../redux/game/selector'
 import { getArrayOfIndices } from '../../../utils/general'
-import './style'
 
 const PlayerCards = () => {
     const playersCount = useSelector(mapPlayersCount)
@@ -13,6 +12,7 @@ const PlayerCards = () => {
         <Flex
             {...{
                 className: 'PlayerCards',
+                flexWrap: 'wrap',
                 flexGrow: 1,
                 gap: 'xs',
             }}

@@ -19,5 +19,9 @@
 .Pool__row {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: $margin__xs;
+    gap: $margin__xxs;
+
+    @media (orientation: landscape) {
+        gap: $margin__sm;
+    }
 }

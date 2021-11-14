@@ -11,17 +11,16 @@
     @media (min-width: $breakpoint__xs) {
         min-height: $height__playerCard__xs;
     }
-
-    @media (min-height: $breakpoint__md) and (orientation: landscape) {
-        width: 100%;
-    }
 }
 
 .PlayerCard__label {
     height: $margin__xl;
+    // Prevent heads from getting too big.
+    max-height: $margin__xl + $margin__sm;
 
     @media (min-width: $breakpoint__xs) {
         height: $margin__xl + $margin__xs;
+        max-height: $margin__xl + $margin__xl;
     }
 
     @media (min-width: $breakpoint__sm) {
@@ -46,6 +45,7 @@
 }
 
 .PlayerCard__player {
+    width: auto;
     stroke-width: 0.8px;
     stroke: hsla(0, 5%, 20%, 0.6);
 

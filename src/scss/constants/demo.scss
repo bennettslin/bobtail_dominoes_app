@@ -11,17 +11,22 @@ $width__dominoes__xs: 320px;
 $width__dominoes__sm: 360px;
 $width__dominoes__md: 400px;
 
+$width__logs__xxs: 250px;
+$width__logs__xs: 285px;
+$width__logs__sm: 320px;
+$width__logs__md: 355px;
+
 $width__playerCard: 96px; // Eyeballed.
 $height__playerCard__xxs:
     $margin__xs * 2 // Padding.
     + $margin__xl // Label.
     + $margin__xs // Gap.
-    + $margin__xl; // Inset.
+    + $margin__xl + $margin__xxs; // Inset.
 $height__playerCard__xs:
     $margin__xs * 2 // Padding.
     + $margin__xl + $margin__xs // Label.
     + $margin__xs // Gap.
-    + $margin__xl; // Inset.
+    + $margin__xl + $margin__xxs; // Inset.
 
 $height__pool: 192px; // Eyeballed.
 $height__controls: 96px; // TODO: Magic number.

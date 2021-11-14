@@ -24,6 +24,7 @@ export default {
             skinIndian: hsl(21, 33, 52),
             skinBlack: hsl(29, 31, 48),
 
+            eyebrowDarkBrown: hsl(19, 17, 25),
             eyebrowBlack: hsl(26, 7, 25),
             hairBlack: hsl(26, 7, 25),
             hairBlackDark: hsl(26, 7, 22),

@@ -35,6 +35,7 @@
     letter-spacing: 0.05em;
 }
 
+.labelFontSize__sm { font-size: 0.66em; }
 .labelFontSize__md { font-size: 1em; }
 .labelFontSize__lg { font-size: 1.15em; }
 
@@ -43,6 +44,7 @@
 .fontSize__lg { font-size: 1.15em; }
 
 @media (min-width: $breakpoint__xs) {
+    .labelFontSize__sm { font-size: 0.75em; }
     .labelFontSize__md { font-size: 1.16em; }
     .labelFontSize__lg { font-size: 1.4em; }
 }
@@ -56,6 +58,7 @@
 }
 
 @media (min-width: $breakpoint__sm) {
+    .labelFontSize__sm { font-size: 0.88em; }
     .labelFontSize__md { font-size: 1.33em; }
     .labelFontSize__lg { font-size: 1.75em; }
 }
@@ -69,6 +72,7 @@
 }
 
 @media (min-width: $breakpoint__md) {
+    .labelFontSize__sm { font-size: 1em; }
     .labelFontSize__md { font-size: 1.5em; }
     .labelFontSize__lg { font-size: 2em; }
 

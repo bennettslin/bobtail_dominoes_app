@@ -13,7 +13,7 @@
 
 .DominoCard__inset {
     padding: $margin__xs;
-    min-height: $margin__xl;
+    min-height: $margin__xl + $margin__xxs;
     background-color: $colour__board;
     border-radius: $borderRadius__md;
     box-shadow: inset $boxShadow__above;
