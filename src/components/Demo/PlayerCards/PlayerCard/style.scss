@@ -1,0 +1,14 @@
+@use 'sass:math';
+@import '../../../../scss/constants/demo';
+@import '../../../../scss/constants/responsive';
+
+.PlayerCard {
+    width: calc(50% - #{math.div($margin__xs, 2)});
+    min-width: $width__playerCard;
+    height: calc(50% - #{math.div($margin__xs, 2)});
+    min-height: $height__playerCard;
+
+    @media (min-height: $breakpoint__md) and (orientation: landscape) {
+        width: 100%;
+    }
+}

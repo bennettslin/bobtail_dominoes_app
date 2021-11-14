@@ -67,3 +67,8 @@ export const getMapIsDominoInLatestTurn = dominoIndex => createSelector(
     mapTurns,
     turns => getIsDominoInLatestTurn({ dominoIndex, turns }),
 )
+
+export const getMapIsCurrentPlayer = playerIndex => createSelector(
+    mapCurrentPlayerIndex,
+    currentPlayerIndex => playerIndex === currentPlayerIndex,
+)

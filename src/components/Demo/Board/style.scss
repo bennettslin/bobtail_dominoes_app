@@ -15,13 +15,14 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: calc(100% - #{$height__info});
+        height: calc(100% - #{$portraitHeight__info__xxs});
         max-height: $portraitLength__board__xxs;
 
         @media (min-width: $breakpoint__xs) {
             max-height: $portraitLength__board__xs;
         }
         @media (min-width: $breakpoint__sm) {
+            height: calc(100% - #{$portraitHeight__info__sm});
             max-height: $portraitLength__board__sm;
         }
         @media (min-width: $breakpoint__md) {
@@ -43,7 +44,7 @@
             100vh - #{
                 $padding__page__xxs * 2 +
                 $height__menu__xxs +
-                $height__info
+                $portraitHeight__info__xxs
             }
         );
 
@@ -52,7 +53,7 @@
                 100vh - #{
                     $padding__page__xs * 2 +
                     $height__menu__xs +
-                    $height__info
+                    $portraitHeight__info__xxs
                 }
             );
         }
@@ -61,7 +62,7 @@
                 100vh - #{
                     $padding__page__sm * 2 +
                     $height__menu__sm +
-                    $height__info
+                    $portraitHeight__info__sm
                 }
             );
         }
@@ -70,7 +71,7 @@
                 100vh - #{
                     $padding__page__md * 2 +
                     $height__menu__md +
-                    $height__info
+                    $portraitHeight__info__sm
                 }
             );
         }

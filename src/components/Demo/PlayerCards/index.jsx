@@ -14,11 +14,7 @@ const PlayerCards = () => {
             {...{
                 className: 'PlayerCards',
                 flexGrow: 1,
-                // flexDirection: 'row',
-                flexWrap: 'wrap',
-                style: {
-                    backgroundColor: '#bbd',
-                },
+                gap: 'xs',
             }}
         >
             {getArrayOfIndices(playersCount).map(playerIndex => (

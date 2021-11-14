@@ -1,37 +1,33 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cx from 'classnames'
 import { useSelector } from 'react-redux'
-import Flex from '../../../Flex'
 import Domino from '../../Domino'
-import { getMapHand, getMapScore } from '../../../../redux/game/selector'
+import DominoCard from '../../DominoCard'
+import { getMapHand, getMapIsCurrentPlayer, getMapScore } from '../../../../redux/game/selector'
+import './style'
 
 const PlayerCard = ({ playerIndex }) => {
     const
         hand = useSelector(getMapHand(playerIndex)),
-        score = useSelector(getMapScore(playerIndex))
+        score = useSelector(getMapScore(playerIndex)),
+        isCurrentPlayer = useSelector(getMapIsCurrentPlayer(playerIndex))
 
     return (
-        <Flex
+        <DominoCard
             {...{
-                className: 'PlayerCard',
-                flexDirection: 'column',
-                alignItems: 'start',
-                gap: 'xs',
-                style: {
-                    minHeight: '100px',
-                    border: '1px solid #dfd',
-                },
+                className: cx(
+                    'PlayerCard',
+                ),
+                label: `Player ${playerIndex + 1}`,
+                figure: score,
+                flexGrow: 1,
             }}
         >
-            <Flex>
-                Player {playerIndex + 1}: {score}
-            </Flex>
-            <Flex {...{ gap: 'xs' }}>
-                {Array.from(hand).map(dominoIndex => (
-                    <Domino {...{ key: dominoIndex, dominoIndex }} />
-                ))}
-            </Flex>
-        </Flex>
+            {Array.from(hand).map(dominoIndex => (
+                <Domino {...{ key: dominoIndex, dominoIndex }} />
+            ))}
+        </DominoCard>
     )
 }
 

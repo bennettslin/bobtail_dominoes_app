@@ -15,6 +15,7 @@
     &.jC__spaceBetween { justify-content: space-between; }
     &.jC__spaceEvenly { justify-content: space-evenly; }
     &.jC__start { justify-content: start; }
+    &.jC__end { justify-content: end; }
 
     &.aI__normal { align-items: normal; }
     &.aI__start { align-items: start; }
@@ -34,6 +35,8 @@
 (min-width: $breakpoint__xs) and (orientation: portrait),
 (min-height: $breakpoint__xs) and (orientation: landscape) {
     .Flex {
+        &.xs__jC__spaceBetween { justify-content: space-between; }
+
         &.xs__gap__xs { gap: $margin__xs; }
         &.xs__gap__sm { gap: $margin__sm; }
 

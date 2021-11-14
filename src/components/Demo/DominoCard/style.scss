@@ -1,0 +1,23 @@
+@import '../../../scss/constants/borders';
+@import '../../../scss/constants/colours';
+@import '../../../scss/constants/responsive';
+@import '../../../scss/constants/shadows';
+
+.DominoCard {
+    width: 100%;
+    padding: $margin__xs $margin__sm;
+    background-color: $colour__background__light;
+    border-radius: $borderRadius__md;
+    box-shadow: $boxShadow__above;
+}
+
+.DominoCard__label {
+    height: $margin__md;
+}
+
+.DominoCard__inset {
+    min-height: $margin__xl;
+    background-color: $colour__board;
+    border-radius: $borderRadius__sm;
+    box-shadow: inset $boxShadow__above;
+}

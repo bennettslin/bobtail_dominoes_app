@@ -1,11 +1,10 @@
 @import './page';
+@import './responsive';
 
 $portraitLength__board__xxs: calc(100vw - #{$padding__page__xxs * 2});
 $portraitLength__board__xs: calc(100vw - #{$padding__page__xs * 2});
 $portraitLength__board__sm: calc(100vw - #{$padding__page__sm * 2});
 $portraitLength__board__md: calc(100vw - #{$padding__page__md * 2});
-
-$height__info: 200px; // TODO: Magic number.
 
 $width__dominoes__xxs: 280px;
 $width__dominoes__xs: 320px;
@@ -16,3 +15,25 @@ $width__logs__xxs: 280px;
 $width__logs__xs: 320px;
 $width__logs__sm: 360px;
 $width__logs__md: 400px;
+
+$width__playerCard: 96px; // Eyeballed.
+$height__playerCard:
+    $margin__xs * 2 // Padding.
+    + $margin__md // Label.
+    + $margin__xs // Gap.
+    + $margin__xl; // Inset.
+
+$height__controls: 72px; // TODO: Magic number.
+$height__pool: 200px; // TODO: Magic number.
+
+$portraitHeight__info__xxs:
+    $margin__xs // Padding top.
+    + $height__playerCard * 2 // Two rows of cards.
+    + $margin__xs // Gap.
+    + $margin__xs // Gap.
+    + $height__controls;
+$portraitHeight__info__sm:
+    $margin__xs // Padding top.
+    + $height__pool
+    + $margin__xs // Gap.
+    + $height__controls;

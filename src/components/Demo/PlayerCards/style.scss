@@ -1,0 +1,10 @@
+@import '../../../scss/constants/responsive';
+
+.PlayerCards {
+    flex-wrap: wrap;
+
+    @media (min-height: $breakpoint__md) and (orientation: landscape) {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+}

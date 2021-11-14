@@ -1,5 +1,13 @@
+@import '../../../scss/constants/demo';
 @import '../../../scss/constants/responsive';
 
 .Pool {
+    display: none;
+    height: $height__pool;
 
+    @media
+    (min-width: $breakpoint__sm) and (orientation: portrait),
+    (min-height: $breakpoint__xs) and (orientation: landscape) {
+        display: flex;
+    }
 }

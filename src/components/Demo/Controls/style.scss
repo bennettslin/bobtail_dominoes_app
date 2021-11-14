@@ -1,0 +1,8 @@
+@import '../../../scss/constants/demo';
+@import '../../../scss/constants/responsive';
+
+.Controls {
+    background-color: #dff;
+    width: 100%;
+    min-height: $height__controls;
+}

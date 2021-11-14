@@ -9,46 +9,49 @@
     overflow: hidden;
 }
 
-.DemoBody__dominoes,
-.GameLogs {
+.DemoBody__dominoes {
+    overflow: hidden;
+    flex-direction: column;
+    
     @media (orientation: portrait) {
+        width: $width__dominoes__xxs;
         height: calc(100% - #{$portraitLength__board__xxs});
-        min-height: $height__info;
-
+        min-height: $portraitHeight__info__xxs;
+        padding-top: $margin__xs;
+        
         @media (min-width: $breakpoint__xs) {
+            width: $width__dominoes__xs;
             height: calc(100% - #{$portraitLength__board__xs});
         }
+
         @media (min-width: $breakpoint__sm) {
+            width: $width__dominoes__sm;
             height: calc(100% - #{$portraitLength__board__sm});
+            min-height: $portraitHeight__info__sm;
+            flex-direction: row;
         }
+
         @media (min-width: $breakpoint__md) {
+            width: $width__dominoes__md;
             height: calc(100% - #{$portraitLength__board__md});
         }
     }
-}
-
-.DemoBody__dominoes {
-    width: $width__dominoes__xxs;
-
-    @media
-    (min-width: $breakpoint__xs) and (orientation: portrait),
-    (min-height: $breakpoint__xs) and (orientation: landscape) {
-        width: $width__dominoes__xs;
-    }
-
-    @media
-    (min-width: $breakpoint__sm) and (orientation: portrait),
-    (min-height: $breakpoint__sm) and (orientation: landscape) {
-        width: $width__dominoes__sm;
-    }
-
-    @media
-    (min-width: $breakpoint__md) and (orientation: portrait),
-    (min-height: $breakpoint__md) and (orientation: landscape) {
-        width: $width__dominoes__md;
-    }
-
+    
     @media (orientation: landscape) {
+        padding: $margin__xs 0;
+        max-width: $width__dominoes__xxs;
         height: 100%;
+
+        @media (min-height: $breakpoint__xs) {
+            max-width: $width__dominoes__xs;
+        }
+    
+        @media (min-height: $breakpoint__sm) {
+            max-width: $width__dominoes__sm;
+        }
+    
+        @media (min-height: $breakpoint__md) {
+            max-width: $width__dominoes__md;
+        }
     }
 }

@@ -32,6 +32,8 @@ const Flex = forwardRef(({
                 justifyContent === 'spaceBetween' && 'jC__spaceBetween',
                 justifyContent === 'spaceEvenly' && 'jC__spaceEvenly',
                 justifyContent === 'start' && 'jC__start',
+                justifyContent === 'end' && 'jC__end',
+                justifyContent?.xs === 'spaceBetween' && 'xs__jC__spaceBetween',
 
                 alignItems === 'normal' && 'aI__normal',
                 alignItems === 'start' && 'aI__start',
@@ -66,8 +68,13 @@ Flex.propTypes = {
     flexDirection: PropTypes.oneOfType([
         PropTypes.oneOf(['column', 'columnReverse']),
     ]),
-    justifyContent: PropTypes.oneOf([
-        'normal', 'spaceBetween', 'spaceEvenly', 'start',
+    justifyContent: PropTypes.oneOfType([
+        PropTypes.oneOf(
+            ['normal', 'spaceBetween', 'spaceEvenly', 'start', 'end'],
+        ),
+        PropTypes.shape({
+            xs: PropTypes.oneOf(['spaceBetween']),
+        }),
     ]),
     alignItems: PropTypes.oneOfType([
         PropTypes.oneOf(['normal', 'start', 'end']),
