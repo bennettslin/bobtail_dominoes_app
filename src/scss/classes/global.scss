@@ -71,6 +71,13 @@ a, button, input[type=submit] {
     }
 }
 
+label {
+    a
+    & {
+        cursor: pointer;
+    }
+}
+
 em, i {
     position: relative;
     left: -0.025em; // Eyeballed.

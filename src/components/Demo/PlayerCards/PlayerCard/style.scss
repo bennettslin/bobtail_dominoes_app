@@ -1,6 +1,7 @@
 @use 'sass:math';
 @import '../../../../scss/constants/demo';
 @import '../../../../scss/constants/responsive';
+@import '../../../../scss/constants/shadows';
 
 .PlayerCard {
     width: calc(50% - #{math.div($margin__xs, 2)});
@@ -46,4 +47,5 @@
 
 .PlayerCard__player {
     height: 100%;
+    filter: $dropShadow;
 }

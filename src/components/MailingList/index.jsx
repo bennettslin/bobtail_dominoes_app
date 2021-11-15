@@ -17,7 +17,7 @@ const MailingList = () => (
             target: '_blank',
         }}
     >
-        <label {...{ className: cx('MailingList__label') }}>
+        <label>
             Join the Bobtail Yearlings mailing list:
         </label>
         <MailingListInputs />

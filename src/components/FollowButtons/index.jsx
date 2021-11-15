@@ -21,7 +21,7 @@ const FollowButtons = () => (
                 className: cx(
                     'FollowButtons__buttons',
                 ),
-                gap: 'xxs',
+                gap: 'xs',
             }}
         >
             <FacebookButton />

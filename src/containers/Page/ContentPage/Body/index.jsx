@@ -45,7 +45,7 @@ const Body = () => {
                 (Array.isArray(body) ? body : [body])
                     .map((child, index) => (
                         typeof child === 'string' ? (
-                            <Markdown {...{ key: index }}>
+                            <Markdown {...{ key: index, fontSize: 'md' }}>
                                 {child}
                             </Markdown>
                         ) : <Fragment {...{ key: index }}>

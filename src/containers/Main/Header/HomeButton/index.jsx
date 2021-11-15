@@ -14,6 +14,7 @@ const HomeButton = ({ onLoad }) => {
 
     return (
         <Button
+            dropShadow
             {...{
                 pagePath: HOME_PAGE,
                 isSelected,

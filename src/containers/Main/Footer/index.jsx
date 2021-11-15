@@ -46,9 +46,12 @@ const MainFooter = ({ didMount }) => {
                 >
                     <Flex
                         {...{
+                            className: cx(
+                                'MainFooter__social',
+                            ),
                             flexDirection: 'column',
                             justifyContent: 'spaceEvenly',
-                            alignItems: 'start',
+                            flexGrow: 1,
                             gap: 'sm',
                         }}
                     >

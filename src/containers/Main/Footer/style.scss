@@ -3,7 +3,7 @@
 
 .MainFooter {
     width: 100%;
-    padding: $margin__sm $margin__md;
+    padding: $margin__sm;
 
     flex-direction: column;
 
@@ -11,5 +11,11 @@
 
     @media (min-width: $breakpoint__sm) {
         flex-direction: row;
+    }
+}
+
+.MainFooter__social {
+    @media (min-width: $breakpoint__sm) {
+        align-items: start;
     }
 }
