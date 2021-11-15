@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import cx from 'classnames'
 import Flex from '../../components/Flex'
 import StyledParagraph from '../../components/Styled/Paragraph'
-import DominoSvg from '../../components/Svgs/Domino'
+import DominoesSvg from '../../components/Svgs/Dominoes'
 import Page from '../../containers/Page'
 import homeDominoes from '../../assets/svgs/home/homeDominoes'
 import './style'
@@ -31,24 +31,19 @@ const Component = () => {
                     flexDirection: 'columnReverse',
                     justifyContent: 'spaceEvenly',
                     flexGrow: 1,
+                    gap: 'sm',
                 }}
             >
-                <DominoSvg
+                <DominoesSvg
                     {...{
                         className: 'homeDominoes',
                         src: homeDominoes,
-                        scaleFactor: 3,
+                        scaleFactor: 1.75,
                         isFigure: false,
                         onLoad,
                     }}
                 />
-                <Flex
-                    {...{
-                        className: cx(
-                            'HomeFlex',
-                        ),
-                    }}
-                >
+                <Flex {...{ className: cx('HomeFlex') }} >
                     <StyledParagraph {...{ fontSize: 'md' }}>
                         Bobtail Dominoes is the ultimate chord-building game for musicians of all skill levels. Challenge yourself or have fun playing with friends!
                     </StyledParagraph>

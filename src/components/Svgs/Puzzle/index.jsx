@@ -4,7 +4,7 @@ import cx from 'classnames'
 import PageConfigContext from '../../../contexts/PageConfig'
 import Button from '../../Button'
 import Flex from '../../Flex'
-import DominoSvg from '../Domino'
+import DominoesSvg from '../Dominoes'
 import { getIsPastOrPresentDate } from '../../../utils/date/puzzles'
 import { addDaysToDate } from '../../../utils/date'
 import './style'
@@ -33,7 +33,7 @@ const PuzzleSvg = ({
                 gap: 'xs',
             }}
         >
-            <DominoSvg
+            <DominoesSvg
                 {...{
                     src: canShowAnswer && showAnswer ?
                         answer :

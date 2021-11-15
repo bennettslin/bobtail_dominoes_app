@@ -4,10 +4,12 @@ import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import { CSSTransition } from 'react-transition-group'
 import getDidMountHoc from '../../../hocs/DidMountHoc'
+import Flex from '../../../components/Flex'
 import FollowButtons from '../../../components/FollowButtons'
 import MailingList from '../../../components/MailingList'
 import StyledFrame from '../../../components/Styled/Frame'
 import StyledFrameBody from '../../../components/Styled/Frame/Body'
+import YearlingsBobtailUpsell from './YearlingsBobtailUpsell'
 import { mapIsUpsellShown } from '../../../redux/option/selector'
 import './style'
 
@@ -38,11 +40,22 @@ const MainFooter = ({ didMount }) => {
                             'MainFooter',
                         ),
                         justifyContent: 'spaceBetween',
+                        alignItems: 'normal',
                         gap: 'sm',
                     }}
                 >
-                    <MailingList />
-                    <FollowButtons />
+                    <Flex
+                        {...{
+                            flexDirection: 'column',
+                            justifyContent: 'spaceEvenly',
+                            alignItems: 'start',
+                            gap: 'sm',
+                        }}
+                    >
+                        <MailingList />
+                        <FollowButtons />
+                    </Flex>
+                    <YearlingsBobtailUpsell />
                 </StyledFrameBody>
             </StyledFrame>
         </CSSTransition>

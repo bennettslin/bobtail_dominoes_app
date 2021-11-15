@@ -1,5 +1,5 @@
 import React from 'react'
-import DominoSvg from '../../components/Svgs/Domino'
+import DominoesSvg from '../../components/Svgs/Dominoes'
 import Page from '../../containers/Page'
 import PAGES_MAP from '../../content/rules'
 import setupSet from '../../assets/svgs/rules/setupSet'
@@ -16,7 +16,7 @@ const Component = () => (
 The standard set consists of 48 dominoes representing all possible whole tones, minor and major thirds, and perfect fourths. The extended set includes semitones and tritones as well, for a total of 66 dominoes.
                 `,
                 (
-                    <DominoSvg {...{
+                    <DominoesSvg {...{
                         src: setupSet,
                         scaleFactor: 0.66,
                     }} />

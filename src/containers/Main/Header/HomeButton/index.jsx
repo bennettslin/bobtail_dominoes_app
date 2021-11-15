@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Button from '../../../../components/Button'
-import DominoSvg from '../../../../components/Svgs/Domino'
+import DominoesSvg from '../../../../components/Svgs/Dominoes'
 import logo from '../../../../assets/svgs/app/logo'
 import { getMapIsSelectedPagePath } from '../../../../redux/page/selector'
 import { HOME_PAGE } from '../../../../constants/pages'
@@ -19,7 +19,7 @@ const HomeButton = ({ onLoad }) => {
                 isSelected,
             }}
         >
-            <DominoSvg
+            <DominoesSvg
                 {...{
                     className: cx(
                         'HomeButton__svg',

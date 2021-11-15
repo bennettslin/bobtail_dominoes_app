@@ -8,7 +8,7 @@ import './style'
 
 const DOMINO_SCALE_FACTOR = 0.225
 
-const DominoSvg = ({
+const DominoesSvg = ({
     src,
     className,
     isFigure = true,
@@ -22,11 +22,11 @@ const DominoSvg = ({
         <Flex
             {...{
                 className: cx(
-                    'DominoSvg',
-                    className && `DominoSvg__${className}`,
+                    'DominoesSvg',
+                    className && `DominoesSvg__${className}`,
                     isFigure ?
-                        'DominoSvg__figure' :
-                        'DominoSvg__full',
+                        'DominoesSvg__figure' :
+                        'DominoesSvg__full',
                     !onLoad && [
                         'hidden',
                         isLoaded && 'shown',
@@ -52,7 +52,7 @@ const DominoSvg = ({
     )
 }
 
-DominoSvg.propTypes = {
+DominoesSvg.propTypes = {
     src: PropTypes.string.isRequired,
     className: PropTypes.string,
     isFigure: PropTypes.bool,
@@ -64,4 +64,4 @@ DominoSvg.propTypes = {
     onLoad: PropTypes.func,
 }
 
-export default DominoSvg
+export default DominoesSvg

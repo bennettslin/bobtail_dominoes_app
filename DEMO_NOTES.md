@@ -1,11 +1,18 @@
 # Demo notes
 
-# TODO: Player cards
-* Distinguish between current and winning colours.
+# TODO:
+* Re-centre player heads
+
+# TODO: Finish footer
+* Leave out of upsell modal
+* Make responsive
+* Check out Yearling's Bobtail
+* by the Bobtail Yearlings
+* Check out our audio webcomic for
+* "The Ulysses of rock albums."
 
 # TODO: Game options
 * Figure out parent arcade button component for checker and demo buttons.
-* Don't bother with changing number of players.
 * Distinguish between initialise game and start game
 
 * getBestPointedMovesForTurn

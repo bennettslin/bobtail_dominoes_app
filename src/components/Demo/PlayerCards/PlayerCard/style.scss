@@ -46,45 +46,4 @@
 
 .PlayerCard__player {
     height: 100%;
-
-    svg {
-        stroke-width: 0.8px;
-        stroke: hsla(0, 5%, 20%, 0.6);
-    }
-
-    [class$=Line] {
-        fill: none;
-    }
-
-    .sclera,
-    .pupil,
-    [class^=iris],
-    [class$=noStroke] {
-        stroke: none;
-    }
-    
-    .cheekLine {
-        stroke: hsla(0, 5%, 20%, 0.4);
-    }
-    
-    .eyeCornerLine,
-    .eyeFoldLine,
-    [class$=CreaseLine] {
-        stroke-width: 0.5px;
-    }
-    
-    [class^=eyebrow],
-    .gum,
-    .teeth,
-    .mouthInner,
-    [class^=lipFemale],
-    [class$=EdgeLine] {
-        stroke-width: 0.6px;
-    }
-    
-    .cheekLine,
-    .lipOverlapLine,
-    [class$=FoldLine] {
-        stroke-width: 0.7px;
-    }
 }

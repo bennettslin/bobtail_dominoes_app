@@ -1,6 +1,6 @@
 @import '../../../scss/constants/borders.scss';
 
-.DominoSvg {
+.DominoesSvg {
     .text {
         font-size: 84px;
         font-family: Fresca;
@@ -23,13 +23,13 @@
     }
 }
 
-.DominoSvg__figure {
+.DominoesSvg__figure {
     svg {
         border-radius: $borderRadius__lg;
         overflow: hidden;
     }
 }
 
-.DominoSvg__full {
+.DominoesSvg__full {
     width: 100%;
 }

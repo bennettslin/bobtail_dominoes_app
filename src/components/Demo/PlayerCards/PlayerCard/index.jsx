@@ -4,13 +4,17 @@ import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Flex from '../../../Flex'
 import StyledShadow from '../../../Styled/Shadow'
-import Svg from '../../../Svg'
+import PeopleSvg from '../../../Svgs/People'
 import Domino from '../../Domino'
 import DominoCard from '../../DominoCard'
-import { getMapHand, getMapIsFocusedPlayer, getMapScore, mapIsGamePlaying } from '../../../../redux/game/selector'
-import { getPlayerSrc } from '../../../../utils/src/players'
+import {
+    getMapHand,
+    getMapIsFocusedPlayer,
+    getMapScore,
+    mapIsGamePlaying,
+} from '../../../../redux/game/selector'
+import { getPlayerSrc } from '../../../../utils/src/people'
 import { PLAYERS } from '../../../../constants/music/play'
-import styleConfigPlayers from '../../../../styles/players'
 import './style'
 
 const PlayerCard = ({ playerIndex }) => {
@@ -43,22 +47,14 @@ const PlayerCard = ({ playerIndex }) => {
                             flexGrow: 1,
                         }}
                     >
-                        <Flex
+                        <PeopleSvg
                             {...{
                                 className: cx(
                                     'PlayerCard__player',
                                 ),
+                                src: getPlayerSrc(playerIndex),
                             }}
-                        >
-                            <StyledShadow>
-                                <Svg
-                                    {...{
-                                        src: getPlayerSrc(playerIndex),
-                                        styleConfig: styleConfigPlayers,
-                                    }}
-                                />
-                            </StyledShadow>
-                        </Flex>
+                        />
                         <Flex
                             {...{
                                 flexDirection: 'column',
