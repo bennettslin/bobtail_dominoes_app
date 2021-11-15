@@ -1,8 +1,5 @@
 # Demo notes
 
-# TODO:
-* Re-centre player heads
-
 # TODO: Game options
 * Figure out parent arcade button component for checker and demo buttons.
 * Distinguish between initialise game and start game
