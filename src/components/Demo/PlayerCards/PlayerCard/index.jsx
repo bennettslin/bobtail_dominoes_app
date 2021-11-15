@@ -7,7 +7,7 @@ import StyledShadow from '../../../Styled/Shadow'
 import Svg from '../../../Svg'
 import Domino from '../../Domino'
 import DominoCard from '../../DominoCard'
-import { getMapHand, getMapIsFocusedPlayer, getMapScore } from '../../../../redux/game/selector'
+import { getMapHand, getMapIsFocusedPlayer, getMapScore, mapIsGamePlaying } from '../../../../redux/game/selector'
 import { getPlayerSrc } from '../../../../utils/src/players'
 import { PLAYERS } from '../../../../constants/music/play'
 import styleConfigPlayers from '../../../../styles/players'
@@ -17,7 +17,13 @@ const PlayerCard = ({ playerIndex }) => {
     const
         hand = useSelector(getMapHand(playerIndex)),
         score = useSelector(getMapScore(playerIndex)),
-        isFocusedPlayer = useSelector(getMapIsFocusedPlayer(playerIndex))
+        isGamePlaying = useSelector(mapIsGamePlaying),
+        isFocusedPlayer = useSelector(getMapIsFocusedPlayer(playerIndex)),
+        styledShadowConfig = {
+            isInset: isFocusedPlayer,
+            isInteractive: isFocusedPlayer && !isGamePlaying,
+            isHighlight: isFocusedPlayer && isGamePlaying,
+        }
 
     return (
         <DominoCard
@@ -67,12 +73,7 @@ const PlayerCard = ({ playerIndex }) => {
                                     ),
                                 }}
                             >
-                                <StyledShadow
-                                    {...{
-                                        isInset: isFocusedPlayer,
-                                        isInteractive: isFocusedPlayer,
-                                    }}
-                                >
+                                <StyledShadow {...styledShadowConfig}>
                                     {score}
                                 </StyledShadow>
                             </Flex>
@@ -83,12 +84,7 @@ const PlayerCard = ({ playerIndex }) => {
                                     ),
                                 }}
                             >
-                                <StyledShadow
-                                    {...{
-                                        isInset: isFocusedPlayer,
-                                        isInteractive: isFocusedPlayer,
-                                    }}
-                                >
+                                <StyledShadow {...styledShadowConfig}>
                                     {PLAYERS[playerIndex]}
                                 </StyledShadow>
                             </Flex>
