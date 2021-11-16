@@ -1,5 +1,7 @@
 # TODO
 * Fix demo in Safari
+    * Dominoes aren't aligned, but only in Safari mobile
+    * Dominoes in inset are large when just two
     * Checker label
 
 # Demo notes
