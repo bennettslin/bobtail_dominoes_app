@@ -1,4 +1,6 @@
 # Demo notes
+* Reset button initializes game but does not start
+* Autoplay starts or continues game
 
 # TODO: Game options
 * Figure out parent arcade button component for checker and demo buttons.
