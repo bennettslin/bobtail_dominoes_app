@@ -36,12 +36,11 @@
 .DominoCard__inset {
     .PlayerCard
     & {
-        max-height: $margin__xl * 1.5; // Eyeballed.
+        max-height: $margin__xl + $margin__xxs; // Eyeballed.
     }
 }
 
 .PlayerCard__domino {
-    width: calc(33.33% - #{math.div($margin__xs * 2, 3)});
     max-width: $margin__xl * 1.5;
 }
 

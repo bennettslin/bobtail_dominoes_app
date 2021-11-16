@@ -1,3 +1,7 @@
+# TODO
+* Fix demo in Safari
+    * Checker label
+
 # Demo notes
 * Reset button initializes game but does not start
 * Autoplay starts or continues game

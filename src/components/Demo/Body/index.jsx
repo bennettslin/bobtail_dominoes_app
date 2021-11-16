@@ -15,7 +15,7 @@ const DemoBody = () => (
                 'DemoBody',
             ),
             justifyContent: { xs: 'spaceBetween' },
-            alignItems: 'end',
+            alignItems: 'flexEnd',
             gap: 'xs',
         }}
     >

@@ -58,7 +58,7 @@ const PlayerCard = ({ playerIndex }) => {
                         <Flex
                             {...{
                                 flexDirection: 'column',
-                                alignItems: 'end',
+                                alignItems: 'flexEnd',
                             }}
                         >
                             <Flex
