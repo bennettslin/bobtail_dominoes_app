@@ -38,8 +38,14 @@
     /**
      * This is needed because aspect ratio only prevents exceeding
      * height, not width.
-    */
+     */
     @media (orientation: portrait) {
+        /**
+         * This partly fixes an issue where iOS Safari only started supporting
+         * aspect ratio in the latest build.
+         */
+        height: 100%;
+
         // Screen height - page padding - menu height - info height.
         max-width: calc(
             100vh - #{

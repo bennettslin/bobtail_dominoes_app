@@ -1,4 +1,5 @@
 .ValidIcon {
     width: 66%; // Eyeballed.
-    height: 66%;
+    max-height: 66%;
+    aspect-ratio: 1 / 1; // Needed for Safari.
 }

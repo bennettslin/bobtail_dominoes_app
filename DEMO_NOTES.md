@@ -1,9 +1,3 @@
-# TODO
-* Fix demo in Safari
-    * Dominoes aren't aligned, but only in Safari mobile
-    * Dominoes in inset are large when just two
-    * Checker label
-
 # Demo notes
 * Reset button initializes game but does not start
 * Autoplay starts or continues game
