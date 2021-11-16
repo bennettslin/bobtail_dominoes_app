@@ -36,7 +36,6 @@
 .DominoCard__inset {
     .PlayerCard
     & {
-        // height: $margin__xl + $margin__xxs; // Eyeballed.
         max-height: $margin__xl + $margin__xxs; // Eyeballed.
     }
 }
@@ -50,4 +49,9 @@
 .PlayerCard__player {
     height: 100%;
     filter: $dropShadow;
+
+    svg {
+        // Needed for Safari.
+        width: auto;
+    }
 }
