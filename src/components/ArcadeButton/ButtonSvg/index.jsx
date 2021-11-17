@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import Svg from '../../../Svg'
-import button from '../../../../assets/svgs/checker/button'
-import buttonPressed from '../../../../assets/svgs/checker/buttonPressed'
-import { join } from '../../../../utils/general'
+import Svg from '../../Svg'
+import button from '../../../assets/svgs/checker/button'
+import buttonPressed from '../../../assets/svgs/checker/buttonPressed'
+import { join } from '../../../utils/general'
 import './style'
 
-const CheckerButtonSvg = ({
+const ArcadeButtonSvg = ({
     isOn,
     styleConfig,
     styleConfigOn,
@@ -18,8 +18,8 @@ const CheckerButtonSvg = ({
             {...{
                 key: join(['pressed', isOn]),
                 className: cx(
-                    'CheckerButtonSvg',
-                    'CheckerButtonSvg__pressed',
+                    'ArcadeButtonSvg',
+                    'ArcadeButtonSvg__pressed',
                 ),
                 src: buttonPressed,
                 styleConfig: isOn ?
@@ -31,7 +31,7 @@ const CheckerButtonSvg = ({
             {...{
                 key: isOn,
                 className: cx(
-                    'CheckerButtonSvg',
+                    'ArcadeButtonSvg',
                 ),
                 src: button,
                 styleConfig: isOn ?
@@ -42,10 +42,10 @@ const CheckerButtonSvg = ({
     </>
 )
 
-CheckerButtonSvg.propTypes = {
+ArcadeButtonSvg.propTypes = {
     isOn: PropTypes.bool,
     styleConfig: PropTypes.object.isRequired,
     styleConfigOn: PropTypes.object,
 }
 
-export default CheckerButtonSvg
+export default ArcadeButtonSvg

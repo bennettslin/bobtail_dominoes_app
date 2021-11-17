@@ -1,0 +1,12 @@
+@import '../../scss/constants/responsive';
+@import '../../scss/constants/shadows';
+
+.ArcadeButton {
+    & svg {
+        position: absolute;
+    }
+}
+
+.ArcadeButton__on {
+    filter: $dropShadow__lightHover;
+}

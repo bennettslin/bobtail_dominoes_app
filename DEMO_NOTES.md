@@ -1,4 +1,5 @@
 # Demo notes
+* Button sizes
 * Reset button initializes game but does not start
 * Autoplay starts or continues game
 

@@ -1,8 +1,8 @@
 import { getAnimatedStyleConfig } from '../../../../utils/music/audio/style'
-import styleConfigPitchBlack from '../../../../styles/checker/pitchBlack'
-import styleConfigPitchOn from '../../../../styles/checker/pitchOn'
-import styleConfigPitchWhite from '../../../../styles/checker/pitchWhite'
-import styleConfigRootOn from '../../../../styles/checker/rootOn'
+import styleConfigPitchBlack from '../../../../styles/arcade/pitchBlack'
+import styleConfigPitchOn from '../../../../styles/arcade/pitchOn'
+import styleConfigPitchWhite from '../../../../styles/arcade/pitchWhite'
+import styleConfigRootOn from '../../../../styles/arcade/rootOn'
 import { mod12 } from '../../../../utils/music/chords/math'
 
 const COORDINATES = [0, 6.7, 25, 50, 75, 93.3, 100]

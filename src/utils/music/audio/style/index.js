@@ -1,6 +1,6 @@
 import { getFixed, join, round } from '../../../general'
 import { getMergedStyles } from '../../../svgs'
-import styleConfigPlayedOn from '../../../../styles/checker/playedOn'
+import styleConfigSoundedOn from '../../../../styles/arcade/soundedOn'
 import {
     ANIMATED_NOTE_DURATION,
     ANIMATED_TOTAL_DURATION,
@@ -55,7 +55,7 @@ export const getKeyframesSequence = ({
 }) => {
     const
         defaultStyle = getStyleFromConfig(styleConfig, pathClassName),
-        playedStyle = getStyleFromConfig(styleConfigPlayedOn, pathClassName)
+        playedStyle = getStyleFromConfig(styleConfigSoundedOn, pathClassName)
 
     const sequence = []
     let counter = 0,

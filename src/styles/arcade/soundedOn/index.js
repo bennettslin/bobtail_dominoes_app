@@ -3,7 +3,7 @@ import { hsl, getMergedStyles } from '../../../utils/svgs'
 import pitches from '../../dominoes/pitches'
 
 export default {
-    className: 'playedOn',
+    className: 'soundedOn',
     styles: getMergedStyles([
         {
             fill: {

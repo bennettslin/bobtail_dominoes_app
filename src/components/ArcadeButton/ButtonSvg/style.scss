@@ -1,0 +1,23 @@
+.ArcadeButtonSvg {
+    .ArcadeButton__off:active
+    &,
+    .ArcadeButton__on:not(:active)
+    &,
+    .ArcadeButton:disabled
+    & {
+        display: none;
+    }
+}
+
+.ArcadeButtonSvg__pressed {
+    display: none;
+
+    .ArcadeButton__off:active
+    &,
+    .ArcadeButton__on:not(:active)
+    &,
+    .ArcadeButton:disabled
+    & {
+        display: block;
+    }
+}

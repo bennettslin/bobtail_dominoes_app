@@ -15,7 +15,7 @@ import { getIntervalSrc } from '../../../utils/src/intervals'
 import { getIntervalPositionAndStyling } from '../../../utils/music/render/interval'
 import styleConfigDominoes from '../../../styles/dominoes'
 import styleConfigFacesPitch from '../../../styles/faces/pitch'
-import styleConfigPitchOn from '../../../styles/checker/pitchOn'
+import styleConfigPitchOn from '../../../styles/arcade/pitchOn'
 import { DIRECTION_X } from '../../../constants/music/game'
 import './style'
 

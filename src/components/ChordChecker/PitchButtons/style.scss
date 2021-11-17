@@ -2,19 +2,19 @@
 
 .PitchButtons {
     position: relative;
-    margin: $length__checkerButton__sm * 0.5;
-    width: $length__checkerButton__sm * 4;
-    height: $length__checkerButton__sm * 4;
+    margin: $length__arcadeButton__sm * 0.5;
+    width: $length__arcadeButton__sm * 4;
+    height: $length__arcadeButton__sm * 4;
 
     @media (min-width: $breakpoint__xs) {
-        margin: $length__checkerButton__md * 0.5;
-        width: $length__checkerButton__md * 4;
-        height: $length__checkerButton__md * 4;
+        margin: $length__arcadeButton__md * 0.5;
+        width: $length__arcadeButton__md * 4;
+        height: $length__arcadeButton__md * 4;
     }
 
     @media (min-width: $breakpoint__sm) {
-        margin: $length__checkerButton__lg * 0.5;
-        width: $length__checkerButton__lg * 4;
-        height: $length__checkerButton__lg * 4;
+        margin: $length__arcadeButton__lg * 0.5;
+        width: $length__arcadeButton__lg * 4;
+        height: $length__arcadeButton__lg * 4;
     }
 }

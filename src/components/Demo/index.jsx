@@ -71,12 +71,13 @@ const Demo = () => {
         <Flex
             {...{
                 className: 'Demo',
-                flexDirection: 'column',
+                // Ensure that menu is not blocked by board movement.
+                flexDirection: 'columnReverse',
                 alignItems: 'normal',
             }}
         >
-            <DemoHeader />
             <DemoBody />
+            <DemoHeader />
         </Flex>
     )
 }

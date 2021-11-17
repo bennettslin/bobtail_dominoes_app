@@ -1,12 +1,12 @@
-.CheckerFaceSvg {
+.ArcadeButtonFaceSvg {
     // -7% * 0.5, where 7% is how much the unclicked button is raised.
     top: -3.5%;
 
-    .CheckerButton__off:active
+    .ArcadeButton__off:active
     &,
-    .CheckerButton__on:not(:active)
+    .ArcadeButton__on:not(:active)
     &,
-    .CheckerButton:disabled
+    .ArcadeButton:disabled
     & {
         top: 3.5%;
     }

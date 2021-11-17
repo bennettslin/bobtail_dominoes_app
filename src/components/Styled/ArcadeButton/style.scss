@@ -4,20 +4,18 @@
 
 $length__base: $margin__xs * 0.5;
 
-$percentage__checkerSvg: 7%;
-
 .StyledArcadeButton {
-    width: $length__checkerButton__sm;
-    height: $length__checkerButton__sm;
+    width: $length__arcadeButton__sm;
+    height: $length__arcadeButton__sm;
 
     @media (min-width: $breakpoint__xs) {
-        width: $length__checkerButton__md;
-        height: $length__checkerButton__md;
+        width: $length__arcadeButton__md;
+        height: $length__arcadeButton__md;
     }
 
     @media (min-width: $breakpoint__sm) {
-        width: $length__checkerButton__lg;
-        height: $length__checkerButton__lg;
+        width: $length__arcadeButton__lg;
+        height: $length__arcadeButton__lg;
     }
 
     background-color: $colour__frame__dark;

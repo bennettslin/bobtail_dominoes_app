@@ -1,9 +1,9 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import CheckerButton from '../../../ChordChecker/CheckerButton'
+import ArcadeButton from '../../../ArcadeButton'
 import { updateCurrentPitchSet } from '../../../../redux/audio/action'
 import faceTranspose from '../../../../assets/svgs/checker/faceTranspose'
-import styleConfigReset from '../../../../styles/checker/reset'
+import styleConfigReset from '../../../../styles/arcade/reset'
 import styleConfigFacesReset from '../../../../styles/faces/reset'
 
 const ResetButton = () => {
@@ -14,7 +14,7 @@ const ResetButton = () => {
     }
 
     return (
-        <CheckerButton
+        <ArcadeButton
             {...{
                 faceSrc: faceTranspose,
                 styleConfig: styleConfigReset,

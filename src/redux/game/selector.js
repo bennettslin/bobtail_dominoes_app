@@ -2,6 +2,10 @@ import { createSelector } from 'reselect'
 import { getIsDominoInLatestTurn, getLatestTurnIndex } from '../../utils/music/render/turn'
 import { GAME_STORE } from './reducer'
 
+export const mapIsDemoAutoplayOn = (
+    { [GAME_STORE]: { isDemoAutoplayOn } },
+) => isDemoAutoplayOn
+
 export const mapPool = (
     { [GAME_STORE]: { pool } },
 ) => pool
