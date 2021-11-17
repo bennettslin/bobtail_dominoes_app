@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import ArcadeButton from '../../../ArcadeButton'
+import DemoButton from '../DemoButton'
 import { updateCurrentPitchSet } from '../../../../redux/audio/action'
 import faceTranspose from '../../../../assets/svgs/checker/faceTranspose'
 import styleConfigReset from '../../../../styles/arcade/reset'
@@ -14,7 +14,7 @@ const ResetButton = () => {
     }
 
     return (
-        <ArcadeButton
+        <DemoButton
             {...{
                 faceSrc: faceTranspose,
                 styleConfig: styleConfigReset,

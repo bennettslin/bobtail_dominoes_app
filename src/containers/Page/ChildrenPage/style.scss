@@ -26,5 +26,6 @@
 .ChildrenPage__fullPage {
     width: 100vw;
     height: 100vh;
+    overflow: hidden; // Shouldn't happen, but just as a precaution.
     background-color: $colour__board;
 }

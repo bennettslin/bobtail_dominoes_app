@@ -1,0 +1,16 @@
+@import '../../../scss/constants/responsive';
+
+.CheckerButton {
+    width: $length__arcadeButton__sm;
+    height: $length__arcadeButton__sm;
+
+    @media (min-width: $breakpoint__xs) {
+        width: $length__arcadeButton__md;
+        height: $length__arcadeButton__md;
+    }
+
+    @media (min-width: $breakpoint__sm) {
+        width: $length__arcadeButton__lg;
+        height: $length__arcadeButton__lg;
+    }
+}

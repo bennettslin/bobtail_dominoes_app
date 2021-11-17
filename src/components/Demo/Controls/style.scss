@@ -3,6 +3,10 @@
 
 .Controls {
     width: 100%;
-    min-height: $height__controls;
-    padding: $margin__xs;
+    min-height: $height__controls__xxs;
+    padding: $margin__sm;
+
+    @media (min-width: $breakpoint__sm) {
+        min-height: $height__controls__sm;
+    }
 }

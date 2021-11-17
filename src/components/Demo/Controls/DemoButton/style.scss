@@ -1,0 +1,16 @@
+@import '../../../../scss/constants/responsive';
+
+.DemoButton {
+    width: $margin__md * 2;
+    height: $margin__md * 2;
+
+    @media (min-width: $breakpoint__sm) {
+        width: $margin__lg * 2;
+        height: $margin__lg * 2;
+    }
+
+    @media (min-width: $breakpoint__md) {
+        width: $margin__xl * 2;
+        height: $margin__xl * 2;
+    }
+}

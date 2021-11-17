@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useDispatch, useSelector } from 'react-redux'
 import getDidMountHoc from '../../../../hocs/DidMountHoc'
-import ArcadeButton from '../../../ArcadeButton'
+import DemoButton from '../DemoButton'
 import { updateIsDemoAutoplayOn } from '../../../../redux/game/action'
 import { mapIsDemoAutoplayOn } from '../../../../redux/game/selector'
 import styleConfigPlay from '../../../../styles/arcade/play'
@@ -20,7 +20,7 @@ const AutoplayButton = ({ didMount }) => {
     }
 
     return (
-        <ArcadeButton
+        <DemoButton
             {...{
                 faceSrc: faceAutoplay,
                 styleConfig: styleConfigPlay,
