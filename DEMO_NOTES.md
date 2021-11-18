@@ -1,4 +1,5 @@
 # Demo notes
+* Implement random shuffle of players
 * Timeout to account for sound playing
     * But have next move ready
 
