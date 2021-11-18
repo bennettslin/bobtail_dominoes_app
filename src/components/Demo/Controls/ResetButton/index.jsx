@@ -1,7 +1,8 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import DemoButton from '../DemoButton'
-import { updateCurrentPitchSet } from '../../../../redux/audio/action'
+import { updateGame } from '../../../../redux/game/action'
+import { getInitialGame } from '../../../../utils/music/game/play'
 import faceTranspose from '../../../../assets/svgs/checker/faceTranspose'
 import styleConfigReset from '../../../../styles/arcade/reset'
 import styleConfigFacesReset from '../../../../styles/faces/reset'
@@ -10,7 +11,7 @@ const ResetButton = () => {
     const dispatch = useDispatch()
 
     const onClick = () => {
-        dispatch(updateCurrentPitchSet())
+        dispatch(updateGame(getInitialGame()))
     }
 
     return (

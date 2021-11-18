@@ -1,6 +1,8 @@
 # Demo notes
-* Reset button initializes game but does not start
-* Autoplay starts or continues game
+* Account for menu height on page load
+* Timeout to account for sound playing
+    * But have next move ready
+
 * Controls should be in landscape...
 
 # TODO: Game options

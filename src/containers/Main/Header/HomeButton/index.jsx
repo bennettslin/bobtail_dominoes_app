@@ -16,6 +16,9 @@ const HomeButton = ({ onLoad }) => {
         <Button
             dropShadow
             {...{
+                className: cx(
+                    'HomeButton',
+                ),
                 pagePath: HOME_PAGE,
                 isSelected,
             }}

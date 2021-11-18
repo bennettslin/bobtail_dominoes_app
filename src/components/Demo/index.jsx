@@ -13,6 +13,7 @@ import {
     mapPool,
     mapScores,
     mapTurns,
+    mapIsDemoAutoplayOn,
 } from '../../redux/game/selector'
 import { getInitialGame, registerTurn } from '../../utils/music/game/play'
 import './style'
@@ -26,7 +27,8 @@ const Demo = () => {
         scores = useSelector(mapScores),
         turns = useSelector(mapTurns),
         currentPlayerIndex = useSelector(mapCurrentPlayerIndex),
-        isGameOver = useSelector(mapIsGameOver)
+        isGameOver = useSelector(mapIsGameOver),
+        isDemoPlayingOn = useSelector(mapIsDemoAutoplayOn)
 
     const registerHandTurn = () => {
         const hand = hands[currentPlayerIndex]
@@ -50,7 +52,11 @@ const Demo = () => {
     }
 
     useEffect(() => {
-        if (currentPlayerIndex > -1 && !isGameOver) {
+        if (
+            isDemoPlayingOn &&
+            !isGameOver &&
+            currentPlayerIndex > -1
+        ) {
             const turnTimeoutIndex = setTimeout(
                 () => registerHandTurn(), 500,
             )
@@ -58,7 +64,13 @@ const Demo = () => {
             // Return callback to clear timeout upon unmount.
             return () => clearTimeout(turnTimeoutIndex)
         }
-    }, [currentPlayerIndex])
+    }, [currentPlayerIndex, isDemoPlayingOn, isGameOver])
+
+    useEffect(() => {
+        if (!isDemoPlayingOn) {
+            // TODO: Clear the timeout.
+        }
+    }, [isDemoPlayingOn])
 
     useEffect(() => {
         if (currentPlayerIndex === -1 && isGameOver) {

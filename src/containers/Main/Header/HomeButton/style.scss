@@ -9,13 +9,13 @@
     (min-height: $breakpoint__xs) and (orientation: landscape) {
         height: $height__menu__xs;
     }
-    
+
     @media
     (min-width: $breakpoint__sm) and (orientation: portrait),
     (min-height: $breakpoint__sm) and (orientation: landscape) {
         height: $height__menu__sm;
     }
-    
+
     @media (min-width: $breakpoint__md) {
         height: $height__menu__md;
     }
