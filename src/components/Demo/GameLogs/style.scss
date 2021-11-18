@@ -9,6 +9,9 @@
     overflow-y: scroll;
 
     @media (orientation: landscape) {
+        position: absolute;
+        top: 0;
+        right: 0;
         display: flex;
 
         @media (min-height: $breakpoint__xs) {
@@ -20,6 +23,7 @@
         }
 
         @media (min-width: $breakpoint__md) {
+            position: relative;
             width: $width__logs__md;
         }
     }

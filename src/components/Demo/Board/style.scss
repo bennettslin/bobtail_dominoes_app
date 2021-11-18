@@ -5,11 +5,6 @@
 @import '../../../scss/constants/transition';
 
 .Board {
-    @media (orientation: landscape) {
-        flex-grow: 1;
-        height: 100%;
-    }
-
     @media (orientation: portrait) {
         position: absolute;
         top: 0;
@@ -28,6 +23,24 @@
         }
         @media (min-width: $breakpoint__md) {
             max-height: $portraitLength__board__md;
+        }
+    }
+
+    @media (orientation: landscape) {
+        flex-grow: 1;
+        max-width: calc(100% - #{$width__logs__xxs});
+        height: 100%;
+
+        @media (min-height: $breakpoint__xs) {
+            max-width: calc(100% - #{$width__logs__xs});
+        }
+
+        @media (min-height: $breakpoint__sm) {
+            max-width: calc(100% - #{$width__logs__sm});
+        }
+
+        @media (min-width: $breakpoint__md) {
+            max-width: none;
         }
     }
 }

@@ -9,6 +9,11 @@
 
     @media (orientation: landscape) {
         overflow: hidden;
+        justify-content: flex-start;
+
+        @media (min-width: $breakpoint__md) {
+            justify-content: space-between;
+        }
     }
 }
 

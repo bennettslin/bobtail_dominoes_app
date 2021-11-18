@@ -14,7 +14,6 @@ const DemoBody = () => (
             className: cx(
                 'DemoBody',
             ),
-            justifyContent: { xs: 'spaceBetween' },
             alignItems: 'flexEnd',
             gap: 'xs',
         }}
