@@ -11,7 +11,7 @@ import {
     getMapHand,
     getMapIsFocusedPlayer,
     getMapScore,
-    mapIsGamePlaying,
+    mapIsGameOver,
 } from '../../../../redux/game/selector'
 import { getPlayerSrc } from '../../../../utils/src/people'
 import { PLAYERS } from '../../../../constants/music/play'
@@ -21,12 +21,12 @@ const PlayerCard = ({ playerIndex }) => {
     const
         hand = useSelector(getMapHand(playerIndex)),
         score = useSelector(getMapScore(playerIndex)),
-        isGamePlaying = useSelector(mapIsGamePlaying),
+        isGameOver = useSelector(mapIsGameOver),
         isFocusedPlayer = useSelector(getMapIsFocusedPlayer(playerIndex)),
         styledShadowConfig = {
             isInset: isFocusedPlayer,
-            isInteractive: isFocusedPlayer && !isGamePlaying,
-            isHighlight: isFocusedPlayer && isGamePlaying,
+            isHighlight: isFocusedPlayer && !isGameOver,
+            isInteractive: isFocusedPlayer && isGameOver,
         }
 
     return (

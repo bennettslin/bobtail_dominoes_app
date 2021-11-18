@@ -35,7 +35,7 @@ const getIsLastTurnAfterEmptyPool = ({ turns, playersCount }) => (
     })
 )
 
-export const getIsGameEnd = ({ pool, hands, turns, playersCount }) => (
+export const getIsGameOver = ({ pool, hands, turns, playersCount }) => (
     getHasNoDominoes({ pool, hands }) ||
     getHasNoMoves({ turns, playersCount }) ||
     getIsLastTurnAfterEmptyPool({ turns, playersCount })

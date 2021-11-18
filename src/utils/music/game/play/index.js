@@ -26,7 +26,7 @@ export const getInitialGame = ({
         turns: getInitialTurns(board),
         playersCount,
         handCount,
-        isGamePlaying: true,
+        isGameOver: false,
         currentPlayerIndex: 0,
     }
 }
@@ -53,7 +53,7 @@ export const registerTurn = ({
         exchangeHand({ pool, hand, discardedIndices })
     }
 
-    const { isGameEnd } = addTurn({
+    const { isGameOver } = addTurn({
         pool,
         hands,
         turns,
@@ -69,7 +69,7 @@ export const registerTurn = ({
         hands,
         scores,
         turns,
-        isGamePlaying: !isGameEnd,
+        isGameOver,
         currentPlayerIndex: (playerIndex + 1) % playersCount,
     }
 }

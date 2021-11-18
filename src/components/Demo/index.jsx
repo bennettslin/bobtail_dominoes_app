@@ -8,7 +8,7 @@ import { updateGame } from '../../redux/game/action'
 import {
     mapBoard,
     mapHands,
-    mapIsGamePlaying,
+    mapIsGameOver,
     mapCurrentPlayerIndex,
     mapPool,
     mapScores,
@@ -26,7 +26,7 @@ const Demo = () => {
         scores = useSelector(mapScores),
         turns = useSelector(mapTurns),
         currentPlayerIndex = useSelector(mapCurrentPlayerIndex),
-        isGamePlaying = useSelector(mapIsGamePlaying)
+        isGameOver = useSelector(mapIsGameOver)
 
     const registerHandTurn = () => {
         const hand = hands[currentPlayerIndex]
@@ -50,7 +50,7 @@ const Demo = () => {
     }
 
     useEffect(() => {
-        if (currentPlayerIndex > -1 && isGamePlaying) {
+        if (currentPlayerIndex > -1 && !isGameOver) {
             const turnTimeoutIndex = setTimeout(
                 () => registerHandTurn(), 500,
             )
@@ -61,7 +61,7 @@ const Demo = () => {
     }, [currentPlayerIndex])
 
     useEffect(() => {
-        if (currentPlayerIndex === -1 && !isGamePlaying) {
+        if (currentPlayerIndex === -1 && isGameOver) {
             // Start new game upon loading this page.
             dispatch(updateGame(getInitialGame()))
         }

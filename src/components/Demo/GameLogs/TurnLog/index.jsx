@@ -10,7 +10,7 @@ import { getDominoLabel } from '../../../../utils/music/chords/label'
 import { getCommaSeparatedList } from '../../../../utils/format'
 import { getPlayerIndex } from '../../../../utils/music/game/play/turns'
 import { getPointsForMoves } from '../../../../utils/music/chords/points'
-import { getMapIsLatestTurn, getMapTurn, mapIsGamePlaying } from '../../../../redux/game/selector'
+import { getMapIsLatestTurn, getMapTurn, mapIsGameOver } from '../../../../redux/game/selector'
 import { PLAYERS } from '../../../../constants/music/play'
 import './style'
 
@@ -23,7 +23,7 @@ const TurnLog = ({
     const
         turn = useSelector(getMapTurn(turnIndex)),
         isLatestTurn = useSelector(getMapIsLatestTurn(turnIndex)),
-        isGamePlaying = useSelector(mapIsGamePlaying),
+        isGameOver = useSelector(mapIsGameOver),
         { moves, dominoIndex, discardedIndices, winnerIndices } = turn
 
     let log
@@ -65,8 +65,8 @@ const TurnLog = ({
             <StyledShadow
                 {...{
                     isInset: isLatestTurn,
-                    isHighlight: isLatestTurn && isGamePlaying,
-                    isInteractive: isLatestTurn && !isGamePlaying,
+                    isHighlight: isLatestTurn && !isGameOver,
+                    isInteractive: isLatestTurn && isGameOver,
                 }}
             >
                 {log}

@@ -23,7 +23,7 @@ describe('addTurn', () => {
             playerIndex: 1,
             playersCount: 4,
         })).toStrictEqual({
-            isGameEnd: false,
+            isGameOver: false,
             turns: [
                 { dominoIndex: 29 },
                 { moves: [MOCK_MOVE_1] },
@@ -40,7 +40,7 @@ describe('addTurn', () => {
             playersCount: 4,
             discardedIndices: [5, 10],
         })).toStrictEqual({
-            isGameEnd: false,
+            isGameOver: false,
             turns: [
                 { dominoIndex: 29 },
                 { moves: [MOCK_MOVE_1] },
@@ -57,7 +57,7 @@ describe('addTurn', () => {
             playerIndex: 1,
             playersCount: 4,
         })).toStrictEqual({
-            isGameEnd: false,
+            isGameOver: false,
             turns: [
                 { dominoIndex: 29 },
                 { moves: [MOCK_MOVE_1] },
@@ -75,7 +75,7 @@ describe('addTurn', () => {
             playerIndex: 1,
             playersCount: 4,
         })).toStrictEqual({
-            isGameEnd: false,
+            isGameOver: false,
             turns: [
                 { dominoIndex: 29 },
                 { moves: [MOCK_MOVE_1] },
@@ -94,7 +94,7 @@ describe('addTurn', () => {
             playerIndex: 1,
             playersCount: 4,
         })).toStrictEqual({
-            isGameEnd: true,
+            isGameOver: true,
             turns: [
                 { dominoIndex: 29 },
                 { moves: [MOCK_MOVE_1] },

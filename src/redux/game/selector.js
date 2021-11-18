@@ -26,9 +26,9 @@ export const mapTurns = (
     { [GAME_STORE]: { turns } },
 ) => turns
 
-export const mapIsGamePlaying = (
-    { [GAME_STORE]: { isGamePlaying } },
-) => isGamePlaying
+export const mapIsGameOver = (
+    { [GAME_STORE]: { isGameOver } },
+) => isGameOver
 
 export const mapCurrentPlayerIndex = (
     { [GAME_STORE]: { currentPlayerIndex } },

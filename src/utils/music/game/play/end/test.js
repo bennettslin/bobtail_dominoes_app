@@ -1,10 +1,10 @@
-import { getIsGameEnd } from '.'
+import { getIsGameOver } from '.'
 import { MOCK_POOL_LIST } from '../../../../../__mocks__/pool'
 import { MOCK_MOVE_1, MOCK_MOVE_2, MOCK_TURNS } from '../../../../../__mocks__/turns'
 
-describe('getIsGameEnd', () => {
+describe('getIsGameOver', () => {
     it('returns false if no conditions are met', () => {
-        expect(getIsGameEnd({
+        expect(getIsGameOver({
             pool: new Set(MOCK_POOL_LIST),
             hands: [new Set([5, 10]), new Set([15, 20])],
             turns: [...MOCK_TURNS],
@@ -13,7 +13,7 @@ describe('getIsGameEnd', () => {
     })
 
     it('returns true if pool and hands are empty', () => {
-        expect(getIsGameEnd({
+        expect(getIsGameOver({
             pool: new Set([]),
             hands: [new Set([]), new Set([]), new Set([])],
             turns: [...MOCK_TURNS],
@@ -22,7 +22,7 @@ describe('getIsGameEnd', () => {
     })
 
     it('returns false if has no moves but game is too early', () => {
-        expect(getIsGameEnd({
+        expect(getIsGameOver({
             pool: new Set(MOCK_POOL_LIST),
             hands: [new Set([15]), new Set([20]), new Set([30])],
             turns: [
@@ -35,7 +35,7 @@ describe('getIsGameEnd', () => {
     })
 
     it('returns false if has no moves but not enough turns passed', () => {
-        expect(getIsGameEnd({
+        expect(getIsGameOver({
             pool: new Set(MOCK_POOL_LIST),
             hands: [new Set([15]), new Set([20]), new Set([30])],
             turns: [
@@ -51,7 +51,7 @@ describe('getIsGameEnd', () => {
     })
 
     it('returns true if has no moves and enough turns passed', () => {
-        expect(getIsGameEnd({
+        expect(getIsGameOver({
             pool: new Set(MOCK_POOL_LIST),
             hands: [new Set([15]), new Set([20]), new Set([30])],
             turns: [
@@ -68,7 +68,7 @@ describe('getIsGameEnd', () => {
     })
 
     it('returns false if empty pool but game is too early', () => {
-        expect(getIsGameEnd({
+        expect(getIsGameOver({
             pool: new Set(MOCK_POOL_LIST),
             hands: [new Set([15]), new Set([20])],
             turns: [
@@ -80,7 +80,7 @@ describe('getIsGameEnd', () => {
     })
 
     it('returns false if empty pool but not enough turns passed', () => {
-        expect(getIsGameEnd({
+        expect(getIsGameOver({
             pool: new Set(MOCK_POOL_LIST),
             hands: [new Set([15]), new Set([20])],
             turns: [
@@ -93,7 +93,7 @@ describe('getIsGameEnd', () => {
     })
 
     it('returns true if empty pool and enough turns passed', () => {
-        expect(getIsGameEnd({
+        expect(getIsGameOver({
             pool: new Set(MOCK_POOL_LIST),
             hands: [new Set([15]), new Set([20])],
             turns: [

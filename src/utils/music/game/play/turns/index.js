@@ -1,4 +1,4 @@
-import { getIsGameEnd } from '../end'
+import { getIsGameOver } from '../end'
 import { getWinnerIndices } from '../scores'
 
 export const getInitialTurns = board => ([
@@ -21,20 +21,20 @@ export const addTurn = ({
     })
 
     // At this point, hand has already been refilled from pool.
-    const isGameEnd = getIsGameEnd({
+    const isGameOver = getIsGameOver({
         pool,
         hands,
         turns,
         playersCount,
     })
 
-    if (isGameEnd) {
+    if (isGameOver) {
         turns.push({ winnerIndices: getWinnerIndices(scores) })
     }
 
     return {
         turns,
-        isGameEnd,
+        isGameOver,
     }
 }
 

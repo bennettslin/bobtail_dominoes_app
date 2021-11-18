@@ -7,7 +7,7 @@ export const GAME_DEFAULT = {
     hands: [],
     scores: [],
     turns: [],
-    isGamePlaying: false,
+    isGameOver: true,
     currentPlayerIndex: -1,
     playersCount: -1,
     handCount: -1,
