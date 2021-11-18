@@ -7,7 +7,7 @@
 
     @media
     (min-width: $breakpoint__sm) and (orientation: portrait),
-    (min-height: $breakpoint__sm) and (orientation: landscape) {
+    (min-width: $breakpoint__md) and (min-height: $breakpoint__sm) and (orientation: landscape) {
         display: flex;
     }
 }

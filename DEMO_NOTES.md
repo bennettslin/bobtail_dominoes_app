@@ -2,8 +2,6 @@
 * Timeout to account for sound playing
     * But have next move ready
 
-* Controls should be in landscape...
-
 # TODO: Game options
 * Figure out parent arcade button component for checker and demo buttons.
 * Distinguish between initialise game and start game

@@ -1,0 +1,11 @@
+@import '../../../scss/constants/responsive';
+
+.PlayerCards {
+    @media (orientation: landscape) {
+        display: none;
+
+        @media (min-width: $breakpoint__md) {
+            display: flex;
+        }
+    }
+}

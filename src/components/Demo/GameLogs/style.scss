@@ -13,6 +13,7 @@
         top: 0;
         right: 0;
         display: flex;
+        height: calc(100% - #{$height__controls__xxs + $margin__xs});
 
         @media (min-height: $breakpoint__xs) {
             width: $width__logs__xs;
@@ -21,10 +22,15 @@
         @media (min-height: $breakpoint__sm) {
             width: $width__logs__sm;
         }
+        
+        @media (min-width: $breakpoint__sm) {
+            height: calc(100% - #{$height__controls__sm + $margin__xs});
+        }
 
         @media (min-width: $breakpoint__md) {
             position: relative;
             width: $width__logs__md;
+            height: auto;
         }
     }
 
