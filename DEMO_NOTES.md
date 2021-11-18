@@ -1,5 +1,4 @@
 # Demo notes
-* Account for menu height on page load
 * Timeout to account for sound playing
     * But have next move ready
 

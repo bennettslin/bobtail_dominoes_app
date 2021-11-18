@@ -1,7 +1,8 @@
 @import '../../../../scss/constants/menu';
 @import '../../../../scss/constants/responsive';
 
-.HomeButton__svg {
+// Force fixed height even if svg hasn't loaded.
+.HomeButton, .HomeButton__svg {
     height: $height__menu__xxs;
 
     @media
