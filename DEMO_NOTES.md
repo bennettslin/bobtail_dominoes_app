@@ -1,5 +1,8 @@
 # Demo notes
+* Store isDemoAutoplayOn in window
 * Implement random shuffle of players
+    * Show players in round table
+    * Show trophies next to scores of winners
 * Timeout to account for sound playing
     * But have next move ready
 

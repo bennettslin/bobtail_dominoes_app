@@ -1,7 +1,7 @@
 export const UPDATE_GAME = 'updateGame'
 
 export const GAME_DEFAULT = {
-    isDemoAutoplayOn: false,
+    isDemoAutoplayOn: true,
     pool: new Set([]),
     board: [],
     hands: [],

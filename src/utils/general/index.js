@@ -50,12 +50,3 @@ export const round = (number, decimalPlaces = 3) => {
         Math.round(number * multiplier) / multiplier
     )
 }
-
-export const getRandomInteger = (min, max) => (
-    // Minimum is inclusive, maximum is exclusive.
-    Math.floor(Math.random() * (max - min) + min)
-)
-
-export const getRandomEntry = (array = []) => (
-    array[getRandomInteger(0, array.length)]
-)
