@@ -9,10 +9,10 @@ import Domino from '../../Domino'
 import DominoCard from '../../DominoCard'
 import {
     getMapHand,
-    getMapIsFocusedPlayer,
+    getMapIsCurrentPlayer,
+    getMapIsWinner,
     getMapPlayer,
     getMapScore,
-    mapIsGameOver,
 } from '../../../../redux/game/selector'
 import { getPlayerSrc } from '../../../../utils/src/people'
 import './style'
@@ -22,14 +22,16 @@ const PlayerCard = ({ playerIndex }) => {
         player = useSelector(getMapPlayer(playerIndex)),
         hand = useSelector(getMapHand(playerIndex)),
         score = useSelector(getMapScore(playerIndex)),
-        isGameOver = useSelector(mapIsGameOver),
-        isFocusedPlayer = useSelector(getMapIsFocusedPlayer(playerIndex)),
+        isCurrentPlayer = useSelector(getMapIsCurrentPlayer(playerIndex)),
+        isWinner = useSelector(getMapIsWinner(playerIndex)),
+        isFocusedPlayer = isCurrentPlayer || isWinner,
         styledShadowConfig = {
-            isInset: isFocusedPlayer,
-            isHighlight: isFocusedPlayer && !isGameOver,
-            isInteractive: isFocusedPlayer && isGameOver,
+            isInset: isCurrentPlayer || isWinner,
+            isHighlight: isCurrentPlayer,
+            isInteractive: isWinner,
         }
 
+    // Player order will rotate like a round table.
     let order = playerIndex
     if (playerIndex === 2) {
         order = 3
@@ -37,7 +39,7 @@ const PlayerCard = ({ playerIndex }) => {
         order = 2
     }
 
-    return (
+    return Boolean(player) && (
         <DominoCard
             {...{
                 className: cx(
@@ -69,17 +71,33 @@ const PlayerCard = ({ playerIndex }) => {
                                 alignItems: 'flexEnd',
                             }}
                         >
-                            <Flex
-                                {...{
-                                    className: cx(
-                                        'font__button',
-                                        'labelFontSize__lg',
-                                    ),
-                                }}
-                            >
-                                <StyledShadow {...styledShadowConfig}>
-                                    {score}
-                                </StyledShadow>
+                            <Flex {...{ gap: 'xxs' }}>
+                                {isWinner && (
+                                    <Flex
+                                        {...{
+                                            className: cx(
+                                                'labelFontSize__md',
+                                                'PlayerCard__winnerIcon',
+                                            ),
+                                        }}
+                                    >
+                                        <StyledShadow {...styledShadowConfig}>
+                                            {'\u2605'}
+                                        </StyledShadow>
+                                    </Flex>
+                                )}
+                                <Flex
+                                    {...{
+                                        className: cx(
+                                            'font__button',
+                                            'labelFontSize__lg',
+                                        ),
+                                    }}
+                                >
+                                    <StyledShadow {...styledShadowConfig}>
+                                        {score}
+                                    </StyledShadow>
+                                </Flex>
                             </Flex>
                             <Flex
                                 {...{

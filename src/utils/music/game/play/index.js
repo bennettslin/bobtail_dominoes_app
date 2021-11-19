@@ -3,14 +3,11 @@ import { exchangeHand, getInitialHands, playHand } from './hands'
 import { getInitialExtendedPool, getInitialStandardPool } from './pool'
 import { addMovesToScores, getInitialScores } from './scores'
 import { addTurn, getInitialTurns } from './turns'
-import { HAND_COUNT } from '../../../../constants/music/play'
-
-const PLAYERS_COUNT = 4
 
 export const getInitialGame = ({
     isExtendedGame = false,
-    playersCount = PLAYERS_COUNT,
-    handCount = HAND_COUNT,
+    handCount,
+    playersCount,
 } = {}) => {
     const
         pool = isExtendedGame ?
@@ -24,8 +21,6 @@ export const getInitialGame = ({
         hands: getInitialHands({ playersCount, handCount, pool }),
         scores: getInitialScores(playersCount),
         turns: getInitialTurns(board),
-        playersCount,
-        handCount,
         isGameOver: false,
         currentPlayerIndex: 0,
     }
@@ -38,9 +33,9 @@ export const registerTurn = ({
     scores,
     turns,
     moves,
+    handCount,
+    playersCount,
     playerIndex,
-    playersCount = PLAYERS_COUNT,
-    handCount = HAND_COUNT,
     discardedIndices,
 }) => {
     const hand = hands[playerIndex]
@@ -70,6 +65,8 @@ export const registerTurn = ({
         scores,
         turns,
         isGameOver,
-        currentPlayerIndex: (playerIndex + 1) % playersCount,
+        currentPlayerIndex: isGameOver ?
+            -1 :
+            (playerIndex + 1) % playersCount,
     }
 }

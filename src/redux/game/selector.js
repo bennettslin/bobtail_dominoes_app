@@ -38,14 +38,6 @@ export const mapCurrentPlayerIndex = (
     { [GAME_STORE]: { currentPlayerIndex } },
 ) => currentPlayerIndex
 
-export const mapPlayersCount = (
-    { [GAME_STORE]: { playersCount } },
-) => playersCount
-
-export const mapHandCount = (
-    { [GAME_STORE]: { handCount } },
-) => handCount
-
 export const getMapPlayer = playerIndex => createSelector(
     mapPlayers,
     players => players[playerIndex],
@@ -86,17 +78,14 @@ export const getMapIsCurrentPlayer = playerIndex => createSelector(
     currentPlayerIndex => playerIndex === currentPlayerIndex,
 )
 
-export const getMapIsFocusedPlayer = playerIndex => createSelector(
+export const getMapIsWinner = playerIndex => createSelector(
     mapTurns,
-    getMapIsCurrentPlayer(playerIndex),
-    (
-        turns,
-        isCurrentPlayer,
-    ) => {
-        const { winnerIndices } = turns[getLatestTurnIndex(turns)]
+    turns => {
+        const { winnerIndices } = turns[getLatestTurnIndex(turns)] || {}
 
-        return winnerIndices ?
-            winnerIndices.some(winnerIndex => playerIndex === winnerIndex) :
-            isCurrentPlayer
+        return (
+            Boolean(winnerIndices) &&
+            winnerIndices.some(winnerIndex => playerIndex === winnerIndex)
+        )
     },
 )

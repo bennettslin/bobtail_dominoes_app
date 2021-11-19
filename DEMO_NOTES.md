@@ -1,12 +1,9 @@
 # Demo notes
-* Show trophies next to scores of winners
+* Current player versus recent player colours
 * Timeout to account for sound playing
     * But have next move ready
 
 # TODO: Game options
-* Figure out parent arcade button component for checker and demo buttons.
-* Distinguish between initialise game and start game
-
 * getBestPointedMovesForTurn
     * Starting to look ugly, refactor
     * Figure out why adding long sonority rule to rows increases the points for a unit test

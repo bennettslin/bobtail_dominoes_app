@@ -11,12 +11,11 @@ import { getCommaSeparatedList } from '../../../../utils/format'
 import { getPlayerIndex } from '../../../../utils/music/game/play/turns'
 import { getPointsForMoves } from '../../../../utils/music/chords/points'
 import { getMapIsLatestTurn, getMapTurn, mapIsGameOver, mapPlayers } from '../../../../redux/game/selector'
+import { HAND_COUNT, PLAYERS_COUNT } from '../../../../constants/music/play'
 import './style'
 
 const TurnLog = ({
     turnIndex,
-    playersCount,
-    handCount,
 }) => {
     const
         players = useSelector(mapPlayers),
@@ -44,9 +43,12 @@ const TurnLog = ({
         )
 
     } else {
-        const playerIndex = getPlayerIndex({ turnIndex, playersCount })
+        const playerIndex = getPlayerIndex({
+            turnIndex,
+            playersCount: PLAYERS_COUNT,
+        })
         log = moves ? (
-            `${players[playerIndex]} plays ${moves.length === handCount ? 'full hand ' : ''}for ${getPointsForMoves({ moves, handCount })} points.`
+            `${players[playerIndex]} plays ${moves.length === HAND_COUNT ? 'full hand ' : ''}for ${getPointsForMoves({ moves, handCount: HAND_COUNT })} points.`
         ) : (
             `${players[playerIndex]} ${discardedIndices.length ? 'exchanges on' : 'passes'} their turn.`
         )
@@ -83,11 +85,6 @@ const TurnLog = ({
 
 TurnLog.propTypes = {
     turnIndex: PropTypes.number.isRequired,
-    playersCount: PropTypes.number.isRequired,
-    playerNames: PropTypes.arrayOf(
-        PropTypes.string.isRequired,
-    ),
-    handCount: PropTypes.number.isRequired,
 }
 
 export default TurnLog

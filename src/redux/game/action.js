@@ -1,8 +1,9 @@
-import { getShuffledArray } from '../../utils/general/random'
-import { getInitialGame } from '../../utils/music/game/play'
 import { setBoolInStorage } from '../../utils/storage'
-import { PLAYERS } from '../../constants/music/play'
-import { GAME_DEFAULT, UPDATE_GAME } from './default'
+import {
+    GAME_DEFAULT,
+    INITIALISE_GAME,
+    REGISTER_GAME_TURN,
+} from './default'
 import { GAME_STORE } from './reducer'
 
 export const updateIsDemoAutoplayOn = (
@@ -17,14 +18,10 @@ export const updateIsDemoAutoplayOn = (
 }
 
 export const initialiseGame = () => ({
-    type: UPDATE_GAME,
-    payload: {
-        ...getInitialGame(),
-        players: getShuffledArray(PLAYERS),
-    },
+    type: INITIALISE_GAME,
 })
 
-export const updateGame = (payload = GAME_DEFAULT) => ({
-    type: UPDATE_GAME,
+export const registerGameTurn = payload => ({
+    type: REGISTER_GAME_TURN,
     payload,
 })

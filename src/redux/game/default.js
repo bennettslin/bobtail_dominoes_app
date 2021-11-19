@@ -1,5 +1,6 @@
 import { getBoolFromStorage } from '../../utils/storage'
-export const UPDATE_GAME = 'updateGame'
+export const INITIALISE_GAME = 'initialiseGame'
+export const REGISTER_GAME_TURN = 'registerGameTurn'
 
 const INITIAL_IS_DEMO_AUTOPLAY_ON = getBoolFromStorage('isDemoAutoplayOn', true)
 
@@ -13,6 +14,4 @@ export const GAME_DEFAULT = {
     turns: [],
     isGameOver: true,
     currentPlayerIndex: -1,
-    playersCount: -1,
-    handCount: -1,
 }

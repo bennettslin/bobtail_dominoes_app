@@ -4,28 +4,21 @@ import Flex from '../Flex'
 import DemoBody from './Body'
 import DemoHeader from './Header'
 import aiWorker from '../../workers/aiWorker'
-import { initialiseGame, updateGame } from '../../redux/game/action'
+import { initialiseGame, registerGameTurn } from '../../redux/game/action'
 import {
     mapBoard,
     mapHands,
     mapIsGameOver,
     mapCurrentPlayerIndex,
-    mapPool,
-    mapScores,
-    mapTurns,
     mapIsDemoAutoplayOn,
 } from '../../redux/game/selector'
-import { registerTurn } from '../../utils/music/game/play'
 import './style'
 
 const Demo = () => {
     const
         dispatch = useDispatch(),
-        pool = useSelector(mapPool),
         board = useSelector(mapBoard),
         hands = useSelector(mapHands),
-        scores = useSelector(mapScores),
-        turns = useSelector(mapTurns),
         currentPlayerIndex = useSelector(mapCurrentPlayerIndex),
         isGameOver = useSelector(mapIsGameOver),
         isDemoPlayingOn = useSelector(mapIsDemoAutoplayOn)
@@ -35,18 +28,7 @@ const Demo = () => {
 
         aiWorker.getBestPointedMovesForTurnFromWorker({ hand, board })
             .then(moves => (
-                dispatch(updateGame(registerTurn({
-                    pool,
-                    board,
-                    hands,
-                    scores,
-                    turns,
-                    playerIndex: currentPlayerIndex,
-
-                    moves,
-                    // Discarded indices are registered if there are no moves.
-                    discardedIndices: Array.from(hand),
-                })))
+                dispatch(registerGameTurn({ moves }))
             ))
 
     }

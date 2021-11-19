@@ -3,7 +3,7 @@ import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Flex from '../../Flex'
 import TurnLog from './TurnLog'
-import { mapHandCount, mapPlayersCount, mapTurnsCount } from '../../../redux/game/selector'
+import { mapTurnsCount } from '../../../redux/game/selector'
 import { getArrayOfIndices } from '../../../utils/general'
 import './style'
 
@@ -11,8 +11,6 @@ const GameLogs = () => {
     const
         gameLogsRef = useRef(),
         turnsCount = useSelector(mapTurnsCount),
-        playersCount = useSelector(mapPlayersCount),
-        handCount = useSelector(mapHandCount),
         [scrollHeight, setScrollHeight] = useState(0)
 
     useEffect(() => {
@@ -56,8 +54,6 @@ const GameLogs = () => {
                     <TurnLog {...{
                         key: turnIndex,
                         turnIndex,
-                        playersCount,
-                        handCount,
                     }} />
                 </Flex>
             ))}
