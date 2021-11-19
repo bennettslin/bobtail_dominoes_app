@@ -27,8 +27,8 @@ const PlayerCard = ({ playerIndex }) => {
         isFocusedPlayer = isCurrentPlayer || isWinner,
         styledShadowConfig = {
             isInset: isCurrentPlayer || isWinner,
-            isHighlight: isCurrentPlayer,
-            isInteractive: isWinner,
+            isCurrentHighlight: isCurrentPlayer,
+            isGold: isWinner,
         }
 
     // Player order will rotate like a round table.

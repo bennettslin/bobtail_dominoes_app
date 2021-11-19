@@ -8,7 +8,7 @@ const StyledButtonText = ({
 
 }) => (
     <StyledShadow
-        isInteractive
+        isGold
         {...{
             isInset: isSelected,
         }}

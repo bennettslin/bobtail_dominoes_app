@@ -16,11 +16,15 @@
 }
 
 .StyledShadow__rearInset {
-    &.StyledShadow__highlight {
-        color: $colour__highlight__dark;
+    &.StyledShadow__currentHighlight {
+        color: $colour__current__dark;
     }
 
-    &.StyledShadow__interactive {
+    &.StyledShadow__playedHighlight {
+        color: $colour__played__dark;
+    }
+
+    &.StyledShadow__gold {
         color: $colour__frame__dark;
     }
 }
@@ -38,11 +42,15 @@
 .StyledShadow__frontInset {
     mix-blend-mode: screen;
 
-    &.StyledShadow__highlight {
-        color: $colour__highlight__dark;
+    &.StyledShadow__currentHighlight {
+        color: $colour__current__dark;
     }
 
-    &.StyledShadow__interactive {
+    &.StyledShadow__playedHighlight {
+        color: $colour__played__dark;
+    }
+
+    &.StyledShadow__gold {
         color: $colour__frame__dark;
     }
 }
@@ -50,7 +58,7 @@
 .StyledShadow__frontShadow {
     color: $colour__text__light;
 
-    &.StyledShadow__interactive {
+    &.StyledShadow__gold {
         color: $colour__link__light;
         fill: $colour__link__light;
     }

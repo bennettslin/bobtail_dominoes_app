@@ -4,8 +4,9 @@ import cx from 'classnames'
 import './style'
 
 const StyledShadow = ({
-    isHighlight,
-    isInteractive,
+    isCurrentHighlight,
+    isPlayedHighlight,
+    isGold,
     isInset,
     children,
 }) => (children || Number.isFinite(children)) && (
@@ -14,8 +15,9 @@ const StyledShadow = ({
             {...{
                 className: cx(
                     'StyledShadow__rear',
-                    isHighlight && 'StyledShadow__highlight',
-                    isInteractive && 'StyledShadow__interactive',
+                    isCurrentHighlight && 'StyledShadow__currentHighlight',
+                    isPlayedHighlight && 'StyledShadow__playedHighlight',
+                    isGold && 'StyledShadow__gold',
                     isInset ?
                         'StyledShadow__rearInset' :
                         'StyledShadow__rearShadow',
@@ -28,8 +30,9 @@ const StyledShadow = ({
             {...{
                 className: cx(
                     'StyledShadow__front',
-                    isHighlight && 'StyledShadow__highlight',
-                    isInteractive && 'StyledShadow__interactive',
+                    isCurrentHighlight && 'StyledShadow__currentHighlight',
+                    isPlayedHighlight && 'StyledShadow__playedHighlight',
+                    isGold && 'StyledShadow__gold',
                     isInset ?
                         'StyledShadow__frontInset' :
                         'StyledShadow__frontShadow',
@@ -42,8 +45,9 @@ const StyledShadow = ({
 )
 
 StyledShadow.propTypes = {
-    isHighlight: PropTypes.bool,
-    isInteractive: PropTypes.bool,
+    isCurrentHighlight: PropTypes.bool,
+    isPlayedHighlight: PropTypes.bool,
+    isGold: PropTypes.bool,
     isInset: PropTypes.bool,
     children: PropTypes.node,
 }

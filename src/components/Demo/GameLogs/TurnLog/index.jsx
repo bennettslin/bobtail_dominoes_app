@@ -66,8 +66,8 @@ const TurnLog = ({
             <StyledShadow
                 {...{
                     isInset: isLatestTurn,
-                    isHighlight: isLatestTurn && !isGameOver,
-                    isInteractive: isLatestTurn && isGameOver,
+                    isPlayedHighlight: isLatestTurn && !isGameOver,
+                    isGold: isLatestTurn && isGameOver,
                 }}
             >
                 {log}

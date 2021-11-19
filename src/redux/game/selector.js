@@ -18,11 +18,11 @@ export const mapBoard = (
     { [GAME_STORE]: { board } },
 ) => board
 
-export const mapHands = (
+const mapHands = (
     { [GAME_STORE]: { hands } },
 ) => hands
 
-export const mapScores = (
+const mapScores = (
     { [GAME_STORE]: { scores } },
 ) => scores
 
@@ -41,6 +41,15 @@ export const mapCurrentPlayerIndex = (
 export const getMapPlayer = playerIndex => createSelector(
     mapPlayers,
     players => players[playerIndex],
+)
+
+export const mapCurrentHand = createSelector(
+    mapHands,
+    mapCurrentPlayerIndex,
+    (
+        hands,
+        currentPlayerIndex,
+    ) => hands[currentPlayerIndex],
 )
 
 export const getMapHand = playerIndex => createSelector(

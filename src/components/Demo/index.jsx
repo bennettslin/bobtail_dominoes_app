@@ -7,10 +7,10 @@ import aiWorker from '../../workers/aiWorker'
 import { initialiseGame, registerGameTurn } from '../../redux/game/action'
 import {
     mapBoard,
-    mapHands,
     mapIsGameOver,
     mapCurrentPlayerIndex,
     mapIsDemoAutoplayOn,
+    mapCurrentHand,
 } from '../../redux/game/selector'
 import './style'
 
@@ -18,19 +18,19 @@ const Demo = () => {
     const
         dispatch = useDispatch(),
         board = useSelector(mapBoard),
-        hands = useSelector(mapHands),
+        currentHand = useSelector(mapCurrentHand),
         currentPlayerIndex = useSelector(mapCurrentPlayerIndex),
         isGameOver = useSelector(mapIsGameOver),
         isDemoPlayingOn = useSelector(mapIsDemoAutoplayOn)
 
     const registerHandTurn = () => {
-        const hand = hands[currentPlayerIndex]
-
-        aiWorker.getBestPointedMovesForTurnFromWorker({ hand, board })
+        aiWorker.getBestPointedMovesForTurnFromWorker({
+            hand: currentHand,
+            board,
+        })
             .then(moves => (
                 dispatch(registerGameTurn({ moves }))
             ))
-
     }
 
     useEffect(() => {

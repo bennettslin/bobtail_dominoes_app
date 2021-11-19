@@ -1,5 +1,4 @@
 # Demo notes
-* Current player versus recent player colours
 * Timeout to account for sound playing
     * But have next move ready
 

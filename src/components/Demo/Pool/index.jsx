@@ -31,7 +31,7 @@ const Pool = () => {
                             ),
                         }}
                     >
-                        <StyledShadow isInset isInteractive>
+                        <StyledShadow isInset isGold>
                             pool
                         </StyledShadow>
                     </Flex>
