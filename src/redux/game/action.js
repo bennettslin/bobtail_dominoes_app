@@ -1,4 +1,7 @@
+import { getShuffledArray } from '../../utils/general/random'
+import { getInitialGame } from '../../utils/music/game/play'
 import { setBoolInStorage } from '../../utils/storage'
+import { PLAYERS } from '../../constants/music/play'
 import { GAME_DEFAULT, UPDATE_GAME } from './default'
 import { GAME_STORE } from './reducer'
 
@@ -12,6 +15,14 @@ export const updateIsDemoAutoplayOn = (
         payload: { isDemoAutoplayOn },
     }
 }
+
+export const initialiseGame = () => ({
+    type: UPDATE_GAME,
+    payload: {
+        ...getInitialGame(),
+        players: getShuffledArray(PLAYERS),
+    },
+})
 
 export const updateGame = (payload = GAME_DEFAULT) => ({
     type: UPDATE_GAME,

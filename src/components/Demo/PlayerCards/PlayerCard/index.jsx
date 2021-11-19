@@ -10,15 +10,16 @@ import DominoCard from '../../DominoCard'
 import {
     getMapHand,
     getMapIsFocusedPlayer,
+    getMapPlayer,
     getMapScore,
     mapIsGameOver,
 } from '../../../../redux/game/selector'
 import { getPlayerSrc } from '../../../../utils/src/people'
-import { PLAYERS } from '../../../../constants/music/play'
 import './style'
 
 const PlayerCard = ({ playerIndex }) => {
     const
+        player = useSelector(getMapPlayer(playerIndex)),
         hand = useSelector(getMapHand(playerIndex)),
         score = useSelector(getMapScore(playerIndex)),
         isGameOver = useSelector(mapIsGameOver),
@@ -28,6 +29,13 @@ const PlayerCard = ({ playerIndex }) => {
             isHighlight: isFocusedPlayer && !isGameOver,
             isInteractive: isFocusedPlayer && isGameOver,
         }
+
+    let order = playerIndex
+    if (playerIndex === 2) {
+        order = 3
+    } else if (playerIndex === 3) {
+        order = 2
+    }
 
     return (
         <DominoCard
@@ -52,7 +60,7 @@ const PlayerCard = ({ playerIndex }) => {
                                 className: cx(
                                     'PlayerCard__player',
                                 ),
-                                src: getPlayerSrc(playerIndex),
+                                src: getPlayerSrc(player),
                             }}
                         />
                         <Flex
@@ -81,7 +89,7 @@ const PlayerCard = ({ playerIndex }) => {
                                 }}
                             >
                                 <StyledShadow {...styledShadowConfig}>
-                                    {PLAYERS[playerIndex]}
+                                    {player}
                                 </StyledShadow>
                             </Flex>
                         </Flex>
@@ -89,6 +97,7 @@ const PlayerCard = ({ playerIndex }) => {
                 ),
                 figure: score,
                 flexGrow: 1,
+                order,
             }}
         >
             {Array.from(hand).map(dominoIndex => (

@@ -8,8 +8,8 @@ export const PLAYER_CATHERINE = 'Catherine'
 export const PLAYER_KHARI = 'Khari'
 
 export const PLAYERS = [
-    'Sita',
-    'Bennett',
-    'Catherine',
-    'Khari',
+    PLAYER_SITA,
+    PLAYER_BENNETT,
+    PLAYER_CATHERINE,
+    PLAYER_KHARI,
 ]

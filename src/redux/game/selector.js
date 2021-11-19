@@ -6,6 +6,10 @@ export const mapIsDemoAutoplayOn = (
     { [GAME_STORE]: { isDemoAutoplayOn } },
 ) => isDemoAutoplayOn
 
+export const mapPlayers = (
+    { [GAME_STORE]: { players } },
+) => players
+
 export const mapPool = (
     { [GAME_STORE]: { pool } },
 ) => pool
@@ -41,6 +45,11 @@ export const mapPlayersCount = (
 export const mapHandCount = (
     { [GAME_STORE]: { handCount } },
 ) => handCount
+
+export const getMapPlayer = playerIndex => createSelector(
+    mapPlayers,
+    players => players[playerIndex],
+)
 
 export const getMapHand = playerIndex => createSelector(
     mapHands,

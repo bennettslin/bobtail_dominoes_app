@@ -10,17 +10,16 @@ import { getDominoLabel } from '../../../../utils/music/chords/label'
 import { getCommaSeparatedList } from '../../../../utils/format'
 import { getPlayerIndex } from '../../../../utils/music/game/play/turns'
 import { getPointsForMoves } from '../../../../utils/music/chords/points'
-import { getMapIsLatestTurn, getMapTurn, mapIsGameOver } from '../../../../redux/game/selector'
-import { PLAYERS } from '../../../../constants/music/play'
+import { getMapIsLatestTurn, getMapTurn, mapIsGameOver, mapPlayers } from '../../../../redux/game/selector'
 import './style'
 
 const TurnLog = ({
     turnIndex,
     playersCount,
-    playerNames = PLAYERS,
     handCount,
 }) => {
     const
+        players = useSelector(mapPlayers),
         turn = useSelector(getMapTurn(turnIndex)),
         isLatestTurn = useSelector(getMapIsLatestTurn(turnIndex)),
         isGameOver = useSelector(mapIsGameOver),
@@ -33,7 +32,7 @@ const TurnLog = ({
 
     } else if (winnerIndices) {
         const winnersList = winnerIndices.map(winnerIndex => (
-            playerNames[winnerIndex]
+            players[winnerIndex]
         ))
         log = (
             <>
@@ -47,9 +46,9 @@ const TurnLog = ({
     } else {
         const playerIndex = getPlayerIndex({ turnIndex, playersCount })
         log = moves ? (
-            `${playerNames[playerIndex]} plays ${moves.length === handCount ? 'full hand ' : ''}for ${getPointsForMoves({ moves, handCount })} points.`
+            `${players[playerIndex]} plays ${moves.length === handCount ? 'full hand ' : ''}for ${getPointsForMoves({ moves, handCount })} points.`
         ) : (
-            `${playerNames[playerIndex]} ${discardedIndices.length ? 'exchanges on' : 'passes'} their turn.`
+            `${players[playerIndex]} ${discardedIndices.length ? 'exchanges on' : 'passes'} their turn.`
         )
     }
 

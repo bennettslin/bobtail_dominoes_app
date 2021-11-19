@@ -4,7 +4,7 @@ import Flex from '../Flex'
 import DemoBody from './Body'
 import DemoHeader from './Header'
 import aiWorker from '../../workers/aiWorker'
-import { updateGame } from '../../redux/game/action'
+import { initialiseGame, updateGame } from '../../redux/game/action'
 import {
     mapBoard,
     mapHands,
@@ -15,7 +15,7 @@ import {
     mapTurns,
     mapIsDemoAutoplayOn,
 } from '../../redux/game/selector'
-import { getInitialGame, registerTurn } from '../../utils/music/game/play'
+import { registerTurn } from '../../utils/music/game/play'
 import './style'
 
 const Demo = () => {
@@ -75,7 +75,7 @@ const Demo = () => {
     useEffect(() => {
         if (currentPlayerIndex === -1 && isGameOver) {
             // Start new game upon loading this page.
-            dispatch(updateGame(getInitialGame()))
+            dispatch(initialiseGame())
         }
     }, [])
 
