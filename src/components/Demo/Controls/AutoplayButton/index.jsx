@@ -13,10 +13,10 @@ import faceAutoplay from '../../../../assets/svgs/checker/faceAutoplay'
 const AutoplayButton = ({ didMount }) => {
     const
         dispatch = useDispatch(),
-        isAutoplayOn = useSelector(mapIsDemoAutoplayOn)
+        isDemoAutoplayOn = useSelector(mapIsDemoAutoplayOn)
 
     const onClick = () => {
-        dispatch(updateIsDemoAutoplayOn(!isAutoplayOn))
+        dispatch(updateIsDemoAutoplayOn(!isDemoAutoplayOn))
     }
 
     return (
@@ -26,7 +26,7 @@ const AutoplayButton = ({ didMount }) => {
                 styleConfig: styleConfigPlay,
                 styleConfigOn: styleConfigPlayOn,
                 faceStyleConfig: styleConfigFacesPlay,
-                isOn: didMount && isAutoplayOn,
+                isOn: didMount && isDemoAutoplayOn,
                 onClick,
             }}
         />

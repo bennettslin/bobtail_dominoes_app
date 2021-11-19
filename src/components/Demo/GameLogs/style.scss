@@ -22,7 +22,7 @@
         @media (min-height: $breakpoint__sm) {
             width: $width__logs__sm;
         }
-        
+
         @media (min-width: $breakpoint__sm) {
             height: calc(100% - #{$height__controls__sm + $margin__xs});
         }

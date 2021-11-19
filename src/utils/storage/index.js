@@ -12,10 +12,11 @@ export const setInStorage = (key, value) => {
     getWindowStorage()[key] = value
 }
 
-export const getBoolFromStorage = key => {
+export const getBoolFromStorage = (key, defaultValue = false) => {
     const
+        // Value is stored as string.
         storedValue = getWindowStorage()[key],
-        savedValue = storedValue === 'true'
+        savedValue = storedValue ? storedValue === 'true' : defaultValue
 
     // This only saves upon initial retrieval.
     setBoolInStorage(key, savedValue)
