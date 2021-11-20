@@ -53,18 +53,18 @@ describe('getValidPointedMoves', () => {
 })
 
 describe('getBestPointedMovesForTurn', () => {
-    it('returns null for empty hand', () => {
+    it('returns empty for empty hand', () => {
         expect(getBestPointedMovesForTurn({
             hand: new Set([]),
             board: [{ dominoIndex: 2, placement: [[-1, 1], [0, 0]] }],
-        })).toBeNull()
+        })).toStrictEqual([])
     })
 
     it('returns empty when no dominoes can be played', () => {
         expect(getBestPointedMovesForTurn({
             hand: new Set([14, 47, 64]),
             board: [{ dominoIndex: 2, placement: [[-1, 1], [0, 0]] }],
-        })).toBeNull()
+        })).toStrictEqual([])
     })
 
     it('returns best moves when some dominoes can be played', () => {

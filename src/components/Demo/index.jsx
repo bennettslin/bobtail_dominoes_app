@@ -48,10 +48,6 @@ const Demo = () => {
     }
 
     useEffect(() => {
-        // TODO: Recalculate moves when board is refreshed.
-    }, [])
-
-    useEffect(() => {
         if (
             isDemoPlayingOn &&
             isTurnAudioComplete &&
@@ -68,7 +64,6 @@ const Demo = () => {
                 hand: currentHand,
                 board,
             }).then(moves => {
-                console.log('moves', moves)
                 dispatch(updateGame({ moves }))
             })
 
@@ -78,15 +73,15 @@ const Demo = () => {
             return clearTurnTimeout
         }
     }, [
-        // A turn was just played, or the demo was reloaded in the same session.
+        // Turn was just played, or demo was reloaded in the same session.
         currentPlayerIndex,
 
-        // A new game was initialised.
+        // New game was initialised.
         gameId,
     ])
 
     useEffect(() => {
-        // Start new game only upon first loading the demo in this user session.
+        // Start new game only upon first loading demo in this user session.
         if (currentPlayerIndex === -1 && !isGameOver) {
             dispatch(initialiseGame())
         }

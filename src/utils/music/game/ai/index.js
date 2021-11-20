@@ -84,7 +84,7 @@ const recurseThroughValidPointedMoves = ({
 
 export const getBestPointedMovesForTurn = ({ hand, board, limit = 3 }) => {
     if (!hand.size) {
-        return null
+        return []
     }
 
     // AI returns moves with points for better visibility.
@@ -94,5 +94,5 @@ export const getBestPointedMovesForTurn = ({ hand, board, limit = 3 }) => {
 
     return validPointedMoves.length ?
         validPointedMoves.sort(sortByHighestPoints)[0].moves :
-        null
+        []
 }

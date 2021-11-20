@@ -67,9 +67,12 @@ export const gameReducer = (
                     scores,
                     turns,
                     playerIndex: currentPlayerIndex,
-                    moves,
-                    // Discarded indices are registered if there are no moves.
-                    discardedIndices: Array.from(hands[currentPlayerIndex]),
+                    // Either play moves or exchange hand.
+                    ...(moves && moves.length) ? {
+                        moves,
+                    } : {
+                        discardedIndices: Array.from(hands[currentPlayerIndex]),
+                    },
                     handCount: HAND_COUNT,
                     playersCount: PLAYERS_COUNT,
                 })),

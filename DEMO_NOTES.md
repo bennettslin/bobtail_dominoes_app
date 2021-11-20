@@ -1,6 +1,3 @@
-# Demo notes
-* AI moves should distinguish between no moves and null
-
 # TODO: Game options
 * getBestPointedMovesForTurn
     * Starting to look ugly, refactor
