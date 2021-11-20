@@ -1,6 +1,5 @@
 # TODO
 * Make player cards grid
-* Reorganise worker
 
 # TODO: Game options
 * getBestPointedMovesForTurn
