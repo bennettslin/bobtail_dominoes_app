@@ -35,12 +35,15 @@ export const gameReducer = (
 ) => {
     switch (type) {
         case INITIALISE_GAME: {
+            const { gameId } = state
             return {
                 ...state,
                 ...getClonedPayload(getInitialGame({
                     handCount: HAND_COUNT,
                     playersCount: PLAYERS_COUNT,
                 })),
+                gameId: gameId + 1,
+                moves: null,
                 players: getShuffledArray(PLAYERS),
             }
         }
@@ -52,8 +55,8 @@ export const gameReducer = (
                 scores,
                 turns,
                 currentPlayerIndex,
+                moves,
             } = state
-            const { moves } = payload
 
             return {
                 ...state,
@@ -70,6 +73,7 @@ export const gameReducer = (
                     handCount: HAND_COUNT,
                     playersCount: PLAYERS_COUNT,
                 })),
+                moves: null,
             }
         }
         case GAME_STORE:

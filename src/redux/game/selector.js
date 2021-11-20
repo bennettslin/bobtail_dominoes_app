@@ -2,9 +2,9 @@ import { createSelector } from 'reselect'
 import { getIsDominoInLatestTurn, getLatestTurnIndex } from '../../utils/music/render/turn'
 import { GAME_STORE } from './reducer'
 
-export const mapIsDemoAutoplayOn = (
-    { [GAME_STORE]: { isDemoAutoplayOn } },
-) => isDemoAutoplayOn
+export const mapGameId = (
+    { [GAME_STORE]: { gameId } },
+) => gameId
 
 export const mapPlayers = (
     { [GAME_STORE]: { players } },
@@ -30,6 +30,10 @@ export const mapTurns = (
     { [GAME_STORE]: { turns } },
 ) => turns
 
+export const mapMoves = (
+    { [GAME_STORE]: { moves } },
+) => moves
+
 export const mapIsGameOver = (
     { [GAME_STORE]: { isGameOver } },
 ) => isGameOver
@@ -37,6 +41,10 @@ export const mapIsGameOver = (
 export const mapCurrentPlayerIndex = (
     { [GAME_STORE]: { currentPlayerIndex } },
 ) => currentPlayerIndex
+
+export const mapIsDemoAutoplayOn = (
+    { [GAME_STORE]: { isDemoAutoplayOn } },
+) => isDemoAutoplayOn
 
 export const getMapPlayer = playerIndex => createSelector(
     mapPlayers,

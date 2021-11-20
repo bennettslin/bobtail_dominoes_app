@@ -1,11 +1,5 @@
 # Demo notes
-* AI gets move and queues it as soon as next player is established
-    * Timeout to account for playing chords
-    * After chords are played
-        * Play next move if AI is ready
-        * Otherwise, wait for AI
-* Timeout to account for sound playing
-    * But have next move ready
+* AI moves should distinguish between no moves and null
 
 # TODO: Game options
 * getBestPointedMovesForTurn

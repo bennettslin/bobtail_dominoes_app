@@ -21,7 +21,11 @@ export const initialiseGame = () => ({
     type: INITIALISE_GAME,
 })
 
-export const registerGameTurn = payload => ({
+export const registerGameTurn = () => ({
     type: REGISTER_GAME_TURN,
+})
+
+export const updateGame = payload => ({
+    type: GAME_STORE,
     payload,
 })
