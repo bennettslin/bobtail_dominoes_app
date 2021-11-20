@@ -17,8 +17,9 @@ export const updateIsDemoAutoplayOn = (
     }
 }
 
-export const initialiseGame = () => ({
+export const initialiseGame = ({ currentPlayerIndex } = {}) => ({
     type: INITIALISE_GAME,
+    payload: { currentPlayerIndex },
 })
 
 export const registerGameTurn = () => ({

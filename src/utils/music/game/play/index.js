@@ -22,7 +22,6 @@ export const getInitialGame = ({
         scores: getInitialScores(playersCount),
         turns: getInitialTurns(board),
         isGameOver: false,
-        currentPlayerIndex: 0,
     }
 }
 
@@ -65,8 +64,5 @@ export const registerTurn = ({
         scores,
         turns,
         isGameOver,
-        currentPlayerIndex: isGameOver ?
-            -1 :
-            (playerIndex + 1) % playersCount,
     }
 }

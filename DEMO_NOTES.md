@@ -1,3 +1,7 @@
+# TODO
+* Make player cards grid
+* Reorganise worker
+
 # TODO: Game options
 * getBestPointedMovesForTurn
     * Starting to look ugly, refactor

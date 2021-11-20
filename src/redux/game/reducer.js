@@ -35,7 +35,8 @@ export const gameReducer = (
 ) => {
     switch (type) {
         case INITIALISE_GAME: {
-            const { gameId } = state
+            const { gameId } = state,
+                { currentPlayerIndex = -1 } = payload
             return {
                 ...state,
                 ...getClonedPayload(getInitialGame({
@@ -43,40 +44,49 @@ export const gameReducer = (
                     playersCount: PLAYERS_COUNT,
                 })),
                 gameId: gameId + 1,
-                moves: null,
                 players: getShuffledArray(PLAYERS),
+                currentPlayerIndex,
+                moves: null,
             }
         }
         case REGISTER_GAME_TURN: {
-            const {
-                pool,
-                board,
-                hands,
-                scores,
-                turns,
-                currentPlayerIndex,
-                moves,
-            } = state
-
-            return {
-                ...state,
-                ...getClonedPayload(registerTurn({
+            const
+                {
+                    pool,
+                    board,
+                    hands,
+                    scores,
+                    turns,
+                    currentPlayerIndex,
+                    moves,
+                } = state,
+                { isGameOver, ...rest } = registerTurn({
                     pool,
                     board,
                     hands,
                     scores,
                     turns,
                     playerIndex: currentPlayerIndex,
+                    handCount: HAND_COUNT,
+                    playersCount: PLAYERS_COUNT,
+
                     // Either play moves or exchange hand.
                     ...(moves && moves.length) ? {
                         moves,
                     } : {
-                        discardedIndices: Array.from(hands[currentPlayerIndex]),
+                        discardedIndices: Array.from(
+                            hands[currentPlayerIndex],
+                        ),
                     },
-                    handCount: HAND_COUNT,
-                    playersCount: PLAYERS_COUNT,
-                })),
+                })
+
+            return {
+                ...state,
+                ...getClonedPayload(rest),
                 moves: null,
+                currentPlayerIndex: isGameOver ?
+                    -1 :
+                    (currentPlayerIndex + 1) % PLAYERS_COUNT,
             }
         }
         case GAME_STORE:

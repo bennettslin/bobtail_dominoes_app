@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Flex from '../Flex'
 import DemoBody from './Body'
 import DemoHeader from './Header'
-import aiWorker from '../../workers/aiWorker'
+import AiWorker from '../../workers/ai.worker'
 import {
     initialiseGame,
     registerGameTurn,
@@ -31,19 +31,15 @@ const Demo = () => {
         currentPlayerIndex = useSelector(mapCurrentPlayerIndex),
         isGameOver = useSelector(mapIsGameOver),
         isDemoPlayingOn = useSelector(mapIsDemoAutoplayOn),
-        [isTurnAudioComplete, setIsTurnAudioComplete] = useState(true)
+        [aiWorker, setAiWorker] = useState(new AiWorker()),
+        [isTurnAudioComplete, setIsTurnAudioComplete] = useState(false)
 
     const registerHandTurn = () => {
         dispatch(registerGameTurn())
     }
 
-    const completeTurnAudio = () => {
-        setIsTurnAudioComplete(true)
-    }
-
-    const clearTurnTimeout = () => {
-        // Needed for unmount, for some reason.
-        completeTurnAudio()
+    const cleanup = () => {
+        aiWorker.terminate()
         clearTimeout(timeoutRef.current)
     }
 
@@ -58,33 +54,43 @@ const Demo = () => {
     }, [isDemoPlayingOn, isTurnAudioComplete, moves])
 
     useEffect(() => {
+        // Either turn was just played, or reloading demo in same session.
         if (currentPlayerIndex > -1 && !isGameOver) {
-            // Queue the next moves.
-            aiWorker.getBestPointedMovesForTurnFromWorker({
-                hand: currentHand,
-                board,
-            }).then(moves => {
-                dispatch(updateGame({ moves }))
-            })
+            if (!moves) {
+                // Queue the next moves.
+                aiWorker.getBestPointedMovesForTurnFromWorker({
+                    hand: currentHand,
+                    board,
+                }).then(moves => {
+                    dispatch(updateGame({ moves }))
+                })
+            }
 
             // TODO: Sound audio for current turn.
             setIsTurnAudioComplete(false)
-            timeoutRef.current = setTimeout(completeTurnAudio, 1000)
-            return clearTurnTimeout
+            timeoutRef.current = setTimeout(
+                () => setIsTurnAudioComplete(true),
+                1500,
+            )
         }
-    }, [
-        // Turn was just played, or demo was reloaded in the same session.
-        currentPlayerIndex,
-
-        // New game was initialised.
-        gameId,
-    ])
+    }, [currentPlayerIndex])
 
     useEffect(() => {
-        // Start new game only upon first loading demo in this user session.
-        if (currentPlayerIndex === -1 && !isGameOver) {
-            dispatch(initialiseGame())
+        // Handle subsequent new game in this session.
+        if (currentPlayerIndex === -1 && gameId) {
+            cleanup()
+            setAiWorker(new AiWorker())
+            dispatch(updateGame({ currentPlayerIndex: 0 }))
         }
+    }, [gameId])
+
+    useEffect(() => {
+        // Start first new game of this session.
+        if (!gameId) {
+            // Cleanup not needed, so set current player now.
+            dispatch(initialiseGame({ currentPlayerIndex: 0 }))
+        }
+        return cleanup
     }, [])
 
     return (
