@@ -1,14 +1,15 @@
 import AiWorker from '../../workers/ai.worker'
 
-let aiWorker
+let aiWorker = null
 
-export const refreshAiWorker = () => {
-    aiWorker = new AiWorker()
+export const terminateAiWorker = () => {
+    aiWorker.terminate()
+    aiWorker = null
 }
 
 export const getAiWorker = () => {
     if (!aiWorker) {
-        refreshAiWorker()
+        aiWorker = new AiWorker()
     }
     return aiWorker
 }

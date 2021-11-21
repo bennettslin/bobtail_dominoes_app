@@ -16,7 +16,7 @@ import {
 } from '../../../redux/game/selector'
 import {
     getAiWorker,
-    refreshAiWorker,
+    terminateAiWorker,
 } from '../../../utils/workers/aiWorker'
 
 const DemoEngine = () => {
@@ -37,7 +37,7 @@ const DemoEngine = () => {
     }
 
     const cleanup = () => {
-        getAiWorker().terminate()
+        terminateAiWorker()
         clearTimeout(timeoutRef.current)
     }
 
@@ -81,7 +81,6 @@ const DemoEngine = () => {
             !isGameOver
         ) {
             cleanup()
-            refreshAiWorker()
             dispatch(updateGame({ currentPlayerIndex: 0 }))
         }
     }, [gameId])
