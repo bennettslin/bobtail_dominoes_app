@@ -73,7 +73,11 @@ const DemoEngine = () => {
 
     useEffect(() => {
         // Handle subsequent new game in this session.
-        if (currentPlayerIndex === -1 && gameId) {
+        if (
+            gameId &&
+            currentPlayerIndex === -1 &&
+            !isGameOver
+        ) {
             cleanup()
             setAiWorker(new AiWorker())
             dispatch(updateGame({ currentPlayerIndex: 0 }))

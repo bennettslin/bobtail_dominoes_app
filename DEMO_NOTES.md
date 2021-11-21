@@ -9,9 +9,6 @@
 * Audio wait time is in Redux
     * Make sure to linger on last turn before declaring winner
 
-# TODO: Nice to have
-* Make player cards grid
-
 # TODO: Game options
 * getBestPointedMovesForTurn
     * Starting to look ugly, refactor

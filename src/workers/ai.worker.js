@@ -5,7 +5,3 @@ export const getBestPointedMovesForTurnFromWorker = ({
     board,
     limit,
 }) => getBestPointedMovesForTurn({ hand, board, limit })
-
-export const closeMyself = () => {
-    self.close()
-}
