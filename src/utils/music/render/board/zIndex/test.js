@@ -1,6 +1,6 @@
-import { getZIndexDominoesList } from '.'
+import { getBoardOrderedByZIndex } from '.'
 
-describe('getZIndexDominoesList', () => {
+describe('getBoardOrderedByZIndex', () => {
     test.each([
         [
             [
@@ -99,6 +99,6 @@ describe('getZIndexDominoesList', () => {
             ],
         ],
     ])('%p returns %p', (board, result) => {
-        expect(getZIndexDominoesList(board)).toStrictEqual(result)
+        expect(getBoardOrderedByZIndex(board)).toStrictEqual(result)
     })
 })

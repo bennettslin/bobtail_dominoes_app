@@ -1,22 +1,3 @@
-@use 'sass:math';
-
-// Divide by number of hexagons in board width.
-$width__hexagon: math.div(100%, 20);
-$width__horizontal: $width__hexagon * 2;
-$width__vertical: $width__hexagon * 1.5;
-
-.Domino__placed {
-    position: absolute;
-}
-
-.Domino__horizontal {
-    width: $width__horizontal;
-}
-
-.Domino__vertical {
-    width: $width__vertical;
-}
-
 .Domino__face {
     position: absolute;
     transform: translate(-50%, -50%);

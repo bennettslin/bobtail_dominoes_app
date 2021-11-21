@@ -10,13 +10,14 @@ import { getIsPlacementUpsideDown, getOrientation } from '../../../utils/music/g
 import { getFacePositionAndSizeStyling } from '../../../utils/music/render/face'
 import { getDominoSrc } from '../../../utils/src/dominoes'
 import { getFaceSrc } from '../../../utils/src/faces'
-import { getDominoTranslateStyling, getDominoPositionStyling } from '../../../utils/music/render/board/coordinates'
+import { getDominoPositionStyling } from '../../../utils/music/render/domino/position'
+import { getDominoSizeStyling } from '../../../utils/music/render/domino/size'
+import { getDominoTranslateStyling } from '../../../utils/music/render/domino/translate'
 import { getIntervalSrc } from '../../../utils/src/intervals'
 import { getIntervalPositionAndStyling } from '../../../utils/music/render/interval'
 import styleConfigDominoes from '../../../styles/dominoes'
 import styleConfigFacesPitch from '../../../styles/faces/pitch'
 import styleConfigPitchOn from '../../../styles/arcade/pitchOn'
-import { DIRECTION_X } from '../../../constants/music/game'
 import './style'
 
 const Domino = ({
@@ -25,33 +26,25 @@ const Domino = ({
     placement,
 }) => {
     const
+        isInLatestTurn = useSelector(getMapIsDominoInLatestTurn(dominoIndex)),
         pitches = getDominoPitches(dominoIndex),
         orientation = getOrientation(placement),
         orderedInterval = getOrderedInterval(dominoIndex),
-        isPlacementUpsideDown = getIsPlacementUpsideDown(placement),
-        isInLatestTurn = useSelector(getMapIsDominoInLatestTurn(dominoIndex))
+        isPlacementUpsideDown = getIsPlacementUpsideDown(placement)
 
     return (
         <Flex
             {...{
                 className: cx(
                     'Domino',
-                    placement && [
-                        'Domino__placed',
-                        orientation === DIRECTION_X ?
-                            'Domino__horizontal' :
-                            'Domino__vertical',
-                    ],
                     className,
                 ),
                 ...placement && {
                     style: {
-                        ...getDominoPositionStyling({
-                            placement,
-                        }),
-                        ...getDominoTranslateStyling({
-                            orientation,
-                        }),
+                        position: 'absolute',
+                        ...getDominoPositionStyling({ placement }),
+                        ...getDominoSizeStyling({ orientation }),
+                        ...getDominoTranslateStyling({ orientation }),
                     },
                 },
             }}

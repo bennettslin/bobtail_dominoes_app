@@ -3,13 +3,19 @@ import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Flex from '../../Flex'
 import Domino from '../Domino'
-import { mapBoard } from '../../../redux/game/selector'
-import { getZIndexDominoesList } from '../../../utils/music/render/board/zIndex'
-import { getMovableBoardStyling } from '../../../utils/music/render/board/centre'
+import {
+    mapBoard,
+    mapBoardHexagonalWidth,
+} from '../../../redux/game/selector'
+import { getBoardOrderedByZIndex } from '../../../utils/music/render/board/zIndex'
+import { getBoardPositionStyling } from '../../../utils/music/render/board/position'
+import { getBoardSizeStyling } from '../../../utils/music/render/board/size'
 import './style'
 
 const Board = () => {
-    const board = useSelector(mapBoard)
+    const
+        board = useSelector(mapBoard),
+        boardHexagonalWidth = useSelector(mapBoardHexagonalWidth)
 
     return (
         <Flex
@@ -32,10 +38,16 @@ const Board = () => {
                         className: cx(
                             'Board__movable',
                         ),
-                        style: getMovableBoardStyling({ board }),
+                        style: {
+                            ...getBoardPositionStyling({
+                                board,
+                                boardHexagonalWidth,
+                            }),
+                            ...getBoardSizeStyling({ boardHexagonalWidth }),
+                        },
                     }}
                 >
-                    {getZIndexDominoesList(board).map(move => {
+                    {getBoardOrderedByZIndex(board).map(move => {
                         const { dominoIndex, placement } = move
                         return (
                             <Domino

@@ -1,5 +1,6 @@
 import { getShuffledArray } from '../../utils/general/random'
 import { getInitialGame, registerTurn } from '../../utils/music/game/play'
+import { getBoardHexagonalWidth } from '../../utils/music/render/board/size'
 import {
     HAND_COUNT,
     PLAYERS,
@@ -10,6 +11,7 @@ import {
     INITIALISE_GAME,
     REGISTER_GAME_TURN,
 } from './default'
+import { BOARD_HEXAGONAL_BASE_WIDTH } from '../../constants/music/domino'
 
 export const GAME_STORE = 'game'
 
@@ -45,8 +47,9 @@ export const gameReducer = (
                 })),
                 gameId: gameId + 1,
                 players: getShuffledArray(PLAYERS),
-                currentPlayerIndex,
                 moves: null,
+                currentPlayerIndex,
+                boardHexagonalWidth: BOARD_HEXAGONAL_BASE_WIDTH,
             }
         }
         case REGISTER_GAME_TURN: {
@@ -83,10 +86,12 @@ export const gameReducer = (
             return {
                 ...state,
                 ...getClonedPayload(rest),
+                isGameOver,
                 moves: null,
                 currentPlayerIndex: isGameOver ?
                     -1 :
                     (currentPlayerIndex + 1) % PLAYERS_COUNT,
+                boardHexagonalWidth: getBoardHexagonalWidth(board),
             }
         }
         case GAME_STORE:

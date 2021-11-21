@@ -66,7 +66,7 @@ const DemoEngine = () => {
             setIsTurnAudioComplete(false)
             timeoutRef.current = setTimeout(
                 () => setIsTurnAudioComplete(true),
-                1500,
+                1000,
             )
         }
     }, [currentPlayerIndex])

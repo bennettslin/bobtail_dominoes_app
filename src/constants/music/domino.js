@@ -2,18 +2,23 @@
 
 export const HEXAGON_HEIGHT_RATIO = 2 / Math.sqrt(3)
 
+// Pixel height for bottom perspective. Specific to the svgs.
+export const HEIGHT_BOTTOM_PIXELS = 15
+export const HEXAGON_BASE_WIDTH = 100
+
 const
     HORIZONTAL_HEIGHT_MULTIPLIER = 2,
     VERTICAL_HEIGHT_MULTIPLIER = 3.5,
 
-    // Pixel height for bottom perspective. Specific to the svgs.
-    HEIGHT_BOTTOM_PIXELS = 15,
-
     // Svg hexagon base width is 100px. Calculate height in pixels.
     HORIZONTAL_HEIGHT_HEXAGONS_PIXELS =
-        100 * HEXAGON_HEIGHT_RATIO * HORIZONTAL_HEIGHT_MULTIPLIER,
+        HEXAGON_BASE_WIDTH
+        * HEXAGON_HEIGHT_RATIO
+        * HORIZONTAL_HEIGHT_MULTIPLIER,
     VERTICAL_HEIGHT_HEXAGONS_PIXELS =
-        100 * HEXAGON_HEIGHT_RATIO * VERTICAL_HEIGHT_MULTIPLIER,
+        HEXAGON_BASE_WIDTH
+        * HEXAGON_HEIGHT_RATIO
+        * VERTICAL_HEIGHT_MULTIPLIER,
 
     // Percentage of total height occupied by hexagons.
     HORIZONTAL_HEIGHT_RATIO =
@@ -29,3 +34,5 @@ export const HORIZONTAL_HEXAGON_HEIGHT_UNIT_RATIO =
     HORIZONTAL_HEIGHT_RATIO / HORIZONTAL_HEIGHT_MULTIPLIER
 export const VERTICAL_HEXAGON_HEIGHT_UNIT_RATIO =
     VERTICAL_HEIGHT_RATIO / VERTICAL_HEIGHT_MULTIPLIER
+
+export const BOARD_HEXAGONAL_BASE_WIDTH = 12

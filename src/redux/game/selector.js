@@ -46,6 +46,10 @@ export const mapIsDemoAutoplayOn = (
     { [GAME_STORE]: { isDemoAutoplayOn } },
 ) => isDemoAutoplayOn
 
+export const mapBoardHexagonalWidth = (
+    { [GAME_STORE]: { boardHexagonalWidth } },
+) => boardHexagonalWidth
+
 export const getMapPlayer = playerIndex => createSelector(
     mapPlayers,
     players => players[playerIndex],
