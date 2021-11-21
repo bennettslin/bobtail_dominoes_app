@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import AiWorker from '../../../workers/ai.worker'
 import {
     initialiseGame,
     registerGameTurn,
@@ -15,6 +14,10 @@ import {
     mapIsGameOver,
     mapMoves,
 } from '../../../redux/game/selector'
+import {
+    getAiWorker,
+    refreshAiWorker,
+} from '../../../utils/workers/aiWorker'
 
 const DemoEngine = () => {
     const
@@ -27,7 +30,6 @@ const DemoEngine = () => {
         currentPlayerIndex = useSelector(mapCurrentPlayerIndex),
         isGameOver = useSelector(mapIsGameOver),
         isDemoPlayingOn = useSelector(mapIsDemoAutoplayOn),
-        [aiWorker, setAiWorker] = useState(new AiWorker()),
         [isTurnAudioComplete, setIsTurnAudioComplete] = useState(false)
 
     const registerHandTurn = () => {
@@ -35,7 +37,7 @@ const DemoEngine = () => {
     }
 
     const cleanup = () => {
-        aiWorker.terminate()
+        getAiWorker().terminate()
         clearTimeout(timeoutRef.current)
     }
 
@@ -54,7 +56,7 @@ const DemoEngine = () => {
         if (currentPlayerIndex > -1 && !isGameOver) {
             if (!moves) {
                 // Queue the next moves.
-                aiWorker.getBestPointedMovesForTurnFromWorker({
+                getAiWorker().getBestPointedMovesForTurnFromWorker({
                     hand: currentHand,
                     board,
                 }).then(moves => {
@@ -79,7 +81,7 @@ const DemoEngine = () => {
             !isGameOver
         ) {
             cleanup()
-            setAiWorker(new AiWorker())
+            refreshAiWorker()
             dispatch(updateGame({ currentPlayerIndex: 0 }))
         }
     }, [gameId])
