@@ -41,6 +41,7 @@ const GameLogs = () => {
                 justifyContent: 'start',
                 alignItems: 'start',
                 gap: 'sm',
+                order: 3,
             }}
         >
             {getArrayOfIndices(turnsCount).map(turnIndex => (

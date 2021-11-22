@@ -19,7 +19,6 @@
 
 .DemoBody__dominoes {
     flex-direction: column;
-    z-index: 1;
 
     @media (orientation: portrait) {
         width: $width__dominoes__xxs;

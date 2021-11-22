@@ -18,6 +18,7 @@ const DemoBody = () => (
             gap: 'xs',
         }}
     >
+        <Board />
         <Flex
             {...{
                 className: 'DemoBody__dominoes',
@@ -25,6 +26,7 @@ const DemoBody = () => (
                 alignItems: 'normal',
                 flexGrow: 1,
                 gap: 'sm',
+                order: 1,
             }}
         >
             <PlayerCards />
@@ -40,7 +42,6 @@ const DemoBody = () => (
                 <Controls />
             </Flex>
         </Flex>
-        <Board />
         <GameLogs />
     </Flex>
 )

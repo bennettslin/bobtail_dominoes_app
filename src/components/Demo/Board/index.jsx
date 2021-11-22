@@ -23,6 +23,7 @@ const Board = () => {
                 className: cx(
                     'Board',
                 ),
+                order: 2,
             }}
         >
             <Flex
