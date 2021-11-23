@@ -1,5 +1,9 @@
 import { createSelector } from 'reselect'
-import { getIsDominoInLatestTurn, getLatestTurnIndex } from '../../utils/music/render/turn'
+import { getIsWinner } from '../../utils/music/game/points'
+import {
+    getIsDominoInLatestTurn,
+    getLatestTurnIndex,
+} from '../../utils/music/render/turn'
 import { GAME_STORE } from './reducer'
 
 export const mapGameId = (
@@ -101,12 +105,8 @@ export const getMapIsCurrentPlayer = playerIndex => createSelector(
 
 export const getMapIsWinner = playerIndex => createSelector(
     mapTurns,
-    turns => {
-        const { winnerIndices } = turns[getLatestTurnIndex(turns)] || {}
-
-        return (
-            Boolean(winnerIndices) &&
-            winnerIndices.some(winnerIndex => playerIndex === winnerIndex)
-        )
-    },
+    turns => getIsWinner({
+        turns,
+        playerIndex,
+    }),
 )

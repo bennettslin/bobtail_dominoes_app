@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ChordAbbreviations from '../../../ChordAbbreviations'
 import { getChordAbbreviationsList, getDominoLabel } from '../../../../utils/music/chords/label'
-import { getPointsForPitchSets } from '../../../../utils/music/chords/points'
+import { getPointsForPitchSets } from '../../../../utils/music/game/points'
 
 const MoveLog = ({
     dominoIndex,

@@ -1,10 +1,3 @@
-# TODO: Now
-* Unit tests!
-    * getBoardSizeStyling
-    * getBoardHexagonalWidth
-    * Cartesian
-    * getDominoSizeStyling
-
 # TODO: Eventual
 * Audio wait time is in Redux
     * Make sure to linger on last turn before declaring winner

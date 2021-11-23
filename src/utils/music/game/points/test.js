@@ -1,4 +1,4 @@
-import { getPoints, getPointsForMoves, getPointsForPitchSets } from '.'
+import { getIsWinner, getPoints, getPointsForMoves, getPointsForPitchSets } from '.'
 import { HAND_COUNT } from '../../../../constants/music/play'
 
 describe('getPoints', () => {
@@ -62,5 +62,28 @@ describe('getPointsForMoves', () => {
         }, 12], // Custom hand count with bingo.
     ])('%p returns %p points', (set, result) => {
         expect(getPointsForMoves(set)).toBe(result)
+    })
+})
+
+describe('getIsWinner', () => {
+    it('returns false if game is still being played', () => {
+        expect(getIsWinner({
+            turns: [{ moves: [] }],
+            playerIndex: 0,
+        })).toBe(false)
+    })
+
+    it('returns false if game is over and player lost', () => {
+        expect(getIsWinner({
+            turns: [{ winnerIndices: [1, 3] }],
+            playerIndex: 0,
+        })).toBe(false)
+    })
+
+    it('returns false if game is over and player won', () => {
+        expect(getIsWinner({
+            turns: [{ winnerIndices: [1, 3] }],
+            playerIndex: 1,
+        })).toBe(true)
     })
 })
