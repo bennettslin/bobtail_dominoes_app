@@ -22,7 +22,7 @@ const mapHands = (
     { [GAME_STORE]: { hands } },
 ) => hands
 
-const mapScores = (
+export const mapScores = (
     { [GAME_STORE]: { scores } },
 ) => scores
 

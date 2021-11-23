@@ -4,6 +4,7 @@ import cx from 'classnames'
 import Flex from '../../components/Flex'
 import StyledBackground from '../../components/Styled/Background'
 import Wrapper from '../Wrapper'
+import DemoTracker from './DemoTracker'
 import AppFooter from './Footer'
 import './style'
 
@@ -19,6 +20,7 @@ const App = ({ children }) => (
             alignItems: 'normal',
         }}
     >
+        <DemoTracker />
         <StyledBackground />
         <Wrapper>{children}</Wrapper>
         <AppFooter />
