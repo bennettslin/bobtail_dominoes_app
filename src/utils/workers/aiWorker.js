@@ -3,8 +3,10 @@ import AiWorker from '../../workers/ai.worker'
 let aiWorker = null
 
 export const terminateAiWorker = () => {
-    aiWorker.terminate()
-    aiWorker = null
+    if (aiWorker) {
+        aiWorker.terminate()
+        aiWorker = null
+    }
 }
 
 export const getAiWorker = () => {
