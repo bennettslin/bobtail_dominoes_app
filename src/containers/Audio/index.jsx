@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { now, PolySynth, FMSynth } from 'tone'
+import { now } from 'tone'
 import { ANIMATED_TOTAL_DURATION } from '../../constants/music/audio'
+import { getSynth } from '../../modules/synth'
 import { queuePlay } from '../../redux/audio/action'
 import { mapCurrentPitchSet, mapHasSonority, mapIsAutoplayOn, mapIsPlaying, mapPlayedPitchConfigs } from '../../redux/audio/selector'
 import { getAudioPitchSymbol } from '../../utils/music/audio/pitch'
@@ -9,21 +10,11 @@ import { getAudioPitchSymbol } from '../../utils/music/audio/pitch'
 const Audio = () => {
     const
         dispatch = useDispatch(),
-        [synth, setSynth] = useState(null),
         isAutoplayOn = useSelector(mapIsAutoplayOn),
         currentPitchSet = useSelector(mapCurrentPitchSet),
         playedPitchConfigs = useSelector(mapPlayedPitchConfigs),
         isPlaying = useSelector(mapIsPlaying),
         hasSonority = useSelector(mapHasSonority)
-
-    const initializeSynth = () => {
-        const newSynth = new PolySynth(FMSynth).toDestination()
-        newSynth.volume.value = -10 // By ear.
-        setSynth(newSynth)
-        return newSynth
-    }
-
-    const getSynth = () => synth || initializeSynth()
 
     const soundPitches = () => {
         Object.values(playedPitchConfigs).forEach(pitchIndexConfig => {

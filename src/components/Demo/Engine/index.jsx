@@ -17,7 +17,7 @@ import {
 import {
     getAiWorker,
     terminateAiWorker,
-} from '../../../utils/workers/aiWorker'
+} from '../../../modules/aiWorker'
 
 const DemoEngine = () => {
     const
