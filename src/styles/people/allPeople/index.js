@@ -5,8 +5,8 @@ export default {
     fill: {
         sclera: hsl(216, 16, 88),
         pupil: hsl(0, 0, 0, 0.5),
-        irisBrown: hsl(42, 21, 50),
-        irisDarkBrown: hsl(36, 22, 47),
+        irisBrown: hsl(42, 21, 47),
+        irisDarkBrown: hsl(36, 18, 42),
         gum: hsl(6, 37, 63),
         lipFemaleMedium: hsl(1, 27, 51, 0.5),
         lipFemaleMedium__noStroke: hsl(1, 27, 51, 0.5),

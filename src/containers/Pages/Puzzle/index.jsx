@@ -5,40 +5,53 @@ import PuzzleSvg from '../../../components/Svgs/Puzzle'
 import Page from '../../Page'
 import NotFoundPage from '../NotFound'
 
+import puzzle from '../../../assets/svgs/puzzles/2021/9-27/friday/puzzle'
+import answer from '../../../assets/svgs/puzzles/2021/9-27/friday/answer'
+
 const PuzzlePage = ({
     didMount,
-    pageMap,
-    content,
-    puzzle,
-    answer,
-}) => (
-    /**
-     * Server side always has page map, client side only has it for past and
-     * present dates. So we'll always render empty page on server side. Then
-     * upon mount on client side, we'll pass page map to page if it exists, or
-     * else swap with not found page if it doesn't.
-     */
-    !didMount || pageMap ? (
-        <Page
-            {...didMount && {
-                ...pageMap,
-                body: [
-                    content,
-                    (
-                        <PuzzleSvg
-                            {...{
-                                puzzle,
-                                answer,
-                            }}
-                        />
-                    ),
-                ],
-            }}
-        />
-    ) : (
-        <NotFoundPage />
+    // pageMap,
+    // content,
+    // puzzle,
+    // answer,
+    pageContext: {
+        pageMap,
+        content,
+        // puzzle,
+        // answer,
+    } = {},
+}) => {
+    console.log('pageContext', pageMap, content)
+
+    return (
+        /**
+         * Server side always has page map, client side only has it for past and
+         * present dates. So we'll always render empty page on server side. Then
+         * upon mount on client side, we'll pass page map to page if it exists, or
+         * else swap with not found page if it doesn't.
+         */
+        !didMount || pageMap ? (
+            <Page
+                {...didMount && {
+                    ...pageMap,
+                    body: [
+                        content,
+                        (
+                            <PuzzleSvg
+                                {...{
+                                    puzzle,
+                                    answer,
+                                }}
+                            />
+                        ),
+                    ],
+                }}
+            />
+        ) : (
+            <NotFoundPage />
+        )
     )
-)
+}
 
 PuzzlePage.propTypes = {
     didMount: PropTypes.bool.isRequired,

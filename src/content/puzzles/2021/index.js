@@ -1,8 +1,7 @@
-import { getPagesMapsForDates } from '../../../utils/pages/puzzles'
+import puzzles09 from './9'
+import puzzles10 from './10'
 
-export const PAGES_DATES = [
-    { year: 2021, month: 9, day: 27 },
-    { year: 2021, month: 10, day: 4 },
+export default [
+    ...puzzles09,
+    ...puzzles10,
 ]
-
-export default getPagesMapsForDates(PAGES_DATES)

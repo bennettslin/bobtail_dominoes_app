@@ -1,5 +1,6 @@
 import webpack from 'webpack'
 import FilterWarningsPlugin from 'webpack-filter-warnings-plugin'
+import puzzlePages from './src/utils/gatsby/pages/puzzles'
 import {
     getIsProductionBuild,
     getIsRuntimeBuild,
@@ -26,5 +27,16 @@ export const onCreateWebpackConfig = ({ actions }) => {
             // Import from files without specifying extensions.
             extensions: ['.js', '.jsx', '.scss', '.svg'],
         },
+    })
+}
+
+export const createPages = ({ actions }) => {
+    puzzlePages.forEach(page => {
+        actions.createPage({
+            ...page,
+            component: require.resolve(
+                './src/containers/Pages/Puzzle/index.jsx',
+            ),
+        })
     })
 }
