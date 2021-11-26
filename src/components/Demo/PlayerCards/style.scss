@@ -1,11 +1,16 @@
 @import '../../../scss/constants/responsive';
 
 .PlayerCards {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $margin__xs;
+
     @media (orientation: landscape) {
         display: none;
 
         @media (min-width: $breakpoint__md) {
-            display: flex;
+            display: grid;
         }
     }
 }

@@ -6,6 +6,7 @@ import {
     ABOUT_PAGE,
     RULES_PAGE,
     GUIDES_PAGE,
+    PUZZLES_PAGE,
     DEMO_PAGE,
 } from '../../../../constants/pages'
 import './style'
@@ -23,6 +24,7 @@ const Menu = () => (
         <MenuButton {...{ topLevelPage: ABOUT_PAGE }} />
         <MenuButton {...{ topLevelPage: RULES_PAGE }} />
         <MenuButton {...{ topLevelPage: GUIDES_PAGE }} />
+        <MenuButton {...{ topLevelPage: PUZZLES_PAGE }} />
         <MenuButton {...{ topLevelPage: DEMO_PAGE }} />
     </Flex>
 )

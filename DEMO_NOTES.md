@@ -1,12 +1,7 @@
-# TODO: Puzzles
-* Play a regular hand
-* Figure out missing domino
-    * Needs missing domino svg
-* Choose piece to maximize points
-
 # TODO: Eventual
 * Audio wait time is in Redux
     * Make sure to linger on last turn before declaring winner
+    * Will need to rework audio module?
 
 # TODO: Game options
 * getBestPointedMovesForTurn

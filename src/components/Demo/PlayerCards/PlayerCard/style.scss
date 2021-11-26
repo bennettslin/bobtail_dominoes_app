@@ -4,9 +4,7 @@
 @import '../../../../scss/constants/shadows';
 
 .PlayerCard {
-    width: calc(50% - #{math.div($margin__xs, 2)});
     min-width: $width__playerCard;
-    height: calc(50% - #{math.div($margin__xs, 2)});
     min-height: $height__playerCard__xxs;
 
     @media (min-width: $breakpoint__xs) {

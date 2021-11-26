@@ -1,11 +1,17 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { now } from 'tone'
-import { ANIMATED_TOTAL_DURATION } from '../../constants/music/audio'
 import { getSynth } from '../../modules/synth'
 import { queuePlay } from '../../redux/audio/action'
-import { mapCurrentPitchSet, mapHasSonority, mapIsAutoplayOn, mapIsPlaying, mapPlayedPitchConfigs } from '../../redux/audio/selector'
+import {
+    mapCurrentPitchSet,
+    mapHasSonority,
+    mapIsAutoplayOn,
+    mapIsPlaying,
+    mapPlayedPitchConfigs,
+} from '../../redux/audio/selector'
 import { getAudioPitchSymbol } from '../../utils/music/audio/pitch'
+import { ANIMATED_TOTAL_DURATION } from '../../constants/music/audio'
 
 const Audio = () => {
     const
