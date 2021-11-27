@@ -1,21 +1,10 @@
 import puzzles from '../../../../content/puzzles'
+import { getPagePathFromConfig } from '../../../pages/config'
 
-export default puzzles.map(({
-    year,
-    month,
-    day,
-}) => ({
-    path: `puzzles/${year}/${month}-${day}`,
+export default puzzles.map(puzzle => ({
+    path: getPagePathFromConfig(puzzle),
     context: {
-        pageMap: {
-            id: 'Blah',
-            date: {
-                year, month, day,
-            },
-            pathDate: {
-                year, month, day,
-            },
-        },
-        content: `Friday puzzle content.`,
+        pageMap: puzzle,
+        content: `Testing content.`,
     },
 }))

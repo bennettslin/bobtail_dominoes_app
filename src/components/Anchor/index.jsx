@@ -2,8 +2,6 @@ import React from 'react'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import { useDispatch } from 'react-redux'
-import { updateSelectedPagePath } from '../../redux/page/action'
 import { getLinkFromPath } from '../../utils/pages/path'
 import { getInternalLink } from './util'
 
@@ -17,7 +15,6 @@ const Anchor = ({
 
 }) => {
     const
-        dispatch = useDispatch(),
         internalLink = getInternalLink({
             href,
             pagePath,
@@ -25,10 +22,6 @@ const Anchor = ({
         Tag = internalLink ? Link : 'a'
 
     const onClick = () => {
-        if (internalLink) {
-            dispatch(updateSelectedPagePath(internalLink))
-        }
-
         if (analyticsLabel || internalLink) {
             logEvent(
                 'Anchor',
@@ -50,7 +43,6 @@ const Anchor = ({
                 ),
                 ...internalLink && {
                     to: getLinkFromPath(internalLink),
-                    replace: true,
                 },
                 ...!internalLink && href && {
                     href,

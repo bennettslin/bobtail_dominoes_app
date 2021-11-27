@@ -1,22 +1,37 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
+import { useDispatch } from 'react-redux'
 import PageConfigContext from '../../contexts/PageConfig'
 import Helmet from '../../components/Helmet'
 import ChildrenPage from './ChildrenPage'
 import ContentPage from './ContentPage'
+import { updateSelectedPagePath } from '../../redux/page/action'
+import { getPathFromLink } from '../../utils/pages/path'
 
-const Page = ({ className, children, ...rest }) => (
-    <PageConfigContext.Provider {...{ value: rest }}>
-        <Helmet />
-        {children ? (
-            <ChildrenPage {...{ className }}>
-                {children}
-            </ChildrenPage>
-        ) : (
-            <ContentPage {...{ className }} />
-        )}
-    </PageConfigContext.Provider>
-)
+const Page = ({ className, children, ...rest }) => {
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(
+            updateSelectedPagePath(
+                getPathFromLink(window.location.pathname),
+            ),
+        )
+    }, [])
+
+    return (
+        <PageConfigContext.Provider {...{ value: rest }}>
+            <Helmet />
+            {children ? (
+                <ChildrenPage {...{ className }}>
+                    {children}
+                </ChildrenPage>
+            ) : (
+                <ContentPage {...{ className }} />
+            )}
+        </PageConfigContext.Provider>
+    )
+}
 
 Page.propTypes = {
     className: PropTypes.string,

@@ -5,13 +5,13 @@ import PageConfigContext from '../../../../contexts/PageConfig'
 import StyledTabbedMenu from '../../../../components/Styled/TabbedMenu'
 import BackLink from '../BackLink'
 import TabbedMenuButton from './Button'
-import { getMapShowBackLink, getMapShowTabbedMenu } from '../../../../redux/page/selector'
+import { getMapShowBackLink, mapShowTabbedMenu } from '../../../../redux/page/selector'
 import { getCapitalizedText } from '../../../../utils/format'
 
 const TabbedMenu = () => {
     const
         { pages, topLevelPage } = useContext(PageConfigContext),
-        showTabbedMenu = useSelector(getMapShowTabbedMenu(pages)),
+        showTabbedMenu = useSelector(mapShowTabbedMenu),
         showBackLink = useSelector(getMapShowBackLink(topLevelPage))
 
     return showTabbedMenu && (
@@ -25,7 +25,7 @@ const TabbedMenu = () => {
             {showBackLink && (
                 <BackLink isStyledShadow />
             )}
-            {pages.map(({
+            {Boolean(pages) && pages.map(({
                 id,
                 title,
                 date,

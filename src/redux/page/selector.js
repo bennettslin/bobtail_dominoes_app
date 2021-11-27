@@ -21,6 +21,13 @@ export const mapIsFullPage = createSelector(
     selectedPagePath => selectedPagePath === DEMO_PAGE,
 )
 
+export const mapShowTabbedMenu = createSelector(
+    mapSelectedPagePath,
+    selectedPagePath => (
+        getIsTabbedPath(selectedPagePath) && selectedPagePath.includes('/')
+    ),
+)
+
 export const getMapIsSelectedOrTabbedPagePath = pagePath => createSelector(
     mapSelectedPagePath,
     getMapIsSelectedPagePath(pagePath),
@@ -42,12 +49,5 @@ export const getMapShowBackLink = pagePath => createSelector(
         isSelectedPagePath,
     ) => (
         getIsBackLinkedPath(pagePath) && !isSelectedPagePath
-    ),
-)
-
-export const getMapShowTabbedMenu = pageIds => createSelector(
-    mapSelectedPagePath,
-    selectedPagePath => (
-        getIsTabbedPath(selectedPagePath) && Boolean(pageIds)
     ),
 )

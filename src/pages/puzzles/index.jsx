@@ -1,22 +1,15 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import getDidMountHoc from '../../hocs/DidMountHoc'
 import Page from '../../containers/Page'
+import PuzzleLinks from '../../components/PuzzleLinks'
 
-const Component = ({ didMount }) => (
+const Component = () => (
     <Page
-        /**
-         * Server side has links for all dates, client side only has links for
-         * past and present dates. So prevent server side from rendering links.
-         */
-        {...didMount && {
-            body: 'hi',
+        {...{
+            body: (
+                <PuzzleLinks />
+            ),
         }}
     />
 )
 
-Component.propTypes = {
-    didMount: PropTypes.bool.isRequired,
-}
-
-export default getDidMountHoc(Component)
+export default Component

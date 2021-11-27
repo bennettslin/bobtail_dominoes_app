@@ -1,15 +1,15 @@
 import React, { useContext, useState } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import PageConfigContext from '../../../contexts/PageConfig'
-import Button from '../../Button'
-import Flex from '../../Flex'
-import DominoesSvg from '../Dominoes'
-import { getIsPastOrPresentDate } from '../../../utils/date/puzzles'
-import { addDaysToDate } from '../../../utils/date'
+import PageConfigContext from '../../contexts/PageConfig'
+import Button from '../Button'
+import Flex from '../Flex'
+import DominoesSvg from '../Svgs/Dominoes'
+import { getIsPastOrPresentDate } from '../../utils/date/puzzles'
+import { addDaysToDate } from '../../utils/date'
 import './style'
 
-const PuzzleSvg = ({
+const Puzzle = ({
     answer,
     puzzle,
 }) => {
@@ -26,7 +26,7 @@ const PuzzleSvg = ({
         <Flex
             {...{
                 className: cx(
-                    'PuzzleSvg',
+                    'Puzzle',
                 ),
                 flexDirection: 'column',
                 alignItems: 'normal',
@@ -59,9 +59,9 @@ const PuzzleSvg = ({
     )
 }
 
-PuzzleSvg.propTypes = {
+Puzzle.propTypes = {
     answer: PropTypes.string.isRequired,
     puzzle: PropTypes.string.isRequired,
 }
 
-export default PuzzleSvg
+export default Puzzle

@@ -24,6 +24,10 @@ export const getLinkFromPath = path => (
     path === HOME_PAGE ? '/' : `/${path}`
 )
 
+export const getPathFromLink = (link = '') => (
+    link[0] === '/' ? link.replace('/', '') : link
+)
+
 export const getUrlFromPath = (path = '') => {
     // Include ending forward slash because Twitter warns about redirects.
     const finalSlash = (
