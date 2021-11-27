@@ -18,7 +18,6 @@ const DirectionPageLink = ({ direction, directionPage }) => {
         { topLevelPage } = useContext(PageConfigContext),
         {
             id,
-            title,
             date,
             pathDate,
         } = directionPage
@@ -49,7 +48,7 @@ const DirectionPageLink = ({ direction, directionPage }) => {
                         }}
                     />
                 )}
-                {title || getCapitalizedText(id)}
+                {getCapitalizedText(id)}
                 {direction === 1 && (
                     <Svg
                         reverse
@@ -70,7 +69,6 @@ DirectionPageLink.propTypes = {
     direction: PropTypes.oneOf([-1, 1]).isRequired,
     directionPage: PropTypes.shape({
         id: PropTypes.string,
-        title: PropTypes.string,
         date: PropTypes.shape({
             year: PropTypes.number.isRequired,
             month: PropTypes.number.isRequired,

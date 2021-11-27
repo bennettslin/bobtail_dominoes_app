@@ -18,14 +18,14 @@ const PuzzleLinks = ({ didMount }) => (
                 gap: 'xs',
             }}
         >
-            {filterPastAndPresentDates(puzzles).map((puzzle, index) => (
+            {/* {filterPastAndPresentDates(puzzles).map((puzzle, index) => (
                 <PuzzleLink
                     {...{
                         key: index,
                         ...puzzle,
                     }}
                 />
-            ))}
+            ))} */}
         </Flex>
     )
 )

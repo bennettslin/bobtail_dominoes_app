@@ -13,7 +13,6 @@ const Helmet = () => {
     const
         {
             id,
-            title,
             description,
         } = useContext(PageConfigContext),
         selectedPagePath = useSelector(mapSelectedPagePath)

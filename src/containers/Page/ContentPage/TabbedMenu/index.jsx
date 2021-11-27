@@ -27,7 +27,6 @@ const TabbedMenu = () => {
             )}
             {Boolean(pages) && pages.map(({
                 id,
-                title,
                 date,
                 pathDate,
             }, index) => (
@@ -39,7 +38,7 @@ const TabbedMenu = () => {
                         topLevelPage,
                     }}
                 >
-                    {title || getCapitalizedText(id)}
+                    {getCapitalizedText(id)}
                 </TabbedMenuButton>
             ))}
         </StyledTabbedMenu>

@@ -1,5 +1,9 @@
 # TODO: Puzzles
-* Separate puzzles by year and month
+* Configs should get year, month and day from keys
+* Index page
+    * Show by year and month
+* Helmet title
+    * Pass puzzle title directly
 
 # Puzzle types
 * Play a regular hand
