@@ -13,6 +13,7 @@ const Helmet = () => {
     const
         {
             id,
+            title,
             description,
         } = useContext(PageConfigContext),
         selectedPagePath = useSelector(mapSelectedPagePath)
@@ -22,7 +23,7 @@ const Helmet = () => {
             <title>
                 {getMetaTitle({
                     page: selectedPagePath,
-                    title: getCapitalizedText(id),
+                    title: title || getCapitalizedText(id),
                 })}
             </title>
             {getMetaTags({

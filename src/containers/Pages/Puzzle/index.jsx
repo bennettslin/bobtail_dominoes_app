@@ -31,6 +31,7 @@ PuzzlePage.propTypes = {
     pageContext: PropTypes.shape({
         pageMap: PropTypes.shape({
             id: PropTypes.string,
+            title: PropTypes.string,
             pages: PropTypes.arrayOf(PropTypes.shape({
                 id: PropTypes.string,
                 date: PropTypes.shape({

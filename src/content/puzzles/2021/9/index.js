@@ -1,8 +1,10 @@
-export default [
-    {
-        date: { year: 2021, month: 9, day: 27 },
-    },
-    {
-        date: { year: 2021, month: 9, day: 29 },
-    },
-]
+export default {
+    9: [
+        {
+            day: 27,
+        },
+        {
+            day: 29,
+        },
+    ],
+}
