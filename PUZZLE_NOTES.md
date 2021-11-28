@@ -1,6 +1,9 @@
 # TODO: Puzzles
-* Index page
-    * Show by year and month
+* Filter future dates from puzzles index
+* Display links as boxes
+* Have puzzle types
+    * In configs
+    * As components
 
 # Puzzle types
 * Play a regular hand

@@ -3,10 +3,11 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import getDidMountHoc from '../../hocs/DidMountHoc'
 import Flex from '../Flex'
+import Heading from '../Heading'
 import PuzzleLink from './PuzzleLink'
 import puzzles from '../../content/puzzles'
-import { filterPastAndPresentDates } from '../../utils/date/puzzles'
 import './style'
+import { formatMonthForDate } from '../../utils/date/format'
 
 const PuzzleLinks = ({ didMount }) => (
     didMount && (
@@ -14,18 +15,59 @@ const PuzzleLinks = ({ didMount }) => (
             {...{
                 className: cx(
                     'PuzzleLinks',
+                    'fontSize__md',
                 ),
-                gap: 'xs',
+                flexDirection: 'column',
+                alignItems: 'start',
+                gap: 'md',
             }}
         >
-            {/* {filterPastAndPresentDates(puzzles).map((puzzle, index) => (
-                <PuzzleLink
-                    {...{
-                        key: index,
-                        ...puzzle,
-                    }}
-                />
-            ))} */}
+            {[...puzzles].reverse().map(yearMaps => {
+                const year = parseInt(Object.keys(yearMaps)[0])
+                return (
+                    <Flex
+                        {...{
+                            key: year,
+                            flexDirection: 'column',
+                            alignItems: 'start',
+                            gap: 'sm',
+                        }}
+                    >
+                        <Heading {...{ level: 3 }}>
+                            {year.toString()}
+                        </Heading>
+                        {[...yearMaps[year]].reverse().map(monthMaps => {
+                            const month = parseInt(Object.keys(monthMaps)[0])
+                            return (
+                                <Flex
+                                    {...{
+                                        key: month,
+                                        flexDirection: 'column',
+                                        alignItems: 'start',
+                                        gap: 'xs',
+                                    }}
+                                >
+                                    <Heading {...{ level: 5 }}>
+                                        {formatMonthForDate(month)}
+                                    </Heading>
+                                    <Flex {...{ gap: 'xs' }}>
+                                        {[...monthMaps[month]].reverse().map((pageMap, index) => {
+                                            return (
+                                                <PuzzleLink
+                                                    {...{
+                                                        key: index,
+                                                        ...pageMap,
+                                                    }}
+                                                />
+                                            )
+                                        })}
+                                    </Flex>
+                                </Flex>
+                            )
+                        })}
+                    </Flex>
+                )
+            })}
         </Flex>
     )
 )

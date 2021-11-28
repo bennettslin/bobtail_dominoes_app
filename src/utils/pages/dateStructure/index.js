@@ -5,13 +5,13 @@ export const parseDateStructuredPages = ({
     spreadFunction = () => ({}),
     ...topLevelRest
 }) => (
-    dateStructuredPages.map(yearMap => {
-        const year = parseInt(Object.keys(yearMap)[0])
+    dateStructuredPages.map(yearMaps => {
+        const year = parseInt(Object.keys(yearMaps)[0])
         return {
-            [year]: yearMap[year].map(monthMap => {
-                const month = parseInt(Object.keys(monthMap)[0])
+            [year]: yearMaps[year].map(monthMaps => {
+                const month = parseInt(Object.keys(monthMaps)[0])
                 return {
-                    [month]: monthMap[month].map(({ day, ...rest }) => {
+                    [month]: monthMaps[month].map(({ day, ...rest }) => {
                         const date = { year, month, day }
                         return {
                             ...topLevelRest,
@@ -27,9 +27,9 @@ export const parseDateStructuredPages = ({
 )
 
 export const flattenDateStructuredPages = dateStructuredPages => (
-    dateStructuredPages.map(yearMap => (
-        Object.values(yearMap)[0].map(monthMap => (
-            Object.values(monthMap)[0].map(pageMap => ({
+    dateStructuredPages.map(yearMaps => (
+        Object.values(yearMaps)[0].map(monthMaps => (
+            Object.values(monthMaps)[0].map(pageMap => ({
                 path: getPagePathFromConfig(pageMap),
                 context: {
                     pageMap,

@@ -1,4 +1,5 @@
 import puzzles2021 from './2021'
+import puzzles2022 from './2022'
 import {
     flattenDateStructuredPages,
     parseDateStructuredPages,
@@ -8,6 +9,7 @@ import { PUZZLES_PAGE } from '../../constants/pages'
 const puzzles = parseDateStructuredPages({
     dateStructuredPages: [
         puzzles2021,
+        puzzles2022,
     ],
     topLevelPage: PUZZLES_PAGE,
     spreadFunction: ({ date: { month, day } }) => ({
