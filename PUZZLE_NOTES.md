@@ -1,8 +1,5 @@
 # TODO: Puzzles
 * Display links as boxes
-* Have puzzle types
-    * In configs
-    * As components
 
 # Puzzle types
 * Play a regular hand

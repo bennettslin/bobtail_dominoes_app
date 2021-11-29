@@ -1,22 +1,15 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import PageConfigContext from '../../contexts/PageConfig'
 import Button from '../Button'
 import Flex from '../Flex'
-import DominoesSvg from '../Svgs/Dominoes'
-import { getIsPastOrPresentDate } from '../../utils/date/current'
-import { addDaysToDate } from '../../utils/date'
 import './style'
 
 const Puzzle = ({
-    answer,
-    puzzle,
+    puzzleType,
+    canShowAnswer,
 }) => {
-    const
-        { date } = useContext(PageConfigContext),
-        [showAnswer, setShowAnswer] = useState(false),
-        canShowAnswer = getIsPastOrPresentDate(addDaysToDate(date, 1))
+    const [showAnswer, setShowAnswer] = useState(false)
 
     const handleButtonClick = () => {
         setShowAnswer(!showAnswer)
@@ -33,13 +26,7 @@ const Puzzle = ({
                 gap: 'xs',
             }}
         >
-            <DominoesSvg
-                {...{
-                    src: canShowAnswer && showAnswer ?
-                        answer :
-                        puzzle,
-                }}
-            />
+            {puzzleType}
             {canShowAnswer ? (
                 <Button
                     {...{
@@ -60,8 +47,8 @@ const Puzzle = ({
 }
 
 Puzzle.propTypes = {
-    answer: PropTypes.string.isRequired,
-    puzzle: PropTypes.string.isRequired,
+    puzzleType: PropTypes.string.isRequired,
+    canShowAnswer: PropTypes.bool.isRequired,
 }
 
 export default Puzzle
