@@ -1,5 +1,4 @@
 # TODO: Puzzles
-* Filter future dates from puzzles index
 * Display links as boxes
 * Have puzzle types
     * In configs

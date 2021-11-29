@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import getDidMountHoc from '../../../hocs/DidMountHoc'
 import Page from '../../Page'
 import NotFoundPage from '../NotFound'
-import { getIsPastOrPresentDate } from '../../../utils/date/puzzles'
+import { getIsPastOrPresentDate } from '../../../utils/date/current'
 
 const PuzzlePage = ({
     didMount,

@@ -1,7 +1,7 @@
 import { addDays, differenceInMilliseconds } from 'date-fns'
 import { getFromStorage, setInStorage } from '../../storage'
 import { getIsServerSide } from '../../browser'
-import { getDateObjectForDate } from '..'
+import { getDateForDateObject, getDateObjectForDate } from '..'
 
 // Establish consistent date for entire session.
 const CURRENT_DATE = new Date()
@@ -22,6 +22,10 @@ if (!IS_PRODUCTION) {
     }
 }
 
+export const getCurrentDate = () => (
+    getDateForDateObject(global.adminCurrentDate)
+)
+
 export const getIsPastOrPresentDate = date => (
     // Render all dates on server side.
     getIsServerSide() ||
@@ -30,10 +34,4 @@ export const getIsPastOrPresentDate = date => (
         IS_PRODUCTION ? CURRENT_DATE : global.adminCurrentDate,
         getDateObjectForDate(date),
     ) >= 0
-)
-
-export const filterPastAndPresentDates = entities => (
-    entities.filter(entity => (
-        getIsPastOrPresentDate(entity.date ? entity.date : entity)
-    ))
 )

@@ -8,6 +8,7 @@ import PuzzleLink from './PuzzleLink'
 import puzzles from '../../content/puzzles'
 import './style'
 import { formatMonthForDate } from '../../utils/date/format'
+import { filterDateStructuredPages } from '../../utils/pages/dateStructure'
 
 const PuzzleLinks = ({ didMount }) => didMount && (
     <Flex
@@ -21,7 +22,7 @@ const PuzzleLinks = ({ didMount }) => didMount && (
             gap: 'md',
         }}
     >
-        {[...puzzles].reverse().map(yearMaps => {
+        {[...filterDateStructuredPages(puzzles)].reverse().map(yearMaps => {
             const year = parseInt(Object.keys(yearMaps)[0])
             return (
                 <Flex
