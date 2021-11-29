@@ -1,7 +1,6 @@
-import { getCurrentDate, getIsPastOrPresentDate } from '../../date/current'
 import { getPagePathFromConfig } from '../config'
 
-const getDateValueFromMaps = maps => (
+export const getDateValueFromMaps = maps => (
     parseInt(Object.keys(maps)[0])
 )
 
@@ -43,31 +42,3 @@ export const flattenDateStructuredPages = dateStructuredPages => (
         )).flat()
     )).flat()
 )
-
-export const filterDateStructuredPages = dateStructuredPages => {
-    const {
-        year: currentYear,
-        month: currentMonth,
-    } = getCurrentDate()
-
-    return dateStructuredPages.filter(yearMaps => (
-        getDateValueFromMaps(yearMaps) <= currentYear
-    )).map(yearMaps => {
-        const year = getDateValueFromMaps(yearMaps)
-        return {
-            [year]: yearMaps[year].filter(monthMaps => {
-                return (
-                    year < currentYear ||
-                    getDateValueFromMaps(monthMaps) <= currentMonth
-                )
-            }).map(monthMaps => {
-                const month = getDateValueFromMaps(monthMaps)
-                return {
-                    [month]: monthMaps[month].filter(({ date }) => (
-                        getIsPastOrPresentDate(date)
-                    )),
-                }
-            }),
-        }
-    })
-}

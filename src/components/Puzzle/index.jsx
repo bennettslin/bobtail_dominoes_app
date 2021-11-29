@@ -5,7 +5,7 @@ import PageConfigContext from '../../contexts/PageConfig'
 import Button from '../Button'
 import Flex from '../Flex'
 import DominoesSvg from '../Svgs/Dominoes'
-import { getIsPastOrPresentDate } from '../../utils/date/puzzles'
+import { getIsPastOrPresentDate } from '../../utils/date/current'
 import { addDaysToDate } from '../../utils/date'
 import './style'
 

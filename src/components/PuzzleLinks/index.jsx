@@ -6,9 +6,9 @@ import Flex from '../Flex'
 import Heading from '../Heading'
 import PuzzleLink from './PuzzleLink'
 import puzzles from '../../content/puzzles'
-import './style'
+import { filterDateStructuredPages } from '../../utils/date/current'
 import { formatMonthForDate } from '../../utils/date/format'
-import { filterDateStructuredPages } from '../../utils/pages/dateStructure'
+import './style'
 
 const PuzzleLinks = ({ didMount }) => didMount && (
     <Flex

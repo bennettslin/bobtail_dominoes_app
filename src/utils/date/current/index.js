@@ -1,6 +1,7 @@
 import { addDays, differenceInMilliseconds } from 'date-fns'
-import { getFromStorage, setInStorage } from '../../storage'
 import { getIsServerSide } from '../../browser'
+import { getDateValueFromMaps } from '../../pages/dateStructure'
+import { getFromStorage, setInStorage } from '../../storage'
 import { getDateForDateObject, getDateObjectForDate } from '..'
 
 // Establish consistent date for entire session.
@@ -35,3 +36,29 @@ export const getIsPastOrPresentDate = date => (
         getDateObjectForDate(date),
     ) >= 0
 )
+
+export const filterDateStructuredPages = dateStructuredPages => {
+    const {
+        year: currentYear,
+        month: currentMonth,
+    } = getCurrentDate()
+
+    return dateStructuredPages.filter(yearMaps => (
+        getDateValueFromMaps(yearMaps) <= currentYear
+    )).map(yearMaps => {
+        const year = getDateValueFromMaps(yearMaps)
+        return {
+            [year]: yearMaps[year].filter(monthMaps => (
+                year < currentYear ||
+                getDateValueFromMaps(monthMaps) <= currentMonth
+            )).map(monthMaps => {
+                const month = getDateValueFromMaps(monthMaps)
+                return {
+                    [month]: monthMaps[month].filter(({ date }) => (
+                        getIsPastOrPresentDate(date)
+                    )),
+                }
+            }),
+        }
+    })
+}

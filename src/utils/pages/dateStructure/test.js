@@ -1,5 +1,4 @@
-import { filterDateStructuredPages, flattenDateStructuredPages, parseDateStructuredPages } from '.'
-import { getDateObjectForDate } from '../../date'
+import { flattenDateStructuredPages, getDateValueFromMaps, parseDateStructuredPages } from '.'
 
 const PARSED_DATE_STRUCTURED_PAGES = [
     {
@@ -39,6 +38,14 @@ const PARSED_DATE_STRUCTURED_PAGES = [
         ],
     },
 ]
+
+describe('getDateValueFromMaps', () => {
+    it('returns date value from maps', () => {
+        expect(
+            getDateValueFromMaps({ 2021: {} }),
+        ).toBe(2021)
+    })
+})
 
 describe('parseDateStructuredPages', () => {
     it('returns date-structured pages', () => {
@@ -116,87 +123,6 @@ describe('flattenDateStructuredPages', () => {
                     },
                 },
                 path: 'birthdays/2022/1-1',
-            },
-        ])
-    })
-})
-
-describe('filterDateStructuredPages', () => {
-    beforeAll(() => {
-        global.adminCurrentDate = getDateObjectForDate(
-            { year: 1983, month: 5, day: 4 },
-        )
-    })
-
-    afterAll(() => {
-        delete global.adminCurrentDate
-    })
-
-    it('returns filtered date-structured pages', () => {
-        expect(
-            filterDateStructuredPages([
-                {
-                    1982: [
-                        {
-                            12: [
-                                { date: { day: 1, month: 12, year: 1982 } },
-                            ],
-                        },
-                    ],
-                },
-                {
-                    1983: [
-                        {
-                            4: [
-                                { date: { day: 12, month: 4, year: 1983 } },
-                            ],
-                        },
-                        {
-                            5: [
-                                { date: { day: 3, month: 5, year: 1983 } },
-                                { date: { day: 4, month: 5, year: 1983 } },
-                                { date: { day: 5, month: 5, year: 1983 } },
-                            ],
-                        },
-                        {
-                            6: [
-                                { date: { day: 3, month: 6, year: 1983 } },
-                            ],
-                        },
-                    ],
-                },
-                {
-                    1984: [
-                        {
-                            3: [
-                                { date: { day: 15, month: 3, year: 1984 } },
-                            ],
-                        },
-                    ],
-                },
-            ]),
-        ).toStrictEqual([
-            {
-                1982: [
-                    {
-                        12: [
-                            { date: { day: 1, month: 12, year: 1982 } },
-                        ],
-                    },
-                ],
-            }, {
-                1983: [
-                    {
-                        4: [
-                            { date: { day: 12, month: 4, year: 1983 } },
-                        ],
-                    }, {
-                        5: [
-                            { date: { day: 3, month: 5, year: 1983 } },
-                            { date: { day: 4, month: 5, year: 1983 } },
-                        ],
-                    },
-                ],
             },
         ])
     })
