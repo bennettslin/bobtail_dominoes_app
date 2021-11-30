@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import Board from '../../Board'
+import DemoDomino from '../Domino'
 import {
     mapBoard,
     mapBoardHexagonalWidth,
@@ -19,6 +20,7 @@ const DemoBoard = () => {
                 board,
                 boardHexagonalWidth,
                 order: 2,
+                DominoComponent: DemoDomino,
             }}
         />
     )

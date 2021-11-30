@@ -5,6 +5,7 @@
     display: none;
     width: $width__logs__xxs;
     height: 100%;
+    // Side padding needed for styled logs.
     padding: $margin__lg $margin__sm;
     overflow-y: scroll;
 

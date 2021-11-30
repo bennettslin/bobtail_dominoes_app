@@ -5,8 +5,8 @@ import { useSelector } from 'react-redux'
 import Flex from '../../../Flex'
 import StyledShadow from '../../../Styled/Shadow'
 import PeopleSvg from '../../../Svgs/People'
-import Domino from '../../Domino'
 import DominoCard from '../../DominoCard'
+import PlayerCardDomino from './Domino'
 import {
     getMapHand,
     getMapIsCurrentPlayer,
@@ -119,11 +119,8 @@ const PlayerCard = ({ playerIndex }) => {
             }}
         >
             {Array.from(hand).map(dominoIndex => (
-                <Domino
+                <PlayerCardDomino
                     {...{
-                        className: cx(
-                            'PlayerCard__domino',
-                        ),
                         key: dominoIndex,
                         dominoIndex,
                     }}

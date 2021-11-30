@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Flex from '../Flex'
-import Domino from '../Demo/Domino'
+import Domino from '../Domino'
 import { getBoardOrderedByZIndex } from '../../utils/music/render/board/zIndex'
 import { getBoardPositionStyling } from '../../utils/music/render/board/position'
 import { getBoardSizeStyling } from '../../utils/music/render/board/size'
@@ -12,6 +12,7 @@ const Board = ({
     className,
     board,
     boardHexagonalWidth,
+    DominoComponent = Domino,
     ...rest
 }) => (
     <Flex
@@ -49,7 +50,7 @@ const Board = ({
                 {getBoardOrderedByZIndex(board).map(move => {
                     const { dominoIndex, placement } = move
                     return (
-                        <Domino
+                        <DominoComponent
                             {...{
                                 key: dominoIndex,
                                 dominoIndex,
@@ -74,6 +75,7 @@ Board.propTypes = {
         ),
     })).isRequired,
     boardHexagonalWidth: PropTypes.number.isRequired,
+    DominoComponent: PropTypes.func,
 }
 
 export default Board
