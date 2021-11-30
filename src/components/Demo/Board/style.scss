@@ -2,9 +2,8 @@
 @import '../../../scss/constants/menu';
 @import '../../../scss/constants/page';
 @import '../../../scss/constants/responsive';
-@import '../../../scss/constants/transition';
 
-.Board {
+.DemoBoard {
     @media (orientation: portrait) {
         position: absolute;
         top: 0;
@@ -45,9 +44,7 @@
     }
 }
 
-.Board__square {
-    aspect-ratio: 1 / 1;
-
+.DemoBoard__square {
     /**
      * This is needed because aspect ratio only prevents exceeding
      * height, not width.
@@ -131,14 +128,4 @@
             );
         }
     }
-}
-
-.Board__movable {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    transition:
-        top $transitionDuration__slowest,
-        left $transitionDuration__slowest,
-        width $transitionDuration__slowest,
-        height $transitionDuration__slowest;
 }

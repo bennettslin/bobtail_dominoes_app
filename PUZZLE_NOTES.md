@@ -1,4 +1,6 @@
 # TODO: Puzzles
+* Isolate board component so it doesn't know state
+* Isolate domino component so it doesn't know state
 * Puzzle link displays mock board
 * Puzzle displays mock board
 

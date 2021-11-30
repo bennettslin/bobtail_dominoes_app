@@ -8,7 +8,7 @@ describe('getBoardHexagonalWidth', () => {
                 { placement: [[9, 10], [10, 10]] },
             ],
             undefined,
-            '31',
+            31,
         ],
         [
             [
@@ -16,7 +16,7 @@ describe('getBoardHexagonalWidth', () => {
                 { placement: [[9, 10], [10, 10]] },
             ],
             10,
-            '31',
+            31,
         ],
         [
             [
@@ -24,7 +24,7 @@ describe('getBoardHexagonalWidth', () => {
                 { placement: [[9, 10], [10, 10]] },
             ],
             40,
-            '40',
+            40,
         ],
     ])('%p, %p returns %p', (board, minWidth, result) => {
         expect(getBoardHexagonalWidth(board, minWidth)).toStrictEqual(result)

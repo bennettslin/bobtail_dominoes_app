@@ -14,7 +14,7 @@ export const getBoardHexagonalWidth = (
 ) => {
     const { minX, maxX, minY, maxY } = getCartesianRange(board)
 
-    return getFixed(Math.max(
+    return Math.max(
         minWidth,
 
         // Include both ends. So if max is 1 and min is -1, total width is 3.
@@ -27,7 +27,7 @@ export const getBoardHexagonalWidth = (
 
             // The bottom perspective of the hexagons.
             + HEIGHT_BOTTOM_PIXELS / HEXAGON_BASE_WIDTH,
-    ))
+    )
 }
 
 export const getBoardSizeStyling = ({

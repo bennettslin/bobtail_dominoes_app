@@ -1,0 +1,15 @@
+@import '../../scss/constants/transition';
+
+.Board__square {
+    aspect-ratio: 1 / 1;
+}
+
+.Board__movable {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    transition:
+        top $transitionDuration__slowest,
+        left $transitionDuration__slowest,
+        width $transitionDuration__slowest,
+        height $transitionDuration__slowest;
+}

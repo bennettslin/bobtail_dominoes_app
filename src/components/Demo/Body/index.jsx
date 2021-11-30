@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 import Flex from '../../Flex'
-import Board from '../Board'
+import DemoBoard from '../Board'
 import Controls from '../Controls'
 import GameLogs from '../GameLogs'
 import PlayerCards from '../PlayerCards'
@@ -18,7 +18,7 @@ const DemoBody = () => (
             gap: 'xs',
         }}
     >
-        <Board />
+        <DemoBoard />
         <Flex
             {...{
                 className: 'DemoBody__dominoes',
