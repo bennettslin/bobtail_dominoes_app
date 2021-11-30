@@ -14,7 +14,7 @@ const PuzzlePage = ({
     } = {},
 }) => {
     const
-        { puzzleType, ...rest } = pageMap,
+        { puzzleType, board, ...rest } = pageMap,
         { date } = rest
 
     return (
@@ -25,6 +25,7 @@ const PuzzlePage = ({
                         <Puzzle
                             {...{
                                 puzzleType,
+                                board,
                                 canShowAnswer: getIsPastOrPresentDate(
                                     addDaysToDate(date, 1),
                                 ),
@@ -51,7 +52,15 @@ PuzzlePage.propTypes = {
                 month: PropTypes.number.isRequired,
                 day: PropTypes.number.isRequired,
             }),
-            puzzleType: PropTypes.string,
+            puzzleType: PropTypes.string.isRequired,
+            board: PropTypes.arrayOf(PropTypes.shape({
+                dominoIndex: PropTypes.number.isRequired,
+                placement: PropTypes.arrayOf(
+                    PropTypes.arrayOf(
+                        PropTypes.number.isRequired,
+                    ).isRequired,
+                ),
+            })).isRequired,
         }),
     }),
 }

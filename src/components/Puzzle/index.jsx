@@ -49,6 +49,14 @@ const Puzzle = ({
 Puzzle.propTypes = {
     puzzleType: PropTypes.string.isRequired,
     canShowAnswer: PropTypes.bool.isRequired,
+    board: PropTypes.arrayOf(PropTypes.shape({
+        dominoIndex: PropTypes.number.isRequired,
+        placement: PropTypes.arrayOf(
+            PropTypes.arrayOf(
+                PropTypes.number.isRequired,
+            ).isRequired,
+        ),
+    })).isRequired,
 }
 
 export default Puzzle

@@ -25,6 +25,15 @@ PuzzleLink.propTypes = {
         month: PropTypes.number.isRequired,
         day: PropTypes.number.isRequired,
     }),
+    puzzleType: PropTypes.string.isRequired,
+    board: PropTypes.arrayOf(PropTypes.shape({
+        dominoIndex: PropTypes.number.isRequired,
+        placement: PropTypes.arrayOf(
+            PropTypes.arrayOf(
+                PropTypes.number.isRequired,
+            ).isRequired,
+        ),
+    })).isRequired,
 }
 
 export default PuzzleLink

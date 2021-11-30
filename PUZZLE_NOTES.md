@@ -1,5 +1,7 @@
 # TODO: Puzzles
-* Display links as boxes
+* Puzzle link displays mock board
+* Puzzle displays mock board
+
 * Have mock board and hand in configs, pass to puzzle
 
 # Puzzle types
