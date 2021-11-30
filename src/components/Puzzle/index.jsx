@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import Board from '../Board'
 import Button from '../Button'
 import Flex from '../Flex'
+import Paragraph from '../Paragraph'
+import { getPuzzleText } from './util'
 import './style'
 
 const Puzzle = ({
     puzzleType,
+    board,
     canShowAnswer,
 }) => {
     const [showAnswer, setShowAnswer] = useState(false)
@@ -26,7 +30,10 @@ const Puzzle = ({
                 gap: 'xs',
             }}
         >
-            {puzzleType}
+            <Paragraph {...{ fontSize: 'md' }}>
+                {getPuzzleText(puzzleType)}
+            </Paragraph>
+            <Board {...{ board, boardHexagonalWidth: 6 }} />
             {canShowAnswer ? (
                 <Button
                     {...{
