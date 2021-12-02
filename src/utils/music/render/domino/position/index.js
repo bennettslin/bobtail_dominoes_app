@@ -1,11 +1,12 @@
 import { getFixed } from '../../../../general'
 import { getIsPlacementUpsideDown } from '../../../game/placement/orientation'
 import { getCartesianX } from '../../cartesian'
-import { BOARD_HEXAGONAL_BASE_WIDTH, HEXAGON_HEIGHT_RATIO } from '../../../../../constants/music/domino'
+import { DEMO_BOARD_HEXAGON_WIDTH } from '../../../../../constants/music/demo'
+import { HEXAGON_HEIGHT_RATIO } from '../../../../../constants/music/domino'
 
 export const getDominoPositionStyling = ({
     placement,
-    boardHexagonalBaseWidth = BOARD_HEXAGONAL_BASE_WIDTH,
+    boardHexagonalBaseWidth = DEMO_BOARD_HEXAGON_WIDTH,
 }) => {
     const
         hexagonWidth = 1 / boardHexagonalBaseWidth,

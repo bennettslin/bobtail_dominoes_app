@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Anchor from '../../Anchor'
+import Board from '../../Board'
 import { formatHeadingForDate } from '../../../utils/date/format'
 import { getPagePathFromConfig } from '../../../utils/pages/config'
 import './style'
@@ -8,12 +9,14 @@ import './style'
 const PuzzleLink = ({
     topLevelPage,
     date,
+    board,
 }) => (
     <Anchor
         {...{
             pagePath: getPagePathFromConfig({ topLevelPage, date }),
         }}
     >
+        <Board {...{ board, boardHexagonalWidth: 6 }} />
         {formatHeadingForDate(date)}
     </Anchor>
 )

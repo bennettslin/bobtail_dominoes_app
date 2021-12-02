@@ -11,7 +11,8 @@ import { getCommaSeparatedList } from '../../../../utils/format'
 import { getPlayerIndex } from '../../../../utils/music/game/play/turns'
 import { getPointsForMoves } from '../../../../utils/music/game/points'
 import { getMapIsLatestTurn, getMapTurn, mapIsGameOver, mapPlayers } from '../../../../redux/game/selector'
-import { HAND_COUNT, PLAYERS_COUNT } from '../../../../constants/music/play'
+import { PLAYERS_COUNT } from '../../../../constants/music/demo'
+import { HAND_COUNT } from '../../../../constants/music/play'
 import './style'
 
 const TurnLog = ({

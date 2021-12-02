@@ -1,10 +1,10 @@
 import { getFixed } from '../../../../general'
 import { DIRECTION_X } from '../../../../../constants/music/game'
-import { BOARD_HEXAGONAL_BASE_WIDTH } from '../../../../../constants/music/domino'
+import { DEMO_BOARD_HEXAGON_WIDTH } from '../../../../../constants/music/demo'
 
 export const getDominoSizeStyling = ({
     orientation,
-    boardHexagonalBaseWidth = BOARD_HEXAGONAL_BASE_WIDTH,
+    boardHexagonalBaseWidth = DEMO_BOARD_HEXAGON_WIDTH,
 }) => {
     const
         hexagonWidth = 1 / boardHexagonalBaseWidth,

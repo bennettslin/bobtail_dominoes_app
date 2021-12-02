@@ -1,4 +1,9 @@
+@import '../../scss/constants/colours';
 @import '../../scss/constants/transition';
+
+.Board {
+    background-color: $colour__board;
+}
 
 .Board__square {
     aspect-ratio: 1 / 1;

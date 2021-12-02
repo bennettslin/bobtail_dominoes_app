@@ -2,7 +2,8 @@ import { getInitialGame, registerTurn } from '.'
 import { MOCK_BOARD } from '../../../../__mocks__/board'
 import { MOCK_POOL_LIST } from '../../../../__mocks__/pool'
 import { MOCK_TURNS } from '../../../../__mocks__/turns'
-import { HAND_COUNT, PLAYERS_COUNT } from '../../../../constants/music/play'
+import { PLAYERS_COUNT } from '../../../../constants/music/demo'
+import { HAND_COUNT } from '../../../../constants/music/play'
 
 const MOCK_PLAYED_TURN = {
     pool: new Set(MOCK_POOL_LIST),

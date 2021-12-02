@@ -7,7 +7,7 @@ import {
     PLAYER_CATHERINE,
     PLAYER_KHARI,
     PLAYER_SITA,
-} from '../../../constants/music/play'
+} from '../../../constants/music/demo'
 
 const PLAYERS_MAP = {
     [PLAYER_SITA]: playerSita,

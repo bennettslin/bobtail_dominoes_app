@@ -1,5 +1,5 @@
 import { getBoolFromStorage } from '../../utils/storage'
-import { BOARD_HEXAGONAL_BASE_WIDTH } from '../../constants/music/domino'
+import { DEMO_BOARD_HEXAGON_WIDTH } from '../../constants/music/demo'
 export const INITIALISE_GAME = 'initialiseGame'
 export const REGISTER_GAME_TURN = 'registerGameTurn'
 
@@ -17,5 +17,5 @@ export const GAME_DEFAULT = {
     isGameOver: false,
     currentPlayerIndex: -1,
     isDemoAutoplayOn: INITIAL_IS_DEMO_AUTOPLAY_ON,
-    boardHexagonalWidth: BOARD_HEXAGONAL_BASE_WIDTH,
+    boardHexagonalWidth: DEMO_BOARD_HEXAGON_WIDTH,
 }

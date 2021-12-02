@@ -1,7 +1,7 @@
 import React from 'react'
 import PlayerCard from './PlayerCard'
 import { getArrayOfIndices } from '../../../utils/general'
-import { PLAYERS_COUNT } from '../../../constants/music/play'
+import { PLAYERS_COUNT } from '../../../constants/music/demo'
 import './style'
 
 const PlayerCards = () => (
