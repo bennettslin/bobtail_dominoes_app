@@ -1,6 +1,4 @@
 # TODO: Puzzles
-* Puzzle links shouldn't expand page width
-* Puzzle board should be centered
 * Utils by default assume default margin based on placement
 * Demo is the one that passes a custom value
 

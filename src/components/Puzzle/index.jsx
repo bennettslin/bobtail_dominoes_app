@@ -34,16 +34,24 @@ const Puzzle = ({
             <Paragraph {...{ fontSize: 'md' }}>
                 {getPuzzleText(puzzleType)}
             </Paragraph>
-            <Board
+            <Flex
                 {...{
                     className: cx(
-                        'PuzzleBoard',
+                        'PuzzleBoard__wrapper',
                     ),
-                    board,
-                    boardHexagonalWidth: PUZZLE_BOARD_HEXAGON_WIDTH,
-                    boardHexagonalBaseWidth: PUZZLE_BOARD_HEXAGON_WIDTH,
                 }}
-            />
+            >
+                <Board
+                    {...{
+                        className: cx(
+                            'PuzzleBoard',
+                        ),
+                        board,
+                        boardHexagonalWidth: PUZZLE_BOARD_HEXAGON_WIDTH,
+                        boardHexagonalBaseWidth: PUZZLE_BOARD_HEXAGON_WIDTH,
+                    }}
+                />
+            </Flex>
             {canShowAnswer ? (
                 <Button
                     {...{

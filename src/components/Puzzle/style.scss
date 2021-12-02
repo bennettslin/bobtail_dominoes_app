@@ -1,7 +1,12 @@
 @import '../../scss/constants/borders';
 @import '../../scss/constants/responsive';
 
+.PuzzleBoard__wrapper {
+    width: 100%;
+}
+
 .PuzzleBoard {
+    width: 100%;
     max-width: $width__sm;
     border-radius: $borderRadius__lg;
 }

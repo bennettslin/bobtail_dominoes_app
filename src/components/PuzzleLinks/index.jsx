@@ -50,7 +50,13 @@ const PuzzleLinks = ({ didMount }) => didMount && (
                                 <Heading {...{ level: 5 }}>
                                     {formatMonthForDate(month)}
                                 </Heading>
-                                <Flex {...{ gap: 'xs' }}>
+                                <Flex
+                                    {...{
+                                        justifyContent: 'normal',
+                                        flexWrap: 'wrap',
+                                        gap: 'xs',
+                                    }}
+                                >
                                     {[...monthMaps[month]].reverse().map(
                                         (pageMap, index) => (
                                             <PuzzleLink
