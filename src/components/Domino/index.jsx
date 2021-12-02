@@ -23,6 +23,7 @@ const Domino = ({
     dominoIndex,
     placement,
     isHighlight,
+    boardHexagonalBaseWidth,
 }) => {
     const
         pitches = getDominoPitches(dominoIndex),
@@ -40,8 +41,14 @@ const Domino = ({
                 ...placement && {
                     style: {
                         position: 'absolute',
-                        ...getDominoPositionStyling({ placement }),
-                        ...getDominoSizeStyling({ orientation }),
+                        ...getDominoPositionStyling({
+                            placement,
+                            boardHexagonalBaseWidth,
+                        }),
+                        ...getDominoSizeStyling({
+                            orientation,
+                            boardHexagonalBaseWidth,
+                        }),
                         ...getDominoTranslateStyling({ orientation }),
                     },
                 },
@@ -102,6 +109,7 @@ Domino.propTypes = {
         ).isRequired,
     ),
     isHighlight: PropTypes.bool,
+    boardHexagonalBaseWidth: PropTypes.number,
 }
 
 export default Domino

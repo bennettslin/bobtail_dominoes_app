@@ -1,0 +1,7 @@
+@import '../../scss/constants/borders';
+@import '../../scss/constants/responsive';
+
+.PuzzleBoard {
+    max-width: $width__sm;
+    border-radius: $borderRadius__lg;
+}

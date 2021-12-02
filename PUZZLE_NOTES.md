@@ -1,6 +1,8 @@
 # TODO: Puzzles
-* Puzzle link renders square board
-* Puzzle renders square board
+* Puzzle links shouldn't expand page width
+* Puzzle board should be centered
+* Utils by default assume default margin based on placement
+* Demo is the one that passes a custom value
 
 # Puzzle types
 * Play a regular hand

@@ -6,6 +6,7 @@ import Button from '../Button'
 import Flex from '../Flex'
 import Paragraph from '../Paragraph'
 import { getPuzzleText } from './util'
+import { PUZZLE_BOARD_HEXAGON_WIDTH } from '../../constants/music/puzzle'
 import './style'
 
 const Puzzle = ({
@@ -33,7 +34,16 @@ const Puzzle = ({
             <Paragraph {...{ fontSize: 'md' }}>
                 {getPuzzleText(puzzleType)}
             </Paragraph>
-            <Board {...{ board, boardHexagonalWidth: 6 }} />
+            <Board
+                {...{
+                    className: cx(
+                        'PuzzleBoard',
+                    ),
+                    board,
+                    boardHexagonalWidth: PUZZLE_BOARD_HEXAGON_WIDTH,
+                    boardHexagonalBaseWidth: PUZZLE_BOARD_HEXAGON_WIDTH,
+                }}
+            />
             {canShowAnswer ? (
                 <Button
                     {...{

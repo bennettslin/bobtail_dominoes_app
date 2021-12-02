@@ -12,6 +12,7 @@ const Board = ({
     className,
     board,
     boardHexagonalWidth,
+    boardHexagonalBaseWidth,
     DominoComponent = Domino,
     ...rest
 }) => (
@@ -43,7 +44,10 @@ const Board = ({
                             board,
                             boardHexagonalWidth,
                         }),
-                        ...getBoardSizeStyling({ boardHexagonalWidth }),
+                        ...getBoardSizeStyling({
+                            boardHexagonalWidth,
+                            boardHexagonalBaseWidth,
+                        }),
                     },
                 }}
             >
@@ -55,6 +59,7 @@ const Board = ({
                                 key: dominoIndex,
                                 dominoIndex,
                                 placement,
+                                boardHexagonalBaseWidth,
                             }}
                         />
                     )
@@ -75,6 +80,7 @@ Board.propTypes = {
         ),
     })).isRequired,
     boardHexagonalWidth: PropTypes.number.isRequired,
+    boardHexagonalBaseWidth: PropTypes.number,
     DominoComponent: PropTypes.func,
 }
 

@@ -1,9 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Anchor from '../../Anchor'
+import cx from 'classnames'
+import Button from '../../Button'
 import Board from '../../Board'
-import { formatHeadingForDate } from '../../../utils/date/format'
+import Flex from '../../Flex'
+import StyledShadow from '../../Styled/Shadow'
 import { getPagePathFromConfig } from '../../../utils/pages/config'
+import { PUZZLE_BOARD_HEXAGON_WIDTH } from '../../../constants/music/puzzle'
 import './style'
 
 const PuzzleLink = ({
@@ -11,14 +14,45 @@ const PuzzleLink = ({
     date,
     board,
 }) => (
-    <Anchor
+    <Button
+        dropShadow
         {...{
             pagePath: getPagePathFromConfig({ topLevelPage, date }),
         }}
     >
-        <Board {...{ board, boardHexagonalWidth: 6 }} />
-        {formatHeadingForDate(date)}
-    </Anchor>
+        <Flex
+            {...{
+                className: cx(
+                    'PuzzleLink__wrapper',
+                ),
+                justifyContent: 'normal',
+                alignItems: 'normal',
+            }}
+        >
+            <Board
+                {...{
+                    className: cx(
+                        'PuzzleLinkBoard',
+                    ),
+                    board,
+                    boardHexagonalWidth: PUZZLE_BOARD_HEXAGON_WIDTH,
+                    boardHexagonalBaseWidth: PUZZLE_BOARD_HEXAGON_WIDTH,
+                }}
+            />
+            <Flex
+                {...{
+                    className: cx(
+                        'PuzzleLink__text',
+                        'font__heading',
+                    ),
+                }}
+            >
+                <StyledShadow>
+                    {date.day}
+                </StyledShadow>
+            </Flex>
+        </Flex>
+    </Button>
 )
 
 PuzzleLink.propTypes = {
