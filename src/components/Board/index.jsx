@@ -4,8 +4,8 @@ import cx from 'classnames'
 import Flex from '../Flex'
 import Domino from '../Domino'
 import { getBoardOrderedByZIndex } from '../../utils/music/render/board/zIndex'
-import { getBoardPositionStyling } from '../../utils/music/render/board/position'
-import { getBoardSizeStyling } from '../../utils/music/render/board/size'
+import { getBoardPositionStyling } from '../../utils/music/styling/board/position'
+import { getBoardSizeStyling } from '../../utils/music/styling/board/size'
 import './style'
 
 const Board = ({

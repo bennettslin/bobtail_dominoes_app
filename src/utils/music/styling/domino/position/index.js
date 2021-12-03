@@ -1,6 +1,6 @@
 import { getFixed } from '../../../../general'
 import { getIsPlacementUpsideDown } from '../../../game/placement/orientation'
-import { getCartesianX } from '../../cartesian'
+import { getCartesianX } from '../../../render/cartesian'
 import { DEMO_BOARD_HEXAGON_WIDTH } from '../../../../../constants/music/demo'
 import { HEXAGON_HEIGHT_RATIO } from '../../../../../constants/music/domino'
 

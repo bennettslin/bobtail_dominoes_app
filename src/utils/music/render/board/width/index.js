@@ -1,4 +1,3 @@
-import { getFixed } from '../../../../general'
 import { getCartesianRange } from '../../cartesian'
 import { DEMO_BOARD_HEXAGON_WIDTH } from '../../../../../constants/music/demo'
 import {
@@ -8,7 +7,7 @@ import {
     HORIZONTAL_HEXAGON_WIDTH_UNIT_RATIO,
 } from '../../../../../constants/music/domino'
 
-export const getBoardHexagonalWidth = (
+export const getHexagonalWidthForBoard = (
     board,
     minWidth = DEMO_BOARD_HEXAGON_WIDTH,
 ) => {
@@ -28,15 +27,4 @@ export const getBoardHexagonalWidth = (
             // The bottom perspective of the hexagons.
             + HEIGHT_BOTTOM_PIXELS / HEXAGON_BASE_WIDTH,
     )
-}
-
-export const getBoardSizeStyling = ({
-    boardHexagonalWidth,
-    boardHexagonalBaseWidth = DEMO_BOARD_HEXAGON_WIDTH,
-}) => {
-    const widthRatio = boardHexagonalBaseWidth / boardHexagonalWidth
-    return {
-        width: `${getFixed(widthRatio * 100)}%`,
-        height: `${getFixed(widthRatio * 100)}%`,
-    }
 }

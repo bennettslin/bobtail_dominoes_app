@@ -1,5 +1,5 @@
 import { getFixed } from '../../../../general'
-import { getCartesianCentre } from '../../cartesian'
+import { getCartesianCentre } from '../../../render/cartesian'
 import { HEXAGON_HEIGHT_RATIO } from '../../../../../constants/music/domino'
 
 export const getBoardPositionStyling = ({
