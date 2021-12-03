@@ -1,5 +1,4 @@
-# TODO: Puzzles
-* Utils by default assume default margin based on placement
+
 
 # Puzzle types
 * Play a regular hand

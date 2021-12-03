@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Button from '../../Button'
-import Board from '../../Board'
 import Flex from '../../Flex'
 import StyledShadow from '../../Styled/Shadow'
+import PuzzleBoard from '../../Puzzle/Board'
 import { getPagePathFromConfig } from '../../../utils/pages/config'
 import './style'
 
@@ -28,7 +28,7 @@ const PuzzleLink = ({
                 alignItems: 'normal',
             }}
         >
-            <Board
+            <PuzzleBoard
                 {...{
                     className: cx(
                         'PuzzleLinkBoard',

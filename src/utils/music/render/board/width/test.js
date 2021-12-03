@@ -1,33 +1,38 @@
-import { getHexagonalWidthForBoard } from '.'
-import { DEMO_BOARD_HEXAGON_WIDTH } from '../../../../../constants/music/demo'
+import { getHexagonalMinWidthForBoard } from '.'
 
-describe('getHexagonalWidthForBoard', () => {
+describe('getHexagonalMinWidthForBoard', () => {
     test.each([
         [
-            [
-                { placement: [[-10, -10], [-9, 10]] },
-                { placement: [[9, 10], [10, 10]] },
-            ],
-            DEMO_BOARD_HEXAGON_WIDTH,
+            {
+                board: [
+                    { placement: [[-10, -10], [-9, 10]] },
+                    { placement: [[9, 10], [10, 10]] },
+                ],
+            },
             31,
         ],
         [
-            [
-                { placement: [[-10, -10], [-9, 10]] },
-                { placement: [[9, 10], [10, 10]] },
-            ],
-            10,
+            {
+                board: [
+                    { placement: [[-10, -10], [-9, 10]] },
+                    { placement: [[9, 10], [10, 10]] },
+                ],
+                minWidth: 10,
+            },
             31,
         ],
         [
-            [
-                { placement: [[-10, -10], [-9, 10]] },
-                { placement: [[9, 10], [10, 10]] },
-            ],
-            40,
-            40,
+            {
+                board: [
+                    { placement: [[-10, -10], [-9, 10]] },
+                    { placement: [[9, 10], [10, 10]] },
+                ],
+                padding: 5,
+                minWidth: 40,
+            },
+            45,
         ],
-    ])('%p, %p returns %p', (board, minWidth, result) => {
-        expect(getHexagonalWidthForBoard(board, minWidth)).toStrictEqual(result)
+    ])('%p returns %p', (props, result) => {
+        expect(getHexagonalMinWidthForBoard(props)).toStrictEqual(result)
     })
 })

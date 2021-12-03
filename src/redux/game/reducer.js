@@ -1,6 +1,6 @@
 import { getShuffledArray } from '../../utils/general/random'
 import { getInitialGame, registerTurn } from '../../utils/music/game/play'
-import { getHexagonalWidthForBoard } from '../../utils/music/render/board/width'
+import { getHexagonalMinWidthForBoard } from '../../utils/music/render/board/width'
 import {
     DEMO_BOARD_HEXAGON_WIDTH,
     PLAYERS,
@@ -91,10 +91,10 @@ export const gameReducer = (
                 currentPlayerIndex: isGameOver ?
                     -1 :
                     (currentPlayerIndex + 1) % PLAYERS_COUNT,
-                boardHexagonalWidth: getHexagonalWidthForBoard(
+                boardHexagonalWidth: getHexagonalMinWidthForBoard({
                     board,
-                    DEMO_BOARD_HEXAGON_WIDTH,
-                ),
+                    minWidth: DEMO_BOARD_HEXAGON_WIDTH,
+                }),
             }
         }
         case GAME_STORE:

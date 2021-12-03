@@ -6,10 +6,11 @@ import {
     HORIZONTAL_HEXAGON_WIDTH_UNIT_RATIO,
 } from '../../../../../constants/music/domino'
 
-export const getHexagonalWidthForBoard = (
+export const getHexagonalMinWidthForBoard = ({
     board,
-    minWidth,
-) => {
+    padding = 0,
+    minWidth = 0,
+}) => {
     const { minX, maxX, minY, maxY } = getCartesianRange(board)
 
     return Math.max(
@@ -25,5 +26,5 @@ export const getHexagonalWidthForBoard = (
 
             // The bottom perspective of the hexagons.
             + HEIGHT_BOTTOM_PIXELS / HEXAGON_BASE_WIDTH,
-    )
+    ) + padding
 }

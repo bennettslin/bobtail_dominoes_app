@@ -8,14 +8,13 @@ import {
     getBoardPositionStyling,
     getBoardSizeStyling,
 } from '../../utils/music/styling/board'
-import { PUZZLE_BOARD_HEXAGON_WIDTH } from '../../constants/music/puzzle'
 import './style'
 
 const Board = ({
     className,
     board,
-    boardHexagonalWidth = PUZZLE_BOARD_HEXAGON_WIDTH,
-    boardHexagonalBaseWidth = PUZZLE_BOARD_HEXAGON_WIDTH,
+    boardHexagonalWidth,
+    boardHexagonalBaseWidth,
     DominoComponent = Domino,
     ...rest
 }) => (

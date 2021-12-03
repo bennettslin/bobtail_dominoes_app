@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import Board from '../Board'
 import Button from '../Button'
 import Flex from '../Flex'
 import Paragraph from '../Paragraph'
+import PuzzleBoard from './Board'
 import { getPuzzleText } from './util'
 import './style'
 
@@ -40,7 +40,7 @@ const Puzzle = ({
                     ),
                 }}
             >
-                <Board
+                <PuzzleBoard
                     {...{
                         className: cx(
                             'PuzzleBoard',
