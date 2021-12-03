@@ -91,7 +91,10 @@ export const gameReducer = (
                 currentPlayerIndex: isGameOver ?
                     -1 :
                     (currentPlayerIndex + 1) % PLAYERS_COUNT,
-                boardHexagonalWidth: getHexagonalWidthForBoard(board),
+                boardHexagonalWidth: getHexagonalWidthForBoard(
+                    board,
+                    DEMO_BOARD_HEXAGON_WIDTH,
+                ),
             }
         }
         case GAME_STORE:

@@ -1,4 +1,5 @@
 import { getHexagonalWidthForBoard } from '.'
+import { DEMO_BOARD_HEXAGON_WIDTH } from '../../../../../constants/music/demo'
 
 describe('getHexagonalWidthForBoard', () => {
     test.each([
@@ -7,7 +8,7 @@ describe('getHexagonalWidthForBoard', () => {
                 { placement: [[-10, -10], [-9, 10]] },
                 { placement: [[9, 10], [10, 10]] },
             ],
-            undefined,
+            DEMO_BOARD_HEXAGON_WIDTH,
             31,
         ],
         [

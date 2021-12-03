@@ -6,6 +6,7 @@ import {
     mapBoard,
     mapBoardHexagonalWidth,
 } from '../../../redux/game/selector'
+import { DEMO_BOARD_HEXAGON_WIDTH } from '../../../constants/music/demo'
 import './style'
 
 const DemoBoard = () => {
@@ -19,8 +20,9 @@ const DemoBoard = () => {
                 className: 'DemoBoard',
                 board,
                 boardHexagonalWidth,
-                order: 2,
+                boardHexagonalBaseWidth: DEMO_BOARD_HEXAGON_WIDTH,
                 DominoComponent: DemoDomino,
+                order: 2,
             }}
         />
     )

@@ -1,5 +1,4 @@
 import { getCartesianRange } from '../../cartesian'
-import { DEMO_BOARD_HEXAGON_WIDTH } from '../../../../../constants/music/demo'
 import {
     HEIGHT_BOTTOM_PIXELS,
     HEXAGON_BASE_WIDTH,
@@ -9,7 +8,7 @@ import {
 
 export const getHexagonalWidthForBoard = (
     board,
-    minWidth = DEMO_BOARD_HEXAGON_WIDTH,
+    minWidth,
 ) => {
     const { minX, maxX, minY, maxY } = getCartesianRange(board)
 

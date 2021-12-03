@@ -1,6 +1,5 @@
 # TODO: Puzzles
 * Utils by default assume default margin based on placement
-* Demo is the one that passes a custom value
 
 # Puzzle types
 * Play a regular hand

@@ -1,11 +1,11 @@
-import { getIntervalPositionAndStyling } from '.'
+import { getIntervalPositionAndSizeStyling } from '.'
 import {
     DIRECTION_X,
     DIRECTION_XY,
     DIRECTION_Y,
 } from '../../../../constants/music/game'
 
-describe('getIntervalPositionAndStyling', () => {
+describe('getIntervalPositionAndSizeStyling', () => {
     test.each([
         [
             DIRECTION_X,
@@ -20,6 +20,6 @@ describe('getIntervalPositionAndStyling', () => {
             { left: '50%', top: '48.21%', width: '33.33%' },
         ],
     ])('%p returns %p', (board, result) => {
-        expect(getIntervalPositionAndStyling(board)).toStrictEqual(result)
+        expect(getIntervalPositionAndSizeStyling(board)).toStrictEqual(result)
     })
 })

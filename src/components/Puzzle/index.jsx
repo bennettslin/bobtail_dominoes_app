@@ -6,7 +6,6 @@ import Button from '../Button'
 import Flex from '../Flex'
 import Paragraph from '../Paragraph'
 import { getPuzzleText } from './util'
-import { PUZZLE_BOARD_HEXAGON_WIDTH } from '../../constants/music/puzzle'
 import './style'
 
 const Puzzle = ({
@@ -47,8 +46,6 @@ const Puzzle = ({
                             'PuzzleBoard',
                         ),
                         board,
-                        boardHexagonalWidth: PUZZLE_BOARD_HEXAGON_WIDTH,
-                        boardHexagonalBaseWidth: PUZZLE_BOARD_HEXAGON_WIDTH,
                     }}
                 />
             </Flex>

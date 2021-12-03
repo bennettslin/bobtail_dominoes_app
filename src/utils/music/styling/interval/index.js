@@ -7,7 +7,7 @@ import {
 } from '../../../../constants/music/domino'
 import { DIRECTION_X } from '../../../../constants/music/game'
 
-export const getIntervalPositionAndStyling = orientation => ({
+export const getIntervalPositionAndSizeStyling = orientation => ({
     top: `${getFixed((
         orientation === DIRECTION_X ?
             HORIZONTAL_HEXAGON_HEIGHT_UNIT_RATIO :

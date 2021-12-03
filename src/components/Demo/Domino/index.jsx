@@ -6,7 +6,7 @@ import { getMapIsDominoInLatestTurn } from '../../../redux/game/selector'
 
 const DemoDomino = ({
     dominoIndex,
-    placement,
+    ...rest
 }) => {
     const isInLatestTurn = useSelector(getMapIsDominoInLatestTurn(dominoIndex))
 
@@ -14,8 +14,8 @@ const DemoDomino = ({
         <Domino
             {...{
                 dominoIndex,
-                placement,
                 isHighlight: isInLatestTurn,
+                ...rest,
             }}
         />
     )
@@ -23,11 +23,6 @@ const DemoDomino = ({
 
 DemoDomino.propTypes = {
     dominoIndex: PropTypes.number.isRequired,
-    placement: PropTypes.arrayOf(
-        PropTypes.arrayOf(
-            PropTypes.number.isRequired,
-        ).isRequired,
-    ),
 }
 
 export default DemoDomino

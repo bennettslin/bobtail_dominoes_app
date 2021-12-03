@@ -6,7 +6,6 @@ import Board from '../../Board'
 import Flex from '../../Flex'
 import StyledShadow from '../../Styled/Shadow'
 import { getPagePathFromConfig } from '../../../utils/pages/config'
-import { PUZZLE_BOARD_HEXAGON_WIDTH } from '../../../constants/music/puzzle'
 import './style'
 
 const PuzzleLink = ({
@@ -35,8 +34,6 @@ const PuzzleLink = ({
                         'PuzzleLinkBoard',
                     ),
                     board,
-                    boardHexagonalWidth: PUZZLE_BOARD_HEXAGON_WIDTH,
-                    boardHexagonalBaseWidth: PUZZLE_BOARD_HEXAGON_WIDTH,
                 }}
             />
             <Flex

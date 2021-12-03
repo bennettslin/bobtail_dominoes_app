@@ -4,15 +4,18 @@ import cx from 'classnames'
 import Flex from '../Flex'
 import Domino from '../Domino'
 import { getBoardOrderedByZIndex } from '../../utils/music/render/board/zIndex'
-import { getBoardPositionStyling } from '../../utils/music/styling/board/position'
-import { getBoardSizeStyling } from '../../utils/music/styling/board/size'
+import {
+    getBoardPositionStyling,
+    getBoardSizeStyling,
+} from '../../utils/music/styling/board'
+import { PUZZLE_BOARD_HEXAGON_WIDTH } from '../../constants/music/puzzle'
 import './style'
 
 const Board = ({
     className,
     board,
-    boardHexagonalWidth,
-    boardHexagonalBaseWidth,
+    boardHexagonalWidth = PUZZLE_BOARD_HEXAGON_WIDTH,
+    boardHexagonalBaseWidth = PUZZLE_BOARD_HEXAGON_WIDTH,
     DominoComponent = Domino,
     ...rest
 }) => (
@@ -79,7 +82,7 @@ Board.propTypes = {
             ).isRequired,
         ),
     })).isRequired,
-    boardHexagonalWidth: PropTypes.number.isRequired,
+    boardHexagonalWidth: PropTypes.number,
     boardHexagonalBaseWidth: PropTypes.number,
     DominoComponent: PropTypes.func,
 }

@@ -8,11 +8,13 @@ import { getIsPlacementUpsideDown, getOrientation } from '../../utils/music/game
 import { getFacePositionAndSizeStyling } from '../../utils/music/styling/face'
 import { getDominoSrc } from '../../utils/src/dominoes'
 import { getFaceSrc } from '../../utils/src/faces'
-import { getDominoPositionStyling } from '../../utils/music/styling/domino/position'
-import { getDominoSizeStyling } from '../../utils/music/styling/domino/size'
-import { getDominoTranslateStyling } from '../../utils/music/styling/domino/translate'
+import {
+    getDominoPositionStyling,
+    getDominoSizeStyling,
+    getDominoTranslateStyling,
+} from '../../utils/music/styling/domino'
 import { getIntervalSrc } from '../../utils/src/intervals'
-import { getIntervalPositionAndStyling } from '../../utils/music/styling/interval'
+import { getIntervalPositionAndSizeStyling } from '../../utils/music/styling/interval'
 import styleConfigDominoes from '../../styles/dominoes'
 import styleConfigFacesPitch from '../../styles/faces/pitch'
 import styleConfigPitchOn from '../../styles/arcade/pitchOn'
@@ -73,7 +75,7 @@ const Domino = ({
                         isPlacementUpsideDown,
                     }),
                     styleConfig: styleConfigDominoes,
-                    style: getIntervalPositionAndStyling(orientation),
+                    style: getIntervalPositionAndSizeStyling(orientation),
                 }}
             />
             {(
