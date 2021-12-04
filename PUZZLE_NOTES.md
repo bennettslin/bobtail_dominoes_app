@@ -1,4 +1,14 @@
+# Regular puzzle utils
+* Util takes in parameters
+    * Number of starting dominoes
+    * Strength of maximum points for starting dominoes
+* Util then iterates through remaining dominoes in random order
+    * Until it finds a domino that builds at least two chords
+    * It repeats this until it has three dominoes
+* It then runs those three dominoes to ensure it has the best possible combination
 
+# Missing puzzle utils
+* Util iterates through 
 
 # Puzzle types
 * Play a regular hand
