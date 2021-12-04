@@ -7,6 +7,7 @@ const Paragraph = ({
     className,
     fontSize,
     children,
+    ...rest
 }) => (
     <p
         {...{
@@ -15,6 +16,7 @@ const Paragraph = ({
                 fontSize === 'md' && 'fontSize__md',
                 className,
             ),
+            ...rest,
         }}
     >
         {children}

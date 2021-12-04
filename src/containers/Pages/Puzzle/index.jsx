@@ -17,27 +17,25 @@ const PuzzlePage = ({
         { puzzleType, board, ...rest } = pageMap,
         { date } = rest
 
-    return (
-        !didMount || getIsPastOrPresentDate(date) ? (
-            <Page
-                {...didMount && {
-                    body: (
-                        <Puzzle
-                            {...{
-                                puzzleType,
-                                board,
-                                canShowAnswer: getIsPastOrPresentDate(
-                                    addDaysToDate(date, 1),
-                                ),
-                            }}
-                        />
-                    ),
-                    ...rest,
-                }}
-            />
-        ) : (
-            <NotFoundPage />
-        )
+    return !didMount || getIsPastOrPresentDate(date) ? (
+        <Page
+            {...didMount && {
+                body: (
+                    <Puzzle
+                        {...{
+                            puzzleType,
+                            board,
+                            canShowAnswer: getIsPastOrPresentDate(
+                                addDaysToDate(date, 1),
+                            ),
+                        }}
+                    />
+                ),
+                ...rest,
+            }}
+        />
+    ) : (
+        <NotFoundPage />
     )
 }
 
