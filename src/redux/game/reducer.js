@@ -1,5 +1,5 @@
 import { getShuffledArray } from '../../utils/general/random'
-import { getInitialGame, registerTurn } from '../../utils/music/game/play'
+import { getInitialGame, registerTurn } from '../../utils/music/play'
 import { getHexagonalMinWidthForBoard } from '../../utils/music/render/board/width'
 import {
     DEMO_BOARD_HEXAGON_WIDTH,

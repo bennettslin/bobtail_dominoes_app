@@ -7,7 +7,7 @@ import DominoCard from '../DominoCard'
 import PoolInterval from './PoolInterval'
 import PoolPitch from './PoolPitch'
 import { mapPool } from '../../../redux/game/selector'
-import { getIntervalCountsInPool, getPitchCountsInPool } from '../../../utils/music/game/statistics'
+import { getIntervalCountsInPool, getPitchCountsInPool } from '../../../utils/music/mechanics/statistics'
 import { OCTAVE_RANGE } from '../../../constants/music/audio'
 import './style'
 

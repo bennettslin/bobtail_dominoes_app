@@ -8,7 +8,14 @@
 * It then runs those three dominoes to ensure it has the best possible combination
 
 # Missing puzzle utils
-* Util iterates through 
+
+# Maximum puzzle utils
+* Util takes in parameters
+    * Number of starting dominoes
+    * Strength of maximum points for starting dominoes
+
+* Util tries each domino to find the one with the maximum points
+* Parent util repeats this process until it finds
 
 # Puzzle types
 * Play a regular hand

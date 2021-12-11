@@ -1,4 +1,4 @@
-import { getRandomEntry } from '../../../../general/random'
+import { getRandomEntry } from '../../../general/random'
 import { getValidPointedMoves } from '../../ai'
 import { getRandomDominoIndex } from '../pool'
 

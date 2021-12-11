@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect'
-import { getIsWinner } from '../../utils/music/game/points'
+import { getIsWinner } from '../../utils/music/mechanics/points'
 import {
     getIsDominoInLatestTurn,
     getLatestTurnIndex,

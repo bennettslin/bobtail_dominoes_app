@@ -1,5 +1,5 @@
+import { getChordsForPlacement } from '../mechanics/placement/chords'
 import { addMoveToBoard } from '../play/board'
-import { getChordsForPlacement } from '../placement/chords'
 import { getAdjacentPlacements } from './adjacent'
 
 const sortByHighestPoints = (

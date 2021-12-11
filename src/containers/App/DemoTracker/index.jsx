@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { mapIsGameOver, mapScores, mapTurns } from '../../../redux/game/selector'
-import { getIsWinner } from '../../../utils/music/game/points'
+import { getIsWinner } from '../../../utils/music/mechanics/points'
 
 const DemoTracker = () => {
     const

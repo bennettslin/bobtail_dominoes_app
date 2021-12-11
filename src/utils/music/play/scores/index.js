@@ -1,5 +1,5 @@
-import { getArrayOfIndices } from '../../../../general'
-import { getPointsForMoves } from '../../points'
+import { getArrayOfIndices } from '../../../general'
+import { getPointsForMoves } from '../../mechanics/points'
 
 export const getInitialScores = playersCount => (
     getArrayOfIndices(playersCount).map(() => 0)

@@ -1,6 +1,6 @@
 import { getCommaSeparatedList } from '../../../format'
 import { join } from '../../../general'
-import { getDominoPitches, getIsReverseInterval } from '../../game/dominoes'
+import { getDominoPitches, getIsReverseInterval } from '../../mechanics/dominoes'
 import { getPrimeFormKey, getRoots } from '../primeForm'
 
 const

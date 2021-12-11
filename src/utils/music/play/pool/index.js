@@ -1,6 +1,6 @@
-import { getArrayOfIndices } from '../../../../general'
-import { getRandomInteger } from '../../../../general/random'
-import { DOMINOES_COUNT, DOMINOES_PITCHES } from '../../../../../constants/music/game'
+import { getArrayOfIndices } from '../../../general'
+import { getRandomInteger } from '../../../general/random'
+import { DOMINOES_COUNT, DOMINOES_PITCHES } from '../../../../constants/music/game'
 
 export const getInitialStandardPool = () => (
     new Set(

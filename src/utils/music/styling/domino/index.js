@@ -1,5 +1,5 @@
 import { getFixed } from '../../../general'
-import { getIsPlacementUpsideDown } from '../../game/placement/orientation'
+import { getIsPlacementUpsideDown } from '../../mechanics/placement/orientation'
 import { getCartesianX } from '../../render/cartesian'
 import {
     HEXAGON_HEIGHT_RATIO,

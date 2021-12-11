@@ -1,4 +1,4 @@
-import { getArrayOfIndices } from '../../../../general'
+import { getArrayOfIndices } from '../../../general'
 import { exchangeDominoIndices, getRandomDominoIndex } from '../pool'
 
 export const getInitialHands = ({

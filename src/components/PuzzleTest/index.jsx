@@ -3,9 +3,10 @@ import cx from 'classnames'
 import Board from '../Board'
 import Button from '../Button'
 import Flex from '../Flex'
-import { PUZZLE_BOARD_HEXAGON_WIDTH } from '../../constants/music/puzzle'
 import Paragraph from '../Paragraph'
 import { hsl } from '../../utils/svgs'
+
+const PUZZLE_BOARD_HEXAGON_WIDTH = 6
 
 const PuzzleTest = () => {
     const
