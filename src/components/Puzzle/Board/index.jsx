@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cx from 'classnames'
 import Board from '../../Board'
 import { getHexagonalMinWidthForBoard } from '../../../utils/music/render/board/width'
+import './style'
 
 const PuzzleBoard = ({
     className,
@@ -15,7 +17,10 @@ const PuzzleBoard = ({
     return (
         <Board
             {...{
-                className,
+                className: cx(
+                    'PuzzleBoard',
+                    className,
+                ),
                 board,
                 boardHexagonalWidth: boardHexagonalMinWidth,
                 boardHexagonalBaseWidth: boardHexagonalMinWidth,

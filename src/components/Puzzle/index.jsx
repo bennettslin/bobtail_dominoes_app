@@ -6,7 +6,6 @@ import Flex from '../Flex'
 import Paragraph from '../Paragraph'
 import PuzzleBoard from './Board'
 import { getPuzzleText } from './util'
-import './style'
 
 const Puzzle = ({
     puzzleType,
@@ -33,21 +32,8 @@ const Puzzle = ({
             <Paragraph {...{ fontSize: 'md' }}>
                 {getPuzzleText(puzzleType)}
             </Paragraph>
-            <Flex
-                {...{
-                    className: cx(
-                        'PuzzleBoard__wrapper',
-                    ),
-                }}
-            >
-                <PuzzleBoard
-                    {...{
-                        className: cx(
-                            'PuzzleBoard',
-                        ),
-                        board,
-                    }}
-                />
+            <Flex>
+                <PuzzleBoard {...{ board }} />
             </Flex>
             {canShowAnswer ? (
                 <Button
