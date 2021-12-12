@@ -1,5 +1,6 @@
 # TODO
 * Formatter util to show board as copyable string
+* Unit test for getBestPointedMoves that includes moveRank
 
 # Regular puzzle utils
 * Util takes in parameters

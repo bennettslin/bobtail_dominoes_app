@@ -6,18 +6,12 @@ export default {
             day: 1,
             puzzleType: REGULAR_PUZZLE_TYPE,
             board: [
-                {
-                    dominoIndex: 4,
-                    placement: [[0, 0], [1, 0]],
-                },
-                {
-                    dominoIndex: 54,
-                    placement: [[0, 2], [0, 1]],
-                },
-                {
-                    dominoIndex: 34,
-                    placement: [[0, -1], [-1, 0]],
-                },
+                { dominoIndex: 43, placement: [[0, 0], [0, -1]] },
+                { dominoIndex: 18, placement: [[0, 2], [0, 1]] },
+                { dominoIndex: 48, placement: [[-2, 4], [-1, 3]] },
+                { dominoIndex: 19, placement: [[-4, 5], [-3, 5]] },
+                { dominoIndex: 33, placement: [[-1, 5], [-2, 5]] },
+                { dominoIndex: 30, placement: [[-2, 1], [-1, 1]] },
             ],
         },
     ],

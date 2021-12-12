@@ -7,6 +7,7 @@ import MaximumButton from './MaximumButton'
 import MissingButton from './MissingButton'
 import RegularButton from './RegularButton'
 import { getTextForPuzzle } from '../../utils/music/puzzles/format'
+import './style'
 
 const PuzzleTest = () => {
     const
@@ -18,10 +19,12 @@ const PuzzleTest = () => {
     }
 
     const getPuzzle = ({ board }) => {
-        setBoard(board)
-        const value = getTextForPuzzle({ board })
-        copyTextToClipboard(value)
-        setTextValue(value)
+        if (board) {
+            setBoard(board)
+            const value = getTextForPuzzle({ board })
+            copyTextToClipboard(value)
+            setTextValue(value)
+        }
     }
 
     return (
@@ -46,7 +49,14 @@ const PuzzleTest = () => {
                 <MaximumButton {...{ getPuzzle }} />
             </Flex>
             <Flex {...{ gap: 'sm' }} >
-                <PuzzleBoard {...{ board }} />
+                <PuzzleBoard
+                    {...{
+                        className: cx(
+                            'PuzzleTestBoard',
+                        ),
+                        board,
+                    }}
+                />
                 <PuzzleTestAside
                     {...{
                         textValue,

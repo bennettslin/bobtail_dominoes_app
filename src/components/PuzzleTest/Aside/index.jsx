@@ -30,7 +30,7 @@ const PuzzleTestAside = ({ textValue, copyTextToClipboard }) => {
             <Paragraph
                 {...{
                     className: cx(
-                        'fontSize__md',
+                        // 'fontSize__md',
                     ),
                     style: {
                         height: '100%',

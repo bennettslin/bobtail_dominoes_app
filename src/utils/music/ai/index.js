@@ -53,7 +53,11 @@ const recurseThroughValidPointedMoves = ({
     hand.size ? (
         Array.from(hand).map(dominoIndex => {
             const
-                validMoves = getValidPointedMoves({ dominoIndex, board, limit }),
+                validMoves = getValidPointedMoves({
+                    dominoIndex,
+                    board,
+                    limit,
+                }),
                 nextHand = new Set(hand)
 
             nextHand.delete(dominoIndex)
@@ -82,7 +86,14 @@ const recurseThroughValidPointedMoves = ({
     )
 )
 
-export const getBestPointedMovesForTurn = ({ hand, board, limit = 3 }) => {
+export const getBestPointedMovesForTurn = ({
+    hand,
+    board,
+    // Only consider this number of moves with each recursion.
+    limit = 3,
+    // Pick the nth best move.
+    moveRank = 0,
+}) => {
     if (!hand.size) {
         return []
     }
@@ -92,7 +103,10 @@ export const getBestPointedMovesForTurn = ({ hand, board, limit = 3 }) => {
         hand, board, limit,
     })
 
-    return validPointedMoves.length ?
-        validPointedMoves.sort(sortByHighestPoints)[0].moves :
+    // Just pick the worst move if move rank exceeds number of moves.
+    const finalRank = Math.min(moveRank, validPointedMoves.length - 1)
+
+    return finalRank > -1 ?
+        validPointedMoves.sort(sortByHighestPoints)[finalRank].moves :
         []
 }

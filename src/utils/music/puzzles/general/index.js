@@ -9,8 +9,8 @@ import {
 export const getInitialBoardForPuzzle = ({
     // Number of dominoes on board.
     dominoesCount = 1,
-    // Each domino has the nth best placement.
-    placementRank = 1,
+    // Each domino has the nth best move.
+    moveRank = 0,
 }) => {
     const
         pool = getInitialStandardPool(),
@@ -23,7 +23,7 @@ export const getInitialBoardForPuzzle = ({
     while (dominoesCount && pool.size) {
         const
             hand = new Set([getRandomDominoIndex(pool)]),
-            moves = getBestPointedMovesForTurn({ hand, board })
+            moves = getBestPointedMovesForTurn({ hand, board, moveRank })
 
         if (moves.length) {
             playHand({ hand, handCount: 1, moves, pool })
@@ -34,7 +34,11 @@ export const getInitialBoardForPuzzle = ({
 
     // Only return values if requested count succeeded.
     return !dominoesCount ? {
-        board,
+        // Remove unneeded values.
+        board: board.map(({ dominoIndex, placement }) => ({
+            dominoIndex,
+            placement,
+        })),
         pool,
-    } : null
+    } : {}
 }
