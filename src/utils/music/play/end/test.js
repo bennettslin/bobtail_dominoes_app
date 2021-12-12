@@ -1,6 +1,6 @@
 import { getIsGameOver } from '.'
-import { MOCK_POOL_LIST } from '../../../../../__mocks__/pool'
-import { MOCK_MOVE_1, MOCK_MOVE_2, MOCK_TURNS } from '../../../../../__mocks__/turns'
+import { MOCK_POOL_LIST } from '../../../../__mocks__/pool'
+import { MOCK_MOVE_1, MOCK_MOVE_2, MOCK_TURNS } from '../../../../__mocks__/turns'
 
 describe('getIsGameOver', () => {
     it('returns false if no conditions are met', () => {

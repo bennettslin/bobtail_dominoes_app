@@ -1,24 +1,40 @@
-const PLACEHOLDER_BOARD = [
-    {
-        dominoIndex: 4,
-        placement: [[0, 0], [1, 0]],
-    },
-    {
-        dominoIndex: 54,
-        placement: [[0, 2], [0, 1]],
-    },
-    {
-        dominoIndex: 34,
-        placement: [[0, -1], [-1, 0]],
-    },
-]
+import { getBestPointedMovesForTurn } from '../../ai'
+import { addMovesToBoard, getInitialBoard } from '../../play/board'
+import { playHand } from '../../play/hands'
+import {
+    getInitialStandardPool,
+    getRandomDominoIndex,
+} from '../../play/pool'
 
 export const getInitialBoardForPuzzle = ({
-    dominoesCount = 1, // Number of dominoes on board.
-    pointStrength = 1, // Each domino has the nth best placement.
+    // Number of dominoes on board.
+    dominoesCount = 1,
+    // Each domino has the nth best placement.
+    placementRank = 1,
 }) => {
-    // TODO
-    return {
-        board: PLACEHOLDER_BOARD,
+    const
+        pool = getInitialStandardPool(),
+        board = getInitialBoard(pool)
+
+    // Decrement count for initial domino.
+    dominoesCount--
+
+    // Add one domino at a time to board.
+    while (dominoesCount && pool.size) {
+        const
+            hand = new Set([getRandomDominoIndex(pool)]),
+            moves = getBestPointedMovesForTurn({ hand, board })
+
+        if (moves.length) {
+            playHand({ hand, handCount: 1, moves, pool })
+            addMovesToBoard({ board, moves })
+            dominoesCount--
+        }
     }
+
+    // Only return values if requested count succeeded.
+    return !dominoesCount ? {
+        board,
+        pool,
+    } : null
 }

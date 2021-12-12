@@ -1,4 +1,4 @@
-import { getInitialExtendedPool, getInitialStandardPool } from '../play/pool'
+import { getInitialExtendedPool, getInitialStandardPool } from '../../play/pool'
 import { getIntervalCountsInPool, getPitchCountsInPool } from '.'
 import { MOCK_POOL_LIST } from '../../../../__mocks__/pool'
 

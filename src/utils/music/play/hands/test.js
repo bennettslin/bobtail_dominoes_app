@@ -1,6 +1,6 @@
 import { exchangeHand, getInitialHands, playHand } from '.'
-import { MOCK_POOL_LIST } from '../../../../../__mocks__/pool'
-import { HAND_COUNT } from '../../../../../constants/music/play'
+import { MOCK_POOL_LIST } from '../../../../__mocks__/pool'
+import { HAND_COUNT } from '../../../../constants/music/play'
 
 describe('getInitialHands', () => {
     beforeEach(() => {

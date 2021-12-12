@@ -1,5 +1,5 @@
 import { exchangeDominoIndices, getInitialExtendedPool, getInitialStandardPool, getRandomDominoIndex } from '.'
-import { MOCK_POOL_LIST } from '../../../../../__mocks__/pool'
+import { MOCK_POOL_LIST } from '../../../../__mocks__/pool'
 
 describe('getInitialStandardPool', () => {
     it('generates and returns pool', () => {

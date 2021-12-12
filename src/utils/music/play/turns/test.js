@@ -1,11 +1,11 @@
 import { addTurn, getInitialTurns, getPlayerIndex } from '.'
-import { MOCK_BOARD } from '../../../../../__mocks__/board'
-import { MOCK_POOL_LIST } from '../../../../../__mocks__/pool'
+import { MOCK_BOARD } from '../../../../__mocks__/board'
+import { MOCK_POOL_LIST } from '../../../../__mocks__/pool'
 import {
     MOCK_MOVE_1,
     MOCK_MOVE_2,
     MOCK_TURNS,
-} from '../../../../../__mocks__/turns'
+} from '../../../../__mocks__/turns'
 
 describe('getInitialTurns', () => {
     it('generates turns with first domino', () => {

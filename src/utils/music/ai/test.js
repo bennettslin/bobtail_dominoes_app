@@ -1,5 +1,5 @@
 import { getBestPointedMovesForTurn, getValidPointedMoves } from '.'
-import { MOCK_BOARD } from '../../../../__mocks__/board'
+import { MOCK_BOARD } from '../../../__mocks__/board'
 
 describe('getValidPointedMoves', () => {
     it('returns array for first domino', () => {

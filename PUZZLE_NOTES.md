@@ -1,6 +1,5 @@
 # TODO
 * Formatter util to show board as copyable string
-* Figure out why movable board is offset
 
 # Regular puzzle utils
 * Util takes in parameters
