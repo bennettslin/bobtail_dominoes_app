@@ -14,7 +14,7 @@ const PuzzlePage = ({
     } = {},
 }) => {
     const
-        { puzzleType, board, ...rest } = pageMap,
+        { puzzleType, board, moves, ...rest } = pageMap,
         { date } = rest
 
     return !didMount || getIsPastOrPresentDate(date) ? (
@@ -25,6 +25,7 @@ const PuzzlePage = ({
                         {...{
                             puzzleType,
                             board,
+                            moves,
                             canShowAnswer: getIsPastOrPresentDate(
                                 addDaysToDate(date, 1),
                             ),
@@ -59,6 +60,14 @@ PuzzlePage.propTypes = {
                     ).isRequired,
                 ),
             })).isRequired,
+            moves: PropTypes.arrayOf(PropTypes.shape({
+                dominoIndex: PropTypes.number.isRequired,
+                placement: PropTypes.arrayOf(
+                    PropTypes.arrayOf(
+                        PropTypes.number.isRequired,
+                    ).isRequired,
+                ),
+            })),
         }),
     }),
 }

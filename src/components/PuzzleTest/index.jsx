@@ -63,6 +63,7 @@ const PuzzleTest = () => {
                             'PuzzleTestBoard',
                         ),
                         board,
+                        moves,
                     }}
                 />
                 <PuzzleTestAside

@@ -1,12 +1,13 @@
-# TODO
-* Unit tests for puzzle utils
-* Puzzle component takes moves
-    * Optionally also takes hand
+# TODO next
 * Answer view places moves on board
     * And renders log
         * Each move shows chord and points
         * If multiple dominoes, also show total points
-* Formatter util to show board as copyable string
+
+# TODO
+* Unit tests for puzzle utils
+* Puzzle component takes moves
+    * Optionally also takes hand
 
 # Regular puzzle utils
 * Util takes in parameters
@@ -22,6 +23,8 @@
 # Maximum puzzle utils
 
 # Puzzle types
+* Switch up number of dominoes on board
+* Switch up standard and extended set
 * Play a regular hand
     * With each guaranteed to build two chords
 * Figure out missing domino

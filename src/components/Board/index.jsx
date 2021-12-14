@@ -54,13 +54,18 @@ const Board = ({
                 }}
             >
                 {getBoardOrderedByZIndex(board).map(move => {
-                    const { dominoIndex, placement } = move
+                    const {
+                        dominoIndex,
+                        placement,
+                        isHighlight,
+                    } = move
                     return (
                         <DominoComponent
                             {...{
                                 key: dominoIndex,
                                 dominoIndex,
                                 placement,
+                                isHighlight,
                                 boardHexagonalBaseWidth,
                             }}
                         />

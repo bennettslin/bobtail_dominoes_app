@@ -10,6 +10,7 @@ import { getPuzzleText } from './util'
 const Puzzle = ({
     puzzleType,
     board,
+    moves,
     canShowAnswer,
 }) => {
     const [showAnswer, setShowAnswer] = useState(false)
@@ -33,7 +34,12 @@ const Puzzle = ({
                 {getPuzzleText(puzzleType)}
             </Paragraph>
             <Flex>
-                <PuzzleBoard {...{ board }} />
+                <PuzzleBoard
+                    {...{
+                        board,
+                        ...showAnswer && { moves },
+                    }}
+                />
             </Flex>
             {canShowAnswer ? (
                 <Button
@@ -65,6 +71,14 @@ Puzzle.propTypes = {
             ).isRequired,
         ),
     })).isRequired,
+    moves: PropTypes.arrayOf(PropTypes.shape({
+        dominoIndex: PropTypes.number.isRequired,
+        placement: PropTypes.arrayOf(
+            PropTypes.arrayOf(
+                PropTypes.number.isRequired,
+            ).isRequired,
+        ),
+    })),
 }
 
 export default Puzzle

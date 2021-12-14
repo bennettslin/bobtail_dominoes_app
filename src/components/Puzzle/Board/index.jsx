@@ -8,9 +8,18 @@ import './style'
 const PuzzleBoard = ({
     className,
     board,
+    moves = [],
 }) => {
+    const newBoard = [
+        ...board,
+        ...moves.map(move => ({
+            ...move,
+            isHighlight: true,
+        })),
+    ]
+
     const boardHexagonalMinWidth = getHexagonalMinWidthForBoard({
-        board,
+        board: newBoard,
         padding: 2,
     })
 
@@ -21,7 +30,7 @@ const PuzzleBoard = ({
                     'PuzzleBoard',
                     className,
                 ),
-                board,
+                board: newBoard,
                 boardHexagonalWidth: boardHexagonalMinWidth,
                 boardHexagonalBaseWidth: boardHexagonalMinWidth,
             }}
@@ -39,6 +48,14 @@ PuzzleBoard.propTypes = {
             ).isRequired,
         ),
     })).isRequired,
+    moves: PropTypes.arrayOf(PropTypes.shape({
+        dominoIndex: PropTypes.number.isRequired,
+        placement: PropTypes.arrayOf(
+            PropTypes.arrayOf(
+                PropTypes.number.isRequired,
+            ).isRequired,
+        ),
+    })),
 }
 
 export default PuzzleBoard
