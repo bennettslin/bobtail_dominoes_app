@@ -5,7 +5,7 @@ import { MOCK_POOL_LIST } from '../../../../__mocks__/pool'
 describe('getPitchCountsInPool', () => {
     it('returns pitches for empty pool', () => {
         expect(getPitchCountsInPool(
-            new Set([])),
+            new Set()),
         ).toStrictEqual([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
     })
 
@@ -31,7 +31,7 @@ describe('getPitchCountsInPool', () => {
 describe('getIntervalCountsInPool', () => {
     it('returns intervalCounts for empty pool', () => {
         expect(getIntervalCountsInPool(
-            new Set([])),
+            new Set()),
         ).toStrictEqual([0, 0, 0, 0, 0, 0])
     })
 

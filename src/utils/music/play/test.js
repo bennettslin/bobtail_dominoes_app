@@ -146,18 +146,18 @@ describe('registerTurn', () => {
     it('registers game ending turn', () => {
         expect(registerTurn({
             ...MOCK_PLAYED_TURN,
-            pool: new Set([]),
+            pool: new Set(),
             board: [MOCK_BOARD[0], MOCK_BOARD[1], MOCK_BOARD[2], MOCK_BOARD[3]],
             handCount: HAND_COUNT,
-            hands: [new Set([]), new Set([]), new Set([30, 49]), new Set([])],
+            hands: [new Set(), new Set(), new Set([30, 49]), new Set()],
             playersCount: PLAYERS_COUNT,
             scores: [15, 22, 18, 7],
             turns: [...MOCK_TURNS],
         })).toStrictEqual({
             board: MOCK_BOARD,
-            hands: [new Set([]), new Set([]), new Set([]), new Set([])],
+            hands: [new Set(), new Set(), new Set(), new Set()],
             isGameOver: true,
-            pool: new Set([]),
+            pool: new Set(),
             scores: [15, 22, 35, 7],
             turns: [{ dominoIndex: 29 }, { moves: [{ dominoIndex: 62, pitchSets: [new Set([4, 1, 8, 0])], placement: [[0, 2], [0, 3]], playerIndex: 0 }] }, { isEmptyPool: true, moves: [{ dominoIndex: 30, pitchSets: [new Set([0, 5, 9, 2]), new Set([11, 2, 6]), new Set([7, 0, 4, 11])], placement: [[1, 1], [2, 0]], playerIndex: 2 }, { dominoIndex: 49, pitchSets: [new Set([0, 9, 5]), new Set([0, 5, 9])], placement: [[-2, 3], [-2, 2]], playerIndex: 2 }] }, { winnerIndices: [2] }],
         })

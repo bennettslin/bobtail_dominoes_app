@@ -1,4 +1,11 @@
 # TODO
+* Unit tests for puzzle utils
+* Puzzle component takes moves
+    * Optionally also takes hand
+* Answer view places moves on board
+    * And renders log
+        * Each move shows chord and points
+        * If multiple dominoes, also show total points
 * Formatter util to show board as copyable string
 
 # Regular puzzle utils
@@ -13,12 +20,6 @@
 # Missing puzzle utils
 
 # Maximum puzzle utils
-* Util takes in parameters
-    * Number of starting dominoes
-    * Strength of maximum points for starting dominoes
-
-* Util tries each domino to find the one with the maximum points
-* Parent util repeats this process until it finds
 
 # Puzzle types
 * Play a regular hand

@@ -68,7 +68,7 @@ describe('addTurn', () => {
 
     it('adds turn for emptied pool', () => {
         expect(addTurn({
-            pool: new Set([]),
+            pool: new Set(),
             hands: [new Set([5]), new Set([10]), new Set([15]), new Set([20])],
             turns: [...MOCK_TURNS],
             moves: [MOCK_MOVE_2],
@@ -86,8 +86,8 @@ describe('addTurn', () => {
 
     it('adds end turn with winner indices', () => {
         expect(addTurn({
-            pool: new Set([]),
-            hands: [new Set([]), new Set([]), new Set([]), new Set([])],
+            pool: new Set(),
+            hands: [new Set(), new Set(), new Set(), new Set()],
             turns: [...MOCK_TURNS],
             scores: [15, 22, 17, 22],
             moves: [MOCK_MOVE_2],

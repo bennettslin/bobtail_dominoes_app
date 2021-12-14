@@ -2,7 +2,7 @@ import { getChordsForPlacement } from '../mechanics/placement/chords'
 import { addMoveToBoard } from '../play/board'
 import { getAdjacentPlacements } from './adjacent'
 
-const sortByHighestPoints = (
+export const sortByHighestPoints = (
     { points: firstPoints },
     { points: secondPoints },
 ) => secondPoints - firstPoints

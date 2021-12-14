@@ -26,15 +26,15 @@ describe('getRandomDominoIndex', () => {
     })
 
     it('returns 0 if pool is empty', () => {
-        const pool = new Set([])
+        const pool = new Set()
         expect(getRandomDominoIndex(pool)).toBe(0)
-        expect(pool).toStrictEqual(new Set([]))
+        expect(pool).toStrictEqual(new Set())
     })
 
     it('returns last domino removed from pool', () => {
         const pool = new Set([46])
         expect(getRandomDominoIndex(pool)).toBe(46)
-        expect(pool).toStrictEqual(new Set([]))
+        expect(pool).toStrictEqual(new Set())
     })
 
     it('returns domino removed from pool', () => {

@@ -102,7 +102,7 @@ describe('getValidPointedMoves', () => {
 describe('getBestPointedMovesForTurn', () => {
     it('returns empty for empty hand', () => {
         expect(getBestPointedMovesForTurn({
-            hand: new Set([]),
+            hand: new Set(),
             board: [{ dominoIndex: 2, placement: [[-1, 1], [0, 0]] }],
         })).toStrictEqual([])
     })

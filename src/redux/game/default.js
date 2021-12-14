@@ -8,7 +8,7 @@ const INITIAL_IS_DEMO_AUTOPLAY_ON = getBoolFromStorage('isDemoAutoplayOn', true)
 export const GAME_DEFAULT = {
     gameId: 0,
     players: [],
-    pool: new Set([]),
+    pool: new Set(),
     board: [],
     hands: [],
     scores: [],

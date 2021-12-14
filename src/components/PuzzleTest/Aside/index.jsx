@@ -5,8 +5,13 @@ import Paragraph from '../../Paragraph'
 import Flex from '../../Flex'
 import Button from '../../Button'
 import { hsl } from '../../../utils/svgs'
+import { getTextForPuzzle } from '../../../utils/music/puzzles/format'
 
-const PuzzleTestAside = ({ textValue, copyTextToClipboard }) => {
+const PuzzleTestAside = ({
+    board,
+    moves,
+    copyTextToClipboard,
+}) => {
     const handleButtonClick = () => (
         copyTextToClipboard()
     )
@@ -38,7 +43,7 @@ const PuzzleTestAside = ({ textValue, copyTextToClipboard }) => {
                     },
                 }}
             >
-                {textValue}
+                {getTextForPuzzle({ board, moves })}
             </Paragraph>
             <Button
                 {...{
@@ -57,7 +62,8 @@ const PuzzleTestAside = ({ textValue, copyTextToClipboard }) => {
 }
 
 PuzzleTestAside.propTypes = {
-    textValue: PropTypes.string.isRequired,
+    board: PropTypes.array.isRequired,
+    moves: PropTypes.array.isRequired,
     copyTextToClipboard: PropTypes.func.isRequired,
 }
 

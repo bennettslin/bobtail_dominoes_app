@@ -10,12 +10,23 @@ export default {
             day: 1,
             puzzleType: MAXIMUM_PUZZLE_TYPE,
             board: [
-                { dominoIndex: 19, placement: [[1, -1], [0, 0]] },
-                { dominoIndex: 43, placement: [[2, -1], [3, -1]] },
-                { dominoIndex: 18, placement: [[-1, 0], [0, -1]] },
-                { dominoIndex: 14, placement: [[0, 2], [0, 1]] },
-                { dominoIndex: 59, placement: [[1, 1], [2, 1]] },
-                { dominoIndex: 26, placement: [[3, 1], [4, 0]] },
+                { dominoIndex: 26, placement: [[0, 0], [0, -1]] },
+                { dominoIndex: 55, placement: [[0, 2], [0, 1]] },
+                { dominoIndex: 14, placement: [[1, 1], [2, 1]] },
+                { dominoIndex: 24, placement: [[-2, 3], [-1, 2]] },
+                { dominoIndex: 53, placement: [[3, 0], [3, 1]] },
+            ],
+            moves: [
+                {
+                    dominoIndex: 59,
+                    placement: [[1, 0], [2, 0]],
+                    pitchSets: [
+                        new Set([2, 7, 10, 6]),
+                        new Set([7, 10, 5, 2]),
+                        new Set([10, 1, 6]),
+                    ],
+                    points: 11,
+                },
             ],
         },
         {
@@ -46,11 +57,25 @@ export default {
             day: 6,
             puzzleType: MAXIMUM_PUZZLE_TYPE,
             board: [
-                { dominoIndex: 29, placement: [[-1, 1], [0, 0]] },
-                { dominoIndex: 16, placement: [[-2, 2], [-3, 3]] },
-                { dominoIndex: 55, placement: [[-3, 1], [-2, 1]] },
-                { dominoIndex: 20, placement: [[-4, 1], [-4, 2]] },
-                { dominoIndex: 45, placement: [[-2, 3], [-3, 4]] },
+                { dominoIndex: 19, placement: [[0, 0], [-1, 1]] },
+                { dominoIndex: 54, placement: [[0, -2], [0, -1]] },
+                { dominoIndex: 29, placement: [[0, -3], [-1, -2]] },
+                { dominoIndex: 42, placement: [[1, -1], [2, -2]] },
+                { dominoIndex: 8, placement: [[2, -1], [1, 0]] },
+                { dominoIndex: 21, placement: [[1, 1], [2, 1]] },
+            ],
+            moves: [
+                {
+                    dominoIndex: 41,
+                    placement: [[2, 0], [3, -1]],
+                    pitchSets: [
+                        new Set([1, 8, 4]),
+                        new Set([8, 0, 4, 11]),
+                        new Set([7, 4, 1]),
+                        new Set([9, 4, 0, 7]),
+                    ],
+                    points: 14,
+                },
             ],
         },
         {

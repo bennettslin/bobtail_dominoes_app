@@ -95,14 +95,14 @@ describe('playHand', () => {
     })
 
     it('returns remaining hand if empty pool', () => {
-        const pool = new Set([])
+        const pool = new Set()
         expect(playHand({
             hand: new Set([5, 10]),
             handCount: HAND_COUNT,
             moves: [{ dominoIndex: 5 }],
             pool,
         })).toStrictEqual(new Set([10]))
-        expect(pool).toStrictEqual(new Set([]))
+        expect(pool).toStrictEqual(new Set())
     })
 
     it('returns for almost empty pool', () => {
@@ -113,7 +113,7 @@ describe('playHand', () => {
             moves: [{ dominoIndex: 10 }],
             pool,
         })).toStrictEqual(new Set([5, 15]))
-        expect(pool).toStrictEqual(new Set([]))
+        expect(pool).toStrictEqual(new Set())
     })
 
     it('returns for custom hand count', () => {

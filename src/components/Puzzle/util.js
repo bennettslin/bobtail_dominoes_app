@@ -7,6 +7,6 @@ export const getPuzzleText = puzzleType => {
         case MISSING_PUZZLE_TYPE:
             return 'Placeholder text for missing puzzle type'
         case MAXIMUM_PUZZLE_TYPE:
-            return 'Placeholder text for maximum puzzle type'
+            return 'Find and place the one domino that will award the most points.'
     }
 }

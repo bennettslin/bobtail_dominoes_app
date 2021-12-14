@@ -14,8 +14,8 @@ describe('getIsGameOver', () => {
 
     it('returns true if pool and hands are empty', () => {
         expect(getIsGameOver({
-            pool: new Set([]),
-            hands: [new Set([]), new Set([]), new Set([])],
+            pool: new Set(),
+            hands: [new Set(), new Set(), new Set()],
             turns: [...MOCK_TURNS],
             playersCount: 3,
         })).toBe(true)

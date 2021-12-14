@@ -6,7 +6,7 @@ import { getMaximumPuzzle } from '../../../utils/music/puzzles/maximum'
 
 const MaximumButton = ({ getPuzzle }) => {
     const handleButtonClick = () => {
-        getPuzzle(getMaximumPuzzle({}))
+        getPuzzle(getMaximumPuzzle())
     }
 
     return (

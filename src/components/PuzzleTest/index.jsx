@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import cx from 'classnames'
 import Flex from '../Flex'
 import PuzzleBoard from '../Puzzle/Board'
@@ -12,20 +12,28 @@ import './style'
 const PuzzleTest = () => {
     const
         [board, setBoard] = useState([]),
-        [textValue, setTextValue] = useState('')
+        [moves, setMoves] = useState([])
 
-    const copyTextToClipboard = value => {
-        navigator.clipboard.writeText(value || textValue)
-    }
-
-    const getPuzzle = ({ board }) => {
-        if (board) {
-            setBoard(board)
-            const value = getTextForPuzzle({ board })
-            copyTextToClipboard(value)
-            setTextValue(value)
+    const copyTextToClipboard = async () => {
+        try {
+            await navigator.clipboard.writeText(
+                getTextForPuzzle({ board, moves }),
+            )
+        } catch {
+            setTimeout(copyTextToClipboard, 1000)
         }
     }
+
+    const getPuzzle = ({ board, moves }) => {
+        if (board) {
+            setBoard(board)
+            setMoves(moves)
+        }
+    }
+
+    useEffect(() => {
+        copyTextToClipboard()
+    }, [board, moves])
 
     return (
         <Flex
@@ -59,7 +67,8 @@ const PuzzleTest = () => {
                 />
                 <PuzzleTestAside
                     {...{
-                        textValue,
+                        board,
+                        moves,
                         copyTextToClipboard,
                     }}
                 />
