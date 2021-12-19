@@ -6,6 +6,7 @@ import Flex from '../Flex'
 import Paragraph from '../Paragraph'
 import PuzzleBoard from './Board'
 import { getPuzzleText } from './util'
+import PlayLog from '../PlayLog'
 
 const Puzzle = ({
     puzzleType,
@@ -33,14 +34,6 @@ const Puzzle = ({
             <Paragraph {...{ fontSize: 'md' }}>
                 {getPuzzleText(puzzleType)}
             </Paragraph>
-            <Flex>
-                <PuzzleBoard
-                    {...{
-                        board,
-                        ...showAnswer && { moves },
-                    }}
-                />
-            </Flex>
             {canShowAnswer ? (
                 <Button
                     {...{
@@ -55,6 +48,19 @@ const Puzzle = ({
                 </Button>
             ) : (
                 'Check back tomorrow for the answer!'
+            )}
+            <Flex>
+                <PuzzleBoard
+                    {...{
+                        board,
+                        ...showAnswer && { moves },
+                    }}
+                />
+            </Flex>
+            {showAnswer && (
+                <Flex>
+                    <PlayLog {...{ fontSize: 'md', moves }} />
+                </Flex>
             )}
         </Flex>
     )

@@ -20,10 +20,10 @@ export default {
                 {
                     dominoIndex: 59,
                     placement: [[1, 0], [2, 0]],
-                    pitchSets: [
-                        new Set([2, 7, 10, 6]),
-                        new Set([7, 10, 5, 2]),
-                        new Set([10, 1, 6]),
+                    pitchLists: [
+                        [2, 7, 10, 6],
+                        [7, 10, 5, 2],
+                        [10, 1, 6],
                     ],
                     points: 11,
                 },
@@ -68,11 +68,11 @@ export default {
                 {
                     dominoIndex: 41,
                     placement: [[2, 0], [3, -1]],
-                    pitchSets: [
-                        new Set([1, 8, 4]),
-                        new Set([8, 0, 4, 11]),
-                        new Set([7, 4, 1]),
-                        new Set([9, 4, 0, 7]),
+                    pitchLists: [
+                        [1, 8, 4],
+                        [8, 0, 4, 11],
+                        [7, 4, 1],
+                        [9, 4, 0, 7],
                     ],
                     points: 14,
                 },
@@ -97,6 +97,30 @@ export default {
                 { dominoIndex: 28, placement: [[1, -2], [1, -1]] },
                 { dominoIndex: 62, placement: [[-2, 2], [-1, 2]] },
                 { dominoIndex: 48, placement: [[-1, -1], [-1, 0]] },
+            ],
+        },
+        {
+            day: 13,
+            puzzleType: MAXIMUM_PUZZLE_TYPE,
+            board: [
+                { dominoIndex: 40, placement: [[0, 0], [-1, 0]] },
+                { dominoIndex: 30, placement: [[-1, 1], [-1, 2]] },
+                { dominoIndex: 48, placement: [[0, 2], [-1, 3]] },
+                { dominoIndex: 5, placement: [[0, 3], [1, 3]] },
+                { dominoIndex: 14, placement: [[-2, 4], [-2, 3]] },
+            ],
+            moves: [
+                {
+                    dominoIndex: 63,
+                    placement: [[0, 1], [1, 1]],
+                    pitchLists: [
+                        [2, 8, 11],
+                        [4, 8, 5, 0],
+                        [8, 11, 4],
+                        [11, 5, 8, 1],
+                    ],
+                    points: 14,
+                },
             ],
         },
     ],

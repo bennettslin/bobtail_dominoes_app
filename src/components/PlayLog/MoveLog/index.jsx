@@ -1,15 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ChordAbbreviations from '../../../ChordAbbreviations'
-import { getChordAbbreviationsList, getDominoLabel } from '../../../../utils/music/chords/label'
-import { getPointsForPitchSets } from '../../../../utils/music/mechanics/points'
+import ChordAbbreviations from '../../ChordAbbreviations'
+import {
+    getChordAbbreviationsList,
+    getDominoLabel,
+} from '../../../utils/music/chords/label'
+import { getPointsForPitchSets } from '../../../utils/music/mechanics/points'
+import ListItem from '../../List/ListItem'
 
 const MoveLog = ({
     dominoIndex,
     pitchSets,
 
 }) => (
-    <li>
+    <ListItem>
         {`${getDominoLabel(dominoIndex)} builds `}
         <ChordAbbreviations
             {...{
@@ -17,7 +21,7 @@ const MoveLog = ({
             }}
         />
         {` for ${getPointsForPitchSets(pitchSets)} points.`}
-    </li>
+    </ListItem>
 )
 
 MoveLog.propTypes = {

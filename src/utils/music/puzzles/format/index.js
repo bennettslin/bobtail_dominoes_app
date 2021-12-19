@@ -10,12 +10,13 @@ const formatAndStringify = entry => (
         .replace(/,/g, ', ')
 )
 
-const formatSets = sets => (
+const formatLists = sets => (
+    // Convert to arrays because server cannot store sets.
     `[${NEWLINE}` +
     sets.map(set => (
-        `${TAB}${TAB}${TAB}new Set([${
+        `${TAB}${TAB}${TAB}[${
             join(Array.from(set), ', ')
-        }]),${NEWLINE}`
+        }],${NEWLINE}`
     )).join('') +
     `${TAB}${TAB}]`
 )
@@ -43,7 +44,7 @@ const getTextForMoves = moves => (
         `${TAB}{${NEWLINE}` +
         `${TAB}${TAB}dominoIndex: ${dominoIndex},${NEWLINE}` +
         `${TAB}${TAB}placement: ${formatAndStringify(placement)},${NEWLINE}` +
-        `${TAB}${TAB}pitchSets: ${formatSets(pitchSets)},${NEWLINE}` +
+        `${TAB}${TAB}pitchLists: ${formatLists(pitchSets)},${NEWLINE}` +
         `${TAB}${TAB}points: ${points},${NEWLINE}` +
         `${TAB}},${NEWLINE}`
     )).join('') +

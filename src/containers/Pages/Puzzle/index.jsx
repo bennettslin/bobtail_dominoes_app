@@ -25,7 +25,15 @@ const PuzzlePage = ({
                         {...{
                             puzzleType,
                             board,
-                            moves,
+                            moves: moves.map(({ pitchLists, ...rest }) => ({
+                                // Convert lists back to sets.
+                                ...pitchLists && {
+                                    pitchSets: pitchLists.map(list => (
+                                        new Set(list)
+                                    )),
+                                },
+                                ...rest,
+                            })),
                             canShowAnswer: getIsPastOrPresentDate(
                                 addDaysToDate(date, 1),
                             ),
@@ -63,6 +71,11 @@ PuzzlePage.propTypes = {
             moves: PropTypes.arrayOf(PropTypes.shape({
                 dominoIndex: PropTypes.number.isRequired,
                 placement: PropTypes.arrayOf(
+                    PropTypes.arrayOf(
+                        PropTypes.number.isRequired,
+                    ).isRequired,
+                ),
+                pitchLists: PropTypes.arrayOf(
                     PropTypes.arrayOf(
                         PropTypes.number.isRequired,
                     ).isRequired,

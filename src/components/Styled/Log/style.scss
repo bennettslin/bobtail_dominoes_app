@@ -1,9 +1,9 @@
-@import '../../../../scss/constants/borders';
-@import '../../../../scss/constants/colours';
-@import '../../../../scss/constants/responsive';
-@import '../../../../scss/constants/shadows';
+@import '../../../scss/constants/borders';
+@import '../../../scss/constants/colours';
+@import '../../../scss/constants/responsive';
+@import '../../../scss/constants/shadows';
 
-.TurnLog__latest {
+.StyledLog__latest {
     &:before {
         position: absolute;
         top: -$margin__xs * 0.5;

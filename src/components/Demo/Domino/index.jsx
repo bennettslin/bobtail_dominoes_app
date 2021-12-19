@@ -14,8 +14,10 @@ const DemoDomino = ({
         <Domino
             {...{
                 dominoIndex,
-                isHighlight: isInLatestTurn,
                 ...rest,
+
+                // Override value passed from board.
+                isHighlight: isInLatestTurn,
             }}
         />
     )
