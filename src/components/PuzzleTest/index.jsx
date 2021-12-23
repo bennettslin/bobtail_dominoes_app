@@ -12,28 +12,30 @@ import './style'
 const PuzzleTest = () => {
     const
         [board, setBoard] = useState([]),
-        [moves, setMoves] = useState([])
+        [moves, setMoves] = useState([]),
+        [puzzleType, setPuzzleType] = useState('')
 
     const copyTextToClipboard = async () => {
         try {
             await navigator.clipboard.writeText(
-                getTextForPuzzle({ board, moves }),
+                getTextForPuzzle({ board, moves, puzzleType }),
             )
         } catch {
             setTimeout(copyTextToClipboard, 1000)
         }
     }
 
-    const getPuzzle = ({ board, moves }) => {
+    const getPuzzle = ({ board, moves, puzzleType }) => {
         if (board) {
             setBoard(board)
             setMoves(moves)
+            setPuzzleType(puzzleType)
         }
     }
 
     useEffect(() => {
         copyTextToClipboard()
-    }, [board, moves])
+    }, [board, moves, puzzleType])
 
     return (
         <Flex
@@ -70,6 +72,7 @@ const PuzzleTest = () => {
                     {...{
                         board,
                         moves,
+                        puzzleType,
                         copyTextToClipboard,
                     }}
                 />

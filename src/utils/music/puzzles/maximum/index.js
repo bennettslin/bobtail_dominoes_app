@@ -1,5 +1,6 @@
 import { getRandomInteger } from '../../../general/random'
 import { getBestMoveForBoard, getInitialBoardForPuzzle } from '../general'
+import { MAXIMUM_PUZZLE_TYPE } from '../../../../constants/music/puzzle'
 
 const sortTrialsByHighestPoints = (
     { move: { points: firstPoints } },
@@ -47,5 +48,6 @@ export const getMaximumPuzzle = ({
     return trials.length ? {
         moves: [trials[0].move],
         board: trials[0].board,
+        puzzleType: MAXIMUM_PUZZLE_TYPE,
     } : {}
 }

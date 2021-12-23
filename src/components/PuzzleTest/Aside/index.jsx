@@ -10,6 +10,7 @@ import { getTextForPuzzle } from '../../../utils/music/puzzles/format'
 const PuzzleTestAside = ({
     board,
     moves,
+    puzzleType,
     copyTextToClipboard,
 }) => {
     const handleButtonClick = () => (
@@ -43,7 +44,7 @@ const PuzzleTestAside = ({
                     },
                 }}
             >
-                {getTextForPuzzle({ board, moves })}
+                {getTextForPuzzle({ board, moves, puzzleType })}
             </Paragraph>
             <Button
                 {...{
@@ -71,6 +72,7 @@ PuzzleTestAside.propTypes = {
             ).isRequired,
         ),
     })),
+    puzzleType: PropTypes.string.isRequired,
     copyTextToClipboard: PropTypes.func.isRequired,
 }
 

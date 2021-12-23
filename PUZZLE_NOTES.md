@@ -1,5 +1,4 @@
 # TODO next
-* Pass day and puzzle type to clipboard as well
 * Show hand if there is one
 
 # TODO
