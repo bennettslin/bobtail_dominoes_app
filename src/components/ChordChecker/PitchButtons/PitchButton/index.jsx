@@ -22,9 +22,9 @@ import './style'
 const PitchButton = ({ pitch }) => {
     const
         dispatch = useDispatch(),
-        hasMaximumSonority = useSelector(mapHasMaximumSonority),
         isRoot = useSelector(getMapIsRoot(pitch)),
         hasCurrentPitch = useSelector(getMapHasCurrentPitch(pitch)),
+        hasMaximumSonority = useSelector(mapHasMaximumSonority),
         playedPitchConfig = useSelector(getMapPlayedPitchConfig(pitch)),
         styleConfig = getButtonStyleConfig(getIsPitchBlack(pitch)),
         styleConfigOn = getButtonOnStyleConfig({

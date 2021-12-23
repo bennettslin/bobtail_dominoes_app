@@ -5,7 +5,7 @@ import { getSynth } from '../../modules/synth'
 import { queuePlay } from '../../redux/audio/action'
 import {
     mapCurrentPitchSet,
-    mapHasSonority,
+    mapHasPlayableSonority,
     mapIsAutoplayOn,
     mapIsPlaying,
     mapPlayedPitchConfigs,
@@ -20,7 +20,7 @@ const Audio = () => {
         currentPitchSet = useSelector(mapCurrentPitchSet),
         playedPitchConfigs = useSelector(mapPlayedPitchConfigs),
         isPlaying = useSelector(mapIsPlaying),
-        hasSonority = useSelector(mapHasSonority)
+        hasPlayableSonority = useSelector(mapHasPlayableSonority)
 
     const soundPitches = () => {
         Object.values(playedPitchConfigs).forEach(pitchIndexConfig => {
@@ -44,13 +44,13 @@ const Audio = () => {
     }
 
     useEffect(() => {
-        if (isAutoplayOn && hasSonority && !isPlaying) {
+        if (isAutoplayOn && hasPlayableSonority && !isPlaying) {
             dispatch(queuePlay(true))
         }
     }, [isAutoplayOn, currentPitchSet])
 
     useEffect(() => {
-        if (hasSonority && playedPitchConfigs) {
+        if (hasPlayableSonority && playedPitchConfigs) {
             soundPitches()
             timePitches()
         }

@@ -1,14 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import CheckerButton from '../../CheckerButton'
 import { updateTransposedPitchSet } from '../../../../redux/audio/action'
+import { mapHasSonority } from '../../../../redux/audio/selector'
 import styleConfigOption from '../../../../styles/arcade/option'
 import styleConfigFacesOption from '../../../../styles/faces/option'
 import faceTranspose from '../../../../assets/svgs/checker/faceTranspose'
 
 const TransposeButton = ({ direction }) => {
-    const dispatch = useDispatch()
+    const
+        dispatch = useDispatch(),
+        hasSonority = useSelector(mapHasSonority)
 
     const onClick = () => {
         dispatch(updateTransposedPitchSet(direction))
@@ -16,12 +19,12 @@ const TransposeButton = ({ direction }) => {
 
     return (
         <CheckerButton
-            enableWithSonority
             {...{
                 faceSrc: faceTranspose,
                 reverse: direction === -1,
                 styleConfig: styleConfigOption,
                 faceStyleConfig: styleConfigFacesOption,
+                disabled: !hasSonority,
                 onClick,
             }}
         />

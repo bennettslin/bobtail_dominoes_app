@@ -4,7 +4,7 @@ let synth = null
 
 const getInitialisedSynth = () => {
     synth = new PolySynth(FMSynth).toDestination()
-    synth.volume.value = -5 // By ear.
+    synth.volume.value = -7.5 // By ear.
     return synth
 }
 
