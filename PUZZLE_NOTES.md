@@ -1,10 +1,6 @@
 # TODO next
+* Change util to return the first puzzle that meets the minimum points
 * Show hand if there is one
-
-# TODO
-* Unit tests for puzzle utils
-* Puzzle component takes moves
-    * Optionally also takes hand
 
 # Regular puzzle utils
 * Build board

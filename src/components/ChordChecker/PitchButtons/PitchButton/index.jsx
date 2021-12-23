@@ -8,6 +8,7 @@ import {
     getMapHasCurrentPitch,
     getMapIsRoot,
     getMapPlayedPitchConfig,
+    mapHasMaximumSonority,
 } from '../../../../redux/audio/selector'
 import { getIsPitchBlack } from '../../../../utils/music/chords/label'
 import { getFaceSrc } from '../../../../utils/src/faces'
@@ -21,6 +22,7 @@ import './style'
 const PitchButton = ({ pitch }) => {
     const
         dispatch = useDispatch(),
+        hasMaximumSonority = useSelector(mapHasMaximumSonority),
         isRoot = useSelector(getMapIsRoot(pitch)),
         hasCurrentPitch = useSelector(getMapHasCurrentPitch(pitch)),
         playedPitchConfig = useSelector(getMapPlayedPitchConfig(pitch)),
@@ -47,6 +49,7 @@ const PitchButton = ({ pitch }) => {
                 faceSrc: getFaceSrc(pitch),
                 style: getButtonPositionStyle(pitch),
                 isOn: hasCurrentPitch,
+                disabled: hasMaximumSonority && !hasCurrentPitch,
                 styleConfig,
                 styleConfigOn,
                 onClick,

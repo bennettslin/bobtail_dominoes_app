@@ -2,6 +2,7 @@ import { createSelector } from 'reselect'
 import { getPitchConfig } from '../../utils/music/audio/pitch'
 import { getRoots } from '../../utils/music/chords/primeForm'
 import { AUDIO_STORE } from './reducer'
+import { MAXIMUM_SONORITY_COUNT } from '../../constants/music/audio'
 
 export const mapIsAutoplayOn = (
     { [AUDIO_STORE]: { isAutoplayOn } },
@@ -22,6 +23,11 @@ export const mapPlayedPitchConfigs = (
 export const mapHasSonority = createSelector(
     mapCurrentPitchSet,
     currentPitchSet => Boolean(currentPitchSet.size),
+)
+
+export const mapHasMaximumSonority = createSelector(
+    mapCurrentPitchSet,
+    currentPitchSet => currentPitchSet.size >= MAXIMUM_SONORITY_COUNT,
 )
 
 export const getMapHasCurrentPitch = pitch => createSelector(

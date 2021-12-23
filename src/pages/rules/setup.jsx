@@ -24,7 +24,7 @@ The standard set consists of 48 dominoes representing all possible whole tones, 
                 `
 We recommend the standard set, but advanced players may choose to play with the extended set.
 
-Before starting the game, the players should decide on which chords to allow. We recommend the chords listed on this website, but extended jazz chords and set theory collections are also possible.
+Before starting the game, the players should decide on which chords to allow. We recommend the chords listed on our [chord checker](/guides/chords) page, but extended jazz chords and set theory collections are also possible.
 
 The players should also agree on the maximum number of dominoes held in each player's hand. We recommend three, but advanced players may choose four or five.
 

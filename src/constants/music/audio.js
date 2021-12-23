@@ -3,6 +3,7 @@ import { getArrayOfIndices } from '../../utils/general'
 export const OCTAVE_RANGE = 12
 export const OCTAVE_COUNT = 3
 export const BASE_PITCH_INDEX = 36 // C3 for piano layout.
+export const MAXIMUM_SONORITY_COUNT = 4 // Prevent audio
 
 export const ALL_PITCH_INDICES = getArrayOfIndices(
     OCTAVE_RANGE * OCTAVE_COUNT,
