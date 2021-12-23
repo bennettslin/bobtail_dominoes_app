@@ -1,8 +1,6 @@
 # TODO next
-* Answer view places moves on board
-    * And renders log
-        * Each move shows chord and points
-        * If multiple dominoes, also show total points
+* Pass day and puzzle type to clipboard as well
+* Show hand if there is one
 
 # TODO
 * Unit tests for puzzle utils
@@ -10,18 +8,23 @@
     * Optionally also takes hand
 
 # Regular puzzle utils
-* Util takes in parameters
-    * Number of starting dominoes
-    * Strength of maximum points for starting dominoes
+* Build board
 * Util then iterates through remaining dominoes in random order
-    * Until it finds a domino that builds at least two chords
+    * Until it finds a domino that builds at least a minimum number of chords
     * It repeats this until it has three dominoes
 * It then runs those three dominoes to ensure it has the best possible combination
+    * And randomizes them before placing in hand
 
 # Missing puzzle utils
+* Build board
+* Determine which domino, once removed, would yield the most points
+    * While meeting the minimum number
+    * Ensure that no other available domino can legally have the same placement
+* Remove domino from board
+    * Needs missing domino svg
 
 # Maximum puzzle utils
-
+* Option for standard or extended set
 # Puzzle types
 * Switch up number of dominoes on board
 * Switch up standard and extended set
@@ -30,3 +33,5 @@
 * Figure out missing domino
     * Needs missing domino svg
 * Choose piece to maximize points
+
+* Standard and extended set

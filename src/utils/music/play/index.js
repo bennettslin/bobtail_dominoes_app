@@ -5,12 +5,12 @@ import { addMovesToScores, getInitialScores } from './scores'
 import { addTurn, getInitialTurns } from './turns'
 
 export const getInitialGame = ({
-    isExtendedGame = false,
+    isExtendedPool = false,
     handCount,
     playersCount,
 } = {}) => {
     const
-        pool = isExtendedGame ?
+        pool = isExtendedPool ?
             getInitialExtendedPool() :
             getInitialStandardPool(),
         board = getInitialBoard(pool)

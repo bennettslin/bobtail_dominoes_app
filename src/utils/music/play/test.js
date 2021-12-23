@@ -54,7 +54,7 @@ describe('getInitialGame', () => {
 
     it('generates initial extended game', () => {
         expect(getInitialGame({
-            isExtendedGame: true,
+            isExtendedPool: true,
             handCount: HAND_COUNT,
             playersCount: PLAYERS_COUNT,
         })).toStrictEqual({

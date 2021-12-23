@@ -2,6 +2,7 @@ import { getBestPointedMovesForTurn, sortByHighestPoints } from '../../ai'
 import { addMovesToBoard, getInitialBoard } from '../../play/board'
 import { playHand } from '../../play/hands'
 import {
+    getInitialExtendedPool,
     getInitialStandardPool,
     getRandomDominoIndex,
 } from '../../play/pool'
@@ -17,13 +18,17 @@ const addDominoesFromRunoffPool = ({ pool, runoffPool }) => {
 }
 
 export const getInitialBoardForPuzzle = ({
+    // Puzzles default to including all dominoes.
+    isExtendedPool = true,
     // Number of dominoes on board.
     dominoesCount = 1,
     // Each domino has the nth best move.
     moveRank = 0,
 }) => {
     const
-        pool = getInitialStandardPool(),
+        pool = isExtendedPool ?
+            getInitialExtendedPool() :
+            getInitialStandardPool(),
         board = getInitialBoard(pool),
         runoffPool = new Set()
 

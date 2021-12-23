@@ -123,5 +123,29 @@ export default {
                 },
             ],
         },
+        {
+            day: 20,
+            puzzleType: MAXIMUM_PUZZLE_TYPE,
+            board: [
+                { dominoIndex: 8, placement: [[0, 0], [-1, 1]] },
+                { dominoIndex: 34, placement: [[1, -1], [2, -2]] },
+                { dominoIndex: 38, placement: [[0, -2], [1, -2]] },
+                { dominoIndex: 45, placement: [[-1, -2], [-1, -1]] },
+                { dominoIndex: 5, placement: [[1, 1], [0, 1]] },
+            ],
+            moves: [
+                {
+                    dominoIndex: 35,
+                    placement: [[-1, 0], [0, -1]],
+                    pitchLists: [
+                        [4, 11, 3, 8],
+                        [11, 8, 3],
+                        [11, 8, 3],
+                        [3, 8, 0, 5],
+                    ],
+                    points: 14,
+                },
+            ],
+        },
     ],
 }
