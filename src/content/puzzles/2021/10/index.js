@@ -147,5 +147,30 @@ export default {
                 },
             ],
         },
+        {
+            day: 27,
+            puzzleType: MAXIMUM_PUZZLE_TYPE,
+            board: [
+                { dominoIndex: 36, placement: [[0, -1], [0, 0]] },
+                { dominoIndex: 9, placement: [[0, -2], [1, -2]] },
+                { dominoIndex: 24, placement: [[1, 0], [0, 1]] },
+                { dominoIndex: 11, placement: [[-2, 2], [-1, 2]] },
+                { dominoIndex: 54, placement: [[2, 0], [2, -1]] },
+            ],
+            moves: [
+                {
+                    dominoIndex: 33,
+                    placement: [[2, -2], [1, -1]],
+                    pitchLists: [
+                        [0, 9, 3],
+                        [3, 9, 6],
+                        [3, 6, 9],
+                        [3, 6, 9],
+                        [9, 6, 2],
+                    ],
+                    points: 15,
+                },
+            ],
+        },
     ],
 }

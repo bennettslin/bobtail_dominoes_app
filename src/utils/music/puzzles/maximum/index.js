@@ -1,22 +1,23 @@
 import { getRandomInteger } from '../../../general/random'
 import { getBestMoveForBoard, getInitialBoardForPuzzle } from '../general'
+import { logTrial } from '../log'
 import { MAXIMUM_PUZZLE_TYPE } from '../../../../constants/music/puzzle'
 
-const sortTrialsByHighestPoints = (
-    { move: { points: firstPoints } },
-    { move: { points: secondPoints } },
-) => secondPoints - firstPoints
+const TRIALS_COUNT = 1000
 
 export const getMaximumPuzzle = ({
     dominoesCount = getRandomInteger(4, 7),
+    minPoints = getRandomInteger(10, 15),
     moveRank = getRandomInteger(0, 5),
-    minPoints = 10,
-    trialsCount = 100,
 
 } = {}) => {
-    const trials = []
+    let validBoard,
+        validMove,
+        trialIndex = 0
 
-    while (trialsCount) {
+    logServe(`Finding a unique outcome with at least ${minPoints} points…`)
+
+    while (!validBoard && !validMove && trialIndex < TRIALS_COUNT) {
         const {
             board,
             pool,
@@ -26,28 +27,27 @@ export const getMaximumPuzzle = ({
         })
 
         if (board) {
-            const { move } = getBestMoveForBoard({
+            const { move, ...rest } = getBestMoveForBoard({
                 board,
                 pool,
                 minPoints,
                 needsUniqueHighest: true,
             })
 
+            logTrial({ trialIndex, ...rest })
+
             if (move) {
-                trials.push({
-                    board,
-                    move,
-                })
+                validBoard = board
+                validMove = move
             }
-            trialsCount--
         }
+
+        trialIndex++
     }
 
-    trials.sort(sortTrialsByHighestPoints)
-
-    return trials.length ? {
-        moves: [trials[0].move],
-        board: trials[0].board,
+    return validMove ? {
+        board: validBoard,
+        moves: [validMove],
         puzzleType: MAXIMUM_PUZZLE_TYPE,
     } : {}
 }

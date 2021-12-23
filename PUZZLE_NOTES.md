@@ -1,5 +1,4 @@
 # TODO next
-* Change util to return the first puzzle that meets the minimum points
 * Show hand if there is one
 
 # Regular puzzle utils
@@ -18,15 +17,10 @@
 * Remove domino from board
     * Needs missing domino svg
 
-# Maximum puzzle utils
-* Option for standard or extended set
 # Puzzle types
 * Switch up number of dominoes on board
-* Switch up standard and extended set
 * Play a regular hand
     * With each guaranteed to build two chords
 * Figure out missing domino
     * Needs missing domino svg
 * Choose piece to maximize points
-
-* Standard and extended set

@@ -87,21 +87,23 @@ export const getBestMoveForBoard = ({
 
     addDominoesFromRunoffPool({ pool, runoffPool })
     possibleMoves.sort(sortByHighestPoints)
-    const topMovePoints = possibleMoves[0].points
 
-    if (
-        needsUniqueHighest &&
-        possibleMoves.length > 1 &&
-        topMovePoints === possibleMoves[1].points
-    ) {
-        // Return empty if top move doesn't have uniquely highest points.
-        return {}
+    const
+        yieldPoints = possibleMoves[0].points,
+        meetsMinimumPoints = yieldPoints >= minPoints,
+        meetsUniqueHighest =
+            !needsUniqueHighest ||
+            possibleMoves.length === 1 ||
+            yieldPoints > possibleMoves[1].points
+
+    return {
+        yieldPoints,
+        meetsMinimumPoints,
+        meetsUniqueHighest,
+        ...meetsMinimumPoints && meetsUniqueHighest && {
+            board,
+            pool,
+            move: possibleMoves[0],
+        },
     }
-
-    // Only return values if requested minimum points succeeded.
-    return topMovePoints >= minPoints ? {
-        board,
-        pool,
-        move: possibleMoves[0],
-    } : {}
 }
