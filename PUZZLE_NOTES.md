@@ -1,6 +1,5 @@
 # TODO next
-* Show hand if there is one
-    * Empty hand 
+* Demo board no longer shrinks enough
 * Puzzles should show navigation
 
 # Regular puzzle utils

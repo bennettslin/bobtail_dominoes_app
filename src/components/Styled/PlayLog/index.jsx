@@ -8,6 +8,7 @@ import './style'
 const StyledTurnLog = ({
     isLatestTurn,
     isGameOver,
+    centreText,
     children,
 }) => {
     return (
@@ -15,6 +16,7 @@ const StyledTurnLog = ({
             {...{
                 className: cx(
                     'StyledLog',
+                    centreText && 'StyledLog__centreText',
                     isLatestTurn && 'StyledLog__latest',
                 ),
             }}
@@ -33,8 +35,9 @@ const StyledTurnLog = ({
 }
 
 StyledTurnLog.propTypes = {
-    isLatestTurn: PropTypes.bool.isRequired,
-    isGameOver: PropTypes.bool.isRequired,
+    isLatestTurn: PropTypes.bool,
+    centreText: PropTypes.bool,
+    isGameOver: PropTypes.bool,
     children: PropTypes.node.isRequired,
 }
 

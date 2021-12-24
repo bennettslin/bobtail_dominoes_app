@@ -30,13 +30,6 @@
     }
 }
 
-.DominoCard__inset {
-    .PlayerCard
-    & {
-        max-height: $margin__xl + $margin__xxs; // Eyeballed.
-    }
-}
-
 .PlayerCard__player {
     height: 100%;
     filter: $dropShadow;
@@ -49,4 +42,19 @@
 
 .PlayerCard__winnerIcon {
     bottom: 0.075em;
+}
+
+.DominoCard__inset {
+    .PlayerCard
+    & {
+        min-height: $margin__xl + $margin__xxs;
+        max-height: $margin__xl + $margin__xxs; // Eyeballed.
+    }
+}
+
+.DominoCardDomino {
+    .PlayerCard
+    & {
+        max-width: $margin__xl * 1.5;
+    }
 }

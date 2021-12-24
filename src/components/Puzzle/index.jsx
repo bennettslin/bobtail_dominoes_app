@@ -66,12 +66,17 @@ const Puzzle = ({
                     }}
                 >
                     {showAnswer && (
-                        <StyledPlayLog>
+                        <StyledPlayLog centreText>
                             <PlayLog {...{ fontSize: 'md', moves }} />
                         </StyledPlayLog>
                     )}
                     {!showAnswer && hand && (
-                        <DominoCard {...{ hand }} />
+                        <DominoCard
+                            {...{
+                                hand,
+                                labelText: 'your hand',
+                            }}
+                        />
                     )}
                 </PuzzleBoard>
             </Flex>

@@ -14,7 +14,7 @@ const PuzzlePage = ({
     } = {},
 }) => {
     const
-        { puzzleType, board, hand, moves, ...rest } = pageMap,
+        { puzzleType, board, handList, moves, ...rest } = pageMap,
         { date } = rest
 
     return !didMount || getIsPastOrPresentDate(date) ? (
@@ -25,9 +25,11 @@ const PuzzlePage = ({
                         {...{
                             puzzleType,
                             board,
-                            hand,
+                            // Convert lists back to sets.
+                            ...handList && {
+                                hand: new Set(handList),
+                            },
                             moves: moves.map(({ pitchLists, ...rest }) => ({
-                                // Convert lists back to sets.
                                 ...pitchLists && {
                                     pitchSets: pitchLists.map(list => (
                                         new Set(list)

@@ -6,7 +6,6 @@ import DominoCard from '../../../DominoCard'
 import Flex from '../../../Flex'
 import StyledShadow from '../../../Styled/Shadow'
 import PeopleSvg from '../../../Svgs/People'
-import PlayerCardDomino from './Domino'
 import {
     getMapHand,
     getMapIsCurrentPlayer,
@@ -113,20 +112,12 @@ const PlayerCard = ({ playerIndex }) => {
                         </Flex>
                     </Flex>
                 ),
+                hand,
                 figure: score,
                 flexGrow: 1,
                 order,
             }}
-        >
-            {Array.from(hand).map(dominoIndex => (
-                <PlayerCardDomino
-                    {...{
-                        key: dominoIndex,
-                        dominoIndex,
-                    }}
-                />
-            ))}
-        </DominoCard>
+        />
     )
 }
 

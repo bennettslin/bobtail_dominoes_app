@@ -126,7 +126,6 @@ export default {
                     points: 15,
                 },
             ],
-            hand: new Set([1, 2, 3]),
         },
     ],
 }

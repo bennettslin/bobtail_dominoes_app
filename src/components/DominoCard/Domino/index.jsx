@@ -1,22 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import Domino from '../../Domino'
 import './style'
-import Domino from '../../../../Domino'
 
-const PlayerCardDomino = ({ dominoIndex }) => (
+const DominoCardDomino = ({ dominoIndex }) => (
     <Domino
         {...{
             className: cx(
-                'PlayerCardDomino',
+                'DominoCardDomino',
             ),
             dominoIndex,
         }}
     />
 )
 
-PlayerCardDomino.propTypes = {
+DominoCardDomino.propTypes = {
     dominoIndex: PropTypes.number.isRequired,
 }
 
-export default PlayerCardDomino
+export default DominoCardDomino

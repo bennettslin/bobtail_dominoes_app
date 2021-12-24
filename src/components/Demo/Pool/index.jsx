@@ -3,7 +3,6 @@ import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import DominoCard from '../../DominoCard'
 import Flex from '../../Flex'
-import StyledShadow from '../../Styled/Shadow'
 import PoolInterval from './PoolInterval'
 import PoolPitch from './PoolPitch'
 import { mapPool } from '../../../redux/game/selector'
@@ -22,20 +21,7 @@ const Pool = () => {
                 className: cx(
                     'Pool',
                 ),
-                label: (
-                    <Flex
-                        {...{
-                            className: cx(
-                                'Pool__label',
-                                'labelFontSize__md',
-                            ),
-                        }}
-                    >
-                        <StyledShadow isInset isGold>
-                            pool
-                        </StyledShadow>
-                    </Flex>
-                ),
+                labelText: 'pool',
                 flexGrow: 1,
             }}
         >

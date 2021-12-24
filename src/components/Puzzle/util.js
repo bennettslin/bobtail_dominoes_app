@@ -3,7 +3,7 @@ import { MAXIMUM_PUZZLE_TYPE, MISSING_PUZZLE_TYPE, REGULAR_PUZZLE_TYPE } from '.
 export const getPuzzleText = puzzleType => {
     switch (puzzleType) {
         case REGULAR_PUZZLE_TYPE:
-            return 'Placeholder text for regular puzzle type'
+            return 'Earn the most points with the given hand.'
         case MISSING_PUZZLE_TYPE:
             return 'Placeholder text for missing puzzle type'
         case MAXIMUM_PUZZLE_TYPE:
