@@ -12,6 +12,7 @@ import './style'
 
 const Board = ({
     className,
+    isDemo,
     board,
     boardHexagonalWidth,
     boardHexagonalBaseWidth,
@@ -26,7 +27,9 @@ const Board = ({
                 'Board',
                 className,
             ),
-            flexDirection: 'column',
+            ...!isDemo && {
+                flexDirection: 'column',
+            },
             ...rest,
         }}
     >
@@ -103,6 +106,7 @@ const Board = ({
 
 Board.propTypes = {
     className: PropTypes.string,
+    isDemo: PropTypes.bool,
     board: PropTypes.arrayOf(PropTypes.shape({
         dominoIndex: PropTypes.number.isRequired,
         placement: PropTypes.arrayOf(

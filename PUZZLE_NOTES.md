@@ -1,5 +1,4 @@
 # TODO next
-* Demo board no longer shrinks enough
 * Puzzles should show navigation
 
 # Regular puzzle utils
