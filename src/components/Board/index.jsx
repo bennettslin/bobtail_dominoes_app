@@ -13,6 +13,7 @@ import './style'
 const Board = ({
     className,
     board,
+    hand,
     boardHexagonalWidth,
     boardHexagonalBaseWidth,
     DominoComponent = Domino,
@@ -24,6 +25,7 @@ const Board = ({
                 'Board',
                 className,
             ),
+            flexDirection: 'column',
             ...rest,
         }}
     >
@@ -73,6 +75,11 @@ const Board = ({
                 })}
             </div>
         </Flex>
+        {hand && (
+            <Flex>
+                    Hello there
+            </Flex>
+        )}
     </Flex>
 )
 
@@ -86,6 +93,7 @@ Board.propTypes = {
             ).isRequired,
         ),
     })).isRequired,
+    hand: PropTypes.object,
     boardHexagonalWidth: PropTypes.number,
     boardHexagonalBaseWidth: PropTypes.number,
     DominoComponent: PropTypes.func,

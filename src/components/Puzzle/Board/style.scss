@@ -6,4 +6,10 @@
     max-width: $width__sm;
     border-radius: $borderRadius__lg;
     overflow: hidden;
+
+    // TODO: There might be a better way to do this.
+    .Board__square {
+        width: 100%;
+        max-width: $width__sm;
+    }
 }

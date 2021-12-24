@@ -11,6 +11,7 @@ import PlayLog from '../PlayLog'
 const Puzzle = ({
     puzzleType,
     board,
+    hand,
     moves,
     canShowAnswer,
 }) => {
@@ -34,6 +35,15 @@ const Puzzle = ({
             <Paragraph {...{ fontSize: 'md' }}>
                 {getPuzzleText(puzzleType)}
             </Paragraph>
+            <Flex>
+                <PuzzleBoard
+                    {...{
+                        board,
+                        hand,
+                        ...showAnswer && { moves },
+                    }}
+                />
+            </Flex>
             {canShowAnswer ? (
                 <Button
                     {...{
@@ -49,14 +59,6 @@ const Puzzle = ({
             ) : (
                 'Check back tomorrow for the answer!'
             )}
-            <Flex>
-                <PuzzleBoard
-                    {...{
-                        board,
-                        ...showAnswer && { moves },
-                    }}
-                />
-            </Flex>
             {showAnswer && (
                 <Flex>
                     <PlayLog {...{ fontSize: 'md', moves }} />
@@ -77,6 +79,7 @@ Puzzle.propTypes = {
             ).isRequired,
         ),
     })).isRequired,
+    hand: PropTypes.object,
     moves: PropTypes.arrayOf(PropTypes.shape({
         dominoIndex: PropTypes.number.isRequired,
         placement: PropTypes.arrayOf(

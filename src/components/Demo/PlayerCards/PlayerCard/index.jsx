@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
+import DominoCard from '../../../DominoCard'
 import Flex from '../../../Flex'
 import StyledShadow from '../../../Styled/Shadow'
 import PeopleSvg from '../../../Svgs/People'
-import DominoCard from '../../DominoCard'
 import PlayerCardDomino from './Domino'
 import {
     getMapHand,

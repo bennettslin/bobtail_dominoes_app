@@ -8,6 +8,7 @@ import './style'
 const PuzzleBoard = ({
     className,
     board,
+    hand,
     moves = [],
 }) => {
     const newBoard = [
@@ -33,6 +34,7 @@ const PuzzleBoard = ({
                 board: newBoard,
                 boardHexagonalWidth: boardHexagonalMinWidth,
                 boardHexagonalBaseWidth: boardHexagonalMinWidth,
+                hand,
             }}
         />
     )
@@ -48,6 +50,7 @@ PuzzleBoard.propTypes = {
             ).isRequired,
         ),
     })).isRequired,
+    hand: PropTypes.object,
     moves: PropTypes.arrayOf(PropTypes.shape({
         dominoIndex: PropTypes.number.isRequired,
         placement: PropTypes.arrayOf(
