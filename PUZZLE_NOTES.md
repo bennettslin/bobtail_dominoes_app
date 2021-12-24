@@ -1,5 +1,8 @@
 # TODO next
+* Regular puzzle utils
+
 * Puzzles should show navigation
+    * Redo how pages navigation is done at all
 
 # Regular puzzle utils
 * Build board
