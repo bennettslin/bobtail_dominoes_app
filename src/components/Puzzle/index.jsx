@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Button from '../Button'
+import DominoCard from '../DominoCard'
 import Flex from '../Flex'
 import Paragraph from '../Paragraph'
 import PlayLog from '../PlayLog'
@@ -42,7 +43,6 @@ const Puzzle = ({
                 <PuzzleBoard
                     {...{
                         board,
-                        hand,
                         ...showAnswer && { moves },
                         topChild: canShowAnswer ? (
                             <Button
@@ -63,15 +63,17 @@ const Puzzle = ({
                                 Check back tomorrow for the answer!
                             </StyledShadow>
                         ),
-                        bottomChild: showAnswer ? (
-                            <Flex>
-                                <StyledPlayLog>
-                                    <PlayLog {...{ fontSize: 'md', moves }} />
-                                </StyledPlayLog>
-                            </Flex>
-                        ) : null,
                     }}
-                />
+                >
+                    {showAnswer && (
+                        <StyledPlayLog>
+                            <PlayLog {...{ fontSize: 'md', moves }} />
+                        </StyledPlayLog>
+                    )}
+                    {!showAnswer && hand && (
+                        <DominoCard {...{ hand }} />
+                    )}
+                </PuzzleBoard>
             </Flex>
         </Flex>
     )

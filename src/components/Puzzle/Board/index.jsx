@@ -8,10 +8,9 @@ import './style'
 const PuzzleBoard = ({
     className,
     board,
-    hand,
     moves = [],
     topChild,
-    bottomChild,
+    children,
 }) => {
     const newBoard = [
         ...board,
@@ -36,11 +35,11 @@ const PuzzleBoard = ({
                 board: newBoard,
                 boardHexagonalWidth: boardHexagonalMinWidth,
                 boardHexagonalBaseWidth: boardHexagonalMinWidth,
-                hand,
                 topChild,
-                bottomChild,
             }}
-        />
+        >
+            {children}
+        </Board>
     )
 }
 
@@ -54,7 +53,6 @@ PuzzleBoard.propTypes = {
             ).isRequired,
         ),
     })).isRequired,
-    hand: PropTypes.object,
     moves: PropTypes.arrayOf(PropTypes.shape({
         dominoIndex: PropTypes.number.isRequired,
         placement: PropTypes.arrayOf(
@@ -64,7 +62,7 @@ PuzzleBoard.propTypes = {
         ),
     })),
     topChild: PropTypes.node,
-    bottomChild: PropTypes.node,
+    children: PropTypes.node,
 }
 
 export default PuzzleBoard

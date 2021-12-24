@@ -13,12 +13,11 @@ import './style'
 const Board = ({
     className,
     board,
-    hand,
     boardHexagonalWidth,
     boardHexagonalBaseWidth,
     DominoComponent = Domino,
     topChild,
-    bottomChild,
+    children,
     ...rest
 }) => (
     <Flex
@@ -88,20 +87,15 @@ const Board = ({
                 {topChild}
             </Flex>
         )}
-        {bottomChild && (
+        {children && (
             <Flex
                 {...{
                     className: cx(
-                        'Board__bottomChild',
+                        'Board__children',
                     ),
                 }}
             >
-                {bottomChild}
-            </Flex>
-        )}
-        {hand && (
-            <Flex>
-                    Hello there
+                {children}
             </Flex>
         )}
     </Flex>
@@ -117,12 +111,11 @@ Board.propTypes = {
             ).isRequired,
         ),
     })).isRequired,
-    hand: PropTypes.object,
     boardHexagonalWidth: PropTypes.number,
     boardHexagonalBaseWidth: PropTypes.number,
-    topChild: PropTypes.node,
-    bottomChild: PropTypes.node,
     DominoComponent: PropTypes.func,
+    topChild: PropTypes.node,
+    children: PropTypes.node,
 }
 
 export default Board
