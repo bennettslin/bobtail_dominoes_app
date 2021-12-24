@@ -1,4 +1,5 @@
 @import '../../scss/constants/colours';
+@import '../../scss/constants/responsive';
 @import '../../scss/constants/transition';
 
 .Board {
@@ -17,4 +18,11 @@
         left $transitionDuration__slowest,
         width $transitionDuration__slowest,
         height $transitionDuration__slowest;
+}
+
+.Board__topChild {
+    position: absolute;
+    top: $margin__xs;
+    width: 100%;
+    text-align: center;
 }

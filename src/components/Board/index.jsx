@@ -17,6 +17,8 @@ const Board = ({
     boardHexagonalWidth,
     boardHexagonalBaseWidth,
     DominoComponent = Domino,
+    topChild,
+    bottomChild,
     ...rest
 }) => (
     <Flex
@@ -75,6 +77,22 @@ const Board = ({
                 })}
             </div>
         </Flex>
+        {topChild && (
+            <Flex
+                {...{
+                    className: cx(
+                        'Board__topChild',
+                    ),
+                }}
+            >
+                {topChild}
+            </Flex>
+        )}
+        {bottomChild && (
+            <Flex>
+                {bottomChild}
+            </Flex>
+        )}
         {hand && (
             <Flex>
                     Hello there
@@ -96,6 +114,8 @@ Board.propTypes = {
     hand: PropTypes.object,
     boardHexagonalWidth: PropTypes.number,
     boardHexagonalBaseWidth: PropTypes.number,
+    topChild: PropTypes.node,
+    bottomChild: PropTypes.node,
     DominoComponent: PropTypes.func,
 }
 

@@ -1,5 +1,10 @@
 # TODO next
 * Show hand if there is one
+    * Empty hand 
+
+* Put log inside board
+
+* Puzzles should show navigation
 
 # Regular puzzle utils
 * Build board
