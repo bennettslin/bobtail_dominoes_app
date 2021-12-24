@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useSelector } from 'react-redux'
 import StaticArray from '../../../StaticArray'
-import StyledTurnLog from '../../../Styled/Log'
+import StyledPlayLog from '../../../Styled/PlayLog'
 import PlayLog from '../../../PlayLog'
 import { getDominoLabel } from '../../../../utils/music/chords/label'
 import { getCommaSeparatedList } from '../../../../utils/format'
@@ -54,14 +54,14 @@ const TurnLog = ({
     }
 
     return (
-        <StyledTurnLog
+        <StyledPlayLog
             {...{
                 isGameOver,
                 isLatestTurn,
             }}
         >
             {log}
-        </StyledTurnLog>
+        </StyledPlayLog>
     )
 }
 

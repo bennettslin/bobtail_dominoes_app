@@ -11,6 +11,7 @@ const PuzzleBoard = ({
     hand,
     moves = [],
     topChild,
+    bottomChild,
 }) => {
     const newBoard = [
         ...board,
@@ -37,6 +38,7 @@ const PuzzleBoard = ({
                 boardHexagonalBaseWidth: boardHexagonalMinWidth,
                 hand,
                 topChild,
+                bottomChild,
             }}
         />
     )
@@ -62,6 +64,7 @@ PuzzleBoard.propTypes = {
         ),
     })),
     topChild: PropTypes.node,
+    bottomChild: PropTypes.node,
 }
 
 export default PuzzleBoard

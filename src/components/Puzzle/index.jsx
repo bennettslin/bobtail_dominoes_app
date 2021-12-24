@@ -4,11 +4,12 @@ import cx from 'classnames'
 import Button from '../Button'
 import Flex from '../Flex'
 import Paragraph from '../Paragraph'
+import PlayLog from '../PlayLog'
 import StyledButtonText from '../Styled/ButtonText'
+import StyledPlayLog from '../Styled/PlayLog'
+import StyledShadow from '../Styled/Shadow'
 import PuzzleBoard from './Board'
 import { getPuzzleText } from './util'
-import PlayLog from '../PlayLog'
-import StyledShadow from '../Styled/Shadow'
 
 const Puzzle = ({
     puzzleType,
@@ -62,14 +63,16 @@ const Puzzle = ({
                                 Check back tomorrow for the answer!
                             </StyledShadow>
                         ),
+                        bottomChild: showAnswer ? (
+                            <Flex>
+                                <StyledPlayLog>
+                                    <PlayLog {...{ fontSize: 'md', moves }} />
+                                </StyledPlayLog>
+                            </Flex>
+                        ) : null,
                     }}
                 />
             </Flex>
-            {showAnswer && (
-                <Flex>
-                    <PlayLog {...{ fontSize: 'md', moves }} />
-                </Flex>
-            )}
         </Flex>
     )
 }

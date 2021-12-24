@@ -89,7 +89,13 @@ const Board = ({
             </Flex>
         )}
         {bottomChild && (
-            <Flex>
+            <Flex
+                {...{
+                    className: cx(
+                        'Board__bottomChild',
+                    ),
+                }}
+            >
                 {bottomChild}
             </Flex>
         )}
