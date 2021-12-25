@@ -1,41 +1,28 @@
 import { join } from '../../general'
+import { addDirectionPages } from '../directionPages'
 
-export const getPagesMap = (
-    initialConfigs,
-    topLevelPage,
-) => (
-    initialConfigs.reduce((map, initialConfig) => {
+export const getPagesMap = ({
+    configs,
+    ...rest
+}) => (
+    configs.reduce((map, initialConfig) => {
         const { id, date: { month, day } = {} } = initialConfig
 
         map[id || join([month, day], '-')] = {
             ...initialConfig,
-            topLevelPage,
-            pages: initialConfigs,
+            ...rest,
         }
 
         return map
     }, {})
 )
 
-export const getPagesMapForIds = (pageIds, topLevelPage) => (
-    getPagesMap(
-        pageIds.map(id => ({ id })),
-        topLevelPage,
-    )
-)
-
-export const getPagePathFromConfig = ({
-    topLevelPage,
-    id,
-    date: { year, month, day } = {},
+export const getPagesMapForIds = ({
+    pageIds,
+    ...rest
 }) => (
-    join([
-        topLevelPage,
-        year,
-        join([
-            month,
-            day,
-        ], '-'),
-        id,
-    ], '/')
+    getPagesMap({
+        configs: addDirectionPages(pageIds.map(id => ({ id }))),
+        ...rest,
+    })
 )

@@ -1,5 +1,3 @@
-import { getPagePathFromConfig } from '../config'
-
 export const getDateValueFromMaps = maps => (
     parseInt(Object.keys(maps)[0])
 )
@@ -33,12 +31,7 @@ export const parseDateStructuredPages = ({
 export const flattenDateStructuredPages = dateStructuredPages => (
     dateStructuredPages.map(yearMaps => (
         Object.values(yearMaps)[0].map(monthMaps => (
-            Object.values(monthMaps)[0].map(pageMap => ({
-                path: getPagePathFromConfig(pageMap),
-                context: {
-                    pageMap,
-                },
-            }))
+            Object.values(monthMaps)[0]
         )).flat()
     )).flat()
 )

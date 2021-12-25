@@ -1,9 +1,11 @@
 import puzzles2021 from './2021'
 // import puzzles2022 from './2022'
+import { contextualizePageMaps } from '../../utils/pages/context'
 import {
     flattenDateStructuredPages,
     parseDateStructuredPages,
 } from '../../utils/pages/dateStructure'
+import { addDirectionPages } from '../../utils/pages/directionPages'
 import { PUZZLES_PAGE } from '../../constants/pages'
 
 const puzzles = parseDateStructuredPages({
@@ -18,7 +20,13 @@ const puzzles = parseDateStructuredPages({
 })
 
 // For server side.
-export const puzzlePages = flattenDateStructuredPages(puzzles)
+export const puzzlePages = (
+    contextualizePageMaps(
+        addDirectionPages(
+            flattenDateStructuredPages(puzzles).reverse(),
+        ),
+    )
+)
 
 // For client side.
 export default puzzles

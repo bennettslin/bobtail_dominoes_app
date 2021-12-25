@@ -1,4 +1,10 @@
-import { formatHeadingForDate, formatWeekLinkForDate } from '.'
+import { formatDirectionTextForDate, formatHeadingForDate, formatMonthForDate } from '.'
+
+describe('formatMonthForDate', () => {
+    it('returns formatted month', () => {
+        expect(formatMonthForDate(5)).toBe('May')
+    })
+})
 
 describe('formatHeadingForDate', () => {
     it('returns false for undefined', () => {
@@ -12,10 +18,14 @@ describe('formatHeadingForDate', () => {
     })
 })
 
-describe('formatWeekLinkForDate', () => {
-    it('returns formatted week link for date', () => {
-        expect(formatWeekLinkForDate(
+describe('formatDirectionTextForDate', () => {
+    it('returns false for undefined', () => {
+        expect(formatDirectionTextForDate()).toBe(false)
+    })
+
+    it('returns formatted direction text for date', () => {
+        expect(formatDirectionTextForDate(
             { year: 1983, month: 5, day: 4 },
-        )).toBe('5/4 - 5/10')
+        )).toBe('May 4')
     })
 })

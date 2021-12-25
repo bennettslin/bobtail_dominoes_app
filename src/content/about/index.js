@@ -6,4 +6,7 @@ const PAGE_IDS = [
     'design',
 ]
 
-export default getPagesMapForIds(PAGE_IDS, ABOUT_PAGE)
+export default getPagesMapForIds({
+    pageIds: PAGE_IDS,
+    topLevelPage: ABOUT_PAGE,
+})

@@ -1,27 +1,16 @@
 import React, { useContext } from 'react'
-import { useSelector } from 'react-redux'
 import PageConfigContext from '../../../../../contexts/PageConfig'
 import PageFooterRow from '../FooterRow'
 import DirectionPageLink from './DirectionPageLink'
-import { mapSelectedPagePath } from '../../../../../redux/page/selector'
-import { getDirectionPage } from './util'
 
 const DirectionRow = () => {
     const
-        { pages } = useContext(PageConfigContext),
-        selectedPagePath = useSelector(mapSelectedPagePath),
-        directionPageLeft = getDirectionPage({
-            direction: -1,
-            pages,
-            selectedPagePath,
-        }),
-        directionPageRight = getDirectionPage({
-            direction: 1,
-            pages,
-            selectedPagePath,
-        })
+        {
+            directionLeftPage,
+            directionRightPage,
+        } = useContext(PageConfigContext)
 
-    if (!directionPageLeft && !directionPageRight) {
+    if (!directionLeftPage && !directionRightPage) {
         return null
     }
 
@@ -32,7 +21,7 @@ const DirectionRow = () => {
                     <DirectionPageLink
                         {...{
                             direction: -1,
-                            directionPage: directionPageLeft,
+                            directionPage: directionLeftPage,
                         }}
                     />
                 ),
@@ -40,7 +29,7 @@ const DirectionRow = () => {
                     <DirectionPageLink
                         {...{
                             direction: 1,
-                            directionPage: directionPageRight,
+                            directionPage: directionRightPage,
                         }}
                     />
                 ),

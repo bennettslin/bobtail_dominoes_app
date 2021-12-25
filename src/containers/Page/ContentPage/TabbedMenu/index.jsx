@@ -25,16 +25,12 @@ const TabbedMenu = () => {
             {showBackLink && (
                 <BackLink isStyledShadow />
             )}
-            {Boolean(pages) && pages.map(({
-                id,
-                date,
-                pathDate,
-            }, index) => (
+            {Boolean(pages) && pages.map(({ id, date }, index) => (
                 <TabbedMenuButton
                     {...{
                         key: index,
                         id,
-                        date: pathDate || date,
+                        date,
                         topLevelPage,
                     }}
                 >

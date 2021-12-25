@@ -7,7 +7,8 @@ import Flex from '../../../../../../components/Flex'
 import Svg from '../../../../../../components/Svg'
 import arrow from '../../../../../../assets/svgs/app/arrow'
 import { getCapitalizedText } from '../../../../../../utils/format'
-import { getPagePathFromConfig } from '../../../../../../utils/pages/config'
+import { getPagePathFromConfig } from '../../../../../../utils/pages/path'
+import { formatDirectionTextForDate } from '../../../../../../utils/date/format'
 
 const DirectionPageLink = ({ direction, directionPage }) => {
     if (!directionPage) {
@@ -16,11 +17,7 @@ const DirectionPageLink = ({ direction, directionPage }) => {
 
     const
         { topLevelPage } = useContext(PageConfigContext),
-        {
-            id,
-            date,
-            pathDate,
-        } = directionPage
+        { id, date } = directionPage
 
     return Boolean(directionPage) && (
         <Anchor
@@ -33,7 +30,7 @@ const DirectionPageLink = ({ direction, directionPage }) => {
                 pagePath: getPagePathFromConfig({
                     topLevelPage,
                     id,
-                    date: pathDate || date,
+                    date,
                 }),
             }}
         >
@@ -48,7 +45,7 @@ const DirectionPageLink = ({ direction, directionPage }) => {
                         }}
                     />
                 )}
-                {getCapitalizedText(id)}
+                {id ? getCapitalizedText(id) : formatDirectionTextForDate(date)}
                 {direction === 1 && (
                     <Svg
                         reverse
@@ -70,11 +67,6 @@ DirectionPageLink.propTypes = {
     directionPage: PropTypes.shape({
         id: PropTypes.string,
         date: PropTypes.shape({
-            year: PropTypes.number.isRequired,
-            month: PropTypes.number.isRequired,
-            day: PropTypes.number.isRequired,
-        }),
-        pathDate: PropTypes.shape({
             year: PropTypes.number.isRequired,
             month: PropTypes.number.isRequired,
             day: PropTypes.number.isRequired,

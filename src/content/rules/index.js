@@ -8,4 +8,7 @@ const PAGE_IDS = [
     'scoring',
 ]
 
-export default getPagesMapForIds(PAGE_IDS, RULES_PAGE)
+export default getPagesMapForIds({
+    pageIds: PAGE_IDS,
+    topLevelPage: RULES_PAGE,
+})

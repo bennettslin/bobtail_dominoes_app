@@ -38,17 +38,9 @@ Page.propTypes = {
     noShare: PropTypes.bool,
     showContactEmail: PropTypes.bool,
     children: PropTypes.node,
-    pages: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.string,
-    })),
     topLevelPage: PropTypes.string,
     pageHeading: PropTypes.string,
     date: PropTypes.shape({
-        year: PropTypes.number.isRequired,
-        month: PropTypes.number.isRequired,
-        day: PropTypes.number.isRequired,
-    }),
-    pathDate: PropTypes.shape({
         year: PropTypes.number.isRequired,
         month: PropTypes.number.isRequired,
         day: PropTypes.number.isRequired,
@@ -58,6 +50,22 @@ Page.propTypes = {
         PropTypes.node,
         PropTypes.string,
     ]),
+    directionLeftPage: PropTypes.shape({
+        id: PropTypes.string,
+        date: PropTypes.shape({
+            year: PropTypes.number.isRequired,
+            month: PropTypes.number.isRequired,
+            day: PropTypes.number.isRequired,
+        }),
+    }),
+    directionRightPage: PropTypes.shape({
+        id: PropTypes.string,
+        date: PropTypes.shape({
+            year: PropTypes.number.isRequired,
+            month: PropTypes.number.isRequired,
+            day: PropTypes.number.isRequired,
+        }),
+    }),
 }
 
 export default Page

@@ -5,7 +5,7 @@ import Button from '../../Button'
 import Flex from '../../Flex'
 import StyledShadow from '../../Styled/Shadow'
 import PuzzleBoard from '../../Puzzle/Board'
-import { getPagePathFromConfig } from '../../../utils/pages/config'
+import { getPagePathFromConfig } from '../../../utils/pages/path'
 import './style'
 
 const PuzzleLink = ({
