@@ -89,40 +89,18 @@ describe('flattenDateStructuredPages', () => {
             flattenDateStructuredPages(PARSED_DATE_STRUCTURED_PAGES),
         ).toStrictEqual([
             {
-                context: {
-                    pageMap: {
-                        date: { day: 13, month: 11, year: 2021 },
-                        topLevelPage: 'birthdays',
-                    },
-                },
-                path: 'birthdays/2021/11-13',
+                date: { day: 13, month: 11, year: 2021 },
+                topLevelPage: 'birthdays',
+            }, {
+                date: { day: 18, month: 11, year: 2021 },
+                topLevelPage: 'birthdays',
             },
             {
-                context: {
-                    pageMap: {
-                        date: { day: 18, month: 11, year: 2021 },
-                        topLevelPage: 'birthdays',
-                    },
-                },
-                path: 'birthdays/2021/11-18',
-            },
-            {
-                context: {
-                    pageMap: {
-                        date: { day: 25, month: 12, year: 2021 },
-                        topLevelPage: 'birthdays',
-                    },
-                },
-                path: 'birthdays/2021/12-25',
-            },
-            {
-                context: {
-                    pageMap: {
-                        date: { day: 1, month: 1, year: 2022 },
-                        topLevelPage: 'birthdays',
-                    },
-                },
-                path: 'birthdays/2022/1-1',
+                date: { day: 25, month: 12, year: 2021 },
+                topLevelPage: 'birthdays',
+            }, {
+                date: { day: 1, month: 1, year: 2022 },
+                topLevelPage: 'birthdays',
             },
         ])
     })

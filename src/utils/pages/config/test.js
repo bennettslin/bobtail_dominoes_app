@@ -13,16 +13,10 @@ describe('getPagesMap', () => {
         ).toStrictEqual({
             '11-13': {
                 date: { day: 13, month: 11, year: 2021 },
-                directionLeftPage: {
-                    date: { day: 4, month: 5, year: 2021 },
-                },
                 topLevelPage: 'birthdays',
             },
             '5-4': {
                 date: { day: 4, month: 5, year: 2021 },
-                directionRightPage: {
-                    date: { day: 13, month: 11, year: 2021 },
-                },
                 topLevelPage: 'birthdays',
             },
         })

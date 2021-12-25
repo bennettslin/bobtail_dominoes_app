@@ -1,6 +1,6 @@
 import puzzles2021 from './2021'
 // import puzzles2022 from './2022'
-import { contextualizePageMaps } from '../../utils/pages/context'
+import { contextualisePageConfigs } from '../../utils/pages/context'
 import {
     flattenDateStructuredPages,
     parseDateStructuredPages,
@@ -21,7 +21,7 @@ const puzzles = parseDateStructuredPages({
 
 // For server side.
 export const puzzlePages = (
-    contextualizePageMaps(
+    contextualisePageConfigs(
         addDirectionPages(
             flattenDateStructuredPages(puzzles).reverse(),
         ),
