@@ -12,20 +12,19 @@ export const getRegularPuzzle = ({
     minPoints = getRandomInteger(10, 15),
 
 } = {}) => {
-    let validBoard,
-        validMoves,
-        validHand,
+    let returnConfig,
         trialIndex = 0
 
     logServe(`Finding a unique outcome with at least ${minPoints} points…`)
 
-    while (!validBoard && !validMoves && trialIndex < TRIALS_COUNT) {
+    while (!returnConfig && trialIndex < TRIALS_COUNT) {
         const { board, pool } = getInitialBoardForPuzzle()
 
         if (board) {
             const {
                 hand,
                 moves,
+                yieldPoints,
                 ...rest
             } = getBestMovesForPuzzleBoard({
                 board,
@@ -34,22 +33,21 @@ export const getRegularPuzzle = ({
                 minPoints,
             })
 
-            logTrial({ trialIndex, ...rest })
+            logTrial({ trialIndex, yieldPoints, ...rest })
 
             if (moves) {
-                validBoard = board
-                validMoves = moves
-                validHand = hand
+                returnConfig = {
+                    board,
+                    moves,
+                    hand,
+                    yieldPoints,
+                    puzzleType: REGULAR_PUZZLE_TYPE,
+                }
             }
         }
 
         trialIndex++
     }
 
-    return validMoves ? {
-        board: validBoard,
-        moves: validMoves,
-        hand: validHand,
-        puzzleType: REGULAR_PUZZLE_TYPE,
-    } : {}
+    return returnConfig || null
 }

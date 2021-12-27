@@ -1,18 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { boardPropTypes } from '../../Board'
 import Paragraph from '../../Paragraph'
 import Flex from '../../Flex'
 import Button from '../../Button'
 import { hsl } from '../../../utils/svgs'
-import { getTextForPuzzle } from '../../../utils/music/puzzles/format'
 
 const PuzzleTestAside = ({
-    board,
-    hand,
-    moves,
-    puzzleType,
+    puzzleText,
     copyTextToClipboard,
 }) => {
     const handleButtonClick = () => (
@@ -43,7 +38,7 @@ const PuzzleTestAside = ({
                     },
                 }}
             >
-                {getTextForPuzzle({ board, hand, moves, puzzleType })}
+                {puzzleText}
             </Paragraph>
             <Button
                 {...{
@@ -62,10 +57,7 @@ const PuzzleTestAside = ({
 }
 
 PuzzleTestAside.propTypes = {
-    board: boardPropTypes.isRequired,
-    hand: PropTypes.object,
-    moves: boardPropTypes,
-    puzzleType: PropTypes.string.isRequired,
+    puzzleText: PropTypes.string.isRequired,
     copyTextToClipboard: PropTypes.func.isRequired,
 }
 

@@ -1,4 +1,4 @@
-import { getNthBest } from '../../general'
+import { getNthInSortedList } from '../../general'
 import { getChordsForPlacement } from '../mechanics/placement/chords'
 import { sortByHighestPoints } from '../mechanics/points'
 import { addMoveToBoard } from '../play/board'
@@ -95,7 +95,7 @@ export const getBestPointedMovesForTurn = ({
         return []
     }
 
-    return getNthBest({
+    return getNthInSortedList({
         rank: moveRank,
         sortedList: recurseThroughValidPointedMoves({
             hand,

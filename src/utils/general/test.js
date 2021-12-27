@@ -1,5 +1,5 @@
 import {
-    getAreSetsEqual, getArrayOfIndices, getFixed, getNthBest, join, round,
+    getAreSetsEqual, getArrayOfIndices, getFixed, getNthInSortedList, join, round,
 } from '.'
 
 describe('getArrayOfIndices', () => {
@@ -80,10 +80,10 @@ describe('round', () => {
     })
 })
 
-describe('getNthBest', () => {
+describe('getNthInSortedList', () => {
     test.each([
         [0, undefined, '0'],
     ])('%p to %p digits returns %p', (number, digits, result) => {
-        expect(getNthBest(number, digits)).toBe(result)
+        expect(getNthInSortedList(number, digits)).toBe(result)
     })
 })

@@ -1,3 +1,5 @@
+import { getNthInSortedList } from '../../../../general'
+import { getRandomInteger } from '../../../../general/random'
 import { getBestPointedMovesForTurn } from '../../../ai'
 import { getPointsForMoves, sortByHighestPoints } from '../../../mechanics/points'
 import { addMoveToBoard } from '../../../play/board'
@@ -7,6 +9,8 @@ import { addDominoesFromRunoffPool, addDominoToRunoffPool } from '../runoff'
 export const getBestMoveForPuzzleBoard = ({
     board,
     pool,
+    // Choose the nth best domino and placement.
+    moveRankRange: [moveRankMin, moveRankMax] = [0, 0],
     minPoints = 0,
     needsUniqueHighest,
 }) => {
@@ -28,10 +32,11 @@ export const getBestMoveForPuzzleBoard = ({
         addDominoToRunoffPool({ dominoIndex, runoffList })
     }
 
-    possibleMoves.sort(sortByHighestPoints)
-
     const
-        move = possibleMoves[0],
+        move = getNthInSortedList({
+            rank: getRandomInteger(moveRankMin, moveRankMax),
+            sortedList: possibleMoves.sort(sortByHighestPoints),
+        }),
         yieldPoints = move.points,
         meetsMinimumPoints = yieldPoints >= minPoints,
         meetsUniqueHighest =
@@ -57,6 +62,8 @@ export const getBestMoveForPuzzleBoard = ({
 export const getBestMovesForPuzzleBoard = ({
     board,
     pool,
+    // For each hand slot, choose the nth best domino and placement.
+    moveRankRange,
     handCount,
     minPoints,
 }) => {
@@ -78,6 +85,7 @@ export const getBestMovesForPuzzleBoard = ({
         const { move } = getBestMoveForPuzzleBoard({
             board: trialBoard,
             pool,
+            moveRankRange,
         })
 
         if (move) {
@@ -88,7 +96,7 @@ export const getBestMovesForPuzzleBoard = ({
         tempHandCount--
     }
 
-    // Safety check, but it's unlikely the hand list will ever be incomplete.
+    // Safety check. It's unlikely the hand list will ever be incomplete.
     if (handList.length === handCount) {
         const
             hand = new Set(handList),

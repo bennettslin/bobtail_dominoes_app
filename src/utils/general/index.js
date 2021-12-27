@@ -51,7 +51,7 @@ export const round = (number, decimalPlaces = 3) => {
     )
 }
 
-export const getNthBest = ({ rank = 0, sortedList }) => {
+export const getNthInSortedList = ({ rank = 0, sortedList = [] }) => {
     // Just pick the worst entry if rank exceeds list count.
     const finalRank = Math.min(rank, sortedList.length - 1)
     return (

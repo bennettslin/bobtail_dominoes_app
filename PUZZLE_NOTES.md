@@ -1,6 +1,7 @@
 # TODO next
 * bestPointedMoves should also ensure it has a uniquely best solution
-* Regular puzzle has option to not get the best possible move for each domino that goes into hand
+* test moveRank and uniqueHighest for bestPointedMoves
+* Other unit tests
 
 # Missing puzzle utils
 * Build board
@@ -12,8 +13,5 @@
 
 # Puzzle types
 * Switch up number of dominoes on board
-* Play a regular hand
-    * With each guaranteed to build two chords
-* Figure out missing domino
-    * Needs missing domino svg
-* Choose piece to maximize points
+* Make hand score less or more
+* Missing puzzle can be missing one or two

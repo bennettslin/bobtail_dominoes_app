@@ -68,6 +68,7 @@ export const getTextForPuzzle = ({
     hand,
     moves,
     puzzleType,
+    yieldPoints,
 }) => (
     puzzleType ? (
         `{${NEWLINE}` +
@@ -80,6 +81,11 @@ export const getTextForPuzzle = ({
                 ''
         ) +
         `${TAB}moves: ${getTextForMoves(moves)},${NEWLINE}` +
+        (
+            Number.isFinite(yieldPoints) ?
+                `${TAB}points: ${yieldPoints},${NEWLINE}` :
+                ''
+        ) +
         `},`
     ) : ''
 )

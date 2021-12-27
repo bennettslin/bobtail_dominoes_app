@@ -13,32 +13,27 @@ import './style'
 const PuzzleTest = () => {
     const
         [board, setBoard] = useState([]),
-        [hand, setHand] = useState(),
         [moves, setMoves] = useState([]),
-        [puzzleType, setPuzzleType] = useState('')
+        [puzzleText, setPuzzleText] = useState('')
 
     const copyTextToClipboard = async () => {
         try {
-            await navigator.clipboard.writeText(
-                getTextForPuzzle({ board, hand, moves, puzzleType }),
-            )
+            await navigator.clipboard.writeText(puzzleText)
         } catch {
             setTimeout(copyTextToClipboard, 1000)
         }
     }
 
-    const setPuzzle = ({ board, hand, moves, puzzleType }) => {
-        if (board) {
-            setBoard(board)
-            setHand(hand)
-            setMoves(moves)
-            setPuzzleType(puzzleType)
-        }
+    const setPuzzle = puzzleConfig => {
+        const { board, moves } = puzzleConfig
+        setBoard(board)
+        setMoves(moves)
+        setPuzzleText(getTextForPuzzle(puzzleConfig))
     }
 
     useEffect(() => {
         copyTextToClipboard()
-    }, [board, hand, moves, puzzleType])
+    }, [puzzleText])
 
     return (
         <Flex
@@ -89,15 +84,7 @@ const PuzzleTest = () => {
                         moves,
                     }}
                 />
-                <PuzzleTestAside
-                    {...{
-                        board,
-                        hand,
-                        moves,
-                        puzzleType,
-                        copyTextToClipboard,
-                    }}
-                />
+                <PuzzleTestAside {...{ puzzleText, copyTextToClipboard }} />
             </Flex>
         </Flex>
     )
