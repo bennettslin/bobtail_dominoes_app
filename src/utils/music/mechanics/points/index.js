@@ -33,3 +33,8 @@ export const getIsWinner = ({
         winnerIndices.some(winnerIndex => playerIndex === winnerIndex)
     )
 }
+
+export const sortByHighestPoints = (
+    { points: firstPoints },
+    { points: secondPoints },
+) => secondPoints - firstPoints

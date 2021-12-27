@@ -1,5 +1,5 @@
-import { getBestPointedMovesForTurn, sortByHighestPoints } from '../../../ai'
-import { getPointsForMoves } from '../../../mechanics/points'
+import { getBestPointedMovesForTurn } from '../../../ai'
+import { getPointsForMoves, sortByHighestPoints } from '../../../mechanics/points'
 import { addMoveToBoard } from '../../../play/board'
 import { getRandomDominoIndex } from '../../../play/pool'
 import { addDominoesFromRunoffPool, addDominoToRunoffPool } from '../runoff'

@@ -1,5 +1,5 @@
 import {
-    getAreSetsEqual, getArrayOfIndices, getFixed, join, round,
+    getAreSetsEqual, getArrayOfIndices, getFixed, getNthBest, join, round,
 } from '.'
 
 describe('getArrayOfIndices', () => {
@@ -47,7 +47,7 @@ describe('getFixed', () => {
         [7.2, 4, '7.2'],
         [8.2649135, 5, '8.26491'],
     ])('%p to %p digits returns %p', (number, digits, result) => {
-        expect(getFixed(number, digits)).toStrictEqual(result)
+        expect(getFixed(number, digits)).toBe(result)
     })
 })
 
@@ -60,7 +60,7 @@ describe('join', () => {
         [['hi', 'there'], ' ', 'hi there'],
         [['how', undefined, 'are', NaN, 'you'], '-', 'how-are-you'],
     ])('%p with separator "%p" returns %p', (number, digits, result) => {
-        expect(join(number, digits)).toStrictEqual(result)
+        expect(join(number, digits)).toBe(result)
     })
 })
 
@@ -76,6 +76,14 @@ describe('round', () => {
         [7.2, 4, 7.2],
         [8.2649135, 5, 8.26491],
     ])('%p to %p decimals returns %p', (number, decimalPlaces, result) => {
-        expect(round(number, decimalPlaces)).toStrictEqual(result)
+        expect(round(number, decimalPlaces)).toBe(result)
+    })
+})
+
+describe('getNthBest', () => {
+    test.each([
+        [0, undefined, '0'],
+    ])('%p to %p digits returns %p', (number, digits, result) => {
+        expect(getNthBest(number, digits)).toBe(result)
     })
 })

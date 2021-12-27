@@ -1,4 +1,4 @@
-import { getIsWinner, getPoints, getPointsForMoves, getPointsForPitchSets } from '.'
+import { getIsWinner, getPoints, getPointsForMoves, getPointsForPitchSets, sortByHighestPoints } from '.'
 import { HAND_COUNT } from '../../../../constants/music/play'
 
 describe('getPoints', () => {
@@ -85,5 +85,14 @@ describe('getIsWinner', () => {
             turns: [{ winnerIndices: [1, 3] }],
             playerIndex: 1,
         })).toBe(true)
+    })
+})
+
+describe('sortByHighestPoints', () => {
+    it('sorts by highest points', () => {
+        expect(sortByHighestPoints({
+            turns: [{ moves: [] }],
+            playerIndex: 0,
+        })).toBe(false)
     })
 })
