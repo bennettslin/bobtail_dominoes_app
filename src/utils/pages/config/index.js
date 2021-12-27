@@ -1,5 +1,11 @@
 import { join } from '../../general'
 import { addDirectionPages } from '../directionPages'
+import { addTabbedPages } from '../tabbedPages'
+
+export const getPageLinkConfig = ({ id, date }) => ({
+    ...id && { id },
+    ...date && { date },
+})
 
 export const getPagesMap = ({
     configs,
@@ -22,7 +28,11 @@ export const getPagesMapForIds = ({
     ...rest
 }) => (
     getPagesMap({
-        configs: addDirectionPages(pageIds.map(id => ({ id }))),
+        configs: addDirectionPages(
+            addTabbedPages(
+                pageIds.map(id => ({ id })),
+            ),
+        ),
         ...rest,
     })
 )

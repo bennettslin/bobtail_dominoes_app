@@ -60,6 +60,10 @@ Page.propTypes = {
         id: PropTypes.string,
         date: datePropTypes,
     }),
+    pages: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string,
+        date: datePropTypes,
+    })),
 }
 
 export default Page

@@ -1,4 +1,12 @@
-import { getPagesMap, getPagesMapForIds } from '.'
+import { getPageLinkConfig, getPagesMap, getPagesMapForIds } from '.'
+
+describe('getPageLinkConfig', () => {
+    it('returns page link config', () => {
+        expect(
+            getPageLinkConfig(),
+        ).toStrictEqual()
+    })
+})
 
 describe('getPagesMap', () => {
     it('returns pages map', () => {
