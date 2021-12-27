@@ -111,12 +111,12 @@ export const boardPropTypes = PropTypes.arrayOf(PropTypes.shape({
             PropTypes.number.isRequired,
         ).isRequired,
     ),
-})).isRequired
+}))
 
 Board.propTypes = {
     className: PropTypes.string,
     isDemo: PropTypes.bool,
-    board: boardPropTypes,
+    board: boardPropTypes.isRequired,
     boardHexagonalWidth: PropTypes.number,
     boardHexagonalBaseWidth: PropTypes.number,
     DominoComponent: PropTypes.func,

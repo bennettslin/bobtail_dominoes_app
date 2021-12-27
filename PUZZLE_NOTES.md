@@ -2,7 +2,6 @@
 * bestPointedMoves should also ensure it has a uniquely best solution
 * Regular puzzle has option to not get the best possible move for each domino that goes into hand
 * Tabbed menu is broken
-* Simplify prop types
 
 # Missing puzzle utils
 * Build board

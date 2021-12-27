@@ -58,7 +58,7 @@ PuzzleLink.propTypes = {
     topLevelPage: PropTypes.string.isRequired,
     date: datePropTypes,
     puzzleType: PropTypes.string.isRequired,
-    board: boardPropTypes,
+    board: boardPropTypes.isRequired,
 }
 
 export default PuzzleLink

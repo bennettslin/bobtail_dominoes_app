@@ -45,15 +45,8 @@ const PuzzleBoard = ({
 
 PuzzleBoard.propTypes = {
     className: PropTypes.string,
-    board: boardPropTypes,
-    moves: PropTypes.arrayOf(PropTypes.shape({
-        dominoIndex: PropTypes.number.isRequired,
-        placement: PropTypes.arrayOf(
-            PropTypes.arrayOf(
-                PropTypes.number.isRequired,
-            ).isRequired,
-        ),
-    })),
+    board: boardPropTypes.isRequired,
+    moves: boardPropTypes,
     topChild: PropTypes.node,
     children: PropTypes.node,
 }

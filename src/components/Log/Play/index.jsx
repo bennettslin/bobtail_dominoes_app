@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { boardPropTypes } from '../../Board'
 import List from '../../List'
 import ListItem from '../../List/ListItem'
 import MoveLog from '../Move'
@@ -57,14 +58,7 @@ const PlayLog = ({
 }
 
 PlayLog.propTypes = {
-    moves: PropTypes.arrayOf(PropTypes.shape({
-        dominoIndex: PropTypes.number.isRequired,
-        placement: PropTypes.arrayOf(
-            PropTypes.arrayOf(
-                PropTypes.number.isRequired,
-            ).isRequired,
-        ),
-    })),
+    moves: boardPropTypes,
     discardedIndices: PropTypes.array,
     playerName: PropTypes.string,
 }

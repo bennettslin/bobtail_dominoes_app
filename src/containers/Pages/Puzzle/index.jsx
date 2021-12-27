@@ -60,7 +60,10 @@ PuzzlePage.propTypes = {
             topLevelPage: PropTypes.string.isRequired,
             date: datePropTypes,
             puzzleType: PropTypes.string.isRequired,
-            board: boardPropTypes,
+            board: boardPropTypes.isRequired,
+            handList: PropTypes.arrayOf(
+                PropTypes.number.isRequired,
+            ),
             moves: PropTypes.arrayOf(PropTypes.shape({
                 dominoIndex: PropTypes.number.isRequired,
                 placement: PropTypes.arrayOf(

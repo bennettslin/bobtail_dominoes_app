@@ -62,16 +62,9 @@ const PuzzleTestAside = ({
 }
 
 PuzzleTestAside.propTypes = {
-    board: boardPropTypes,
+    board: boardPropTypes.isRequired,
     hand: PropTypes.object,
-    moves: PropTypes.arrayOf(PropTypes.shape({
-        dominoIndex: PropTypes.number.isRequired,
-        placement: PropTypes.arrayOf(
-            PropTypes.arrayOf(
-                PropTypes.number.isRequired,
-            ).isRequired,
-        ),
-    })),
+    moves: boardPropTypes,
     puzzleType: PropTypes.string.isRequired,
     copyTextToClipboard: PropTypes.func.isRequired,
 }
