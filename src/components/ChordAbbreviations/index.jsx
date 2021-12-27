@@ -1,40 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import StaticArray from '../StaticArray'
-
-const Entry = ({ entry }) => (
-    typeof entry === 'string' ? entry : (
-        <>
-            {entry.root}{entry.type}
-            {/* Always render sup tag for line height consistency. */}
-            <sup>{entry.sup}</sup>
-        </>
-    )
-)
-
-Entry.propTypes = {
-    entry: PropTypes.oneOfType([
-        PropTypes.shape({
-            root: PropTypes.string,
-            type: PropTypes.string,
-            sup: PropTypes.string,
-        }),
-        PropTypes.string,
-    ]),
-}
+import LogList from '../Log/List'
+import LogEntry from '../Log/Entry'
 
 const ChordAbbreviations = ({ abbreviations }) => (
-    <StaticArray
-        {...{
-            list: abbreviations,
-            Entry,
-        }}
-    />
+    <LogList {...{ list: abbreviations }} />
 )
 
 ChordAbbreviations.propTypes = {
     abbreviations: PropTypes.arrayOf(
-        Entry.propTypes.entry,
+        LogEntry.propTypes.entry,
     ),
 }
 

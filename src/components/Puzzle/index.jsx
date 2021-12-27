@@ -5,9 +5,9 @@ import Button from '../Button'
 import DominoCard from '../DominoCard'
 import Flex from '../Flex'
 import Paragraph from '../Paragraph'
-import PlayLog from '../PlayLog'
+import PlayLog from '../Log/Play'
 import StyledButtonText from '../Styled/ButtonText'
-import StyledPlayLog from '../Styled/PlayLog'
+import StyledLog from '../Styled/Log'
 import StyledShadow from '../Styled/Shadow'
 import PuzzleBoard from './Board'
 import { getPuzzleText } from './util'
@@ -66,9 +66,9 @@ const Puzzle = ({
                     }}
                 >
                     {showAnswer && (
-                        <StyledPlayLog centreText>
-                            <PlayLog {...{ fontSize: 'md', moves }} />
-                        </StyledPlayLog>
+                        <StyledLog>
+                            <PlayLog {...{ moves }} />
+                        </StyledLog>
                     )}
                     {!showAnswer && hand && (
                         <DominoCard

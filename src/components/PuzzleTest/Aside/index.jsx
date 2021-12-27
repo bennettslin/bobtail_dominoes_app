@@ -9,6 +9,7 @@ import { getTextForPuzzle } from '../../../utils/music/puzzles/format'
 
 const PuzzleTestAside = ({
     board,
+    hand,
     moves,
     puzzleType,
     copyTextToClipboard,
@@ -35,16 +36,13 @@ const PuzzleTestAside = ({
         >
             <Paragraph
                 {...{
-                    className: cx(
-                        // 'fontSize__md',
-                    ),
                     style: {
                         height: '100%',
                         minWidth: '240px',
                     },
                 }}
             >
-                {getTextForPuzzle({ board, moves, puzzleType })}
+                {getTextForPuzzle({ board, hand, moves, puzzleType })}
             </Paragraph>
             <Button
                 {...{
@@ -64,6 +62,7 @@ const PuzzleTestAside = ({
 
 PuzzleTestAside.propTypes = {
     board: PropTypes.array.isRequired,
+    hand: PropTypes.object,
     moves: PropTypes.arrayOf(PropTypes.shape({
         dominoIndex: PropTypes.number.isRequired,
         placement: PropTypes.arrayOf(

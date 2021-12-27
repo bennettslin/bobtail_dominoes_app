@@ -20,13 +20,15 @@ const stringify = entry => (
         .replace(/,/g, ', ')
 )
 
+const formatList = set => (
+    `[${join(Array.from(set), ', ')}]`
+)
+
 const formatLists = sets => (
     // Convert to arrays because server cannot store sets.
     `[${NEWLINE}` +
     sets.map(set => (
-        `${TAB}${TAB}${TAB}${TAB}[${
-            join(Array.from(set), ', ')
-        }],${NEWLINE}`
+        `${TAB}${TAB}${TAB}${TAB}${formatList(set)},${NEWLINE}`
     )).join('') +
     `${TAB}${TAB}${TAB}]`
 )
@@ -63,6 +65,7 @@ const getTextForMoves = moves => (
 
 export const getTextForPuzzle = ({
     board,
+    hand,
     moves,
     puzzleType,
 }) => (
@@ -71,6 +74,11 @@ export const getTextForPuzzle = ({
         `${TAB}day: 0,${NEWLINE}` +
         `${TAB}puzzleType: ${PUZZLE_TYPE_NAMES[puzzleType]},${NEWLINE}` +
         `${TAB}board: ${getTextForBoard(board)},${NEWLINE}` +
+        (
+            hand ?
+                `${TAB}handList: ${formatList(hand)},${NEWLINE}` :
+                ''
+        ) +
         `${TAB}moves: ${getTextForMoves(moves)},${NEWLINE}` +
         `},`
     ) : ''

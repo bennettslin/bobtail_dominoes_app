@@ -2,11 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Button from '../../Button'
-import { getRegularPuzzle } from '../../../utils/music/puzzles/regular'
 
-const RegularButton = ({ getPuzzle }) => {
+const PuzzleTestButton = ({ text, getPuzzle, setPuzzle }) => {
     const handleButtonClick = () => {
-        getPuzzle(getRegularPuzzle({}))
+        setPuzzle(getPuzzle())
     }
 
     return (
@@ -20,13 +19,15 @@ const RegularButton = ({ getPuzzle }) => {
                 handleButtonClick,
             }}
         >
-            Regular puzzle
+            {text}
         </Button>
     )
 }
 
-RegularButton.propTypes = {
+PuzzleTestButton.propTypes = {
+    text: PropTypes.string.isRequired,
     getPuzzle: PropTypes.func.isRequired,
+    setPuzzle: PropTypes.func.isRequired,
 }
 
-export default RegularButton
+export default PuzzleTestButton

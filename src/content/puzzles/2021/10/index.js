@@ -1,7 +1,7 @@
 import {
     MAXIMUM_PUZZLE_TYPE,
     // MISSING_PUZZLE_TYPE,
-    // REGULAR_PUZZLE_TYPE,
+    REGULAR_PUZZLE_TYPE,
 } from '../../../../constants/music/puzzle'
 
 export default {
@@ -24,6 +24,98 @@ export default {
                         [2, 7, 10, 6],
                         [7, 10, 5, 2],
                         [10, 1, 6],
+                    ],
+                    points: 11,
+                },
+            ],
+        },
+        {
+            day: 2,
+            puzzleType: MAXIMUM_PUZZLE_TYPE,
+            board: [
+                { dominoIndex: 53, placement: [[0, 1], [0, 0]] },
+                { dominoIndex: 15, placement: [[-2, 0], [-1, 0]] },
+                { dominoIndex: 18, placement: [[-3, 2], [-2, 1]] },
+                { dominoIndex: 47, placement: [[-2, -1], [-1, -2]] },
+                { dominoIndex: 10, placement: [[1, -1], [1, 0]] },
+                { dominoIndex: 29, placement: [[-3, -2], [-2, -2]] },
+            ],
+            moves: [
+                {
+                    dominoIndex: 38,
+                    placement: [[0, -2], [0, -1]],
+                    pitchLists: [
+                        [2, 10, 7, 3],
+                        [3, 11, 8, 6],
+                        [11, 5, 8, 1],
+                    ],
+                    points: 12,
+                },
+            ],
+        },
+        {
+            day: 3,
+            puzzleType: MAXIMUM_PUZZLE_TYPE,
+            board: [
+                { dominoIndex: 50, placement: [[1, -1], [0, 0]] },
+                { dominoIndex: 30, placement: [[-1, 1], [-1, 2]] },
+                { dominoIndex: 6, placement: [[-2, 1], [-2, 2]] },
+                { dominoIndex: 54, placement: [[0, 1], [1, 1]] },
+                { dominoIndex: 26, placement: [[0, 2], [0, 3]] },
+                { dominoIndex: 43, placement: [[-4, 3], [-3, 2]] },
+            ],
+            moves: [
+                {
+                    dominoIndex: 33,
+                    placement: [[-2, 0], [-1, 0]],
+                    pitchLists: [
+                        [3, 6, 10],
+                        [3, 0, 6],
+                        [6, 2, 11],
+                        [6, 0, 9, 4],
+                    ],
+                    points: 13,
+                },
+            ],
+        },
+        {
+            day: 4,
+            puzzleType: REGULAR_PUZZLE_TYPE,
+            board: [
+                { dominoIndex: 33, placement: [[0, 0], [1, -1]] },
+                { dominoIndex: 55, placement: [[2, -3], [2, -2]] },
+                { dominoIndex: 25, placement: [[3, -3], [3, -2]] },
+                { dominoIndex: 26, placement: [[2, -5], [2, -4]] },
+            ],
+            handList: [20, 38, 19],
+            moves: [
+                {
+                    dominoIndex: 20,
+                    placement: [[1, -2], [1, -3]],
+                    pitchLists: [
+                        [1, 10, 6],
+                        [10, 1, 6],
+                        [10, 6, 2],
+                    ],
+                    points: 9,
+                },
+                {
+                    dominoIndex: 38,
+                    placement: [[0, -2], [0, -3]],
+                    pitchLists: [
+                        [3, 1, 10, 6],
+                        [7, 10, 3],
+                        [11, 10, 6, 2],
+                    ],
+                    points: 11,
+                },
+                {
+                    dominoIndex: 19,
+                    placement: [[3, -5], [3, -4]],
+                    pitchLists: [
+                        [1, 9, 2, 6],
+                        [1, 7, 10, 3],
+                        [9, 6, 1],
                     ],
                     points: 11,
                 },

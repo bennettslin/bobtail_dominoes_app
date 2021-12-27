@@ -5,10 +5,9 @@ import Flex from '../../Flex'
 import StyledShadow from '../Shadow'
 import './style'
 
-const StyledTurnLog = ({
+const StyledLog = ({
     isLatestTurn,
     isGameOver,
-    centreText,
     children,
 }) => {
     return (
@@ -16,7 +15,6 @@ const StyledTurnLog = ({
             {...{
                 className: cx(
                     'StyledLog',
-                    centreText && 'StyledLog__centreText',
                     isLatestTurn && 'StyledLog__latest',
                 ),
             }}
@@ -34,11 +32,10 @@ const StyledTurnLog = ({
     )
 }
 
-StyledTurnLog.propTypes = {
+StyledLog.propTypes = {
     isLatestTurn: PropTypes.bool,
-    centreText: PropTypes.bool,
     isGameOver: PropTypes.bool,
     children: PropTypes.node.isRequired,
 }
 
-export default StyledTurnLog
+export default StyledLog

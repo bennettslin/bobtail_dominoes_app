@@ -1,13 +1,8 @@
 # TODO next
-* Regular puzzle utils
-
-# Regular puzzle utils
-* Build board
-* Util then iterates through remaining dominoes in random order
-    * Until it finds a domino that builds at least a minimum number of chords
-    * It repeats this until it has three dominoes
-* It then runs those three dominoes to ensure it has the best possible combination
-    * And randomizes them before placing in hand
+* bestPointedMoves should also ensure it has a uniquely best solution
+* Regular puzzle has option to not get the best possible move for each domino that goes into hand
+* Tabbed menu is broken
+* Simplify prop types
 
 # Missing puzzle utils
 * Build board

@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useSelector } from 'react-redux'
-import StaticArray from '../../../StaticArray'
-import StyledPlayLog from '../../../Styled/PlayLog'
-import PlayLog from '../../../PlayLog'
+import LogList from '../../../Log/List'
+import PlayLog from '../../../Log/Play'
+import StyledLog from '../../../Styled/Log'
 import { getDominoLabel } from '../../../../utils/music/chords/label'
 import { getCommaSeparatedList } from '../../../../utils/format'
 import { getPlayerIndex } from '../../../../utils/music/play/turns'
@@ -31,7 +31,7 @@ const TurnLog = ({
         ))
         log = (
             <>
-                <StaticArray
+                <LogList
                     {...{ list: getCommaSeparatedList(winnersList) }}
                 />
                 {` ${winnersList.length > 1 ? 'win' : 'wins'} the game!`}
@@ -54,14 +54,14 @@ const TurnLog = ({
     }
 
     return (
-        <StyledPlayLog
+        <StyledLog
             {...{
                 isGameOver,
                 isLatestTurn,
             }}
         >
             {log}
-        </StyledPlayLog>
+        </StyledLog>
     )
 }
 

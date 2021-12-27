@@ -1,31 +1,37 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import List from '../List'
-import MoveLog from './MoveLog'
-import { getPointsForMoves } from '../../utils/music/mechanics/points'
-import { HAND_COUNT } from '../../constants/music/play'
+import List from '../../List'
+import ListItem from '../../List/ListItem'
+import MoveLog from '../Move'
+import { getPointsForMoves } from '../../../utils/music/mechanics/points'
+import { BINGO_POINTS, HAND_COUNT } from '../../../constants/music/play'
+import LogEntry from '../Entry'
 
 const PlayLog = ({
     moves,
     discardedIndices,
-    fontSize,
     playerName,
 }) => {
     let log = null
 
+    // For demo.
     if (playerName) {
         log = moves ? (
-            `${playerName} plays ${moves.length === HAND_COUNT ? 'full hand ' : ''}for ${getPointsForMoves({ moves, handCount: HAND_COUNT })} points.`
+            `${playerName} earns ${getPointsForMoves({ moves, handCount: HAND_COUNT })} points.`
         ) : (
             `${playerName} ${discardedIndices.length ? 'exchanges on' : 'passes'} their turn.`
         )
+
+    // For puzzle.
+    } else if (moves.length > 1) {
+        log = `One possible solution to earn ${getPointsForMoves({ moves, handCount: HAND_COUNT })} points.`
     }
 
     return (
         <>
             {log}
             {moves && (
-                <List {...{ fontSize, isClean: !log }}>
+                <List {...{ isClean: !log }}>
                     {moves.map((move, index) => (
                         <MoveLog
                             {...{
@@ -34,6 +40,16 @@ const PlayLog = ({
                             }}
                         />
                     ))}
+                    {moves.length === HAND_COUNT && (
+                        <ListItem>
+                            <LogEntry
+                                addSup
+                                {...{
+                                    entry: `Full hand for ${BINGO_POINTS} bonus points.`,
+                                }}
+                            />
+                        </ListItem>
+                    )}
                 </List>
             )}
         </>
@@ -50,7 +66,6 @@ PlayLog.propTypes = {
         ),
     })),
     discardedIndices: PropTypes.array,
-    fontSize: PropTypes.string,
     playerName: PropTypes.string,
 }
 
