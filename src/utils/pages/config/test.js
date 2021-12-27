@@ -1,10 +1,17 @@
-import { getPageLinkConfig, getPagesMap, getPagesMapForIds } from '.'
+import { getPageLinkConfig, getPagesMap, getIdPagesMap } from '.'
 
 describe('getPageLinkConfig', () => {
     it('returns page link config', () => {
         expect(
-            getPageLinkConfig(),
-        ).toStrictEqual()
+            getPageLinkConfig({
+                id: 'liz',
+                date: { day: 4, month: 5, year: 2021 },
+                topLevelPage: 'birthdays',
+            }),
+        ).toStrictEqual({
+            date: { day: 4, month: 5, year: 2021 },
+            id: 'liz',
+        })
     })
 })
 
@@ -31,10 +38,10 @@ describe('getPagesMap', () => {
     })
 })
 
-describe('getPagesMapForIds', () => {
+describe('getIdPagesMap', () => {
     it('returns pages map for ids', () => {
         expect(
-            getPagesMapForIds({
+            getIdPagesMap({
                 pageIds: ['dogs', 'cats', 'mice'],
                 topLevelPage: 'animals',
             }),
@@ -43,16 +50,19 @@ describe('getPagesMapForIds', () => {
                 directionLeftPage: { id: 'dogs' },
                 directionRightPage: { id: 'mice' },
                 id: 'cats',
+                pages: [{ id: 'dogs' }, { id: 'cats' }, { id: 'mice' }],
                 topLevelPage: 'animals',
             },
             dogs: {
                 directionRightPage: { id: 'cats' },
                 id: 'dogs',
+                pages: [{ id: 'dogs' }, { id: 'cats' }, { id: 'mice' }],
                 topLevelPage: 'animals',
             },
             mice: {
                 directionLeftPage: { id: 'cats' },
                 id: 'mice',
+                pages: [{ id: 'dogs' }, { id: 'cats' }, { id: 'mice' }],
                 topLevelPage: 'animals',
             },
         })

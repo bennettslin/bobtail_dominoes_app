@@ -23,7 +23,7 @@ export const getPagesMap = ({
     }, {})
 )
 
-export const getPagesMapForIds = ({
+export const getIdPagesMap = ({
     pageIds,
     ...rest
 }) => (

@@ -1,4 +1,4 @@
-import { getPagesMapForIds } from '../../utils/pages/config'
+import { getIdPagesMap } from '../../utils/pages/config'
 import { RULES_PAGE } from '../../constants/pages'
 
 const PAGE_IDS = [
@@ -8,7 +8,7 @@ const PAGE_IDS = [
     'scoring',
 ]
 
-export default getPagesMapForIds({
+export default getIdPagesMap({
     pageIds: PAGE_IDS,
     topLevelPage: RULES_PAGE,
 })
