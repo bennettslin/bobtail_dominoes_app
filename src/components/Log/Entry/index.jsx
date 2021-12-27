@@ -19,15 +19,17 @@ const LogEntry = ({ entry, addSup = false }) => (
     )
 )
 
+export const entryPropTypes = PropTypes.oneOfType([
+    PropTypes.shape({
+        root: PropTypes.string,
+        type: PropTypes.string,
+        sup: PropTypes.string,
+    }),
+    PropTypes.string,
+])
+
 LogEntry.propTypes = {
-    entry: PropTypes.oneOfType([
-        PropTypes.shape({
-            root: PropTypes.string,
-            type: PropTypes.string,
-            sup: PropTypes.string,
-        }),
-        PropTypes.string,
-    ]),
+    entry: entryPropTypes,
     addSup: PropTypes.bool,
 }
 

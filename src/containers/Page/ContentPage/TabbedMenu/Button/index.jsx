@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
+import { datePropTypes } from '../../..'
 import StyledButtonText from '../../../../../components/Styled/ButtonText'
 import StyledTabButton from '../../../../../components/Styled/TabButton'
 import { getMapIsSelectedOrTabbedPagePath } from '../../../../../redux/page/selector'
@@ -39,11 +40,7 @@ const TabbedMenuButton = ({
 TabbedMenuButton.propTypes = {
     className: PropTypes.string,
     id: PropTypes.string,
-    date: PropTypes.shape({
-        year: PropTypes.number.isRequired,
-        month: PropTypes.number.isRequired,
-        day: PropTypes.number.isRequired,
-    }),
+    date: datePropTypes,
     topLevelPage: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
 }

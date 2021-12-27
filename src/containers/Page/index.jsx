@@ -33,6 +33,12 @@ const Page = ({ className, children, ...rest }) => {
     )
 }
 
+export const datePropTypes = PropTypes.shape({
+    year: PropTypes.number.isRequired,
+    month: PropTypes.number.isRequired,
+    day: PropTypes.number.isRequired,
+})
+
 Page.propTypes = {
     className: PropTypes.string,
     noShare: PropTypes.bool,
@@ -40,11 +46,7 @@ Page.propTypes = {
     children: PropTypes.node,
     topLevelPage: PropTypes.string,
     pageHeading: PropTypes.string,
-    date: PropTypes.shape({
-        year: PropTypes.number.isRequired,
-        month: PropTypes.number.isRequired,
-        day: PropTypes.number.isRequired,
-    }),
+    date: datePropTypes,
     body: PropTypes.oneOfType([
         PropTypes.array,
         PropTypes.node,
@@ -52,19 +54,11 @@ Page.propTypes = {
     ]),
     directionLeftPage: PropTypes.shape({
         id: PropTypes.string,
-        date: PropTypes.shape({
-            year: PropTypes.number.isRequired,
-            month: PropTypes.number.isRequired,
-            day: PropTypes.number.isRequired,
-        }),
+        date: datePropTypes,
     }),
     directionRightPage: PropTypes.shape({
         id: PropTypes.string,
-        date: PropTypes.shape({
-            year: PropTypes.number.isRequired,
-            month: PropTypes.number.isRequired,
-            day: PropTypes.number.isRequired,
-        }),
+        date: datePropTypes,
     }),
 }
 

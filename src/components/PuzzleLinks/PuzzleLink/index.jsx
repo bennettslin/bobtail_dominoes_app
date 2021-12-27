@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import { datePropTypes } from '../../../containers/Page'
 import Button from '../../Button'
 import Flex from '../../Flex'
 import StyledShadow from '../../Styled/Shadow'
@@ -54,11 +55,7 @@ const PuzzleLink = ({
 
 PuzzleLink.propTypes = {
     topLevelPage: PropTypes.string.isRequired,
-    date: PropTypes.shape({
-        year: PropTypes.number.isRequired,
-        month: PropTypes.number.isRequired,
-        day: PropTypes.number.isRequired,
-    }),
+    date: datePropTypes,
     puzzleType: PropTypes.string.isRequired,
     board: PropTypes.arrayOf(PropTypes.shape({
         dominoIndex: PropTypes.number.isRequired,

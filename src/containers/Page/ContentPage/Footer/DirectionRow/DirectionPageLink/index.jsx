@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import { datePropTypes } from '../../../..'
 import PageConfigContext from '../../../../../../contexts/PageConfig'
 import Anchor from '../../../../../../components/Anchor'
 import Flex from '../../../../../../components/Flex'
@@ -66,11 +67,7 @@ DirectionPageLink.propTypes = {
     direction: PropTypes.oneOf([-1, 1]).isRequired,
     directionPage: PropTypes.shape({
         id: PropTypes.string,
-        date: PropTypes.shape({
-            year: PropTypes.number.isRequired,
-            month: PropTypes.number.isRequired,
-            day: PropTypes.number.isRequired,
-        }),
+        date: datePropTypes,
     }),
 }
 
