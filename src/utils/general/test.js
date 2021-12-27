@@ -82,8 +82,10 @@ describe('round', () => {
 
 describe('getNthInSortedList', () => {
     test.each([
-        [0, undefined, '0'],
-    ])('%p to %p digits returns %p', (number, digits, result) => {
-        expect(getNthInSortedList(number, digits)).toBe(result)
+        [{ sortedList: [1, 2, 3] }, 1],
+        [{ sortedList: [1, 2, 3], rank: 1 }, 2],
+        [{ sortedList: [1, 2, 3], rank: 10 }, 3],
+    ])('%p returns %p', (props, result) => {
+        expect(getNthInSortedList(props)).toBe(result)
     })
 })

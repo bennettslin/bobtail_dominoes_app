@@ -89,10 +89,11 @@ describe('getIsWinner', () => {
 })
 
 describe('sortByHighestPoints', () => {
-    it('sorts by highest points', () => {
-        expect(sortByHighestPoints({
-            turns: [{ moves: [] }],
-            playerIndex: 0,
-        })).toBe(false)
+    test.each([
+        [{ points: 1 }, { points: 2 }, 1],
+        [{ points: 2 }, { points: 1 }, -1],
+        [{ points: 2 }, { points: 2 }, 0],
+    ])('%p and %p returns %p', (firstMove, secondMove, result) => {
+        expect(sortByHighestPoints(firstMove, secondMove)).toBe(result)
     })
 })
