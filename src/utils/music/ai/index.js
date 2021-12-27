@@ -1,7 +1,7 @@
-import { getNthInSortedList } from '../../general'
 import { getChordsForPlacement } from '../mechanics/placement/chords'
 import { sortByHighestPoints } from '../mechanics/points'
 import { addMoveToBoard } from '../play/board'
+import { getBestPointedEntryBasedOnRequirements } from '../puzzles/general/requirements'
 import { getAdjacentPlacements } from './adjacent'
 
 export const getValidPointedMoves = ({ dominoIndex, board = [], limit }) => {
@@ -86,23 +86,25 @@ const recurseThroughValidPointedMoves = ({
 export const getBestPointedMovesForTurn = ({
     hand,
     board,
-    // Only consider this number of moves with each recursion.
-    limit = 3,
-    // Pick the nth best move.
-    moveRank,
+    limit = 3, // Only consider this number of moves with each recursion.
+    minPoints,
+    needsUniqueHighest,
+    rankRange, // Pick the nth best move.
 }) => {
     if (!hand.size) {
         return []
     }
 
-    return getNthInSortedList({
-        rank: moveRank,
-        sortedList: recurseThroughValidPointedMoves({
+    const { bestPointedEntry } = getBestPointedEntryBasedOnRequirements({
+        sortedPointedEntries: recurseThroughValidPointedMoves({
             hand,
             board,
             limit,
-
-        // AI returns moves with points for better visibility.
         }).sort(sortByHighestPoints),
-    })?.moves || []
+        minPoints,
+        needsUniqueHighest,
+        rankRange,
+    })
+
+    return bestPointedEntry?.moves || []
 }

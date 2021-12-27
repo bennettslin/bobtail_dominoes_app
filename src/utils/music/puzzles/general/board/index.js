@@ -15,7 +15,7 @@ export const getInitialBoardForPuzzle = ({
     // Number of dominoes on board.
     dominoesCountRange: [dominoesCountMin, dominoesCountMax] = [4, 7],
     // For each domino, choose the nth best placement.
-    placementRankRange: [moveRankMin, moveRankMax] = [0, 5],
+    rankRange = [0, 5],
 } = {}) => {
     const
         pool = isExtendedPool ?
@@ -37,7 +37,7 @@ export const getInitialBoardForPuzzle = ({
             moves = getBestPointedMovesForTurn({
                 hand,
                 board,
-                moveRank: getRandomInteger(moveRankMin, moveRankMax),
+                rankRange,
             })
 
         if (moves.length) {

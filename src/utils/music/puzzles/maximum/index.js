@@ -4,20 +4,18 @@ import { getBestMoveForPuzzleBoard } from '../general/move'
 import { logTrial } from '../log'
 import { MAXIMUM_PUZZLE_TYPE } from '../../../../constants/music/puzzle'
 
-const TRIALS_COUNT = 1000
+const TRIALS_COUNT = 10
+// const TRIALS_COUNT = 1000
 
 export const getMaximumPuzzle = ({
-    // minPoints = getRandomInteger(10, 15),
-    minPoints = getRandomInteger(5, 7),
+    minPoints = getRandomInteger(10, 15),
 
 } = {}) => {
-    let validBoard,
-        validMove,
-        trialIndex = 0
+    let trialIndex = 0
 
     logServe(`Finding a unique outcome with at least ${minPoints} points…`)
 
-    while (!validBoard && !validMove && trialIndex < TRIALS_COUNT) {
+    while (trialIndex < TRIALS_COUNT) {
         const { board, pool } = getInitialBoardForPuzzle()
 
         if (board) {
@@ -31,17 +29,14 @@ export const getMaximumPuzzle = ({
             logTrial({ trialIndex, ...rest })
 
             if (move) {
-                validBoard = board
-                validMove = move
+                return {
+                    board,
+                    moves: [move],
+                    puzzleType: MAXIMUM_PUZZLE_TYPE,
+                }
             }
         }
 
         trialIndex++
     }
-
-    return validMove ? {
-        board: validBoard,
-        moves: [validMove],
-        puzzleType: MAXIMUM_PUZZLE_TYPE,
-    } : {}
 }

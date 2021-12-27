@@ -24,8 +24,8 @@ const PuzzleTest = () => {
         }
     }
 
-    const setPuzzle = puzzleConfig => {
-        const { board, moves } = puzzleConfig
+    const setPuzzle = (puzzleConfig = {}) => {
+        const { board = [], moves = [] } = puzzleConfig
         setBoard(board)
         setMoves(moves)
         setPuzzleText(getTextForPuzzle(puzzleConfig))

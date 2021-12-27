@@ -176,7 +176,7 @@ describe('getBestPointedMovesForTurn', () => {
         expect(getBestPointedMovesForTurn({
             hand: new Set([18, 20, 38]),
             board: MOCK_BOARD,
-            moveRank: 10,
+            rankRange: [10, 10],
         })).toStrictEqual([
             {
                 dominoIndex: 20,
