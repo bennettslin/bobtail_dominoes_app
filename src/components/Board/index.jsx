@@ -104,17 +104,19 @@ const Board = ({
     </Flex>
 )
 
+export const boardPropTypes = PropTypes.arrayOf(PropTypes.shape({
+    dominoIndex: PropTypes.number.isRequired,
+    placement: PropTypes.arrayOf(
+        PropTypes.arrayOf(
+            PropTypes.number.isRequired,
+        ).isRequired,
+    ),
+})).isRequired
+
 Board.propTypes = {
     className: PropTypes.string,
     isDemo: PropTypes.bool,
-    board: PropTypes.arrayOf(PropTypes.shape({
-        dominoIndex: PropTypes.number.isRequired,
-        placement: PropTypes.arrayOf(
-            PropTypes.arrayOf(
-                PropTypes.number.isRequired,
-            ).isRequired,
-        ),
-    })).isRequired,
+    board: boardPropTypes,
     boardHexagonalWidth: PropTypes.number,
     boardHexagonalBaseWidth: PropTypes.number,
     DominoComponent: PropTypes.func,

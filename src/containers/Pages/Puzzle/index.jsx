@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { boardPropTypes } from '../../../components/Board'
 import getDidMountHoc from '../../../hocs/DidMountHoc'
 import Puzzle from '../../../components/Puzzle'
 import Page, { datePropTypes } from '../../Page'
@@ -59,14 +60,7 @@ PuzzlePage.propTypes = {
             topLevelPage: PropTypes.string.isRequired,
             date: datePropTypes,
             puzzleType: PropTypes.string.isRequired,
-            board: PropTypes.arrayOf(PropTypes.shape({
-                dominoIndex: PropTypes.number.isRequired,
-                placement: PropTypes.arrayOf(
-                    PropTypes.arrayOf(
-                        PropTypes.number.isRequired,
-                    ).isRequired,
-                ),
-            })).isRequired,
+            board: boardPropTypes,
             moves: PropTypes.arrayOf(PropTypes.shape({
                 dominoIndex: PropTypes.number.isRequired,
                 placement: PropTypes.arrayOf(

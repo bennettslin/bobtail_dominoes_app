@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import { boardPropTypes } from '../../Board'
 import Paragraph from '../../Paragraph'
 import Flex from '../../Flex'
 import Button from '../../Button'
@@ -61,7 +62,7 @@ const PuzzleTestAside = ({
 }
 
 PuzzleTestAside.propTypes = {
-    board: PropTypes.array.isRequired,
+    board: boardPropTypes,
     hand: PropTypes.object,
     moves: PropTypes.arrayOf(PropTypes.shape({
         dominoIndex: PropTypes.number.isRequired,

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import { boardPropTypes } from '../Board'
 import Button from '../Button'
 import DominoCard from '../DominoCard'
 import Flex from '../Flex'
@@ -87,14 +88,7 @@ const Puzzle = ({
 Puzzle.propTypes = {
     puzzleType: PropTypes.string.isRequired,
     canShowAnswer: PropTypes.bool.isRequired,
-    board: PropTypes.arrayOf(PropTypes.shape({
-        dominoIndex: PropTypes.number.isRequired,
-        placement: PropTypes.arrayOf(
-            PropTypes.arrayOf(
-                PropTypes.number.isRequired,
-            ).isRequired,
-        ),
-    })).isRequired,
+    board: boardPropTypes,
     hand: PropTypes.object,
     moves: PropTypes.arrayOf(PropTypes.shape({
         dominoIndex: PropTypes.number.isRequired,
