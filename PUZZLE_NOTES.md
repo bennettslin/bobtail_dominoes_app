@@ -1,10 +1,12 @@
-# Missing puzzle utils
-* Build board
-* Determine which domino, once removed, would yield the most points
-    * While meeting the minimum number
-    * Ensure that no other available domino can legally have the same placement
-* Remove domino from board
-    * Needs missing domino svg
+# TODO
+* Render missing domino from config
+    * Figure out puzzle text
+* Get missing puzzle util
+    * Pass missing domino to config
+    * Render text from config
+    * Allow for multiple missing dominoes?
+* Svg for missing domino
+
 
 # Puzzle types
 * Switch up number of dominoes on board

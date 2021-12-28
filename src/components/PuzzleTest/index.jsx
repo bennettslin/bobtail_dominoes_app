@@ -24,11 +24,10 @@ const PuzzleTest = () => {
         }
     }
 
-    const setPuzzle = (puzzleConfig = {}) => {
-        const { board = [], moves = [] } = puzzleConfig
+    const setPuzzle = ({ board = [], moves = [], ...rest } = {}) => {
         setBoard(board)
         setMoves(moves)
-        setPuzzleText(getTextForPuzzle(puzzleConfig))
+        setPuzzleText(getTextForPuzzle({ board, moves, ...rest }))
     }
 
     useEffect(() => {

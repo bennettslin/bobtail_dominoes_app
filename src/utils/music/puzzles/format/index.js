@@ -80,7 +80,11 @@ export const getTextForPuzzle = ({
                 `${TAB}handList: ${formatList(hand)},${NEWLINE}` :
                 ''
         ) +
-        `${TAB}moves: ${getTextForMoves(moves)},${NEWLINE}` +
+        (
+            moves.length ?
+                `${TAB}moves: ${getTextForMoves(moves)},${NEWLINE}` :
+                ''
+        ) +
         (
             moves.length > 1 ?
                 `${TAB}points: ${getPointsForMoves({ moves })},${NEWLINE}` :
