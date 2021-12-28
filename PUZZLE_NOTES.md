@@ -1,6 +1,3 @@
-# TODO next
-* test requirements
-
 # Missing puzzle utils
 * Build board
 * Determine which domino, once removed, would yield the most points
