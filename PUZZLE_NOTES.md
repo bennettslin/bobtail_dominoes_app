@@ -1,5 +1,4 @@
 # TODO next
-* test moveRank and uniqueHighest for bestPointedMoves
 * test requirements
 
 # Missing puzzle utils

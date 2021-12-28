@@ -1,5 +1,5 @@
 import { getRandomEntry } from '../../../general/random'
-import { getValidPointedMoves } from '../../ai'
+import { getValidPointedMoves } from '../../ai/valid'
 import { getRandomDominoIndex } from '../pool'
 
 export const getInitialBoard = pool => ([

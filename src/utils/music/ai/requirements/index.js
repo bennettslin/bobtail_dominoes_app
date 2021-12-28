@@ -13,19 +13,17 @@ export const getBestPointedEntryBasedOnRequirements = ({
             rank: getRandomInteger(rankMin, rankMax),
             sortedList: sortedPointedEntries,
         }),
-        yieldPoints = bestPointedEntry?.points || 0,
-        meetsMinimumPoints = yieldPoints >= minPoints,
-
-        meetsUniqueHighest =
-            Boolean(rankMax) ||
-            !needsUniqueHighest ||
-            sortedPointedEntries.length === 1 ||
-            yieldPoints > sortedPointedEntries[1].points
+        yieldPoints = bestPointedEntry?.points || 0
 
     return {
         bestPointedEntry,
         yieldPoints,
-        meetsMinimumPoints,
-        meetsUniqueHighest,
+        meetsMinimumPoints: yieldPoints >= minPoints,
+        meetsUniqueHighest: (
+            Boolean(rankMax) ||
+            !needsUniqueHighest ||
+            sortedPointedEntries.length === 1 ||
+            yieldPoints > sortedPointedEntries[1].points
+        ),
     }
 }

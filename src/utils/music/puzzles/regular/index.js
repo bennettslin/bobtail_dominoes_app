@@ -8,7 +8,7 @@ const TRIALS_COUNT = 10
 // const TRIALS_COUNT = 1000
 
 export const getRegularPuzzle = ({
-    minPoints = getRandomInteger(10, 15),
+    minPoints = getRandomInteger(25, 30),
 
 } = {}) => {
     let trialIndex = 0
