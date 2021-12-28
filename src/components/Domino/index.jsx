@@ -58,6 +58,7 @@ const Domino = ({
         >
             <Svg
                 {...{
+                    key: isHighlight, // Fix weird unstyled domino issue.
                     src: getDominoSrc(orientation),
                     styleConfig: isHighlight ?
                         styleConfigPitchOn :
