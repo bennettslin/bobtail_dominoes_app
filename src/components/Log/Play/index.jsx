@@ -18,14 +18,14 @@ const PlayLog = ({
     // For demo.
     if (playerName) {
         log = moves ? (
-            `${playerName} earns ${getPointsForMoves({ moves, handCount: HAND_COUNT })} points.`
+            `${playerName} earns ${getPointsForMoves({ moves })} points.`
         ) : (
             `${playerName} ${discardedIndices.length ? 'exchanges on' : 'passes'} their turn.`
         )
 
     // For puzzle.
     } else if (moves.length > 1) {
-        log = `One possible solution to earn ${getPointsForMoves({ moves, handCount: HAND_COUNT })} points.`
+        log = `One possible solution to earn ${getPointsForMoves({ moves })} points.`
     }
 
     return (

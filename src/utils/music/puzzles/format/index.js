@@ -4,6 +4,7 @@ import {
     MISSING_PUZZLE_TYPE,
     REGULAR_PUZZLE_TYPE,
 } from '../../../../constants/music/puzzle'
+import { getPointsForMoves } from '../../mechanics/points'
 
 const PUZZLE_TYPE_NAMES = {
     [MAXIMUM_PUZZLE_TYPE]: 'MAXIMUM_PUZZLE_TYPE',
@@ -68,7 +69,6 @@ export const getTextForPuzzle = ({
     hand,
     moves,
     puzzleType,
-    yieldPoints,
 }) => (
     puzzleType ? (
         `{${NEWLINE}` +
@@ -82,8 +82,8 @@ export const getTextForPuzzle = ({
         ) +
         `${TAB}moves: ${getTextForMoves(moves)},${NEWLINE}` +
         (
-            Number.isFinite(yieldPoints) ?
-                `${TAB}points: ${yieldPoints},${NEWLINE}` :
+            moves.length > 1 ?
+                `${TAB}points: ${getPointsForMoves({ moves })},${NEWLINE}` :
                 ''
         ) +
         `},`

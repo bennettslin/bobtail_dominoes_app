@@ -2,14 +2,12 @@ import { getRandomInteger } from '../../../general/random'
 import { getInitialBoardForPuzzle } from '../general/board'
 import { getBestMovesForPuzzleBoard } from '../general/moves'
 import { logTrial } from '../log'
-import { HAND_COUNT } from '../../../../constants/music/play'
 import { REGULAR_PUZZLE_TYPE } from '../../../../constants/music/puzzle'
 
 const TRIALS_COUNT = 10
 // const TRIALS_COUNT = 1000
 
 export const getRegularPuzzle = ({
-    handCount = HAND_COUNT,
     minPoints = getRandomInteger(10, 15),
 
 } = {}) => {
@@ -24,23 +22,21 @@ export const getRegularPuzzle = ({
             const {
                 hand,
                 moves,
-                yieldPoints,
                 ...rest
             } = getBestMovesForPuzzleBoard({
                 board,
                 pool,
-                handCount,
                 minPoints,
+                needsUniqueHighest: true,
             })
 
-            logTrial({ trialIndex, yieldPoints, ...rest })
+            logTrial({ trialIndex, ...rest })
 
             if (moves) {
                 return {
                     board,
                     moves,
                     hand,
-                    yieldPoints,
                     puzzleType: REGULAR_PUZZLE_TYPE,
                 }
             }

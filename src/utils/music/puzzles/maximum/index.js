@@ -8,7 +8,8 @@ const TRIALS_COUNT = 10
 // const TRIALS_COUNT = 1000
 
 export const getMaximumPuzzle = ({
-    minPoints = getRandomInteger(10, 15),
+    // minPoints = getRandomInteger(10, 15),
+    minPoints = getRandomInteger(1, 4),
 
 } = {}) => {
     let trialIndex = 0

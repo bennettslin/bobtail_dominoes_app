@@ -1,5 +1,5 @@
-import { getNthInSortedList } from '../../../../general'
-import { getRandomInteger } from '../../../../general/random'
+import { getNthInSortedList } from '../../../general'
+import { getRandomInteger } from '../../../general/random'
 
 export const getBestPointedEntryBasedOnRequirements = ({
     sortedPointedEntries,
@@ -13,7 +13,7 @@ export const getBestPointedEntryBasedOnRequirements = ({
             rank: getRandomInteger(rankMin, rankMax),
             sortedList: sortedPointedEntries,
         }),
-        yieldPoints = bestPointedEntry?.points,
+        yieldPoints = bestPointedEntry?.points || 0,
         meetsMinimumPoints = yieldPoints >= minPoints,
 
         meetsUniqueHighest =

@@ -34,7 +34,7 @@ export const getInitialBoardForPuzzle = ({
         const
             dominoIndex = getRandomDominoIndex(pool),
             hand = new Set([dominoIndex]),
-            moves = getBestPointedMovesForTurn({
+            { moves } = getBestPointedMovesForTurn({
                 hand,
                 board,
                 rankRange,
@@ -51,12 +51,14 @@ export const getInitialBoardForPuzzle = ({
 
     addDominoesFromRunoffPool({ pool, runoffList })
 
-    // Only return values if requested count succeeded.
-    return !dominoesCount ? {
-        board: board.map(({ dominoIndex, placement }) => ({
-            dominoIndex,
-            placement,
-        })),
-        pool,
-    } : {}
+    return {
+        // Only return values if requested count succeeded.
+        ...!dominoesCount && {
+            board: board.map(({ dominoIndex, placement }) => ({
+                dominoIndex,
+                placement,
+            })),
+            pool,
+        },
+    }
 }

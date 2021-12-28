@@ -59,7 +59,7 @@ const DemoEngine = () => {
                 getAiWorker().getBestPointedMovesForTurnFromWorker({
                     hand: currentHand,
                     board,
-                }).then(moves => {
+                }).then(({ moves }) => {
                     dispatch(updateGame({ moves }))
                 })
             }

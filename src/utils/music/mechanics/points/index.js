@@ -1,5 +1,5 @@
 import { getIsValidChord } from '../../chords/valid'
-import { BINGO_POINTS } from '../../../../constants/music/play'
+import { BINGO_POINTS, HAND_COUNT } from '../../../../constants/music/play'
 import { getLatestTurnIndex } from '../../render/turn'
 
 export const getPoints = pitchSet => (
@@ -13,8 +13,8 @@ export const getPointsForPitchSets = (pitchSets = []) => (
 )
 
 export const getPointsForMoves = ({
-    handCount,
     moves = [],
+    handCount = HAND_COUNT,
 } = {}) => (
     moves.reduce((sum, { pitchSets }) => (
         sum + getPointsForPitchSets(pitchSets)

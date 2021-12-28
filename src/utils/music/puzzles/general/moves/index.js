@@ -1,23 +1,23 @@
 import { getBestPointedMovesForTurn } from '../../../ai'
-import { getPointsForMoves } from '../../../mechanics/points'
 import { addMoveToBoard } from '../../../play/board'
 import { getBestMoveForPuzzleBoard } from '../move'
+import { HAND_COUNT } from '../../../../../constants/music/play'
 
 export const getBestMovesForPuzzleBoard = ({
     board,
     pool,
+    handCount = HAND_COUNT,
     // For each hand slot, choose the nth best domino and placement.
     rankRange,
-    handCount,
     minPoints,
+    needsUniqueHighest,
 }) => {
     const
         // Have separate trial board while testing individual dominoes.
         trialBoard = [...board],
         handList = []
 
-    let tempHandCount = handCount,
-        returnConfig = {}
+    let tempHandCount = handCount
 
     while (
         // We have an incomplete hand.
@@ -44,15 +44,25 @@ export const getBestMovesForPuzzleBoard = ({
     if (handList.length === handCount) {
         const
             hand = new Set(handList),
-            // This ensures dominoes are placed in the best possible order.
-            moves = getBestPointedMovesForTurn({ hand, board }),
-            yieldPoints = getPointsForMoves({ moves, handCount }),
-            meetsMinimumPoints = yieldPoints >= minPoints
+            {
+                moves,
+                yieldPoints,
+                meetsMinimumPoints,
+                meetsUniqueHighest,
 
-        returnConfig = {
+            // This ensures dominoes are placed in the best possible order.
+            } = getBestPointedMovesForTurn({
+                hand,
+                board,
+                minPoints,
+                needsUniqueHighest,
+            })
+
+        return {
             yieldPoints,
             meetsMinimumPoints,
-            ...moves.length && meetsMinimumPoints && {
+            meetsUniqueHighest,
+            ...moves.length && meetsMinimumPoints && meetsUniqueHighest && {
                 board,
                 pool,
                 hand,
@@ -61,5 +71,5 @@ export const getBestMovesForPuzzleBoard = ({
         }
     }
 
-    return returnConfig
+    return {}
 }

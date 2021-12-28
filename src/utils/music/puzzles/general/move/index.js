@@ -1,7 +1,7 @@
 import { getBestPointedMovesForTurn } from '../../../ai'
+import { getBestPointedEntryBasedOnRequirements } from '../../../ai/requirements'
 import { sortByHighestPoints } from '../../../mechanics/points'
 import { getRandomDominoIndex } from '../../../play/pool'
-import { getBestPointedEntryBasedOnRequirements } from '../requirements'
 import { addDominoesFromRunoffPool, addDominoToRunoffPool } from '../runoff'
 
 export const getBestMoveForPuzzleBoard = ({
@@ -21,7 +21,7 @@ export const getBestMoveForPuzzleBoard = ({
             dominoIndex = getRandomDominoIndex(pool),
             hand = new Set([dominoIndex]),
             // We definitely want the best placement for each domino...
-            moves = getBestPointedMovesForTurn({ hand, board })
+            { moves } = getBestPointedMovesForTurn({ hand, board })
 
         if (moves.length) {
             possibleMoves.push(moves[0])
