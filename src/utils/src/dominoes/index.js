@@ -2,9 +2,9 @@ import dominoX from '../../../assets/svgs/dominoes/dominoX'
 import dominoY from '../../../assets/svgs/dominoes/dominoY'
 import dominoXY from '../../../assets/svgs/dominoes/dominoXY'
 
-import missingDominoX from '../../../assets/svgs/dominoes/dominoX'
-import missingDominoY from '../../../assets/svgs/dominoes/dominoY'
-import missingDominoXY from '../../../assets/svgs/dominoes/dominoXY'
+import missingDominoX from '../../../assets/svgs/dominoes/missingDominoX'
+import missingDominoY from '../../../assets/svgs/dominoes/missingDominoY'
+import missingDominoXY from '../../../assets/svgs/dominoes/missingDominoXY'
 
 import {
     DIRECTION_X,

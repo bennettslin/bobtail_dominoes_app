@@ -1,5 +1,4 @@
 # TODO
-* Svg for missing domino
 * Allow for multiple missing dominoes?
 
 

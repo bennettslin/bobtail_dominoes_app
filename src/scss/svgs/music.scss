@@ -1,0 +1,22 @@
+.dominoes {
+    .text {
+        font-size: 84px;
+        font-family: Fresca;
+    }
+    [class^=rancho] {
+        font-family: Rancho;
+    }
+    .symbol {
+        font-size: 60px;
+    }
+    [class$=Line] {
+        fill: none;
+        stroke-width: 10px;
+    }
+    .wide {
+        stroke-width: 20px;
+    }
+    .dashed {
+        stroke-dasharray: 12;
+    }
+}
