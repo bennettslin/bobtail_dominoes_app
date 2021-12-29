@@ -6,7 +6,7 @@ import Svg from '../Svg'
 import { getDominoPitches, getOrderedInterval } from '../../utils/music/mechanics/dominoes'
 import { getIsPlacementUpsideDown, getOrientation } from '../../utils/music/mechanics/placement/orientation'
 import { getFacePositionAndSizeStyling } from '../../utils/music/styling/face'
-import { getDominoSrc } from '../../utils/src/dominoes'
+import { getDominoSrc, getMissingDominoSrc } from '../../utils/src/dominoes'
 import { getFaceSrc } from '../../utils/src/faces'
 import {
     getDominoPositionStyling,
@@ -25,6 +25,7 @@ const Domino = ({
     dominoIndex,
     placement,
     isHighlight,
+    isMissing,
     boardHexagonalBaseWidth,
 }) => {
     const
@@ -56,49 +57,61 @@ const Domino = ({
                 },
             }}
         >
-            <Svg
-                {...{
-                    key: isHighlight, // Fix weird unstyled domino issue.
-                    src: getDominoSrc(orientation),
-                    styleConfig: isHighlight ?
-                        styleConfigPitchOn :
-                        styleConfigDominoes,
-                }}
-            />
-            <Svg
-                {...{
-                    className: cx(
-                        'Domino__face',
-                    ),
-                    src: getIntervalSrc({
-                        interval: orderedInterval,
-                        orientation,
-                        isPlacementUpsideDown,
-                    }),
-                    styleConfig: styleConfigDominoes,
-                    style: getIntervalPositionAndSizeStyling(orientation),
-                }}
-            />
-            {(
-                getIsPlacementUpsideDown(placement) ?
-                    [...pitches].reverse() :
-                    pitches
-            ).map((pitch, pitchIndex) => (
+            {isMissing ? (
                 <Svg
                     {...{
-                        key: pitch,
-                        className: cx(
-                            'Domino__face',
-                        ),
-                        src: getFaceSrc(pitch),
-                        styleConfig: styleConfigFacesPitch,
-                        style: getFacePositionAndSizeStyling({
-                            pitchIndex,
-                            orientation,
-                        }),
+                        src: getMissingDominoSrc(orientation),
+                        styleConfig: styleConfigDominoes,
                     }}
                 />
-            ))}
+            ) : (
+                <>
+                    <Svg
+                        {...{
+                            key: isHighlight, // Fix weird unstyled domino issue.
+                            src: getDominoSrc(orientation),
+                            styleConfig: isHighlight ?
+                                styleConfigPitchOn :
+                                styleConfigDominoes,
+                        }}
+                    />
+                    <Svg
+                        {...{
+                            className: cx(
+                                'Domino__face',
+                            ),
+                            src: getIntervalSrc({
+                                interval: orderedInterval,
+                                orientation,
+                                isPlacementUpsideDown,
+                            }),
+                            styleConfig: styleConfigDominoes,
+                            style:
+                                getIntervalPositionAndSizeStyling(orientation),
+                        }}
+                    />
+                    {(
+                        getIsPlacementUpsideDown(placement) ?
+                            [...pitches].reverse() :
+                            pitches
+                    ).map((pitch, pitchIndex) => (
+                        <Svg
+                            {...{
+                                key: pitch,
+                                className: cx(
+                                    'Domino__face',
+                                ),
+                                src: getFaceSrc(pitch),
+                                styleConfig: styleConfigFacesPitch,
+                                style: getFacePositionAndSizeStyling({
+                                    pitchIndex,
+                                    orientation,
+                                }),
+                            }}
+                        />
+                    ))}
+                </>
+            )}
         </Flex>
     )
 }
@@ -112,6 +125,7 @@ Domino.propTypes = {
         ).isRequired,
     ),
     isHighlight: PropTypes.bool,
+    isMissing: PropTypes.bool,
     boardHexagonalBaseWidth: PropTypes.number,
 }
 

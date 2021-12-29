@@ -1,6 +1,11 @@
 import dominoX from '../../../assets/svgs/dominoes/dominoX'
 import dominoY from '../../../assets/svgs/dominoes/dominoY'
 import dominoXY from '../../../assets/svgs/dominoes/dominoXY'
+
+import missingDominoX from '../../../assets/svgs/dominoes/dominoX'
+import missingDominoY from '../../../assets/svgs/dominoes/dominoY'
+import missingDominoXY from '../../../assets/svgs/dominoes/dominoXY'
+
 import {
     DIRECTION_X,
     DIRECTION_XY,
@@ -13,4 +18,11 @@ const DOMINOES = {
     [DIRECTION_XY]: dominoXY,
 }
 
+const MISSING_DOMINOES = {
+    [DIRECTION_X]: missingDominoX,
+    [DIRECTION_Y]: missingDominoY,
+    [DIRECTION_XY]: missingDominoXY,
+}
+
 export const getDominoSrc = orientation => DOMINOES[orientation]
+export const getMissingDominoSrc = orientation => MISSING_DOMINOES[orientation]

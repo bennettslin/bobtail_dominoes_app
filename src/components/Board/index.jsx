@@ -59,24 +59,19 @@ const Board = ({
                     },
                 }}
             >
-                {getBoardOrderedByZIndex(board).map(move => {
-                    const {
-                        dominoIndex,
-                        placement,
-                        isHighlight,
-                    } = move
-                    return (
-                        <DominoComponent
-                            {...{
-                                key: dominoIndex,
-                                dominoIndex,
-                                placement,
-                                isHighlight,
-                                boardHexagonalBaseWidth,
-                            }}
-                        />
-                    )
-                })}
+                {getBoardOrderedByZIndex(board).map(({
+                    dominoIndex,
+                    ...rest
+                }) => (
+                    <DominoComponent
+                        {...{
+                            key: dominoIndex,
+                            dominoIndex,
+                            boardHexagonalBaseWidth,
+                            ...rest,
+                        }}
+                    />
+                ))}
             </div>
         </Flex>
         {topChild && (

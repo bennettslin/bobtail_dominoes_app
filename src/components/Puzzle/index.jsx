@@ -18,6 +18,7 @@ const Puzzle = ({
     board,
     hand,
     moves,
+    missingMoves,
     canShowAnswer,
 }) => {
     const [showAnswer, setShowAnswer] = useState(false)
@@ -44,7 +45,9 @@ const Puzzle = ({
                 <PuzzleBoard
                     {...{
                         board,
-                        ...showAnswer && { moves },
+                        moves,
+                        missingMoves,
+                        showAnswer,
                         topChild: canShowAnswer ? (
                             <Button
                                 {...{
@@ -67,9 +70,11 @@ const Puzzle = ({
                     }}
                 >
                     {showAnswer ? (
-                        <StyledLog>
-                            <PlayLog {...{ moves }} />
-                        </StyledLog>
+                        moves && (
+                            <StyledLog>
+                                <PlayLog {...{ moves }} />
+                            </StyledLog>
+                        )
                     ) : (
                         hand && (
                             <DominoCard
@@ -91,7 +96,8 @@ Puzzle.propTypes = {
     canShowAnswer: PropTypes.bool.isRequired,
     board: boardPropTypes.isRequired,
     hand: PropTypes.object,
-    moves: boardPropTypes.isRequired,
+    moves: boardPropTypes,
+    missingMoves: boardPropTypes,
 }
 
 export default Puzzle

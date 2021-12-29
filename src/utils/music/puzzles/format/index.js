@@ -34,7 +34,7 @@ const formatLists = sets => (
     `${TAB}${TAB}${TAB}]`
 )
 
-const getTextForBoard = board => (
+const getBoardText = board => (
     JSON.stringify(board)
         .replace(/"/g, '')
         .replace(/:/g, ': ')
@@ -46,7 +46,7 @@ const getTextForBoard = board => (
         .replace(/}, {/g, `},${NEWLINE}${TAB}${TAB}{`)
 )
 
-const getTextForMoves = moves => (
+const getMovesText = moves => (
     `[${NEWLINE}` +
     moves.map(({
         dominoIndex,
@@ -68,25 +68,31 @@ export const getTextForPuzzle = ({
     board,
     hand,
     moves,
+    missingMoves,
     puzzleType,
 }) => (
     puzzleType ? (
         `{${NEWLINE}` +
         `${TAB}day: 0,${NEWLINE}` +
         `${TAB}puzzleType: ${PUZZLE_TYPE_NAMES[puzzleType]},${NEWLINE}` +
-        `${TAB}board: ${getTextForBoard(board)},${NEWLINE}` +
+        `${TAB}board: ${getBoardText(board)},${NEWLINE}` +
         (
             hand ?
                 `${TAB}handList: ${formatList(hand)},${NEWLINE}` :
                 ''
         ) +
         (
-            moves.length ?
-                `${TAB}moves: ${getTextForMoves(moves)},${NEWLINE}` :
+            moves ?
+                `${TAB}moves: ${getMovesText(moves)},${NEWLINE}` :
                 ''
         ) +
         (
-            moves.length > 1 ?
+            missingMoves ?
+                `${TAB}missingMoves: ${getBoardText(missingMoves)},${NEWLINE}` :
+                ''
+        ) +
+        (
+            moves?.length > 1 ?
                 `${TAB}points: ${getPointsForMoves({ moves })},${NEWLINE}` :
                 ''
         ) +

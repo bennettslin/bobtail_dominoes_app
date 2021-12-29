@@ -1,5 +1,6 @@
 import {
     MAXIMUM_PUZZLE_TYPE,
+    MISSING_PUZZLE_TYPE,
     // MISSING_PUZZLE_TYPE,
     REGULAR_PUZZLE_TYPE,
 } from '../../../../constants/music/puzzle'
@@ -119,6 +120,20 @@ export default {
                     ],
                     points: 11,
                 },
+            ],
+        },
+        {
+            day: 5,
+            puzzleType: MISSING_PUZZLE_TYPE,
+            board: [
+                { dominoIndex: 40, placement: [[-1, 1], [0, 1]] },
+                { dominoIndex: 66, placement: [[0, 2], [1, 2]] },
+                { dominoIndex: 52, placement: [[1, -2], [1, -1]] },
+                { dominoIndex: 42, placement: [[-3, 2], [-2, 2]] },
+                { dominoIndex: 9, placement: [[-1, -1], [-1, 0]] },
+            ],
+            missingMoves: [
+                { dominoIndex: 3, placement: [[0, 0], [0, -1]] },
             ],
         },
         {

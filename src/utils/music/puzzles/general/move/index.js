@@ -44,7 +44,11 @@ export const getBestMoveForPuzzleBoard = ({
         needsUniqueHighest,
     })
 
-    addDominoesFromRunoffPool({ move, pool, runoffList })
+    addDominoesFromRunoffPool({
+        chosenDominoIndex: move.dominoIndex,
+        pool,
+        runoffList,
+    })
 
     return {
         yieldPoints,

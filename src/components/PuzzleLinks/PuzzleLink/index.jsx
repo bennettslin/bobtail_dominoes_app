@@ -14,6 +14,7 @@ const PuzzleLink = ({
     topLevelPage,
     date,
     board,
+    missingMoves,
 }) => (
     <Button
         dropShadow
@@ -36,6 +37,7 @@ const PuzzleLink = ({
                         'PuzzleLinkBoard',
                     ),
                     board,
+                    missingMoves,
                 }}
             />
             <Flex
@@ -59,6 +61,7 @@ PuzzleLink.propTypes = {
     date: datePropTypes,
     puzzleType: PropTypes.string.isRequired,
     board: boardPropTypes.isRequired,
+    missingMoves: boardPropTypes,
 }
 
 export default PuzzleLink

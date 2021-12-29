@@ -2,12 +2,15 @@ export const addDominoToRunoffPool = ({ dominoIndex, runoffList }) => {
     runoffList.push(dominoIndex)
 }
 
-export const addDominoesFromRunoffPool = ({ move = {}, pool, runoffList }) => {
-    const { dominoIndex: moveDominoIndex } = move
+export const addDominoesFromRunoffPool = ({
+    chosenDominoIndex,
+    pool,
+    runoffList,
 
+}) => {
     runoffList.forEach(dominoIndex => {
-        // Domino in move remains outside of pool.
-        if (dominoIndex !== moveDominoIndex) {
+        // Chosen domino remains outside of pool.
+        if (dominoIndex !== chosenDominoIndex) {
             pool.add(dominoIndex)
         }
     })

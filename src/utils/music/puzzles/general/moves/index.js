@@ -41,35 +41,35 @@ export const getBestMovesForPuzzleBoard = ({
     }
 
     // Safety check. It's unlikely the hand list will ever be incomplete.
-    if (handList.length === handCount) {
-        const
-            hand = new Set(handList),
-            {
-                moves,
-                yieldPoints,
-                meetsMinimumPoints,
-                meetsUniqueHighest,
+    if (handList.length !== handCount) {
+        return {}
+    }
 
-            // This ensures dominoes are placed in the best possible order.
-            } = getBestPointedMovesForTurn({
-                hand,
-                board,
-                minPoints,
-                needsUniqueHighest,
-            })
-
-        return {
+    const
+        hand = new Set(handList),
+        {
+            moves,
             yieldPoints,
             meetsMinimumPoints,
             meetsUniqueHighest,
-            ...moves.length && meetsMinimumPoints && meetsUniqueHighest && {
-                board,
-                pool,
-                hand,
-                moves,
-            },
-        }
-    }
 
-    return {}
+            // This ensures dominoes are placed in the best possible order.
+        } = getBestPointedMovesForTurn({
+            hand,
+            board,
+            minPoints,
+            needsUniqueHighest,
+        })
+
+    return {
+        yieldPoints,
+        meetsMinimumPoints,
+        meetsUniqueHighest,
+        ...moves.length && meetsMinimumPoints && meetsUniqueHighest && {
+            board,
+            pool,
+            hand,
+            moves,
+        },
+    }
 }

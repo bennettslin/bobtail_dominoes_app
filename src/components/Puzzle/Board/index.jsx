@@ -2,28 +2,31 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Board, { boardPropTypes } from '../../Board'
+import { getBoardBasedOnShowAnswer } from '../../../utils/music/puzzles/answer'
 import { getHexagonalMinWidthForBoard } from '../../../utils/music/render/board/width'
 import './style'
 
 const PuzzleBoard = ({
     className,
-    board,
-    moves = [],
+    board: rawBoard,
+    moves,
+    missingMoves,
+    showAnswer,
     topChild,
     children,
-}) => {
-    const newBoard = [
-        ...board,
-        ...moves.map(move => ({
-            ...move,
-            isHighlight: true,
-        })),
-    ]
 
-    const boardHexagonalMinWidth = getHexagonalMinWidthForBoard({
-        board: newBoard,
-        padding: 2,
-    })
+}) => {
+    const
+        board = getBoardBasedOnShowAnswer({
+            board: rawBoard,
+            moves,
+            missingMoves,
+            showAnswer,
+        }),
+        boardHexagonalMinWidth = getHexagonalMinWidthForBoard({
+            board,
+            padding: 2,
+        })
 
     return (
         <Board
@@ -32,7 +35,7 @@ const PuzzleBoard = ({
                     'PuzzleBoard',
                     className,
                 ),
-                board: newBoard,
+                board,
                 boardHexagonalWidth: boardHexagonalMinWidth,
                 boardHexagonalBaseWidth: boardHexagonalMinWidth,
                 topChild,
@@ -47,6 +50,8 @@ PuzzleBoard.propTypes = {
     className: PropTypes.string,
     board: boardPropTypes.isRequired,
     moves: boardPropTypes,
+    missingMoves: boardPropTypes,
+    showAnswer: PropTypes.bool,
     topChild: PropTypes.node,
     children: PropTypes.node,
 }

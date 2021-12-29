@@ -24,10 +24,17 @@ const PuzzleTest = () => {
         }
     }
 
-    const setPuzzle = ({ board = [], moves = [], ...rest } = {}) => {
+    const setPuzzle = ({
+        board = [],
+        moves,
+        missingMoves,
+        ...rest
+    } = {}) => {
         setBoard(board)
-        setMoves(moves)
-        setPuzzleText(getTextForPuzzle({ board, moves, ...rest }))
+        setMoves(moves || missingMoves || [])
+        setPuzzleText(
+            getTextForPuzzle({ board, moves, missingMoves, ...rest }),
+        )
     }
 
     useEffect(() => {
@@ -75,6 +82,7 @@ const PuzzleTest = () => {
             </Flex>
             <Flex {...{ gap: 'sm' }} >
                 <PuzzleBoard
+                    showAnswer
                     {...{
                         className: cx(
                             'PuzzleTestBoard',

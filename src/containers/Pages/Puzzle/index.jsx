@@ -15,7 +15,7 @@ const PuzzlePage = ({
     } = {},
 }) => {
     const
-        { puzzleType, board, handList, moves, ...rest } = pageMap,
+        { handList, moves, ...rest } = pageMap,
         { date } = rest
 
     return !didMount || getIsPastOrPresentDate(date) ? (
@@ -24,20 +24,21 @@ const PuzzlePage = ({
                 body: (
                     <Puzzle
                         {...{
-                            puzzleType,
-                            board,
                             // Convert lists back to sets.
                             ...handList && {
                                 hand: new Set(handList),
                             },
-                            moves: moves.map(({ pitchLists, ...rest }) => ({
-                                ...pitchLists && {
-                                    pitchSets: pitchLists.map(list => (
-                                        new Set(list)
-                                    )),
-                                },
-                                ...rest,
-                            })),
+                            ...moves && {
+                                moves: moves.map(({ pitchLists, ...rest }) => ({
+                                    ...pitchLists && {
+                                        pitchSets: pitchLists.map(list => (
+                                            new Set(list)
+                                        )),
+                                    },
+                                    ...rest,
+                                })),
+                            },
+                            ...rest,
                             canShowAnswer: getIsPastOrPresentDate(
                                 addDaysToDate(date, 1),
                             ),
@@ -77,6 +78,7 @@ PuzzlePage.propTypes = {
                     ).isRequired,
                 ),
             })),
+            missingMoves: boardPropTypes,
         }),
     }),
 }
