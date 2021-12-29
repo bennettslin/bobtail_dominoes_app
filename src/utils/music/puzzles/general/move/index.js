@@ -2,18 +2,18 @@ import { getBestPointedMovesForTurn } from '../../../ai'
 import { getBestPointedEntryBasedOnRequirements } from '../../../ai/requirements'
 import { sortByHighestPoints } from '../../../mechanics/points'
 import { getRandomDominoIndex } from '../../../play/pool'
-import { addDominoesFromRunoffPool, addDominoToRunoffPool } from '../runoff'
 
-export const getBestMoveForPuzzleBoard = ({
+export const getBestMoveForPuzzle = ({
     board,
-    pool,
+    pool: originalPool,
     rankRange, // Choose the nth best domino and placement.
     minPoints,
     needsUniqueHighest,
 }) => {
     const
-        possibleMoves = [],
-        runoffList = []
+        // Don't mutate original pool.
+        pool = new Set(originalPool),
+        possibleMoves = []
 
     // Try each domino in pool.
     while (pool.size) {
@@ -26,8 +26,6 @@ export const getBestMoveForPuzzleBoard = ({
         if (moves.length) {
             possibleMoves.push(moves[0])
         }
-
-        addDominoToRunoffPool({ dominoIndex, runoffList })
     }
 
     const {
@@ -44,12 +42,6 @@ export const getBestMoveForPuzzleBoard = ({
         needsUniqueHighest,
     })
 
-    addDominoesFromRunoffPool({
-        chosenDominoIndex: move.dominoIndex,
-        pool,
-        runoffList,
-    })
-
     return {
         yieldPoints,
         meetsMinimumPoints,
@@ -58,7 +50,6 @@ export const getBestMoveForPuzzleBoard = ({
         // Consider search failed if requirements are not met.
         ...meetsMinimumPoints && meetsUniqueHighest && {
             board,
-            pool,
             move,
         },
     }

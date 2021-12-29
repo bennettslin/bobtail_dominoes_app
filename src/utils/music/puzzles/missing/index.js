@@ -1,5 +1,5 @@
 import { getInitialBoardForPuzzle } from '../general/board'
-import { getBestMissingMoveForPuzzleBoard } from '../general/missing'
+import { getBestMissingMovesForPuzzle } from '../general/missing'
 import { getRandomInteger } from '../../../general/random'
 import { logTrialForPuzzleWithMissingMoves } from '../log'
 import { MISSING_PUZZLE_TYPE } from '../../../../constants/music/puzzle'
@@ -28,7 +28,7 @@ export const getMissingPuzzle = ({
         const {
             board: boardWithMissingMoves,
             missingMoves,
-        } = getBestMissingMoveForPuzzleBoard({
+        } = getBestMissingMovesForPuzzle({
             board,
             pool,
             minPoints,

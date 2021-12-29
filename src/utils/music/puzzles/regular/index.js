@@ -1,6 +1,6 @@
 import { getRandomInteger } from '../../../general/random'
 import { getInitialBoardForPuzzle } from '../general/board'
-import { getBestMovesForPuzzleBoard } from '../general/moves'
+import { getBestMovesForPuzzle } from '../general/moves'
 import { logTrialForPuzzleWithPoints } from '../log'
 import { REGULAR_PUZZLE_TYPE } from '../../../../constants/music/puzzle'
 
@@ -28,7 +28,7 @@ export const getRegularPuzzle = ({
             hand,
             moves,
             ...rest
-        } = getBestMovesForPuzzleBoard({
+        } = getBestMovesForPuzzle({
             board,
             pool,
             minPoints,

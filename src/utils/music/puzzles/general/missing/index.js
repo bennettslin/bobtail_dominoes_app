@@ -2,7 +2,6 @@ import { getBestPointedEntryBasedOnRequirements } from '../../../ai/requirements
 import { getChordsForPlacement } from '../../../mechanics/placement/chords'
 import { sortByHighestPoints } from '../../../mechanics/points'
 import { getRandomDominoIndex } from '../../../play/pool'
-import { addDominoesFromRunoffPool, addDominoToRunoffPool } from '../runoff'
 
 const getBoardWithoutDomino = ({ dominoIndex, board }) => (
     board.filter(({ dominoIndex: trialDominoIndex }) => (
@@ -10,12 +9,15 @@ const getBoardWithoutDomino = ({ dominoIndex, board }) => (
     ))
 )
 
-export const getBestMissingMoveForPuzzleBoard = ({
+export const getBestMissingMovesForPuzzle = ({
     board,
-    pool,
+    pool: originalPool,
     minPoints,
+    // missingCount = 1,
 }) => {
     const
+        // Don't mutate original pool.
+        pool = new Set(originalPool),
         pointedMoves = board.map(({
             dominoIndex,
             placement,
@@ -38,8 +40,7 @@ export const getBestMissingMoveForPuzzleBoard = ({
             sortedPointedEntries: pointedMoves.sort(sortByHighestPoints),
             minPoints,
         }),
-        trialBoard = getBoardWithoutDomino({ dominoIndex, board }),
-        runoffList = []
+        trialBoard = getBoardWithoutDomino({ dominoIndex, board })
 
     /**
      * Temporarily add domino to pool to ensure its reverse placement also
@@ -76,18 +77,7 @@ export const getBestMissingMoveForPuzzleBoard = ({
         ) {
             hasDuplicateLegalPlacement = true
         }
-
-        addDominoToRunoffPool({
-            dominoIndex: trialDominoIndex,
-            runoffList,
-        })
     }
-
-    addDominoesFromRunoffPool({
-        chosenDominoIndex: dominoIndex,
-        pool,
-        runoffList,
-    })
 
     return {
         // Consider search failed if there is a duplicate legal placement.

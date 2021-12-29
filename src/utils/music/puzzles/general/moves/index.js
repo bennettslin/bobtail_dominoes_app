@@ -1,9 +1,9 @@
 import { getBestPointedMovesForTurn } from '../../../ai'
 import { addMoveToBoard } from '../../../play/board'
-import { getBestMoveForPuzzleBoard } from '../move'
+import { getBestMoveForPuzzle } from '../move'
 import { HAND_COUNT } from '../../../../../constants/music/play'
 
-export const getBestMovesForPuzzleBoard = ({
+export const getBestMovesForPuzzle = ({
     board,
     pool,
     handCount = HAND_COUNT,
@@ -26,7 +26,7 @@ export const getBestMovesForPuzzleBoard = ({
         // Puzzle is not possible if this sum is less than hand count.
         tempHandCount + handList.length === handCount
     ) {
-        const { move } = getBestMoveForPuzzleBoard({
+        const { move } = getBestMoveForPuzzle({
             board: trialBoard,
             pool,
             rankRange,
