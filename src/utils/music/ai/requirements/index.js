@@ -3,9 +3,9 @@ import { getRandomInteger } from '../../../general/random'
 
 export const getBestPointedEntryBasedOnRequirements = ({
     sortedPointedEntries,
-    minPoints = 0,
     needsUniqueHighest = false,
     rankRange: [rankMin, rankMax] = [0, 0],
+    minPointsRange: [minPointsMin, minPointsMax] = [0, 0],
 
 }) => {
     const
@@ -18,7 +18,8 @@ export const getBestPointedEntryBasedOnRequirements = ({
     return {
         bestPointedEntry,
         yieldPoints,
-        meetsMinimumPoints: yieldPoints >= minPoints,
+        meetsMinimumPoints:
+            yieldPoints >= getRandomInteger(minPointsMin, minPointsMax),
         meetsUniqueHighest: (
             Boolean(rankMax) ||
             !needsUniqueHighest ||

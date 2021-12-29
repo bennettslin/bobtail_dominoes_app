@@ -1,3 +1,11 @@
+export const logPuzzleSearch = ([minPointsMin, minPointsMax]) => {
+    logServe(`Finding a unique outcome between at least ${minPointsMin} and ${minPointsMax} points…`)
+}
+
+export const logBoardError = trialIndex => {
+    logServe(`Trial ${trialIndex} could not create a board.`)
+}
+
 export const logTrialForPuzzleWithPoints = ({
     trialIndex,
     yieldPoints,

@@ -7,7 +7,7 @@ export const getBestMoveForPuzzle = ({
     board,
     pool: originalPool,
     rankRange, // Choose the nth best domino and placement.
-    minPoints,
+    minPointsRange,
     needsUniqueHighest,
 }) => {
     const
@@ -38,7 +38,7 @@ export const getBestMoveForPuzzle = ({
     } = getBestPointedEntryBasedOnRequirements({
         sortedPointedEntries: possibleMoves.sort(sortByHighestPoints),
         rankRange,
-        minPoints,
+        minPointsRange,
         needsUniqueHighest,
     })
 

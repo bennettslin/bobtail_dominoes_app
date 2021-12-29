@@ -19,7 +19,7 @@ describe('getBestPointedEntryBasedOnRequirements', () => {
         }],
         [{
             sortedPointedEntries: [{ points: 10 }, { points: 9 }],
-            minPoints: 20,
+            minPointsRange: [20, 20],
         }, {
             bestPointedEntry: { points: 10 },
             meetsMinimumPoints: false,

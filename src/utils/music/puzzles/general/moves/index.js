@@ -9,7 +9,7 @@ export const getBestMovesForPuzzle = ({
     handCount = HAND_COUNT,
     // For each hand slot, choose the nth best domino and placement.
     rankRange,
-    minPoints,
+    minPointsRange,
     needsUniqueHighest,
 }) => {
     const
@@ -57,7 +57,7 @@ export const getBestMovesForPuzzle = ({
         } = getBestPointedMovesForTurn({
             hand,
             board,
-            minPoints,
+            minPointsRange,
             needsUniqueHighest,
         })
 

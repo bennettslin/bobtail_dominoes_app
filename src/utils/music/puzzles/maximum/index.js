@@ -1,20 +1,23 @@
-import { getRandomInteger } from '../../../general/random'
 import { getInitialBoardForPuzzle } from '../general/board'
 import { getBestMoveForPuzzle } from '../general/move'
-import { logTrialForPuzzleWithPoints } from '../log'
+import {
+    logBoardError,
+    logPuzzleSearch,
+    logTrialForPuzzleWithPoints,
+} from '../log'
 import { MAXIMUM_PUZZLE_TYPE } from '../../../../constants/music/puzzle'
 
 const TRIALS_COUNT = 10
 // const TRIALS_COUNT = 1000
 
 export const getMaximumPuzzle = ({
-    // minPoints = getRandomInteger(10, 15),
-    minPoints = getRandomInteger(1, 4),
+    // minPointsRange = [10, 15],
+    minPointsRange = [1, 4],
 
 } = {}) => {
     let trialIndex = 0
 
-    logServe(`Finding a unique outcome with at least ${minPoints} points…`)
+    logPuzzleSearch(minPointsRange)
 
     while (trialIndex < TRIALS_COUNT) {
         const { board, pool } = getInitialBoardForPuzzle()
@@ -22,13 +25,14 @@ export const getMaximumPuzzle = ({
         trialIndex++
 
         if (!board) {
+            logBoardError(trialIndex)
             break
         }
 
         const { move, ...rest } = getBestMoveForPuzzle({
             board,
             pool,
-            minPoints,
+            minPointsRange,
             needsUniqueHighest: true,
         })
 

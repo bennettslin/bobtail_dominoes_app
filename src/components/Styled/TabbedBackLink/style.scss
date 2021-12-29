@@ -2,17 +2,10 @@
 
 .StyledTabbedBackLink {
     margin-right: $margin__xs;
-}
 
-.BackLink__text {
-    .StyledTabbedBackLink
-    & {        
-        display: none;
-        
-        @media
-        (min-width: $breakpoint__sm) and (orientation: portrait),
-        (min-height: $breakpoint__sm) and (orientation: landscape) {
-            display: block;
-        }
+    @media
+    (min-width: $breakpoint__xs) and (orientation: portrait),
+    (min-height: $breakpoint__xs) and (orientation: landscape) {
+        left: -$margin__sm;
     }
 }

@@ -12,7 +12,7 @@ const getBoardWithoutDomino = ({ dominoIndex, board }) => (
 export const getBestMissingMovesForPuzzle = ({
     board,
     pool: originalPool,
-    minPoints,
+    minPointsRange,
     // missingCount = 1,
 }) => {
     const
@@ -38,7 +38,7 @@ export const getBestMissingMovesForPuzzle = ({
             },
         } = getBestPointedEntryBasedOnRequirements({
             sortedPointedEntries: pointedMoves.sort(sortByHighestPoints),
-            minPoints,
+            minPointsRange,
         }),
         trialBoard = getBoardWithoutDomino({ dominoIndex, board })
 

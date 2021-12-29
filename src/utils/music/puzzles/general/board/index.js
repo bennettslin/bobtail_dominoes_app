@@ -15,9 +15,9 @@ export const getInitialBoardForPuzzle = ({
     // Number of dominoes on board.
     dominoesCountRange: [dominoesCountMin, dominoesCountMax] = [4, 7],
     // For each domino, choose the nth best placement.
-    rankRange = [0, 5],
+    rankRange = [0, 0],
     // Each domino should score this many points.
-    minPointsRange: [minPointsMin, minPointsMax] = [3, 7],
+    minPointsRange = [6, 9],
 } = {}) => {
     const
         originalPool = isExtendedPool ?
@@ -46,7 +46,7 @@ export const getInitialBoardForPuzzle = ({
 
                 // Exempt first played domino from minimum points requirement.
                 ...board.length > 2 && {
-                    minPoints: getRandomInteger(minPointsMin, minPointsMax),
+                    minPointsRange,
                 },
             })
 

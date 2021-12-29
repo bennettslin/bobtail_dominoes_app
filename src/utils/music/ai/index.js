@@ -6,9 +6,9 @@ export const getBestPointedMovesForTurn = ({
     hand,
     board,
     limit = 3, // Only consider this number of moves with each recursion.
-    minPoints,
     needsUniqueHighest,
     rankRange, // Pick the nth best move.
+    minPointsRange,
 }) => {
     if (!hand.size) {
         return { moves: [] }
@@ -23,7 +23,7 @@ export const getBestPointedMovesForTurn = ({
             board,
             limit,
         }).sort(sortByHighestPoints),
-        minPoints,
+        minPointsRange,
         needsUniqueHighest,
         rankRange,
     })
