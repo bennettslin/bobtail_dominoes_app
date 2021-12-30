@@ -7,6 +7,7 @@ import ChildrenPage from './ChildrenPage'
 import ContentPage from './ContentPage'
 import { updateSelectedPagePath } from '../../redux/page/action'
 import { getPathFromLink } from '../../utils/pages/path'
+import { datePropTypes } from '../../constants/propTypes'
 
 const Page = ({ className, children, ...rest }) => {
     const dispatch = useDispatch()
@@ -32,12 +33,6 @@ const Page = ({ className, children, ...rest }) => {
         </PageConfigContext.Provider>
     )
 }
-
-export const datePropTypes = PropTypes.shape({
-    year: PropTypes.number.isRequired,
-    month: PropTypes.number.isRequired,
-    day: PropTypes.number.isRequired,
-})
 
 Page.propTypes = {
     className: PropTypes.string,

@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { datePropTypes } from '../../../..'
 import PageConfigContext from '../../../../../../contexts/PageConfig'
 import Anchor from '../../../../../../components/Anchor'
 import Flex from '../../../../../../components/Flex'
@@ -10,6 +9,7 @@ import arrow from '../../../../../../assets/svgs/app/arrow'
 import { getCapitalizedText } from '../../../../../../utils/format'
 import { getPagePathFromConfig } from '../../../../../../utils/pages/path'
 import { formatDirectionTextForDate } from '../../../../../../utils/date/format'
+import { datePropTypes } from '../../../../../../constants/propTypes'
 
 const DirectionPageLink = ({ direction, directionPage }) => {
     if (!directionPage) {

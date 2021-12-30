@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { boardPropTypes } from '../../../components/Board'
 import getDidMountHoc from '../../../hocs/DidMountHoc'
 import Puzzle from '../../../components/Puzzle'
-import Page, { datePropTypes } from '../../Page'
+import Page from '../../Page'
 import NotFoundPage from '../NotFound'
 import { getIsPastOrPresentDate } from '../../../utils/date/current'
 import { addDaysToDate } from '../../../utils/date'
+import { boardPropTypes, datePropTypes, handListPropTypes } from '../../../constants/propTypes'
 
 const PuzzlePage = ({
     didMount,
@@ -53,10 +53,6 @@ const PuzzlePage = ({
     )
 }
 
-export const handListPropTypes = PropTypes.arrayOf(
-    PropTypes.number.isRequired,
-)
-
 PuzzlePage.propTypes = {
     didMount: PropTypes.bool.isRequired,
     pageContext: PropTypes.shape({
@@ -67,19 +63,7 @@ PuzzlePage.propTypes = {
             puzzleType: PropTypes.string.isRequired,
             board: boardPropTypes.isRequired,
             handList: handListPropTypes,
-            moves: PropTypes.arrayOf(PropTypes.shape({
-                dominoIndex: PropTypes.number.isRequired,
-                placement: PropTypes.arrayOf(
-                    PropTypes.arrayOf(
-                        PropTypes.number.isRequired,
-                    ).isRequired,
-                ),
-                pitchLists: PropTypes.arrayOf(
-                    PropTypes.arrayOf(
-                        PropTypes.number.isRequired,
-                    ).isRequired,
-                ),
-            })),
+            moves: boardPropTypes,
             missingMoves: boardPropTypes,
         }),
     }),

@@ -1,5 +1,6 @@
 # TODO
-* Organize puzzle list by month and year?
+* Organize puzzle list by year?
+    * Puzzle list pages are also generated programmatically.
 * Allow for multiple missing dominoes?
 
 # Puzzle types

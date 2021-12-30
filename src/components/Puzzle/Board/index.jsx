@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import Board, { boardPropTypes } from '../../Board'
+import Board from '../../Board'
 import { getBoardBasedOnShowAnswer } from '../../../utils/music/puzzles/answer'
 import { getHexagonalMinWidthForBoard } from '../../../utils/music/render/board/width'
+import { boardPropTypes } from '../../../constants/propTypes'
 import './style'
 
 const PuzzleBoard = ({

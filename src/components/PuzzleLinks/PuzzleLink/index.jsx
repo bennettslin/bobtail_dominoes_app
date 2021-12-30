@@ -1,15 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { boardPropTypes } from '../../Board'
-import { datePropTypes } from '../../../containers/Page'
-import { handListPropTypes } from '../../../containers/Pages/Puzzle'
 import Button from '../../Button'
 import Flex from '../../Flex'
 import Hand from '../../Hand'
 import StyledShadow from '../../Styled/Shadow'
 import PuzzleBoard from '../../Puzzle/Board'
 import { getPagePathFromConfig } from '../../../utils/pages/path'
+import { boardPropTypes, datePropTypes, handListPropTypes } from '../../../constants/propTypes'
 import './style'
 
 const PuzzleLink = ({

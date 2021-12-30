@@ -8,6 +8,7 @@ import {
     getBoardPositionStyling,
     getBoardSizeStyling,
 } from '../../utils/music/styling/board'
+import { boardPropTypes } from '../../constants/propTypes'
 import './style'
 
 const Board = ({
@@ -98,15 +99,6 @@ const Board = ({
         )}
     </Flex>
 )
-
-export const boardPropTypes = PropTypes.arrayOf(PropTypes.shape({
-    dominoIndex: PropTypes.number.isRequired,
-    placement: PropTypes.arrayOf(
-        PropTypes.arrayOf(
-            PropTypes.number.isRequired,
-        ).isRequired,
-    ),
-}))
 
 Board.propTypes = {
     className: PropTypes.string,

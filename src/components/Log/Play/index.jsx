@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { boardPropTypes } from '../../Board'
 import List from '../../List'
 import ListItem from '../../List/ListItem'
+import LogEntry from '../Entry'
 import MoveLog from '../Move'
 import { getPointsForMoves } from '../../../utils/music/mechanics/points'
 import { BINGO_POINTS, HAND_COUNT } from '../../../constants/music/play'
-import LogEntry from '../Entry'
+import { boardPropTypes } from '../../../constants/propTypes'
 
 const PlayLog = ({
     moves,

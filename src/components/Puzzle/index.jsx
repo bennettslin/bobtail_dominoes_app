@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { boardPropTypes } from '../Board'
 import Button from '../Button'
 import DominoCard from '../DominoCard'
 import Flex from '../Flex'
@@ -12,6 +11,7 @@ import StyledLog from '../Styled/Log'
 import StyledShadow from '../Styled/Shadow'
 import PuzzleBoard from './Board'
 import { getPuzzleText } from './util'
+import { boardPropTypes } from '../../constants/propTypes'
 
 const Puzzle = ({
     puzzleType,
