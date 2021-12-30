@@ -24,26 +24,26 @@ export const getMaximumPuzzle = ({
 
         trialIndex++
 
-        if (!board) {
-            logBoardError(trialIndex)
-            break
-        }
-
-        const { move, ...rest } = getBestMoveForPuzzle({
-            board,
-            pool,
-            minPointsRange,
-            needsUniqueHighest: true,
-        })
-
-        logTrialForPuzzleWithPoints({ trialIndex, ...rest })
-
-        if (move) {
-            return {
+        if (board) {
+            const { move, ...rest } = getBestMoveForPuzzle({
                 board,
-                moves: [move],
-                puzzleType: MAXIMUM_PUZZLE_TYPE,
+                pool,
+                minPointsRange,
+                needsUniqueHighest: true,
+            })
+
+            logTrialForPuzzleWithPoints({ trialIndex, ...rest })
+
+            if (move) {
+                return {
+                    board,
+                    moves: [move],
+                    puzzleType: MAXIMUM_PUZZLE_TYPE,
+                }
             }
+
+        } else {
+            logBoardError(trialIndex)
         }
     }
 }

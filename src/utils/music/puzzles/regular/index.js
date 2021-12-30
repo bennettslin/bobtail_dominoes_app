@@ -23,31 +23,31 @@ export const getRegularPuzzle = ({
 
         trialIndex++
 
-        if (!board) {
-            logBoardError(trialIndex)
-            break
-        }
-
-        const {
-            hand,
-            moves,
-            ...rest
-        } = getBestMovesForPuzzle({
-            board,
-            pool,
-            minPointsRange,
-            needsUniqueHighest: true,
-        })
-
-        logTrialForPuzzleWithPoints({ trialIndex, ...rest })
-
-        if (moves) {
-            return {
-                board,
-                moves,
+        if (board) {
+            const {
                 hand,
-                puzzleType: REGULAR_PUZZLE_TYPE,
+                moves,
+                ...rest
+            } = getBestMovesForPuzzle({
+                board,
+                pool,
+                minPointsRange,
+                needsUniqueHighest: true,
+            })
+
+            logTrialForPuzzleWithPoints({ trialIndex, ...rest })
+
+            if (moves) {
+                return {
+                    board,
+                    moves,
+                    hand,
+                    puzzleType: REGULAR_PUZZLE_TYPE,
+                }
             }
+
+        } else {
+            logBoardError(trialIndex)
         }
     }
 }

@@ -24,28 +24,28 @@ export const getMissingPuzzle = ({
 
         trialIndex++
 
-        if (!board) {
-            logBoardError(trialIndex)
-            break
-        }
-
-        const {
-            board: boardWithMissingMoves,
-            missingMoves,
-        } = getBestMissingMovesForPuzzle({
-            board,
-            pool,
-            minPointsRange,
-        })
-
-        logTrialForPuzzleWithMissingMoves({ trialIndex, missingMoves })
-
-        if (missingMoves) {
-            return {
+        if (board) {
+            const {
                 board: boardWithMissingMoves,
                 missingMoves,
-                puzzleType: MISSING_PUZZLE_TYPE,
+            } = getBestMissingMovesForPuzzle({
+                board,
+                pool,
+                minPointsRange,
+            })
+
+            logTrialForPuzzleWithMissingMoves({ trialIndex, missingMoves })
+
+            if (missingMoves) {
+                return {
+                    board: boardWithMissingMoves,
+                    missingMoves,
+                    puzzleType: MISSING_PUZZLE_TYPE,
+                }
             }
+
+        } else {
+            logBoardError(trialIndex)
         }
     }
 }

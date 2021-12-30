@@ -41,7 +41,7 @@ export const registerTurn = ({
 
     if (moves) {
         playHand({ pool, hand, moves, handCount })
-        addMovesToBoard({ board, moves, playerIndex })
+        addMovesToBoard({ board, moves })
         addMovesToScores({ scores, moves, playerIndex, handCount })
     } else {
         exchangeHand({ pool, hand, discardedIndices })

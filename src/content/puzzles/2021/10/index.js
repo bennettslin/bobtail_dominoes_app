@@ -162,6 +162,52 @@ export default {
             ],
         },
         {
+            day: 7,
+            puzzleType: REGULAR_PUZZLE_TYPE,
+            board: [
+                { dominoIndex: 48, placement: [[-1, 1], [0, 0]] },
+                { dominoIndex: 8, placement: [[0, 1], [1, 1]] },
+                { dominoIndex: 37, placement: [[2, 1], [1, 2]] },
+                { dominoIndex: 15, placement: [[1, -1], [1, 0]] },
+            ],
+            handList: [9, 14, 58],
+            moves: [
+                {
+                    dominoIndex: 9,
+                    placement: [[2, 0], [2, -1]],
+                    pitchLists: [
+                        [8, 5, 0],
+                        [9, 0, 3],
+                        [9, 5, 0],
+                    ],
+                    points: 9,
+                },
+                {
+                    dominoIndex: 14,
+                    placement: [[-1, 2], [0, 2]],
+                    pitchLists: [
+                        [1, 4, 10],
+                        [9, 5, 0, 1],
+                        [8, 0, 4],
+                        [0, 8, 4],
+                    ],
+                    points: 13,
+                },
+                {
+                    dominoIndex: 58,
+                    placement: [[0, 3], [-1, 3]],
+                    pitchLists: [
+                        [8, 0, 4, 7],
+                        [3, 10, 7],
+                        [5, 1, 9],
+                        [0, 8, 4, 9],
+                    ],
+                    points: 14,
+                },
+            ],
+            points: 38,
+        },
+        {
             day: 13,
             puzzleType: MAXIMUM_PUZZLE_TYPE,
             board: [

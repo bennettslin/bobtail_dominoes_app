@@ -16,16 +16,13 @@ export const getInitialBoardForPuzzle = ({
     dominoesCountRange: [dominoesCountMin, dominoesCountMax] = [4, 7],
     // For each domino, choose the nth best placement.
     rankRange = [0, 0],
-    // Each domino should score this many points.
+    // Each domino should score at least this many points.
     minPointsRange = [6, 9],
 } = {}) => {
     const
-        originalPool = isExtendedPool ?
+        pool = isExtendedPool ?
             getInitialExtendedPool() :
             getInitialStandardPool(),
-
-        // Don't mutate original pool.
-        pool = new Set(originalPool),
         board = getInitialBoard(pool),
         runoffList = []
 
@@ -39,7 +36,7 @@ export const getInitialBoardForPuzzle = ({
         const
             dominoIndex = getRandomDominoIndex(pool),
             hand = new Set([dominoIndex]),
-            { moves } = getBestPointedMovesForTurn({
+            { moves, meetsMinimumPoints } = getBestPointedMovesForTurn({
                 hand,
                 board,
                 rankRange,
@@ -50,10 +47,13 @@ export const getInitialBoardForPuzzle = ({
                 },
             })
 
-        if (moves.length) {
+        // Domino meets requirements, so add it to the board.
+        if (moves.length && meetsMinimumPoints) {
             playHand({ hand, handCount: 1, moves, pool })
             addMovesToBoard({ board, moves })
             dominoesCount--
+
+        // Domino doesn't meet requirements, so add it back to pool later.
         } else {
             addDominoToRunoffPool({ dominoIndex, runoffList })
         }

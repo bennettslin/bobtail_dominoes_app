@@ -14,9 +14,8 @@ export const addMoveToBoard = (move, board) => {
     return board
 }
 
-export const addMovesToBoard = ({ playerIndex, moves, board }) => {
+export const addMovesToBoard = ({ moves, board }) => {
     moves.forEach(move => {
-        move.playerIndex = playerIndex
         addMoveToBoard(move, board)
     })
 

@@ -24,7 +24,6 @@ describe('addMoveToBoard', () => {
         expect(addMoveToBoard(
             {
                 dominoIndex: 54,
-                playerIndex: 0,
                 placement: [[0, 2], [0, 1]],
                 pitchSets: [new Set([0, 9, 6])],
                 points: 3,
@@ -34,7 +33,6 @@ describe('addMoveToBoard', () => {
             { dominoIndex: 4, placement: [[0, 0], [1, 0]] },
             {
                 dominoIndex: 54,
-                playerIndex: 0,
                 placement: [[0, 2], [0, 1]],
                 pitchSets: [new Set([0, 9, 6])],
                 points: 3,
@@ -46,7 +44,6 @@ describe('addMoveToBoard', () => {
 describe('addMovesToBoard', () => {
     it('returns board with new moves added', () => {
         expect(addMovesToBoard({
-            playerIndex: 1,
             moves: [
                 {
                     dominoIndex: 34,
@@ -70,13 +67,11 @@ describe('addMovesToBoard', () => {
             { dominoIndex: 4, placement: [[0, 0], [1, 0]] },
             {
                 dominoIndex: 54,
-                playerIndex: 0,
                 pitchSets: [new Set([0, 9, 6])],
                 placement: [[0, 2], [0, 1]],
             },
             {
                 dominoIndex: 34,
-                playerIndex: 1,
                 pitchSets: [
                     new Set([3, 0, 9, 6]),
                     new Set([7, 0, 4]),
@@ -85,7 +80,6 @@ describe('addMovesToBoard', () => {
             },
             {
                 dominoIndex: 5,
-                playerIndex: 1,
                 pitchSets: [
                     new Set([0, 5, 9]),
                     new Set([3, 7, 0]),

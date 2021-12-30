@@ -65,6 +65,8 @@ export const getBestMovesForPuzzle = ({
         yieldPoints,
         meetsMinimumPoints,
         meetsUniqueHighest,
+
+        // Consider search failed if requirements are not met.
         ...moves.length && meetsMinimumPoints && meetsUniqueHighest && {
             board,
             pool,

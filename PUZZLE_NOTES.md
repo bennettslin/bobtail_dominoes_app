@@ -1,8 +1,6 @@
 # TODO
-* Puzzles don't fail automatically
-    * Determine when there should be failure if requirements aren't met
-    * Bring these failure points closer to user end
 * Show hand in puzzle link for regular puzzles
+* Organize puzzle list by month and year?
 * Allow for multiple missing dominoes?
 
 # Puzzle types
@@ -19,4 +17,3 @@
 * Sunday: regular (difficult)
 
 # Puzzles list
-* Show only for month and year?

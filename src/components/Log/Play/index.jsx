@@ -25,7 +25,7 @@ const PlayLog = ({
 
     // For puzzle.
     } else if (moves.length > 1) {
-        log = `One possible solution to earn ${getPointsForMoves({ moves })} points.`
+        log = `The top solution earns ${getPointsForMoves({ moves })} points.`
     }
 
     return (

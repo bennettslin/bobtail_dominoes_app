@@ -139,7 +139,7 @@ describe('registerTurn', () => {
             isGameOver: false,
             pool: new Set([3, 16, 21, 25, 33, 34, 40, 46, 49, 55, 61]),
             scores: [15, 22, 35, 7],
-            turns: [{ dominoIndex: 29 }, { moves: [{ dominoIndex: 62, pitchSets: [new Set([4, 1, 8, 0])], placement: [[0, 2], [0, 3]], playerIndex: 0 }] }, { moves: [{ dominoIndex: 30, pitchSets: [new Set([0, 5, 9, 2]), new Set([11, 2, 6]), new Set([7, 0, 4, 11])], placement: [[1, 1], [2, 0]], playerIndex: 2 }, { dominoIndex: 49, pitchSets: [new Set([0, 9, 5]), new Set([0, 5, 9])], placement: [[-2, 3], [-2, 2]], playerIndex: 2 }] }],
+            turns: [{ dominoIndex: 29 }, { moves: [{ dominoIndex: 62, pitchSets: [new Set([4, 1, 8, 0])], placement: [[0, 2], [0, 3]] }] }, { moves: [{ dominoIndex: 30, pitchSets: [new Set([0, 5, 9, 2]), new Set([11, 2, 6]), new Set([7, 0, 4, 11])], placement: [[1, 1], [2, 0]] }, { dominoIndex: 49, pitchSets: [new Set([0, 9, 5]), new Set([0, 5, 9])], placement: [[-2, 3], [-2, 2]] }] }],
         })
     })
 
@@ -159,7 +159,7 @@ describe('registerTurn', () => {
             isGameOver: true,
             pool: new Set(),
             scores: [15, 22, 35, 7],
-            turns: [{ dominoIndex: 29 }, { moves: [{ dominoIndex: 62, pitchSets: [new Set([4, 1, 8, 0])], placement: [[0, 2], [0, 3]], playerIndex: 0 }] }, { isEmptyPool: true, moves: [{ dominoIndex: 30, pitchSets: [new Set([0, 5, 9, 2]), new Set([11, 2, 6]), new Set([7, 0, 4, 11])], placement: [[1, 1], [2, 0]], playerIndex: 2 }, { dominoIndex: 49, pitchSets: [new Set([0, 9, 5]), new Set([0, 5, 9])], placement: [[-2, 3], [-2, 2]], playerIndex: 2 }] }, { winnerIndices: [2] }],
+            turns: [{ dominoIndex: 29 }, { moves: [{ dominoIndex: 62, pitchSets: [new Set([4, 1, 8, 0])], placement: [[0, 2], [0, 3]] }] }, { isEmptyPool: true, moves: [{ dominoIndex: 30, pitchSets: [new Set([0, 5, 9, 2]), new Set([11, 2, 6]), new Set([7, 0, 4, 11])], placement: [[1, 1], [2, 0]] }, { dominoIndex: 49, pitchSets: [new Set([0, 9, 5]), new Set([0, 5, 9])], placement: [[-2, 3], [-2, 2]] }] }, { winnerIndices: [2] }],
         })
     })
 })

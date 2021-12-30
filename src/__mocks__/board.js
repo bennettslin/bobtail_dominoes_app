@@ -18,13 +18,11 @@ export const MOCK_BOARD = [
     }, // C-E.
     {
         dominoIndex: 54,
-        playerIndex: 0,
         placement: [[0, 2], [0, 1]],
         pitchSets: [new Set([0, 9, 6])],
     }, // F#-A.
     {
         dominoIndex: 34,
-        playerIndex: 1,
         placement: [[0, -1], [-1, 0]],
         pitchSets: [
             new Set([3, 0, 9, 6]),
@@ -33,7 +31,6 @@ export const MOCK_BOARD = [
     }, // Eb-G.
     {
         dominoIndex: 5,
-        playerIndex: 1,
         placement: [[-2, 1], [-1, 1]],
         pitchSets: [
             new Set([0, 5, 9]),
@@ -42,7 +39,6 @@ export const MOCK_BOARD = [
     }, // C-F.
     {
         dominoIndex: 30,
-        playerIndex: 2,
         placement: [[1, 1], [2, 0]],
         pitchSets: [
             new Set([0, 5, 9, 2]),
@@ -52,7 +48,6 @@ export const MOCK_BOARD = [
     }, // D-B.
     {
         dominoIndex: 49,
-        playerIndex: 2,
         placement: [[-2, 3], [-2, 2]],
         pitchSets: [
             new Set([0, 9, 5]),
