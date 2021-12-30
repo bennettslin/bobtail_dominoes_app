@@ -4,19 +4,19 @@ import cx from 'classnames'
 import Domino from '../../Domino'
 import './style'
 
-const DominoCardDomino = ({ dominoIndex }) => (
+const HandDomino = ({ dominoIndex }) => (
     <Domino
         {...{
             className: cx(
-                'DominoCardDomino',
+                'HandDomino',
             ),
             dominoIndex,
         }}
     />
 )
 
-DominoCardDomino.propTypes = {
+HandDomino.propTypes = {
     dominoIndex: PropTypes.number.isRequired,
 }
 
-export default DominoCardDomino
+export default HandDomino

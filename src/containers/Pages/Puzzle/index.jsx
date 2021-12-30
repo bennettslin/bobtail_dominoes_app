@@ -53,6 +53,10 @@ const PuzzlePage = ({
     )
 }
 
+export const handListPropTypes = PropTypes.arrayOf(
+    PropTypes.number.isRequired,
+)
+
 PuzzlePage.propTypes = {
     didMount: PropTypes.bool.isRequired,
     pageContext: PropTypes.shape({
@@ -62,9 +66,7 @@ PuzzlePage.propTypes = {
             date: datePropTypes,
             puzzleType: PropTypes.string.isRequired,
             board: boardPropTypes.isRequired,
-            handList: PropTypes.arrayOf(
-                PropTypes.number.isRequired,
-            ),
+            handList: handListPropTypes,
             moves: PropTypes.arrayOf(PropTypes.shape({
                 dominoIndex: PropTypes.number.isRequired,
                 placement: PropTypes.arrayOf(

@@ -1,5 +1,4 @@
 # TODO
-* Show hand in puzzle link for regular puzzles
 * Organize puzzle list by month and year?
 * Allow for multiple missing dominoes?
 

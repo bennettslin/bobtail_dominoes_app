@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Flex from '../Flex'
+import Hand from '../Hand'
 import StyledShadow from '../Styled/Shadow'
-import DominoCardDomino from './Domino'
 import './style'
 
 const DominoCard = ({
@@ -53,14 +53,7 @@ const DominoCard = ({
                 gap: 'xs',
             }}
         >
-            {hand && Array.from(hand).map(dominoIndex => (
-                <DominoCardDomino
-                    {...{
-                        key: dominoIndex,
-                        dominoIndex,
-                    }}
-                />
-            ))}
+            <Hand {...{ hand }} />
             {children}
         </Flex>
     </Flex>

@@ -1,7 +1,7 @@
 @use 'sass:math';
 @import '../../../scss/constants/responsive';
 
-.DominoCardDomino {
+.HandDomino {
     // Force domino to be same size even if fewer than three in the hand.
     width: calc(33.33% - #{math.div($margin__xs * 2, 3)});
 }
