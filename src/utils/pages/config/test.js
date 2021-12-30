@@ -1,4 +1,4 @@
-import { getPageLinkConfig, getPagesMap, getIdPagesMap } from '.'
+import { getPageLinkConfig, getPagesMap, getIdPagesMap, getIdPagesList } from '.'
 
 describe('getPageLinkConfig', () => {
     it('returns page link config', () => {
@@ -66,5 +66,20 @@ describe('getIdPagesMap', () => {
                 topLevelPage: 'animals',
             },
         })
+    })
+})
+
+describe('getIdPagesList', () => {
+    it('returns pages list for ids', () => {
+        expect(
+            getIdPagesList({
+                pageIds: ['dogs', 'cats', 'mice'],
+                topLevelPage: 'animals',
+            }),
+        ).toStrictEqual([
+            { id: 'dogs', topLevelPage: 'animals' },
+            { id: 'cats', topLevelPage: 'animals' },
+            { id: 'mice', topLevelPage: 'animals' },
+        ])
     })
 })

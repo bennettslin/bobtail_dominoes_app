@@ -36,3 +36,13 @@ export const getIdPagesMap = ({
         ...rest,
     })
 )
+
+export const getIdPagesList = ({
+    pageIds,
+    ...rest
+}) => (
+    pageIds.map(id => ({
+        id,
+        ...rest,
+    }))
+)

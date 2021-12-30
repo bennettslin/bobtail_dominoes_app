@@ -1,31 +1,23 @@
-import { formatDirectionTextForDate, formatHeadingForDate, formatMonthForDate } from '.'
+import { formatDate } from '.'
 
-describe('formatMonthForDate', () => {
-    it('returns formatted month', () => {
-        expect(formatMonthForDate(5)).toBe('May')
-    })
-})
-
-describe('formatHeadingForDate', () => {
-    it('returns false for undefined', () => {
-        expect(formatHeadingForDate()).toBe(false)
+describe('formatDate', () => {
+    it('returns undefined for no date', () => {
+        expect(formatDate()).toBeUndefined()
     })
 
-    it('returns formatted header for date', () => {
-        expect(formatHeadingForDate(
-            { year: 1983, month: 5, day: 4 },
-        )).toBe('May 4, 1983')
-    })
-})
-
-describe('formatDirectionTextForDate', () => {
-    it('returns false for undefined', () => {
-        expect(formatDirectionTextForDate()).toBe(false)
+    it('returns for just year', () => {
+        expect(formatDate({ year: 1983 })).toBe('1983')
     })
 
-    it('returns formatted direction text for date', () => {
-        expect(formatDirectionTextForDate(
-            { year: 1983, month: 5, day: 4 },
-        )).toBe('May 4')
+    it('returns for just month', () => {
+        expect(formatDate({ month: 5 })).toBe('May')
+    })
+
+    it('returns for just day and month', () => {
+        expect(formatDate({ month: 5, day: 4 })).toBe('May 4')
+    })
+
+    it('returns for day, month, and year', () => {
+        expect(formatDate({ year: 1983, month: 5, day: 4 })).toBe('May 4, 1983')
     })
 })

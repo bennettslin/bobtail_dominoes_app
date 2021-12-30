@@ -6,7 +6,7 @@ export const getDateForDateObject = dateObject => ({
     day: getDate(dateObject),
 })
 
-export const getDateObjectForDate = ({ year, month, day }) => (
+export const getDateObjectForDate = ({ year = 2020, month = 1, day = 1 }) => (
     new Date(year, month - 1, day)
 )
 

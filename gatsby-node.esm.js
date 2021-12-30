@@ -1,6 +1,6 @@
 import webpack from 'webpack'
 import FilterWarningsPlugin from 'webpack-filter-warnings-plugin'
-import { puzzlePages } from './src/content/puzzles'
+import { puzzleLinkPages, puzzlePages } from './src/content/puzzles'
 import {
     getIsProductionBuild,
     getIsRuntimeBuild,
@@ -36,6 +36,15 @@ export const createPages = ({ actions }) => {
             ...page,
             component: require.resolve(
                 './src/containers/Pages/Puzzle/index.jsx',
+            ),
+        })
+    })
+
+    puzzleLinkPages.forEach(page => {
+        actions.createPage({
+            ...page,
+            component: require.resolve(
+                './src/containers/Pages/PuzzleLinks/index.jsx',
             ),
         })
     })

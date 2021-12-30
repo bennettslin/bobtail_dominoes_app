@@ -1,14 +1,25 @@
 import { format } from 'date-fns'
 import { getDateObjectForDate } from '..'
 
-export const formatMonthForDate = month => (
-    format(getDateObjectForDate({ year: 2021, month, day: 1 }), 'MMMM')
-)
+export const formatDate = date => {
+    if (!date) {
+        return
+    }
 
-export const formatHeadingForDate = date => (
-    Boolean(date) && format(getDateObjectForDate(date), 'MMMM d, yyyy')
-)
+    const { year, month, day } = date
+    let dateFormat = 'MMMM d, yyyy'
 
-export const formatDirectionTextForDate = date => (
-    Boolean(date) && format(getDateObjectForDate(date), 'MMMM d')
-)
+    if (year) {
+        if (!month) {
+            if (!day) {
+                dateFormat = 'yyyy'
+            }
+        }
+    } else {
+        if (month) {
+            dateFormat = day ? 'MMMM d' : 'MMMM'
+        }
+    }
+
+    return format(getDateObjectForDate(date), dateFormat)
+}

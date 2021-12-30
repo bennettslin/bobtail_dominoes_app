@@ -30,7 +30,7 @@ const Heading = ({
 Heading.propTypes = {
     level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
     fontSize: PropTypes.oneOf(['md']),
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node,
 }
 
 export default Heading

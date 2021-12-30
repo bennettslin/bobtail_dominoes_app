@@ -8,7 +8,7 @@ import Svg from '../../../../../../components/Svg'
 import arrow from '../../../../../../assets/svgs/app/arrow'
 import { getCapitalizedText } from '../../../../../../utils/format'
 import { getPagePathFromConfig } from '../../../../../../utils/pages/path'
-import { formatDirectionTextForDate } from '../../../../../../utils/date/format'
+import { formatDate } from '../../../../../../utils/date/format'
 import { datePropTypes } from '../../../../../../constants/propTypes'
 
 const DirectionPageLink = ({ direction, directionPage }) => {
@@ -18,7 +18,8 @@ const DirectionPageLink = ({ direction, directionPage }) => {
 
     const
         { topLevelPage } = useContext(PageConfigContext),
-        { id, date } = directionPage
+        { id, date } = directionPage,
+        { month, day } = date
 
     return Boolean(directionPage) && (
         <Anchor
@@ -46,7 +47,7 @@ const DirectionPageLink = ({ direction, directionPage }) => {
                         }}
                     />
                 )}
-                {id ? getCapitalizedText(id) : formatDirectionTextForDate(date)}
+                {id ? getCapitalizedText(id) : formatDate({ month, day })}
                 {direction === 1 && (
                     <Svg
                         reverse
