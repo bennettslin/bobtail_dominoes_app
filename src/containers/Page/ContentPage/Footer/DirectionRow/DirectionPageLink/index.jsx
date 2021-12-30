@@ -6,9 +6,8 @@ import Anchor from '../../../../../../components/Anchor'
 import Flex from '../../../../../../components/Flex'
 import Svg from '../../../../../../components/Svg'
 import arrow from '../../../../../../assets/svgs/app/arrow'
-import { getCapitalizedText } from '../../../../../../utils/format'
+import { getFormattedPageLink } from '../../../../../../utils/pages/format'
 import { getPagePathFromConfig } from '../../../../../../utils/pages/path'
-import { formatDate } from '../../../../../../utils/date/format'
 import { datePropTypes } from '../../../../../../constants/propTypes'
 
 const DirectionPageLink = ({ direction, directionPage }) => {
@@ -18,8 +17,7 @@ const DirectionPageLink = ({ direction, directionPage }) => {
 
     const
         { topLevelPage } = useContext(PageConfigContext),
-        { id, date } = directionPage,
-        { month, day } = date
+        { id, date } = directionPage
 
     return Boolean(directionPage) && (
         <Anchor
@@ -47,7 +45,7 @@ const DirectionPageLink = ({ direction, directionPage }) => {
                         }}
                     />
                 )}
-                {id ? getCapitalizedText(id) : formatDate({ month, day })}
+                {getFormattedPageLink({ id, date })}
                 {direction === 1 && (
                     <Svg
                         reverse

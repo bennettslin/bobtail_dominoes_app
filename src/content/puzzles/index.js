@@ -1,6 +1,7 @@
 import puzzles2020 from './2020'
 import puzzles2021 from './2021'
 import puzzles2022 from './2022'
+import { getPagesList } from '../../utils/pages/config'
 import { contextualisePageConfigs } from '../../utils/pages/context'
 import {
     flattenDateStructuredPages,
@@ -8,7 +9,6 @@ import {
 } from '../../utils/pages/dateStructure'
 import { addDirectionPages } from '../../utils/pages/directionPages'
 import { PUZZLES_PAGE } from '../../constants/pages'
-import { getIdPagesList } from '../../utils/pages/config'
 
 const puzzles = parseDateStructuredPages({
     dateStructuredPages: [
@@ -31,17 +31,15 @@ export const puzzlePages = (
     )
 )
 
-const PAGE_IDS = [
-    '2022',
-    '2021',
-    '2020',
-]
-
 // For server side.
 export const puzzleLinkPages = (
     contextualisePageConfigs(
-        getIdPagesList({
-            pageIds: PAGE_IDS,
+        getPagesList({
+            pageDates: [
+                { year: 2022 },
+                { year: 2021 },
+                { year: 2020 },
+            ],
             topLevelPage: PUZZLES_PAGE,
         }),
     )

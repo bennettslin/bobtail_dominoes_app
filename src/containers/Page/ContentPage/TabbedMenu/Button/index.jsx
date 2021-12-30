@@ -6,14 +6,16 @@ import StyledButtonText from '../../../../../components/Styled/ButtonText'
 import StyledTabButton from '../../../../../components/Styled/TabButton'
 import { getMapIsSelectedOrTabbedPagePath } from '../../../../../redux/page/selector'
 import { getPagePathFromConfig } from '../../../../../utils/pages/path'
+import { datePropTypes } from '../../../../../constants/propTypes'
 
 const TabbedMenuButton = ({
     id,
+    date,
     topLevelPage,
     children,
 }) => {
     const
-        pagePath = getPagePathFromConfig({ topLevelPage, id }),
+        pagePath = getPagePathFromConfig({ topLevelPage, id, date }),
         isSelected = useSelector(getMapIsSelectedOrTabbedPagePath(pagePath))
 
     return (
@@ -38,6 +40,7 @@ const TabbedMenuButton = ({
 TabbedMenuButton.propTypes = {
     className: PropTypes.string,
     id: PropTypes.string,
+    date: datePropTypes,
     topLevelPage: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
 }

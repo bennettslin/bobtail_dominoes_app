@@ -7,42 +7,26 @@ export const getPageLinkConfig = ({ id, date }) => ({
     ...date && { date },
 })
 
-export const getPagesMap = ({
-    configs,
-    ...rest
-}) => (
-    configs.reduce((map, initialConfig) => {
-        const { id, date: { month, day } = {} } = initialConfig
+export const getPagesMapFromList = configs => (
+    configs.reduce((map, config) => {
+        const { id, date: { month, day } = {} } = config
 
-        map[id || join([month, day], '-')] = {
-            ...initialConfig,
-            ...rest,
-        }
+        map[id || join([month, day], '-')] = config
 
         return map
     }, {})
 )
 
-export const getIdPagesMap = ({
-    pageIds,
-    ...rest
-}) => (
-    getPagesMap({
-        configs: addDirectionPages(
-            addTabbedPages(
-                pageIds.map(id => ({ id })),
-            ),
+export const getPagesList = ({ pageIds, pageDates, ...rest }) => (
+    addDirectionPages(
+        addTabbedPages(
+            pageIds ?
+                pageIds.map(id => ({ id, ...rest })) :
+                pageDates.map(date => ({ date, ...rest })),
         ),
-        ...rest,
-    })
+    )
 )
 
-export const getIdPagesList = ({
-    pageIds,
-    ...rest
-}) => (
-    pageIds.map(id => ({
-        id,
-        ...rest,
-    }))
+export const getPagesMap = props => (
+    getPagesMapFromList(getPagesList(props))
 )

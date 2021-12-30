@@ -4,27 +4,25 @@ import getDidMountHoc from '../../../hocs/DidMountHoc'
 import PuzzleLinks from '../../../components/PuzzleLinks'
 import Page from '../../Page'
 import NotFoundPage from '../NotFound'
-// import { datePropTypes } from '../../../constants/propTypes'
+import { datePropTypes, pagesPropTypes } from '../../../constants/propTypes'
 
 const PuzzleLinksPage = ({
     didMount,
     pageContext: {
-        id,
-    } = {},
+        pageMap: {
+            date,
+            ...rest
+        },
+    },
 }) => {
+
     return didMount ? (
         <Page
             {...didMount && {
-                id,
-                pages: [
-                    { id: '2022' },
-                    { id: '2021' },
-                    { id: '2020' },
-                ],
-                topLevelPage: 'puzzles',
                 body: (
-                    <PuzzleLinks />
+                    <PuzzleLinks {...{ date }} />
                 ),
+                ...rest,
             }}
         />
     ) : (
@@ -36,9 +34,9 @@ PuzzleLinksPage.propTypes = {
     didMount: PropTypes.bool.isRequired,
     pageContext: PropTypes.shape({
         pageMap: PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            // topLevelPage: PropTypes.string.isRequired,
-            // date: datePropTypes,
+            date: datePropTypes.isRequired,
+            pages: pagesPropTypes.isRequired,
+            topLevelPage: PropTypes.string.isRequired,
         }),
     }),
 }

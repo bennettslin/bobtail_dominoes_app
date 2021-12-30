@@ -1,5 +1,14 @@
 import PropTypes from 'prop-types'
 
+export const pagePropTypes = PropTypes.shape({
+    id: PropTypes.string,
+    date: datePropTypes,
+})
+
+export const pagesPropTypes = PropTypes.arrayOf(
+    pagePropTypes,
+)
+
 export const boardPropTypes = PropTypes.arrayOf(
     PropTypes.shape({
         dominoIndex: PropTypes.number.isRequired,
@@ -19,9 +28,9 @@ export const boardPropTypes = PropTypes.arrayOf(
 )
 
 export const datePropTypes = PropTypes.shape({
-    year: PropTypes.number.isRequired,
-    month: PropTypes.number.isRequired,
-    day: PropTypes.number.isRequired,
+    year: PropTypes.number,
+    month: PropTypes.number,
+    day: PropTypes.number,
 })
 
 export const handListPropTypes = PropTypes.arrayOf(

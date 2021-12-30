@@ -8,9 +8,10 @@ import PuzzleLink from './PuzzleLink'
 import puzzles from '../../content/puzzles'
 import { filterDateStructuredPages } from '../../utils/date/current'
 import { formatDate } from '../../utils/date/format'
+import { datePropTypes } from '../../constants/propTypes'
 import './style'
 
-const PuzzleLinks = ({ didMount }) => didMount && (
+const PuzzleLinks = ({ didMount, date }) => didMount && (
     <Flex
         {...{
             className: cx(
@@ -79,6 +80,7 @@ const PuzzleLinks = ({ didMount }) => didMount && (
 
 PuzzleLinks.propTypes = {
     didMount: PropTypes.bool.isRequired,
+    date: datePropTypes,
 }
 
 export default getDidMountHoc(PuzzleLinks)

@@ -7,7 +7,7 @@ import ChildrenPage from './ChildrenPage'
 import ContentPage from './ContentPage'
 import { updateSelectedPagePath } from '../../redux/page/action'
 import { getPathFromLink } from '../../utils/pages/path'
-import { datePropTypes } from '../../constants/propTypes'
+import { datePropTypes, pagePropTypes, pagesPropTypes } from '../../constants/propTypes'
 
 const Page = ({ className, children, ...rest }) => {
     const dispatch = useDispatch()
@@ -47,18 +47,9 @@ Page.propTypes = {
         PropTypes.node,
         PropTypes.string,
     ]),
-    directionLeftPage: PropTypes.shape({
-        id: PropTypes.string,
-        date: datePropTypes,
-    }),
-    directionRightPage: PropTypes.shape({
-        id: PropTypes.string,
-        date: datePropTypes,
-    }),
-    pages: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.string,
-        date: datePropTypes,
-    })),
+    directionLeftPage: pagePropTypes,
+    directionRightPage: pagePropTypes,
+    pages: pagesPropTypes,
 }
 
 export default Page

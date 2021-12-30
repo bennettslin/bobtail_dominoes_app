@@ -1,11 +1,12 @@
 # TODO
 * Organize puzzle list by year
-    * Use years rather than id
     * Puzzle links know to get just puzzles for particular year
         * From date structured page config
     * Puzzle pages have back link to year page
         * Probably needs to be in config itself
     * Prevent future years from being shown
+
+* Tabs show previous and next for puzzle pages
 
 * Allow for multiple missing dominoes?
 

@@ -1,12 +1,10 @@
-import { getIdPagesMap } from '../../utils/pages/config'
+import { getPagesMap } from '../../utils/pages/config'
 import { GUIDES_PAGE } from '../../constants/pages'
 
-const PAGE_IDS = [
-    'chords',
-    'strategy',
-]
-
-export default getIdPagesMap({
-    pageIds: PAGE_IDS,
+export default getPagesMap({
+    pageIds: [
+        'chords',
+        'strategy',
+    ],
     topLevelPage: GUIDES_PAGE,
 })
