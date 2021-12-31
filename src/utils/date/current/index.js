@@ -1,6 +1,5 @@
 import { addDays, differenceInMilliseconds } from 'date-fns'
 import { getIsServerSide } from '../../browser'
-import { getDateValueFromMaps } from '../../pages/dateStructure'
 import { getFromStorage, setInStorage } from '../../storage'
 import { getDateForDateObject, getDateObjectForDate } from '..'
 
@@ -8,7 +7,7 @@ import { getDateForDateObject, getDateObjectForDate } from '..'
 const CURRENT_DATE = new Date()
 
 // When not in production, allow admin to change current date.
-if (!IS_PRODUCTION) {
+if (!getIsServerSide() && !IS_PRODUCTION) {
     const ADMIN_INCREMENT_KEY = 'adminIncrement'
     global.adminCurrentDate = addDays(
         CURRENT_DATE,
@@ -37,41 +36,35 @@ export const getIsPastOrPresentDate = date => (
     ) >= 0
 )
 
-export const getDateStructuredPagesForSingleYear = ({
+const getFilterdMonth = ({
     dateStructuredPages,
     year,
-}) => ({
-    [year]: dateStructuredPages[year],
-})
+    month,
+}) => (
+    dateStructuredPages[year][month].filter(({ date }) => (
+        getIsPastOrPresentDate(date)
+    ))
+)
 
-export const filterPastOrPresentDateStructuredPages = dateStructuredPages => (
-    // Filter out future years.
-    dateStructuredPages.filter(yearMaps => (
-        getIsPastOrPresentDate({
-            year: getDateValueFromMaps(yearMaps),
-        })
-
-    )).map(yearMaps => {
-        const year = getDateValueFromMaps(yearMaps)
-
-        return {
-            // Filter out future months.
-            [year]: yearMaps[year].filter(monthMaps => (
-                getIsPastOrPresentDate({
-                    year,
-                    month: getDateValueFromMaps(monthMaps),
-                })
-
-            )).map(monthMaps => {
-                const month = getDateValueFromMaps(monthMaps)
-
-                return {
-                    // Filter out future days.
-                    [month]: monthMaps[month].filter(({ date }) => (
-                        getIsPastOrPresentDate(date)
-                    )),
+export const filterOutFutureDateStructuredPages = dateStructuredPages => {
+    Object.keys(dateStructuredPages).forEach(year => {
+        if (!getIsPastOrPresentDate({ year })) {
+            delete dateStructuredPages[year]
+        } else {
+            Object.keys(dateStructuredPages[year]).forEach(month => {
+                if (!getIsPastOrPresentDate({ year, month })) {
+                    delete dateStructuredPages[year][month]
+                } else {
+                    dateStructuredPages[year][month] = getFilterdMonth({
+                        dateStructuredPages,
+                        year,
+                        month,
+                    })
                 }
-            }),
+            })
         }
     })
-)
+
+    return dateStructuredPages
+}
+

@@ -1,24 +1,24 @@
 import puzzles2020 from './2020'
 import puzzles2021 from './2021'
 import puzzles2022 from './2022'
+import { filterOutFutureDateStructuredPages } from '../../utils/date/current'
 import { getPagesList } from '../../utils/pages/config'
 import { contextualisePageConfigs } from '../../utils/pages/context'
 import {
     flattenDateStructuredPages,
-    parseDateStructuredPages,
+    populateDateStructuredPages,
 } from '../../utils/pages/dateStructure'
 import { addDirectionPages } from '../../utils/pages/directionPages'
 import { PUZZLES_PAGE } from '../../constants/pages'
-import { filterPastOrPresentDateStructuredPages } from '../../utils/date/current'
 
-const puzzles = parseDateStructuredPages({
-    dateStructuredPages: [
-        puzzles2020,
-        puzzles2021,
-        puzzles2022,
-    ],
+const puzzles = populateDateStructuredPages({
+    dateStructuredPages: {
+        ...puzzles2020,
+        ...puzzles2021,
+        ...puzzles2022,
+    },
     topLevelPage: PUZZLES_PAGE,
-    spreadFunction: ({ date: { month, day } }) => ({
+    dateSpreadFunction: ({ month, day }) => ({
         title: `Puzzle ${[month, day].join('/')}`,
     }),
 })
@@ -37,14 +37,14 @@ export const puzzleLinkPages = (
     contextualisePageConfigs(
         getPagesList({
             pageDates: [
-                { year: 2022 },
-                { year: 2021 },
                 { year: 2020 },
-            ],
+                { year: 2021 },
+                { year: 2022 },
+            ].reverse(),
             topLevelPage: PUZZLES_PAGE,
         }),
     )
 )
 
 // For client side.
-export default filterPastOrPresentDateStructuredPages(puzzles)
+export default filterOutFutureDateStructuredPages(puzzles)

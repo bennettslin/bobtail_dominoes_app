@@ -1,4 +1,4 @@
-import { getIsPastOrPresentDate, getCurrentDate, filterPastOrPresentDateStructuredPages } from '.'
+import { getIsPastOrPresentDate, getCurrentDate, filterOutFutureDateStructuredPages } from '.'
 import { getDateObjectForDate } from '..'
 
 describe('getCurrentDate', () => {
@@ -47,7 +47,7 @@ describe('getIsPastOrPresentDate', () => {
     })
 })
 
-describe('filterPastOrPresentDateStructuredPages', () => {
+describe('filterOutFutureDateStructuredPages', () => {
     beforeAll(() => {
         global.adminCurrentDate = getDateObjectForDate(
             { year: 1983, month: 5, day: 4 },
@@ -60,7 +60,7 @@ describe('filterPastOrPresentDateStructuredPages', () => {
 
     it('returns filtered date-structured pages', () => {
         expect(
-            filterPastOrPresentDateStructuredPages([
+            filterOutFutureDateStructuredPages([
                 {
                     1982: [
                         {

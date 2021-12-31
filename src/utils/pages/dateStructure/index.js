@@ -2,36 +2,74 @@ export const getDateValueFromMaps = maps => (
     parseInt(Object.keys(maps)[0])
 )
 
-export const parseDateStructuredPages = ({
-    dateStructuredPages,
-    spreadFunction = () => ({}),
-    ...topLevelRest
+export const getListFromMap = map => (
+    Object.keys(map).map(key => map[key])
+)
+
+export const getKeyedListFromMap = map => (
+    Object.keys(map).map(key => ({ [key]: map[key] }))
+)
+
+const getMonthMap = ({
+    year,
+    month,
+    monthMaps,
+    topLevelRest,
+    dateSpreadFunction,
 }) => (
-    dateStructuredPages.map(yearMaps => {
-        const year = getDateValueFromMaps(yearMaps)
+    monthMaps[month].map(({ day, ...rest }) => {
+        const date = { year, month, day }
         return {
-            [year]: yearMaps[year].map(monthMaps => {
-                const month = getDateValueFromMaps(monthMaps)
-                return {
-                    [month]: monthMaps[month].map(({ day, ...rest }) => {
-                        const date = { year, month, day }
-                        return {
-                            ...topLevelRest,
-                            ...rest,
-                            ...spreadFunction({ date }),
-                            date,
-                        }
-                    }),
-                }
-            }),
+            ...rest,
+            ...topLevelRest,
+            ...dateSpreadFunction(date),
+            date,
         }
     })
 )
 
+const getYearMap = ({
+    year,
+    yearMaps,
+    ...rest
+}) => (
+    getKeyedListFromMap(yearMaps[year]).reduce(
+        (monthsMap, monthMaps) => {
+            const month = getDateValueFromMaps(monthMaps)
+            return {
+                ...monthsMap,
+                [month]: getMonthMap({
+                    year,
+                    month,
+                    monthMaps,
+                    ...rest,
+                }),
+            }
+        }, {},
+    )
+)
+
+export const populateDateStructuredPages = ({
+    dateStructuredPages,
+    ...rest
+}) => (
+    getKeyedListFromMap(dateStructuredPages).reduce(
+        (yearsMap, yearMaps) => {
+            const year = getDateValueFromMaps(yearMaps)
+            return {
+                ...yearsMap,
+                [year]: getYearMap({
+                    year,
+                    yearMaps,
+                    ...rest,
+                }),
+            }
+        }, {},
+    )
+)
+
 export const flattenDateStructuredPages = dateStructuredPages => (
-    dateStructuredPages.map(yearMaps => (
-        Object.values(yearMaps)[0].map(monthMaps => (
-            Object.values(monthMaps)[0]
-        )).flat()
+    getListFromMap(dateStructuredPages).map(years => (
+        getListFromMap(years).flat()
     )).flat()
 )

@@ -3,9 +3,7 @@ import puzzles10 from './10'
 // import puzzles12 from './12'
 
 export default {
-    2022: [
-        // puzzles09,
-        puzzles10,
-        // puzzles12,
-    ],
+    2022: {
+        ...puzzles10,
+    },
 }

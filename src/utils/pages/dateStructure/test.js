@@ -1,4 +1,4 @@
-import { flattenDateStructuredPages, getDateValueFromMaps, parseDateStructuredPages } from '.'
+import { flattenDateStructuredPages, getDateValueFromMaps } from '.'
 
 const PARSED_DATE_STRUCTURED_PAGES = [
     {
@@ -47,41 +47,41 @@ describe('getDateValueFromMaps', () => {
     })
 })
 
-describe('parseDateStructuredPages', () => {
-    it('returns date-structured pages', () => {
-        expect(
-            parseDateStructuredPages({
-                dateStructuredPages: [
-                    {
-                        2021: [
-                            {
-                                11: [
-                                    { day: 13 },
-                                    { day: 18 },
-                                ],
-                            },
-                            {
-                                12: [
-                                    { day: 25 },
-                                ],
-                            },
-                        ],
-                    },
-                    {
-                        2022: [
-                            {
-                                1: [
-                                    { day: 1 },
-                                ],
-                            },
-                        ],
-                    },
-                ],
-                topLevelPage: 'birthdays',
-            }),
-        ).toStrictEqual(PARSED_DATE_STRUCTURED_PAGES)
-    })
-})
+// describe('parseDateStructuredPages', () => {
+//     it('returns date-structured pages', () => {
+//         expect(
+//             parseDateStructuredPages({
+//                 dateStructuredPages: [
+//                     {
+//                         2021: [
+//                             {
+//                                 11: [
+//                                     { day: 13 },
+//                                     { day: 18 },
+//                                 ],
+//                             },
+//                             {
+//                                 12: [
+//                                     { day: 25 },
+//                                 ],
+//                             },
+//                         ],
+//                     },
+//                     {
+//                         2022: [
+//                             {
+//                                 1: [
+//                                     { day: 1 },
+//                                 ],
+//                             },
+//                         ],
+//                     },
+//                 ],
+//                 topLevelPage: 'birthdays',
+//             }),
+//         ).toStrictEqual(PARSED_DATE_STRUCTURED_PAGES)
+//     })
+// })
 
 describe('flattenDateStructuredPages', () => {
     it('returns flattened date-structured pages', () => {

@@ -26,7 +26,7 @@ const PuzzleLinks = ({ didMount, date }) => {
                 gap: 'md',
             }}
         >
-            {[...puzzles].reverse().map(yearMaps => {
+            {/* {[...puzzles].reverse().map(yearMaps => {
                 const year = parseInt(Object.keys(yearMaps)[0])
                 return (
                     <Flex
@@ -77,7 +77,7 @@ const PuzzleLinks = ({ didMount, date }) => {
                         })}
                     </Flex>
                 )
-            })}
+            })} */}
         </Flex>
     )
 }

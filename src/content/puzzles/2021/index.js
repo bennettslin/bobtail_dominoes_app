@@ -12,18 +12,18 @@ import puzzles11 from './11'
 // import puzzles12 from './12'
 
 export default {
-    2021: [
-        // puzzles01,
-        // puzzles02,
-        // puzzles03,
-        // puzzles04,
-        // puzzles05,
-        // puzzles06,
-        // puzzles07,
-        // puzzles08,
-        // puzzles09,
-        puzzles10,
-        puzzles11,
-        // puzzles12,
-    ],
+    2021: {
+        // ...puzzles01,
+        // ...puzzles02,
+        // ...puzzles03,
+        // ...puzzles04,
+        // ...puzzles05,
+        // ...puzzles06,
+        // ...puzzles07,
+        // ...puzzles08,
+        // ...puzzles09,
+        ...puzzles10,
+        ...puzzles11,
+        // ...puzzles12,
+    },
 }
