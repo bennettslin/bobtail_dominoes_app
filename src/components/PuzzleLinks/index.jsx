@@ -6,12 +6,14 @@ import Flex from '../Flex'
 import Heading from '../Heading'
 import PuzzleLink from './PuzzleLink'
 import puzzles from '../../content/puzzles'
-import { filterDateStructuredPages } from '../../utils/date/current'
 import { formatDate } from '../../utils/date/format'
 import { datePropTypes } from '../../constants/propTypes'
 import './style'
 
 const PuzzleLinks = ({ didMount, date }) => {
+
+    console.log('puzzles', puzzles)
+
     return didMount && (
         <Flex
             {...{
@@ -24,7 +26,7 @@ const PuzzleLinks = ({ didMount, date }) => {
                 gap: 'md',
             }}
         >
-            {[...filterDateStructuredPages(puzzles)].reverse().map(yearMaps => {
+            {[...puzzles].reverse().map(yearMaps => {
                 const year = parseInt(Object.keys(yearMaps)[0])
                 return (
                     <Flex

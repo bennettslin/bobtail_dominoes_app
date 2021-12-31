@@ -15,7 +15,6 @@ const PuzzleLinksPage = ({
         },
     },
 }) => {
-
     return didMount ? (
         <Page
             {...didMount && {

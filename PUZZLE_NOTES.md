@@ -8,8 +8,6 @@
 
 * Tabs show previous and next for puzzle pages
 
-* Allow for multiple missing dominoes?
-
 # Puzzle types
 * Switch up number of dominoes on board
 * Make hand score less or more

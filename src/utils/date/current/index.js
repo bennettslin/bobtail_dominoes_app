@@ -15,7 +15,7 @@ if (!IS_PRODUCTION) {
         getFromStorage(ADMIN_INCREMENT_KEY) || 0,
     )
 
-    global.addToDate = increment => {
+    global.addToDate = (increment = 0) => {
         setInStorage(ADMIN_INCREMENT_KEY, increment)
         const newDate = addDays(CURRENT_DATE, increment)
         global.adminCurrentDate = newDate
@@ -44,23 +44,29 @@ export const getDateStructuredPagesForSingleYear = ({
     [year]: dateStructuredPages[year],
 })
 
-export const filterDateStructuredPages = dateStructuredPages => {
-    const {
-        year: currentYear,
-        month: currentMonth,
-    } = getCurrentDate()
+export const filterPastOrPresentDateStructuredPages = dateStructuredPages => (
+    // Filter out future years.
+    dateStructuredPages.filter(yearMaps => (
+        getIsPastOrPresentDate({
+            year: getDateValueFromMaps(yearMaps),
+        })
 
-    return dateStructuredPages.filter(yearMaps => (
-        getDateValueFromMaps(yearMaps) <= currentYear
     )).map(yearMaps => {
         const year = getDateValueFromMaps(yearMaps)
+
         return {
+            // Filter out future months.
             [year]: yearMaps[year].filter(monthMaps => (
-                year < currentYear ||
-                getDateValueFromMaps(monthMaps) <= currentMonth
+                getIsPastOrPresentDate({
+                    year,
+                    month: getDateValueFromMaps(monthMaps),
+                })
+
             )).map(monthMaps => {
                 const month = getDateValueFromMaps(monthMaps)
+
                 return {
+                    // Filter out future days.
                     [month]: monthMaps[month].filter(({ date }) => (
                         getIsPastOrPresentDate(date)
                     )),
@@ -68,4 +74,4 @@ export const filterDateStructuredPages = dateStructuredPages => {
             }),
         }
     })
-}
+)

@@ -9,6 +9,7 @@ import {
 } from '../../utils/pages/dateStructure'
 import { addDirectionPages } from '../../utils/pages/directionPages'
 import { PUZZLES_PAGE } from '../../constants/pages'
+import { filterPastOrPresentDateStructuredPages } from '../../utils/date/current'
 
 const puzzles = parseDateStructuredPages({
     dateStructuredPages: [
@@ -46,4 +47,4 @@ export const puzzleLinkPages = (
 )
 
 // For client side.
-export default puzzles
+export default filterPastOrPresentDateStructuredPages(puzzles)
