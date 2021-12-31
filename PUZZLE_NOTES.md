@@ -1,5 +1,5 @@
 # TODO
-* Organize puzzle list by year
+* Organize puzzle list by month
     * Puzzle links know to get just puzzles for particular year
         * From date structured page config
     * Puzzle pages have back link to year page

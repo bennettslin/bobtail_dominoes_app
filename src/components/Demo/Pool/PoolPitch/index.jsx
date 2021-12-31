@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import PoolIcon from '../PoolIcon'
 import { getFaceSrc } from '../../../../utils/src/faces'
-import poolPitch from '../../../../assets/svgs/dominoes/poolPitch'
+import poolPitch from '../../../../assets/svgs/dominoes/pool/poolPitch'
 
 const PoolPitch = ({ pitch, pitchCount }) => (
     <PoolIcon

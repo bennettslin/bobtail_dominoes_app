@@ -3,18 +3,27 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Flex from '../Flex'
 import Svg from '../Svg'
-import { getDominoPitches, getOrderedInterval } from '../../utils/music/mechanics/dominoes'
-import { getIsPlacementUpsideDown, getOrientation } from '../../utils/music/mechanics/placement/orientation'
-import { getFacePositionAndSizeStyling } from '../../utils/music/styling/face'
-import { getDominoSrc, getMissingDominoSrc } from '../../utils/src/dominoes'
-import { getFaceSrc } from '../../utils/src/faces'
+import {
+    getDominoPitches,
+    getOrderedInterval,
+} from '../../utils/music/mechanics/dominoes'
+import {
+    getIsPlacementUpsideDown,
+    getOrientation,
+} from '../../utils/music/mechanics/placement/orientation'
 import {
     getDominoPositionStyling,
     getDominoSizeStyling,
     getDominoTranslateStyling,
 } from '../../utils/music/styling/domino'
-import { getIntervalSrc } from '../../utils/src/intervals'
+import { getFacePositionAndSizeStyling } from '../../utils/music/styling/face'
 import { getIntervalPositionAndSizeStyling } from '../../utils/music/styling/interval'
+import { getFaceSrc } from '../../utils/src/faces'
+import { getIntervalSrc } from '../../utils/src/intervals'
+import {
+    getTileSrc,
+    getMissingTileSrc,
+} from '../../utils/src/tiles'
 import styleConfigDominoes from '../../styles/dominoes'
 import styleConfigFacesPitch from '../../styles/faces/pitch'
 import styleConfigPitchOn from '../../styles/arcade/pitchOn'
@@ -60,7 +69,7 @@ const Domino = ({
             {isMissing ? (
                 <Svg
                     {...{
-                        src: getMissingDominoSrc(orientation),
+                        src: getMissingTileSrc(orientation),
                         styleConfig: styleConfigDominoes,
                     }}
                 />
@@ -68,8 +77,8 @@ const Domino = ({
                 <>
                     <Svg
                         {...{
-                            key: isHighlight, // Fix weird unstyled domino issue.
-                            src: getDominoSrc(orientation),
+                            key: isHighlight, // Fix weird unstyled issue.
+                            src: getTileSrc(orientation),
                             styleConfig: isHighlight ?
                                 styleConfigPitchOn :
                                 styleConfigDominoes,

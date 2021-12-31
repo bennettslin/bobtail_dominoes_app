@@ -37,6 +37,13 @@ export const getIsPastOrPresentDate = date => (
     ) >= 0
 )
 
+export const getDateStructuredPagesForSingleYear = ({
+    dateStructuredPages,
+    year,
+}) => ({
+    [year]: dateStructuredPages[year],
+})
+
 export const filterDateStructuredPages = dateStructuredPages => {
     const {
         year: currentYear,
