@@ -15,6 +15,7 @@ import { placementPropTypes } from '../../../constants/propTypes'
 const DominoInterval = ({
     dominoIndex,
     placement,
+    isThumbnail,
 }) => {
     const
         orientation = getOrientation(placement),
@@ -31,6 +32,7 @@ const DominoInterval = ({
                     interval: orderedInterval,
                     orientation,
                     isPlacementUpsideDown,
+                    isThumbnail,
                 }),
                 styleConfig: styleConfigDominoes,
                 style: getIntervalPositionAndSizeStyling(orientation),
@@ -42,6 +44,7 @@ const DominoInterval = ({
 DominoInterval.propTypes = {
     dominoIndex: PropTypes.number.isRequired,
     placement: placementPropTypes,
+    isThumbnail: PropTypes.bool,
 }
 
 export default DominoInterval

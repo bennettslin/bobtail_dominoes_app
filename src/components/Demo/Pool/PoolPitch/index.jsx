@@ -8,7 +8,7 @@ const PoolPitch = ({ pitch, pitchCount }) => (
     <PoolIcon
         {...{
             tileSrc: poolPitch,
-            faceSrc: getFaceSrc(pitch),
+            faceSrc: getFaceSrc({ pitch }),
             count: pitchCount,
         }}
     />

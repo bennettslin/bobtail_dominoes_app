@@ -17,6 +17,7 @@ const Board = ({
     board,
     boardHexagonalWidth,
     boardHexagonalBaseWidth,
+    isThumbnail,
     DominoComponent = Domino,
     topChild,
     children,
@@ -69,6 +70,7 @@ const Board = ({
                             key: dominoIndex,
                             dominoIndex,
                             boardHexagonalBaseWidth,
+                            isThumbnail,
                             ...rest,
                         }}
                     />
@@ -103,6 +105,7 @@ const Board = ({
 Board.propTypes = {
     className: PropTypes.string,
     isDemo: PropTypes.bool,
+    isThumbnail: PropTypes.bool,
     board: boardPropTypes.isRequired,
     boardHexagonalWidth: PropTypes.number,
     boardHexagonalBaseWidth: PropTypes.number,

@@ -37,6 +37,7 @@ const PuzzleLink = ({
                 }}
             >
                 <PuzzleBoard
+                    isThumbnail
                     {...{
                         className: cx(
                             'PuzzleLinkBoard',
@@ -58,7 +59,7 @@ const PuzzleLink = ({
                         {date.day}
                     </StyledShadow>
                 </Flex>
-                <Hand {...{ hand }} />
+                <Hand isThumbnail {...{ hand }} />
             </Flex>
         </Button>
     )

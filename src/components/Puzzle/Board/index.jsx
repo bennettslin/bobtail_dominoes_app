@@ -13,6 +13,7 @@ const PuzzleBoard = ({
     moves,
     missingMoves,
     showAnswer,
+    isThumbnail,
     topChild,
     children,
 
@@ -39,6 +40,7 @@ const PuzzleBoard = ({
                 board,
                 boardHexagonalWidth: boardHexagonalMinWidth,
                 boardHexagonalBaseWidth: boardHexagonalMinWidth,
+                isThumbnail,
                 topChild,
             }}
         >
@@ -49,6 +51,7 @@ const PuzzleBoard = ({
 
 PuzzleBoard.propTypes = {
     className: PropTypes.string,
+    isThumbnail: PropTypes.bool,
     board: boardPropTypes.isRequired,
     moves: boardPropTypes,
     missingMoves: boardPropTypes,

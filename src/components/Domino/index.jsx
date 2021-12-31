@@ -20,6 +20,7 @@ const Domino = ({
     placement,
     isHighlight,
     isMissing,
+    isThumbnail,
     boardHexagonalBaseWidth,
 }) => {
     const orientation = getOrientation(placement)
@@ -52,8 +53,12 @@ const Domino = ({
             ) : (
                 <>
                     <DominoTile {...{ placement, isHighlight }} />
-                    <DominoInterval {...{ dominoIndex, placement }} />
-                    <DominoFaces {...{ dominoIndex, placement }} />
+                    <DominoInterval
+                        {...{ dominoIndex, placement, isThumbnail }}
+                    />
+                    <DominoFaces
+                        {...{ dominoIndex, placement, isThumbnail }}
+                    />
                 </>
             )}
         </Flex>
@@ -66,6 +71,7 @@ Domino.propTypes = {
     placement: placementPropTypes,
     isHighlight: PropTypes.bool,
     isMissing: PropTypes.bool,
+    isThumbnail: PropTypes.bool,
     boardHexagonalBaseWidth: PropTypes.number,
 }
 

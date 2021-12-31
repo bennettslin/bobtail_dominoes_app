@@ -16,6 +16,7 @@ import './style'
 const DominoFaces = ({
     dominoIndex,
     placement,
+    isThumbnail,
 }) => {
     const
         pitches = getDominoPitches(dominoIndex),
@@ -34,7 +35,10 @@ const DominoFaces = ({
                         className: cx(
                             'DominoFace',
                         ),
-                        src: getFaceSrc(pitch),
+                        src: getFaceSrc({
+                            pitch,
+                            isThumbnail,
+                        }),
                         styleConfig: styleConfigFacesPitch,
                         style: getFacePositionAndSizeStyling({
                             pitchIndex,
@@ -50,6 +54,7 @@ const DominoFaces = ({
 DominoFaces.propTypes = {
     dominoIndex: PropTypes.number.isRequired,
     placement: placementPropTypes,
+    isThumbnail: PropTypes.bool,
 }
 
 export default DominoFaces

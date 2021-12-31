@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import PoolIcon from '../PoolIcon'
-import { getIntervalSrc } from '../../../../utils/src/intervals'
+import { getPoolIntervalSrc } from '../../../../utils/src/pool'
 import poolInterval from '../../../../assets/svgs/dominoes/pool/poolInterval'
 
 const PoolInterval = ({ interval, intervalCount }) => (
     <PoolIcon
         {...{
             tileSrc: poolInterval,
-            faceSrc: getIntervalSrc({ interval }),
+            faceSrc: getPoolIntervalSrc({ interval }),
             count: intervalCount,
         }}
     />

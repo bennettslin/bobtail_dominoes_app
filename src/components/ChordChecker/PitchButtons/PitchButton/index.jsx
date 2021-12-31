@@ -46,7 +46,7 @@ const PitchButton = ({ pitch }) => {
                     'PitchButton',
                     playedPitchConfig && 'testing',
                 ),
-                faceSrc: getFaceSrc(pitch),
+                faceSrc: getFaceSrc({ pitch }),
                 style: getButtonPositionStyle(pitch),
                 isOn: hasCurrentPitch,
                 disabled: hasMaximumSonority && !hasCurrentPitch,
