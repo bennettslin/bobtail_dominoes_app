@@ -2,11 +2,11 @@ import React from 'react'
 import cx from 'classnames'
 import Flex from '../Flex'
 import puzzles from '../../content/puzzles'
-import { getKeyedListFromMap } from '../../utils/general/map'
+import { getIntegerKeysFromMap } from '../../utils/general/map'
 import { datePropTypes } from '../../constants/propTypes'
 
 const PuzzleMonthLinks = ({ date: { year } }) => {
-    console.log('getListfrom', getKeyedListFromMap(puzzles[year]))
+    console.log('getListfrom', getIntegerKeysFromMap(puzzles[year]))
 
     return null
     // return (
