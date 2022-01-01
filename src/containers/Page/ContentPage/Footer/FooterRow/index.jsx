@@ -5,22 +5,24 @@ import Flex from '../../../../../components/Flex'
 import './style'
 
 const PageFooterRow = ({ leftChild, rightChild, isBottomRow }) => (
-    <Flex
-        {...{
-            className: cx(
-                'PageFooterRow',
-                isBottomRow && 'PageFooterRow__bottom',
-            ),
-            justifyContent: 'spaceBetween',
-        }}
-    >
-        <Flex>
-            {leftChild}
+    (leftChild || rightChild) && (
+        <Flex
+            {...{
+                className: cx(
+                    'PageFooterRow',
+                    isBottomRow && 'PageFooterRow__bottom',
+                ),
+                justifyContent: 'spaceBetween',
+            }}
+        >
+            <Flex>
+                {leftChild}
+            </Flex>
+            <Flex>
+                {rightChild}
+            </Flex>
         </Flex>
-        <Flex>
-            {rightChild}
-        </Flex>
-    </Flex>
+    )
 )
 
 PageFooterRow.propTypes = {

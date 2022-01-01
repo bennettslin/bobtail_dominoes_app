@@ -6,7 +6,7 @@ import Flex from '../../Flex'
 import Hand from '../../Hand'
 import StyledShadow from '../../Styled/Shadow'
 import PuzzleBoard from '../../Puzzle/Board'
-import { getPagePathFromConfig } from '../../../utils/pages/path'
+import { getPagePathFromConfig } from '../../../utils/pages/path/config'
 import { boardPropTypes, datePropTypes, handListPropTypes } from '../../../constants/propTypes'
 import './style'
 

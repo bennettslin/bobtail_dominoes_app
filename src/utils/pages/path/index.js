@@ -1,25 +1,10 @@
-import { join } from '../../general'
 import {
-    BACK_LINKED_PAGES_SET,
     DOMAIN_NAME,
     HOME_PAGE,
-    TABBED_PAGES_SET,
 } from '../../../constants/pages'
 
 export const getTopLevelPageFromPath = (path = '') => (
     path.split('/')[0]
-)
-
-export const getChildPageFromPath = (path = '') => (
-    path.split('/').reverse()[0]
-)
-
-export const getIsTabbedPath = path => (
-    TABBED_PAGES_SET.has(getTopLevelPageFromPath(path))
-)
-
-export const getIsBackLinkedPath = path => (
-    BACK_LINKED_PAGES_SET.has(getTopLevelPageFromPath(path))
 )
 
 export const getLinkFromPath = path => (
@@ -41,17 +26,3 @@ export const getUrlFromPath = (path = '') => {
 
     return `${DOMAIN_NAME}${getLinkFromPath(path)}${finalSlash}`
 }
-
-export const getPagePathFromConfig = ({
-    topLevelPage,
-    id,
-    date: { year, month, day } = {},
-}) => (
-    join([
-        topLevelPage,
-        year,
-        month,
-        day,
-        id,
-    ], '/')
-)

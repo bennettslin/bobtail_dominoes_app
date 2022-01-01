@@ -3,7 +3,7 @@ import { aboutPageIds } from '../../../../content/about'
 import { guidesPageIds } from '../../../../content/guides'
 import puzzles from '../../../../content/puzzles'
 import { rulesPageIds } from '../../../../content/rules'
-import { getPagePathFromConfig } from '..'
+import { getPagePathFromConfig } from '../config'
 import {
     ABOUT_PAGE,
     GUIDES_PAGE,

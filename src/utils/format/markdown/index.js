@@ -1,6 +1,6 @@
 import removeMarkdown from 'remove-markdown'
 import { join } from '../../general'
-import { getPagePathFromConfig } from '../../pages/path'
+import { getPagePathFromConfig } from '../../pages/path/config'
 
 export const convertMarkdownToText = markdown => (
     removeMarkdown(markdown)

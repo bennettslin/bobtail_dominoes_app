@@ -4,16 +4,12 @@ import PageConfigContext from '../../../../../contexts/PageConfig'
 import ShareButtons from '../../../../../components/ShareButtons'
 import BackLink from '../../BackLink'
 import PageFooterRow from '../FooterRow'
-import { getMapShowBackLink } from '../../../../../redux/page/selector'
+import { mapShowTabbedMenuBackLink } from '../../../../../redux/page/selector'
 
 const TopLevelShareRow = () => {
     const
-        { noShare, topLevelPage } = useContext(PageConfigContext),
-        showBackLink = useSelector(getMapShowBackLink(topLevelPage))
-
-    if (!showBackLink && noShare) {
-        return null
-    }
+        { noShare } = useContext(PageConfigContext),
+        showBackLink = useSelector(mapShowTabbedMenuBackLink)
 
     return (
         <PageFooterRow

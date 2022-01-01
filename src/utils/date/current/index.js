@@ -38,9 +38,7 @@ export const getIsTimeEligibleDate = date => (
 
 export const getTimeEligiblePage = page => (
     // eslint-disable-next-line no-nested-ternary
-    !page || !page.date ?
-        null :
-        getIsTimeEligibleDate(page.date) ?
-            page :
-            null
+    page && (
+        !page.date || getIsTimeEligibleDate(page.date)
+    ) ? page : null
 )

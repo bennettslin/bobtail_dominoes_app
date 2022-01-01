@@ -7,7 +7,7 @@ import Flex from '../../../../../../components/Flex'
 import Svg from '../../../../../../components/Svg'
 import arrow from '../../../../../../assets/svgs/app/arrow'
 import { getFormattedPageLink } from '../../../../../../utils/pages/format'
-import { getPagePathFromConfig } from '../../../../../../utils/pages/path'
+import { getPagePathFromConfig } from '../../../../../../utils/pages/path/config'
 import { datePropTypes } from '../../../../../../constants/propTypes'
 
 const DirectionPageLink = ({ direction, directionPage }) => {

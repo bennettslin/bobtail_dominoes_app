@@ -6,7 +6,7 @@ import Flex from '../Flex'
 import puzzles from '../../content/puzzles'
 import { formatDate } from '../../utils/date/format'
 import { getNumberKeysFromMap } from '../../utils/general/keyMap'
-import { getPagePathFromConfig } from '../../utils/pages/path'
+import { getPagePathFromConfig } from '../../utils/pages/path/config'
 import { datePropTypes } from '../../constants/propTypes'
 
 const PuzzleMonthLinks = ({ date: { year }, topLevelPage }) => (

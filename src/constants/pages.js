@@ -12,11 +12,4 @@ export const DEMO_PAGE = 'demo'
 export const PUZZLES_PAGE = 'puzzles'
 export const LINKS_PAGE = 'links'
 
-export const TABBED_PAGES_SET = new Set([
-    ABOUT_PAGE,
-    RULES_PAGE,
-    GUIDES_PAGE,
-    PUZZLES_PAGE,
-])
-
 export const BACK_LINKED_PAGES_SET = new Set()

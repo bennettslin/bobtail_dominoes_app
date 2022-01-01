@@ -7,15 +7,13 @@
 
     * Month page
         * Tabs for just previous and next month
-        * Back tab to year page
 
     * Puzzle page
         * Tabs for just previous and next day
-        * Back tab to month page
 
 * Make puzzle pages smarter, only do did mount on load
 
-* Time eligible unit test
+* Fix and add unit tests
 
 * Interval thumbnail svgs
 

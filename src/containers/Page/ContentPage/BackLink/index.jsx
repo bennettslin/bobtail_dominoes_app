@@ -8,14 +8,15 @@ import Flex from '../../../../components/Flex'
 import StyledButtonText from '../../../../components/Styled/ButtonText'
 import StyledBackLink from '../../../../components/Styled/TabbedBackLink'
 import Svg from '../../../../components/Svg'
-import { getMapShowBackLink } from '../../../../redux/page/selector'
-import { getCapitalizedText } from '../../../../utils/format'
+import { mapShowTabbedMenuBackLink } from '../../../../redux/page/selector'
+import { getTabbedBackLinkTextForDate } from '../../../../utils/pages/format'
+import { getTabbedBackLinkPathForDate } from '../../../../utils/pages/path/tabbed'
 import backLink from '../../../../assets/svgs/app/backLink'
 
 const BackLink = ({ isStyledShadow }) => {
     const
-        { topLevelPage } = useContext(PageConfigContext),
-        showBackLink = useSelector(getMapShowBackLink(topLevelPage)),
+        { topLevelPage, date } = useContext(PageConfigContext),
+        showBackLink = useSelector(mapShowTabbedMenuBackLink),
         Tag = isStyledShadow ? StyledBackLink : Anchor,
         TextTag = isStyledShadow ? StyledButtonText : Fragment
 
@@ -26,7 +27,7 @@ const BackLink = ({ isStyledShadow }) => {
                     'BackLink',
                     'font__button',
                 ),
-                pagePath: topLevelPage,
+                pagePath: getTabbedBackLinkPathForDate({ topLevelPage, date }),
             }}
         >
             <TextTag>
@@ -50,7 +51,7 @@ const BackLink = ({ isStyledShadow }) => {
                             ),
                         }}
                     >
-                        {getCapitalizedText(topLevelPage)}
+                        {getTabbedBackLinkTextForDate(date)}
                     </div>
                 </Flex>
             </TextTag>

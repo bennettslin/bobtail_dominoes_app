@@ -5,11 +5,11 @@ import { getTimeEligiblePage } from '../../../../../utils/date/current'
 import { getFormattedPageLink } from '../../../../../utils/pages/format'
 
 const TabbedMenuButtons = () => {
-    const { pages = [], topLevelPage } = useContext(PageConfigContext)
-
-    const timeEligiblePages = pages.filter(page => (
-        getTimeEligiblePage(page)
-    ))
+    const
+        { pages = [], topLevelPage } = useContext(PageConfigContext),
+        timeEligiblePages = pages.filter(page => (
+            getTimeEligiblePage(page)
+        ))
 
     return Boolean(timeEligiblePages.length) && (
         <>

@@ -1,10 +1,7 @@
 import { createSelector } from 'reselect'
 import { DEMO_PAGE } from '../../constants/pages'
-import {
-    getIsBackLinkedPath,
-    getIsTabbedPath,
-    getTopLevelPageFromPath,
-} from '../../utils/pages/path'
+import { getTopLevelPageFromPath } from '../../utils/pages/path'
+import { getIsTabbedBackLinkPath, getIsTabbedPath } from '../../utils/pages/path/tabbed'
 import { PAGE_STORE } from './reducer'
 
 export const mapSelectedPagePath = (
@@ -24,7 +21,14 @@ export const mapIsFullPage = createSelector(
 export const mapShowTabbedMenu = createSelector(
     mapSelectedPagePath,
     selectedPagePath => (
-        getIsTabbedPath(selectedPagePath) && selectedPagePath.includes('/')
+        getIsTabbedPath(selectedPagePath)
+    ),
+)
+
+export const mapShowTabbedMenuBackLink = createSelector(
+    mapSelectedPagePath,
+    selectedPagePath => (
+        getIsTabbedBackLinkPath(selectedPagePath)
     ),
 )
 
@@ -43,11 +47,3 @@ export const getMapIsSelectedOrTabbedPagePath = pagePath => createSelector(
     ),
 )
 
-export const getMapShowBackLink = pagePath => createSelector(
-    getMapIsSelectedPagePath(pagePath),
-    (
-        isSelectedPagePath,
-    ) => (
-        getIsBackLinkedPath(pagePath) && !isSelectedPagePath
-    ),
-)

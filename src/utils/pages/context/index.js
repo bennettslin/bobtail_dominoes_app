@@ -1,4 +1,4 @@
-import { getPagePathFromConfig } from '../path'
+import { getPagePathFromConfig } from '../path/config'
 
 export const contextualisePageConfigs = configs => (
     configs.map(config => ({
