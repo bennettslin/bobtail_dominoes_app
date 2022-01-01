@@ -21,8 +21,6 @@
 
 * Prevent future dates from being shown anywhere, including tabs
 
-* Unit tests for new date structure utils and current date utils
-
 * Interval thumbnail svgs
 
 # Puzzle types
