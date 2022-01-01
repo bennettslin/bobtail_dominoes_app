@@ -55,10 +55,8 @@ export const getPagePathFromConfig = ({
     join([
         topLevelPage,
         year,
-        join([
-            month,
-            day,
-        ], '-'),
+        month,
+        day,
         id,
     ], '/')
 )

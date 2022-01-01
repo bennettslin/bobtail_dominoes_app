@@ -1,4 +1,5 @@
 import { exchangeDominoIndices, getInitialExtendedPool, getInitialStandardPool, getRandomDominoIndex } from '.'
+import { getAfterEach, getBeforeEach } from '../../../../__mocks__/random'
 import { MOCK_POOL_LIST } from '../../../../__mocks__/pool'
 
 describe('getInitialStandardPool', () => {
@@ -18,12 +19,8 @@ describe('getInitialExtendedPool', () => {
 })
 
 describe('getRandomDominoIndex', () => {
-    beforeEach(() => {
-        jest.spyOn(global.Math, 'random').mockReturnValue(0.123456789)
-    })
-    afterEach(() => {
-        jest.spyOn(global.Math, 'random').mockRestore()
-    })
+    beforeEach(getBeforeEach())
+    afterEach(getAfterEach())
 
     it('returns 0 if pool is empty', () => {
         const pool = new Set()
@@ -47,12 +44,8 @@ describe('getRandomDominoIndex', () => {
 })
 
 describe('exchangeDominoIndices', () => {
-    beforeEach(() => {
-        jest.spyOn(global.Math, 'random').mockReturnValue(0.123456789)
-    })
-    afterEach(() => {
-        jest.spyOn(global.Math, 'random').mockRestore()
-    })
+    beforeEach(getBeforeEach())
+    afterEach(getAfterEach())
 
     it('returns null if exchanged dominoes are already in pool', () => {
         expect(exchangeDominoIndices({

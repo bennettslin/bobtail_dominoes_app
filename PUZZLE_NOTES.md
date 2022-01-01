@@ -1,7 +1,7 @@
 # TODO
 * PuzzleMonthLinks component
 
-* Organize puzzle list by month
+* Puzzle pages
     * Year page
         * Each year page has month links
         * Tabs to all years

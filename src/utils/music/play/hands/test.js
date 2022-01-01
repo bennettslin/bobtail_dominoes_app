@@ -1,14 +1,11 @@
 import { exchangeHand, getInitialHands, playHand } from '.'
+import { getAfterEach, getBeforeEach } from '../../../../__mocks__/random'
 import { MOCK_POOL_LIST } from '../../../../__mocks__/pool'
 import { HAND_COUNT } from '../../../../constants/music/play'
 
 describe('getInitialHands', () => {
-    beforeEach(() => {
-        jest.spyOn(global.Math, 'random').mockReturnValue(0.123456789)
-    })
-    afterEach(() => {
-        jest.spyOn(global.Math, 'random').mockRestore()
-    })
+    beforeEach(getBeforeEach())
+    afterEach(getAfterEach())
 
     it('generates one hand', () => {
         const pool = new Set(MOCK_POOL_LIST)
@@ -54,12 +51,8 @@ describe('getInitialHands', () => {
 })
 
 describe('playHand', () => {
-    beforeEach(() => {
-        jest.spyOn(global.Math, 'random').mockReturnValue(0.123456789)
-    })
-    afterEach(() => {
-        jest.spyOn(global.Math, 'random').mockRestore()
-    })
+    beforeEach(getBeforeEach())
+    afterEach(getAfterEach())
 
     it('plays entire hand', () => {
         const pool = new Set(MOCK_POOL_LIST)
@@ -134,12 +127,8 @@ describe('playHand', () => {
 })
 
 describe('exchangeHand', () => {
-    beforeEach(() => {
-        jest.spyOn(global.Math, 'random').mockReturnValue(0.123456789)
-    })
-    afterEach(() => {
-        jest.spyOn(global.Math, 'random').mockRestore()
-    })
+    beforeEach(getBeforeEach())
+    afterEach(getAfterEach())
 
     it('returns null if pool already has domino indices', () => {
         const pool = new Set(MOCK_POOL_LIST)

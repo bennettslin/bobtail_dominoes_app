@@ -1,13 +1,10 @@
 import { getRandomEntry, getRandomInteger } from '.'
 import { getArrayOfIndices } from '..'
+import { getAfterEach, getBeforeEach } from '../../../__mocks__/random'
 
 describe('getRandomInteger', () => {
-    beforeEach(() => {
-        jest.spyOn(global.Math, 'random').mockReturnValue(0.123456789)
-    })
-    afterEach(() => {
-        jest.spyOn(global.Math, 'random').mockRestore()
-    })
+    beforeEach(getBeforeEach())
+    afterEach(getAfterEach())
 
     test.each([
         [0, 100, 12],
@@ -19,12 +16,8 @@ describe('getRandomInteger', () => {
 })
 
 describe('getRandomEntry', () => {
-    beforeEach(() => {
-        jest.spyOn(global.Math, 'random').mockReturnValue(0.123456789)
-    })
-    afterEach(() => {
-        jest.spyOn(global.Math, 'random').mockRestore()
-    })
+    beforeEach(getBeforeEach())
+    afterEach(getAfterEach())
 
     test.each([
         [undefined, undefined],

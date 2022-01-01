@@ -1,14 +1,11 @@
 import { addMovesToBoard, addMoveToBoard, getInitialBoard } from '.'
 import { getInitialExtendedPool } from '../pool'
+import { getAfterEach, getBeforeEach } from '../../../../__mocks__/random'
 import { MOCK_BOARD } from '../../../../__mocks__/board'
 
 describe('getInitialBoard', () => {
-    beforeEach(() => {
-        jest.spyOn(global.Math, 'random').mockReturnValue(0.123456789)
-    })
-    afterEach(() => {
-        jest.spyOn(global.Math, 'random').mockRestore()
-    })
+    beforeEach(getBeforeEach())
+    afterEach(getAfterEach())
 
     it('generates board with first domino removed from pool and placed', () => {
         const pool = getInitialExtendedPool()

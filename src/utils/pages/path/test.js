@@ -8,6 +8,6 @@ describe('getPagePathFromConfig', () => {
                 id: 'bennett',
                 date: { year: 2021, month: 11, day: 13 },
             }),
-        ).toBe('birthdays/2021/11-13/bennett')
+        ).toBe('birthdays/2021/11/13/bennett')
     })
 })

@@ -1,12 +1,9 @@
 import { getBestPointedEntryBasedOnRequirements } from '.'
+import { getAfterEach, getBeforeEach } from '../../../../__mocks__/random'
 
 describe('getBestPointedEntryBasedOnRequirements', () => {
-    beforeEach(() => {
-        jest.spyOn(global.Math, 'random').mockReturnValue(0.123456789)
-    })
-    afterEach(() => {
-        jest.spyOn(global.Math, 'random').mockRestore()
-    })
+    beforeEach(getBeforeEach())
+    afterEach(getAfterEach())
 
     test.each([
         [{

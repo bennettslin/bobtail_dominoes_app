@@ -21,7 +21,7 @@ describe('contextualisePageConfigs', () => {
                         topLevelPage: 'birthdays',
                     },
                 },
-                path: 'birthdays/2021/5-4',
+                path: 'birthdays/2021/5/4',
             },
             {
                 context: {
@@ -30,7 +30,7 @@ describe('contextualisePageConfigs', () => {
                         topLevelPage: 'birthdays',
                     },
                 },
-                path: 'birthdays/2021/11-13',
+                path: 'birthdays/2021/11/13',
             },
         ])
     })

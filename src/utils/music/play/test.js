@@ -1,4 +1,5 @@
 import { getInitialGame, registerTurn } from '.'
+import { getAfterEach, getBeforeEach } from '../../../__mocks__/random'
 import { MOCK_BOARD } from '../../../__mocks__/board'
 import { MOCK_POOL_LIST } from '../../../__mocks__/pool'
 import { MOCK_TURNS } from '../../../__mocks__/turns'
@@ -31,12 +32,8 @@ const MOCK_PLAYED_TURN = {
 }
 
 describe('getInitialGame', () => {
-    beforeEach(() => {
-        jest.spyOn(global.Math, 'random').mockReturnValue(0.123456789)
-    })
-    afterEach(() => {
-        jest.spyOn(global.Math, 'random').mockRestore()
-    })
+    beforeEach(getBeforeEach())
+    afterEach(getAfterEach())
 
     it('generates initial game', () => {
         expect(getInitialGame({
@@ -97,12 +94,8 @@ describe('getInitialGame', () => {
 })
 
 describe('registerTurn', () => {
-    beforeEach(() => {
-        jest.spyOn(global.Math, 'random').mockReturnValue(0.123456789)
-    })
-    afterEach(() => {
-        jest.spyOn(global.Math, 'random').mockRestore()
-    })
+    beforeEach(getBeforeEach())
+    afterEach(getAfterEach())
 
     it('registers exchanged turn', () => {
         expect(registerTurn({
