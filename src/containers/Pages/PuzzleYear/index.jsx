@@ -8,16 +8,17 @@ import { datePropTypes, pagesPropTypes } from '../../../constants/propTypes'
 const PuzzleYearPage = ({
     didMount,
     pageContext: {
-        pageMap: { date, ...rest },
+        pageMap: { date, topLevelPage, ...rest },
     },
 }) => {
     return didMount && (
         <TimeEligiblePage
             {...{
                 body: (
-                    <PuzzleMonthLinks {...{ date }} />
+                    <PuzzleMonthLinks {...{ date, topLevelPage }} />
                 ),
                 date,
+                topLevelPage,
                 ...rest,
             }}
         />

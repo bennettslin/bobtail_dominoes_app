@@ -3,9 +3,7 @@
 
 * Puzzle pages
     * Year page
-        * Each year page has month links
-        * Tabs to all years
-        * No back tab
+        * Tabs for previous and next year
 
     * Month page
         * Tabs for just previous and next month
