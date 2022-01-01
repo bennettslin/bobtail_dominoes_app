@@ -1,37 +1,5 @@
-import {
-    flattenDateStructuredPages, flattenMonthStructuredPages, flattenYearStructuredPages, getDateValueFromMaps, getKeyedListFromMap, getListFromMap,
-} from '.'
+import { flattenDateStructuredPages, flattenMonthStructuredPages, flattenYearStructuredPages } from '.'
 import { DATE_STRUCTURED_PAGES } from '../../../__mocks__/dateStructuredPages'
-
-describe('getDateValueFromMaps', () => {
-    it('returns date value from maps', () => {
-        expect(
-            getDateValueFromMaps({ 2021: {} }),
-        ).toBe(2021)
-    })
-})
-
-describe('getListFromMap', () => {
-    it('returns list from map', () => {
-        expect(
-            getListFromMap({
-                5: { 4: {} },
-                11: { 13: {} },
-            }),
-        ).toStrictEqual([{ 4: {} }, { 13: {} }])
-    })
-})
-
-describe('getKeyedListFromMap', () => {
-    it('returns keyed list from map', () => {
-        expect(
-            getKeyedListFromMap({
-                5: { 4: {} },
-                11: { 13: {} },
-            }),
-        ).toStrictEqual([{ 5: { 4: {} } }, { 11: { 13: {} } }])
-    })
-})
 
 describe('flattenYearStructuredPages', () => {
     it('returns flattened year-structured pages', () => {

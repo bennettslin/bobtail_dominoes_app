@@ -17,6 +17,8 @@
 
 * Make puzzle pages smarter, only do did mount on load
 
+* Time eligible unit test
+
 * Interval thumbnail svgs
 
 # Puzzle types

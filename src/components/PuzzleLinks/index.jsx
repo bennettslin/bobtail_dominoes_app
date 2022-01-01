@@ -1,13 +1,10 @@
 import React from 'react'
 import cx from 'classnames'
 import Flex from '../Flex'
-import Heading from '../Heading'
 import PuzzleLink from './PuzzleLink'
 import puzzles from '../../content/puzzles'
-import { formatDate } from '../../utils/date/format'
-import { getListFromMap } from '../../utils/pages/dateStructure'
+import { getListFromMap } from '../../utils/general/map'
 import { datePropTypes } from '../../constants/propTypes'
-import './style'
 
 const PuzzleLinks = ({ date: { year, month } }) => (
     <Flex
@@ -21,9 +18,6 @@ const PuzzleLinks = ({ date: { year, month } }) => (
             gap: 'md',
         }}
     >
-        <Heading {...{ level: 3 }}>
-            {formatDate({ year, month })}
-        </Heading>
         <Flex
             {...{
                 justifyContent: 'normal',

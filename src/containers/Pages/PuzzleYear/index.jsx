@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import getDidMountHoc from '../../../hocs/DidMountHoc'
+import PuzzleMonthLinks from '../../../components/PuzzleMonthLinks'
 import TimeEligiblePage from '../TimeEligible'
 import { datePropTypes, pagesPropTypes } from '../../../constants/propTypes'
 
@@ -14,7 +15,7 @@ const PuzzleYearPage = ({
         <TimeEligiblePage
             {...{
                 body: (
-                    'Testing'
+                    <PuzzleMonthLinks {...{ date }} />
                 ),
                 date,
                 ...rest,
