@@ -1,14 +1,14 @@
-import { filterOutFutureDateStructuredPages, getLastDateStructuredPageForLink } from '.'
+import { filterTimeEligibleDateMappedPages, getLastDateMappedPageForLink } from '.'
 import { getAfterAll, getBeforeAll } from '../../../../__mocks__/currentDate'
-import { DATE_STRUCTURED_PAGES } from '../../../../__mocks__/dateStructuredPages'
+import { DATE_MAPPED_PAGES } from '../../../../__mocks__/dateMapped'
 
-describe('filterOutFutureDateStructuredPages', () => {
+describe('filterTimeEligibleDateMappedPages', () => {
     beforeAll(getBeforeAll({ year: 2021, month: 11, day: 13 }))
     afterAll(getAfterAll())
 
-    it('returns filtered date-structured pages', () => {
+    it('filters time eligible date mapped pages', () => {
         expect(
-            filterOutFutureDateStructuredPages(DATE_STRUCTURED_PAGES),
+            filterTimeEligibleDateMappedPages(DATE_MAPPED_PAGES),
         ).toStrictEqual({
             1983: {
                 5: {
@@ -30,13 +30,13 @@ describe('filterOutFutureDateStructuredPages', () => {
     })
 })
 
-describe('getLastDateStructuredPageForLink', () => {
+describe('getLastDateMappedPageForLink', () => {
     beforeAll(getBeforeAll({ year: 2021, month: 11, day: 13 }))
     afterAll(getAfterAll())
 
-    it('returns last date-structured page for link', () => {
+    it('returns last date mapped page for link', () => {
         expect(
-            getLastDateStructuredPageForLink(DATE_STRUCTURED_PAGES),
+            getLastDateMappedPageForLink(DATE_MAPPED_PAGES),
         ).toStrictEqual({
             date: { day: 13, month: 11, year: 2021 },
         })

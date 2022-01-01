@@ -45,11 +45,11 @@ const populateMonthsMap = ({
     )
 )
 
-export const populateDateStructuredPages = ({
-    dateStructuredPages,
+export const populateDateMappedPages = ({
+    dateMappedPages,
     ...rest
 }) => (
-    getEntryListFromMap(dateStructuredPages).reduce(
+    getEntryListFromMap(dateMappedPages).reduce(
         (yearsMap, yearMaps) => {
             const year = getFirstNumberKeyInMap(yearMaps)
             return {

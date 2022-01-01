@@ -1,18 +1,18 @@
-import { flattenDateStructuredPages, flattenMonthStructuredPages, flattenYearStructuredPages } from '.'
-import { DATE_STRUCTURED_PAGES } from '../../../__mocks__/dateStructuredPages'
+import { flattenDateMappedPages, flattenMonthMappedPages, flattenYearMappedPages } from '.'
+import { DATE_MAPPED_PAGES } from '../../../__mocks__/dateMapped'
 
-describe('flattenYearStructuredPages', () => {
-    it('returns flattened year-structured pages', () => {
+describe('flattenYearMappedPages', () => {
+    it('returns flattened year mapped pages', () => {
         expect(
-            flattenYearStructuredPages(DATE_STRUCTURED_PAGES),
+            flattenYearMappedPages(DATE_MAPPED_PAGES),
         ).toStrictEqual([{ year: 1983 }, { year: 2021 }, { year: 2022 }])
     })
 })
 
-describe('flattenMonthStructuredPages', () => {
-    it('returns flattened month-structured pages', () => {
+describe('flattenMonthMappedPages', () => {
+    it('returns flattened month mapped pages', () => {
         expect(
-            flattenMonthStructuredPages(DATE_STRUCTURED_PAGES),
+            flattenMonthMappedPages(DATE_MAPPED_PAGES),
         ).toStrictEqual([
             { month: 5, year: 1983 },
             { month: 11, year: 2021 },
@@ -22,10 +22,10 @@ describe('flattenMonthStructuredPages', () => {
     })
 })
 
-describe('flattenDateStructuredPages', () => {
-    it('returns flattened date-structured pages', () => {
+describe('flattenDateMappedPages', () => {
+    it('returns flattened date mapped pages', () => {
         expect(
-            flattenDateStructuredPages(DATE_STRUCTURED_PAGES),
+            flattenDateMappedPages(DATE_MAPPED_PAGES),
         ).toStrictEqual([
             {
                 date: { day: 5, month: 4, year: 1983 },

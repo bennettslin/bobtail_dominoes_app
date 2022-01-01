@@ -2,19 +2,19 @@ import puzzles2020 from './2020'
 import puzzles2021 from './2021'
 import puzzles2022 from './2022'
 import { getPagesList } from '../../utils/pages/config'
-import { filterOutFutureDateStructuredPages } from '../../utils/date/current/dateStructure'
+import { filterTimeEligibleDateMappedPages } from '../../utils/date/current/dateMapped'
 import { contextualisePageConfigs } from '../../utils/pages/context'
 import {
-    flattenDateStructuredPages,
-    flattenMonthStructuredPages,
-    flattenYearStructuredPages,
-} from '../../utils/pages/dateStructure'
-import { populateDateStructuredPages } from '../../utils/pages/dateStructure/populate'
+    flattenDateMappedPages,
+    flattenMonthMappedPages,
+    flattenYearMappedPages,
+} from '../../utils/pages/dateMapped'
+import { populateDateMappedPages } from '../../utils/pages/dateMapped/populate'
 import { addDirectionPages } from '../../utils/pages/directionPages'
 import { PUZZLES_PAGE } from '../../constants/pages'
 
-const allPuzzles = populateDateStructuredPages({
-    dateStructuredPages: {
+const allPuzzles = populateDateMappedPages({
+    dateMappedPages: {
         ...puzzles2020,
         ...puzzles2021,
         ...puzzles2022,
@@ -29,7 +29,7 @@ const allPuzzles = populateDateStructuredPages({
 export const puzzlePages = (
     contextualisePageConfigs(
         addDirectionPages(
-            flattenDateStructuredPages(allPuzzles).reverse(),
+            flattenDateMappedPages(allPuzzles).reverse(),
         ),
     )
 )
@@ -38,7 +38,7 @@ export const puzzlePages = (
 export const puzzleMonthPages = (
     contextualisePageConfigs(
         getPagesList({
-            pageDates: flattenMonthStructuredPages(allPuzzles).reverse(),
+            pageDates: flattenMonthMappedPages(allPuzzles).reverse(),
             topLevelPage: PUZZLES_PAGE,
         }),
     )
@@ -48,11 +48,11 @@ export const puzzleMonthPages = (
 export const puzzleYearPages = (
     contextualisePageConfigs(
         getPagesList({
-            pageDates: flattenYearStructuredPages(allPuzzles).reverse(),
+            pageDates: flattenYearMappedPages(allPuzzles).reverse(),
             topLevelPage: PUZZLES_PAGE,
         }),
     )
 )
 
 // For client side. Only past and present puzzles.
-export default filterOutFutureDateStructuredPages(allPuzzles)
+export default filterTimeEligibleDateMappedPages(allPuzzles)

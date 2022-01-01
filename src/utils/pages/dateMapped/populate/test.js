@@ -1,11 +1,11 @@
-import { populateDateStructuredPages } from '.'
-import { DATE_STRUCTURED_PAGES } from '../../../../__mocks__/dateStructuredPages'
+import { populateDateMappedPages } from '.'
+import { DATE_MAPPED_PAGES } from '../../../../__mocks__/dateMapped'
 
-describe('populateDateStructuredPages', () => {
-    it('populates date-structured pages', () => {
+describe('populateDateMappedPages', () => {
+    it('populates date mapped pages', () => {
         expect(
-            populateDateStructuredPages({
-                dateStructuredPages: DATE_STRUCTURED_PAGES,
+            populateDateMappedPages({
+                dateMappedPages: DATE_MAPPED_PAGES,
                 points: 25,
             }),
         ).toStrictEqual({

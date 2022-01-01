@@ -1,4 +1,4 @@
-export const DATE_STRUCTURED_PAGES = {
+export const DATE_MAPPED_PAGES = {
     1983: {
         5: {
             4: {

@@ -1,4 +1,4 @@
-import { getLastDateStructuredPageForLink } from '../../../date/current/dateStructure'
+import { getLastDateMappedPageForLink } from '../../../date/current/dateMapped'
 import { aboutPageIds } from '../../../../content/about'
 import { guidesPageIds } from '../../../../content/guides'
 import puzzles from '../../../../content/puzzles'
@@ -15,7 +15,7 @@ const INITIAL_CHILD_PAGES = {
     [ABOUT_PAGE]: aboutPageIds[0],
     [GUIDES_PAGE]: guidesPageIds[0],
     [PUZZLES_PAGE]: getPagePathFromConfig(
-        getLastDateStructuredPageForLink(puzzles),
+        getLastDateMappedPageForLink(puzzles),
     ),
     [RULES_PAGE]: rulesPageIds[0],
 }

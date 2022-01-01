@@ -1,13 +1,13 @@
 import { getFirstNumberKeyInMap, getEntryListFromMap, getValueListFromMap } from '../../general/keyMap'
 
-export const flattenYearStructuredPages = dateStructuredPages => (
-    getEntryListFromMap(dateStructuredPages).map(yearMaps => ({
+export const flattenYearMappedPages = dateMappedPages => (
+    getEntryListFromMap(dateMappedPages).map(yearMaps => ({
         year: getFirstNumberKeyInMap(yearMaps),
     }))
 )
 
-export const flattenMonthStructuredPages = dateStructuredPages => (
-    getEntryListFromMap(dateStructuredPages).map(yearMaps => {
+export const flattenMonthMappedPages = dateMappedPages => (
+    getEntryListFromMap(dateMappedPages).map(yearMaps => {
         const year = getFirstNumberKeyInMap(yearMaps)
         return getEntryListFromMap(yearMaps[year]).map(monthMaps => ({
             year,
@@ -16,8 +16,8 @@ export const flattenMonthStructuredPages = dateStructuredPages => (
     }).flat()
 )
 
-export const flattenDateStructuredPages = dateStructuredPages => (
-    getValueListFromMap(dateStructuredPages).map(years => (
+export const flattenDateMappedPages = dateMappedPages => (
+    getValueListFromMap(dateMappedPages).map(years => (
         getValueListFromMap(years).map(months => (
             getValueListFromMap(months)
         )).flat()
