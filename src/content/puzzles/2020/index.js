@@ -3,7 +3,5 @@ import puzzles10 from './10'
 // import puzzles12 from './12'
 
 export default {
-    2020: {
-        ...puzzles10,
-    },
+    10: puzzles10,
 }
