@@ -9,8 +9,8 @@ import StyledButtonText from '../../../../components/Styled/ButtonText'
 import StyledBackLink from '../../../../components/Styled/TabbedBackLink'
 import Svg from '../../../../components/Svg'
 import { mapShowTabbedMenuBackLink } from '../../../../redux/page/selector'
-import { getTabbedBackLinkTextForDate } from '../../../../utils/pages/format'
-import { getTabbedBackLinkPathForDate } from '../../../../utils/pages/path/tabbed'
+import { getTabbedBackLinkText } from '../../../../utils/pages/format'
+import { getTabbedBackLinkPath } from '../../../../utils/pages/path/tabbed'
 import backLink from '../../../../assets/svgs/app/backLink'
 
 const BackLink = ({ isStyledShadow }) => {
@@ -27,7 +27,7 @@ const BackLink = ({ isStyledShadow }) => {
                     'BackLink',
                     'font__button',
                 ),
-                pagePath: getTabbedBackLinkPathForDate({ topLevelPage, date }),
+                pagePath: getTabbedBackLinkPath({ topLevelPage, date }),
             }}
         >
             <TextTag>
@@ -51,7 +51,7 @@ const BackLink = ({ isStyledShadow }) => {
                             ),
                         }}
                     >
-                        {getTabbedBackLinkTextForDate(date)}
+                        {getTabbedBackLinkText({ date })}
                     </div>
                 </Flex>
             </TextTag>

@@ -20,7 +20,9 @@ export const getFormattedPageLink = ({
     return ''
 }
 
-export const getTabbedBackLinkTextForDate = ({ year, month, day }) => (
+export const getTabbedBackLinkText = ({
+    date: { year, month, day } = {},
+}) => (
     formatDate({
         year,
         ...day && { month },

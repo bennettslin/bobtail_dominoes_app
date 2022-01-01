@@ -1,6 +1,4 @@
 # TODO
-* PuzzleMonthLinks component
-
 * Puzzle pages
     * Year page
         * Tabs for previous and next year
@@ -14,6 +12,8 @@
 * Make puzzle pages smarter, only do did mount on load
 
 * Make puzzles in full width correspond to days of week
+
+* Tabbed menu should show selected for any child page
 
 * Fix and add unit tests
 * Tabbed menu responsive
