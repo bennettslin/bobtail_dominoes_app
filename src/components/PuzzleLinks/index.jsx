@@ -3,7 +3,7 @@ import cx from 'classnames'
 import Flex from '../Flex'
 import PuzzleLink from './PuzzleLink'
 import puzzles from '../../content/puzzles'
-import { getListFromMap } from '../../utils/general/map'
+import { getValueListFromMap } from '../../utils/general/keyMap'
 import { datePropTypes } from '../../constants/propTypes'
 
 const PuzzleLinks = ({ date: { year, month } }) => (
@@ -25,7 +25,7 @@ const PuzzleLinks = ({ date: { year, month } }) => (
                 gap: 'xs',
             }}
         >
-            {getListFromMap(puzzles[year][month]).reverse().map(
+            {getValueListFromMap(puzzles[year][month]).reverse().map(
                 (pageMaps, index) => (
                     <PuzzleLink
                         {...{

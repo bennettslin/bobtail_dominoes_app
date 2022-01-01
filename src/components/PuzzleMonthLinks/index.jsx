@@ -2,11 +2,11 @@ import React from 'react'
 import cx from 'classnames'
 import Flex from '../Flex'
 import puzzles from '../../content/puzzles'
-import { getIntegerKeysFromMap } from '../../utils/general/map'
+import { getNumberKeysFromMap } from '../../utils/general/keyMap'
 import { datePropTypes } from '../../constants/propTypes'
 
 const PuzzleMonthLinks = ({ date: { year } }) => {
-    console.log('getListfrom', getIntegerKeysFromMap(puzzles[year]))
+    console.log('getListfrom', getNumberKeysFromMap(puzzles[year]))
 
     return null
     // return (
@@ -28,7 +28,7 @@ const PuzzleMonthLinks = ({ date: { year } }) => {
     //                 gap: 'xs',
     //             }}
     //         >
-    //             {getListFromMap(puzzles[year]).reverse().map(
+    //             {getValueListFromMap(puzzles[year]).reverse().map(
     //                 (pageMaps, index) => (
     //                     <PuzzleLink
     //                         {...{

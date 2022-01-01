@@ -1,25 +1,25 @@
-import { getFirstIntegerKeyInMap, getKeyedListFromMap, getListFromMap } from '../../general/map'
+import { getFirstNumberKeyInMap, getEntryListFromMap, getValueListFromMap } from '../../general/keyMap'
 
 export const flattenYearStructuredPages = dateStructuredPages => (
-    getKeyedListFromMap(dateStructuredPages).map(yearMaps => ({
-        year: getFirstIntegerKeyInMap(yearMaps),
+    getEntryListFromMap(dateStructuredPages).map(yearMaps => ({
+        year: getFirstNumberKeyInMap(yearMaps),
     }))
 )
 
 export const flattenMonthStructuredPages = dateStructuredPages => (
-    getKeyedListFromMap(dateStructuredPages).map(yearMaps => {
-        const year = getFirstIntegerKeyInMap(yearMaps)
-        return getKeyedListFromMap(yearMaps[year]).map(monthMaps => ({
+    getEntryListFromMap(dateStructuredPages).map(yearMaps => {
+        const year = getFirstNumberKeyInMap(yearMaps)
+        return getEntryListFromMap(yearMaps[year]).map(monthMaps => ({
             year,
-            month: getFirstIntegerKeyInMap(monthMaps),
+            month: getFirstNumberKeyInMap(monthMaps),
         }))
     }).flat()
 )
 
 export const flattenDateStructuredPages = dateStructuredPages => (
-    getListFromMap(dateStructuredPages).map(years => (
-        getListFromMap(years).map(months => (
-            getListFromMap(months)
+    getValueListFromMap(dateStructuredPages).map(years => (
+        getValueListFromMap(years).map(months => (
+            getValueListFromMap(months)
         )).flat()
     )).flat()
 )

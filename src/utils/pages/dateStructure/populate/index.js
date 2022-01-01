@@ -1,4 +1,4 @@
-import { getFirstIntegerKeyInMap, getKeyedListFromMap } from '../../../general/map'
+import { getFirstNumberKeyInMap, getEntryListFromMap } from '../../../general/keyMap'
 
 const populateDaysMap = ({
     year,
@@ -7,9 +7,9 @@ const populateDaysMap = ({
     dateSpreadFunction = () => ({}),
     ...rest
 }) => (
-    getKeyedListFromMap(monthMaps[month]).reduce(
+    getEntryListFromMap(monthMaps[month]).reduce(
         (daysMap, dayMaps) => {
-            const day = getFirstIntegerKeyInMap(dayMaps)
+            const day = getFirstNumberKeyInMap(dayMaps)
             const date = { year, month, day }
             return {
                 ...daysMap,
@@ -29,9 +29,9 @@ const populateMonthsMap = ({
     yearMaps,
     ...rest
 }) => (
-    getKeyedListFromMap(yearMaps[year]).reduce(
+    getEntryListFromMap(yearMaps[year]).reduce(
         (monthsMap, monthMaps) => {
-            const month = getFirstIntegerKeyInMap(monthMaps)
+            const month = getFirstNumberKeyInMap(monthMaps)
             return {
                 ...monthsMap,
                 [month]: populateDaysMap({
@@ -49,9 +49,9 @@ export const populateDateStructuredPages = ({
     dateStructuredPages,
     ...rest
 }) => (
-    getKeyedListFromMap(dateStructuredPages).reduce(
+    getEntryListFromMap(dateStructuredPages).reduce(
         (yearsMap, yearMaps) => {
-            const year = getFirstIntegerKeyInMap(yearMaps)
+            const year = getFirstNumberKeyInMap(yearMaps)
             return {
                 ...yearsMap,
                 [year]: populateMonthsMap({
