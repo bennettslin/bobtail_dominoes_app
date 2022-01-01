@@ -12,7 +12,7 @@ import './style'
 
 const PuzzleLinks = ({ didMount, date }) => {
 
-    console.log('puzzles', puzzles)
+    // console.log('puzzles', puzzles)
 
     return didMount && (
         <Flex

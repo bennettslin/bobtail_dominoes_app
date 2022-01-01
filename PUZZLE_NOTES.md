@@ -1,8 +1,5 @@
 # TODO
 
-* Make months objects as well, to prevent me from being confused later.
-    * And then update puzzle formatter
-
 * Organize puzzle list by month
     * Year page
         * Each year page has month links

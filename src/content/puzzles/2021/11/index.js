@@ -1,14 +1,12 @@
 import {
     MAXIMUM_PUZZLE_TYPE,
     MISSING_PUZZLE_TYPE,
-    // MISSING_PUZZLE_TYPE,
     REGULAR_PUZZLE_TYPE,
 } from '../../../../constants/music/puzzle'
 
 export default {
-    11: [
-        {
-            day: 1,
+    11: {
+        1: {
             puzzleType: MAXIMUM_PUZZLE_TYPE,
             board: [
                 { dominoIndex: 26, placement: [[0, 0], [0, -1]] },
@@ -30,8 +28,7 @@ export default {
                 },
             ],
         },
-        {
-            day: 2,
+        2: {
             puzzleType: MAXIMUM_PUZZLE_TYPE,
             board: [
                 { dominoIndex: 53, placement: [[0, 1], [0, 0]] },
@@ -54,8 +51,7 @@ export default {
                 },
             ],
         },
-        {
-            day: 3,
+        3: {
             puzzleType: MAXIMUM_PUZZLE_TYPE,
             board: [
                 { dominoIndex: 50, placement: [[1, -1], [0, 0]] },
@@ -79,8 +75,7 @@ export default {
                 },
             ],
         },
-        {
-            day: 4,
+        4: {
             puzzleType: REGULAR_PUZZLE_TYPE,
             board: [
                 { dominoIndex: 33, placement: [[0, 0], [1, -1]] },
@@ -122,8 +117,7 @@ export default {
                 },
             ],
         },
-        {
-            day: 5,
+        5: {
             puzzleType: MISSING_PUZZLE_TYPE,
             board: [
                 { dominoIndex: 40, placement: [[-1, 1], [0, 1]] },
@@ -136,8 +130,7 @@ export default {
                 { dominoIndex: 3, placement: [[0, 0], [0, -1]] },
             ],
         },
-        {
-            day: 6,
+        6: {
             puzzleType: MAXIMUM_PUZZLE_TYPE,
             board: [
                 { dominoIndex: 19, placement: [[0, 0], [-1, 1]] },
@@ -161,8 +154,7 @@ export default {
                 },
             ],
         },
-        {
-            day: 7,
+        7: {
             puzzleType: REGULAR_PUZZLE_TYPE,
             board: [
                 { dominoIndex: 48, placement: [[-1, 1], [0, 0]] },
@@ -207,8 +199,7 @@ export default {
             ],
             points: 38,
         },
-        {
-            day: 13,
+        13: {
             puzzleType: MAXIMUM_PUZZLE_TYPE,
             board: [
                 { dominoIndex: 40, placement: [[0, 0], [-1, 0]] },
@@ -231,8 +222,7 @@ export default {
                 },
             ],
         },
-        {
-            day: 20,
+        20: {
             puzzleType: MAXIMUM_PUZZLE_TYPE,
             board: [
                 { dominoIndex: 8, placement: [[0, 0], [-1, 1]] },
@@ -255,8 +245,7 @@ export default {
                 },
             ],
         },
-        {
-            day: 27,
+        27: {
             puzzleType: MAXIMUM_PUZZLE_TYPE,
             board: [
                 { dominoIndex: 36, placement: [[0, -1], [0, 0]] },
@@ -280,5 +269,5 @@ export default {
                 },
             ],
         },
-    ],
+    },
 }

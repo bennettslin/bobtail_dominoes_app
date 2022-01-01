@@ -35,36 +35,3 @@ export const getIsPastOrPresentDate = date => (
         getDateObjectForDate(date),
     ) >= 0
 )
-
-const getFilterdMonth = ({
-    dateStructuredPages,
-    year,
-    month,
-}) => (
-    dateStructuredPages[year][month].filter(({ date }) => (
-        getIsPastOrPresentDate(date)
-    ))
-)
-
-export const filterOutFutureDateStructuredPages = dateStructuredPages => {
-    Object.keys(dateStructuredPages).forEach(year => {
-        if (!getIsPastOrPresentDate({ year })) {
-            delete dateStructuredPages[year]
-        } else {
-            Object.keys(dateStructuredPages[year]).forEach(month => {
-                if (!getIsPastOrPresentDate({ year, month })) {
-                    delete dateStructuredPages[year][month]
-                } else {
-                    dateStructuredPages[year][month] = getFilterdMonth({
-                        dateStructuredPages,
-                        year,
-                        month,
-                    })
-                }
-            })
-        }
-    })
-
-    return dateStructuredPages
-}
-

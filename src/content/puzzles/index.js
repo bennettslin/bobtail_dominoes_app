@@ -1,13 +1,11 @@
 import puzzles2020 from './2020'
 import puzzles2021 from './2021'
 import puzzles2022 from './2022'
-import { filterOutFutureDateStructuredPages } from '../../utils/date/current'
 import { getPagesList } from '../../utils/pages/config'
+import { filterOutFutureDateStructuredPages } from '../../utils/date/current/dateStructure'
 import { contextualisePageConfigs } from '../../utils/pages/context'
-import {
-    flattenDateStructuredPages,
-    populateDateStructuredPages,
-} from '../../utils/pages/dateStructure'
+import { flattenDateStructuredPages } from '../../utils/pages/dateStructure'
+import { populateDateStructuredPages } from '../../utils/pages/dateStructure/populate'
 import { addDirectionPages } from '../../utils/pages/directionPages'
 import { PUZZLES_PAGE } from '../../constants/pages'
 
