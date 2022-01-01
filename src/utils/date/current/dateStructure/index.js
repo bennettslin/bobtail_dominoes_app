@@ -1,4 +1,6 @@
 import { getIsPastOrPresentDate } from '..'
+import { getPageLinkConfig } from '../../../pages/config'
+import { flattenDateStructuredPages } from '../../../pages/dateStructure'
 
 const filterOutFutureDay = ({ dateStructuredPages, year, month }) => {
     Object.keys(dateStructuredPages[year][month]).forEach(day => {
@@ -35,4 +37,11 @@ export const filterOutFutureDateStructuredPages = dateStructuredPages => {
     })
 
     return dateStructuredPages
+}
+
+export const getLastDateStructuredPageForLink = dateStructuredPages => {
+    const pagesList = flattenDateStructuredPages(dateStructuredPages)
+    return getPageLinkConfig(
+        pagesList[pagesList.length - 1],
+    )
 }

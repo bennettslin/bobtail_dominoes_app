@@ -15,10 +15,6 @@
         * Tabs for just previous and next day
         * Back tab to month page
 
-* Day pages should be separated by slash, not dash
-
-* Puzzles menu button links to most recent puzzle
-
 * Prevent future dates from being shown anywhere, including tabs
 
 * Interval thumbnail svgs

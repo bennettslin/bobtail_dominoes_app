@@ -13,7 +13,7 @@ import { populateDateStructuredPages } from '../../utils/pages/dateStructure/pop
 import { addDirectionPages } from '../../utils/pages/directionPages'
 import { PUZZLES_PAGE } from '../../constants/pages'
 
-const puzzles = populateDateStructuredPages({
+const allPuzzles = populateDateStructuredPages({
     dateStructuredPages: {
         ...puzzles2020,
         ...puzzles2021,
@@ -29,7 +29,7 @@ const puzzles = populateDateStructuredPages({
 export const puzzlePages = (
     contextualisePageConfigs(
         addDirectionPages(
-            flattenDateStructuredPages(puzzles).reverse(),
+            flattenDateStructuredPages(allPuzzles).reverse(),
         ),
     )
 )
@@ -38,7 +38,7 @@ export const puzzlePages = (
 export const puzzleMonthPages = (
     contextualisePageConfigs(
         getPagesList({
-            pageDates: flattenMonthStructuredPages(puzzles).reverse(),
+            pageDates: flattenMonthStructuredPages(allPuzzles).reverse(),
             topLevelPage: PUZZLES_PAGE,
         }),
     )
@@ -48,11 +48,11 @@ export const puzzleMonthPages = (
 export const puzzleYearPages = (
     contextualisePageConfigs(
         getPagesList({
-            pageDates: flattenYearStructuredPages(puzzles).reverse(),
+            pageDates: flattenYearStructuredPages(allPuzzles).reverse(),
             topLevelPage: PUZZLES_PAGE,
         }),
     )
 )
 
-// For client side.
-export default filterOutFutureDateStructuredPages(puzzles)
+// For client side. Only past and present puzzles.
+export default filterOutFutureDateStructuredPages(allPuzzles)

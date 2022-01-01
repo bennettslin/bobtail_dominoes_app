@@ -6,7 +6,7 @@ import StyledButton from '../../../../../components/Styled/Button'
 import StyledButtonText from '../../../../../components/Styled/ButtonText'
 import { getMapIsSelectedOrTabbedPagePath } from '../../../../../redux/page/selector'
 import { join } from '../../../../../utils/general'
-import { getInitialChildPage } from '../../../../../utils/pages/path'
+import { getInitialChildPage } from '../../../../../utils/pages/path/initial'
 import { getCapitalizedText } from '../../../../../utils/format'
 
 const MenuButton = ({

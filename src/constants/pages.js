@@ -20,10 +20,3 @@ export const TABBED_PAGES_SET = new Set([
 ])
 
 export const BACK_LINKED_PAGES_SET = new Set()
-
-export const INITIAL_CHILD_PAGES = {
-    [ABOUT_PAGE]: 'story',
-    [GUIDES_PAGE]: 'chords',
-    [PUZZLES_PAGE]: '2021',
-    [RULES_PAGE]: 'setup',
-}

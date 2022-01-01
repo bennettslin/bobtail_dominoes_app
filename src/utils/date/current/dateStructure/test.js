@@ -1,4 +1,4 @@
-import { filterOutFutureDateStructuredPages } from '.'
+import { filterOutFutureDateStructuredPages, getLastDateStructuredPageForLink } from '.'
 import { getAfterAll, getBeforeAll } from '../../../../__mocks__/currentDate'
 import { DATE_STRUCTURED_PAGES } from '../../../../__mocks__/dateStructuredPages'
 
@@ -26,6 +26,19 @@ describe('filterOutFutureDateStructuredPages', () => {
                     },
                 },
             },
+        })
+    })
+})
+
+describe('getLastDateStructuredPageForLink', () => {
+    beforeAll(getBeforeAll({ year: 2021, month: 11, day: 13 }))
+    afterAll(getAfterAll())
+
+    it('returns last date-structured page for link', () => {
+        expect(
+            getLastDateStructuredPageForLink(DATE_STRUCTURED_PAGES),
+        ).toStrictEqual({
+            date: { day: 13, month: 11, year: 2021 },
         })
     })
 })
