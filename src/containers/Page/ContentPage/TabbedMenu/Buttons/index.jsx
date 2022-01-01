@@ -1,19 +1,19 @@
 import React, { useContext } from 'react'
 import PageConfigContext from '../../../../../contexts/PageConfig'
 import TabbedMenuButton from '../Button'
-import { getPastOrPresentPage } from '../../../../../utils/date/current'
+import { getTimeEligiblePage } from '../../../../../utils/date/current'
 import { getFormattedPageLink } from '../../../../../utils/pages/format'
 
 const TabbedMenuButtons = () => {
     const { pages = [], topLevelPage } = useContext(PageConfigContext)
 
-    const eligiblePages = pages.filter(page => (
-        getPastOrPresentPage(page)
+    const timeEligiblePages = pages.filter(page => (
+        getTimeEligiblePage(page)
     ))
 
-    return Boolean(eligiblePages.length) && (
+    return Boolean(timeEligiblePages.length) && (
         <>
-            {eligiblePages.map(({ id, date }, index) => (
+            {timeEligiblePages.map(({ id, date }, index) => (
                 <TabbedMenuButton
                     {...{
                         key: index,

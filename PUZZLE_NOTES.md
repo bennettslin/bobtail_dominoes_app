@@ -15,7 +15,7 @@
         * Tabs for just previous and next day
         * Back tab to month page
 
-* Prevent future pages from being shown
+* Make puzzle pages smarter, only do did mount on load
 
 * Interval thumbnail svgs
 

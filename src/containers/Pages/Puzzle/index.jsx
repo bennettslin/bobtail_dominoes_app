@@ -2,25 +2,20 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import getDidMountHoc from '../../../hocs/DidMountHoc'
 import Puzzle from '../../../components/Puzzle'
-import Page from '../../Page'
-import NotFoundPage from '../NotFound'
-import { getIsPastOrPresentDate } from '../../../utils/date/current'
+import TimeEligiblePage from '../TimeEligible'
+import { getIsTimeEligibleDate } from '../../../utils/date/current'
 import { addDaysToDate } from '../../../utils/date'
 import { boardPropTypes, datePropTypes, handListPropTypes } from '../../../constants/propTypes'
 
 const PuzzlePage = ({
     didMount,
     pageContext: {
-        pageMap,
+        pageMap: { handList, moves, date, ...rest },
     } = {},
 }) => {
-    const
-        { handList, moves, ...rest } = pageMap,
-        { date } = rest
-
-    return !didMount || getIsPastOrPresentDate(date) ? (
-        <Page
-            {...didMount && {
+    return didMount && (
+        <TimeEligiblePage
+            {...{
                 body: (
                     <Puzzle
                         {...{
@@ -39,17 +34,16 @@ const PuzzlePage = ({
                                 })),
                             },
                             ...rest,
-                            canShowAnswer: getIsPastOrPresentDate(
+                            canShowAnswer: getIsTimeEligibleDate(
                                 addDaysToDate(date, 1),
                             ),
                         }}
                     />
                 ),
+                date,
                 ...rest,
             }}
         />
-    ) : (
-        <NotFoundPage />
     )
 }
 

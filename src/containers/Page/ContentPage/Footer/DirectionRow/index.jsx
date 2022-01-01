@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import PageConfigContext from '../../../../../contexts/PageConfig'
 import PageFooterRow from '../FooterRow'
 import DirectionPageLink from './DirectionPageLink'
-import { getPastOrPresentPage } from '../../../../../utils/date/current'
+import { getTimeEligiblePage } from '../../../../../utils/date/current'
 
 const DirectionRow = () => {
     const
@@ -11,17 +11,17 @@ const DirectionRow = () => {
             directionRightPage,
         } = useContext(PageConfigContext),
 
-        eligibleLeftPage = getPastOrPresentPage(directionLeftPage),
-        eligibleRightPage = getPastOrPresentPage(directionRightPage)
+        timeEligibleLeftPage = getTimeEligiblePage(directionLeftPage),
+        timeEligibleRightPage = getTimeEligiblePage(directionRightPage)
 
-    return (eligibleLeftPage || eligibleRightPage) && (
+    return (timeEligibleLeftPage || timeEligibleRightPage) && (
         <PageFooterRow
             {...{
                 leftChild: (
                     <DirectionPageLink
                         {...{
                             direction: -1,
-                            directionPage: eligibleLeftPage,
+                            directionPage: timeEligibleLeftPage,
                         }}
                     />
                 ),
@@ -29,7 +29,7 @@ const DirectionRow = () => {
                     <DirectionPageLink
                         {...{
                             direction: 1,
-                            directionPage: eligibleRightPage,
+                            directionPage: timeEligibleRightPage,
                         }}
                     />
                 ),

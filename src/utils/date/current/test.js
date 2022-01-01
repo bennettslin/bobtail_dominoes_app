@@ -1,4 +1,4 @@
-import { getIsPastOrPresentDate, getCurrentDate } from '.'
+import { getIsTimeEligibleDate, getCurrentDate, getTimeEligiblePage } from '.'
 import { getAfterAll, getBeforeAll } from '../../../__mocks__/currentDate'
 
 describe('getCurrentDate', () => {
@@ -12,24 +12,47 @@ describe('getCurrentDate', () => {
     })
 })
 
-describe('getIsPastOrPresentDate', () => {
+describe('getIsTimeEligibleDate', () => {
     beforeAll(getBeforeAll())
     afterAll(getAfterAll())
 
     it('returns true for past date', () => {
-        expect(getIsPastOrPresentDate(
+        expect(getIsTimeEligibleDate(
             { year: 1983, month: 5, day: 3 },
         )).toBe(true)
     })
 
     it('returns true for present date', () => {
-        expect(getIsPastOrPresentDate(
+        expect(getIsTimeEligibleDate(
             { year: 1983, month: 5, day: 4 },
         )).toBe(true)
     })
 
     it('returns false for future date', () => {
-        expect(getIsPastOrPresentDate(
+        expect(getIsTimeEligibleDate(
+            { year: 1983, month: 5, day: 5 },
+        )).toBe(false)
+    })
+})
+
+describe('getTimeEligiblePage', () => {
+    beforeAll(getBeforeAll())
+    afterAll(getAfterAll())
+
+    it('returns true for past date', () => {
+        expect(getTimeEligiblePage(
+            { year: 1983, month: 5, day: 3 },
+        )).toBe(true)
+    })
+
+    it('returns true for present date', () => {
+        expect(getTimeEligiblePage(
+            { year: 1983, month: 5, day: 4 },
+        )).toBe(true)
+    })
+
+    it('returns false for future date', () => {
+        expect(getTimeEligiblePage(
             { year: 1983, month: 5, day: 5 },
         )).toBe(false)
     })

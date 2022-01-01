@@ -1,10 +1,10 @@
-import { getIsPastOrPresentDate } from '..'
+import { getIsTimeEligibleDate } from '..'
 import { getPageLinkConfig } from '../../../pages/config'
 import { flattenDateStructuredPages } from '../../../pages/dateStructure'
 
 const filterOutFutureDay = ({ dateStructuredPages, year, month }) => {
     Object.keys(dateStructuredPages[year][month]).forEach(day => {
-        if (!getIsPastOrPresentDate({ year, month, day })) {
+        if (!getIsTimeEligibleDate({ year, month, day })) {
             delete dateStructuredPages[year][month][day]
         }
     })
@@ -12,7 +12,7 @@ const filterOutFutureDay = ({ dateStructuredPages, year, month }) => {
 
 const filterOutFutureMonth = ({ dateStructuredPages, year }) => {
     Object.keys(dateStructuredPages[year]).forEach(month => {
-        if (!getIsPastOrPresentDate({ year, month })) {
+        if (!getIsTimeEligibleDate({ year, month })) {
             delete dateStructuredPages[year][month]
         } else {
             filterOutFutureDay({
@@ -26,7 +26,7 @@ const filterOutFutureMonth = ({ dateStructuredPages, year }) => {
 
 export const filterOutFutureDateStructuredPages = dateStructuredPages => {
     Object.keys(dateStructuredPages).forEach(year => {
-        if (!getIsPastOrPresentDate({ year })) {
+        if (!getIsTimeEligibleDate({ year })) {
             delete dateStructuredPages[year]
         } else {
             filterOutFutureMonth({

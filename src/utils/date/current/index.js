@@ -26,7 +26,7 @@ export const getCurrentDate = () => (
     getDateForDateObject(global.adminCurrentDate)
 )
 
-export const getIsPastOrPresentDate = date => (
+export const getIsTimeEligibleDate = date => (
     // Render all dates on server side.
     getIsServerSide() ||
 
@@ -36,11 +36,11 @@ export const getIsPastOrPresentDate = date => (
     ) >= 0
 )
 
-export const getPastOrPresentPage = page => (
+export const getTimeEligiblePage = page => (
     // eslint-disable-next-line no-nested-ternary
     !page || !page.date ?
         null :
-        getIsPastOrPresentDate(page.date) ?
+        getIsTimeEligibleDate(page.date) ?
             page :
             null
 )
