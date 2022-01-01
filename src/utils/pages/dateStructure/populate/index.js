@@ -1,8 +1,4 @@
-import { getDateValueFromMaps } from '..'
-
-export const getKeyedListFromMap = map => (
-    Object.keys(map).map(key => ({ [key]: map[key] }))
-)
+import { getDateValueFromMaps, getKeyedListFromMap } from '..'
 
 const populateDaysMap = ({
     year,

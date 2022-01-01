@@ -6,7 +6,7 @@ import Page from '../../Page'
 import NotFoundPage from '../NotFound'
 import { datePropTypes, pagesPropTypes } from '../../../constants/propTypes'
 
-const PuzzleLinksPage = ({
+const PuzzleMonthPage = ({
     didMount,
     pageContext: {
         pageMap: {
@@ -17,7 +17,7 @@ const PuzzleLinksPage = ({
 }) => {
     return didMount ? (
         <Page
-            {...didMount && {
+            {...{
                 body: (
                     <PuzzleLinks {...{ date }} />
                 ),
@@ -29,7 +29,7 @@ const PuzzleLinksPage = ({
     )
 }
 
-PuzzleLinksPage.propTypes = {
+PuzzleMonthPage.propTypes = {
     didMount: PropTypes.bool.isRequired,
     pageContext: PropTypes.shape({
         pageMap: PropTypes.shape({
@@ -40,4 +40,4 @@ PuzzleLinksPage.propTypes = {
     }),
 }
 
-export default getDidMountHoc(PuzzleLinksPage)
+export default getDidMountHoc(PuzzleMonthPage)

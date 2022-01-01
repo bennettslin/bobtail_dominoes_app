@@ -1,4 +1,5 @@
 # TODO
+* PuzzleMonthLinks component
 
 * Organize puzzle list by month
     * Year page
@@ -7,13 +8,14 @@
         * No back tab
 
     * Month page
-        * Each month page has puzzle links
         * Tabs for just previous and next month
         * Back tab to year page
 
     * Puzzle page
         * Tabs for just previous and next day
         * Back tab to month page
+
+* Day pages should be separated by slash, not dash
 
 * Puzzles menu button links to most recent puzzle
 

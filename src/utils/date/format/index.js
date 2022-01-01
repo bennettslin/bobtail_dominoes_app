@@ -14,6 +14,10 @@ export const formatDate = date => {
             if (!day) {
                 dateFormat = 'yyyy'
             }
+        } else {
+            if (!day) {
+                dateFormat = 'MMMM yyyy'
+            }
         }
     } else {
         if (month) {

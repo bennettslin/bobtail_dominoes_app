@@ -20,6 +20,8 @@ const Page = ({ className, children, ...rest }) => {
         )
     }, [])
 
+    console.log('page rest', rest)
+
     return (
         <PageConfigContext.Provider {...{ value: rest }}>
             <Helmet />

@@ -4,7 +4,11 @@ import puzzles2022 from './2022'
 import { getPagesList } from '../../utils/pages/config'
 import { filterOutFutureDateStructuredPages } from '../../utils/date/current/dateStructure'
 import { contextualisePageConfigs } from '../../utils/pages/context'
-import { flattenDateStructuredPages } from '../../utils/pages/dateStructure'
+import {
+    flattenDateStructuredPages,
+    flattenMonthStructuredPages,
+    flattenYearStructuredPages,
+} from '../../utils/pages/dateStructure'
 import { populateDateStructuredPages } from '../../utils/pages/dateStructure/populate'
 import { addDirectionPages } from '../../utils/pages/directionPages'
 import { PUZZLES_PAGE } from '../../constants/pages'
@@ -31,14 +35,20 @@ export const puzzlePages = (
 )
 
 // For server side.
-export const puzzleLinkPages = (
+export const puzzleMonthPages = (
     contextualisePageConfigs(
         getPagesList({
-            pageDates: [
-                { year: 2020 },
-                { year: 2021 },
-                { year: 2022 },
-            ].reverse(),
+            pageDates: flattenMonthStructuredPages(puzzles).reverse(),
+            topLevelPage: PUZZLES_PAGE,
+        }),
+    )
+)
+
+// For server side.
+export const puzzleYearPages = (
+    contextualisePageConfigs(
+        getPagesList({
+            pageDates: flattenYearStructuredPages(puzzles).reverse(),
             topLevelPage: PUZZLES_PAGE,
         }),
     )
