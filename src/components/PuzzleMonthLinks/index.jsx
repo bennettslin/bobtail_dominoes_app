@@ -20,7 +20,7 @@ const PuzzleMonthLinks = ({ date: { year }, topLevelPage }) => (
             alignItems: 'start',
         }}
     >
-        {getNumberKeysFromMap(puzzles[year]).reverse().map(month => (
+        {getNumberKeysFromMap(puzzles[year]).map(month => (
             <Anchor
                 {...{
                     key: month,

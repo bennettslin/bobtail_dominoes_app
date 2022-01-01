@@ -25,7 +25,7 @@ const PuzzleLinks = ({ date: { year, month } }) => (
                 gap: 'xs',
             }}
         >
-            {getValueListFromMap(puzzles[year][month]).reverse().map(
+            {getValueListFromMap(puzzles[year][month]).map(
                 (pageMaps, index) => (
                     <PuzzleLink
                         {...{

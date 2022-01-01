@@ -13,7 +13,11 @@
 
 * Make puzzle pages smarter, only do did mount on load
 
+* Make puzzles in full width correspond to days of week
+
 * Fix and add unit tests
+* Tabbed menu responsive
+* Puzzle links responsive
 
 * Interval thumbnail svgs
 

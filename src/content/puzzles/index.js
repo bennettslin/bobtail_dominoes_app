@@ -29,7 +29,7 @@ const allPuzzles = populateDateMappedPages({
 export const puzzlePages = (
     contextualisePageConfigs(
         addDirectionPages(
-            flattenDateMappedPages(allPuzzles).reverse(),
+            flattenDateMappedPages(allPuzzles),
         ),
     )
 )
@@ -38,7 +38,7 @@ export const puzzlePages = (
 export const puzzleMonthPages = (
     contextualisePageConfigs(
         getPagesList({
-            pageDates: flattenMonthMappedPages(allPuzzles).reverse(),
+            pageDates: flattenMonthMappedPages(allPuzzles),
             topLevelPage: PUZZLES_PAGE,
         }),
     )
@@ -48,7 +48,7 @@ export const puzzleMonthPages = (
 export const puzzleYearPages = (
     contextualisePageConfigs(
         getPagesList({
-            pageDates: flattenYearMappedPages(allPuzzles).reverse(),
+            pageDates: flattenYearMappedPages(allPuzzles),
             topLevelPage: PUZZLES_PAGE,
         }),
     )
