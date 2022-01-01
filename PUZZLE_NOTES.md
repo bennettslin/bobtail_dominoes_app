@@ -15,7 +15,7 @@
         * Tabs for just previous and next day
         * Back tab to month page
 
-* Prevent future dates from being shown anywhere, including tabs
+* Prevent future pages from being shown
 
 * Interval thumbnail svgs
 

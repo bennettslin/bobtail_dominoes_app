@@ -35,3 +35,12 @@ export const getIsPastOrPresentDate = date => (
         getDateObjectForDate(date),
     ) >= 0
 )
+
+export const getPastOrPresentPage = page => (
+    // eslint-disable-next-line no-nested-ternary
+    !page || !page.date ?
+        null :
+        getIsPastOrPresentDate(page.date) ?
+            page :
+            null
+)
