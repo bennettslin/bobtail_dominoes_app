@@ -1,6 +1,4 @@
 # TODO
-* Add tabbed menu links to puzzle pages
-
 * Responsive
     * Tabbed menu
         * Shorten text links

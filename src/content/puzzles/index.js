@@ -8,6 +8,7 @@ import {
 } from '../../utils/pages/dateMapped'
 import { populateDateMappedPages } from '../../utils/pages/dateMapped/populate'
 import { addDirectionPages } from '../../utils/pages/directionPages'
+import { addTabbedPages } from '../../utils/pages/tabbedPages'
 import { PUZZLES_PAGE } from '../../constants/pages'
 import puzzles2020 from './2020'
 import puzzles2021 from './2021'
@@ -29,7 +30,10 @@ const allPuzzles = populateDateMappedPages({
 export const puzzlePages = (
     contextualisePageConfigs(
         addDirectionPages(
-            flattenDateMappedPages(allPuzzles),
+            addTabbedPages({
+                configs: flattenDateMappedPages(allPuzzles),
+                truncatePages: true,
+            }),
         ),
     )
 )
