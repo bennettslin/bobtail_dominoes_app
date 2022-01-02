@@ -7,7 +7,7 @@ import { datePropTypes, pagesPropTypes } from '../../../constants/propTypes'
 
 const PuzzleYearPage = ({
     pageContext: {
-        pageMap: { date, topLevelPage, ...rest },
+        pageMap: { date, topLevelPage, monthsList, ...rest },
     },
 }) => {
     const { didAppLoad } = useContext(AppLoadedContext)
@@ -16,7 +16,13 @@ const PuzzleYearPage = ({
         <TimeEligiblePage
             {...{
                 body: (
-                    <PuzzleMonthLinks {...{ date, topLevelPage }} />
+                    <PuzzleMonthLinks
+                        {...{
+                            date,
+                            topLevelPage,
+                            monthsList,
+                        }}
+                    />
                 ),
                 date,
                 topLevelPage,
@@ -31,6 +37,9 @@ PuzzleYearPage.propTypes = {
         pageMap: PropTypes.shape({
             date: datePropTypes.isRequired,
             pages: pagesPropTypes.isRequired,
+            monthsList: PropTypes.arrayOf(
+                PropTypes.number.isRequired,
+            ).isRequired,
             topLevelPage: PropTypes.string.isRequired,
         }),
     }),

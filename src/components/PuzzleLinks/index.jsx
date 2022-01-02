@@ -1,12 +1,13 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Flex from '../Flex'
 import PuzzleLink from './PuzzleLink'
-import puzzles from '../../content/puzzles'
-import { getValueListFromMap } from '../../utils/general/keyMap'
-import { datePropTypes } from '../../constants/propTypes'
+import { filterTimeEligiblePages } from '../../utils/date/current'
+import { puzzlePagePropTypes } from '../../constants/propTypes'
+import { formatDate } from '../../utils/date/format'
 
-const PuzzleLinks = ({ date: { year, month } }) => (
+const PuzzleLinks = ({ puzzlesList }) => (
     <Flex
         {...{
             className: cx(
@@ -25,22 +26,20 @@ const PuzzleLinks = ({ date: { year, month } }) => (
                 gap: 'xs',
             }}
         >
-            {getValueListFromMap(puzzles[year][month]).map(
-                (pageMaps, index) => (
-                    <PuzzleLink
-                        {...{
-                            key: index,
-                            ...pageMaps,
-                        }}
-                    />
-                ),
-            )}
+            {filterTimeEligiblePages(puzzlesList).map(puzzle => (
+                <PuzzleLink
+                    {...{
+                        key: formatDate({ date: puzzle.date }),
+                        ...puzzle,
+                    }}
+                />
+            ))}
         </Flex>
     </Flex>
 )
 
 PuzzleLinks.propTypes = {
-    date: datePropTypes,
+    puzzlesList: PropTypes.arrayOf(puzzlePagePropTypes).isRequired,
 }
 
 export default PuzzleLinks

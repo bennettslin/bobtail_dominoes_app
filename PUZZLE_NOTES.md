@@ -1,3 +1,6 @@
+# TODO:
+* Pass puzzles info to menu
+
 # TODO: high priority
 * Puzzles by day of week
 * Puzzle test page counter to make it more organised

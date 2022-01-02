@@ -38,3 +38,14 @@ export const datePropTypes = PropTypes.shape({
 export const handListPropTypes = PropTypes.arrayOf(
     PropTypes.number.isRequired,
 )
+
+export const puzzlePagePropTypes = PropTypes.shape({
+    title: PropTypes.string,
+    topLevelPage: PropTypes.string.isRequired,
+    date: datePropTypes,
+    puzzleType: PropTypes.string,
+    board: boardPropTypes.isRequired,
+    handList: handListPropTypes,
+    moves: boardPropTypes,
+    missingMoves: boardPropTypes,
+})

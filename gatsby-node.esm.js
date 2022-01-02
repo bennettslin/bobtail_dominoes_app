@@ -1,6 +1,6 @@
 import webpack from 'webpack'
 import FilterWarningsPlugin from 'webpack-filter-warnings-plugin'
-import { puzzleMonthPages, puzzlePages, puzzleYearPages } from './src/content/puzzles'
+import { createPuzzlePages } from './src/utils/gatsby/pages/puzzles'
 import {
     getIsProductionBuild,
     getIsRuntimeBuild,
@@ -31,30 +31,5 @@ export const onCreateWebpackConfig = ({ actions }) => {
 }
 
 export const createPages = ({ actions }) => {
-    puzzlePages.forEach(page => {
-        actions.createPage({
-            ...page,
-            component: require.resolve(
-                './src/containers/Pages/Puzzle/index.jsx',
-            ),
-        })
-    })
-
-    puzzleMonthPages.forEach(page => {
-        actions.createPage({
-            ...page,
-            component: require.resolve(
-                './src/containers/Pages/PuzzleMonth/index.jsx',
-            ),
-        })
-    })
-
-    puzzleYearPages.forEach(page => {
-        actions.createPage({
-            ...page,
-            component: require.resolve(
-                './src/containers/Pages/PuzzleYear/index.jsx',
-            ),
-        })
-    })
+    createPuzzlePages(actions)
 }

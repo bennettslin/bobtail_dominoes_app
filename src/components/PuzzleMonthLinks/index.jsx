@@ -3,13 +3,12 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Anchor from '../Anchor'
 import Flex from '../Flex'
-import puzzles from '../../content/puzzles'
 import { formatDate } from '../../utils/date/format'
-import { getNumberKeysFromMap } from '../../utils/general/keyMap'
 import { getPagePathFromConfig } from '../../utils/pages/path/config'
 import { datePropTypes } from '../../constants/propTypes'
+import { filterTimeEligiblePages } from '../../utils/date/current'
 
-const PuzzleMonthLinks = ({ date: { year }, topLevelPage }) => (
+const PuzzleMonthLinks = ({ date: { year }, topLevelPage, monthsList }) => (
     <Flex
         {...{
             className: cx(
@@ -20,7 +19,11 @@ const PuzzleMonthLinks = ({ date: { year }, topLevelPage }) => (
             alignItems: 'start',
         }}
     >
-        {getNumberKeysFromMap(puzzles[year]).map(month => (
+        {filterTimeEligiblePages(
+            monthsList.map(month => ({
+                date: { year, month },
+            })),
+        ).map(({ date: { month } }) => (
             <Anchor
                 {...{
                     key: month,
@@ -38,6 +41,9 @@ const PuzzleMonthLinks = ({ date: { year }, topLevelPage }) => (
 
 PuzzleMonthLinks.propTypes = {
     date: datePropTypes,
+    monthsList: PropTypes.arrayOf(
+        PropTypes.number.isRequired,
+    ).isRequired,
     topLevelPage: PropTypes.string.isRequired,
 }
 

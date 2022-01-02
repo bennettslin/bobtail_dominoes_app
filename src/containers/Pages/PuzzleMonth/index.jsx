@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import AppLoadedContext from '../../../contexts/AppLoaded'
 import PuzzleLinks from '../../../components/PuzzleLinks'
 import TimeEligiblePage from '../TimeEligible'
-import { datePropTypes, pagesPropTypes } from '../../../constants/propTypes'
+import { datePropTypes, pagesPropTypes, puzzlePagePropTypes } from '../../../constants/propTypes'
 
 const PuzzleMonthPage = ({
     pageContext: {
-        pageMap: { date, ...rest },
+        pageMap: { puzzlesList, ...rest },
     },
 }) => {
     const { didAppLoad } = useContext(AppLoadedContext)
@@ -16,9 +16,8 @@ const PuzzleMonthPage = ({
         <TimeEligiblePage
             {...{
                 body: (
-                    <PuzzleLinks {...{ date }} />
+                    <PuzzleLinks {...{ puzzlesList }} />
                 ),
-                date,
                 ...rest,
             }}
         />
@@ -30,6 +29,7 @@ PuzzleMonthPage.propTypes = {
         pageMap: PropTypes.shape({
             date: datePropTypes.isRequired,
             pages: pagesPropTypes.isRequired,
+            puzzlesList: PropTypes.arrayOf(puzzlePagePropTypes).isRequired,
             topLevelPage: PropTypes.string.isRequired,
         }),
     }),

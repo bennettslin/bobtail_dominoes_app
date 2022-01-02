@@ -5,7 +5,7 @@ import Puzzle from '../../../components/Puzzle'
 import TimeEligiblePage from '../TimeEligible'
 import { getIsTimeEligibleDate } from '../../../utils/date/current'
 import { addDaysToDate } from '../../../utils/date'
-import { boardPropTypes, datePropTypes, handListPropTypes } from '../../../constants/propTypes'
+import { puzzlePagePropTypes } from '../../../constants/propTypes'
 
 const PuzzlePage = ({
     pageContext: {
@@ -50,16 +50,7 @@ const PuzzlePage = ({
 
 PuzzlePage.propTypes = {
     pageContext: PropTypes.shape({
-        pageMap: PropTypes.shape({
-            title: PropTypes.string,
-            topLevelPage: PropTypes.string.isRequired,
-            date: datePropTypes,
-            puzzleType: PropTypes.string.isRequired,
-            board: boardPropTypes.isRequired,
-            handList: handListPropTypes,
-            moves: boardPropTypes,
-            missingMoves: boardPropTypes,
-        }),
+        pageMap: puzzlePagePropTypes,
     }),
 }
 

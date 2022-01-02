@@ -42,3 +42,9 @@ export const getTimeEligiblePage = page => (
         !page.date || getIsTimeEligibleDate(page.date)
     ) ? page : null
 )
+
+export const filterTimeEligiblePages = pages => (
+    pages.filter(({ date }) => (
+        getIsTimeEligibleDate(date)
+    ))
+)

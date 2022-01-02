@@ -1,4 +1,4 @@
-import { getIsTimeEligibleDate, getCurrentDate, getTimeEligiblePage } from '.'
+import { getIsTimeEligibleDate, getCurrentDate, getTimeEligiblePage, filterTimeEligiblePages } from '.'
 import { getAfterAll, getBeforeAll } from '../../../__mocks__/currentDate'
 
 describe('getCurrentDate', () => {
@@ -59,5 +59,17 @@ describe('getTimeEligiblePage', () => {
         expect(getTimeEligiblePage(
             { date: { year: 1987, month: 8, day: 22 } },
         )).toBeNull()
+    })
+})
+
+describe('filterTimeEligiblePages', () => {
+    beforeAll(getBeforeAll())
+    afterAll(getAfterAll())
+
+    it('returns list of past and present pages', () => {
+        expect(filterTimeEligiblePages([
+            { date: { year: 1983, month: 5, day: 4 } },
+            { date: { year: 1987, month: 8, day: 22 } },
+        ])).toStrictEqual([{ date: { year: 1983, month: 5, day: 4 } }])
     })
 })

@@ -68,7 +68,6 @@ const PuzzleLink = ({
 PuzzleLink.propTypes = {
     topLevelPage: PropTypes.string.isRequired,
     date: datePropTypes,
-    puzzleType: PropTypes.string.isRequired,
     board: boardPropTypes.isRequired,
     handList: handListPropTypes,
     missingMoves: boardPropTypes,
