@@ -17,16 +17,24 @@ export const getPagesMapFromList = configs => (
     }, {})
 )
 
-export const getPagesList = ({ pageIds, pageDates, ...rest }) => (
+export const getPagesList = ({
+    pageIds,
+    pageDates,
+    truncatePages,
+    ...rest
+}) => (
     addDirectionPages(
-        addTabbedPages(
-            pageIds ?
+        addTabbedPages({
+            configs: pageIds ?
                 pageIds.map(id => ({ id, ...rest })) :
                 pageDates.map(date => ({ date, ...rest })),
-        ),
+            truncatePages,
+        }),
     )
 )
 
 export const getPagesMap = props => (
-    getPagesMapFromList(getPagesList(props))
+    getPagesMapFromList(
+        getPagesList(props),
+    )
 )

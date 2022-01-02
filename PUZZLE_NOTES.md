@@ -1,17 +1,16 @@
 # TODO
-* Tabbed menu limits to previous and next
-    * Puzzle pages pass pages
-    * Pages just have previous, current, next, and before and after ellipses
-    * Render before and after ellipses
+* Add tabbed menu links to puzzle pages
 
 * Responsive
     * Tabbed menu
+        * Shorten text links
     * Puzzle links
 
 * Interval thumbnail svgs
 
 # TODO: medium priority
 * Fix and add unit tests
+    * addTabbedPages
 
 # TODO: low priority
 * Make puzzles in full width correspond to days of week

@@ -13,13 +13,14 @@ const TabbedMenuButtons = () => {
 
     return Boolean(timeEligiblePages.length) && (
         <>
-            {timeEligiblePages.map(({ id, date }, index) => (
+            {timeEligiblePages.map(({ id, date, isEllipsis }, index) => (
                 <TabbedMenuButton
                     {...{
                         key: index,
                         id,
                         date,
                         topLevelPage,
+                        isEllipsis,
                     }}
                 >
                     {getFormattedPageLink({ id, date })}

@@ -40,6 +40,7 @@ export const puzzleMonthPages = (
         getPagesList({
             pageDates: flattenMonthMappedPages(allPuzzles),
             topLevelPage: PUZZLES_PAGE,
+            truncatePages: true,
         }),
     )
 )
@@ -50,6 +51,7 @@ export const puzzleYearPages = (
         getPagesList({
             pageDates: flattenYearMappedPages(allPuzzles),
             topLevelPage: PUZZLES_PAGE,
+            truncatePages: true,
         }),
     )
 )

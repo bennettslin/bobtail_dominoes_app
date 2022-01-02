@@ -7,18 +7,22 @@ import StyledTabButton from '../../../../../components/Styled/TabButton'
 import { getMapIsSelectedPagePath } from '../../../../../redux/page/selector'
 import { getPagePathFromConfig } from '../../../../../utils/pages/path/config'
 import { datePropTypes } from '../../../../../constants/propTypes'
+import TabbedMenuEllipsis from './Ellipsis'
 
 const TabbedMenuButton = ({
     id,
     date,
     topLevelPage,
+    isEllipsis,
     children,
 }) => {
     const
         pagePath = getPagePathFromConfig({ topLevelPage, id, date }),
         isSelected = useSelector(getMapIsSelectedPagePath(pagePath))
 
-    return (
+    return isEllipsis ? (
+        <TabbedMenuEllipsis />
+    ) : (
         <StyledTabButton
             {...{
                 className: cx(
@@ -42,6 +46,7 @@ TabbedMenuButton.propTypes = {
     id: PropTypes.string,
     date: datePropTypes,
     topLevelPage: PropTypes.string.isRequired,
+    isEllipsis: PropTypes.bool,
     children: PropTypes.node.isRequired,
 }
 

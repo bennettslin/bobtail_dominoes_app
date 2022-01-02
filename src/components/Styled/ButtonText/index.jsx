@@ -3,13 +3,14 @@ import PropTypes from 'prop-types'
 import StyledShadow from '../Shadow'
 
 const StyledButtonText = ({
+    disabled,
     isSelected,
     children,
 
 }) => (
     <StyledShadow
-        isGold
         {...{
+            isGold: !disabled,
             isInset: isSelected,
         }}
     >
@@ -18,6 +19,7 @@ const StyledButtonText = ({
 )
 
 StyledButtonText.propTypes = {
+    disabled: PropTypes.bool,
     isSelected: PropTypes.bool,
     children: PropTypes.node.isRequired,
 }
