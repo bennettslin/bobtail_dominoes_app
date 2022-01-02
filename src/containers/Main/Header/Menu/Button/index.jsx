@@ -4,7 +4,7 @@ import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import StyledButton from '../../../../../components/Styled/Button'
 import StyledButtonText from '../../../../../components/Styled/ButtonText'
-import { getMapIsSelectedOrTabbedPagePath } from '../../../../../redux/page/selector'
+import { getMapIsSelectedMenuPath } from '../../../../../redux/page/selector'
 import { join } from '../../../../../utils/general'
 import { getInitialChildPage } from '../../../../../utils/pages/path/initial'
 import { getCapitalizedText } from '../../../../../utils/format'
@@ -14,9 +14,7 @@ const MenuButton = ({
     topLevelPage,
     children,
 }) => {
-    const isSelected = useSelector(
-        getMapIsSelectedOrTabbedPagePath(topLevelPage),
-    )
+    const isSelected = useSelector(getMapIsSelectedMenuPath(topLevelPage))
 
     return (
         <StyledButton

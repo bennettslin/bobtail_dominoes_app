@@ -1,19 +1,7 @@
 # TODO
-* Puzzle pages
-    * Year page
-        * Tabs for previous and next year
-
-    * Month page
-        * Tabs for just previous and next month
-
-    * Puzzle page
-        * Tabs for just previous and next day
-
-* Make puzzle pages smarter, only do did mount on load
+* Tabbed menu limits to previous and next
 
 * Make puzzles in full width correspond to days of week
-
-* Tabbed menu should show selected for any child page
 
 * Fix and add unit tests
 * Tabbed menu responsive
@@ -21,6 +9,7 @@
 
 * Interval thumbnail svgs
 
+* Make puzzle pages smarter, only do did mount on load
 # Puzzle types
 * Switch up number of dominoes on board
 * Make hand score less or more

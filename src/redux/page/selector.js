@@ -32,18 +32,9 @@ export const mapShowTabbedMenuBackLink = createSelector(
     ),
 )
 
-export const getMapIsSelectedOrTabbedPagePath = pagePath => createSelector(
+export const getMapIsSelectedMenuPath = topLevelPage => createSelector(
     mapSelectedPagePath,
-    getMapIsSelectedPagePath(pagePath),
-    (
-        selectedPagePath,
-        isSelectedPagePath,
-    ) => (
-        isSelectedPagePath ||
-        (
-            getIsTabbedPath(pagePath) &&
-            pagePath === getTopLevelPageFromPath(selectedPagePath)
-        )
+    selectedPagePath => (
+        getTopLevelPageFromPath(selectedPagePath) === topLevelPage
     ),
 )
-
