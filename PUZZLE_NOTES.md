@@ -1,6 +1,4 @@
 # TODO: high priority
-* Make puzzle pages smarter, only do did mount on load
-    * Test in staged build
 * Puzzles by day of week
 * Puzzle test page counter to make it more organised
 

@@ -1,17 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
-import getDidMountHoc from '../../../hocs/DidMountHoc'
+import AppLoadedContext from '../../../contexts/AppLoaded'
 import PuzzleLinks from '../../../components/PuzzleLinks'
 import TimeEligiblePage from '../TimeEligible'
 import { datePropTypes, pagesPropTypes } from '../../../constants/propTypes'
 
 const PuzzleMonthPage = ({
-    didMount,
     pageContext: {
         pageMap: { date, ...rest },
     },
 }) => {
-    return didMount && (
+    const { didAppLoad } = useContext(AppLoadedContext)
+
+    return didAppLoad && (
         <TimeEligiblePage
             {...{
                 body: (
@@ -25,7 +26,6 @@ const PuzzleMonthPage = ({
 }
 
 PuzzleMonthPage.propTypes = {
-    didMount: PropTypes.bool.isRequired,
     pageContext: PropTypes.shape({
         pageMap: PropTypes.shape({
             date: datePropTypes.isRequired,
@@ -35,4 +35,4 @@ PuzzleMonthPage.propTypes = {
     }),
 }
 
-export default getDidMountHoc(PuzzleMonthPage)
+export default PuzzleMonthPage

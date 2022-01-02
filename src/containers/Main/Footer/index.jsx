@@ -1,9 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { useContext } from 'react'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import { CSSTransition } from 'react-transition-group'
-import getDidMountHoc from '../../../hocs/DidMountHoc'
+import AppLoadedContext from '../../../contexts/AppLoaded'
 import Flex from '../../../components/Flex'
 import FollowButtons from '../../../components/FollowButtons'
 import MailingList from '../../../components/MailingList'
@@ -13,13 +12,16 @@ import YearlingsBobtailUpsell from './YearlingsBobtailUpsell'
 import { mapIsUpsellShown } from '../../../redux/option/selector'
 import './style'
 
-const MainFooter = ({ didMount }) => {
-    const isUpsellShown = useSelector(mapIsUpsellShown)
+const MainFooter = () => {
+    const
+        { didAppLoad } = useContext(AppLoadedContext),
+        isUpsellShown = useSelector(mapIsUpsellShown)
 
     return (
         <CSSTransition
+            appear
             {...{
-                in: didMount && !isUpsellShown,
+                in: didAppLoad && !isUpsellShown,
                 timeout: 200,
                 classNames: {
                     enterDone: 'shown',
@@ -65,8 +67,4 @@ const MainFooter = ({ didMount }) => {
     )
 }
 
-MainFooter.propTypes = {
-    didMount: PropTypes.bool.isRequired,
-}
-
-export default getDidMountHoc(MainFooter)
+export default MainFooter

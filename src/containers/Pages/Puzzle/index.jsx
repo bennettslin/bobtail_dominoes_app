@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
-import getDidMountHoc from '../../../hocs/DidMountHoc'
+import AppLoadedContext from '../../../contexts/AppLoaded'
 import Puzzle from '../../../components/Puzzle'
 import TimeEligiblePage from '../TimeEligible'
 import { getIsTimeEligibleDate } from '../../../utils/date/current'
@@ -8,12 +8,13 @@ import { addDaysToDate } from '../../../utils/date'
 import { boardPropTypes, datePropTypes, handListPropTypes } from '../../../constants/propTypes'
 
 const PuzzlePage = ({
-    didMount,
     pageContext: {
         pageMap: { handList, moves, date, ...rest },
     } = {},
 }) => {
-    return didMount && (
+    const { didAppLoad } = useContext(AppLoadedContext)
+
+    return didAppLoad && (
         <TimeEligiblePage
             {...{
                 body: (
@@ -48,7 +49,6 @@ const PuzzlePage = ({
 }
 
 PuzzlePage.propTypes = {
-    didMount: PropTypes.bool.isRequired,
     pageContext: PropTypes.shape({
         pageMap: PropTypes.shape({
             title: PropTypes.string,
@@ -63,4 +63,4 @@ PuzzlePage.propTypes = {
     }),
 }
 
-export default getDidMountHoc(PuzzlePage)
+export default PuzzlePage
