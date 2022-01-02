@@ -30,7 +30,7 @@ const PuzzleMonthLinks = ({ date: { year }, topLevelPage }) => (
                     }),
                 }}
             >
-                {formatDate({ month })}
+                {formatDate({ date: { month } })}
             </Anchor>
         ))}
     </Flex>

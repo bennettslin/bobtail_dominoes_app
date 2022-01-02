@@ -39,7 +39,7 @@ const Body = () => {
                 {getSmartQuotedText(titleHeading)}
             </Heading>
             <Heading {...{ level: 5, fontSize: 'md' }}>
-                {formatDate(pageDate || date)}
+                {formatDate({ date: pageDate || date })}
             </Heading>
             {body && (
                 (Array.isArray(body) ? body : [body])

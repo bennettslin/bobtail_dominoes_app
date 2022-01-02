@@ -1,6 +1,11 @@
 @import '../../../../../../scss/constants/responsive';
 
 .TabbedMenuEllipsis {
-    padding: $margin__xxs 0;
-    margin: 0 -$margin__sm; 
+    margin: 0 -$margin__xs - $margin__xxs;
+
+    @media
+    (min-width: $breakpoint__xs) and (orientation: portrait),
+    (min-height: $breakpoint__xs) and (orientation: landscape) {
+        margin: 0 -$margin__sm - $margin__xxs;
+    }
 }

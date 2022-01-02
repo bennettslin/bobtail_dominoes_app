@@ -3,13 +3,27 @@
 @import '../../../scss/constants/responsive';
 
 .PuzzleLink {
-    width: $margin__xl * 3;
-    height: $margin__xl * 3;
+    width: $margin__md * 3;
+    height: $margin__md * 3;
     padding: $margin__xs;
 
     // Ensure that button is fully covered when hand is also shown.
     background-color: $colour__board;
     border-radius: $borderRadius__lg;
+
+    @media
+    (min-width: $breakpoint__xs) and (orientation: portrait),
+    (min-height: $breakpoint__xs) and (orientation: landscape) {
+        width: $margin__lg * 3;
+        height: $margin__lg * 3;
+    }
+
+    @media
+    (min-width: $breakpoint__sm) and (orientation: portrait),
+    (min-height: $breakpoint__sm) and (orientation: landscape) {
+        width: $margin__xl * 3;
+        height: $margin__xl * 3;
+    }
 }
 
 .PuzzleLink__text {

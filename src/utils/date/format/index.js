@@ -1,13 +1,15 @@
 import { format } from 'date-fns'
 import { getDateObjectForDate } from '..'
 
-export const formatDate = date => {
+export const formatDate = ({ date, truncate } = {}) => {
     if (!date) {
         return
     }
 
-    const { year, month, day } = date
-    let dateFormat = 'MMMM d, yyyy'
+    const
+        { year, month, day } = date,
+        monthFormat = truncate ? 'MMM' : 'MMMM'
+    let dateFormat = `${monthFormat} d, yyyy`
 
     if (year) {
         if (!month) {
@@ -16,12 +18,12 @@ export const formatDate = date => {
             }
         } else {
             if (!day) {
-                dateFormat = 'MMMM yyyy'
+                dateFormat = `${monthFormat} yyyy`
             }
         }
     } else {
         if (month) {
-            dateFormat = day ? 'MMMM d' : 'MMMM'
+            dateFormat = day ? `${monthFormat} d` : monthFormat
         }
     }
 

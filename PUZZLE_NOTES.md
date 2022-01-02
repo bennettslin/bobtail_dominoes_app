@@ -1,14 +1,10 @@
 # TODO
-* Responsive
-    * Tabbed menu
-        * Shorten text links
-    * Puzzle links
-
 * Interval thumbnail svgs
 
 # TODO: medium priority
 * Fix and add unit tests
     * addTabbedPages
+    * formatDate with truncate
 
 # TODO: low priority
 * Make puzzles in full width correspond to days of week
