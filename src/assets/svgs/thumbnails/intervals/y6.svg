@@ -1,0 +1,10 @@
+<svg viewBox="0 0 100 100">
+  <g class="dotsFace">
+    <rect x="14.6" y="39.24" width="8.84" height="8.84" rx="1.56" transform="translate(-18.23 73.33) rotate(-105)"/>
+    <rect x="24.6" y="21.92" width="8.84" height="8.84" rx="1.56" transform="matrix(-0.26, -0.97, 0.97, -0.26, 11.09, 61.19)"/>
+    <rect x="40.58" y="54.24" width="8.84" height="8.84" rx="1.56" transform="translate(-0.01 117.31) rotate(-105)"/>
+    <rect x="50.58" y="36.92" width="8.84" height="8.84" rx="1.56" transform="translate(29.3 105.17) rotate(-105)"/>
+    <rect x="66.56" y="69.24" width="8.84" height="8.84" rx="1.56" transform="translate(18.2 161.29) rotate(-105)"/>
+    <rect x="76.56" y="51.92" width="8.84" height="8.84" rx="1.56" transform="translate(47.52 149.14) rotate(-105)"/>
+  </g>
+</svg>

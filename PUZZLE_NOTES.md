@@ -1,6 +1,3 @@
-# TODO
-* Interval thumbnail svgs
-
 # TODO: medium priority
 * Fix and add unit tests
     * addTabbedPages
