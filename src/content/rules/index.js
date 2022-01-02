@@ -4,7 +4,7 @@ import { RULES_PAGE } from '../../constants/pages'
 export const rulesPageIds = [
     'setup',
     'playing',
-    'rotating',
+    // 'rotating',
     'scoring',
 ]
 

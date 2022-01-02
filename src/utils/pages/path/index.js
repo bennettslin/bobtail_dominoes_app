@@ -4,10 +4,10 @@ export const getTopLevelPageFromPath = (path = '') => (
     path.split('/')[0]
 )
 
-export const getInternalLinkFromPath = path => (
+export const getInternalLinkForPath = path => (
     path === HOME_PAGE ? '/' : `/${path}`
 )
 
-export const getPathFromWindowLocation = (link = '') => (
-    link[0] === '/' ? link.replace('/', '') : link
+export const getPathFromWindowLocation = locationPath => (
+    locationPath === '/' ? HOME_PAGE : locationPath.replace('/', '')
 )

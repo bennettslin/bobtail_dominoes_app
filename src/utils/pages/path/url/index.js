@@ -1,4 +1,4 @@
-import { getInternalLinkFromPath } from '..'
+import { getInternalLinkForPath } from '..'
 import { DOMAIN_NAME, HOME_PAGE } from '../../../../constants/pages'
 
 export const getUrlForPath = (path = '') => {
@@ -10,5 +10,5 @@ export const getUrlForPath = (path = '') => {
         path.includes('.')
     ) ? '' : '/'
 
-    return `${DOMAIN_NAME}${getInternalLinkFromPath(path)}${finalSlash}`
+    return `${DOMAIN_NAME}${getInternalLinkForPath(path)}${finalSlash}`
 }

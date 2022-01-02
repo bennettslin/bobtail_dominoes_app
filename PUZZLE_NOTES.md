@@ -1,11 +1,8 @@
-# TODO: medium priority
-* Fix and add unit tests
-    * addTabbedPages
-    * formatDate with truncate
+# TODO: high priority
+* Make puzzle pages smarter, only do did mount on load
 
 # TODO: low priority
 * Make puzzles in full width correspond to days of week
-* Make puzzle pages smarter, only do did mount on load
 
 # Puzzle types
 * Switch up number of dominoes on board

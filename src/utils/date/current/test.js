@@ -39,21 +39,25 @@ describe('getTimeEligiblePage', () => {
     beforeAll(getBeforeAll())
     afterAll(getAfterAll())
 
-    it('returns true for past date', () => {
-        expect(getTimeEligiblePage(
-            { year: 1983, month: 5, day: 3 },
-        )).toBe(true)
+    it('returns null if no page', () => {
+        expect(getTimeEligiblePage()).toBeNull()
     })
 
-    it('returns true for present date', () => {
+    it('returns page if no date', () => {
         expect(getTimeEligiblePage(
-            { year: 1983, month: 5, day: 4 },
-        )).toBe(true)
+            { id: 'liz' },
+        )).toStrictEqual({ id: 'liz' })
     })
 
-    it('returns false for future date', () => {
+    it('returns page if present date', () => {
         expect(getTimeEligiblePage(
-            { year: 1983, month: 5, day: 5 },
-        )).toBe(false)
+            { date: { year: 1983, month: 5, day: 4 } },
+        )).toStrictEqual({ date: { year: 1983, month: 5, day: 4 } })
+    })
+
+    it('returns null if future date', () => {
+        expect(getTimeEligiblePage(
+            { date: { year: 1987, month: 8, day: 22 } },
+        )).toBeNull()
     })
 })
