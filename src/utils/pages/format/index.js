@@ -4,7 +4,7 @@ import { getCapitalizedText } from '../../format'
 export const getFormattedPageLink = ({
     id,
     date,
-}) => {
+} = {}) => {
     if (id) {
         return getCapitalizedText(id)
 

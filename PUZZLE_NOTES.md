@@ -1,15 +1,22 @@
 # TODO
 * Tabbed menu limits to previous and next
+    * Puzzle pages pass pages
+    * Pages just have previous, current, next, and before and after ellipses
+    * Render before and after ellipses
 
-* Make puzzles in full width correspond to days of week
-
-* Fix and add unit tests
-* Tabbed menu responsive
-* Puzzle links responsive
+* Responsive
+    * Tabbed menu
+    * Puzzle links
 
 * Interval thumbnail svgs
 
+# TODO: medium priority
+* Fix and add unit tests
+
+# TODO: low priority
+* Make puzzles in full width correspond to days of week
 * Make puzzle pages smarter, only do did mount on load
+
 # Puzzle types
 * Switch up number of dominoes on board
 * Make hand score less or more
