@@ -1,5 +1,5 @@
 import qs from 'qs'
-import { getUrlFromPath } from '../pages/path'
+import { getUrlForPath } from '../pages/path/url'
 import { join } from '../general'
 import {
     FACEBOOK_ACCOUNT,
@@ -68,7 +68,7 @@ export const openSocialMediaPopup = ({
 
 }) => {
     const popupWindow = window.open(
-        SOCIAL_MEDIA_URL_MAP[socialMediaKey][brandId](getUrlFromPath(page)),
+        SOCIAL_MEDIA_URL_MAP[socialMediaKey][brandId](getUrlForPath(page)),
         `${APP_NAME}_${socialMediaKey}`,
         getWindowFeatures({
             ...BASE_WINDOW_FEATURES,

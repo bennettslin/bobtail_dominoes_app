@@ -2,7 +2,7 @@ import React from 'react'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import { getLinkFromPath } from '../../utils/pages/path'
+import { getInternalLinkFromPath } from '../../utils/pages/path'
 import { getInternalLink } from './util'
 
 const Anchor = ({
@@ -41,7 +41,7 @@ const Anchor = ({
                     className,
                 ),
                 ...internalLink && {
-                    to: getLinkFromPath(internalLink),
+                    to: getInternalLinkFromPath(internalLink),
                 },
                 ...!internalLink && href && {
                     href,

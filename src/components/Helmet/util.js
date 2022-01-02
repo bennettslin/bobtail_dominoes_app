@@ -1,5 +1,5 @@
 import { getTruncatedText } from '../../utils/format'
-import { getUrlFromPath } from '../../utils/pages/path'
+import { getUrlForPath } from '../../utils/pages/path/url'
 import { HOME_PAGE } from '../../constants/pages'
 import { TWITTER_ACCOUNT } from '../../constants/socialMedia'
 import {
@@ -34,14 +34,14 @@ const getFacebookConfig = ({
     description,
     title,
 }) => ({
-    'og:url': getUrlFromPath(page),
+    'og:url': getUrlForPath(page),
     'og:type': 'website',
     'og:title': getMetaTitle({
         page,
         title,
     }),
     'og:description': getMetaDescription(description),
-    'og:image': getUrlFromPath(`share/image/facebook/${APP_NAME}.png`),
+    'og:image': getUrlForPath(`share/image/facebook/${APP_NAME}.png`),
 })
 
 const getTwitterConfig = ({
@@ -57,7 +57,7 @@ const getTwitterConfig = ({
     }),
     'twitter:description': getMetaDescription(description),
     'twitter:image':
-        getUrlFromPath(`share/image/twitter/${APP_NAME}.png`),
+        getUrlForPath(`share/image/twitter/${APP_NAME}.png`),
 })
 
 const spreadHelmetConfig = ({ config, nameKey }) => (

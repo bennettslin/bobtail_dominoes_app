@@ -7,7 +7,7 @@ import ShareButton from '..'
 import copyUrl from '../../../../assets/svgs/socialMedia/copyUrl'
 import copyUrlCopied from '../../../../assets/svgs/socialMedia/copyUrlCopied'
 import { mapSelectedPagePath } from '../../../../redux/page/selector'
-import { getUrlFromPath } from '../../../../utils/pages/path'
+import { getUrlForPath } from '../../../../utils/pages/path/url'
 import { COPY_URL_KEY } from '../../../../constants/socialMedia'
 
 const TOOLTIP_TEXT = 'link copied!'
@@ -29,7 +29,7 @@ const CopyUrlButton = () => {
     }
 
     const handleButtonClick = () => {
-        navigator.clipboard.writeText(getUrlFromPath(selectedPagePath))
+        navigator.clipboard.writeText(getUrlForPath(selectedPagePath))
 
         clearTimeout(copyTimeoutId)
         setIsCopied(true)

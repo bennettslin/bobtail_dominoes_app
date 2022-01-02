@@ -6,7 +6,7 @@ import Helmet from '../../components/Helmet'
 import ChildrenPage from './ChildrenPage'
 import ContentPage from './ContentPage'
 import { updateSelectedPagePath } from '../../redux/page/action'
-import { getPathFromLink } from '../../utils/pages/path'
+import { getPathFromWindowLocation } from '../../utils/pages/path'
 import { datePropTypes, pagePropTypes, pagesPropTypes } from '../../constants/propTypes'
 
 const Page = ({ className, children, ...rest }) => {
@@ -15,7 +15,7 @@ const Page = ({ className, children, ...rest }) => {
     useEffect(() => {
         dispatch(
             updateSelectedPagePath(
-                getPathFromLink(window.location.pathname),
+                getPathFromWindowLocation(window.location.pathname),
             ),
         )
     }, [])

@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 import Flex from '../Flex'
 import ButtonAnimatable from './Animatable'
 import Tooltip from './Tooltip'
-import { getLinkFromPath } from '../../utils/pages/path'
+import { getInternalLinkFromPath } from '../../utils/pages/path'
 import './style'
 
 const Button = forwardRef(({
@@ -68,7 +68,7 @@ const Button = forwardRef(({
                 },
                 onClick,
                 ...isInternalLink && {
-                    to: getLinkFromPath(pagePath),
+                    to: getInternalLinkFromPath(pagePath),
                 },
                 ...isTooltipEnabled && {
                     'data-for': tooltipId,
