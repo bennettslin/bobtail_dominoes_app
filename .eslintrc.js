@@ -12,6 +12,7 @@ module.exports = {
         BUILD_DATE_TIME: true,
         IS_RUNTIME: true,
         IS_PRODUCTION: true,
+        PUZZLE_MONTH_DATES: true,
         gtag: true,
         logError: true,
         logEvent: true,

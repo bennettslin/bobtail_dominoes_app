@@ -1,5 +1,6 @@
 import webpack from 'webpack'
 import FilterWarningsPlugin from 'webpack-filter-warnings-plugin'
+import { puzzleMonthDates } from './src/content/puzzles/server'
 import { createPuzzlePages } from './src/utils/gatsby/pages/puzzles'
 import {
     getIsProductionBuild,
@@ -17,6 +18,7 @@ export const onCreateWebpackConfig = ({ actions }) => {
                 BUILD_DATE_TIME: buildDateTime,
                 IS_RUNTIME: getIsRuntimeBuild(),
                 IS_PRODUCTION: getIsProductionBuild(),
+                PUZZLE_MONTH_DATES: JSON.stringify(puzzleMonthDates),
             }),
 
             new FilterWarningsPlugin({

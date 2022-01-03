@@ -1,4 +1,4 @@
-import { getIsTimeEligibleDate, getCurrentDate, getTimeEligiblePage, filterTimeEligiblePages } from '.'
+import { getIsTimeEligibleDate, getCurrentDate, getTimeEligiblePage, filterTimeEligiblePages, getMostRecentDateInDateList } from '.'
 import { getAfterAll, getBeforeAll } from '../../../__mocks__/currentDate'
 
 describe('getCurrentDate', () => {
@@ -71,5 +71,21 @@ describe('filterTimeEligiblePages', () => {
             { date: { year: 1983, month: 5, day: 4 } },
             { date: { year: 1987, month: 8, day: 22 } },
         ])).toStrictEqual([{ date: { year: 1983, month: 5, day: 4 } }])
+    })
+})
+
+describe('getMostRecentDateInDateList', () => {
+    beforeAll(getBeforeAll({ year: 2021, month: 11, day: 13 }))
+    afterAll(getAfterAll())
+
+    it('returns last date mapped page for link', () => {
+        expect(
+            getMostRecentDateInDateList([
+                { date: { year: 1983, month: 5, day: 4 } },
+                { date: { year: 1987, month: 8, day: 22 } },
+            ]),
+        ).toStrictEqual({
+            date: { day: 13, month: 11, year: 2021 },
+        })
     })
 })

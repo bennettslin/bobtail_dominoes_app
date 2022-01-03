@@ -14,6 +14,8 @@ import { addTabbedPages } from '../../../utils/pages/tabbedPages'
 import { PUZZLES_PAGE } from '../../../constants/pages'
 import puzzles from '..'
 
+export const puzzleMonthDates = flattenMonthMappedPages(puzzles)
+
 export const puzzlePages = (
     contextualisePageConfigs(
         addDirectionPages(
@@ -29,7 +31,7 @@ export const puzzleMonthPages = (
     contextualisePageConfigs(
         addPuzzlesForMonth({
             configs: getPagesList({
-                pageDates: flattenMonthMappedPages(puzzles),
+                pageDates: puzzleMonthDates,
                 topLevelPage: PUZZLES_PAGE,
                 truncatePages: true,
             }),

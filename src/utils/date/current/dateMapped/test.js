@@ -1,4 +1,4 @@
-import { filterTimeEligibleDateMappedPages, getLastDateMappedPageForLink } from '.'
+import { filterTimeEligibleDateMappedPages } from '.'
 import { getAfterAll, getBeforeAll } from '../../../../__mocks__/currentDate'
 import { DATE_MAPPED_PAGES } from '../../../../__mocks__/dateMapped'
 
@@ -26,19 +26,6 @@ describe('filterTimeEligibleDateMappedPages', () => {
                     },
                 },
             },
-        })
-    })
-})
-
-describe('getLastDateMappedPageForLink', () => {
-    beforeAll(getBeforeAll({ year: 2021, month: 11, day: 13 }))
-    afterAll(getAfterAll())
-
-    it('returns last date mapped page for link', () => {
-        expect(
-            getLastDateMappedPageForLink(DATE_MAPPED_PAGES),
-        ).toStrictEqual({
-            date: { day: 13, month: 11, year: 2021 },
         })
     })
 })

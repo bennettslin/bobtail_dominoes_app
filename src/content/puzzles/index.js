@@ -1,4 +1,3 @@
-import { filterTimeEligibleDateMappedPages } from '../../utils/date/current/dateMapped'
 import { populateDateMappedPages } from '../../utils/pages/dateMapped/populate'
 import { PUZZLES_PAGE } from '../../constants/pages'
 import puzzles2020 from './2020'
@@ -17,5 +16,4 @@ const puzzles = populateDateMappedPages({
     }),
 })
 
-// For client side. Only past and present puzzles.
-export default filterTimeEligibleDateMappedPages(puzzles)
+export default puzzles

@@ -1,4 +1,4 @@
-import { getPagesMap } from '../../utils/pages/config'
+import { getIdPagesMap } from '../../utils/pages/config'
 import { GUIDES_PAGE } from '../../constants/pages'
 
 export const guidesPageIds = [
@@ -6,7 +6,7 @@ export const guidesPageIds = [
     'strategy',
 ]
 
-export default getPagesMap({
+export default getIdPagesMap({
     pageIds: guidesPageIds,
     topLevelPage: GUIDES_PAGE,
 })

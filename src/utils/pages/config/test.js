@@ -1,4 +1,4 @@
-import { getPageLinkConfig, getPagesMapFromList, getPagesMap, getPagesList } from '.'
+import { getPageLinkConfig, getPagesMapFromList, getIdPagesMap, getPagesList } from '.'
 
 describe('getPageLinkConfig', () => {
     it('returns page link config', () => {
@@ -78,10 +78,10 @@ describe('getPagesList', () => {
     })
 })
 
-describe('getPagesMap', () => {
+describe('getIdPagesMap', () => {
     it('returns pages map for ids', () => {
         expect(
-            getPagesMap({
+            getIdPagesMap({
                 pageIds: ['dogs', 'cats', 'mice'],
                 topLevelPage: 'animals',
             }),

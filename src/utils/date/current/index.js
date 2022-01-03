@@ -48,3 +48,13 @@ export const filterTimeEligiblePages = pages => (
         getIsTimeEligibleDate(date)
     ))
 )
+
+// TODO: Consolidate into single util.
+export const getMostRecentDateInDateList = dateList => {
+    const timeEligibleDateList = dateList.filter(date => (
+        getIsTimeEligibleDate(date)
+    )).reverse()
+
+    console.log('time eligible date list', timeEligibleDateList)
+    return timeEligibleDateList[0]
+}

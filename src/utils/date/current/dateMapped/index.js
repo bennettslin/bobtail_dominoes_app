@@ -1,6 +1,4 @@
 import { getIsTimeEligibleDate } from '..'
-import { getPageLinkConfig } from '../../../pages/config'
-import { flattenDateMappedPages } from '../../../pages/dateMapped'
 
 const filterOutFutureDay = ({ dateMappedPages, year, month }) => {
     Object.keys(dateMappedPages[year][month]).forEach(day => {
@@ -37,11 +35,4 @@ export const filterTimeEligibleDateMappedPages = dateMappedPages => {
     })
 
     return dateMappedPages
-}
-
-export const getLastDateMappedPageForLink = dateMappedPages => {
-    const pagesList = flattenDateMappedPages(dateMappedPages)
-    return getPageLinkConfig(
-        pagesList[pagesList.length - 1],
-    )
 }

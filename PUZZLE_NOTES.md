@@ -1,5 +1,6 @@
 # TODO:
 * Pass puzzles info to menu
+* Dynamically generate puzzle title
 
 # TODO: high priority
 * Puzzles by day of week
