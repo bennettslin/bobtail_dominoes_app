@@ -11,5 +11,3 @@ export const GUIDES_PAGE = 'guides'
 export const DEMO_PAGE = 'demo'
 export const PUZZLES_PAGE = 'puzzles'
 export const LINKS_PAGE = 'links'
-
-export const BACK_LINKED_PAGES_SET = new Set()
