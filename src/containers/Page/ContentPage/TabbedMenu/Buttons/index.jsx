@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import PageConfigContext from '../../../../../contexts/PageConfig'
 import TabbedMenuButton from '../Button'
 import { getTimeEligiblePage } from '../../../../../utils/date/current/pages'
-import { getFormattedPageLink } from '../../../../../utils/pages/format'
+import { getPageLinkText } from '../../../../../utils/pages/format'
 
 const TabbedMenuButtons = () => {
     const
@@ -23,7 +23,7 @@ const TabbedMenuButtons = () => {
                         isEllipsis,
                     }}
                 >
-                    {getFormattedPageLink({ id, date })}
+                    {getPageLinkText({ id, date })}
                 </TabbedMenuButton>
             ))}
         </>

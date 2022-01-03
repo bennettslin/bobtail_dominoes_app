@@ -11,9 +11,6 @@ const puzzles = populateDateMappedPages({
         2022: puzzles2022,
     },
     topLevelPage: PUZZLES_PAGE,
-    dateSpreadFunction: ({ month, day }) => ({
-        title: `Puzzle ${[month, day].join('/')}`,
-    }),
 })
 
 export default puzzles

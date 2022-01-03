@@ -4,7 +4,6 @@ const populateDaysMap = ({
     year,
     month,
     monthMaps,
-    dateSpreadFunction = () => ({}),
     ...rest
 }) => (
     getEntryListFromMap(monthMaps[month]).reduce(
@@ -15,7 +14,6 @@ const populateDaysMap = ({
                 ...daysMap,
                 [day]: {
                     date,
-                    ...dateSpreadFunction(date),
                     ...dayMaps[day],
                     ...rest,
                 },

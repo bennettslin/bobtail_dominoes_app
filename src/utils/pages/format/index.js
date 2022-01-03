@@ -1,31 +1,43 @@
 import { formatDate } from '../../date/format'
 import { getCapitalizedText } from '../../format'
+import { join } from '../../general'
 
-export const getFormattedPageLink = ({
+export const getHelmetTitle = ({
     id,
     date,
-} = {}) => {
-    if (id) {
-        return getCapitalizedText(id)
-
-    } else if (date) {
-        const { year, month, day } = date
-
-        // If date is full, only return format for month and day.
-        return (
+    topLevelPage,
+}) => (
+    id ? (
+        getCapitalizedText(id)
+    ) : (
+        join([
+            getCapitalizedText(topLevelPage),
             formatDate({
-                date: {
-                    ...!(year && month && day) && { year },
-                    month,
-                    day,
-                },
+                date,
                 truncate: true,
-            })
-        )
-    }
+            }),
+        ], ': ')
+    )
+)
 
-    return ''
-}
+export const getPageLinkText = ({
+    id,
+    date: { year, month, day } = {},
+} = {}) => (
+    id ? (
+        getCapitalizedText(id)
+    ) : (
+        formatDate({
+            date: {
+                // If date is full, only return format for month and day.
+                ...!(year && month && day) && { year },
+                month,
+                day,
+            },
+            truncate: true,
+        })
+    )
+)
 
 export const getTabbedBackLinkText = ({
     date: { year, month, day } = {},
