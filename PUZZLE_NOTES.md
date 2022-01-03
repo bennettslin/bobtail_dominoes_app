@@ -1,5 +1,11 @@
 # TODO: high priority
-* Puzzles by day of week
+* Props for generating each puzzle by day of week
+* Store admin date in local storage
+    * Start with Jan 1, 2021
+* Generate button to generate puzzle based on day of week of admin date
+    * Formatter util populates day of admin date
+    * Aside shows day of week and date of admin date
+* Generate next button to increment admin date and generate next puzzle
 * Puzzle test page counter to make it more organised
 
 # TODO: low priority

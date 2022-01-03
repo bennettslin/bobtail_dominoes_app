@@ -65,6 +65,7 @@ const getMovesText = moves => (
 )
 
 export const getTextForPuzzle = ({
+    day = 0,
     board,
     hand,
     moves,
@@ -72,7 +73,7 @@ export const getTextForPuzzle = ({
     puzzleType,
 }) => (
     puzzleType ? (
-        `replaceWithDay: {${NEWLINE}` +
+        `${day}: {${NEWLINE}` +
         `${TAB}puzzleType: ${PUZZLE_TYPE_NAMES[puzzleType]},${NEWLINE}` +
         `${TAB}board: ${getBoardText(board)},${NEWLINE}` +
         (
