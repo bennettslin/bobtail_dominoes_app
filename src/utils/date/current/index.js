@@ -35,26 +35,3 @@ export const getIsTimeEligibleDate = date => (
         getDateObjectForDate(date),
     ) >= 0
 )
-
-export const getTimeEligiblePage = page => (
-    // eslint-disable-next-line no-nested-ternary
-    page && (
-        !page.date || getIsTimeEligibleDate(page.date)
-    ) ? page : null
-)
-
-export const filterTimeEligiblePages = pages => (
-    pages.filter(({ date }) => (
-        getIsTimeEligibleDate(date)
-    ))
-)
-
-// TODO: Consolidate into single util.
-export const getMostRecentDateInDateList = dateList => {
-    const timeEligibleDateList = dateList.filter(date => (
-        getIsTimeEligibleDate(date)
-    )).reverse()
-
-    console.log('time eligible date list', timeEligibleDateList)
-    return timeEligibleDateList[0]
-}

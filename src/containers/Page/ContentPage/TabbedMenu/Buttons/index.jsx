@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import PageConfigContext from '../../../../../contexts/PageConfig'
 import TabbedMenuButton from '../Button'
-import { getTimeEligiblePage } from '../../../../../utils/date/current'
+import { getTimeEligiblePage } from '../../../../../utils/date/current/pages'
 import { getFormattedPageLink } from '../../../../../utils/pages/format'
 
 const TabbedMenuButtons = () => {

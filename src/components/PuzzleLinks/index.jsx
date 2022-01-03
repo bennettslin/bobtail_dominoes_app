@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Flex from '../Flex'
 import PuzzleLink from './PuzzleLink'
-import { filterTimeEligiblePages } from '../../utils/date/current'
-import { puzzlePagePropTypes } from '../../constants/propTypes'
+import { filterTimeEligiblePages } from '../../utils/date/current/pages'
 import { formatDate } from '../../utils/date/format'
+import { puzzlePagePropTypes } from '../../constants/propTypes'
 
 const PuzzleLinks = ({ puzzlesList }) => (
     <Flex

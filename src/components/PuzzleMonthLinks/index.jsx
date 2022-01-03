@@ -4,9 +4,9 @@ import cx from 'classnames'
 import Anchor from '../Anchor'
 import Flex from '../Flex'
 import { formatDate } from '../../utils/date/format'
+import { filterTimeEligiblePages } from '../../utils/date/current/pages'
 import { getPagePathFromConfig } from '../../utils/pages/path/config'
 import { datePropTypes } from '../../constants/propTypes'
-import { filterTimeEligiblePages } from '../../utils/date/current'
 
 const PuzzleMonthLinks = ({ date: { year }, topLevelPage, monthsList }) => (
     <Flex
