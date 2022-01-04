@@ -3,7 +3,7 @@ import {
     getValueListFromMap,
 } from '../../general/keyMap'
 
-export const addPuzzlesForMonth = ({ configs, dateMappedPages }) => (
+export const addPuzzlesForMonths = ({ configs, dateMappedPages }) => (
     configs.map(config => {
         const
             { date: { year, month } } = config,

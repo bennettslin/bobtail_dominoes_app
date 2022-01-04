@@ -8,7 +8,7 @@ import {
 import { addDirectionPages } from '../../../utils/pages/directionPages'
 import {
     addPuzzleLinksForYears,
-    addPuzzlesForMonth,
+    addPuzzlesForMonths,
 } from '../../../utils/pages/puzzles'
 import { addTabbedPages } from '../../../utils/pages/tabbedPages'
 import { PUZZLES_PAGE } from '../../../constants/pages'
@@ -29,7 +29,7 @@ export const puzzlePages = (
 
 export const puzzleMonthPages = (
     contextualisePageConfigs(
-        addPuzzlesForMonth({
+        addPuzzlesForMonths({
             configs: getPagesList({
                 pageDates: puzzleMonthDates,
                 topLevelPage: PUZZLES_PAGE,
