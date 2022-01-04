@@ -1,5 +1,6 @@
 # TODO: high priority
 * Props for generating each puzzle by day of week
+* Wrap up unit tests
 
 # Puzzle types
 * Switch up number of dominoes on board
