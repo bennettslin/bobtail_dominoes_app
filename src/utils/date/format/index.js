@@ -9,6 +9,7 @@ export const formatDate = ({ date, truncate } = {}) => {
     const
         { year, month, day } = date,
         monthFormat = truncate ? 'MMM' : 'MMMM'
+
     let dateFormat = `${monthFormat} d, yyyy`
 
     if (year) {
@@ -29,3 +30,7 @@ export const formatDate = ({ date, truncate } = {}) => {
 
     return format(getDateObjectForDate(date), dateFormat)
 }
+
+export const formatDateWithDayOfWeek = date => (
+    format(getDateObjectForDate(date), 'EEEE, MMMM d, yyyy')
+)

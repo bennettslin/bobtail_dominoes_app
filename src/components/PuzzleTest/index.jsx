@@ -3,13 +3,10 @@ import cx from 'classnames'
 import Flex from '../Flex'
 import PuzzleBoard from '../Puzzle/Board'
 import PuzzleTestAside from './Aside'
-import PuzzleTestButton from './Button'
+import PuzzleTestButtons from './Buttons'
+import PuzzleTestDateInputs from './DateInputs'
 import { getTextForPuzzle } from '../../utils/music/puzzles/format'
-import { getMaximumPuzzle } from '../../utils/music/puzzles/maximum'
-import { getMissingPuzzle } from '../../utils/music/puzzles/missing'
-import { getRegularPuzzle } from '../../utils/music/puzzles/regular'
 import './style'
-import { DAY_OF_WEEK_DEBUG_BUTTON_CONFIGS } from './helper'
 
 const PuzzleTest = () => {
     const
@@ -53,6 +50,13 @@ const PuzzleTest = () => {
                 gap: 'xs',
             }}
         >
+            <Flex
+                {...{
+                    justifyContent: 'spaceEvenly',
+                }}
+            >
+                <PuzzleTestDateInputs />
+            </Flex>
             <Flex {...{ gap: 'sm' }} >
                 <PuzzleBoard
                     showAnswer
@@ -66,22 +70,7 @@ const PuzzleTest = () => {
                 />
                 <PuzzleTestAside {...{ puzzleText, copyTextToClipboard }} />
             </Flex>
-            <Flex
-                {...{
-                    justifyContent: 'spaceEvenly',
-                    gap: 'xs',
-                }}
-            >
-                {DAY_OF_WEEK_DEBUG_BUTTON_CONFIGS.map((config, index) => (
-                    <PuzzleTestButton
-                        {...{
-                            key: index,
-                            setPuzzle,
-                            ...config,
-                        }}
-                    />
-                ))}
-            </Flex>
+            <PuzzleTestButtons {...{ setPuzzle }} />
         </Flex>
     )
 }

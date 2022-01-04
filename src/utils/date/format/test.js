@@ -1,4 +1,4 @@
-import { formatDate } from '.'
+import { formatDate, formatDateWithDayOfWeek } from '.'
 
 describe('formatDate', () => {
     test.each([
@@ -41,5 +41,16 @@ describe('formatDate', () => {
         ],
     ])('%p returns %p', (props, result) => {
         expect(formatDate(props)).toBe(result)
+    })
+})
+
+describe('formatDateWithDayOfWeek', () => {
+    test.each([
+        [
+            { year: 1983, month: 5, day: 4 },
+            'Wednesday, May 4, 1983',
+        ],
+    ])('%p returns %p', (props, result) => {
+        expect(formatDateWithDayOfWeek(props)).toBe(result)
     })
 })

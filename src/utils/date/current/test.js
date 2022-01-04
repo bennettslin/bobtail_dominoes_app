@@ -8,7 +8,7 @@ describe('getCurrentDate', () => {
     it('returns current date', () => {
         expect(
             getCurrentDate(),
-        ).toStrictEqual({ day: 4, month: 5, year: 1983 })
+        ).toStrictEqual({ year: 1983, month: 5, day: 4 })
     })
 })
 

@@ -10,7 +10,8 @@ module.exports = {
     transformIgnorePatterns: [`node_modules/(?!(gatsby)/)`],
     globals: {
         __PATH_PREFIX__: ``,
-        IS_PRODUCTION: false,
+        IS_PRODUCTION: true,
+        IS_RUNTIME: false,
         window: {
             localStorage: {},
         },

@@ -1,9 +1,10 @@
 import { getDateObjectForDate } from '../utils/date'
 
 export const getBeforeAll = (date = { year: 1983, month: 5, day: 4 }) => () => {
-    global.adminCurrentDate = getDateObjectForDate(date)
+    jest.useFakeTimers('modern')
+    jest.setSystemTime(getDateObjectForDate(date))
 }
 
 export const getAfterAll = () => () => {
-    delete global.adminCurrentDate
+    jest.useRealTimers()
 }

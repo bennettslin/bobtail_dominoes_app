@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Button from '../../Button'
 
-const PuzzleTestButton = ({ text, getPuzzle, setPuzzle }) => {
+const PuzzleTestButton = ({ text, getPuzzle, setPuzzle, ...rest }) => {
     const handleButtonClick = () => {
-        setPuzzle(getPuzzle())
+        setPuzzle(getPuzzle({ ...rest }))
     }
 
     return (

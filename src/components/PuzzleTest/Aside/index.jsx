@@ -1,15 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import Paragraph from '../../Paragraph'
-import Flex from '../../Flex'
+import { useSelector } from 'react-redux'
 import Button from '../../Button'
+import Flex from '../../Flex'
+import Heading from '../../Heading'
+import Paragraph from '../../Paragraph'
+import { mapPuzzleTestDate } from '../../../redux/admin/selector'
+import { formatDateWithDayOfWeek } from '../../../utils/date/format'
 import { hsl } from '../../../utils/svgs'
 
 const PuzzleTestAside = ({
     puzzleText,
     copyTextToClipboard,
 }) => {
+    const puzzleTestDate = useSelector(mapPuzzleTestDate)
+
     const handleButtonClick = () => (
         copyTextToClipboard()
     )
@@ -30,6 +36,9 @@ const PuzzleTestAside = ({
                 },
             }}
         >
+            <Heading {...{ level: 5 }}>
+                {formatDateWithDayOfWeek(puzzleTestDate)}
+            </Heading>
             <Paragraph
                 {...{
                     style: {
