@@ -32,12 +32,12 @@ describe('formatDate', () => {
             'Aug 22',
         ],
         [
-            { date: { year: 1987, month: 8 }, truncate: true },
-            'Aug 1987',
+            { date: { year: 1988, month: 8 }, truncate: true },
+            'Aug 1988',
         ],
         [
-            { date: { year: 1987, month: 8, day: 22 }, truncate: true },
-            'Aug 22, 1987',
+            { date: { year: 1988, month: 8, day: 22 }, truncate: true },
+            'Aug 22, 1988',
         ],
     ])('%p returns %p', (props, result) => {
         expect(formatDate(props)).toBe(result)

@@ -23,7 +23,7 @@ describe('getTimeEligiblePage', () => {
 
     it('returns null if future date', () => {
         expect(getTimeEligiblePage(
-            { date: { year: 1987, month: 8, day: 22 } },
+            { date: { year: 1988, month: 8, day: 22 } },
         )).toBeNull()
     })
 })
@@ -35,7 +35,7 @@ describe('filterTimeEligiblePages', () => {
     it('returns list of past and present pages', () => {
         expect(filterTimeEligiblePages([
             { date: { year: 1983, month: 5, day: 4 } },
-            { date: { year: 1987, month: 8, day: 22 } },
+            { date: { year: 1988, month: 8, day: 22 } },
         ])).toStrictEqual([{ date: { year: 1983, month: 5, day: 4 } }])
     })
 })
@@ -48,7 +48,7 @@ describe('getMostRecentPageFromDates', () => {
         expect(
             getMostRecentPageFromDates([
                 { year: 1983, month: 5, day: 4 },
-                { year: 1987, month: 8, day: 22 },
+                { year: 1988, month: 8, day: 22 },
             ]),
         ).toStrictEqual({
             date: { year: 1983, month: 5, day: 4 },
