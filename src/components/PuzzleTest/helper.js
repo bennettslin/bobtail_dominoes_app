@@ -2,7 +2,11 @@ import { getMaximumPuzzle } from '../../utils/music/puzzles/maximum'
 import { getMissingPuzzle } from '../../utils/music/puzzles/missing'
 import { getRegularPuzzle } from '../../utils/music/puzzles/regular'
 
-export const PUZZLE_OF_DAY_CONFIGS = [
+const PUZZLE_OF_DAY_CONFIGS = [
+    {
+        text: 'Sunday',
+        getPuzzle: getRegularPuzzle,
+    },
     {
         text: 'Monday',
         getPuzzle: getRegularPuzzle,
@@ -27,8 +31,8 @@ export const PUZZLE_OF_DAY_CONFIGS = [
         text: 'Saturday',
         getPuzzle: getMaximumPuzzle,
     },
-    {
-        text: 'Sunday',
-        getPuzzle: getMaximumPuzzle,
-    },
 ]
+
+export const getPuzzleConfig = dayOfWeekIndex => (
+    PUZZLE_OF_DAY_CONFIGS[dayOfWeekIndex]
+)

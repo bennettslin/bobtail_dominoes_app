@@ -3,9 +3,10 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Flex from '../../Flex'
 import PuzzleTestButton from '../Button'
-import { PUZZLE_OF_DAY_CONFIGS } from '../constants'
+import { getPuzzleConfig } from '../helper'
+import { getArrayOfIndices } from '../../../utils/general'
 
-const PuzzleTestButtons = ({ setPuzzle }) => (
+const PuzzleTestDebugButtons = ({ setPuzzle }) => (
     <Flex
         {...{
             className: cx(
@@ -16,20 +17,20 @@ const PuzzleTestButtons = ({ setPuzzle }) => (
         }}
     >
         for debugging only:
-        {PUZZLE_OF_DAY_CONFIGS.map((config, index) => (
+        {getArrayOfIndices(7).map(index => (
             <PuzzleTestButton
                 {...{
                     key: index,
                     setPuzzle,
-                    ...config,
+                    ...getPuzzleConfig(index),
                 }}
             />
         ))}
     </Flex>
 )
 
-PuzzleTestButtons.propTypes = {
+PuzzleTestDebugButtons.propTypes = {
     setPuzzle: PropTypes.func.isRequired,
 }
 
-export default PuzzleTestButtons
+export default PuzzleTestDebugButtons
