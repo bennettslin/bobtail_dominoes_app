@@ -1,5 +1,7 @@
 # TODO: high priority
 * Props for generating each puzzle by day of week
+    * Keep manual buttons for each day of week
+        * Label them as debug to make their purpose clear
 * Store admin date in local storage
     * Start with Jan 1, 2021
 * Generate button to generate puzzle based on day of week of admin date

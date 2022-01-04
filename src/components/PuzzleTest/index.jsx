@@ -9,6 +9,7 @@ import { getMaximumPuzzle } from '../../utils/music/puzzles/maximum'
 import { getMissingPuzzle } from '../../utils/music/puzzles/missing'
 import { getRegularPuzzle } from '../../utils/music/puzzles/regular'
 import './style'
+import { DAY_OF_WEEK_DEBUG_BUTTON_CONFIGS } from './helper'
 
 const PuzzleTest = () => {
     const
@@ -52,34 +53,6 @@ const PuzzleTest = () => {
                 gap: 'xs',
             }}
         >
-            <Flex
-                {...{
-                    justifyContent: 'spaceEvenly',
-                    gap: 'xs',
-                }}
-            >
-                <PuzzleTestButton
-                    {...{
-                        text: 'Regular puzzle',
-                        getPuzzle: getRegularPuzzle,
-                        setPuzzle,
-                    }}
-                />
-                <PuzzleTestButton
-                    {...{
-                        text: 'Missing puzzle',
-                        getPuzzle: getMissingPuzzle,
-                        setPuzzle,
-                    }}
-                />
-                <PuzzleTestButton
-                    {...{
-                        text: 'Maximum puzzle',
-                        getPuzzle: getMaximumPuzzle,
-                        setPuzzle,
-                    }}
-                />
-            </Flex>
             <Flex {...{ gap: 'sm' }} >
                 <PuzzleBoard
                     showAnswer
@@ -92,6 +65,22 @@ const PuzzleTest = () => {
                     }}
                 />
                 <PuzzleTestAside {...{ puzzleText, copyTextToClipboard }} />
+            </Flex>
+            <Flex
+                {...{
+                    justifyContent: 'spaceEvenly',
+                    gap: 'xs',
+                }}
+            >
+                {DAY_OF_WEEK_DEBUG_BUTTON_CONFIGS.map((config, index) => (
+                    <PuzzleTestButton
+                        {...{
+                            key: index,
+                            setPuzzle,
+                            ...config,
+                        }}
+                    />
+                ))}
             </Flex>
         </Flex>
     )
