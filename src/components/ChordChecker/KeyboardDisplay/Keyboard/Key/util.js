@@ -6,7 +6,7 @@ import styleConfigPitchOn from '../../../../../styles/arcade/pitchOn'
 import styleConfigPitchWhite from '../../../../../styles/arcade/pitchWhite'
 import styleConfigRootOn from '../../../../../styles/arcade/rootOn'
 import './style'
-import { mod12 } from '../../../../../utils/music/chords/math'
+import { modOctave } from '../../../../../utils/music/chords/math'
 import keyC from '../../../../../assets/svgs/checker/keyC'
 import keyCD from '../../../../../assets/svgs/checker/keyCD'
 import keyD from '../../../../../assets/svgs/checker/keyD'
@@ -63,7 +63,7 @@ export const getBlackKeyPositionStyle = pitchIndex => {
             // Add white keys in previous octaves.
             Math.floor((pitchIndex - BASE_PITCH_INDEX) / 12) * 7 +
             // Add white keys in this octave.
-            Math.floor((mod12(pitch - LOWEST_PITCH) + 1) / 2) +
+            Math.floor((modOctave(pitch - LOWEST_PITCH) + 1) / 2) +
             // Add extra white key if needed.
             ((pitch % 2 === LOWEST_PITCH % 2) || pitch < LOWEST_PITCH)
             // Accommodate the way svgs are spaced.

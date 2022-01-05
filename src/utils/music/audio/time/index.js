@@ -1,6 +1,6 @@
-import { OCTAVE_DURATION } from '../../../../constants/music/audio'
-import { round } from '../../../general'
+import { round } from '../../../general/math'
 import { getPitchConfig, getPitchIndices } from '../pitch'
+import { OCTAVE_DURATION } from '../../../../constants/music/audio'
 
 const getDurationTime = pitchSet => (
     round(OCTAVE_DURATION / pitchSet.size)

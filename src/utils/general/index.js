@@ -44,13 +44,6 @@ export const join = (array = [], separator = '') => (
     )).join(separator)
 )
 
-export const round = (number, decimalPlaces = 3) => {
-    const multiplier = Math.pow(10, decimalPlaces)
-    return (
-        Math.round(number * multiplier) / multiplier
-    )
-}
-
 export const getNthInSortedList = ({ rank = 0, sortedList = [] }) => {
     // Just pick the worst entry if rank exceeds list count.
     const finalRank = Math.min(rank, sortedList.length - 1)

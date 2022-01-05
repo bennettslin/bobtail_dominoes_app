@@ -1,6 +1,6 @@
 import { join } from '../../../general'
 import { getIsSymmetricalChord } from '../label'
-import { mod12 } from '../math'
+import { modOctave } from '../math'
 import { getIsValidChord } from '../valid'
 
 export const getNormalForm = pitchSet => {
@@ -32,7 +32,7 @@ export const getNormalForm = pitchSet => {
         // eslint-disable-next-line no-loop-func
         orderedPitchSets.forEach(orderedPitchSet => {
             // We want the lowest interval possible.
-            const currentInterval = mod12(
+            const currentInterval = modOctave(
                 orderedPitchSet[currentIndex] - orderedPitchSet[0],
             )
 
@@ -64,7 +64,7 @@ export const getPrimeForm = (pitchSet = new Set()) => {
      */
     const normalForm = getNormalForm(pitchSet)
     return (
-        normalForm.map(pitch => mod12(pitch - normalForm[0]))
+        normalForm.map(pitch => modOctave(pitch - normalForm[0]))
     )
 }
 
@@ -102,7 +102,7 @@ export const getRoots = pitchSet => {
             index++
 
             // Distance between root and seventh is whole tone or less.
-            if (mod12(normalForm[index] - normalForm[index - 1]) <= 2) {
+            if (modOctave(normalForm[index] - normalForm[index - 1]) <= 2) {
                 return new Set([normalForm[index]])
             }
         }

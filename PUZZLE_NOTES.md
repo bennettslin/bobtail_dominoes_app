@@ -1,12 +1,9 @@
 # TODO: high priority
 * Props for generating each puzzle by day of week
-* Wrap up unit tests
-    * Can addPuzzles utils get everything from dateMappedPages?
 
 # Puzzle types
 * Switch up number of dominoes on board
 * Make hand score less or more
-* Missing puzzle can be missing one or two
 
 * Monday: regular (easy)
 * Tuesday: missing (one piece)

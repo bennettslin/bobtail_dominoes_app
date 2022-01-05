@@ -1,6 +1,4 @@
-import {
-    getAreSetsEqual, getArrayOfIndices, getFixed, getNthInSortedList, join, round,
-} from '.'
+import { getAreSetsEqual, getArrayOfIndices, getFixed, getNthInSortedList, join } from '.'
 
 describe('getArrayOfIndices', () => {
     it('returns array with given length', () => {
@@ -61,22 +59,6 @@ describe('join', () => {
         [['how', undefined, 'are', NaN, 'you'], '-', 'how-are-you'],
     ])('%p with separator "%p" returns %p', (number, digits, result) => {
         expect(join(number, digits)).toBe(result)
-    })
-})
-
-describe('round', () => {
-    test.each([
-        [0, undefined, 0],
-        [5, undefined, 5],
-        [10, undefined, 10],
-        [3.7, undefined, 3.7],
-        [7.23, undefined, 7.23],
-        [4.3142, undefined, 4.314],
-        [10.8195, undefined, 10.82],
-        [7.2, 4, 7.2],
-        [8.2649135, 5, 8.26491],
-    ])('%p to %p decimals returns %p', (number, decimalPlaces, result) => {
-        expect(round(number, decimalPlaces)).toBe(result)
     })
 })
 

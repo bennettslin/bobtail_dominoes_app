@@ -1,25 +1,25 @@
 import {
-    mod12,
+    modOctave,
     getArrayOfPitches,
     getArrayOfPitchesForCircleOfFifths,
     transposePitchSet,
 } from '.'
 
-describe('mod12', () => {
+describe('modOctave', () => {
     it('returns correct number for less than zero', () => {
-        expect(mod12(-5)).toBe(7)
+        expect(modOctave(-5)).toBe(7)
     })
 
     it('returns same number for less than 12', () => {
-        expect(mod12(5)).toBe(5)
+        expect(modOctave(5)).toBe(5)
     })
 
     it('returns correct number for 12', () => {
-        expect(mod12(12)).toBe(0)
+        expect(modOctave(12)).toBe(0)
     })
 
     it('returns correct number for greater than 12', () => {
-        expect(mod12(15)).toBe(3)
+        expect(modOctave(15)).toBe(3)
     })
 })
 

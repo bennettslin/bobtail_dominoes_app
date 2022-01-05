@@ -7,12 +7,11 @@ import {
 } from '../log'
 import { MISSING_PUZZLE_TYPE } from '../../../../constants/music/puzzle'
 
-// const TRIALS_COUNT = 10
 const TRIALS_COUNT = 1000
 
 export const getMissingPuzzle = ({
-    // minPointsRange = [10, 15],
-    minPointsRange = [1, 4],
+    dominoesCountRange,
+    minPointsRange = [10, 15],
 
 } = {}) => {
     let trialIndex = 0
@@ -20,7 +19,9 @@ export const getMissingPuzzle = ({
     logPuzzleSearch(minPointsRange)
 
     while (trialIndex < TRIALS_COUNT) {
-        const { board, pool } = getInitialBoardForPuzzle()
+        const { board, pool } = getInitialBoardForPuzzle({
+            dominoesCountRange,
+        })
 
         trialIndex++
 

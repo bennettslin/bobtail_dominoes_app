@@ -7,10 +7,10 @@ import {
 } from '../log'
 import { REGULAR_PUZZLE_TYPE } from '../../../../constants/music/puzzle'
 
-const TRIALS_COUNT = 10
-// const TRIALS_COUNT = 1000
+const TRIALS_COUNT = 1000
 
 export const getRegularPuzzle = ({
+    dominoesCountRange,
     minPointsRange = [25, 30],
 
 } = {}) => {
@@ -19,7 +19,9 @@ export const getRegularPuzzle = ({
     logPuzzleSearch(minPointsRange)
 
     while (trialIndex < TRIALS_COUNT) {
-        const { board, pool } = getInitialBoardForPuzzle()
+        const { board, pool } = getInitialBoardForPuzzle({
+            dominoesCountRange,
+        })
 
         trialIndex++
 

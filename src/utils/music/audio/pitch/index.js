@@ -1,4 +1,4 @@
-import { mod12 } from '../../chords/math'
+import { modOctave } from '../../chords/math'
 import {
     OCTAVE_RANGE,
     BASE_PITCH_INDEX,
@@ -9,7 +9,7 @@ const AUDIO_PITCHES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#
 
 export const getPitchConfig = pitchIndex => ({
     register: Math.floor(pitchIndex / OCTAVE_RANGE),
-    pitch: mod12(pitchIndex),
+    pitch: modOctave(pitchIndex),
 })
 
 export const getAudioPitchSymbol = pitchIndex => {

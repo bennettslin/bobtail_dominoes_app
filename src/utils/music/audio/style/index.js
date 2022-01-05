@@ -1,4 +1,5 @@
-import { getFixed, join, round } from '../../../general'
+import { getFixed, join } from '../../../general'
+import { round } from '../../../general/math'
 import { getMergedStyles } from '../../../svgs'
 import styleConfigSoundedOn from '../../../../styles/arcade/soundedOn'
 import {

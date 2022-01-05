@@ -3,7 +3,7 @@ import styleConfigPitchBlack from '../../../../styles/arcade/pitchBlack'
 import styleConfigPitchOn from '../../../../styles/arcade/pitchOn'
 import styleConfigPitchWhite from '../../../../styles/arcade/pitchWhite'
 import styleConfigRootOn from '../../../../styles/arcade/rootOn'
-import { mod12 } from '../../../../utils/music/chords/math'
+import { modOctave } from '../../../../utils/music/chords/math'
 
 const COORDINATES = [0, 6.7, 25, 50, 75, 93.3, 100]
 
@@ -28,5 +28,5 @@ export const getButtonOnStyleConfig = ({
 
 export const getButtonPositionStyle = pitch => ({
     top: `${COORDINATES[6 - Math.abs(6 - pitch)]}%`,
-    left: `${COORDINATES[Math.abs(6 - mod12((pitch + 9)))]}%`,
+    left: `${COORDINATES[Math.abs(6 - modOctave((pitch + 9)))]}%`,
 })
