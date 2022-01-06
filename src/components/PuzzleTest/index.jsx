@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import cx from 'classnames'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Flex from '../Flex'
 import PuzzleBoard from '../Puzzle/Board'
 import PuzzleTestAside from './Aside'
@@ -8,11 +8,13 @@ import PuzzleTestDebugButtons from './DebugButtons'
 import PuzzleTestDateInputs from './DateInputs'
 import PuzzleTestGenerateButtons from './GenerateButtons'
 import { mapPuzzleTestDate } from '../../redux/admin/selector'
+import { queuePlay, updateCurrentPitchSet } from '../../redux/audio/action'
 import { getTextForPuzzle } from '../../utils/music/puzzles/format'
 import './style'
 
 const PuzzleTest = () => {
     const
+        dispatch = useDispatch(),
         puzzleTestDate = useSelector(mapPuzzleTestDate),
         [board, setBoard] = useState([]),
         [moves, setMoves] = useState([]),
@@ -49,6 +51,18 @@ const PuzzleTest = () => {
     useEffect(() => {
         copyTextToClipboard()
     }, [puzzleText])
+
+    useEffect(() => {
+        if (board.length) {
+            // Play sound to notify me when a trial succeeded.
+            dispatch(queuePlay(true))
+        }
+    }, [board])
+
+    useEffect(() => {
+        // Make notification sound a happy C major chord.
+        dispatch(updateCurrentPitchSet(new Set([0, 4, 7])))
+    }, [])
 
     return (
         <Flex

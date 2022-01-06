@@ -3,9 +3,9 @@ import { MAXIMUM_PUZZLE_TYPE, MISSING_PUZZLE_TYPE, REGULAR_PUZZLE_TYPE } from '.
 export const getPuzzleText = puzzleType => {
     switch (puzzleType) {
         case REGULAR_PUZZLE_TYPE:
-            return 'Place the given dominoes in your hand to earn the most points.'
+            return 'Place the dominoes in your hand to earn the most points.'
         case MISSING_PUZZLE_TYPE:
-            return 'Which domino is missing from the board?'
+            return 'Which domino is missing?'
         case MAXIMUM_PUZZLE_TYPE:
             return 'Select and place a single available domino to earn the most points.'
     }
