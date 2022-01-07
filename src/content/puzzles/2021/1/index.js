@@ -4,7 +4,7 @@ import {
     REGULAR_PUZZLE_TYPE,
 } from '../../../../constants/music/puzzle'
 
-// NOTE: These puzzles had maximum rank range.
+// NOTE: Rank range was [0, 0] for all.
 export default {
     1: {
         puzzleType: MISSING_PUZZLE_TYPE,

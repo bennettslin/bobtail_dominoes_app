@@ -11,6 +11,7 @@ const TRIALS_COUNT = 1000
 
 export const getRegularPuzzle = async ({
     dominoesCountRange,
+    rankRange,
     minPointsRange = [25, 30],
 
 } = {}) => {
@@ -22,6 +23,7 @@ export const getRegularPuzzle = async ({
         const { board, pool } = await getPuzzlesWorker()
             .getInitialBoardForPuzzleFromWorker({
                 dominoesCountRange,
+                rankRange,
             }).then(props => props)
 
         trialIndex++
