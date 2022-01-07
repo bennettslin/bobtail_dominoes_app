@@ -1,5 +1,5 @@
-import { getInitialBoardForPuzzle } from '../general/board'
-import { getBestMovesForPuzzle } from '../general/moves'
+/* eslint-disable no-await-in-loop */
+import { getPuzzlesWorker } from '../../../../modules/puzzleWorkers'
 import {
     logBoardError,
     logPuzzleSearch,
@@ -9,7 +9,7 @@ import { REGULAR_PUZZLE_TYPE } from '../../../../constants/music/puzzle'
 
 const TRIALS_COUNT = 1000
 
-export const getRegularPuzzle = ({
+export const getRegularPuzzle = async ({
     dominoesCountRange,
     minPointsRange = [25, 30],
 
@@ -19,9 +19,10 @@ export const getRegularPuzzle = ({
     logPuzzleSearch(minPointsRange)
 
     while (trialIndex < TRIALS_COUNT) {
-        const { board, pool } = getInitialBoardForPuzzle({
-            dominoesCountRange,
-        })
+        const { board, pool } = await getPuzzlesWorker()
+            .getInitialBoardForPuzzleFromWorker({
+                dominoesCountRange,
+            }).then(props => props)
 
         trialIndex++
 
@@ -30,12 +31,13 @@ export const getRegularPuzzle = ({
                 hand,
                 moves,
                 ...rest
-            } = getBestMovesForPuzzle({
-                board,
-                pool,
-                minPointsRange,
-                needsUniqueHighest: true,
-            })
+            } = await getPuzzlesWorker()
+                .getBestMovesForPuzzleFromWorker({
+                    board,
+                    pool,
+                    minPointsRange,
+                    needsUniqueHighest: true,
+                }).then(props => props)
 
             logTrialForPuzzleWithPoints({ trialIndex, ...rest })
 

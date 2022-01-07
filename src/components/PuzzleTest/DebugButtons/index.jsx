@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Flex from '../../Flex'
 import PuzzleTestButton from '../Button'
-import { getPuzzleConfig } from '../helper'
 import { getArrayOfIndices } from '../../../utils/general'
 
 const PuzzleTestDebugButtons = ({ setPuzzle }) => (
@@ -17,12 +16,12 @@ const PuzzleTestDebugButtons = ({ setPuzzle }) => (
         }}
     >
         for debugging only:
-        {getArrayOfIndices(7).map(index => (
+        {getArrayOfIndices(7).map(customIndex => (
             <PuzzleTestButton
                 {...{
-                    key: index,
+                    key: customIndex,
+                    customIndex,
                     setPuzzle,
-                    ...getPuzzleConfig(index),
                 }}
             />
         ))}

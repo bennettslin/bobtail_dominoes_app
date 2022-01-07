@@ -73,6 +73,7 @@ export const getTextForPuzzle = ({
     puzzleType,
 }) => (
     puzzleType ? (
+        NEWLINE +
         `${day}: {${NEWLINE}` +
         `${TAB}puzzleType: ${PUZZLE_TYPE_NAMES[puzzleType]},${NEWLINE}` +
         `${TAB}board: ${getBoardText(board)},${NEWLINE}` +

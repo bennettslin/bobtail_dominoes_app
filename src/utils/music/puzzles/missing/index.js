@@ -1,5 +1,5 @@
-import { getInitialBoardForPuzzle } from '../general/board'
-import { getBestMissingMovesForPuzzle } from '../general/missing'
+/* eslint-disable no-await-in-loop */
+import { getPuzzlesWorker } from '../../../../modules/puzzleWorkers'
 import {
     logBoardError,
     logPuzzleSearch,
@@ -9,7 +9,7 @@ import { MISSING_PUZZLE_TYPE } from '../../../../constants/music/puzzle'
 
 const TRIALS_COUNT = 1000
 
-export const getMissingPuzzle = ({
+export const getMissingPuzzle = async ({
     dominoesCountRange,
     minPointsRange = [10, 15],
 
@@ -19,9 +19,10 @@ export const getMissingPuzzle = ({
     logPuzzleSearch(minPointsRange)
 
     while (trialIndex < TRIALS_COUNT) {
-        const { board, pool } = getInitialBoardForPuzzle({
-            dominoesCountRange,
-        })
+        const { board, pool } = await getPuzzlesWorker()
+            .getInitialBoardForPuzzleFromWorker({
+                dominoesCountRange,
+            }).then(props => props)
 
         trialIndex++
 
@@ -29,11 +30,12 @@ export const getMissingPuzzle = ({
             const {
                 board: boardWithMissingMoves,
                 missingMoves,
-            } = getBestMissingMovesForPuzzle({
-                board,
-                pool,
-                minPointsRange,
-            })
+            } = await getPuzzlesWorker()
+                .getBestMissingMovesForPuzzleFromWorker({
+                    board,
+                    pool,
+                    minPointsRange,
+                }).then(props => props)
 
             logTrialForPuzzleWithMissingMoves({ trialIndex, missingMoves })
 

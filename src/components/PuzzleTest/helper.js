@@ -1,47 +1,49 @@
-import { getMaximumPuzzle } from '../../utils/music/puzzles/maximum'
-import { getMissingPuzzle } from '../../utils/music/puzzles/missing'
-import { getRegularPuzzle } from '../../utils/music/puzzles/regular'
+import {
+    MAXIMUM_PUZZLE_TYPE,
+    MISSING_PUZZLE_TYPE,
+    REGULAR_PUZZLE_TYPE,
+} from '../../constants/music/puzzle'
 
 const PUZZLE_OF_DAY_CONFIGS = [
     {
         text: 'Monday',
-        getPuzzle: getRegularPuzzle,
+        puzzleType: REGULAR_PUZZLE_TYPE,
         dominoesCountRange: [3, 5],
         minPointsRange: [16, 20],
     },
     {
         text: 'Tuesday',
-        getPuzzle: getMissingPuzzle,
+        puzzleType: MISSING_PUZZLE_TYPE,
         dominoesCountRange: [3, 5],
         minPointsRange: [6, 9],
     },
     {
         text: 'Wednesday',
-        getPuzzle: getMaximumPuzzle,
+        puzzleType: MAXIMUM_PUZZLE_TYPE,
         dominoesCountRange: [3, 5],
         minPointsRange: [8, 12],
     },
     {
         text: 'Thursday',
-        getPuzzle: getRegularPuzzle,
+        puzzleType: REGULAR_PUZZLE_TYPE,
         dominoesCountRange: [5, 7],
         minPointsRange: [20, 24],
     },
     {
         text: 'Friday',
-        getPuzzle: getMissingPuzzle,
+        puzzleType: MISSING_PUZZLE_TYPE,
         dominoesCountRange: [5, 7],
         minPointsRange: [9, 12],
     },
     {
         text: 'Saturday',
-        getPuzzle: getMaximumPuzzle,
+        puzzleType: MAXIMUM_PUZZLE_TYPE,
         dominoesCountRange: [5, 7],
         minPointsRange: [12, 16],
     },
     {
         text: 'Sunday',
-        getPuzzle: getRegularPuzzle,
+        puzzleType: REGULAR_PUZZLE_TYPE,
         dominoesCountRange: [7, 9],
         minPointsRange: [24, 28],
     },

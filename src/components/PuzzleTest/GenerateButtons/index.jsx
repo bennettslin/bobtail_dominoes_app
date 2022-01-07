@@ -7,23 +7,14 @@ import PuzzleTestButton from '../Button'
 import { updatePuzzleTestDate } from '../../../redux/admin/action'
 import { mapPuzzleTestDate } from '../../../redux/admin/selector'
 import { addDaysToDate } from '../../../utils/date'
-import { getDayOfWeekIndex } from '../../../utils/date/dayOfWeek'
-import { getPuzzleConfig } from '../helper'
 
 const PuzzleTestGenerateButtons = ({ setPuzzle }) => {
     const
         dispatch = useDispatch(),
         puzzleTestDate = useSelector(mapPuzzleTestDate),
-        {
-            ...puzzleProps
-        } = getPuzzleConfig(getDayOfWeekIndex(puzzleTestDate)),
-        nextDate = addDaysToDate(puzzleTestDate, 1),
-        {
-            ...nextPuzzleProps
-        } = getPuzzleConfig(getDayOfWeekIndex(nextDate))
+        nextDate = addDaysToDate(puzzleTestDate, 1)
 
-    const handleGenerateNext = () => {
-        setPuzzle(nextPuzzleProps)
+    const setDateFirst = () => {
         dispatch(updatePuzzleTestDate(nextDate))
     }
 
@@ -39,16 +30,15 @@ const PuzzleTestGenerateButtons = ({ setPuzzle }) => {
         >
             <PuzzleTestButton
                 {...{
-                    setPuzzle,
-                    ...puzzleProps,
                     text: 'Generate', // Override text in puzzle props.
+                    setPuzzle,
                 }}
             />
             <PuzzleTestButton
                 {...{
-                    setPuzzle: handleGenerateNext,
-                    ...nextPuzzleProps,
                     text: 'Next',
+                    setPuzzle,
+                    setDateFirst,
                 }}
             />
         </Flex>
