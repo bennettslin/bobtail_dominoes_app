@@ -11,3 +11,7 @@ export const mapGeneratePuzzleConfig = (
 export const mapPuzzle = (
     { [PUZZLE_STORE]: { puzzle } },
 ) => puzzle
+
+export const mapPuzzleText = (
+    { [PUZZLE_STORE]: { puzzleText } },
+) => puzzleText

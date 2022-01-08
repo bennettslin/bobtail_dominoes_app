@@ -1,24 +1,30 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { useEffect } from 'react'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import Button from '../../Button'
 import Flex from '../../Flex'
 import Heading from '../../Heading'
 import Paragraph from '../../Paragraph'
-import { mapPuzzleTestDate } from '../../../redux/puzzle/selector'
+import { mapPuzzleTestDate, mapPuzzleText } from '../../../redux/puzzle/selector'
 import { formatDateWithDayOfWeek } from '../../../utils/date/format'
 import { hsl } from '../../../utils/svgs'
 
-const AdminPuzzleAside = ({
-    puzzleText,
-    copyTextToClipboard,
-}) => {
-    const puzzleTestDate = useSelector(mapPuzzleTestDate)
+const AdminPuzzleAside = () => {
+    const
+        puzzleTestDate = useSelector(mapPuzzleTestDate),
+        puzzleText = useSelector(mapPuzzleText)
 
-    const handleButtonClick = () => (
+    const copyTextToClipboard = async () => {
+        try {
+            await navigator.clipboard.writeText(puzzleText)
+        } catch {
+            setTimeout(copyTextToClipboard, 1000)
+        }
+    }
+
+    useEffect(() => {
         copyTextToClipboard()
-    )
+    }, [puzzleText])
 
     return (
         <Flex
@@ -56,18 +62,13 @@ const AdminPuzzleAside = ({
                         'font__text',
                         'fontSize__md',
                     ),
-                    handleButtonClick,
+                    handleButtonClick: copyTextToClipboard,
                 }}
             >
             Copy
             </Button>
         </Flex>
     )
-}
-
-AdminPuzzleAside.propTypes = {
-    puzzleText: PropTypes.string.isRequired,
-    copyTextToClipboard: PropTypes.func.isRequired,
 }
 
 export default AdminPuzzleAside

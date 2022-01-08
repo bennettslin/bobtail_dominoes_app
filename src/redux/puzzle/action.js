@@ -27,7 +27,7 @@ export const resetPuzzleText = () => ({
     type: RESET_PUZZLE_TEXT,
 })
 
-export const appendPuzzleText = text => ({
+export const appendPuzzleText = puzzleText => ({
     type: APPEND_PUZZLE_TEXT,
-    payload: text,
+    payload: { puzzleText },
 })
