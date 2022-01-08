@@ -10,7 +10,7 @@ import { mapPuzzleTestDate } from '../../../redux/admin/selector'
 import { formatDateWithDayOfWeek } from '../../../utils/date/format'
 import { hsl } from '../../../utils/svgs'
 
-const PuzzleTestAside = ({
+const AdminPuzzleAside = ({
     puzzleText,
     copyTextToClipboard,
 }) => {
@@ -24,7 +24,7 @@ const PuzzleTestAside = ({
         <Flex
             {...{
                 className: cx(
-                    'PuzzleTestAside',
+                    'AdminPuzzleAside',
                 ),
                 flexDirection: 'column',
                 gap: 'xs',
@@ -65,9 +65,9 @@ const PuzzleTestAside = ({
     )
 }
 
-PuzzleTestAside.propTypes = {
+AdminPuzzleAside.propTypes = {
     puzzleText: PropTypes.string.isRequired,
     copyTextToClipboard: PropTypes.func.isRequired,
 }
 
-export default PuzzleTestAside
+export default AdminPuzzleAside

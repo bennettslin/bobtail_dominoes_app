@@ -1,16 +1,16 @@
 import React from 'react'
 import Page from '../../Page'
 import NotFoundPage from '../NotFound'
-import PuzzleTest from '../../../components/PuzzleTest'
+import AdminPuzzleGenerator from '../../../components/AdminPuzzleGenerator'
 
-const PuzzleTestPage = () => (
+const AdminPage = () => (
     IS_RUNTIME ? (
         <Page
             {...{
-                id: 'puzzleTest',
-                titleHeading: 'Puzzle test page',
+                id: 'admin',
+                titleHeading: 'Admin page',
                 body: (
-                    <PuzzleTest />
+                    <AdminPuzzleGenerator />
                 ),
             }}
         />
@@ -19,4 +19,4 @@ const PuzzleTestPage = () => (
     )
 )
 
-export default PuzzleTestPage
+export default AdminPage

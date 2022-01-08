@@ -1,18 +1,18 @@
 import React from 'react'
 import cx from 'classnames'
 import { useDispatch, useSelector } from 'react-redux'
-import Flex from '../../Flex'
+import Flex from '../Flex'
 import {
     updateAdminCurrentDate,
     updatePuzzleTestDate,
-} from '../../../redux/admin/action'
-import { getDateFromInputValue, getInputValueFromDate } from '../../../utils/date/input'
+} from '../../redux/admin/action'
+import { getDateFromInputValue, getInputValueFromDate } from '../../utils/date/input'
 import {
     mapAdminCurrentDate,
     mapPuzzleTestDate,
-} from '../../../redux/admin/selector'
+} from '../../redux/admin/selector'
 
-const PuzzleTestDateInputs = () => {
+const AdminDateInputs = () => {
     const
         dispatch = useDispatch(),
         adminCurrentDate = useSelector(mapAdminCurrentDate),
@@ -72,4 +72,4 @@ const PuzzleTestDateInputs = () => {
     )
 }
 
-export default PuzzleTestDateInputs
+export default AdminDateInputs

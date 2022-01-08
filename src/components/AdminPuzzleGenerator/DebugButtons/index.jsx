@@ -5,11 +5,11 @@ import Flex from '../../Flex'
 import PuzzleTestButton from '../Button'
 import { getArrayOfIndices } from '../../../utils/general'
 
-const PuzzleTestDebugButtons = ({ setPuzzle }) => (
+const AdminPuzzleDebugButtons = ({ setPuzzle }) => (
     <Flex
         {...{
             className: cx(
-                'PuzzleTest__debugButtons',
+                'AdminPuzzleDebugButtons',
             ),
             justifyContent: 'spaceEvenly',
             gap: 'xs',
@@ -28,8 +28,8 @@ const PuzzleTestDebugButtons = ({ setPuzzle }) => (
     </Flex>
 )
 
-PuzzleTestDebugButtons.propTypes = {
+AdminPuzzleDebugButtons.propTypes = {
     setPuzzle: PropTypes.func.isRequired,
 }
 
-export default PuzzleTestDebugButtons
+export default AdminPuzzleDebugButtons

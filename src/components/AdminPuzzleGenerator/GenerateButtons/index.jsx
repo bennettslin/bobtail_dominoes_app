@@ -8,7 +8,7 @@ import { updatePuzzleTestDate } from '../../../redux/admin/action'
 import { mapPuzzleTestDate } from '../../../redux/admin/selector'
 import { addDaysToDate } from '../../../utils/date'
 
-const PuzzleTestGenerateButtons = ({ setPuzzle }) => {
+const AdminPuzzleGenerateButtons = ({ setPuzzle }) => {
     const
         dispatch = useDispatch(),
         puzzleTestDate = useSelector(mapPuzzleTestDate),
@@ -22,7 +22,7 @@ const PuzzleTestGenerateButtons = ({ setPuzzle }) => {
         <Flex
             {...{
                 className: cx(
-                    'PuzzleTestGenerateButtons',
+                    'AdminPuzzleGenerateButtons',
                 ),
                 justifyContent: 'spaceEvenly',
                 gap: 'xs',
@@ -45,8 +45,8 @@ const PuzzleTestGenerateButtons = ({ setPuzzle }) => {
     )
 }
 
-PuzzleTestGenerateButtons.propTypes = {
+AdminPuzzleGenerateButtons.propTypes = {
     setPuzzle: PropTypes.func.isRequired,
 }
 
-export default PuzzleTestGenerateButtons
+export default AdminPuzzleGenerateButtons

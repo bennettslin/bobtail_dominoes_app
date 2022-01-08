@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import cx from 'classnames'
 import { useDispatch, useSelector } from 'react-redux'
+import AdminDateInputs from '../AdminDateInputs'
 import Flex from '../Flex'
-import PuzzleBoard from '../Puzzle/Board'
-import PuzzleTestAside from './Aside'
-import PuzzleTestDebugButtons from './DebugButtons'
-import PuzzleTestDateInputs from './DateInputs'
-import PuzzleTestGenerateButtons from './GenerateButtons'
+import AdminPuzzleBoard from './Board'
+import AdminPuzzleAside from './Aside'
+import AdminPuzzleDebugButtons from './DebugButtons'
+import AdminPuzzleEngine from './Engine'
+import AdminPuzzleGenerateButtons from './GenerateButtons'
 import { mapPuzzleTestDate } from '../../redux/admin/selector'
 import { queuePlay, updateCurrentPitchSet } from '../../redux/audio/action'
 import { getTextForPuzzle } from '../../utils/music/puzzles/format'
-import './style'
 
-const PuzzleTest = () => {
+const AdminPuzzleGenerator = () => {
     const
         dispatch = useDispatch(),
         puzzleTestDate = useSelector(mapPuzzleTestDate),
@@ -68,37 +68,29 @@ const PuzzleTest = () => {
         <Flex
             {...{
                 className: cx(
-                    'PuzzleTest',
+                    'AdminPuzzleGenerator',
                 ),
                 flexDirection: 'column',
                 alignItems: 'normal',
                 gap: 'xs',
             }}
         >
+            <AdminPuzzleEngine />
             <Flex
                 {...{
                     justifyContent: 'spaceEvenly',
                 }}
             >
-                <PuzzleTestDateInputs />
-                <PuzzleTestGenerateButtons {...{ setPuzzle }} />
+                <AdminDateInputs />
+                <AdminPuzzleGenerateButtons {...{ setPuzzle }} />
             </Flex>
             <Flex {...{ gap: 'sm' }} >
-                <PuzzleBoard
-                    showAnswer
-                    {...{
-                        className: cx(
-                            'PuzzleTestBoard',
-                        ),
-                        board,
-                        moves,
-                    }}
-                />
-                <PuzzleTestAside {...{ puzzleText, copyTextToClipboard }} />
+                <AdminPuzzleBoard {...{ board, moves }} />
+                <AdminPuzzleAside {...{ puzzleText, copyTextToClipboard }} />
             </Flex>
-            <PuzzleTestDebugButtons {...{ setPuzzle }} />
+            <AdminPuzzleDebugButtons {...{ setPuzzle }} />
         </Flex>
     )
 }
 
-export default PuzzleTest
+export default AdminPuzzleGenerator
