@@ -2,15 +2,11 @@ import React from 'react'
 import cx from 'classnames'
 import { useDispatch, useSelector } from 'react-redux'
 import Flex from '../Flex'
-import {
-    updateAdminCurrentDate,
-    updatePuzzleTestDate,
-} from '../../redux/admin/action'
+import { updateAdminCurrentDate } from '../../redux/admin/action'
+import { mapAdminCurrentDate } from '../../redux/admin/selector'
+import { updatePuzzleTestDate } from '../../redux/puzzle/action'
+import { mapPuzzleTestDate } from '../../redux/puzzle/selector'
 import { getDateFromInputValue, getInputValueFromDate } from '../../utils/date/input'
-import {
-    mapAdminCurrentDate,
-    mapPuzzleTestDate,
-} from '../../redux/admin/selector'
 
 const AdminDateInputs = () => {
     const

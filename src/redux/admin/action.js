@@ -12,14 +12,3 @@ export const updateAdminCurrentDate = (
         payload: { adminCurrentDate },
     }
 }
-
-export const updatePuzzleTestDate = (
-    puzzleTestDate = ADMIN_DEFAULT.puzzleTestDate,
-) => {
-    setDateInStorage('puzzleTestDate', puzzleTestDate)
-
-    return {
-        type: ADMIN_STORE,
-        payload: { puzzleTestDate },
-    }
-}

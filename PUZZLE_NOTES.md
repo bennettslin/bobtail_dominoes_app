@@ -1,5 +1,6 @@
 # Do entire month at once
 * Have engine component
+    * Refactor to make test generation based on Redux queue
     * Knows how many days in month of puzzle test day
         * https://date-fns.org/v2.28.0/docs/getDaysInMonth
 * Generate month button

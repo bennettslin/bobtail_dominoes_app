@@ -3,21 +3,18 @@ import cx from 'classnames'
 import { useDispatch, useSelector } from 'react-redux'
 import AdminDateInputs from '../AdminDateInputs'
 import Flex from '../Flex'
-import AdminPuzzleBoard from './Board'
 import AdminPuzzleAside from './Aside'
+import AdminPuzzleBoard from './Board'
 import AdminPuzzleDebugButtons from './DebugButtons'
 import AdminPuzzleEngine from './Engine'
-import AdminPuzzleGenerateButtons from './GenerateButtons'
-import { mapPuzzleTestDate } from '../../redux/admin/selector'
-import { queuePlay, updateCurrentPitchSet } from '../../redux/audio/action'
+import { mapPuzzleTestDate } from '../../redux/puzzle/selector'
+import { updateCurrentPitchSet } from '../../redux/audio/action'
 import { getTextForPuzzle } from '../../utils/music/puzzles/format'
 
 const AdminPuzzleGenerator = () => {
     const
         dispatch = useDispatch(),
         puzzleTestDate = useSelector(mapPuzzleTestDate),
-        [board, setBoard] = useState([]),
-        [moves, setMoves] = useState([]),
         [puzzleText, setPuzzleText] = useState(''),
         { day } = puzzleTestDate
 
@@ -35,8 +32,6 @@ const AdminPuzzleGenerator = () => {
         missingMoves,
         ...rest
     } = {}) => {
-        setBoard(board)
-        setMoves(moves || missingMoves || [])
         setPuzzleText(
             getTextForPuzzle({
                 day,
@@ -51,13 +46,6 @@ const AdminPuzzleGenerator = () => {
     useEffect(() => {
         copyTextToClipboard()
     }, [puzzleText])
-
-    useEffect(() => {
-        if (board.length) {
-            // Play sound to notify me when a trial succeeded.
-            dispatch(queuePlay(true))
-        }
-    }, [board])
 
     useEffect(() => {
         // Make notification sound a happy C major chord.
@@ -76,19 +64,14 @@ const AdminPuzzleGenerator = () => {
             }}
         >
             <AdminPuzzleEngine />
-            <Flex
-                {...{
-                    justifyContent: 'spaceEvenly',
-                }}
-            >
+            <Flex {...{ justifyContent: 'spaceEvenly' }} >
                 <AdminDateInputs />
-                <AdminPuzzleGenerateButtons {...{ setPuzzle }} />
             </Flex>
             <Flex {...{ gap: 'sm' }} >
-                <AdminPuzzleBoard {...{ board, moves }} />
+                <AdminPuzzleBoard />
                 <AdminPuzzleAside {...{ puzzleText, copyTextToClipboard }} />
             </Flex>
-            <AdminPuzzleDebugButtons {...{ setPuzzle }} />
+            <AdminPuzzleDebugButtons />
         </Flex>
     )
 }

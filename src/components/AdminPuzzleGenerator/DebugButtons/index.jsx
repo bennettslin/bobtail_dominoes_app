@@ -1,11 +1,10 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Flex from '../../Flex'
-import PuzzleTestButton from '../Button'
-import { getArrayOfIndices } from '../../../utils/general'
+import AdminPuzzleGenerateButton from './GenerateButton'
+import AdminPuzzleDateButton from './DateButton'
 
-const AdminPuzzleDebugButtons = ({ setPuzzle }) => (
+const AdminPuzzleDebugButtons = () => (
     <Flex
         {...{
             className: cx(
@@ -15,21 +14,15 @@ const AdminPuzzleDebugButtons = ({ setPuzzle }) => (
             gap: 'xs',
         }}
     >
-        for debugging only:
-        {getArrayOfIndices(7).map(customIndex => (
-            <PuzzleTestButton
-                {...{
-                    key: customIndex,
-                    customIndex,
-                    setPuzzle,
-                }}
-            />
-        ))}
+        For debugging only:
+        <AdminPuzzleDateButton {...{ direction: -1 }}>
+            Previous
+        </AdminPuzzleDateButton>
+        <AdminPuzzleGenerateButton />
+        <AdminPuzzleDateButton {...{ direction: 1 }}>
+            Next
+        </AdminPuzzleDateButton>
     </Flex>
 )
-
-AdminPuzzleDebugButtons.propTypes = {
-    setPuzzle: PropTypes.func.isRequired,
-}
 
 export default AdminPuzzleDebugButtons

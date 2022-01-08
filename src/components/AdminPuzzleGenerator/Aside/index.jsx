@@ -6,7 +6,7 @@ import Button from '../../Button'
 import Flex from '../../Flex'
 import Heading from '../../Heading'
 import Paragraph from '../../Paragraph'
-import { mapPuzzleTestDate } from '../../../redux/admin/selector'
+import { mapPuzzleTestDate } from '../../../redux/puzzle/selector'
 import { formatDateWithDayOfWeek } from '../../../utils/date/format'
 import { hsl } from '../../../utils/svgs'
 

@@ -2,53 +2,53 @@ import {
     MAXIMUM_PUZZLE_TYPE,
     MISSING_PUZZLE_TYPE,
     REGULAR_PUZZLE_TYPE,
-} from '../../constants/music/puzzle'
+} from '../music/puzzle'
 
 const PUZZLE_OF_DAY_CONFIGS = [
     {
-        text: 'Monday',
+        // Monday
         puzzleType: REGULAR_PUZZLE_TYPE,
         dominoesCountRange: [3, 5],
         rankRange: [0, 5],
         minPointsRange: [16, 20],
     },
     {
-        text: 'Tuesday',
+        // Tuesday
         puzzleType: MISSING_PUZZLE_TYPE,
         dominoesCountRange: [3, 5],
         rankRange: [0, 5],
         minPointsRange: [6, 9],
     },
     {
-        text: 'Wednesday',
+        // Wednesday
         puzzleType: MAXIMUM_PUZZLE_TYPE,
         dominoesCountRange: [3, 5],
         rankRange: [0, 5],
         minPointsRange: [8, 12],
     },
     {
-        text: 'Thursday',
+        // Thursday
         puzzleType: REGULAR_PUZZLE_TYPE,
         dominoesCountRange: [5, 7],
         rankRange: [0, 3],
         minPointsRange: [20, 24],
     },
     {
-        text: 'Friday',
+        // Friday
         puzzleType: MISSING_PUZZLE_TYPE,
         dominoesCountRange: [5, 7],
         rankRange: [0, 3],
         minPointsRange: [9, 12],
     },
     {
-        text: 'Saturday',
+        // Saturday
         puzzleType: MAXIMUM_PUZZLE_TYPE,
         dominoesCountRange: [5, 7],
         rankRange: [0, 3],
         minPointsRange: [12, 16],
     },
     {
-        text: 'Sunday',
+        // Sunday
         puzzleType: REGULAR_PUZZLE_TYPE,
         dominoesCountRange: [7, 9],
         rankRange: [0, 3],
@@ -56,6 +56,6 @@ const PUZZLE_OF_DAY_CONFIGS = [
     },
 ]
 
-export const getPuzzleConfig = dayOfWeekIndex => (
+export const getGeneratePuzzleConfig = dayOfWeekIndex => (
     PUZZLE_OF_DAY_CONFIGS[dayOfWeekIndex]
 )
