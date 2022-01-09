@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux'
 import Button from '../../Button'
 import Flex from '../../Flex'
 import Heading from '../../Heading'
-import Paragraph from '../../Paragraph'
 import { mapPuzzleTestDate, mapPuzzleText } from '../../../redux/puzzle/selector'
 import { formatDateWithDayOfWeek } from '../../../utils/date/format'
 import { hsl } from '../../../utils/svgs'
@@ -45,16 +44,16 @@ const AdminPuzzleAside = () => {
             <Heading {...{ level: 5 }}>
                 {formatDateWithDayOfWeek(puzzleTestDate)}
             </Heading>
-            <Paragraph
+            <textarea
                 {...{
                     style: {
                         height: '100%',
-                        minWidth: '240px',
+                        minWidth: '320px',
+                        fontSize: '0.25em',
                     },
+                    value: puzzleText,
                 }}
-            >
-                {puzzleText}
-            </Paragraph>
+            />
             <Button
                 {...{
                     className: cx(
