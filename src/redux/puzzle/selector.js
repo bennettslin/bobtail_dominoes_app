@@ -4,6 +4,10 @@ export const mapPuzzleTestDate = (
     { [PUZZLE_STORE]: { puzzleTestDate } },
 ) => puzzleTestDate
 
+export const mapPuzzleEndDate = (
+    { [PUZZLE_STORE]: { puzzleEndDate } },
+) => puzzleEndDate
+
 export const mapGeneratePuzzleConfig = (
     { [PUZZLE_STORE]: { generatePuzzleConfig } },
 ) => generatePuzzleConfig

@@ -1,5 +1,5 @@
 import { setDateInStorage } from '../../utils/storage/date'
-import { PUZZLE_DEFAULT, QUEUE_GENERATE_PUZZLE, APPEND_PUZZLE_TEXT, RESET_PUZZLE_TEXT } from './default'
+import { PUZZLE_DEFAULT, QUEUE_GENERATE_MONTH_PUZZLE, QUEUE_GENERATE_PUZZLE, UPDATE_PUZZLE } from './default'
 import { PUZZLE_STORE } from './reducer'
 
 export const updatePuzzleTestDate = (
@@ -13,21 +13,15 @@ export const updatePuzzleTestDate = (
     }
 }
 
-export const queueGeneratePuzzle = queuedGeneratePuzzle => ({
+export const queueGeneratePuzzle = () => ({
     type: QUEUE_GENERATE_PUZZLE,
-    payload: { queuedGeneratePuzzle },
+})
+
+export const queueGenerateMonthPuzzle = () => ({
+    type: QUEUE_GENERATE_MONTH_PUZZLE,
 })
 
 export const updatePuzzle = (puzzle = PUZZLE_DEFAULT.puzzle) => ({
-    type: PUZZLE_STORE,
+    type: UPDATE_PUZZLE,
     payload: { puzzle },
-})
-
-export const resetPuzzleText = () => ({
-    type: RESET_PUZZLE_TEXT,
-})
-
-export const appendPuzzleText = puzzleText => ({
-    type: APPEND_PUZZLE_TEXT,
-    payload: { puzzleText },
 })

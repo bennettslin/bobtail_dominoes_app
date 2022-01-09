@@ -7,7 +7,7 @@ import {
 } from '../log'
 import { MISSING_PUZZLE_TYPE } from '../../../../constants/music/puzzle'
 
-const TRIALS_COUNT = 1000
+const TRIALS_COUNT = Number.MAX_SAFE_INTEGER
 
 export const getMissingPuzzle = async ({
     dominoesCountRange,

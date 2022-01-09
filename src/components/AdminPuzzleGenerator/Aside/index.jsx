@@ -45,6 +45,7 @@ const AdminPuzzleAside = () => {
                 {formatDateWithDayOfWeek(puzzleTestDate)}
             </Heading>
             <textarea
+                readOnly
                 {...{
                     style: {
                         height: '100%',

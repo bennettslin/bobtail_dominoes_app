@@ -1,3 +1,4 @@
+import { getDayOfWeekIndex } from '../../utils/date/dayOfWeek'
 import {
     MAXIMUM_PUZZLE_TYPE,
     MISSING_PUZZLE_TYPE,
@@ -56,6 +57,6 @@ const PUZZLE_OF_DAY_CONFIGS = [
     },
 ]
 
-export const getGeneratePuzzleConfig = dayOfWeekIndex => (
-    PUZZLE_OF_DAY_CONFIGS[dayOfWeekIndex]
+export const getGeneratePuzzleConfig = date => (
+    PUZZLE_OF_DAY_CONFIGS[getDayOfWeekIndex(date)]
 )

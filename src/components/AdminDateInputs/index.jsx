@@ -1,5 +1,4 @@
 import React from 'react'
-import cx from 'classnames'
 import { useDispatch, useSelector } from 'react-redux'
 import Flex from '../Flex'
 import { updateAdminCurrentDate } from '../../redux/admin/action'
@@ -25,9 +24,6 @@ const AdminDateInputs = () => {
     return (
         <Flex
             {...{
-                className: cx(
-                    'PuzzleTest__dateInputs',
-                ),
                 justifyContent: 'spaceEvenly',
                 gap: 'xs',
             }}

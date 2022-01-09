@@ -5,5 +5,4 @@ import {
 } from '../../../../constants/music/puzzle'
 
 export default {
-
 }

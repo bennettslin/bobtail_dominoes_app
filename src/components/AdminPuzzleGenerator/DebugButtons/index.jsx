@@ -1,5 +1,4 @@
 import React from 'react'
-import cx from 'classnames'
 import Flex from '../../Flex'
 import AdminPuzzleGenerateButton from './GenerateButton'
 import AdminPuzzleDateButton from './DateButton'
@@ -7,9 +6,6 @@ import AdminPuzzleDateButton from './DateButton'
 const AdminPuzzleDebugButtons = () => (
     <Flex
         {...{
-            className: cx(
-                'AdminPuzzleDebugButtons',
-            ),
             justifyContent: 'spaceEvenly',
             gap: 'xs',
         }}

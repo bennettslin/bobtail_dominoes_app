@@ -1,14 +1,14 @@
 import React from 'react'
 import cx from 'classnames'
 import { useDispatch } from 'react-redux'
-import Button from '../../../Button'
-import { queueGeneratePuzzle } from '../../../../redux/puzzle/action'
+import Button from '../../Button'
+import { queueGenerateMonthPuzzle } from '../../../redux/puzzle/action'
 
-const AdminPuzzleGenerateButton = () => {
+const AdminPuzzleCounterButton = () => {
     const dispatch = useDispatch()
 
     const handleButtonClick = () => {
-        dispatch(queueGeneratePuzzle())
+        dispatch(queueGenerateMonthPuzzle())
     }
 
     return (
@@ -22,9 +22,9 @@ const AdminPuzzleGenerateButton = () => {
                 handleButtonClick,
             }}
         >
-            Test
+            Generate
         </Button>
     )
 }
 
-export default AdminPuzzleGenerateButton
+export default AdminPuzzleCounterButton
