@@ -43,6 +43,7 @@ export const puzzleReducer = (
                 generatePuzzleConfig: (
                     getGeneratePuzzleConfig(puzzleTestDate)
                 ),
+                puzzle: PUZZLE_DEFAULT.puzzle,
                 puzzleText: PUZZLE_DEFAULT.puzzleText,
             }
         }
@@ -61,22 +62,26 @@ export const puzzleReducer = (
 
             return {
                 ...state,
-                ...puzzle && {
+                ...puzzleEndDate && {
                     puzzleTestDate,
                     ...isSameDate && {
                         puzzleEndDate: PUZZLE_DEFAULT.puzzleEndDate,
                     },
-                    generatePuzzleConfig: (
-                        isSameDate ?
-                            PUZZLE_DEFAULT.generatePuzzleConfig :
-                            getGeneratePuzzleConfig(puzzleTestDate)
-                    ),
+                },
+                generatePuzzleConfig:
+                    (!puzzleEndDate || isSameDate) ?
+                        PUZZLE_DEFAULT.generatePuzzleConfig :
+                        getGeneratePuzzleConfig(
+                            puzzleTestDate,
+                        ),
+
+                puzzle,
+                ...puzzle && {
                     puzzleText: puzzleText + getTextForPuzzle({
                         day: prevTestDate.day,
                         ...puzzle,
                     }),
                 },
-                puzzle,
             }
         }
         default:

@@ -28,13 +28,10 @@ describe('addDaysToDate', () => {
 })
 
 describe('getIsSameDate', () => {
-    it('returns true if same date', () => {
+    it('returns false if either date does not exist', () => {
         expect(
-            getIsSameDate(
-                { year: 1983, month: 5, day: 4 },
-                { year: 1983, month: 5, day: 4 },
-            ),
-        ).toBe(true)
+            getIsSameDate(),
+        ).toBe(false)
     })
 
     it('returns false if future date', () => {
@@ -53,6 +50,15 @@ describe('getIsSameDate', () => {
                 { year: 1983, month: 5, day: 4 },
             ),
         ).toBe(false)
+    })
+
+    it('returns true if same date', () => {
+        expect(
+            getIsSameDate(
+                { year: 1983, month: 5, day: 4 },
+                { year: 1983, month: 5, day: 4 },
+            ),
+        ).toBe(true)
     })
 })
 

@@ -19,10 +19,10 @@ export const addDaysToDate = (date, increment) => (
 )
 
 export const getIsSameDate = (firstDate, secondDate) => (
-    !differenceInDays(
+    firstDate && secondDate ? !differenceInDays(
         getDateObjectForDate(firstDate),
         getDateObjectForDate(secondDate),
-    )
+    ) : false
 )
 
 export const getFirstDayOfMonth = date => (

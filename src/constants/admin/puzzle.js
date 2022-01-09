@@ -10,21 +10,21 @@ const PUZZLE_OF_DAY_CONFIGS = [
         // Monday
         puzzleType: REGULAR_PUZZLE_TYPE,
         dominoesCountRange: [3, 5],
-        rankRange: [0, 5],
+        rankRange: [0, 3],
         minPointsRange: [16, 20],
     },
     {
         // Tuesday
         puzzleType: MISSING_PUZZLE_TYPE,
         dominoesCountRange: [3, 5],
-        rankRange: [0, 5],
+        rankRange: [0, 3],
         minPointsRange: [6, 9],
     },
     {
         // Wednesday
         puzzleType: MAXIMUM_PUZZLE_TYPE,
         dominoesCountRange: [3, 5],
-        rankRange: [0, 5],
+        rankRange: [0, 3],
         minPointsRange: [8, 12],
     },
     {
