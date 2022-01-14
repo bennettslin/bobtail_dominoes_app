@@ -4,7 +4,9 @@ import NotFoundPage from '../NotFound'
 import AdminPuzzleGenerator from '../../../components/AdminPuzzleGenerator'
 
 const AdminPage = () => (
-    IS_RUNTIME ? (
+    IS_PRODUCTION ? (
+        <NotFoundPage />
+    ) : (
         <Page
             {...{
                 id: 'admin',
@@ -14,8 +16,6 @@ const AdminPage = () => (
                 ),
             }}
         />
-    ) : (
-        <NotFoundPage />
     )
 )
 

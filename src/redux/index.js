@@ -7,10 +7,12 @@ import { getPageReducer, PAGE_STORE } from './page/reducer'
 import { puzzleReducer, PUZZLE_STORE } from './puzzle/reducer'
 
 export const getReducers = ({ initialPage }) => combineReducers({
-    [ADMIN_STORE]: adminReducer,
     [AUDIO_STORE]: audioReducer,
     [GAME_STORE]: gameReducer,
     [OPTION_STORE]: optionReducer,
     [PAGE_STORE]: getPageReducer({ initialPage }),
-    [PUZZLE_STORE]: puzzleReducer,
+    ...!IS_PRODUCTION && {
+        [ADMIN_STORE]: adminReducer,
+        [PUZZLE_STORE]: puzzleReducer,
+    },
 })

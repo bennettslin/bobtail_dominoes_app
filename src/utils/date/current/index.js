@@ -4,9 +4,9 @@ import { getDateFromStorage } from '../../storage/date'
 import { getDateForDateObject, getDateObjectForDate } from '..'
 
 export const getCurrentDate = () => (
-    IS_RUNTIME ?
-        getDateFromStorage('adminCurrentDate') :
-        getDateForDateObject(new Date())
+    IS_PRODUCTION ?
+        getDateForDateObject(new Date()) :
+        getDateFromStorage('adminCurrentDate')
 )
 
 export const getIsTimeEligibleDate = date => (
