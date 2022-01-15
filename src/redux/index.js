@@ -5,13 +5,15 @@ import { gameReducer, GAME_STORE } from './game/reducer'
 import { optionReducer, OPTION_STORE } from './option/reducer'
 import { getPageReducer, PAGE_STORE } from './page/reducer'
 import { puzzleReducer, PUZZLE_STORE } from './puzzle/reducer'
+import { getIsAdmin } from '../utils/admin'
 
 export const getReducers = ({ initialPage }) => combineReducers({
     [AUDIO_STORE]: audioReducer,
     [GAME_STORE]: gameReducer,
     [OPTION_STORE]: optionReducer,
     [PAGE_STORE]: getPageReducer({ initialPage }),
-    ...!IS_PRODUCTION && {
+
+    ...getIsAdmin() && {
         [ADMIN_STORE]: adminReducer,
         [PUZZLE_STORE]: puzzleReducer,
     },

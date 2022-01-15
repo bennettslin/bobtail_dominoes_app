@@ -1,21 +1,13 @@
 import React from 'react'
 import Page from '../../Page'
 import NotFoundPage from '../NotFound'
-import AdminPuzzleGenerator from '../../../components/AdminPuzzleGenerator'
+import { getIsAdmin } from '../../../utils/admin'
 
-const AdminPage = () => (
-    IS_PRODUCTION ? (
-        <NotFoundPage />
+const AdminPage = props => (
+    getIsAdmin() ? (
+        <Page {...props} />
     ) : (
-        <Page
-            {...{
-                id: 'admin',
-                titleHeading: 'Admin page',
-                body: (
-                    <AdminPuzzleGenerator />
-                ),
-            }}
-        />
+        <NotFoundPage />
     )
 )
 

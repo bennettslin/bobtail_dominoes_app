@@ -9,7 +9,9 @@ import {
     GUIDES_PAGE,
     PUZZLES_PAGE,
     RULES_PAGE,
+    ADMIN_PAGE,
 } from '../../../../constants/pages'
+import { adminPageIds } from '../../../../content/admin'
 
 const INITIAL_CHILD_PAGES = {
     [ABOUT_PAGE]: aboutPageIds[0],
@@ -20,6 +22,7 @@ const INITIAL_CHILD_PAGES = {
         ),
     ),
     [RULES_PAGE]: rulesPageIds[0],
+    [ADMIN_PAGE]: adminPageIds[0],
 }
 
 export const getInitialChildPage = topLevelPage => (

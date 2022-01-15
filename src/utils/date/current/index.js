@@ -1,12 +1,13 @@
 import { differenceInMilliseconds } from 'date-fns'
+import { getIsAdmin } from '../../admin'
 import { getIsServerSide } from '../../browser'
 import { getDateFromStorage } from '../../storage/date'
 import { getDateForDateObject, getDateObjectForDate } from '..'
 
 export const getCurrentDate = () => (
-    IS_PRODUCTION ?
-        getDateForDateObject(new Date()) :
-        getDateFromStorage('adminCurrentDate')
+    getIsAdmin() ?
+        getDateFromStorage('adminCurrentDate') :
+        getDateForDateObject(new Date())
 )
 
 export const getIsTimeEligibleDate = date => (
