@@ -34,17 +34,17 @@ export const getKeySrc = pitch => KEYS[pitch]
 
 export const getKeyStyleConfig = ({
     isPitchBlack,
-    hasCurrentPitch,
-    isRoot,
-    playedPitchIndexConfig,
+    hasCheckerPitch,
+    isCheckerRoot,
+    checkerPitchIndexConfig,
 
 }) => {
     let styleConfig = isPitchBlack ?
         styleConfigPitchBlack :
         styleConfigPitchWhite
 
-    if (hasCurrentPitch) {
-        styleConfig = isRoot ?
+    if (hasCheckerPitch) {
+        styleConfig = isCheckerRoot ?
             styleConfigRootOn :
             styleConfigPitchOn
     }
@@ -52,7 +52,7 @@ export const getKeyStyleConfig = ({
     // This returns the default if there is no played config.
     return getAnimatedStyleConfig(
         styleConfig,
-        playedPitchIndexConfig,
+        checkerPitchIndexConfig,
     )
 }
 

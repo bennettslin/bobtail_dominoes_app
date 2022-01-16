@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { useDispatch, useSelector } from 'react-redux'
 import getDidMountHoc from '../../../../hocs/DidMountHoc'
 import CheckerButton from '../../CheckerButton'
-import { updateIsAutoplayOn } from '../../../../redux/audio/action'
-import { mapIsAutoplayOn } from '../../../../redux/audio/selector'
+import { updateIsCheckerAutoplayOn } from '../../../../redux/checker/action'
+import { mapIsCheckerAutoplayOn } from '../../../../redux/checker/selector'
 import styleConfigAudio from '../../../../styles/arcade/audio'
 import styleConfigAudioOn from '../../../../styles/arcade/audioOn'
 import styleConfigFacesAudio from '../../../../styles/faces/audio'
@@ -13,10 +13,10 @@ import faceAutoplay from '../../../../assets/svgs/checker/faceAutoplay'
 const AutoplayButton = ({ didMount }) => {
     const
         dispatch = useDispatch(),
-        isAutoplayOn = useSelector(mapIsAutoplayOn)
+        isCheckerAutoplayOn = useSelector(mapIsCheckerAutoplayOn)
 
     const onClick = () => {
-        dispatch(updateIsAutoplayOn(!isAutoplayOn))
+        dispatch(updateIsCheckerAutoplayOn(!isCheckerAutoplayOn))
     }
 
     return (
@@ -26,7 +26,7 @@ const AutoplayButton = ({ didMount }) => {
                 styleConfig: styleConfigAudio,
                 styleConfigOn: styleConfigAudioOn,
                 faceStyleConfig: styleConfigFacesAudio,
-                isOn: didMount && isAutoplayOn,
+                isOn: didMount && isCheckerAutoplayOn,
                 onClick,
             }}
         />

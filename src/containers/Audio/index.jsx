@@ -2,14 +2,14 @@ import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { now } from 'tone'
 import { getSynth } from '../../modules/synth'
-import { mapPlayedPitchConfigs } from '../../redux/audio/selector'
+import { mapCheckerPitchConfigs } from '../../redux/checker/selector'
 import { getAudioPitchSymbol } from '../../utils/music/audio/pitch'
 
 const Audio = () => {
-    const playedPitchConfigs = useSelector(mapPlayedPitchConfigs)
+    const checkerPitchConfigs = useSelector(mapCheckerPitchConfigs)
 
     const soundPitches = () => {
-        Object.values(playedPitchConfigs).forEach(pitchIndexConfig => {
+        Object.values(checkerPitchConfigs).forEach(pitchIndexConfig => {
             Object.values(pitchIndexConfig).forEach(({
                 pitchIndex,
                 attack,
@@ -24,10 +24,10 @@ const Audio = () => {
     }
 
     useEffect(() => {
-        if (playedPitchConfigs) {
+        if (checkerPitchConfigs) {
             soundPitches()
         }
-    }, [playedPitchConfigs])
+    }, [checkerPitchConfigs])
 
     return null
 }

@@ -11,7 +11,7 @@ const getAttackTime = ({
     pitchSet,
 }) => round(index * getDurationTime(pitchSet))
 
-export const getPlayedPitchConfigs = (pitchSet = new Set()) => (
+export const getPitchConfigs = (pitchSet = new Set()) => (
     getPitchIndices(pitchSet).reduce((config, pitchIndex, index) => {
         const { pitch } = getPitchConfig(pitchIndex)
         config[pitch] = config[pitch] || {}

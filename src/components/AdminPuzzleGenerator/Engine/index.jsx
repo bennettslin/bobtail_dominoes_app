@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { queuePlay, updateCurrentPitchSet } from '../../../redux/audio/action'
+import { queueCheckerPlay, updateCheckerPitchSet } from '../../../redux/checker/action'
 import { updatePuzzle } from '../../../redux/puzzle/action'
 import { mapGeneratePuzzleConfig, mapPuzzleEndDate } from '../../../redux/puzzle/selector'
 import { getPuzzle } from '../../../utils/music/puzzles'
@@ -25,13 +25,13 @@ const AdminPuzzleEngine = () => {
 
     useEffect(() => {
         if (!puzzleEndDate) {
-            dispatch(queuePlay(true))
+            dispatch(queueCheckerPlay(true))
         }
     }, [puzzleEndDate])
 
     useEffect(() => {
         // Make notification sound a happy C major chord.
-        dispatch(updateCurrentPitchSet(new Set([0, 4, 7])))
+        dispatch(updateCheckerPitchSet(new Set([0, 4, 7])))
     }, [])
 
     return null

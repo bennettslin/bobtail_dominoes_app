@@ -1,6 +1,6 @@
-import { getPlayedPitchConfigs } from '.'
+import { getPitchConfigs } from '.'
 
-describe('getPlayedPitchConfigs', () => {
+describe('getPitchConfigs', () => {
     test.each([
         [undefined, {}],
         [new Set(), {}],
@@ -24,6 +24,6 @@ describe('getPlayedPitchConfigs', () => {
             },
         }],
     ])('%p returns played pitch config %p', (set, result) => {
-        expect(getPlayedPitchConfigs(set)).toStrictEqual(result)
+        expect(getPitchConfigs(set)).toStrictEqual(result)
     })
 })

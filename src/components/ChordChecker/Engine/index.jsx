@@ -1,43 +1,43 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { queuePlay } from '../../../redux/audio/action'
+import { queueCheckerPlay } from '../../../redux/checker/action'
 import {
-    mapCurrentPitchSet,
-    mapHasPlayableSonority,
-    mapIsAutoplayOn,
-    mapIsPlaying,
-    mapPlayedPitchConfigs,
-} from '../../../redux/audio/selector'
+    mapCheckerPitchSet,
+    mapHasPlayableCheckerSonority,
+    mapIsCheckerAutoplayOn,
+    mapIsCheckerPlaying,
+    mapCheckerPitchConfigs,
+} from '../../../redux/checker/selector'
 import { ANIMATED_TOTAL_DURATION } from '../../../constants/music/audio'
 
 const ChordCheckerEngine = () => {
     const
         dispatch = useDispatch(),
-        isAutoplayOn = useSelector(mapIsAutoplayOn),
-        isPlaying = useSelector(mapIsPlaying),
-        hasPlayableSonority = useSelector(mapHasPlayableSonority),
-        currentPitchSet = useSelector(mapCurrentPitchSet),
-        playedPitchConfigs = useSelector(mapPlayedPitchConfigs)
+        isCheckerAutoplayOn = useSelector(mapIsCheckerAutoplayOn),
+        isCheckerPlaying = useSelector(mapIsCheckerPlaying),
+        hasPlayableCheckerSonority = useSelector(mapHasPlayableCheckerSonority),
+        checkerPitchSet = useSelector(mapCheckerPitchSet),
+        checkerPitchConfigs = useSelector(mapCheckerPitchConfigs)
 
     const setTimeoutForPlayEnd = () => {
         setTimeout(() => {
-            dispatch(queuePlay(false))
+            dispatch(queueCheckerPlay(false))
         }, ANIMATED_TOTAL_DURATION * 1000)
     }
 
     useEffect(() => {
-        if (playedPitchConfigs) {
+        if (checkerPitchConfigs) {
             setTimeoutForPlayEnd()
         }
-    }, [playedPitchConfigs])
+    }, [checkerPitchConfigs])
 
     useEffect(() => {
-        if (isAutoplayOn && !isPlaying) {
-            if (hasPlayableSonority) {
-                dispatch(queuePlay(true))
+        if (isCheckerAutoplayOn && !isCheckerPlaying) {
+            if (hasPlayableCheckerSonority) {
+                dispatch(queueCheckerPlay(true))
             }
         }
-    }, [isAutoplayOn, currentPitchSet])
+    }, [isCheckerAutoplayOn, checkerPitchSet])
 
     return null
 }

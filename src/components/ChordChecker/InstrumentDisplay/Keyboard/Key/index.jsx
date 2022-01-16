@@ -5,10 +5,10 @@ import { useSelector } from 'react-redux'
 import StyledShadow from '../../../../Styled/Shadow'
 import Svg from '../../../../Svg'
 import {
-    getMapHasCurrentPitch,
-    getMapIsRoot,
-    getMapPlayedPitchIndexConfig,
-} from '../../../../../redux/audio/selector'
+    getMapHasCheckerPitch,
+    getMapIsCheckerRoot,
+    getMapCheckerPitchIndexConfig,
+} from '../../../../../redux/checker/selector'
 import { getPitchConfig } from '../../../../../utils/music/audio/pitch'
 import { getIsPitchBlack } from '../../../../../utils/music/chords/label'
 import {
@@ -22,16 +22,16 @@ const KeyboardKey = ({ pitchIndex }) => {
     const
         { pitch } = getPitchConfig(pitchIndex),
         isPitchBlack = getIsPitchBlack(pitch),
-        hasCurrentPitch = useSelector(getMapHasCurrentPitch(pitch)),
-        isRoot = useSelector(getMapIsRoot(pitch)),
-        playedPitchIndexConfig = useSelector(
-            getMapPlayedPitchIndexConfig(pitchIndex),
+        hasCheckerPitch = useSelector(getMapHasCheckerPitch(pitch)),
+        isCheckerRoot = useSelector(getMapIsCheckerRoot(pitch)),
+        checkerPitchIndexConfig = useSelector(
+            getMapCheckerPitchIndexConfig(pitchIndex),
         ),
         styleConfig = getKeyStyleConfig({
             isPitchBlack,
-            hasCurrentPitch,
-            isRoot,
-            playedPitchIndexConfig,
+            hasCheckerPitch,
+            isCheckerRoot,
+            checkerPitchIndexConfig,
         })
 
     return (
@@ -39,7 +39,6 @@ const KeyboardKey = ({ pitchIndex }) => {
             {...{
                 className: cx(
                     'KeyboardKey',
-                    playedPitchIndexConfig && 'testing',
                 ),
                 ...isPitchBlack && {
                     style: {

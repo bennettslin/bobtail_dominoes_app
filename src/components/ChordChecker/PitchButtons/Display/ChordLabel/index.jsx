@@ -3,13 +3,13 @@ import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import ChordAbbreviations from '../../../../ChordAbbreviations'
 import StyledChordLabel from '../../../../Styled/ChordLabel'
-import { mapCurrentPitchSet } from '../../../../../redux/audio/selector'
+import { mapCheckerPitchSet } from '../../../../../redux/checker/selector'
 import { getChordAbbreviation } from '../../../../../utils/music/chords/label'
 
 const DisplayChordLabel = () => {
     const
-        currentPitchSet = useSelector(mapCurrentPitchSet),
-        abbreviations = [getChordAbbreviation(currentPitchSet)]
+        checkerPitchSet = useSelector(mapCheckerPitchSet),
+        abbreviations = [getChordAbbreviation(checkerPitchSet)]
 
     return (
         <StyledChordLabel

@@ -2,12 +2,12 @@ import React from 'react'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
 import StyledChordLabel from '../../../Styled/ChordLabel'
-import { mapCurrentPitchSet } from '../../../../redux/audio/selector'
+import { mapCheckerPitchSet } from '../../../../redux/checker/selector'
 import { getChordLabel } from '../../../../utils/music/chords/label'
 import './style'
 
 const ChordLabel = () => {
-    const currentPitchSet = useSelector(mapCurrentPitchSet)
+    const checkerPitchSet = useSelector(mapCheckerPitchSet)
 
     return (
         <StyledChordLabel
@@ -18,7 +18,7 @@ const ChordLabel = () => {
                 ),
             }}
         >
-            {getChordLabel(currentPitchSet)}
+            {getChordLabel(checkerPitchSet)}
         </StyledChordLabel>
     )
 }

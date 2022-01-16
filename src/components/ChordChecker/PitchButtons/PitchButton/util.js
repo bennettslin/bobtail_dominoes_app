@@ -14,15 +14,15 @@ export const getButtonStyleConfig = isPitchBlack => (
 )
 
 export const getButtonOnStyleConfig = ({
-    isRoot,
-    playedPitchConfig,
+    isCheckerRoot,
+    checkerPitchConfig,
 }) => (
     // This returns the default if there is no played config.
     getAnimatedStyleConfig(
-        isRoot ?
+        isCheckerRoot ?
             styleConfigRootOn :
             styleConfigPitchOn,
-        playedPitchConfig,
+        checkerPitchConfig,
     )
 )
 

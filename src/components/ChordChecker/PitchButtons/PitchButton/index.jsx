@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { useDispatch, useSelector } from 'react-redux'
 import CheckerButton from '../../CheckerButton'
-import { togglePitch } from '../../../../redux/audio/action'
+import { toggleCheckerPitch } from '../../../../redux/checker/action'
 import {
-    getMapHasCurrentPitch,
-    getMapIsRoot,
-    getMapPlayedPitchConfig,
-    mapHasMaximumSonority,
-} from '../../../../redux/audio/selector'
+    getMapHasCheckerPitch,
+    getMapIsCheckerRoot,
+    getMapCheckerPitchConfig,
+    mapHasMaximumCheckerSonority,
+} from '../../../../redux/checker/selector'
 import { getIsPitchBlack } from '../../../../utils/music/chords/label'
 import { getFaceSrc } from '../../../../utils/src/faces'
 import {
@@ -22,34 +22,33 @@ import './style'
 const PitchButton = ({ pitch }) => {
     const
         dispatch = useDispatch(),
-        isRoot = useSelector(getMapIsRoot(pitch)),
-        hasCurrentPitch = useSelector(getMapHasCurrentPitch(pitch)),
-        hasMaximumSonority = useSelector(mapHasMaximumSonority),
-        playedPitchConfig = useSelector(getMapPlayedPitchConfig(pitch)),
+        isCheckerRoot = useSelector(getMapIsCheckerRoot(pitch)),
+        hasCheckerPitch = useSelector(getMapHasCheckerPitch(pitch)),
+        hasMaximumCheckerSonority = useSelector(mapHasMaximumCheckerSonority),
+        checkerPitchConfig = useSelector(getMapCheckerPitchConfig(pitch)),
         styleConfig = getButtonStyleConfig(getIsPitchBlack(pitch)),
         styleConfigOn = getButtonOnStyleConfig({
-            isRoot,
-            playedPitchConfig,
+            isCheckerRoot,
+            checkerPitchConfig,
         })
 
     const onClick = () => {
-        dispatch(togglePitch(pitch))
+        dispatch(toggleCheckerPitch(pitch))
     }
 
     return (
         <CheckerButton
             {...{
-                key: hasCurrentPitch ?
+                key: hasCheckerPitch ?
                     styleConfigOn.className :
                     styleConfig.className,
                 className: cx(
                     'PitchButton',
-                    playedPitchConfig && 'testing',
                 ),
                 faceSrc: getFaceSrc({ pitch }),
                 style: getButtonPositionStyle(pitch),
-                isOn: hasCurrentPitch,
-                disabled: hasMaximumSonority && !hasCurrentPitch,
+                isOn: hasCheckerPitch,
+                disabled: hasMaximumCheckerSonority && !hasCheckerPitch,
                 styleConfig,
                 styleConfigOn,
                 onClick,

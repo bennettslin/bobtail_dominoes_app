@@ -1,11 +1,11 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import CheckerButton from '../../CheckerButton'
-import { queuePlay } from '../../../../redux/audio/action'
+import { queueCheckerPlay } from '../../../../redux/checker/action'
 import {
-    mapHasPlayableSonority,
-    mapIsPlaying,
-} from '../../../../redux/audio/selector'
+    mapHasPlayableCheckerSonority,
+    mapIsCheckerPlaying,
+} from '../../../../redux/checker/selector'
 import styleConfigAudio from '../../../../styles/arcade/audio'
 import styleConfigFacesAudio from '../../../../styles/faces/audio'
 import facePlay from '../../../../assets/svgs/checker/facePlay'
@@ -13,18 +13,18 @@ import facePlay from '../../../../assets/svgs/checker/facePlay'
 const PlayButton = () => {
     const
         dispatch = useDispatch(),
-        isPlaying = useSelector(mapIsPlaying),
-        hasPlayableSonority = useSelector(mapHasPlayableSonority)
+        isCheckerPlaying = useSelector(mapIsCheckerPlaying),
+        hasPlayableCheckerSonority = useSelector(mapHasPlayableCheckerSonority)
 
     const onClick = () => {
-        dispatch(queuePlay(true))
+        dispatch(queueCheckerPlay(true))
     }
 
     return (
         <CheckerButton
             {...{
                 faceSrc: facePlay,
-                disabled: isPlaying || !hasPlayableSonority,
+                disabled: isCheckerPlaying || !hasPlayableCheckerSonority,
                 styleConfig: styleConfigAudio,
                 faceStyleConfig: styleConfigFacesAudio,
                 onClick,
