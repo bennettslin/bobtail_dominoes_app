@@ -1,26 +1,12 @@
 import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { now } from 'tone'
 import { getSynth } from '../../modules/synth'
-import { queuePlay } from '../../redux/audio/action'
-import {
-    mapCurrentPitchSet,
-    mapHasPlayableSonority,
-    mapIsAutoplayOn,
-    mapIsPlaying,
-    mapPlayedPitchConfigs,
-} from '../../redux/audio/selector'
+import { mapPlayedPitchConfigs } from '../../redux/audio/selector'
 import { getAudioPitchSymbol } from '../../utils/music/audio/pitch'
-import { ANIMATED_TOTAL_DURATION } from '../../constants/music/audio'
 
 const Audio = () => {
-    const
-        dispatch = useDispatch(),
-        isAutoplayOn = useSelector(mapIsAutoplayOn),
-        currentPitchSet = useSelector(mapCurrentPitchSet),
-        playedPitchConfigs = useSelector(mapPlayedPitchConfigs),
-        isPlaying = useSelector(mapIsPlaying),
-        hasPlayableSonority = useSelector(mapHasPlayableSonority)
+    const playedPitchConfigs = useSelector(mapPlayedPitchConfigs)
 
     const soundPitches = () => {
         Object.values(playedPitchConfigs).forEach(pitchIndexConfig => {
@@ -37,22 +23,9 @@ const Audio = () => {
         })
     }
 
-    const timePitches = () => {
-        setTimeout(() => {
-            dispatch(queuePlay(false))
-        }, ANIMATED_TOTAL_DURATION * 1000)
-    }
-
     useEffect(() => {
-        if (isAutoplayOn && hasPlayableSonority && !isPlaying) {
-            dispatch(queuePlay(true))
-        }
-    }, [isAutoplayOn, currentPitchSet])
-
-    useEffect(() => {
-        if (hasPlayableSonority && playedPitchConfigs) {
+        if (playedPitchConfigs) {
             soundPitches()
-            timePitches()
         }
     }, [playedPitchConfigs])
 

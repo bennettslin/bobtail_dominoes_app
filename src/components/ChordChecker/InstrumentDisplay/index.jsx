@@ -6,12 +6,12 @@ import ChordLabel from './ChordLabel'
 import Keyboard from './Keyboard'
 import './style'
 
-const KeyboardDisplay = () => (
+const InstrumentDisplay = () => (
     <StyledPlatform isBottomPlatform>
         <StyledDisplay
             {...{
                 className: cx(
-                    'KeyboardDisplay',
+                    'InstrumentDisplay',
                 ),
                 flexDirection: 'column',
             }}
@@ -22,4 +22,4 @@ const KeyboardDisplay = () => (
     </StyledPlatform>
 )
 
-export default KeyboardDisplay
+export default InstrumentDisplay

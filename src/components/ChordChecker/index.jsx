@@ -1,7 +1,8 @@
 import React from 'react'
 import cx from 'classnames'
 import Flex from '../Flex'
-import KeyboardDisplay from './KeyboardDisplay'
+import ChordCheckerEngine from './Engine'
+import InstrumentDisplay from './InstrumentDisplay'
 import OptionButtons from './OptionButtons'
 import PitchButtons from './PitchButtons'
 import './style'
@@ -18,7 +19,8 @@ const ChordChecker = () => (
             gap: { xs: 'sm' },
         }}
     >
-        <KeyboardDisplay />
+        <ChordCheckerEngine />
+        <InstrumentDisplay />
         <Flex
             {...{
                 className: cx(
