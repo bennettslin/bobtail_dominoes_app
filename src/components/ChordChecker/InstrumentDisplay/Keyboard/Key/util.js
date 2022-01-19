@@ -5,7 +5,6 @@ import styleConfigPitchBlack from '../../../../../styles/arcade/pitchBlack'
 import styleConfigPitchOn from '../../../../../styles/arcade/pitchOn'
 import styleConfigPitchWhite from '../../../../../styles/arcade/pitchWhite'
 import styleConfigRootOn from '../../../../../styles/arcade/rootOn'
-import './style'
 import { modOctave } from '../../../../../utils/music/chords/math'
 import keyC from '../../../../../assets/svgs/checker/keyC'
 import keyCD from '../../../../../assets/svgs/checker/keyCD'
@@ -20,6 +19,7 @@ import keyA from '../../../../../assets/svgs/checker/keyA'
 import keyAB from '../../../../../assets/svgs/checker/keyAB'
 import keyB from '../../../../../assets/svgs/checker/keyB'
 import { ALL_PITCH_INDICES, BASE_PITCH_INDEX } from '../../../../../constants/music/audio'
+import './style'
 
 const
     KEYS = [keyC, keyCD, keyD, keyDE, keyE, keyF, keyFG, keyG, keyGA, keyA, keyAB, keyB],

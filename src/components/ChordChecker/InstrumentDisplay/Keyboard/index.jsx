@@ -5,25 +5,23 @@ import KeyboardKey from './Key'
 import { ORDERED_PITCH_INDICES } from './util'
 import './style'
 
-const Keyboard = () => {
-    return (
-        <Flex
-            {...{
-                className: cx(
-                    'Keyboard',
-                ),
-            }}
-        >
-            {ORDERED_PITCH_INDICES.map(pitchIndex => (
-                <KeyboardKey
-                    {...{
-                        key: pitchIndex,
-                        pitchIndex,
-                    }}
-                />
-            ))}
-        </Flex>
-    )
-}
+const Keyboard = () => (
+    <Flex
+        {...{
+            className: cx(
+                'Keyboard',
+            ),
+        }}
+    >
+        {ORDERED_PITCH_INDICES.map(pitchIndex => (
+            <KeyboardKey
+                {...{
+                    key: pitchIndex,
+                    pitchIndex,
+                }}
+            />
+        ))}
+    </Flex>
+)
 
 export default Keyboard
