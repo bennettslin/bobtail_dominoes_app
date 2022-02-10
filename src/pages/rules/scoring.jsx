@@ -32,15 +32,13 @@ This means that within the same turn, it's possible to earn 3 points by creating
                     <DominoesSvg {...{ src: scoringExtend }} />
                 ),
                 `
-The order of placement sometimes matters. In the above example, had you switched the first and second dominoes, the final chords would be the same, but you would have fewer points! 
+The order of placement sometimes matters. In the above example, had you switched the first and second dominoes, the final chords would be the same, but you would have fewer points!
                 `,
                 (
                     <DominoesSvg {...{ src: scoringOrder }} />
                 ),
                 `
-At the end of your turn, add up the total points from each domino placement. Include any points earned from chords built by rotating dominoes.
-
-If you play all the dominoes in a full hand on any turn, you get a bonus of ${BINGO_POINTS} points!
+At the end of your turn, add up the total points from each domino placement. If you play all the dominoes in a full hand on any turn, you get a bonus of ${BINGO_POINTS} points!
 
 The player with the highest score wins the game. A tie is possible.
             `,

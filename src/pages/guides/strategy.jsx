@@ -10,8 +10,8 @@ const Component = () => (
             ...PAGES_MAP[ID],
             titleHeading: 'Strategy and tips',
             body: `
-- Any three notes make up a triad if every note is separated from the others by a minor third or greater.
-- Any four notes make up a valid seventh chord if no two notes are separated by a perfect fourth, and only two notes at most are separated by a whole tone or less.
+- Any three notes make up a triad if every interval between two consecutive notes is a minor third or greater.
+- Any four notes make up a seventh chord if no interval between two consecutive note is a perfect fourth or greater, and only one at most is a whole tone or less.
             `,
         }}
     />
