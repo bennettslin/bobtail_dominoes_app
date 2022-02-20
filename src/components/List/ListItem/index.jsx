@@ -6,12 +6,14 @@ import './style'
 const ListItem = ({
     className,
     children,
+    hasGap,
     ...rest
 }) => (
     <li
         {...{
             className: cx(
                 'ListItem',
+                hasGap && 'ListItem__gap',
                 className,
             ),
             ...rest,
@@ -22,6 +24,7 @@ const ListItem = ({
 )
 
 ListItem.propTypes = {
+    hasGap: PropTypes.bool,
     className: PropTypes.string,
     children: PropTypes.node.isRequired,
 }

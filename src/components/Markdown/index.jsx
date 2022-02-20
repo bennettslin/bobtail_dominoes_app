@@ -4,6 +4,8 @@ import cx from 'classnames'
 import ReactMarkdown from 'react-markdown'
 import Anchor from '../Anchor'
 import Heading from '../Heading'
+import List from '../List'
+import ListItem from '../List/ListItem'
 import Paragraph from '../Paragraph'
 import { getSmartQuotedText } from '../../utils/format/smartQuote'
 import './style'
@@ -32,7 +34,11 @@ const Markdown = ({
                 h5: ({ children }) => (
                     <Heading {...{ level: 5 }}>{children}</Heading>
                 ),
+                li: ({ children }) => (
+                    <ListItem hasGap>{children}</ListItem>
+                ),
                 p: Paragraph,
+                ul: List,
             },
         }}
     >

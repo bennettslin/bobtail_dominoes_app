@@ -1,6 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 import Button from '../../../../components/Button'
+import FinePrint from '../../../../components/FinePrint'
 import Flex from '../../../../components/Flex'
 import Markdown from '../../../../components/Markdown'
 import PeopleSvg from '../../../../components/Svgs/People'
@@ -22,51 +23,45 @@ const YearlingsBobtailUpsell = () => (
         }}
     >
         <Flex>
-            <Flex
-                {...{
-                    flexDirection: 'column',
-                }}
-            >
-                <Markdown>
+            <Flex {...{ flexDirection: 'column', gap: 'xxs' }}>
+                <Flex {...{ flexDirection: 'column' }}>
+                    <Markdown>
                     Please check out…
-                </Markdown>
-                <label
-                    {...{
-                        className: cx(
-                            'font__yearlingsBobtail',
-                            'fontSize__lg',
-                        ),
-                    }}
-                >
-                    <i>{getSmartQuotedText(`Yearling's Bobtail`)}</i>
-                </label>
-                <label
-                    {...{
-                        className: cx(
-                            'font__yearlingsBobtail',
-                            'fontSize__sm',
-                        ),
-                    }}
-                >
+                    </Markdown>
+                    <label
+                        {...{
+                            className: cx(
+                                'font__yearlingsBobtail',
+                                'fontSize__lg',
+                            ),
+                        }}
+                    >
+                        <i>{getSmartQuotedText(`Yearling's Bobtail`)}</i>
+                    </label>
+                    <Markdown>
                     by the
-                </label>
-                <label
-                    {...{
-                        className: cx(
-                            'YearlingsBobtailUpsell__bandLabel',
-                            'font__yearlingsBobtail',
-                            'fontSize__md',
-                        ),
-                    }}
-                >
+                    </Markdown>
+                    <label
+                        {...{
+                            className: cx(
+                                'YearlingsBobtailUpsell__bandLabel',
+                                'font__yearlingsBobtail',
+                                'fontSize__md',
+                            ),
+                        }}
+                    >
                     Bobtail Yearlings
-                </label>
-                <Markdown>
-                An audio webcomic for
-                </Markdown>
-                <Markdown>
-                    {`"The *Ulysses* of Rock Albums!"`}
-                </Markdown>
+                    </label>
+                    <Markdown>
+                    An audio webcomic for
+                    </Markdown>
+                    <Markdown>
+                        {`"The *Ulysses* of Rock Albums!"`}
+                    </Markdown>
+                </Flex>
+                <FinePrint>
+                    (Contains adult situations.)
+                </FinePrint>
             </Flex>
             <PeopleSvg
                 {...{

@@ -6,6 +6,7 @@ export const rulesPageIds = [
     'playing',
     // 'rotating',
     'scoring',
+    'fun',
 ]
 
 export default getIdPagesMap({
