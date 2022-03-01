@@ -13,7 +13,7 @@ const Component = () => (
             titleHeading: 'Setting up',
             body: [
                 `
-The standard set consists of 48 dominoes representing all possible whole tones, minor and major thirds, and perfect fourths. The extended set includes semitones and tritones as well, for a total of 66 dominoes.
+The standard set consists of 48 dominoes representing all possible whole tones, minor and major thirds, and perfect fourths. The extended set includes semitones and tritones for a total of 66 dominoes.
                 `,
                 (
                     <DominoesSvg {...{
@@ -22,13 +22,13 @@ The standard set consists of 48 dominoes representing all possible whole tones, 
                     }} />
                 ),
                 `
-We recommend the standard set, but advanced players may choose to play with the extended set.
+We recommend the standard set for beginners. Advanced players may choose to play with the extended set.
 
-Before starting the game, the players should decide on which chords to allow. We recommend the chords listed on our [chord checker](/guides/chords) page, but extended jazz chords and set theory collections are also possible.
+Before starting the game, the players should decide on which chords to allow. We recommend the ones listed on our [chord checker](/guides/chords) page. Jazz chords and set theory collections are also possible.
 
-The players should also agree on the maximum number of dominoes held in each player's hand. We recommend three, but advanced players may choose four or five.
+The players should also agree on the maximum number of dominoes held in each player's hand. We recommend three for beginners. Advanced players may choose four.
 
-Place all dominoes face down to form a pool. Each player draws a single domino. The player with the domino that has a note closest to C, in ascending order, goes first. To break a tie, compare that domino's second note.
+Place all dominoes face down to form a pool. Each player draws a single domino. The player with the domino that has a note closest to C, in ascending order, goes first. To break a tie, compare each domino's second note.
 
 Reshuffle the pool. Draw a single domino and place it face up to begin the board. Each player now draws the maximum number of dominoes into their hand.
                 `,

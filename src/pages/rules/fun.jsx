@@ -11,9 +11,9 @@ const Component = () => (
             titleHeading: 'Musical fun',
             body: [
                 `
-- Bring your musical instrument to the game! It's easier to recognize a valid chord when you sound it out. You can also jam out with the other players who are waiting on their turn!
+- Bring your musical instrument to the game! It's easier to recognize a valid chord once you hear it. You can also jam out while waiting on your turn!
 
-- Since chords that intersect in a bunch will be musically related, they can often be arranged into a sensible chord progression. So start every songwriting session with a game of Bobtail Dominoes!
+- Chords joined together in a bunch can often be arranged into a sensible progression. So start every songwriting session with a game of Bobtail Dominoes!
 
 - Take a picture of the final board and post it with a #BobtailDominoes hashtag on [Facebook](https://www.facebook.com/hashtag/BobtailDominoes), [Instagram](https://www.instagram.com/explore/tags/BobtailDominoes), and [Twitter](https://twitter.com/hashtag/BobtailDominoes)!
                 `,
