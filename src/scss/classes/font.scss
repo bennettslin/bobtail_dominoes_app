@@ -6,18 +6,8 @@
 }
 
 @font-face {
-    font-family: Peralta;
-    src: url('../assets/fonts/Peralta/Peralta-Regular.ttf');
-}
-
-@font-face {
     font-family: Chicle;
     src: url('../assets/fonts/Chicle/Chicle-Regular.ttf');
-}
-
-@font-face {
-    font-family: Rancho;
-    src: url('../assets/fonts/Rancho/Rancho-Regular.ttf');
 }
 
 .font__text {
@@ -25,18 +15,13 @@
     letter-spacing: 0.025em;
 }
 
-.font__heading {
-    font-family: Peralta, Georgia;
-    font-weight: normal;
-}
-
-.font__button {
+.font__heading, .font__button {
     font-family: Chicle, Arial;
     letter-spacing: 0.05em;
-}
 
-.font__yearlingsBobtail {
-    font-family: Rancho;
+    i {
+        letter-spacing: 0.025em;
+    }
 }
 
 .labelFontSize__sm { font-size: 0.66em; }

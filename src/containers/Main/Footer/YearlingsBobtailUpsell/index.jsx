@@ -31,7 +31,7 @@ const YearlingsBobtailUpsell = () => (
                     <label
                         {...{
                             className: cx(
-                                'font__yearlingsBobtail',
+                                'font__heading',
                                 'fontSize__lg',
                             ),
                         }}
@@ -45,7 +45,7 @@ const YearlingsBobtailUpsell = () => (
                         {...{
                             className: cx(
                                 'YearlingsBobtailUpsell__bandLabel',
-                                'font__yearlingsBobtail',
+                                'font__heading',
                                 'fontSize__md',
                             ),
                         }}

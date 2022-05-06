@@ -32,11 +32,8 @@ const Body = () => {
                 gap: 'md',
             }}
         >
-            <Heading {...{ fontSize: 'md' }}>
-                {getSmartQuotedText(pageHeading)}
-            </Heading>
-            <Heading {...{ level: 3, fontSize: 'md' }}>
-                {getSmartQuotedText(titleHeading)}
+            <Heading>
+                {getSmartQuotedText(pageHeading || titleHeading)}
             </Heading>
             <Heading {...{ level: 5, fontSize: 'md' }}>
                 {formatDate({ date: pageDate || date })}
