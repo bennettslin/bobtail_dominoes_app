@@ -8,7 +8,6 @@ const List = ({
     fontSize,
     isClean,
     children,
-    ...rest
 }) => (
     <ul
         {...{
@@ -18,7 +17,6 @@ const List = ({
                 fontSize === 'md' && 'fontSize__md',
                 className,
             ),
-            ...rest,
         }}
     >
         {children}
