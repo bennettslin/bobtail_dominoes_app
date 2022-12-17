@@ -1,4 +1,5 @@
 import removeMarkdown from 'remove-markdown'
+import slugify from 'slugify'
 import { join } from '../../general'
 import { getPagePathFromConfig } from '../../pages/path/config'
 
@@ -6,16 +7,37 @@ export const convertMarkdownToText = markdown => (
     removeMarkdown(markdown)
 )
 
-export const getSlugForLinkId = children => (
-    (Array.isArray(children) ? children[0] : children)
-        .replace(/'/g, '')
-        .toLowerCase().split(/[^a-z0-9]/)
-        .filter(text => Boolean(text))
-        .join('-')
+const joinArrayOfStrings = stringArray => (
+    stringArray.map(entry => {
+        if (typeof entry === 'string') {
+            return entry
+        }
+
+        const entryObject = entry?.props?.children
+
+        return Array.isArray(entryObject) ?
+            joinArrayOfStrings(entryObject) :
+            entryObject
+    })
+        .join('')
+)
+
+export const getLinkId = children => (
+    slugify(
+        joinArrayOfStrings(
+            Array.isArray(children) ?
+                children :
+                [children],
+        ),
+        {
+            lower: true,
+            strict: true,
+        },
+    )
 )
 
 export const getMarkdownLinkForText = id => (
-    `[${id}](#${getSlugForLinkId(id)})${'  '}`
+    `[${id}](#${getLinkId(id)})${'  '}`
 )
 
 const getMarkdownLinksForPages = ({

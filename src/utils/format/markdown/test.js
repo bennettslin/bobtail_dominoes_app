@@ -1,4 +1,4 @@
-import { convertMarkdownToText, getMarkdownLinkForText, getMarkdownLinksForRootPage, getSlugForLinkId } from '.'
+import { convertMarkdownToText, getMarkdownLinkForText, getMarkdownLinksForRootPage, getLinkId } from '.'
 
 describe('convertMarkdownToText', () => {
     it('returns text for markdown', () => {
@@ -12,15 +12,15 @@ link text`)
     })
 })
 
-describe('getSlugForLinkId', () => {
+describe('getLinkId', () => {
     it('returns slug for formatted date', () => {
-        expect(getSlugForLinkId(
+        expect(getLinkId(
             'May 4, 1983',
         )).toBe('may-4-1983')
     })
 
     it('returns slug for essay title', () => {
-        expect(getSlugForLinkId(
+        expect(getLinkId(
             `Can't stop, won't stop!`,
         )).toBe('cant-stop-wont-stop')
     })
