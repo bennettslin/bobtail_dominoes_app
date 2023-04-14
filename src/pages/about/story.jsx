@@ -21,7 +21,7 @@ Hi, I'm Bennett from the Bobtail Yearlings! Some time ago, I realized that in or
                 `
 Each day, I would challenge myself to arrange the dominoes into chords. I would then strum the chords on my guitar, hoping to come up with a nice progression for my next song. As time went on, I began to dream in chordal space, and I could feel myself developing a better harmonic intuition.
 
-Of course, it was obvious all along that Bobtail Dominoes could be a tabletop game for multiple players. So I play tested with some musician friends, and we came up with a set of rules that worked well. My hope is that a few of you will invent your own rules and share them, just like with classic dominoes!
+Of course, it was obvious all along that Bobtail Dominoes could be a tabletop game for multiple players. So I play tested with some musician friends, and we came up with a set of rules that work well. My hope is that some of you will invent your own variants and share them, just like with classic dominoes!
                 `,
             ],
         }}
