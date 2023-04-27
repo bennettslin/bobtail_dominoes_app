@@ -56,7 +56,7 @@ const YearlingsBobtailUpsell = () => (
                     An audio webcomic for
                     </Markdown>
                     <Markdown>
-                        {`"The *Ulysses* of Rock Albums!"`}
+                        {`the "*Ulysses* of rock albums"!`}
                     </Markdown>
                 </Flex>
                 <FinePrint>
