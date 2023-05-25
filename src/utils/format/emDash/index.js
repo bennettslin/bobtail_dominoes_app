@@ -1,3 +1,3 @@
 export const getUnbrokenEmDashText = text => (
-    text.replace(/—/g, '&NoBreak;—')
+    text.replace(/—/g, '\u2060—')
 )
