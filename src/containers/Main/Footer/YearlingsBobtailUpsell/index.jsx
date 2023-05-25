@@ -6,7 +6,7 @@ import Flex from '../../../../components/Flex'
 import Markdown from '../../../../components/Markdown'
 import PeopleSvg from '../../../../components/Svgs/People'
 import bennettLiz from '../../../../assets/svgs/people/bennettLiz'
-import { getSmartQuotedText } from '../../../../utils/format/smartQuote'
+import { getFormattedText } from '../../../../utils/format'
 import { YEARLINGS_BOBTAIL_WEBSITE } from '../../../../constants/website'
 import './style'
 
@@ -36,7 +36,7 @@ const YearlingsBobtailUpsell = () => (
                             ),
                         }}
                     >
-                        <i>{getSmartQuotedText(`Yearling's Bobtail`)}</i>
+                        <i>{getFormattedText(`Yearling's Bobtail`)}</i>
                     </label>
                     <Markdown>
                     by the

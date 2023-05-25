@@ -5,7 +5,7 @@ import ContactEmail from '../../../../components/ContactEmail'
 import Flex from '../../../../components/Flex'
 import Heading from '../../../../components/Heading'
 import Markdown from '../../../../components/Markdown'
-import { getSmartQuotedText } from '../../../../utils/format/smartQuote'
+import { getFormattedText } from '../../../../utils/format'
 import { formatDate } from '../../../../utils/date/format'
 import './style'
 
@@ -33,7 +33,7 @@ const Body = () => {
             }}
         >
             <Heading>
-                {getSmartQuotedText(pageHeading || titleHeading)}
+                {getFormattedText(pageHeading || titleHeading)}
             </Heading>
             <Heading {...{ level: 5, fontSize: 'md' }}>
                 {formatDate({ date: pageDate || date })}

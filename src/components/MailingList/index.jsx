@@ -2,7 +2,7 @@ import React from 'react'
 import cx from 'classnames'
 import FinePrint from '../FinePrint'
 import MailingListInputs from './Inputs'
-import { getSmartQuotedText } from '../../utils/format/smartQuote'
+import { getFormattedText } from '../../utils/format'
 import { EMAIL_ACTION } from '../../constants/website'
 import './style'
 
@@ -23,7 +23,7 @@ const MailingList = () => (
         </label>
         <MailingListInputs />
         <FinePrint>
-            {getSmartQuotedText(
+            {getFormattedText(
                 `We'll send out one email per month at most.`,
             )}
         </FinePrint>

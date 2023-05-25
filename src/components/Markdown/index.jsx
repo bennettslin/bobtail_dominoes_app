@@ -7,7 +7,7 @@ import Heading from '../Heading'
 import List from '../List'
 import ListItem from '../List/ListItem'
 import Paragraph from '../Paragraph'
-import { getSmartQuotedText } from '../../utils/format/smartQuote'
+import { getFormattedText } from '../../utils/format'
 import './style'
 
 const Markdown = ({
@@ -42,7 +42,7 @@ const Markdown = ({
             },
         }}
     >
-        {getSmartQuotedText(children)}
+        {getFormattedText(children)}
     </ReactMarkdown>
 )
 
