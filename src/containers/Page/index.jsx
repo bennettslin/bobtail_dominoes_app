@@ -9,7 +9,13 @@ import { updateSelectedPagePath } from '../../redux/page/action'
 import { getPathFromWindowLocation } from '../../utils/pages/path'
 import { datePropTypes, pagePropTypes, pagesPropTypes } from '../../constants/propTypes'
 
-const Page = ({ className, children, ...rest }) => {
+const Page = ({
+    className,
+    children,
+    metaTitle,
+    metaDescription,
+    ...rest
+}) => {
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -22,7 +28,7 @@ const Page = ({ className, children, ...rest }) => {
 
     return (
         <PageConfigContext.Provider {...{ value: rest }}>
-            <Helmet />
+            <Helmet {...{ metaTitle, metaDescription }} />
             {children ? (
                 <ChildrenPage {...{ className }}>
                     {children}
@@ -39,6 +45,8 @@ Page.propTypes = {
     noShare: PropTypes.bool,
     showContactEmail: PropTypes.bool,
     children: PropTypes.node,
+    metaTitle: PropTypes.string,
+    metaDescription: PropTypes.string,
     topLevelPage: PropTypes.string,
     pageHeading: PropTypes.string,
     date: datePropTypes,

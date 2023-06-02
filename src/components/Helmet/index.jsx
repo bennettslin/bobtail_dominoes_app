@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
 import { useSelector } from 'react-redux'
 import { Helmet as ReactHelmet } from 'react-helmet'
 import PageConfigContext from '../../contexts/PageConfig'
@@ -9,12 +10,13 @@ import {
     getMetaTags,
 } from './util'
 
-const Helmet = () => {
+const Helmet = ({ metaTitle, metaDescription }) => {
     const
         {
             id,
             date,
             topLevelPage,
+            description,
         } = useContext(PageConfigContext),
         selectedPagePath = useSelector(mapSelectedPagePath),
         title = getHelmetTitle({
@@ -33,7 +35,8 @@ const Helmet = () => {
             </title>
             {getMetaTags({
                 page: selectedPagePath,
-                title,
+                description: metaDescription || description,
+                title: metaTitle || title,
             }).map(({
                 name,
                 property,
@@ -50,6 +53,11 @@ const Helmet = () => {
             ))}
         </ReactHelmet>
     )
+}
+
+Helmet.propTypes = {
+    metaTitle: PropTypes.string,
+    metaDescription: PropTypes.string,
 }
 
 export default Helmet
