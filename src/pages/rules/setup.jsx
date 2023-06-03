@@ -16,7 +16,7 @@ const Component = () => (
             metaDescription: `Setting up pieces and rules for the game.`,
             body: [
                 `
-The standard set consists of 48 dominoes representing all possible whole tones, minor and major thirds, and perfect fourths. The extended set includes semitones and tritones, for a total of 66 dominoes.
+Each domino represents an interval of two notes. The standard set consists of 48 dominoes representing all possible whole tones, minor and major thirds, and perfect fourths. The extended set includes semitones and tritones, for a total of 66 dominoes.
                 `,
                 (
                     <DominoesSvg {...{
