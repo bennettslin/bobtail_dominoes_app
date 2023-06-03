@@ -13,6 +13,7 @@ const Component = () => (
             ...PAGES_MAP[ID],
             titleHeading: TITLE,
             metaTitle: TITLE,
+            metaDescription: `How I invented the game.`,
             body: [
                 `
 Hi, I'm Bennett from the Bobtail Yearlings! Some time ago, I realized that in order to improve as a songwriter, I needed to visualize chordal space. After struggling to get started, I decided to gamify the process. That's when the idea for Bobtail Dominoes came to me, and I made this prototype from mosaic bathroom tiles.

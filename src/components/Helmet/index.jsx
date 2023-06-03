@@ -16,14 +16,16 @@ const Helmet = ({ metaTitle, metaDescription }) => {
             id,
             date,
             topLevelPage,
-            description,
+            description: contextDescription,
         } = useContext(PageConfigContext),
         selectedPagePath = useSelector(mapSelectedPagePath),
-        title = getHelmetTitle({
+        helmetTitle = getHelmetTitle({
             id,
             date,
             topLevelPage,
-        })
+        }),
+        title = metaTitle || helmetTitle,
+        description = metaDescription || contextDescription
 
     return (
         <ReactHelmet>
@@ -35,8 +37,8 @@ const Helmet = ({ metaTitle, metaDescription }) => {
             </title>
             {getMetaTags({
                 page: selectedPagePath,
-                description: metaDescription || description,
-                title: metaTitle || title,
+                description,
+                title,
             }).map(({
                 name,
                 property,

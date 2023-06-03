@@ -14,6 +14,7 @@ const Component = () => (
             showContactEmail: true,
             titleHeading: TITLE,
             metaTitle: TITLE,
+            metaDescription: `Current specs for the game pieces.`,
             body: [
                 `
 Hang tight! Manufacturers worldwide are backed up right now, so we're still weighing our options for a manufacturing partner. In the meantime, if you have feedback or suggestions for improvement on the current specs, we'd love to hear them!

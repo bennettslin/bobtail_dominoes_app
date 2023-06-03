@@ -11,6 +11,7 @@ const Component = () => (
             ...PAGES_MAP[ID],
             titleHeading: TITLE,
             metaTitle: TITLE,
+            metaDescription: `Fun ways to play the game.`,
             body: [
                 `
 - Bring your musical instrument to the game! It's easier to recognize a valid chord once you hear it. You can also jam out while waiting on your turn!

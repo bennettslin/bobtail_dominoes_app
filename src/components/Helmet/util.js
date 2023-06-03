@@ -15,9 +15,17 @@ const capitalise = str => (
 export const getMetaTitle = ({
     page,
     title,
-}) => (
-    `${page === HOME_PAGE ? '' : `${title || capitalise(page)} | `}${APP_TITLE}`
-)
+}) => {
+    if (title) {
+        return title
+
+    } else if (page === HOME_PAGE) {
+        return APP_TITLE
+
+    } else {
+        return `${capitalise(page)} | ${APP_TITLE}`
+    }
+}
 
 export const getMetaDescription = description => (
     description ?

@@ -12,6 +12,7 @@ const Component = () => (
             ...PAGES_MAP[ID],
             titleHeading: TITLE,
             metaTitle: TITLE,
+            metaDescription: `Validate a chord under the standard rules.`,
             body: [
                 (
                     <ChordChecker />

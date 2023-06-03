@@ -13,6 +13,7 @@ const Component = () => (
             ...PAGES_MAP[ID],
             titleHeading: TITLE,
             metaTitle: TITLE,
+            metaDescription: `Setting up pieces and rules for the game.`,
             body: [
                 `
 The standard set consists of 48 dominoes representing all possible whole tones, minor and major thirds, and perfect fourths. The extended set includes semitones and tritones, for a total of 66 dominoes.

@@ -14,6 +14,7 @@ const Component = () => (
             ...PAGES_MAP[ID],
             titleHeading: TITLE,
             metaTitle: TITLE,
+            metaDescription: `How to play a single turn.`,
             body: [
                 `
 When it's your turn, place a single domino from your hand onto the board to build at least one valid chord. In doing so, you may form any number of dyads, or two notes in a row.

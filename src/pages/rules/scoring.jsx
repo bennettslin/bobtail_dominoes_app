@@ -16,6 +16,7 @@ const Component = () => (
             ...PAGES_MAP[ID],
             titleHeading: TITLE,
             metaTitle: TITLE,
+            metaDescription: `Scoring each turn and determining the winner.`,
             body: [
                 `
 Use a score pad to keep track of your points.

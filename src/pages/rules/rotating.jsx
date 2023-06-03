@@ -15,6 +15,7 @@ const Component = () => (
             ...PAGES_MAP[ID],
             titleHeading: TITLE,
             metaTitle: TITLE,
+            metaDescription: `Ways to rotate dominoes on a given turn.`,
             body: [
                 `
 A domino that is already on the board may be shifted only by rotating in place.

@@ -11,6 +11,7 @@ const Component = () => (
             ...PAGES_MAP[ID],
             titleHeading: TITLE,
             metaTitle: TITLE,
+            metaDescription: `Quick tips for how to win the game.`,
             body: `
 - Three notes make up a triad if every interval between two consecutive notes is a minor third or greater.
 - Four notes make up a seventh chord if no interval between two consecutives note is a perfect fourth or greater, and only one at most is a whole tone or less.
