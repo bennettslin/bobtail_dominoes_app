@@ -6,12 +6,14 @@ import playingValid from '../../assets/svgs/rules/playingValid'
 import playingInvalid from '../../assets/svgs/rules/playingInvalid'
 
 const ID = 'playing'
+const TITLE = 'Playing your turn'
 
 const Component = () => (
     <Page
         {...{
             ...PAGES_MAP[ID],
-            titleHeading: 'Playing your turn',
+            titleHeading: TITLE,
+            metaTitle: TITLE,
             body: [
                 `
 When it's your turn, place a single domino from your hand onto the board to build at least one valid chord. In doing so, you may form any number of dyads, or two notes in a row.

@@ -3,12 +3,14 @@ import Page from '../../containers/Page'
 import PAGES_MAP from '../../content/rules'
 
 const ID = 'fun'
+const TITLE = 'Musical fun'
 
 const Component = () => (
     <Page
         {...{
             ...PAGES_MAP[ID],
-            titleHeading: 'Musical fun',
+            titleHeading: TITLE,
+            metaTitle: TITLE,
             body: [
                 `
 - Bring your musical instrument to the game! It's easier to recognize a valid chord once you hear it. You can also jam out while waiting on your turn!

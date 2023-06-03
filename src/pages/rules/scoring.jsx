@@ -8,12 +8,14 @@ import scoringOrder from '../../assets/svgs/rules/scoringOrder'
 import { BINGO_POINTS } from '../../constants/music/play'
 
 const ID = 'scoring'
+const TITLE = 'Counting your score'
 
 const Component = () => (
     <Page
         {...{
             ...PAGES_MAP[ID],
-            titleHeading: 'Counting your score',
+            titleHeading: TITLE,
+            metaTitle: TITLE,
             body: [
                 `
 Use a score pad to keep track of your points.

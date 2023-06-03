@@ -5,12 +5,14 @@ import PAGES_MAP from '../../content/about'
 import prototype_reduced from '../../assets/images/prototype_reduced.jpg'
 
 const ID = 'story'
+const TITLE = 'Our story'
 
 const Component = () => (
     <Page
         {...{
             ...PAGES_MAP[ID],
-            titleHeading: 'Our story',
+            titleHeading: TITLE,
+            metaTitle: TITLE,
             body: [
                 `
 Hi, I'm Bennett from the Bobtail Yearlings! Some time ago, I realized that in order to improve as a songwriter, I needed to visualize chordal space. After struggling to get started, I decided to gamify the process. That's when the idea for Bobtail Dominoes came to me, and I made this prototype from mosaic bathroom tiles.

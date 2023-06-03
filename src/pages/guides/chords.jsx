@@ -4,12 +4,14 @@ import Page from '../../containers/Page'
 import PAGES_MAP from '../../content/guides'
 
 const ID = 'chords'
+const TITLE = 'Chord checker'
 
 const Component = () => (
     <Page
         {...{
             ...PAGES_MAP[ID],
-            titleHeading: 'Chord checker',
+            titleHeading: TITLE,
+            metaTitle: TITLE,
             body: [
                 (
                     <ChordChecker />

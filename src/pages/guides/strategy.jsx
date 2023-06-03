@@ -3,12 +3,14 @@ import Page from '../../containers/Page'
 import PAGES_MAP from '../../content/guides'
 
 const ID = 'strategy'
+const TITLE = 'Strategy and tips'
 
 const Component = () => (
     <Page
         {...{
             ...PAGES_MAP[ID],
-            titleHeading: 'Strategy and tips',
+            titleHeading: TITLE,
+            metaTitle: TITLE,
             body: `
 - Three notes make up a triad if every interval between two consecutive notes is a minor third or greater.
 - Four notes make up a seventh chord if no interval between two consecutives note is a perfect fourth or greater, and only one at most is a whole tone or less.

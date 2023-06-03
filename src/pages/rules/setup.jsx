@@ -5,12 +5,14 @@ import PAGES_MAP from '../../content/rules'
 import setupSet from '../../assets/svgs/rules/setupSet'
 
 const ID = 'setup'
+const TITLE = 'Setting up'
 
 const Component = () => (
     <Page
         {...{
             ...PAGES_MAP[ID],
-            titleHeading: 'Setting up',
+            titleHeading: TITLE,
+            metaTitle: TITLE,
             body: [
                 `
 The standard set consists of 48 dominoes representing all possible whole tones, minor and major thirds, and perfect fourths. The extended set includes semitones and tritones, for a total of 66 dominoes.

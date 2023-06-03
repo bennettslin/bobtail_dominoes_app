@@ -7,12 +7,14 @@ import rotatingInvalid from '../../assets/svgs/rules/rotatingInvalid'
 import rotatingScore from '../../assets/svgs/rules/rotatingScore'
 
 const ID = 'rotating'
+const TITLE = 'Rotating dominoes'
 
 const Component = () => (
     <Page
         {...{
             ...PAGES_MAP[ID],
-            titleHeading: 'Rotating dominoes',
+            titleHeading: TITLE,
+            metaTitle: TITLE,
             body: [
                 `
 A domino that is already on the board may be shifted only by rotating in place.
