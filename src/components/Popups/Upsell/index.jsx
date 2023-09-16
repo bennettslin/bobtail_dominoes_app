@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useDispatch, useSelector } from 'react-redux'
 import getDidMountHoc from '../../../hocs/DidMountHoc'
-import FollowButtons from '../../FollowButtons'
+// import FollowButtons from '../../FollowButtons'
 import MailingList from '../../MailingList'
 import Popup from '../../Popup'
 import UpsellDisableLink from './DisableLink'
@@ -27,7 +27,7 @@ const UpsellPopup = ({ didMount }) => {
             }}
         >
             <MailingList />
-            <FollowButtons />
+            {/* <FollowButtons /> */}
             <UpsellDisableLink />
         </Popup>
     )
