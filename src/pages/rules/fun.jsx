@@ -18,7 +18,7 @@ const Component = () => (
 
 - Chords joined together in a bunch can often be arranged into a sensible progression. So start every songwriting session with a game of Bobtail Dominoes!
 
-- Take a picture of the final board and post it with a #BobtailDominoes hashtag on [Facebook](https://www.facebook.com/hashtag/BobtailDominoes), [Instagram](https://www.instagram.com/explore/tags/BobtailDominoes), and [Twitter](https://twitter.com/hashtag/BobtailDominoes)!
+- Take a picture of the final board and keep it for future reference!
                 `,
             ],
         }}
