@@ -1,8 +1,6 @@
 import React from 'react'
 import cx from 'classnames'
 import Flex from '../Flex'
-import FacebookButton from './FollowButton/FacebookButton'
-import TwitterButton from './FollowButton/TwitterButton'
 
 const FollowButtons = () => (
     <Flex
@@ -24,8 +22,6 @@ const FollowButtons = () => (
                 gap: 'xs',
             }}
         >
-            <FacebookButton />
-            <TwitterButton />
         </Flex>
     </Flex>
 )
