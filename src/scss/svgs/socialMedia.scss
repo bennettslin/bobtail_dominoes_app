@@ -8,12 +8,4 @@ svg {
     &.copyUrlCopied {
         fill: hsl(120, 33%, 67%);
     }
-
-    &.facebook {
-        fill: $colour__facebook;
-    }
-
-    &.twitter {
-        fill: $colour__twitter;
-    }
 }
