@@ -61,6 +61,9 @@ export const getSmartQuotedText = (text = '') => {
                 // Or it's the only character.
                 text.length === 1 ||
 
+                // Or it's preceded by a double quote.
+                text[indexOfCharacter - 1] === '"' ||
+
                 // ... or it's preceded by an opening parenthesis.
                 text[indexOfCharacter - 1] === '('
             ) ? openingSmartQuote : closingSmartQuote
