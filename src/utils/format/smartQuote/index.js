@@ -55,12 +55,17 @@ export const getSmartQuotedText = (text = '') => {
 
                     // And the second character also isn't a space.
                     text[indexOfCharacter + 1] !== ' '
+
                 ) || (
                     // Or it's not the first character…
-                    indexOfCharacter &&
+                    indexOfCharacter && (
 
-                    // And it's preceded by a space…
-                    text[indexOfCharacter - 1] === ' '
+                        // And it's preceded by a space…
+                        text[indexOfCharacter - 1] === ' ' ||
+
+                        // Or a newline.
+                        text[indexOfCharacter - 1] === '\n'
+                    )
                 ) ||
 
                 // Or it's the only character.
