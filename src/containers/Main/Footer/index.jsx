@@ -1,27 +1,22 @@
 import React, { useContext } from 'react'
 import cx from 'classnames'
-import { useSelector } from 'react-redux'
 import { CSSTransition } from 'react-transition-group'
 import AppLoadedContext from '../../../contexts/AppLoaded'
 import Flex from '../../../components/Flex'
-// import FollowButtons from '../../../components/FollowButtons'
 import MailingList from '../../../components/MailingList'
 import StyledFrame from '../../../components/Styled/Frame'
 import StyledFrameBody from '../../../components/Styled/Frame/Body'
 import YearlingsBobtailUpsell from './YearlingsBobtailUpsell'
-import { mapIsUpsellShown } from '../../../redux/option/selector'
 import './style'
 
 const MainFooter = () => {
-    const
-        { didAppLoad } = useContext(AppLoadedContext),
-        isUpsellShown = useSelector(mapIsUpsellShown)
+    const { didAppLoad } = useContext(AppLoadedContext)
 
     return (
         <CSSTransition
             appear
             {...{
-                in: didAppLoad && !isUpsellShown,
+                in: didAppLoad,
                 timeout: 200,
                 classNames: {
                     enterDone: 'shown',
@@ -58,7 +53,6 @@ const MainFooter = () => {
                         }}
                     >
                         <MailingList />
-                        {/* <FollowButtons /> */}
                     </Flex>
                     <YearlingsBobtailUpsell />
                 </StyledFrameBody>
