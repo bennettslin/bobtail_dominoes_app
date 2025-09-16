@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Flex from '../../components/Flex'
-import Popups from '../../components/Popups'
 import Main from '../Main'
 
 const Wrapper = ({ children }) => (
@@ -16,7 +15,6 @@ const Wrapper = ({ children }) => (
         }}
     >
         <Main>{children}</Main>
-        <Popups />
     </Flex>
 )
 
