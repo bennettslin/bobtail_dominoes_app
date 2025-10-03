@@ -1,7 +1,6 @@
 import React from 'react'
 import cx from 'classnames'
 import Button from '../../../../components/Button'
-import FinePrint from '../../../../components/FinePrint'
 import Flex from '../../../../components/Flex'
 import Markdown from '../../../../components/Markdown'
 import PeopleSvg from '../../../../components/Svgs/People'
@@ -59,9 +58,6 @@ const YearlingsBobtailUpsell = () => (
                         {`the "*Ulysses* of rock albums"!`}
                     </Markdown>
                 </Flex>
-                <FinePrint>
-                    (Contains adult situations.)
-                </FinePrint>
             </Flex>
             <PeopleSvg
                 {...{
