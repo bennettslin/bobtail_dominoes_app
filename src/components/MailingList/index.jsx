@@ -18,7 +18,7 @@ const MailingList = () => (
         <MailingListAnchor />
         <FinePrint>
             {getFormattedText(
-                `We'll send a weekly newsletter of puzzles, plus the latest info.`,
+                `We'll send weekly puzzles, plus the latest info.`,
             )}
         </FinePrint>
     </Flex>
