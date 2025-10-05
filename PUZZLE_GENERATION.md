@@ -54,3 +54,12 @@
         * To get copied onto clipboard
         * I have no idea why
     * Only then is it safe to generate next month's
+
+### Wrap up
+* Rerun locally
+    * Go to puzzles page
+        * If up to date, should start at today's date
+        * Puzzles page should show all puzzles up to today
+    * Go to admin page
+        * Set to future date
+        * Puzzles page should show all puzzles generated
