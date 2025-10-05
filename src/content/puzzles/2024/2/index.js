@@ -5,7 +5,6 @@ import {
 } from '../../../../constants/music/puzzle'
 
 export default {
-
     1: {
         puzzleType: REGULAR_PUZZLE_TYPE,
         board: [
