@@ -52,14 +52,14 @@
 * Ensure last day of month has been pasted!
     * In my experience, entire snippet may take a while
         * To get copied onto clipboard
-        * I have no idea why
-    * Only then is it safe to generate next month's
+            * I have no idea why
+    * Only then is it safe to generate next month's worth
 
-### Wrap up
+### Validation
 * Rerun locally
-    * Go to puzzles page
-        * If up to date, should start at today's date
-        * Puzzles page should show all puzzles up to today
     * Go to admin page
-        * Set to future date
-        * Puzzles page should show all puzzles generated
+        * Set current date to future date
+            * Puzzles menu should show all puzzles generated
+        * Then set current date back to today's date
+            * Puzzles page should start on today's date
+                * Puzzles menu should show all puzzles up to today
