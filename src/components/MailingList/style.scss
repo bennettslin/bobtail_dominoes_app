@@ -1,8 +1,10 @@
+@import '../../scss/constants/colours';
 @import '../../scss/constants/responsive';
 
 .MailingList {
     width: 100%;
     max-width: 360px;
 
+    color: $colour__neutral__dark;
     text-align: center;
 }

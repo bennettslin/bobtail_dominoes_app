@@ -36,25 +36,23 @@ const MainFooter = () => {
                         className: cx(
                             'MainFooter',
                         ),
-                        justifyContent: 'spaceBetween',
+                        justifyContent: 'spaceEvenly',
                         alignItems: 'normal',
                         gap: 'sm',
                     }}
                 >
+                    <YearlingsBobtailUpsell />
                     <Flex
                         {...{
                             className: cx(
                                 'MainFooter__social',
                             ),
                             flexDirection: 'column',
-                            justifyContent: 'spaceEvenly',
-                            flexGrow: 1,
                             gap: 'sm',
                         }}
                     >
                         <MailingList />
                     </Flex>
-                    <YearlingsBobtailUpsell />
                 </StyledFrameBody>
             </StyledFrame>
         </CSSTransition>

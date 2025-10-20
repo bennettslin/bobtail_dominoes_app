@@ -38,20 +38,6 @@ const YearlingsBobtailUpsell = () => (
                         <i>{getFormattedText(`Yearling's Bobtail`)}</i>
                     </label>
                     <Markdown>
-                    by the
-                    </Markdown>
-                    <label
-                        {...{
-                            className: cx(
-                                'YearlingsBobtailUpsell__bandLabel',
-                                'font__heading',
-                                'fontSize__md',
-                            ),
-                        }}
-                    >
-                    Bobtail Yearlings
-                    </label>
-                    <Markdown>
                     An audio webcomic for
                     </Markdown>
                     <Markdown>
@@ -62,7 +48,7 @@ const YearlingsBobtailUpsell = () => (
             <PeopleSvg
                 {...{
                     src: bennettLiz,
-                    scaleFactor: 0.595,
+                    scaleFactor: 0.3,
                 }}
             />
         </Flex>

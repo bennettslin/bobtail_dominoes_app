@@ -2,7 +2,7 @@ import React from 'react'
 import cx from 'classnames'
 import Flex from '../Flex'
 import MailingListAnchor from './Anchor'
-import FinePrint from '../FinePrint'
+import Markdown from '../Markdown'
 import { getFormattedText } from '../../utils/format'
 import './style'
 
@@ -16,11 +16,11 @@ const MailingList = () => (
         }}
     >
         <MailingListAnchor />
-        <FinePrint>
+        <Markdown>
             {getFormattedText(
-                `We'll send weekly puzzles, plus the latest info.`,
+                `to the Bobtail Yearlings mailing list!`,
             )}
-        </FinePrint>
+        </Markdown>
     </Flex>
 )
 
