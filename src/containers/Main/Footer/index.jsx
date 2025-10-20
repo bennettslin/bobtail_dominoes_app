@@ -41,7 +41,6 @@ const MainFooter = () => {
                         gap: 'sm',
                     }}
                 >
-                    <YearlingsBobtailUpsell />
                     <Flex
                         {...{
                             className: cx(
@@ -53,6 +52,7 @@ const MainFooter = () => {
                     >
                         <MailingList />
                     </Flex>
+                    <YearlingsBobtailUpsell />
                 </StyledFrameBody>
             </StyledFrame>
         </CSSTransition>
